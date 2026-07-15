@@ -6,6 +6,73 @@ import trinketRawData from "Retail/Engine/EffectFormulas/Generic/Trinkets/Trinke
 // Note that raid trinket data is stored here. For other trinket data, see the dungeon, timewalking and other trinket data files.
 export const raidTrinketData = [
   { //
+    /*
+      Effects
+      - 
+
+    */
+    id: 270164,
+    name: "Gebbo's Bottomless Bag",
+    description: "",
+    addonDescription: "",
+    effects: [
+    { // Crit Proc (S1) that increases every second + self-DoT (S5) - Seriously Sharp Seashell
+        stat: "crit",
+        duration: 12,
+        ppm: 3,
+    },
+    { // Vers proc (S2) that removes S8 every time you cast - Brittle Torga Totem
+        stat: "versatility",
+        ppm: 3,
+    },
+    { // Mastery Proc (S3) that diminishes over its duration - Tattered Tortollan Scroll
+        stat: "mastery",
+        ppm: 3,
+    },
+    { // Haste Proc (S4) that also gives speed - Slick and Slimy Gralstone
+        stat: "haste",
+        ppm: 3,
+    },
+    { // All secondaries (S6) - 50lb Midnight Salmon
+        stat: "all",
+        ppm: 3,
+    },
+    { // All secondaries reduced (S7) - Rotting Voidfin
+        stat: "all",
+        ppm: 3,
+    },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+        let bonus_stats: Stats = {};
+
+
+        return bonus_stats;
+    }
+  },
+  { // -- Can gain stacks while the active is going.
+        name: "Hex Lord's Dooming Idol",
+        description: "",
+        effects: [
+          {  // Passive Int loss
+          },
+          {  // On-use Int
+            duration: 30,
+            cooldown: 30, // Technically 20
+          },
+
+        ],
+        runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+          let bonus_stats: Stats = {};
+
+          bonus_stats.intellect = processedValue({...data[1], ...trinketRawData["Hex Lord's Dooming Idol"][1]}, itemLevel) * 5; // You can keep 5 stacks at all times.
+
+          const intellectDeduction = processedValue({...data[0], ...trinketRawData["Hex Lord's Dooming Idol"][0]}, itemLevel)
+          bonus_stats.intellect -= intellectDeduction * 2.5;
+    
+          return bonus_stats;
+        }
+  },
+  { //
     id: 270167,
     name: "Wavecaller's Seastone",
     description: "",

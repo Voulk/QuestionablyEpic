@@ -133272,16 +133272,6 @@ export const nameDB =
         "fr": "Cuirasse des béhémoths colossaux",
         "de": "Brustplatte der kolossalen Ungetüme"
     },
-    "260873": {
-        "cn": "",
-        "en": "Cowl of Infinite Gravity",
-        "ru": "Клобук бесконечной гравитации",
-        "es": "Capucha de gravedad infinita",
-        "br": "Capucho da Gravidade Infinita",
-        "kr": "",
-        "fr": "Capuche de gravité infinie",
-        "de": "Gugel der unendlichen Schwerkraft"
-    },
     "262360": {
         "cn": "",
         "en": "Storyteller's Verses",
@@ -137704,13 +137694,13 @@ export const nameDB =
     },
     "268225": {
         "cn": "",
-        "en": "Spelunker's Drenched Legguards",
-        "ru": "Вымокшие набедренники спелеолога",
-        "es": "Musleras caladas de espeleólogo",
-        "br": "Guarda-pernas Ensopados do Espeleologista",
+        "en": "Coiled Hex Legguards",
+        "ru": "Набедренники спирального сглаза",
+        "es": "Musleras de maleficio serpenteante",
+        "br": "Guarda-pernas da Bagata Enrolada",
         "kr": "",
-        "fr": "Garde-jambes ruisselants de spéléologue",
-        "de": "Durchnässte Beinschützer des Höhlenforschers"
+        "fr": "Garde-jambes maléficieux torsadés",
+        "de": "Verdrehte Zauberbeinschützer"
     },
     "268226": {
         "cn": "",
@@ -144424,13 +144414,13 @@ export const nameDB =
     },
     "272225": {
         "cn": "",
-        "en": "Galerider's Mantle",
-        "ru": "Оплечье оседлавшего ветер",
-        "es": "Manto de jinete de vendaval",
-        "br": "Manto do Cavaleiro da Tempestade",
+        "en": "Pyrewalker's Mantle",
+        "ru": "Pyrewalker's Mantle",
+        "es": "Pyrewalker's Mantle",
+        "br": "Pyrewalker's Mantle",
         "kr": "",
-        "fr": "Mantelet de chevauche-vent",
-        "de": "Mantel des Böenreiters"
+        "fr": "Pyrewalker's Mantle",
+        "de": "Pyrewalker's Mantle"
     },
     "272226": {
         "cn": "",
@@ -144444,13 +144434,13 @@ export const nameDB =
     },
     "272227": {
         "cn": "",
-        "en": "Pyrewalker's Veil",
-        "ru": "Вуаль идущего сквозь пламя",
-        "es": "Velo de transitapiras",
-        "br": "Véu do Pisa-piras",
+        "en": "Galerider's Veil",
+        "ru": "Galerider's Veil",
+        "es": "Galerider's Veil",
+        "br": "Galerider's Veil",
         "kr": "",
-        "fr": "Voile de marche-brasier",
-        "de": "Schleier des Lohenwandlers"
+        "fr": "Galerider's Veil",
+        "de": "Galerider's Veil"
     },
     "272228": {
         "cn": "",
@@ -144484,83 +144474,83 @@ export const nameDB =
     },
     "272231": {
         "cn": "",
-        "en": "Galerider's Doublet",
-        "ru": "Дублет оседлавшего ветер",
-        "es": "Jubón de jinete de vendaval",
-        "br": "Perponte do Cavaleiro da Tempestade",
+        "en": "Pyrewalker's Doublet",
+        "ru": "Pyrewalker's Doublet",
+        "es": "Pyrewalker's Doublet",
+        "br": "Pyrewalker's Doublet",
         "kr": "",
-        "fr": "Doublet de chevauche-vent",
-        "de": "Wams des Böenreiters"
+        "fr": "Pyrewalker's Doublet",
+        "de": "Pyrewalker's Doublet"
     },
     "272232": {
         "cn": "",
-        "en": "Galerider's Buskins",
-        "ru": "Полусапоги оседлавшего ветер",
-        "es": "Polainas de jinete de vendaval",
-        "br": "Alpargatas do Cavaleiro da Tempestade",
+        "en": "Pyrewalker's Buskins",
+        "ru": "Pyrewalker's Buskins",
+        "es": "Pyrewalker's Buskins",
+        "br": "Pyrewalker's Buskins",
         "kr": "",
-        "fr": "Cothurnes de chevauche-vent",
-        "de": "Halbstiefel des Böenreiters"
+        "fr": "Pyrewalker's Buskins",
+        "de": "Pyrewalker's Buskins"
     },
     "272233": {
         "cn": "",
-        "en": "Galerider's Gloves",
-        "ru": "Перчатки оседлавшего ветер",
-        "es": "Guantes de jinete de vendaval",
-        "br": "Luvas do Cavaleiro da Tempestade",
+        "en": "Pyrewalker's Gloves",
+        "ru": "Pyrewalker's Gloves",
+        "es": "Pyrewalker's Gloves",
+        "br": "Pyrewalker's Gloves",
         "kr": "",
-        "fr": "Gants de chevauche-vent",
-        "de": "Handschuhe des Böenreiters"
+        "fr": "Pyrewalker's Gloves",
+        "de": "Pyrewalker's Gloves"
     },
     "272234": {
         "cn": "",
-        "en": "Galerider's Miter",
-        "ru": "Митра оседлавшего ветер",
-        "es": "Mitra de jinete de vendaval",
-        "br": "Mitra do Cavaleiro da Tempestade",
+        "en": "Pyrewalker's Miter",
+        "ru": "Pyrewalker's Miter",
+        "es": "Pyrewalker's Miter",
+        "br": "Pyrewalker's Miter",
         "kr": "",
-        "fr": "Mitre de chevauche-vent",
-        "de": "Mitra des Böenreiters"
+        "fr": "Pyrewalker's Miter",
+        "de": "Pyrewalker's Miter"
     },
     "272235": {
         "cn": "",
-        "en": "Galerider's Treads",
-        "ru": "Ботфорты оседлавшего ветер",
-        "es": "Botines de jinete de vendaval",
-        "br": "Botinas do Cavaleiro da Tempestade",
+        "en": "Pyrewalker's Treads",
+        "ru": "Pyrewalker's Treads",
+        "es": "Pyrewalker's Treads",
+        "br": "Pyrewalker's Treads",
         "kr": "",
-        "fr": "Bottines de chevauche-vent",
-        "de": "Treter des Böenreiters"
+        "fr": "Pyrewalker's Treads",
+        "de": "Pyrewalker's Treads"
     },
     "272236": {
         "cn": "",
-        "en": "Galerider's Mantlet",
-        "ru": "Оплечье оседлавшего ветер",
-        "es": "Manto de jinete de vendaval",
-        "br": "Dragonas do Cavaleiro da Tempestade",
+        "en": "Pyrewalker's Mantlet",
+        "ru": "Pyrewalker's Mantlet",
+        "es": "Pyrewalker's Mantlet",
+        "br": "Pyrewalker's Mantlet",
         "kr": "",
-        "fr": "Manteline de chevauche-vent",
-        "de": "Mantelet des Böenreiters"
+        "fr": "Pyrewalker's Mantlet",
+        "de": "Pyrewalker's Mantlet"
     },
     "272237": {
         "cn": "",
-        "en": "Galerider's Obi",
-        "ru": "Оби оседлавшего ветер",
-        "es": "Obi de jinete de vendaval",
-        "br": "Obi do Cavaleiro da Tempestade",
+        "en": "Pyrewalker's Obi",
+        "ru": "Pyrewalker's Obi",
+        "es": "Pyrewalker's Obi",
+        "br": "Pyrewalker's Obi",
         "kr": "",
-        "fr": "Obi de chevauche-vent",
-        "de": "Obi des Böenreiters"
+        "fr": "Pyrewalker's Obi",
+        "de": "Pyrewalker's Obi"
     },
     "272238": {
         "cn": "",
-        "en": "Galerider's Wraps",
-        "ru": "Повязки оседлавшего ветер",
-        "es": "Envolturas de jinete de vendaval",
-        "br": "Munhequeiras do Cavaleiro da Tempestade",
+        "en": "Pyrewalker's Wraps",
+        "ru": "Pyrewalker's Wraps",
+        "es": "Pyrewalker's Wraps",
+        "br": "Pyrewalker's Wraps",
         "kr": "",
-        "fr": "Couvre-bras de chevauche-vent",
-        "de": "Wickel des Böenreiters"
+        "fr": "Pyrewalker's Wraps",
+        "de": "Pyrewalker's Wraps"
     },
     "272239": {
         "cn": "",
@@ -144644,83 +144634,83 @@ export const nameDB =
     },
     "272247": {
         "cn": "",
-        "en": "Pyrewalker's Byrnie",
-        "ru": "Кольчуга идущего сквозь пламя",
-        "es": "Camisote de transitapiras",
-        "br": "Hauberque do Pisa-piras",
+        "en": "Galerider's Byrnie",
+        "ru": "Galerider's Byrnie",
+        "es": "Galerider's Byrnie",
+        "br": "Galerider's Byrnie",
         "kr": "",
-        "fr": "Haubert de marche-brasier",
-        "de": "Brünne des Lohenwandlers"
+        "fr": "Galerider's Byrnie",
+        "de": "Galerider's Byrnie"
     },
     "272248": {
         "cn": "",
-        "en": "Pyrewalker's Chausses",
-        "ru": "Шоссы идущего сквозь пламя",
-        "es": "Calzas de transitapiras",
-        "br": "Chausses do Pisa-piras",
+        "en": "Galerider's Chausses",
+        "ru": "Galerider's Chausses",
+        "es": "Galerider's Chausses",
+        "br": "Galerider's Chausses",
         "kr": "",
-        "fr": "Hauts-de-chausse de marche-brasier",
-        "de": "Beinlinge des Lohenwandlers"
+        "fr": "Galerider's Chausses",
+        "de": "Galerider's Chausses"
     },
     "272249": {
         "cn": "",
-        "en": "Pyrewalker's Chain Clasps",
-        "ru": "Плетеные зажимы идущего сквозь пламя",
-        "es": "Cintos de anillas de transitapiras",
-        "br": "Fechos Encadeados do Pisa-piras",
+        "en": "Galerider's Chain Clasps",
+        "ru": "Galerider's Chain Clasps",
+        "es": "Galerider's Chain Clasps",
+        "br": "Galerider's Chain Clasps",
         "kr": "",
-        "fr": "Fermoirs de marche-brasier en anneaux",
-        "de": "Kettenschnallen des Lohenwandlers"
+        "fr": "Galerider's Chain Clasps",
+        "de": "Galerider's Chain Clasps"
     },
     "272250": {
         "cn": "",
-        "en": "Pyrewalker's Gaze",
-        "ru": "Взор идущего сквозь пламя",
-        "es": "Semblante de transitapiras",
-        "br": "Olhar do Pisa-piras",
+        "en": "Galerider's Gaze",
+        "ru": "Galerider's Gaze",
+        "es": "Galerider's Gaze",
+        "br": "Galerider's Gaze",
         "kr": "",
-        "fr": "Regard de marche-brasier",
-        "de": "Blick des Lohenwandlers"
+        "fr": "Galerider's Gaze",
+        "de": "Galerider's Gaze"
     },
     "272251": {
         "cn": "",
-        "en": "Pyrewalker's Chausses",
-        "ru": "Шоссы идущего сквозь пламя",
-        "es": "Calzas de transitapiras",
-        "br": "Chausses do Pisa-piras",
+        "en": "Galerider's Chausses",
+        "ru": "Galerider's Chausses",
+        "es": "Galerider's Chausses",
+        "br": "Galerider's Chausses",
         "kr": "",
-        "fr": "Hauts-de-chausse de marche-brasier",
-        "de": "Beinlinge des Lohenwandlers"
+        "fr": "Galerider's Chausses",
+        "de": "Galerider's Chausses"
     },
     "272252": {
         "cn": "",
-        "en": "Pyrewalker's Mantle",
-        "ru": "Оплечье идущего сквозь пламя",
-        "es": "Manto de transitapiras",
-        "br": "Dragonas do Pisa-piras",
+        "en": "Galerider's Mantle",
+        "ru": "Galerider's Mantle",
+        "es": "Galerider's Mantle",
+        "br": "Galerider's Mantle",
         "kr": "",
-        "fr": "Mantelet de marche-brasier",
-        "de": "Mantel des Lohenwandlers"
+        "fr": "Galerider's Mantle",
+        "de": "Galerider's Mantle"
     },
     "272253": {
         "cn": "",
-        "en": "Pyrewalker's Mail Skirt",
-        "ru": "Кольчужная юбка идущего сквозь пламя",
-        "es": "Falda de malla de transitapiras",
-        "br": "Saia de Malha do Pisa-piras",
+        "en": "Galerider's Mail Skirt",
+        "ru": "Galerider's Mail Skirt",
+        "es": "Galerider's Mail Skirt",
+        "br": "Galerider's Mail Skirt",
         "kr": "",
-        "fr": "Jupe de mailles de marche-brasier",
-        "de": "Kettenrock des Lohenwandlers"
+        "fr": "Galerider's Mail Skirt",
+        "de": "Galerider's Mail Skirt"
     },
     "272254": {
         "cn": "",
-        "en": "Pyrewalker's Mesh Wraps",
-        "ru": "Повязки идущего сквозь пламя",
-        "es": "Brazaletes de malla de transitapiras",
-        "br": "Munhequeiras de Rede Metálica do Pisa-piras",
+        "en": "Galerider's Mesh Wraps",
+        "ru": "Galerider's Mesh Wraps",
+        "es": "Galerider's Mesh Wraps",
+        "br": "Galerider's Mesh Wraps",
         "kr": "",
-        "fr": "Couvre-mains de marche-brasier",
-        "de": "Maschenwickel des Lohenwandlers"
+        "fr": "Galerider's Mesh Wraps",
+        "de": "Galerider's Mesh Wraps"
     },
     "272255": {
         "cn": "",
@@ -145085,12 +145075,12 @@ export const nameDB =
     "274493": {
         "cn": "",
         "en": "Effigy of Ula'tek's Faithful",
-        "ru": "Effigy of Ula'tek's Faithful",
-        "es": "Effigy of Ula'tek's Faithful",
-        "br": "Effigy of Ula'tek's Faithful",
+        "ru": "Истукан последователя Ула'тек",
+        "es": "Efigie de fiel de Ula'tek",
+        "br": "Efígie do Fiel de Ula'tek",
         "kr": "",
-        "fr": "Effigy of Ula'tek's Faithful",
-        "de": "Effigy of Ula'tek's Faithful"
+        "fr": "Effigie de fidèle d’Ula’tek",
+        "de": "Bildnis von Ula'teks Getreuen"
     },
     "274494": {
         "cn": "",
@@ -146564,13 +146554,13 @@ export const nameDB =
     },
     "276001": {
         "cn": "",
-        "en": "Flamebeak Armguards",
-        "ru": "Боевые наручи пламенного клюва",
-        "es": "Guardabrazos de picollama",
-        "br": "Guarda-braços de Biquígneo",
+        "en": "Skytalon Armguards",
+        "ru": "Skytalon Armguards",
+        "es": "Skytalon Armguards",
+        "br": "Skytalon Armguards",
         "kr": "",
-        "fr": "Garde-bras de flambebec",
-        "de": "Flammenschnabelarmschützer"
+        "fr": "Skytalon Armguards",
+        "de": "Skytalon Armguards"
     },
     "276002": {
         "cn": "",
@@ -146584,13 +146574,13 @@ export const nameDB =
     },
     "276003": {
         "cn": "",
-        "en": "Skytalon Bracers",
-        "ru": "Наручи небесного когтя",
-        "es": "Brazales de garfacielo",
-        "br": "Braçadeiras de Garraérea",
+        "en": "Flamebeak Bracers",
+        "ru": "Flamebeak Bracers",
+        "es": "Flamebeak Bracers",
+        "br": "Flamebeak Bracers",
         "kr": "",
-        "fr": "Brassards de serre-du-ciel",
-        "de": "Himmelsklauenarmschienen"
+        "fr": "Flamebeak Bracers",
+        "de": "Flamebeak Bracers"
     },
     "276004": {
         "cn": "",
@@ -146604,13 +146594,13 @@ export const nameDB =
     },
     "276005": {
         "cn": "",
-        "en": "Flamebeak Treads",
-        "ru": "Ботфорты пламенного клюва",
-        "es": "Botines de picollama",
-        "br": "Botinas de Biquígneo",
+        "en": "Skytalon Treads",
+        "ru": "Skytalon Treads",
+        "es": "Skytalon Treads",
+        "br": "Skytalon Treads",
         "kr": "",
-        "fr": "Bottines de flambebec",
-        "de": "Flammenschnabeltreter"
+        "fr": "Skytalon Treads",
+        "de": "Skytalon Treads"
     },
     "276006": {
         "cn": "",
@@ -146624,13 +146614,13 @@ export const nameDB =
     },
     "276007": {
         "cn": "",
-        "en": "Skytalon Sandals",
-        "ru": "Сандалии небесного когтя",
-        "es": "Sandalias de garfacielo",
-        "br": "Sandálias de Garraérea",
+        "en": "Flamebeak Sandals",
+        "ru": "Flamebeak Sandals",
+        "es": "Flamebeak Sandals",
+        "br": "Flamebeak Sandals",
         "kr": "",
-        "fr": "Sandales de serre-du-ciel",
-        "de": "Himmelsklauensandalen"
+        "fr": "Flamebeak Sandals",
+        "de": "Flamebeak Sandals"
     },
     "276008": {
         "cn": "",
@@ -146644,13 +146634,13 @@ export const nameDB =
     },
     "276009": {
         "cn": "",
-        "en": "Flamebeak Gloves",
-        "ru": "Перчатки пламенного клюва",
-        "es": "Guantes de picollama",
-        "br": "Luvas de Biquígneo",
+        "en": "Skytalon Gloves",
+        "ru": "Skytalon Gloves",
+        "es": "Skytalon Gloves",
+        "br": "Skytalon Gloves",
         "kr": "",
-        "fr": "Gants de flambebec",
-        "de": "Flammenschnabelhandschuhe"
+        "fr": "Skytalon Gloves",
+        "de": "Skytalon Gloves"
     },
     "276010": {
         "cn": "",
@@ -146664,13 +146654,13 @@ export const nameDB =
     },
     "276011": {
         "cn": "",
-        "en": "Skytalon Grips",
-        "ru": "Захваты небесного когтя",
-        "es": "Mandiletes de garfacielo",
-        "br": "Guantes de Garraérea",
+        "en": "Flamebeak Grips",
+        "ru": "Flamebeak Grips",
+        "es": "Flamebeak Grips",
+        "br": "Flamebeak Grips",
         "kr": "",
-        "fr": "Poignes de serre-du-ciel",
-        "de": "Himmelsklauenhandschutz"
+        "fr": "Flamebeak Grips",
+        "de": "Flamebeak Grips"
     },
     "276012": {
         "cn": "",
@@ -146684,13 +146674,13 @@ export const nameDB =
     },
     "276013": {
         "cn": "",
-        "en": "Flamebeak Hauberk",
-        "ru": "Хауберк пламенного клюва",
-        "es": "Camisote de picollama",
-        "br": "Cota de Biquígneo",
+        "en": "Skytalon Hauberk",
+        "ru": "Skytalon Hauberk",
+        "es": "Skytalon Hauberk",
+        "br": "Skytalon Hauberk",
         "kr": "",
-        "fr": "Haubert de flambebec",
-        "de": "Flammenschnabelhalsberge"
+        "fr": "Skytalon Hauberk",
+        "de": "Skytalon Hauberk"
     },
     "276014": {
         "cn": "",
@@ -146704,13 +146694,13 @@ export const nameDB =
     },
     "276015": {
         "cn": "",
-        "en": "Skytalon Robes",
-        "ru": "Одеяния небесного когтя",
-        "es": "Toga de garfacielo",
-        "br": "Vestes de Garraérea",
+        "en": "Flamebeak Robes",
+        "ru": "Flamebeak Robes",
+        "es": "Flamebeak Robes",
+        "br": "Flamebeak Robes",
         "kr": "",
-        "fr": "Robe de serre-du-ciel",
-        "de": "Himmelsklauenrobe"
+        "fr": "Flamebeak Robes",
+        "de": "Flamebeak Robes"
     },
     "276016": {
         "cn": "",
@@ -146724,13 +146714,13 @@ export const nameDB =
     },
     "276017": {
         "cn": "",
-        "en": "Flamebeak Helmet",
-        "ru": "Шлем пламенного клюва",
-        "es": "Casco de picollama",
-        "br": "Capacete de Biquígneo",
+        "en": "Skytalon Helmet",
+        "ru": "Skytalon Helmet",
+        "es": "Skytalon Helmet",
+        "br": "Skytalon Helmet",
         "kr": "",
-        "fr": "Casque de flambebec",
-        "de": "Flammenschnabelhelm"
+        "fr": "Skytalon Helmet",
+        "de": "Skytalon Helmet"
     },
     "276018": {
         "cn": "",
@@ -146744,13 +146734,13 @@ export const nameDB =
     },
     "276019": {
         "cn": "",
-        "en": "Skytalon Crown",
-        "ru": "Корона небесного когтя",
-        "es": "Corona de garfacielo",
-        "br": "Coroa de Garraérea",
+        "en": "Flamebeak Crown",
+        "ru": "Flamebeak Crown",
+        "es": "Flamebeak Crown",
+        "br": "Flamebeak Crown",
         "kr": "",
-        "fr": "Couronne de serre-du-ciel",
-        "de": "Himmelsklauenkrone"
+        "fr": "Flamebeak Crown",
+        "de": "Flamebeak Crown"
     },
     "276020": {
         "cn": "",
@@ -146764,13 +146754,13 @@ export const nameDB =
     },
     "276021": {
         "cn": "",
-        "en": "Flamebeak Spaulders",
-        "ru": "Наплечье пламенного клюва",
-        "es": "Bufas de picollama",
-        "br": "Espaldares de Biquígneo",
+        "en": "Skytalon Spaulders",
+        "ru": "Skytalon Spaulders",
+        "es": "Skytalon Spaulders",
+        "br": "Skytalon Spaulders",
         "kr": "",
-        "fr": "Spallières de flambebec",
-        "de": "Flammenschnabelschiftung"
+        "fr": "Skytalon Spaulders",
+        "de": "Skytalon Spaulders"
     },
     "276022": {
         "cn": "",
@@ -146784,13 +146774,13 @@ export const nameDB =
     },
     "276023": {
         "cn": "",
-        "en": "Skytalon Mantle",
-        "ru": "Оплечье небесного когтя",
-        "es": "Manto de garfacielo",
-        "br": "Dragonas de Garraérea",
+        "en": "Flamebeak Mantle",
+        "ru": "Flamebeak Mantle",
+        "es": "Flamebeak Mantle",
+        "br": "Flamebeak Mantle",
         "kr": "",
-        "fr": "Mantelet de serre-du-ciel",
-        "de": "Himmelsklauenmantel"
+        "fr": "Flamebeak Mantle",
+        "de": "Flamebeak Mantle"
     },
     "276024": {
         "cn": "",
@@ -146804,13 +146794,13 @@ export const nameDB =
     },
     "276025": {
         "cn": "",
-        "en": "Flamebeak Breeches",
-        "ru": "Брюки пламенного клюва",
-        "es": "Calzones de picollama",
-        "br": "Calções de Biquígneo",
+        "en": "Skytalon Breeches",
+        "ru": "Skytalon Breeches",
+        "es": "Skytalon Breeches",
+        "br": "Skytalon Breeches",
         "kr": "",
-        "fr": "Braies de flambebec",
-        "de": "Flammenschnabelbundhosen"
+        "fr": "Skytalon Breeches",
+        "de": "Skytalon Breeches"
     },
     "276026": {
         "cn": "",
@@ -146824,13 +146814,13 @@ export const nameDB =
     },
     "276027": {
         "cn": "",
-        "en": "Skytalon Leggings",
-        "ru": "Поножи небесного когтя",
-        "es": "Leotardos de garfacielo",
-        "br": "Perneiras de Garraérea",
+        "en": "Flamebeak Leggings",
+        "ru": "Flamebeak Leggings",
+        "es": "Flamebeak Leggings",
+        "br": "Flamebeak Leggings",
         "kr": "",
-        "fr": "Jambières de serre-du-ciel",
-        "de": "Himmelsklauengamaschen"
+        "fr": "Flamebeak Leggings",
+        "de": "Flamebeak Leggings"
     },
     "276028": {
         "cn": "",
@@ -146844,13 +146834,13 @@ export const nameDB =
     },
     "276029": {
         "cn": "",
-        "en": "Flamebeak Belt",
-        "ru": "Пояс пламенного клюва",
-        "es": "Cinturón de picollama",
-        "br": "Cinto de Biquígneo",
+        "en": "Skytalon Belt",
+        "ru": "Skytalon Belt",
+        "es": "Skytalon Belt",
+        "br": "Skytalon Belt",
         "kr": "",
-        "fr": "Ceinture de flambebec",
-        "de": "Flammenschnabelgürtel"
+        "fr": "Skytalon Belt",
+        "de": "Skytalon Belt"
     },
     "276030": {
         "cn": "",
@@ -146864,13 +146854,13 @@ export const nameDB =
     },
     "276031": {
         "cn": "",
-        "en": "Skytalon Cord",
-        "ru": "Шнурованный ремень небесного когтя",
-        "es": "Cordón de garfacielo",
-        "br": "Cordão de Garraérea",
+        "en": "Flamebeak Cord",
+        "ru": "Flamebeak Cord",
+        "es": "Flamebeak Cord",
+        "br": "Flamebeak Cord",
         "kr": "",
-        "fr": "Corde de serre-du-ciel",
-        "de": "Himmelsklauenkordel"
+        "fr": "Flamebeak Cord",
+        "de": "Flamebeak Cord"
     },
     "276032": {
         "cn": "",
@@ -146934,23 +146924,23 @@ export const nameDB =
     },
     "276038": {
         "cn": "",
-        "en": "Flamebeak Cloak",
-        "ru": "Плащ пламенного клюва",
-        "es": "Capa de picollama",
-        "br": "Manto de Biquígneo",
+        "en": "Skytalon Cloak",
+        "ru": "Skytalon Cloak",
+        "es": "Skytalon Cloak",
+        "br": "Skytalon Cloak",
         "kr": "",
-        "fr": "Cape de flambebec",
-        "de": "Flammenschnabelumhang"
+        "fr": "Skytalon Cloak",
+        "de": "Skytalon Cloak"
     },
     "276039": {
         "cn": "",
-        "en": "Skytalon Drape",
-        "ru": "Пелерина небесного когтя",
-        "es": "Mantón de garfacielo",
-        "br": "Clâmide de Garraérea",
+        "en": "Flamebeak Drape",
+        "ru": "Flamebeak Drape",
+        "es": "Flamebeak Drape",
+        "br": "Flamebeak Drape",
         "kr": "",
-        "fr": "Drapé de serre-du-ciel",
-        "de": "Himmelsklauentuch"
+        "fr": "Flamebeak Drape",
+        "de": "Flamebeak Drape"
     },
     "276040": {
         "cn": "",
@@ -147394,83 +147384,83 @@ export const nameDB =
     },
     "277772": {
         "cn": "",
-        "en": "Venom-Cursed Dragonhawk's Scalebands",
-        "ru": "Чешуйчатое нарукавье ядоклятого дракондора",
-        "es": "Brazaescamas de dracohalcón maldito por el veneno",
-        "br": "Embraces Escamosos do Falcodrago Amaldiçoado por Peçonha",
+        "en": "Venom-Cursed Eagle's Scalebands",
+        "ru": "Venom-Cursed Eagle's Scalebands",
+        "es": "Venom-Cursed Eagle's Scalebands",
+        "br": "Venom-Cursed Eagle's Scalebands",
         "kr": "",
-        "fr": "Poigne-écaille de faucon-dragon affolé par le venin",
-        "de": "Geschuppte Bänder des giftverfluchten Drachenfalken"
+        "fr": "Venom-Cursed Eagle's Scalebands",
+        "de": "Venom-Cursed Eagle's Scalebands"
     },
     "277773": {
         "cn": "",
-        "en": "Venom-Cursed Dragonhawk's Waistguard",
-        "ru": "Воинский пояс ядоклятого дракондора",
-        "es": "Guardarrenes de dracohalcón maldito por el veneno",
-        "br": "Cinta do Falcodrago Amaldiçoado por Peçonha",
+        "en": "Venom-Cursed Eagle's Waistguard",
+        "ru": "Venom-Cursed Eagle's Waistguard",
+        "es": "Venom-Cursed Eagle's Waistguard",
+        "br": "Venom-Cursed Eagle's Waistguard",
         "kr": "",
-        "fr": "Sangle de faucon-dragon affolé par le venin",
-        "de": "Taillenschutz des giftverfluchten Drachenfalken"
+        "fr": "Venom-Cursed Eagle's Waistguard",
+        "de": "Venom-Cursed Eagle's Waistguard"
     },
     "277774": {
         "cn": "",
-        "en": "Venom-Cursed Dragonhawk's Amice",
-        "ru": "Нарамник ядоклятого дракондора",
-        "es": "Amito de dracohalcón maldito por el veneno",
-        "br": "Sobreveste do Falcodrago Amaldiçoado por Peçonha",
+        "en": "Venom-Cursed Eagle's Amice",
+        "ru": "Venom-Cursed Eagle's Amice",
+        "es": "Venom-Cursed Eagle's Amice",
+        "br": "Venom-Cursed Eagle's Amice",
         "kr": "",
-        "fr": "Amict de faucon-dragon affolé par le venin",
-        "de": "Amicia des giftverfluchten Drachenfalken"
+        "fr": "Venom-Cursed Eagle's Amice",
+        "de": "Venom-Cursed Eagle's Amice"
     },
     "277775": {
         "cn": "",
-        "en": "Venom-Cursed Dragonhawk's Legguards",
-        "ru": "Набедренники ядоклятого дракондора",
-        "es": "Musleras de dracohalcón maldito por el veneno",
-        "br": "Guarda-pernas do Falcodrago Amaldiçoado por Peçonha",
+        "en": "Venom-Cursed Eagle's Legguards",
+        "ru": "Venom-Cursed Eagle's Legguards",
+        "es": "Venom-Cursed Eagle's Legguards",
+        "br": "Venom-Cursed Eagle's Legguards",
         "kr": "",
-        "fr": "Garde-jambes de faucon-dragon affolé par le venin",
-        "de": "Beinschützer des giftverfluchten Drachenfalken"
+        "fr": "Venom-Cursed Eagle's Legguards",
+        "de": "Venom-Cursed Eagle's Legguards"
     },
     "277776": {
         "cn": "",
-        "en": "Venom-Cursed Dragonhawk's Guise",
-        "ru": "Личина ядоклятого дракондора",
-        "es": "Disfraz de dracohalcón maldito por el veneno",
-        "br": "Socapa do Falcodrago Amaldiçoado por Peçonha",
+        "en": "Venom-Cursed Eagle's Guise",
+        "ru": "Venom-Cursed Eagle's Guise",
+        "es": "Venom-Cursed Eagle's Guise",
+        "br": "Venom-Cursed Eagle's Guise",
         "kr": "",
-        "fr": "Semblance de faucon-dragon affolé par le venin",
-        "de": "Haube des giftverfluchten Drachenfalken"
+        "fr": "Venom-Cursed Eagle's Guise",
+        "de": "Venom-Cursed Eagle's Guise"
     },
     "277777": {
         "cn": "",
-        "en": "Venom-Cursed Dragonhawk's Grips",
-        "ru": "Захваты ядоклятого дракондора",
-        "es": "Mandiletes de dracohalcón maldito por el veneno",
-        "br": "Guantes do Falcodrago Amaldiçoado por Peçonha",
+        "en": "Venom-Cursed Eagle's Grips",
+        "ru": "Venom-Cursed Eagle's Grips",
+        "es": "Venom-Cursed Eagle's Grips",
+        "br": "Venom-Cursed Eagle's Grips",
         "kr": "",
-        "fr": "Poignes de faucon-dragon affolé par le venin",
-        "de": "Handschutz des giftverfluchten Drachenfalken"
+        "fr": "Venom-Cursed Eagle's Grips",
+        "de": "Venom-Cursed Eagle's Grips"
     },
     "277778": {
         "cn": "",
-        "en": "Venom-Cursed Dragonhawk's Flight",
-        "ru": "Полет ядоклятого дракондора",
-        "es": "Vuelo de dracohalcón maldito por el veneno",
-        "br": "Voo do Falcodrago Amaldiçoado por Peçonha",
+        "en": "Venom-Cursed Eagle's Flight",
+        "ru": "Venom-Cursed Eagle's Flight",
+        "es": "Venom-Cursed Eagle's Flight",
+        "br": "Venom-Cursed Eagle's Flight",
         "kr": "",
-        "fr": "Vol de faucon-dragon affolé par le venin",
-        "de": "Flug des giftverfluchten Drachenfalken"
+        "fr": "Venom-Cursed Eagle's Flight",
+        "de": "Venom-Cursed Eagle's Flight"
     },
     "277779": {
         "cn": "",
-        "en": "Venom-Cursed Dragonhawk's Crest",
-        "ru": "Герб ядоклятого дракондора",
-        "es": "Blasón de dracohalcón maldito por el veneno",
-        "br": "Brasão do Falcodrago Amaldiçoado por Peçonha",
+        "en": "Venom-Cursed Eagle's Crest",
+        "ru": "Venom-Cursed Eagle's Crest",
+        "es": "Venom-Cursed Eagle's Crest",
+        "br": "Venom-Cursed Eagle's Crest",
         "kr": "",
-        "fr": "Cimier de faucon-dragon affolé par le venin",
-        "de": "Zierfedern des giftverfluchten Drachenfalken"
+        "fr": "Venom-Cursed Eagle's Crest",
+        "de": "Venom-Cursed Eagle's Crest"
     },
     "277780": {
         "cn": "",
@@ -147554,83 +147544,83 @@ export const nameDB =
     },
     "277788": {
         "cn": "",
-        "en": "Venom-Cursed Eagle's Wristbands",
-        "ru": "Нарукавье ядоклятого орла",
-        "es": "Braciles de águila maldita por el veneno",
-        "br": "Pulseiras da Águia Amaldiçoada por Peçonha",
+        "en": "Venom-Cursed Dragonhawk's Wristbands",
+        "ru": "Venom-Cursed Dragonhawk's Wristbands",
+        "es": "Venom-Cursed Dragonhawk's Wristbands",
+        "br": "Venom-Cursed Dragonhawk's Wristbands",
         "kr": "",
-        "fr": "Protège-poignets d’aigle affolé par le venin",
-        "de": "Handgelenkschutz des giftverfluchten Adlers"
+        "fr": "Venom-Cursed Dragonhawk's Wristbands",
+        "de": "Venom-Cursed Dragonhawk's Wristbands"
     },
     "277789": {
         "cn": "",
-        "en": "Venom-Cursed Eagle's Cinch",
-        "ru": "Кушак ядоклятого орла",
-        "es": "Cincho de águila maldita por el veneno",
-        "br": "Cilha da Águia Amaldiçoada por Peçonha",
+        "en": "Venom-Cursed Dragonhawk's Cinch",
+        "ru": "Venom-Cursed Dragonhawk's Cinch",
+        "es": "Venom-Cursed Dragonhawk's Cinch",
+        "br": "Venom-Cursed Dragonhawk's Cinch",
         "kr": "",
-        "fr": "Cordelière d’aigle affolé par le venin",
-        "de": "Gurt des giftverfluchten Adlers"
+        "fr": "Venom-Cursed Dragonhawk's Cinch",
+        "de": "Venom-Cursed Dragonhawk's Cinch"
     },
     "277790": {
         "cn": "",
-        "en": "Venom-Cursed Eagle's Wingspan",
-        "ru": "Крылья ядоклятого орла",
-        "es": "Alas de águila maldita por el veneno",
-        "br": "Envergadura da Águia Amaldiçoada por Peçonha",
+        "en": "Venom-Cursed Dragonhawk's Wingspan",
+        "ru": "Venom-Cursed Dragonhawk's Wingspan",
+        "es": "Venom-Cursed Dragonhawk's Wingspan",
+        "br": "Venom-Cursed Dragonhawk's Wingspan",
         "kr": "",
-        "fr": "Envergure d’aigle affolé par le venin",
-        "de": "Flügelschlag des giftverfluchten Adlers"
+        "fr": "Venom-Cursed Dragonhawk's Wingspan",
+        "de": "Venom-Cursed Dragonhawk's Wingspan"
     },
     "277791": {
         "cn": "",
-        "en": "Venom-Cursed Eagle's Leggings",
-        "ru": "Поножи ядоклятого орла",
-        "es": "Leotardos de águila maldita por el veneno",
-        "br": "Perneiras da Águia Amaldiçoada por Peçonha",
+        "en": "Venom-Cursed Dragonhawk's Leggings",
+        "ru": "Venom-Cursed Dragonhawk's Leggings",
+        "es": "Venom-Cursed Dragonhawk's Leggings",
+        "br": "Venom-Cursed Dragonhawk's Leggings",
         "kr": "",
-        "fr": "Jambières d’aigle affolé par le venin",
-        "de": "Gamaschen des giftverfluchten Adlers"
+        "fr": "Venom-Cursed Dragonhawk's Leggings",
+        "de": "Venom-Cursed Dragonhawk's Leggings"
     },
     "277792": {
         "cn": "",
-        "en": "Venom-Cursed Eagle's Plumage",
-        "ru": "Оперение ядоклятого орла",
-        "es": "Plumaje de águila maldita por el veneno",
-        "br": "Plumagem da Águia Amaldiçoada por Peçonha",
+        "en": "Venom-Cursed Dragonhawk's Plumage",
+        "ru": "Venom-Cursed Dragonhawk's Plumage",
+        "es": "Venom-Cursed Dragonhawk's Plumage",
+        "br": "Venom-Cursed Dragonhawk's Plumage",
         "kr": "",
-        "fr": "Plumage d’aigle affolé par le venin",
-        "de": "Federschmuck des giftverfluchten Adlers"
+        "fr": "Venom-Cursed Dragonhawk's Plumage",
+        "de": "Venom-Cursed Dragonhawk's Plumage"
     },
     "277793": {
         "cn": "",
-        "en": "Venom-Cursed Eagle's Handwraps",
-        "ru": "Повязки ядоклятого орла",
-        "es": "Manijas de águila maldita por el veneno",
-        "br": "Mitenes da Águia Amaldiçoada por Peçonha",
+        "en": "Venom-Cursed Dragonhawk's Handwraps",
+        "ru": "Venom-Cursed Dragonhawk's Handwraps",
+        "es": "Venom-Cursed Dragonhawk's Handwraps",
+        "br": "Venom-Cursed Dragonhawk's Handwraps",
         "kr": "",
-        "fr": "Protège-mains d’aigle affolé par le venin",
-        "de": "Handlappen des giftverfluchten Adlers"
+        "fr": "Venom-Cursed Dragonhawk's Handwraps",
+        "de": "Venom-Cursed Dragonhawk's Handwraps"
     },
     "277794": {
         "cn": "",
-        "en": "Venom-Cursed Eagle's Talons",
-        "ru": "Когти ядоклятого орла",
-        "es": "Garfas de águila maldita por el veneno",
-        "br": "Grifas da Águia Amaldiçoada por Peçonha",
+        "en": "Venom-Cursed Dragonhawk's Talons",
+        "ru": "Venom-Cursed Dragonhawk's Talons",
+        "es": "Venom-Cursed Dragonhawk's Talons",
+        "br": "Venom-Cursed Dragonhawk's Talons",
         "kr": "",
-        "fr": "Serres d’aigle affolé par le venin",
-        "de": "Krallen des giftverfluchten Adlers"
+        "fr": "Venom-Cursed Dragonhawk's Talons",
+        "de": "Venom-Cursed Dragonhawk's Talons"
     },
     "277795": {
         "cn": "",
-        "en": "Venom-Cursed Eagle's Robes",
-        "ru": "Одеяния ядоклятого орла",
-        "es": "Toga de águila maldita por el veneno",
-        "br": "Vestes da Águia Amaldiçoada por Peçonha",
+        "en": "Venom-Cursed Dragonhawk's Robes",
+        "ru": "Venom-Cursed Dragonhawk's Robes",
+        "es": "Venom-Cursed Dragonhawk's Robes",
+        "br": "Venom-Cursed Dragonhawk's Robes",
         "kr": "",
-        "fr": "Robe d’aigle affolé par le venin",
-        "de": "Robe des giftverfluchten Adlers"
+        "fr": "Venom-Cursed Dragonhawk's Robes",
+        "de": "Venom-Cursed Dragonhawk's Robes"
     },
     "277798": {
         "cn": "",
@@ -148124,13 +148114,13 @@ export const nameDB =
     },
     "279217": {
         "cn": "",
-        "en": "Venom-Cursed Eagle's Shroud",
-        "ru": "Накидка ядоклятого орла",
-        "es": "Sudario de águila maldita por el veneno",
-        "br": "Mortalha da Águia Amaldiçoada por Peçonha",
+        "en": "Venom-Cursed Dragonhawk's Shroud",
+        "ru": "Venom-Cursed Dragonhawk's Shroud",
+        "es": "Venom-Cursed Dragonhawk's Shroud",
+        "br": "Venom-Cursed Dragonhawk's Shroud",
         "kr": "",
-        "fr": "Voile d’aigle affolé par le venin",
-        "de": "Tuch des giftverfluchten Adlers"
+        "fr": "Venom-Cursed Dragonhawk's Shroud",
+        "de": "Venom-Cursed Dragonhawk's Shroud"
     },
     "279220": {
         "cn": "",
@@ -148144,13 +148134,13 @@ export const nameDB =
     },
     "279222": {
         "cn": "",
-        "en": "Venom-Cursed Dragonhawk's Mantle",
-        "ru": "Оплечье ядоклятого дракондора",
-        "es": "Manto de dracohalcón maldito por el veneno",
-        "br": "Manto do Falcodrago Amaldiçoado por Peçonha",
+        "en": "Venom-Cursed Eagle's Mantle",
+        "ru": "Venom-Cursed Eagle's Mantle",
+        "es": "Venom-Cursed Eagle's Mantle",
+        "br": "Venom-Cursed Eagle's Mantle",
         "kr": "",
-        "fr": "Mantelet de faucon-dragon affolé par le venin",
-        "de": "Mantel des giftverfluchten Drachenfalken"
+        "fr": "Venom-Cursed Eagle's Mantle",
+        "de": "Venom-Cursed Eagle's Mantle"
     },
     "279223": {
         "cn": "",

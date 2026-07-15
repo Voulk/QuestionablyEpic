@@ -83052,14 +83052,7 @@
             "type": "trinket",
             "name": "Emerald Coach's Whistle"
         },
-        "levelRange": [
-            263,
-            272,
-            276,
-            285,
-            289,
-            298
-        ]
+        "levelRange": []
     },
     {
         "id": 193719,
@@ -237242,8 +237235,12 @@
         },
         "sources": [
             {
-                "instanceId": -69,
-                "encounterId": -69
+                "instanceId": -98,
+                "encounterId": -98
+            },
+            {
+                "instanceId": -92,
+                "encounterId": -92
             }
         ],
         "slot": "Trinket",
@@ -237251,18 +237248,7 @@
             "type": "trinket",
             "name": "Ever-Collapsing Void Fissure"
         },
-        "levelRange": [
-            263,
-            272,
-            276,
-            285,
-            289,
-            298,
-            302,
-            308,
-            315,
-            321
-        ]
+        "levelRange": []
     },
     {
         "id": 251787,
@@ -237879,14 +237865,7 @@
             "type": "trinket",
             "name": "Radiant Sunstone"
         },
-        "levelRange": [
-            263,
-            272,
-            276,
-            285,
-            289,
-            298
-        ]
+        "levelRange": []
     },
     {
         "id": 252418,
@@ -254402,22 +254381,6 @@
         "slot": "Chest"
     },
     {
-        "id": 260873,
-        "name": "Cowl of Infinite Gravity",
-        "icon": "inv_cape_cloth_questbloodelf_b_01",
-        "quality": 2,
-        "itemClass": 4,
-        "itemSubClass": 1,
-        "itemLevel": 100,
-        "stats": {
-            "intellect": 5259,
-            "stamina": 7889,
-            "haste": 3800,
-            "mastery": 3200
-        },
-        "slot": "Back"
-    },
-    {
         "id": 262360,
         "name": "Storyteller's Verses",
         "icon": "inv_offhand_1h_dragonraid_d_02",
@@ -261895,7 +261858,7 @@
     },
     {
         "id": 268225,
-        "name": "Spelunker's Drenched Legguards",
+        "name": "Coiled Hex Legguards",
         "icon": "inv_pant_leather_raidmonkulatek_d_01",
         "quality": 4,
         "itemClass": 4,
@@ -261909,13 +261872,12 @@
         },
         "sources": [
             {
-                "instanceId": 1317,
-                "encounterId": 2849
+                "instanceId": 1320,
+                "encounterId": 2883
             }
         ],
         "squishEra": 2,
-        "slot": "Legs",
-        "crafted": true
+        "slot": "Legs"
     },
     {
         "id": 268226,
@@ -262026,7 +261988,7 @@
         "sources": [
             {
                 "instanceId": 1320,
-                "encounterId": 2874
+                "encounterId": 2888
             }
         ],
         "squishEra": 2,
@@ -262049,7 +262011,7 @@
         "sources": [
             {
                 "instanceId": 1320,
-                "encounterId": 2888
+                "encounterId": 2883
             }
         ],
         "squishEra": 2,
@@ -264128,6 +264090,7 @@
         "itemClass": 4,
         "itemSubClass": 1,
         "itemLevel": 259,
+        "itemSetId": 2050,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -264151,6 +264114,7 @@
         "itemClass": 4,
         "itemSubClass": 1,
         "itemLevel": 259,
+        "itemSetId": 2050,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -264174,6 +264138,7 @@
         "itemClass": 4,
         "itemSubClass": 1,
         "itemLevel": 259,
+        "itemSetId": 2050,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -264197,6 +264162,7 @@
         "itemClass": 4,
         "itemSubClass": 1,
         "itemLevel": 259,
+        "itemSetId": 2050,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -264220,6 +264186,7 @@
         "itemClass": 4,
         "itemSubClass": 1,
         "itemLevel": 259,
+        "itemSetId": 2050,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -264243,6 +264210,7 @@
         "itemClass": 4,
         "itemSubClass": 1,
         "itemLevel": 259,
+        "itemSetId": 2050,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -264266,6 +264234,7 @@
         "itemClass": 4,
         "itemSubClass": 1,
         "itemLevel": 259,
+        "itemSetId": 2050,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -264289,6 +264258,7 @@
         "itemClass": 4,
         "itemSubClass": 1,
         "itemLevel": 259,
+        "itemSetId": 2050,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -264312,6 +264282,7 @@
         "itemClass": 4,
         "itemSubClass": 2,
         "itemLevel": 259,
+        "itemSetId": 2051,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -264335,6 +264306,7 @@
         "itemClass": 4,
         "itemSubClass": 2,
         "itemLevel": 259,
+        "itemSetId": 2051,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -264358,6 +264330,7 @@
         "itemClass": 4,
         "itemSubClass": 2,
         "itemLevel": 259,
+        "itemSetId": 2051,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -264381,6 +264354,7 @@
         "itemClass": 4,
         "itemSubClass": 2,
         "itemLevel": 259,
+        "itemSetId": 2051,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -264404,6 +264378,7 @@
         "itemClass": 4,
         "itemSubClass": 2,
         "itemLevel": 259,
+        "itemSetId": 2051,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -264427,6 +264402,7 @@
         "itemClass": 4,
         "itemSubClass": 2,
         "itemLevel": 259,
+        "itemSetId": 2051,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -264450,6 +264426,7 @@
         "itemClass": 4,
         "itemSubClass": 2,
         "itemLevel": 259,
+        "itemSetId": 2051,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -264473,6 +264450,7 @@
         "itemClass": 4,
         "itemSubClass": 2,
         "itemLevel": 259,
+        "itemSetId": 2051,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -264496,6 +264474,7 @@
         "itemClass": 4,
         "itemSubClass": 3,
         "itemLevel": 259,
+        "itemSetId": 2052,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -264519,6 +264498,7 @@
         "itemClass": 4,
         "itemSubClass": 3,
         "itemLevel": 259,
+        "itemSetId": 2052,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -264542,6 +264522,7 @@
         "itemClass": 4,
         "itemSubClass": 3,
         "itemLevel": 259,
+        "itemSetId": 2052,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -264565,6 +264546,7 @@
         "itemClass": 4,
         "itemSubClass": 3,
         "itemLevel": 259,
+        "itemSetId": 2052,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -264588,6 +264570,7 @@
         "itemClass": 4,
         "itemSubClass": 3,
         "itemLevel": 259,
+        "itemSetId": 2052,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -264611,6 +264594,7 @@
         "itemClass": 4,
         "itemSubClass": 3,
         "itemLevel": 259,
+        "itemSetId": 2052,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -264634,6 +264618,7 @@
         "itemClass": 4,
         "itemSubClass": 3,
         "itemLevel": 259,
+        "itemSetId": 2052,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -264657,6 +264642,7 @@
         "itemClass": 4,
         "itemSubClass": 3,
         "itemLevel": 259,
+        "itemSetId": 2052,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -264680,6 +264666,7 @@
         "itemClass": 4,
         "itemSubClass": 4,
         "itemLevel": 259,
+        "itemSetId": 2053,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -264703,6 +264690,7 @@
         "itemClass": 4,
         "itemSubClass": 4,
         "itemLevel": 259,
+        "itemSetId": 2053,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -264726,6 +264714,7 @@
         "itemClass": 4,
         "itemSubClass": 4,
         "itemLevel": 259,
+        "itemSetId": 2053,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -264749,6 +264738,7 @@
         "itemClass": 4,
         "itemSubClass": 4,
         "itemLevel": 259,
+        "itemSetId": 2053,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -264772,6 +264762,7 @@
         "itemClass": 4,
         "itemSubClass": 4,
         "itemLevel": 259,
+        "itemSetId": 2053,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -264795,6 +264786,7 @@
         "itemClass": 4,
         "itemSubClass": 4,
         "itemLevel": 259,
+        "itemSetId": 2053,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -264818,6 +264810,7 @@
         "itemClass": 4,
         "itemSubClass": 4,
         "itemLevel": 259,
+        "itemSetId": 2053,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -264841,6 +264834,7 @@
         "itemClass": 4,
         "itemSubClass": 4,
         "itemLevel": 259,
+        "itemSetId": 2053,
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
@@ -268526,7 +268520,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Chest"
+        "slot": "Chest",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270614,
@@ -268549,7 +268546,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Chest"
+        "slot": "Chest",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270615,
@@ -268572,7 +268572,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Feet"
+        "slot": "Feet",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270616,
@@ -268595,7 +268598,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Feet"
+        "slot": "Feet",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270617,
@@ -268618,7 +268624,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Hands"
+        "slot": "Hands",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270618,
@@ -268641,7 +268650,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Hands"
+        "slot": "Hands",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270619,
@@ -268664,7 +268676,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Head"
+        "slot": "Head",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270620,
@@ -268687,7 +268702,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Head"
+        "slot": "Head",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270621,
@@ -268710,7 +268728,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Legs"
+        "slot": "Legs",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270622,
@@ -268733,7 +268754,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Legs"
+        "slot": "Legs",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270623,
@@ -268756,7 +268780,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Shoulder"
+        "slot": "Shoulder",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270624,
@@ -268779,7 +268806,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Shoulder"
+        "slot": "Shoulder",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270625,
@@ -268802,7 +268832,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Waist"
+        "slot": "Waist",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270626,
@@ -268825,7 +268858,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Waist"
+        "slot": "Waist",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270627,
@@ -268848,7 +268884,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Wrist"
+        "slot": "Wrist",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270628,
@@ -268871,7 +268910,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Wrist"
+        "slot": "Wrist",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270629,
@@ -268894,7 +268936,11 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Chest"
+        "slot": "Chest",
+        "classRestriction": [
+            "Holy Priest",
+            "Discipline Priest"
+        ]
     },
     {
         "id": 270630,
@@ -268917,7 +268963,11 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Chest"
+        "slot": "Chest",
+        "classRestriction": [
+            "Holy Priest",
+            "Discipline Priest"
+        ]
     },
     {
         "id": 270631,
@@ -268940,7 +268990,11 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Feet"
+        "slot": "Feet",
+        "classRestriction": [
+            "Holy Priest",
+            "Discipline Priest"
+        ]
     },
     {
         "id": 270632,
@@ -268963,7 +269017,11 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Feet"
+        "slot": "Feet",
+        "classRestriction": [
+            "Holy Priest",
+            "Discipline Priest"
+        ]
     },
     {
         "id": 270633,
@@ -268986,7 +269044,11 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Hands"
+        "slot": "Hands",
+        "classRestriction": [
+            "Holy Priest",
+            "Discipline Priest"
+        ]
     },
     {
         "id": 270634,
@@ -269009,7 +269071,11 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Hands"
+        "slot": "Hands",
+        "classRestriction": [
+            "Holy Priest",
+            "Discipline Priest"
+        ]
     },
     {
         "id": 270635,
@@ -269032,7 +269098,11 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Head"
+        "slot": "Head",
+        "classRestriction": [
+            "Holy Priest",
+            "Discipline Priest"
+        ]
     },
     {
         "id": 270636,
@@ -269055,7 +269125,11 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Head"
+        "slot": "Head",
+        "classRestriction": [
+            "Holy Priest",
+            "Discipline Priest"
+        ]
     },
     {
         "id": 270637,
@@ -269078,7 +269152,11 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Legs"
+        "slot": "Legs",
+        "classRestriction": [
+            "Holy Priest",
+            "Discipline Priest"
+        ]
     },
     {
         "id": 270638,
@@ -269101,7 +269179,11 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Legs"
+        "slot": "Legs",
+        "classRestriction": [
+            "Holy Priest",
+            "Discipline Priest"
+        ]
     },
     {
         "id": 270639,
@@ -269124,7 +269206,11 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Shoulder"
+        "slot": "Shoulder",
+        "classRestriction": [
+            "Holy Priest",
+            "Discipline Priest"
+        ]
     },
     {
         "id": 270640,
@@ -269147,7 +269233,11 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Shoulder"
+        "slot": "Shoulder",
+        "classRestriction": [
+            "Holy Priest",
+            "Discipline Priest"
+        ]
     },
     {
         "id": 270641,
@@ -269170,7 +269260,11 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Waist"
+        "slot": "Waist",
+        "classRestriction": [
+            "Holy Priest",
+            "Discipline Priest"
+        ]
     },
     {
         "id": 270642,
@@ -269193,7 +269287,11 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Waist"
+        "slot": "Waist",
+        "classRestriction": [
+            "Holy Priest",
+            "Discipline Priest"
+        ]
     },
     {
         "id": 270643,
@@ -269216,7 +269314,11 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Wrist"
+        "slot": "Wrist",
+        "classRestriction": [
+            "Holy Priest",
+            "Discipline Priest"
+        ]
     },
     {
         "id": 270644,
@@ -269239,7 +269341,11 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Wrist"
+        "slot": "Wrist",
+        "classRestriction": [
+            "Holy Priest",
+            "Discipline Priest"
+        ]
     },
     {
         "id": 270645,
@@ -269262,7 +269368,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Chest"
+        "slot": "Chest",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270646,
@@ -269285,7 +269394,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Chest"
+        "slot": "Chest",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270647,
@@ -269308,7 +269420,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Feet"
+        "slot": "Feet",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270648,
@@ -269331,7 +269446,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Feet"
+        "slot": "Feet",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270649,
@@ -269354,7 +269472,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Hands"
+        "slot": "Hands",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270650,
@@ -269377,7 +269498,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Hands"
+        "slot": "Hands",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270651,
@@ -269400,7 +269524,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Head"
+        "slot": "Head",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270652,
@@ -269423,7 +269550,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Head"
+        "slot": "Head",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270653,
@@ -269446,7 +269576,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Legs"
+        "slot": "Legs",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270654,
@@ -269469,7 +269602,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Legs"
+        "slot": "Legs",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270655,
@@ -269492,7 +269628,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Shoulder"
+        "slot": "Shoulder",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270656,
@@ -269515,7 +269654,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Shoulder"
+        "slot": "Shoulder",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270657,
@@ -269538,7 +269680,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Waist"
+        "slot": "Waist",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270658,
@@ -269561,7 +269706,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Waist"
+        "slot": "Waist",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270659,
@@ -269584,7 +269732,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Wrist"
+        "slot": "Wrist",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270660,
@@ -269607,7 +269758,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Wrist"
+        "slot": "Wrist",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270661,
@@ -269630,7 +269784,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Chest"
+        "slot": "Chest",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270662,
@@ -269653,7 +269810,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Chest"
+        "slot": "Chest",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270663,
@@ -269676,7 +269836,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Feet"
+        "slot": "Feet",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270664,
@@ -269699,7 +269862,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Feet"
+        "slot": "Feet",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270665,
@@ -269722,7 +269888,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Hands"
+        "slot": "Hands",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270666,
@@ -269745,7 +269914,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Hands"
+        "slot": "Hands",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270667,
@@ -269768,7 +269940,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Head"
+        "slot": "Head",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270668,
@@ -269791,7 +269966,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Head"
+        "slot": "Head",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270669,
@@ -269814,7 +269992,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Legs"
+        "slot": "Legs",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270670,
@@ -269837,7 +270018,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Legs"
+        "slot": "Legs",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270671,
@@ -269860,7 +270044,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Shoulder"
+        "slot": "Shoulder",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270672,
@@ -269883,7 +270070,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Shoulder"
+        "slot": "Shoulder",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270673,
@@ -269906,7 +270096,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Waist"
+        "slot": "Waist",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270674,
@@ -269929,7 +270122,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Waist"
+        "slot": "Waist",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270675,
@@ -269952,7 +270148,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Wrist"
+        "slot": "Wrist",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270676,
@@ -269975,7 +270174,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Wrist"
+        "slot": "Wrist",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270677,
@@ -269998,7 +270200,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Chest"
+        "slot": "Chest",
+        "classRestriction": [
+            "Restoration Druid"
+        ]
     },
     {
         "id": 270678,
@@ -270021,7 +270226,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Chest"
+        "slot": "Chest",
+        "classRestriction": [
+            "Restoration Druid"
+        ]
     },
     {
         "id": 270679,
@@ -270044,7 +270252,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Feet"
+        "slot": "Feet",
+        "classRestriction": [
+            "Restoration Druid"
+        ]
     },
     {
         "id": 270680,
@@ -270067,7 +270278,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Feet"
+        "slot": "Feet",
+        "classRestriction": [
+            "Restoration Druid"
+        ]
     },
     {
         "id": 270681,
@@ -270090,7 +270304,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Hands"
+        "slot": "Hands",
+        "classRestriction": [
+            "Restoration Druid"
+        ]
     },
     {
         "id": 270682,
@@ -270113,7 +270330,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Hands"
+        "slot": "Hands",
+        "classRestriction": [
+            "Restoration Druid"
+        ]
     },
     {
         "id": 270683,
@@ -270136,7 +270356,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Head"
+        "slot": "Head",
+        "classRestriction": [
+            "Restoration Druid"
+        ]
     },
     {
         "id": 270684,
@@ -270159,7 +270382,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Head"
+        "slot": "Head",
+        "classRestriction": [
+            "Restoration Druid"
+        ]
     },
     {
         "id": 270685,
@@ -270182,7 +270408,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Legs"
+        "slot": "Legs",
+        "classRestriction": [
+            "Restoration Druid"
+        ]
     },
     {
         "id": 270686,
@@ -270205,7 +270434,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Legs"
+        "slot": "Legs",
+        "classRestriction": [
+            "Restoration Druid"
+        ]
     },
     {
         "id": 270687,
@@ -270228,7 +270460,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Shoulder"
+        "slot": "Shoulder",
+        "classRestriction": [
+            "Restoration Druid"
+        ]
     },
     {
         "id": 270688,
@@ -270251,7 +270486,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Shoulder"
+        "slot": "Shoulder",
+        "classRestriction": [
+            "Restoration Druid"
+        ]
     },
     {
         "id": 270689,
@@ -270274,7 +270512,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Waist"
+        "slot": "Waist",
+        "classRestriction": [
+            "Restoration Druid"
+        ]
     },
     {
         "id": 270690,
@@ -270297,7 +270538,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Waist"
+        "slot": "Waist",
+        "classRestriction": [
+            "Restoration Druid"
+        ]
     },
     {
         "id": 270691,
@@ -270320,7 +270564,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Wrist"
+        "slot": "Wrist",
+        "classRestriction": [
+            "Restoration Druid"
+        ]
     },
     {
         "id": 270692,
@@ -270343,7 +270590,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Wrist"
+        "slot": "Wrist",
+        "classRestriction": [
+            "Restoration Druid"
+        ]
     },
     {
         "id": 270693,
@@ -270366,7 +270616,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Chest"
+        "slot": "Chest",
+        "classRestriction": [
+            "Mistweaver Monk"
+        ]
     },
     {
         "id": 270694,
@@ -270389,7 +270642,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Chest"
+        "slot": "Chest",
+        "classRestriction": [
+            "Mistweaver Monk"
+        ]
     },
     {
         "id": 270695,
@@ -270412,7 +270668,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Feet"
+        "slot": "Feet",
+        "classRestriction": [
+            "Mistweaver Monk"
+        ]
     },
     {
         "id": 270696,
@@ -270435,7 +270694,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Feet"
+        "slot": "Feet",
+        "classRestriction": [
+            "Mistweaver Monk"
+        ]
     },
     {
         "id": 270697,
@@ -270458,7 +270720,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Hands"
+        "slot": "Hands",
+        "classRestriction": [
+            "Mistweaver Monk"
+        ]
     },
     {
         "id": 270698,
@@ -270481,7 +270746,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Hands"
+        "slot": "Hands",
+        "classRestriction": [
+            "Mistweaver Monk"
+        ]
     },
     {
         "id": 270699,
@@ -270504,7 +270772,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Head"
+        "slot": "Head",
+        "classRestriction": [
+            "Mistweaver Monk"
+        ]
     },
     {
         "id": 270700,
@@ -270527,7 +270798,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Head"
+        "slot": "Head",
+        "classRestriction": [
+            "Mistweaver Monk"
+        ]
     },
     {
         "id": 270701,
@@ -270550,7 +270824,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Legs"
+        "slot": "Legs",
+        "classRestriction": [
+            "Mistweaver Monk"
+        ]
     },
     {
         "id": 270702,
@@ -270573,7 +270850,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Legs"
+        "slot": "Legs",
+        "classRestriction": [
+            "Mistweaver Monk"
+        ]
     },
     {
         "id": 270703,
@@ -270596,7 +270876,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Shoulder"
+        "slot": "Shoulder",
+        "classRestriction": [
+            "Mistweaver Monk"
+        ]
     },
     {
         "id": 270704,
@@ -270619,7 +270902,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Shoulder"
+        "slot": "Shoulder",
+        "classRestriction": [
+            "Mistweaver Monk"
+        ]
     },
     {
         "id": 270705,
@@ -270642,7 +270928,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Waist"
+        "slot": "Waist",
+        "classRestriction": [
+            "Mistweaver Monk"
+        ]
     },
     {
         "id": 270706,
@@ -270665,7 +270954,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Waist"
+        "slot": "Waist",
+        "classRestriction": [
+            "Mistweaver Monk"
+        ]
     },
     {
         "id": 270707,
@@ -270688,7 +270980,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Wrist"
+        "slot": "Wrist",
+        "classRestriction": [
+            "Mistweaver Monk"
+        ]
     },
     {
         "id": 270708,
@@ -270711,7 +271006,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Wrist"
+        "slot": "Wrist",
+        "classRestriction": [
+            "Mistweaver Monk"
+        ]
     },
     {
         "id": 270709,
@@ -270734,7 +271032,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Chest"
+        "slot": "Chest",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270710,
@@ -270757,7 +271058,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Chest"
+        "slot": "Chest",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270711,
@@ -270780,7 +271084,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Feet"
+        "slot": "Feet",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270712,
@@ -270803,7 +271110,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Feet"
+        "slot": "Feet",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270713,
@@ -270826,7 +271136,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Hands"
+        "slot": "Hands",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270714,
@@ -270849,7 +271162,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Hands"
+        "slot": "Hands",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270715,
@@ -270872,7 +271188,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Head"
+        "slot": "Head",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270716,
@@ -270895,7 +271214,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Head"
+        "slot": "Head",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270717,
@@ -270918,7 +271240,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Legs"
+        "slot": "Legs",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270718,
@@ -270941,7 +271266,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Legs"
+        "slot": "Legs",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270719,
@@ -270964,7 +271292,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Shoulder"
+        "slot": "Shoulder",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270720,
@@ -270987,7 +271318,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Shoulder"
+        "slot": "Shoulder",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270721,
@@ -271010,7 +271344,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Waist"
+        "slot": "Waist",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270722,
@@ -271033,7 +271370,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Waist"
+        "slot": "Waist",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270723,
@@ -271056,7 +271396,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Wrist"
+        "slot": "Wrist",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270724,
@@ -271079,7 +271422,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Wrist"
+        "slot": "Wrist",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270725,
@@ -271102,7 +271448,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Chest"
+        "slot": "Chest",
+        "classRestriction": [
+            "Preservation Evoker"
+        ]
     },
     {
         "id": 270726,
@@ -271125,7 +271474,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Chest"
+        "slot": "Chest",
+        "classRestriction": [
+            "Preservation Evoker"
+        ]
     },
     {
         "id": 270727,
@@ -271148,7 +271500,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Feet"
+        "slot": "Feet",
+        "classRestriction": [
+            "Preservation Evoker"
+        ]
     },
     {
         "id": 270728,
@@ -271171,7 +271526,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Feet"
+        "slot": "Feet",
+        "classRestriction": [
+            "Preservation Evoker"
+        ]
     },
     {
         "id": 270729,
@@ -271194,7 +271552,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Hands"
+        "slot": "Hands",
+        "classRestriction": [
+            "Preservation Evoker"
+        ]
     },
     {
         "id": 270730,
@@ -271217,7 +271578,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Hands"
+        "slot": "Hands",
+        "classRestriction": [
+            "Preservation Evoker"
+        ]
     },
     {
         "id": 270731,
@@ -271240,7 +271604,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Head"
+        "slot": "Head",
+        "classRestriction": [
+            "Preservation Evoker"
+        ]
     },
     {
         "id": 270732,
@@ -271263,7 +271630,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Head"
+        "slot": "Head",
+        "classRestriction": [
+            "Preservation Evoker"
+        ]
     },
     {
         "id": 270733,
@@ -271286,7 +271656,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Legs"
+        "slot": "Legs",
+        "classRestriction": [
+            "Preservation Evoker"
+        ]
     },
     {
         "id": 270734,
@@ -271309,7 +271682,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Legs"
+        "slot": "Legs",
+        "classRestriction": [
+            "Preservation Evoker"
+        ]
     },
     {
         "id": 270735,
@@ -271332,7 +271708,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Shoulder"
+        "slot": "Shoulder",
+        "classRestriction": [
+            "Preservation Evoker"
+        ]
     },
     {
         "id": 270736,
@@ -271355,7 +271734,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Shoulder"
+        "slot": "Shoulder",
+        "classRestriction": [
+            "Preservation Evoker"
+        ]
     },
     {
         "id": 270737,
@@ -271378,7 +271760,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Waist"
+        "slot": "Waist",
+        "classRestriction": [
+            "Preservation Evoker"
+        ]
     },
     {
         "id": 270738,
@@ -271401,7 +271786,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Waist"
+        "slot": "Waist",
+        "classRestriction": [
+            "Preservation Evoker"
+        ]
     },
     {
         "id": 270739,
@@ -271424,7 +271812,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Wrist"
+        "slot": "Wrist",
+        "classRestriction": [
+            "Preservation Evoker"
+        ]
     },
     {
         "id": 270740,
@@ -271447,7 +271838,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Wrist"
+        "slot": "Wrist",
+        "classRestriction": [
+            "Preservation Evoker"
+        ]
     },
     {
         "id": 270741,
@@ -271470,7 +271864,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Chest"
+        "slot": "Chest",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270742,
@@ -271493,7 +271890,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Chest"
+        "slot": "Chest",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270743,
@@ -271516,7 +271916,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Feet"
+        "slot": "Feet",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270744,
@@ -271539,7 +271942,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Feet"
+        "slot": "Feet",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270745,
@@ -271562,7 +271968,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Hands"
+        "slot": "Hands",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270746,
@@ -271585,7 +271994,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Hands"
+        "slot": "Hands",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270747,
@@ -271608,7 +272020,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Head"
+        "slot": "Head",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270748,
@@ -271631,7 +272046,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Head"
+        "slot": "Head",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270749,
@@ -271654,7 +272072,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Legs"
+        "slot": "Legs",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270750,
@@ -271677,7 +272098,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Legs"
+        "slot": "Legs",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270751,
@@ -271700,7 +272124,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Shoulder"
+        "slot": "Shoulder",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270752,
@@ -271723,7 +272150,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Shoulder"
+        "slot": "Shoulder",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270753,
@@ -271746,7 +272176,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Waist"
+        "slot": "Waist",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270754,
@@ -271769,7 +272202,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Waist"
+        "slot": "Waist",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270755,
@@ -271792,7 +272228,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Wrist"
+        "slot": "Wrist",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270756,
@@ -271815,7 +272254,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Wrist"
+        "slot": "Wrist",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270757,
@@ -271838,7 +272280,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Chest"
+        "slot": "Chest",
+        "classRestriction": [
+            "Restoration Shaman"
+        ]
     },
     {
         "id": 270758,
@@ -271861,7 +272306,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Chest"
+        "slot": "Chest",
+        "classRestriction": [
+            "Restoration Shaman"
+        ]
     },
     {
         "id": 270759,
@@ -271884,7 +272332,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Feet"
+        "slot": "Feet",
+        "classRestriction": [
+            "Restoration Shaman"
+        ]
     },
     {
         "id": 270760,
@@ -271907,7 +272358,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Feet"
+        "slot": "Feet",
+        "classRestriction": [
+            "Restoration Shaman"
+        ]
     },
     {
         "id": 270761,
@@ -271930,7 +272384,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Hands"
+        "slot": "Hands",
+        "classRestriction": [
+            "Restoration Shaman"
+        ]
     },
     {
         "id": 270762,
@@ -271953,7 +272410,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Hands"
+        "slot": "Hands",
+        "classRestriction": [
+            "Restoration Shaman"
+        ]
     },
     {
         "id": 270763,
@@ -271976,7 +272436,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Head"
+        "slot": "Head",
+        "classRestriction": [
+            "Restoration Shaman"
+        ]
     },
     {
         "id": 270764,
@@ -271999,7 +272462,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Head"
+        "slot": "Head",
+        "classRestriction": [
+            "Restoration Shaman"
+        ]
     },
     {
         "id": 270765,
@@ -272022,7 +272488,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Legs"
+        "slot": "Legs",
+        "classRestriction": [
+            "Restoration Shaman"
+        ]
     },
     {
         "id": 270766,
@@ -272045,7 +272514,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Legs"
+        "slot": "Legs",
+        "classRestriction": [
+            "Restoration Shaman"
+        ]
     },
     {
         "id": 270767,
@@ -272068,7 +272540,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Shoulder"
+        "slot": "Shoulder",
+        "classRestriction": [
+            "Restoration Shaman"
+        ]
     },
     {
         "id": 270768,
@@ -272091,7 +272566,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Shoulder"
+        "slot": "Shoulder",
+        "classRestriction": [
+            "Restoration Shaman"
+        ]
     },
     {
         "id": 270769,
@@ -272114,7 +272592,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Waist"
+        "slot": "Waist",
+        "classRestriction": [
+            "Restoration Shaman"
+        ]
     },
     {
         "id": 270770,
@@ -272137,7 +272618,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Waist"
+        "slot": "Waist",
+        "classRestriction": [
+            "Restoration Shaman"
+        ]
     },
     {
         "id": 270771,
@@ -272160,7 +272644,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Wrist"
+        "slot": "Wrist",
+        "classRestriction": [
+            "Restoration Shaman"
+        ]
     },
     {
         "id": 270772,
@@ -272183,7 +272670,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Wrist"
+        "slot": "Wrist",
+        "classRestriction": [
+            "Restoration Shaman"
+        ]
     },
     {
         "id": 270773,
@@ -272206,7 +272696,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Chest"
+        "slot": "Chest",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270774,
@@ -272229,7 +272722,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Chest"
+        "slot": "Chest",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270775,
@@ -272252,7 +272748,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Feet"
+        "slot": "Feet",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270776,
@@ -272275,7 +272774,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Feet"
+        "slot": "Feet",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270777,
@@ -272298,7 +272800,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Hands"
+        "slot": "Hands",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270778,
@@ -272321,7 +272826,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Hands"
+        "slot": "Hands",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270779,
@@ -272344,7 +272852,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Head"
+        "slot": "Head",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270780,
@@ -272367,7 +272878,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Head"
+        "slot": "Head",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270781,
@@ -272390,7 +272904,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Legs"
+        "slot": "Legs",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270782,
@@ -272413,7 +272930,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Legs"
+        "slot": "Legs",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270783,
@@ -272436,7 +272956,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Shoulder"
+        "slot": "Shoulder",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270784,
@@ -272459,7 +272982,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Shoulder"
+        "slot": "Shoulder",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270785,
@@ -272482,7 +273008,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Waist"
+        "slot": "Waist",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270786,
@@ -272505,7 +273034,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Waist"
+        "slot": "Waist",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270787,
@@ -272528,7 +273060,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Wrist"
+        "slot": "Wrist",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270788,
@@ -272551,7 +273086,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Wrist"
+        "slot": "Wrist",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270789,
@@ -272574,7 +273112,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Chest"
+        "slot": "Chest",
+        "classRestriction": [
+            "Holy Paladin"
+        ]
     },
     {
         "id": 270790,
@@ -272597,7 +273138,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Chest"
+        "slot": "Chest",
+        "classRestriction": [
+            "Holy Paladin"
+        ]
     },
     {
         "id": 270791,
@@ -272620,7 +273164,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Feet"
+        "slot": "Feet",
+        "classRestriction": [
+            "Holy Paladin"
+        ]
     },
     {
         "id": 270792,
@@ -272643,7 +273190,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Feet"
+        "slot": "Feet",
+        "classRestriction": [
+            "Holy Paladin"
+        ]
     },
     {
         "id": 270793,
@@ -272666,7 +273216,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Hands"
+        "slot": "Hands",
+        "classRestriction": [
+            "Holy Paladin"
+        ]
     },
     {
         "id": 270794,
@@ -272689,7 +273242,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Hands"
+        "slot": "Hands",
+        "classRestriction": [
+            "Holy Paladin"
+        ]
     },
     {
         "id": 270795,
@@ -272712,7 +273268,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Head"
+        "slot": "Head",
+        "classRestriction": [
+            "Holy Paladin"
+        ]
     },
     {
         "id": 270796,
@@ -272735,7 +273294,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Head"
+        "slot": "Head",
+        "classRestriction": [
+            "Holy Paladin"
+        ]
     },
     {
         "id": 270797,
@@ -272758,7 +273320,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Legs"
+        "slot": "Legs",
+        "classRestriction": [
+            "Holy Paladin"
+        ]
     },
     {
         "id": 270798,
@@ -272781,7 +273346,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Legs"
+        "slot": "Legs",
+        "classRestriction": [
+            "Holy Paladin"
+        ]
     },
     {
         "id": 270799,
@@ -272804,7 +273372,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Shoulder"
+        "slot": "Shoulder",
+        "classRestriction": [
+            "Holy Paladin"
+        ]
     },
     {
         "id": 270800,
@@ -272827,7 +273398,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Shoulder"
+        "slot": "Shoulder",
+        "classRestriction": [
+            "Holy Paladin"
+        ]
     },
     {
         "id": 270801,
@@ -272850,7 +273424,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Waist"
+        "slot": "Waist",
+        "classRestriction": [
+            "Holy Paladin"
+        ]
     },
     {
         "id": 270802,
@@ -272873,7 +273450,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Waist"
+        "slot": "Waist",
+        "classRestriction": [
+            "Holy Paladin"
+        ]
     },
     {
         "id": 270803,
@@ -272896,7 +273476,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Wrist"
+        "slot": "Wrist",
+        "classRestriction": [
+            "Holy Paladin"
+        ]
     },
     {
         "id": 270804,
@@ -272919,7 +273502,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Wrist"
+        "slot": "Wrist",
+        "classRestriction": [
+            "Holy Paladin"
+        ]
     },
     {
         "id": 270805,
@@ -272942,7 +273528,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Chest"
+        "slot": "Chest",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270806,
@@ -272965,7 +273554,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Chest"
+        "slot": "Chest",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270807,
@@ -272988,7 +273580,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Feet"
+        "slot": "Feet",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270808,
@@ -273011,7 +273606,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Feet"
+        "slot": "Feet",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270809,
@@ -273034,7 +273632,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Hands"
+        "slot": "Hands",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270810,
@@ -273057,7 +273658,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Hands"
+        "slot": "Hands",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270811,
@@ -273080,7 +273684,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Head"
+        "slot": "Head",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270812,
@@ -273103,7 +273710,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Head"
+        "slot": "Head",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270813,
@@ -273126,7 +273736,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Legs"
+        "slot": "Legs",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270814,
@@ -273149,7 +273762,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Legs"
+        "slot": "Legs",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270815,
@@ -273172,7 +273788,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Shoulder"
+        "slot": "Shoulder",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270816,
@@ -273195,7 +273814,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Shoulder"
+        "slot": "Shoulder",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270817,
@@ -273218,7 +273840,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Waist"
+        "slot": "Waist",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270818,
@@ -273241,7 +273866,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Waist"
+        "slot": "Waist",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270819,
@@ -273264,7 +273892,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Wrist"
+        "slot": "Wrist",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270820,
@@ -273287,7 +273918,10 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Wrist"
+        "slot": "Wrist",
+        "classRestriction": [
+            "DPS or Tank Spec"
+        ]
     },
     {
         "id": 270822,
@@ -277923,7 +278557,7 @@
     },
     {
         "id": 272225,
-        "name": "Galerider's Mantle",
+        "name": "Pyrewalker's Mantle",
         "icon": "inv_cape_cloth_outdooramaniloa_c_01",
         "quality": 4,
         "itemClass": 4,
@@ -277969,7 +278603,7 @@
     },
     {
         "id": 272227,
-        "name": "Pyrewalker's Veil",
+        "name": "Galerider's Veil",
         "icon": "inv_cape_mail_outdooramaniloa_c_01",
         "quality": 4,
         "itemClass": 4,
@@ -278061,7 +278695,7 @@
     },
     {
         "id": 272231,
-        "name": "Galerider's Doublet",
+        "name": "Pyrewalker's Doublet",
         "icon": "inv_robe_cloth_outdooramaniloa_c_01",
         "quality": 4,
         "itemClass": 4,
@@ -278084,7 +278718,7 @@
     },
     {
         "id": 272232,
-        "name": "Galerider's Buskins",
+        "name": "Pyrewalker's Buskins",
         "icon": "inv_boot_cloth_outdooramaniloa_c_01",
         "quality": 4,
         "itemClass": 4,
@@ -278107,7 +278741,7 @@
     },
     {
         "id": 272233,
-        "name": "Galerider's Gloves",
+        "name": "Pyrewalker's Gloves",
         "icon": "inv_glove_cloth_outdooramaniloa_c_01",
         "quality": 4,
         "itemClass": 4,
@@ -278130,7 +278764,7 @@
     },
     {
         "id": 272234,
-        "name": "Galerider's Miter",
+        "name": "Pyrewalker's Miter",
         "icon": "inv_helm_cloth_outdooramaniloa_c_01",
         "quality": 4,
         "itemClass": 4,
@@ -278153,7 +278787,7 @@
     },
     {
         "id": 272235,
-        "name": "Galerider's Treads",
+        "name": "Pyrewalker's Treads",
         "icon": "inv_pant_cloth_outdooramaniloa_c_01",
         "quality": 4,
         "itemClass": 4,
@@ -278176,7 +278810,7 @@
     },
     {
         "id": 272236,
-        "name": "Galerider's Mantlet",
+        "name": "Pyrewalker's Mantlet",
         "icon": "inv_shoulder_cloth_outdooramaniloa_c_01",
         "quality": 4,
         "itemClass": 4,
@@ -278199,7 +278833,7 @@
     },
     {
         "id": 272237,
-        "name": "Galerider's Obi",
+        "name": "Pyrewalker's Obi",
         "icon": "inv_belt_cloth_outdooramaniloa_c_01",
         "quality": 4,
         "itemClass": 4,
@@ -278222,7 +278856,7 @@
     },
     {
         "id": 272238,
-        "name": "Galerider's Wraps",
+        "name": "Pyrewalker's Wraps",
         "icon": "inv_bracer_cloth_outdooramaniloa_c_01",
         "quality": 4,
         "itemClass": 4,
@@ -278429,7 +279063,7 @@
     },
     {
         "id": 272247,
-        "name": "Pyrewalker's Byrnie",
+        "name": "Galerider's Byrnie",
         "icon": "inv_chest_mail_outdooramaniloa_c_01",
         "quality": 4,
         "itemClass": 4,
@@ -278452,7 +279086,7 @@
     },
     {
         "id": 272248,
-        "name": "Pyrewalker's Chausses",
+        "name": "Galerider's Chausses",
         "icon": "inv_boot_mail_outdooramaniloa_c_01",
         "quality": 4,
         "itemClass": 4,
@@ -278475,7 +279109,7 @@
     },
     {
         "id": 272249,
-        "name": "Pyrewalker's Chain Clasps",
+        "name": "Galerider's Chain Clasps",
         "icon": "inv_glove_mail_outdooramaniloa_c_01",
         "quality": 4,
         "itemClass": 4,
@@ -278498,7 +279132,7 @@
     },
     {
         "id": 272250,
-        "name": "Pyrewalker's Gaze",
+        "name": "Galerider's Gaze",
         "icon": "inv_helm_mail_outdooramaniloa_c_01",
         "quality": 4,
         "itemClass": 4,
@@ -278521,7 +279155,7 @@
     },
     {
         "id": 272251,
-        "name": "Pyrewalker's Chausses",
+        "name": "Galerider's Chausses",
         "icon": "inv_pant_mail_outdooramaniloa_c_01",
         "quality": 4,
         "itemClass": 4,
@@ -278544,7 +279178,7 @@
     },
     {
         "id": 272252,
-        "name": "Pyrewalker's Mantle",
+        "name": "Galerider's Mantle",
         "icon": "inv_shoulder_mail_outdooramaniloa_c_01",
         "quality": 4,
         "itemClass": 4,
@@ -278567,7 +279201,7 @@
     },
     {
         "id": 272253,
-        "name": "Pyrewalker's Mail Skirt",
+        "name": "Galerider's Mail Skirt",
         "icon": "inv_belt_mail_outdooramaniloa_c_01",
         "quality": 4,
         "itemClass": 4,
@@ -278590,7 +279224,7 @@
     },
     {
         "id": 272254,
-        "name": "Pyrewalker's Mesh Wraps",
+        "name": "Galerider's Mesh Wraps",
         "icon": "inv_bracer_mail_outdooramaniloa_c_01",
         "quality": 4,
         "itemClass": 4,
@@ -282350,15 +282984,15 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "crit": 3800,
-            "mastery": 3200
+            "versatility": 3950,
+            "crit": 3050
         },
         "squishEra": 2,
         "slot": "Wrist"
     },
     {
         "id": 276001,
-        "name": "Flamebeak Armguards",
+        "name": "Skytalon Armguards",
         "icon": "inv_bracer_mail_outdooramaniloa_c_01",
         "quality": 3,
         "itemClass": 4,
@@ -282367,8 +283001,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "crit": 3950,
-            "mastery": 3050
+            "mastery": 3800,
+            "crit": 3200
         },
         "squishEra": 2,
         "slot": "Wrist"
@@ -282384,15 +283018,15 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "crit": 3950,
-            "mastery": 3050
+            "haste": 3950,
+            "versatility": 3050
         },
         "squishEra": 2,
         "slot": "Wrist"
     },
     {
         "id": 276003,
-        "name": "Skytalon Bracers",
+        "name": "Flamebeak Bracers",
         "icon": "inv_bracer_cloth_outdooramaniloa_c_01",
         "quality": 3,
         "itemClass": 4,
@@ -282401,8 +283035,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "mastery": 3800,
-            "crit": 3200
+            "crit": 3650,
+            "mastery": 3350
         },
         "squishEra": 2,
         "slot": "Wrist"
@@ -282418,15 +283052,15 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "versatility": 3650,
-            "crit": 3350
+            "crit": 3650,
+            "haste": 3350
         },
         "squishEra": 2,
         "slot": "Feet"
     },
     {
         "id": 276005,
-        "name": "Flamebeak Treads",
+        "name": "Skytalon Treads",
         "icon": "inv_boot_mail_outdooramaniloa_c_01",
         "quality": 3,
         "itemClass": 4,
@@ -282435,8 +283069,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "haste": 3800,
-            "versatility": 3200
+            "versatility": 3650,
+            "mastery": 3350
         },
         "squishEra": 2,
         "slot": "Feet"
@@ -282452,15 +283086,15 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "haste": 3800,
-            "mastery": 3200
+            "crit": 3650,
+            "haste": 3350
         },
         "squishEra": 2,
         "slot": "Feet"
     },
     {
         "id": 276007,
-        "name": "Skytalon Sandals",
+        "name": "Flamebeak Sandals",
         "icon": "inv_boot_cloth_outdooramaniloa_c_01",
         "quality": 3,
         "itemClass": 4,
@@ -282469,8 +283103,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "haste": 3950,
-            "mastery": 3050
+            "mastery": 3800,
+            "versatility": 3200
         },
         "squishEra": 2,
         "slot": "Feet"
@@ -282486,15 +283120,15 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "crit": 3800,
-            "mastery": 3200
+            "mastery": 3800,
+            "haste": 3200
         },
         "squishEra": 2,
         "slot": "Hands"
     },
     {
         "id": 276009,
-        "name": "Flamebeak Gloves",
+        "name": "Skytalon Gloves",
         "icon": "inv_glove_mail_outdooramaniloa_c_01",
         "quality": 3,
         "itemClass": 4,
@@ -282503,8 +283137,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "haste": 3950,
-            "crit": 3050
+            "haste": 3650,
+            "crit": 3350
         },
         "squishEra": 2,
         "slot": "Hands"
@@ -282520,7 +283154,7 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "mastery": 3950,
+            "haste": 3950,
             "crit": 3050
         },
         "squishEra": 2,
@@ -282528,7 +283162,7 @@
     },
     {
         "id": 276011,
-        "name": "Skytalon Grips",
+        "name": "Flamebeak Grips",
         "icon": "inv_glove_cloth_outdooramaniloa_c_01",
         "quality": 3,
         "itemClass": 4,
@@ -282538,7 +283172,7 @@
             "intellect": 5259,
             "stamina": 7889,
             "crit": 3800,
-            "haste": 3200
+            "versatility": 3200
         },
         "squishEra": 2,
         "slot": "Hands"
@@ -282554,15 +283188,15 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "versatility": 3950,
-            "crit": 3050
+            "crit": 3950,
+            "haste": 3050
         },
         "squishEra": 2,
         "slot": "Chest"
     },
     {
         "id": 276013,
-        "name": "Flamebeak Hauberk",
+        "name": "Skytalon Hauberk",
         "icon": "inv_chest_mail_outdooramaniloa_c_01",
         "quality": 3,
         "itemClass": 4,
@@ -282571,8 +283205,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "haste": 3800,
-            "versatility": 3200
+            "mastery": 3800,
+            "haste": 3200
         },
         "squishEra": 2,
         "slot": "Chest"
@@ -282588,7 +283222,7 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "haste": 3950,
+            "mastery": 3950,
             "versatility": 3050
         },
         "squishEra": 2,
@@ -282596,7 +283230,7 @@
     },
     {
         "id": 276015,
-        "name": "Skytalon Robes",
+        "name": "Flamebeak Robes",
         "icon": "inv_robe_cloth_outdooramaniloa_c_01",
         "quality": 3,
         "itemClass": 4,
@@ -282605,8 +283239,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "mastery": 3800,
-            "haste": 3200
+            "mastery": 3650,
+            "versatility": 3350
         },
         "squishEra": 2,
         "slot": "Chest"
@@ -282622,15 +283256,15 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "mastery": 3950,
-            "crit": 3050
+            "haste": 3650,
+            "mastery": 3350
         },
         "squishEra": 2,
         "slot": "Head"
     },
     {
         "id": 276017,
-        "name": "Flamebeak Helmet",
+        "name": "Skytalon Helmet",
         "icon": "inv_helm_mail_outdooramaniloa_c_01",
         "quality": 3,
         "itemClass": 4,
@@ -282639,8 +283273,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "haste": 3950,
-            "mastery": 3050
+            "haste": 3800,
+            "mastery": 3200
         },
         "squishEra": 2,
         "slot": "Head"
@@ -282656,15 +283290,15 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "crit": 3950,
-            "mastery": 3050
+            "versatility": 3950,
+            "crit": 3050
         },
         "squishEra": 2,
         "slot": "Head"
     },
     {
         "id": 276019,
-        "name": "Skytalon Crown",
+        "name": "Flamebeak Crown",
         "icon": "inv_helm_cloth_outdooramaniloa_c_01",
         "quality": 3,
         "itemClass": 4,
@@ -282673,8 +283307,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "mastery": 3950,
-            "versatility": 3050
+            "haste": 3950,
+            "mastery": 3050
         },
         "squishEra": 2,
         "slot": "Head"
@@ -282690,15 +283324,15 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "mastery": 3650,
-            "crit": 3350
+            "crit": 3800,
+            "mastery": 3200
         },
         "squishEra": 2,
         "slot": "Shoulder"
     },
     {
         "id": 276021,
-        "name": "Flamebeak Spaulders",
+        "name": "Skytalon Spaulders",
         "icon": "inv_shoulder_mail_outdooramaniloa_c_01",
         "quality": 3,
         "itemClass": 4,
@@ -282707,7 +283341,7 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "versatility": 3650,
+            "crit": 3650,
             "mastery": 3350
         },
         "squishEra": 2,
@@ -282724,15 +283358,15 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "crit": 3950,
-            "versatility": 3050
+            "haste": 3800,
+            "mastery": 3200
         },
         "squishEra": 2,
         "slot": "Shoulder"
     },
     {
         "id": 276023,
-        "name": "Skytalon Mantle",
+        "name": "Flamebeak Mantle",
         "icon": "inv_shoulder_cloth_outdooramaniloa_c_01",
         "quality": 3,
         "itemClass": 4,
@@ -282741,8 +283375,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "haste": 3650,
-            "mastery": 3350
+            "haste": 3950,
+            "mastery": 3050
         },
         "squishEra": 2,
         "slot": "Shoulder"
@@ -282758,15 +283392,15 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "crit": 3800,
-            "mastery": 3200
+            "haste": 3650,
+            "versatility": 3350
         },
         "squishEra": 2,
         "slot": "Legs"
     },
     {
         "id": 276025,
-        "name": "Flamebeak Breeches",
+        "name": "Skytalon Breeches",
         "icon": "inv_pant_mail_outdooramaniloa_c_01",
         "quality": 3,
         "itemClass": 4,
@@ -282775,8 +283409,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "haste": 3800,
-            "mastery": 3200
+            "haste": 3950,
+            "mastery": 3050
         },
         "squishEra": 2,
         "slot": "Legs"
@@ -282792,15 +283426,15 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "crit": 3950,
-            "mastery": 3050
+            "mastery": 3950,
+            "haste": 3050
         },
         "squishEra": 2,
         "slot": "Legs"
     },
     {
         "id": 276027,
-        "name": "Skytalon Leggings",
+        "name": "Flamebeak Leggings",
         "icon": "inv_pant_cloth_outdooramaniloa_c_01",
         "quality": 3,
         "itemClass": 4,
@@ -282809,8 +283443,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "haste": 3950,
-            "versatility": 3050
+            "haste": 3800,
+            "versatility": 3200
         },
         "squishEra": 2,
         "slot": "Legs"
@@ -282826,15 +283460,15 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "haste": 3950,
-            "versatility": 3050
+            "mastery": 3800,
+            "versatility": 3200
         },
         "squishEra": 2,
         "slot": "Waist"
     },
     {
         "id": 276029,
-        "name": "Flamebeak Belt",
+        "name": "Skytalon Belt",
         "icon": "inv_belt_mail_outdooramaniloa_c_01",
         "quality": 3,
         "itemClass": 4,
@@ -282843,8 +283477,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "versatility": 3950,
-            "crit": 3050
+            "crit": 3800,
+            "mastery": 3200
         },
         "squishEra": 2,
         "slot": "Waist"
@@ -282860,15 +283494,15 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "versatility": 3650,
-            "mastery": 3350
+            "mastery": 3950,
+            "crit": 3050
         },
         "squishEra": 2,
         "slot": "Waist"
     },
     {
         "id": 276031,
-        "name": "Skytalon Cord",
+        "name": "Flamebeak Cord",
         "icon": "inv_belt_cloth_outdooramaniloa_c_01",
         "quality": 3,
         "itemClass": 4,
@@ -282877,7 +283511,7 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "crit": 3950,
+            "versatility": 3950,
             "haste": 3050
         },
         "squishEra": 2,
@@ -282894,8 +283528,8 @@
         "stats": {
             "intellect": 0,
             "stamina": 7889,
-            "mastery": 9500,
-            "versatility": 8000
+            "mastery": 9250,
+            "versatility": 8250
         },
         "squishEra": 2,
         "slot": "Neck"
@@ -282911,8 +283545,8 @@
         "stats": {
             "intellect": 0,
             "stamina": 7889,
-            "haste": 10000,
-            "crit": 7500
+            "haste": 9000,
+            "crit": 8500
         },
         "squishEra": 2,
         "slot": "Neck"
@@ -282928,8 +283562,8 @@
         "stats": {
             "intellect": 0,
             "stamina": 7889,
-            "mastery": 10000,
-            "crit": 7500
+            "crit": 9000,
+            "versatility": 8500
         },
         "squishEra": 2,
         "slot": "Finger"
@@ -282945,8 +283579,8 @@
         "stats": {
             "intellect": 0,
             "stamina": 7889,
-            "mastery": 9000,
-            "crit": 8500
+            "mastery": 9250,
+            "crit": 8250
         },
         "squishEra": 2,
         "slot": "Finger"
@@ -282962,8 +283596,8 @@
         "stats": {
             "intellect": 0,
             "stamina": 7889,
-            "haste": 10000,
-            "versatility": 7500
+            "haste": 9500,
+            "versatility": 8000
         },
         "squishEra": 2,
         "slot": "Finger"
@@ -282979,15 +283613,15 @@
         "stats": {
             "intellect": 0,
             "stamina": 7889,
-            "versatility": 9000,
-            "mastery": 8500
+            "versatility": 9250,
+            "mastery": 8250
         },
         "squishEra": 2,
         "slot": "Finger"
     },
     {
         "id": 276038,
-        "name": "Flamebeak Cloak",
+        "name": "Skytalon Cloak",
         "icon": "inv_cape_mail_outdooramaniloa_c_01",
         "quality": 3,
         "itemClass": 4,
@@ -282996,7 +283630,7 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "versatility": 3800,
+            "haste": 3800,
             "mastery": 3200
         },
         "squishEra": 2,
@@ -283004,7 +283638,7 @@
     },
     {
         "id": 276039,
-        "name": "Skytalon Drape",
+        "name": "Flamebeak Drape",
         "icon": "inv_cape_cloth_outdooramaniloa_c_01",
         "quality": 3,
         "itemClass": 4,
@@ -283013,8 +283647,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "crit": 3650,
-            "haste": 3350
+            "versatility": 3950,
+            "crit": 3050
         },
         "squishEra": 2,
         "slot": "Back"
@@ -283030,8 +283664,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "versatility": 3950,
-            "crit": 3050
+            "crit": 3650,
+            "mastery": 3350
         },
         "squishEra": 2,
         "slot": "Back"
@@ -283047,8 +283681,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "versatility": 3650,
-            "mastery": 3350
+            "mastery": 3950,
+            "haste": 3050
         },
         "squishEra": 2,
         "slot": "Back"
@@ -283064,8 +283698,8 @@
         "stats": {
             "intellect": 16132,
             "stamina": 7889,
-            "versatility": 3800,
-            "crit": 3200
+            "versatility": 3950,
+            "crit": 3050
         },
         "squishEra": 2,
         "slot": "Shield"
@@ -283081,8 +283715,8 @@
         "stats": {
             "intellect": 16132,
             "stamina": 7889,
-            "crit": 3650,
-            "versatility": 3350
+            "versatility": 3950,
+            "mastery": 3050
         },
         "squishEra": 2,
         "slot": "Offhand"
@@ -283098,8 +283732,8 @@
         "stats": {
             "intellect": 23380,
             "stamina": 7889,
-            "mastery": 3950,
-            "haste": 3050
+            "versatility": 3800,
+            "mastery": 3200
         },
         "squishEra": 2,
         "slot": "2H Weapon"
@@ -283115,8 +283749,8 @@
         "stats": {
             "intellect": 30629,
             "stamina": 7889,
-            "crit": 3800,
-            "mastery": 3200
+            "mastery": 3650,
+            "crit": 3350
         },
         "squishEra": 2,
         "slot": "Warglaive Weapon"
@@ -283133,7 +283767,7 @@
             "intellect": 30629,
             "stamina": 7889,
             "crit": 3650,
-            "versatility": 3350
+            "haste": 3350
         },
         "squishEra": 2,
         "slot": "1H Weapon"
@@ -283149,8 +283783,8 @@
         "stats": {
             "intellect": 30629,
             "stamina": 7889,
-            "mastery": 3800,
-            "crit": 3200
+            "haste": 3650,
+            "crit": 3350
         },
         "squishEra": 2,
         "slot": "1H Weapon"
@@ -283166,8 +283800,8 @@
         "stats": {
             "intellect": 30629,
             "stamina": 7889,
-            "mastery": 3950,
-            "haste": 3050
+            "crit": 3950,
+            "mastery": 3050
         },
         "squishEra": 2,
         "slot": "1H Weapon"
@@ -283183,8 +283817,8 @@
         "stats": {
             "intellect": 30629,
             "stamina": 7889,
-            "crit": 3650,
-            "mastery": 3350
+            "crit": 3800,
+            "mastery": 3200
         },
         "squishEra": 2,
         "slot": "1H Weapon"
@@ -283200,8 +283834,8 @@
         "stats": {
             "intellect": 30629,
             "stamina": 7889,
-            "crit": 3950,
-            "haste": 3050
+            "crit": 3800,
+            "haste": 3200
         },
         "squishEra": 2,
         "slot": "Warglaive Weapon"
@@ -283217,8 +283851,8 @@
         "stats": {
             "intellect": 16132,
             "stamina": 7889,
-            "mastery": 3950,
-            "versatility": 3050
+            "crit": 3800,
+            "versatility": 3200
         },
         "squishEra": 2,
         "slot": "Offhand"
@@ -283234,8 +283868,8 @@
         "stats": {
             "intellect": 16132,
             "stamina": 7889,
-            "haste": 3650,
-            "crit": 3350
+            "mastery": 3800,
+            "versatility": 3200
         },
         "squishEra": 2,
         "slot": "Shield"
@@ -283251,8 +283885,8 @@
         "stats": {
             "intellect": 0,
             "stamina": 7889,
-            "haste": 9250,
-            "mastery": 8250
+            "haste": 9000,
+            "mastery": 8500
         },
         "squishEra": 2,
         "slot": "Finger"
@@ -283268,8 +283902,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "crit": 3950,
-            "versatility": 3050
+            "versatility": 3800,
+            "crit": 3200
         },
         "squishEra": 2,
         "slot": "Head"
@@ -283285,8 +283919,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "crit": 3650,
-            "versatility": 3350
+            "mastery": 3650,
+            "crit": 3350
         },
         "squishEra": 2,
         "slot": "Feet"
@@ -283302,8 +283936,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "versatility": 3800,
-            "crit": 3200
+            "haste": 3650,
+            "mastery": 3350
         },
         "squishEra": 2,
         "slot": "Chest"
@@ -283319,8 +283953,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "versatility": 3650,
-            "crit": 3350
+            "crit": 3650,
+            "versatility": 3350
         },
         "squishEra": 2,
         "slot": "Back"
@@ -283336,8 +283970,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "haste": 3950,
-            "versatility": 3050
+            "versatility": 3650,
+            "crit": 3350
         },
         "squishEra": 2,
         "slot": "Hands"
@@ -283353,8 +283987,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "crit": 3800,
-            "mastery": 3200
+            "crit": 3950,
+            "versatility": 3050
         },
         "squishEra": 2,
         "slot": "Wrist"
@@ -283370,8 +284004,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "crit": 3950,
-            "mastery": 3050
+            "haste": 3800,
+            "mastery": 3200
         },
         "squishEra": 2,
         "slot": "Wrist"
@@ -283387,8 +284021,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "crit": 3950,
-            "mastery": 3050
+            "crit": 3650,
+            "versatility": 3350
         },
         "squishEra": 2,
         "slot": "Wrist"
@@ -283405,7 +284039,7 @@
             "intellect": 5259,
             "stamina": 7889,
             "mastery": 3800,
-            "crit": 3200
+            "versatility": 3200
         },
         "squishEra": 2,
         "slot": "Wrist"
@@ -283421,8 +284055,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "crit": 3800,
-            "mastery": 3200
+            "crit": 3650,
+            "haste": 3350
         },
         "squishEra": 2,
         "slot": "Wrist"
@@ -283438,8 +284072,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "crit": 3950,
-            "mastery": 3050
+            "haste": 3800,
+            "mastery": 3200
         },
         "squishEra": 2,
         "slot": "Wrist"
@@ -283456,7 +284090,7 @@
             "intellect": 5259,
             "stamina": 7889,
             "crit": 3950,
-            "mastery": 3050
+            "haste": 3050
         },
         "squishEra": 2,
         "slot": "Wrist"
@@ -283472,8 +284106,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "mastery": 3800,
-            "crit": 3200
+            "mastery": 3950,
+            "versatility": 3050
         },
         "squishEra": 2,
         "slot": "Wrist"
@@ -283769,7 +284403,7 @@
     },
     {
         "id": 277772,
-        "name": "Venom-Cursed Dragonhawk's Scalebands",
+        "name": "Venom-Cursed Eagle's Scalebands",
         "icon": "inv_bracer_mail_outdooramaniloa_c_01",
         "quality": 2,
         "itemClass": 4,
@@ -283786,7 +284420,7 @@
     },
     {
         "id": 277773,
-        "name": "Venom-Cursed Dragonhawk's Waistguard",
+        "name": "Venom-Cursed Eagle's Waistguard",
         "icon": "inv_belt_mail_outdooramaniloa_c_01",
         "quality": 2,
         "itemClass": 4,
@@ -283803,7 +284437,7 @@
     },
     {
         "id": 277774,
-        "name": "Venom-Cursed Dragonhawk's Amice",
+        "name": "Venom-Cursed Eagle's Amice",
         "icon": "inv_shoulder_mail_outdooramaniloa_c_01",
         "quality": 2,
         "itemClass": 4,
@@ -283820,7 +284454,7 @@
     },
     {
         "id": 277775,
-        "name": "Venom-Cursed Dragonhawk's Legguards",
+        "name": "Venom-Cursed Eagle's Legguards",
         "icon": "inv_pant_mail_outdooramaniloa_c_01",
         "quality": 2,
         "itemClass": 4,
@@ -283837,7 +284471,7 @@
     },
     {
         "id": 277776,
-        "name": "Venom-Cursed Dragonhawk's Guise",
+        "name": "Venom-Cursed Eagle's Guise",
         "icon": "inv_helm_mail_outdooramaniloa_c_01",
         "quality": 2,
         "itemClass": 4,
@@ -283854,7 +284488,7 @@
     },
     {
         "id": 277777,
-        "name": "Venom-Cursed Dragonhawk's Grips",
+        "name": "Venom-Cursed Eagle's Grips",
         "icon": "inv_glove_mail_outdooramaniloa_c_01",
         "quality": 2,
         "itemClass": 4,
@@ -283871,7 +284505,7 @@
     },
     {
         "id": 277778,
-        "name": "Venom-Cursed Dragonhawk's Flight",
+        "name": "Venom-Cursed Eagle's Flight",
         "icon": "inv_boot_mail_outdooramaniloa_c_01",
         "quality": 2,
         "itemClass": 4,
@@ -283888,7 +284522,7 @@
     },
     {
         "id": 277779,
-        "name": "Venom-Cursed Dragonhawk's Crest",
+        "name": "Venom-Cursed Eagle's Crest",
         "icon": "inv_chest_mail_outdooramaniloa_c_01",
         "quality": 2,
         "itemClass": 4,
@@ -284041,7 +284675,7 @@
     },
     {
         "id": 277788,
-        "name": "Venom-Cursed Eagle's Wristbands",
+        "name": "Venom-Cursed Dragonhawk's Wristbands",
         "icon": "inv_bracer_cloth_outdooramaniloa_c_01",
         "quality": 2,
         "itemClass": 4,
@@ -284058,7 +284692,7 @@
     },
     {
         "id": 277789,
-        "name": "Venom-Cursed Eagle's Cinch",
+        "name": "Venom-Cursed Dragonhawk's Cinch",
         "icon": "inv_belt_cloth_outdooramaniloa_c_01",
         "quality": 2,
         "itemClass": 4,
@@ -284075,7 +284709,7 @@
     },
     {
         "id": 277790,
-        "name": "Venom-Cursed Eagle's Wingspan",
+        "name": "Venom-Cursed Dragonhawk's Wingspan",
         "icon": "inv_shoulder_cloth_outdooramaniloa_c_01",
         "quality": 2,
         "itemClass": 4,
@@ -284092,7 +284726,7 @@
     },
     {
         "id": 277791,
-        "name": "Venom-Cursed Eagle's Leggings",
+        "name": "Venom-Cursed Dragonhawk's Leggings",
         "icon": "inv_pant_cloth_outdooramaniloa_c_01",
         "quality": 2,
         "itemClass": 4,
@@ -284109,7 +284743,7 @@
     },
     {
         "id": 277792,
-        "name": "Venom-Cursed Eagle's Plumage",
+        "name": "Venom-Cursed Dragonhawk's Plumage",
         "icon": "inv_helm_cloth_outdooramaniloa_c_01",
         "quality": 2,
         "itemClass": 4,
@@ -284126,7 +284760,7 @@
     },
     {
         "id": 277793,
-        "name": "Venom-Cursed Eagle's Handwraps",
+        "name": "Venom-Cursed Dragonhawk's Handwraps",
         "icon": "inv_glove_cloth_outdooramaniloa_c_01",
         "quality": 2,
         "itemClass": 4,
@@ -284143,7 +284777,7 @@
     },
     {
         "id": 277794,
-        "name": "Venom-Cursed Eagle's Talons",
+        "name": "Venom-Cursed Dragonhawk's Talons",
         "icon": "inv_boot_cloth_outdooramaniloa_c_01",
         "quality": 2,
         "itemClass": 4,
@@ -284160,7 +284794,7 @@
     },
     {
         "id": 277795,
-        "name": "Venom-Cursed Eagle's Robes",
+        "name": "Venom-Cursed Dragonhawk's Robes",
         "icon": "inv_robe_cloth_outdooramaniloa_c_01",
         "quality": 2,
         "itemClass": 4,
@@ -284311,8 +284945,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "versatility": 3950,
-            "crit": 3050
+            "versatility": 3650,
+            "crit": 3350
         },
         "squishEra": 2,
         "slot": "Chest"
@@ -284328,8 +284962,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "haste": 3800,
-            "versatility": 3200
+            "versatility": 3800,
+            "haste": 3200
         },
         "squishEra": 2,
         "slot": "Chest"
@@ -284345,8 +284979,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "haste": 3950,
-            "versatility": 3050
+            "mastery": 3800,
+            "versatility": 3200
         },
         "squishEra": 2,
         "slot": "Chest"
@@ -284362,8 +284996,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "mastery": 3800,
-            "haste": 3200
+            "versatility": 3950,
+            "haste": 3050
         },
         "squishEra": 2,
         "slot": "Chest"
@@ -284380,7 +285014,7 @@
             "intellect": 5259,
             "stamina": 7889,
             "mastery": 3950,
-            "crit": 3050
+            "haste": 3050
         },
         "squishEra": 2,
         "slot": "Head"
@@ -284396,8 +285030,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "haste": 3950,
-            "mastery": 3050
+            "versatility": 3650,
+            "haste": 3350
         },
         "squishEra": 2,
         "slot": "Head"
@@ -284413,8 +285047,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "crit": 3950,
-            "mastery": 3050
+            "mastery": 3650,
+            "crit": 3350
         },
         "squishEra": 2,
         "slot": "Head"
@@ -284430,8 +285064,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "mastery": 3950,
-            "versatility": 3050
+            "versatility": 3950,
+            "crit": 3050
         },
         "squishEra": 2,
         "slot": "Head"
@@ -284447,8 +285081,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "mastery": 3650,
-            "crit": 3350
+            "versatility": 3650,
+            "haste": 3350
         },
         "squishEra": 2,
         "slot": "Shoulder"
@@ -284464,8 +285098,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "versatility": 3650,
-            "mastery": 3350
+            "crit": 3950,
+            "haste": 3050
         },
         "squishEra": 2,
         "slot": "Shoulder"
@@ -284481,8 +285115,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "crit": 3950,
-            "versatility": 3050
+            "versatility": 3950,
+            "mastery": 3050
         },
         "squishEra": 2,
         "slot": "Shoulder"
@@ -284498,8 +285132,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "haste": 3650,
-            "mastery": 3350
+            "versatility": 3800,
+            "haste": 3200
         },
         "squishEra": 2,
         "slot": "Shoulder"
@@ -284515,8 +285149,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "crit": 3800,
-            "mastery": 3200
+            "haste": 3650,
+            "crit": 3350
         },
         "squishEra": 2,
         "slot": "Wrist"
@@ -284532,8 +285166,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "crit": 3950,
-            "mastery": 3050
+            "mastery": 3950,
+            "versatility": 3050
         },
         "squishEra": 2,
         "slot": "Wrist"
@@ -284549,8 +285183,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "crit": 3950,
-            "mastery": 3050
+            "crit": 3650,
+            "mastery": 3350
         },
         "squishEra": 2,
         "slot": "Wrist"
@@ -284566,8 +285200,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "mastery": 3800,
-            "crit": 3200
+            "versatility": 3800,
+            "mastery": 3200
         },
         "squishEra": 2,
         "slot": "Wrist"
@@ -284583,8 +285217,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "versatility": 3650,
-            "crit": 3350
+            "versatility": 3950,
+            "haste": 3050
         },
         "squishEra": 2,
         "slot": "Feet"
@@ -284600,8 +285234,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "haste": 3800,
-            "versatility": 3200
+            "crit": 3650,
+            "mastery": 3350
         },
         "squishEra": 2,
         "slot": "Feet"
@@ -284617,8 +285251,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "haste": 3800,
-            "mastery": 3200
+            "mastery": 3950,
+            "versatility": 3050
         },
         "squishEra": 2,
         "slot": "Feet"
@@ -284634,8 +285268,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "haste": 3950,
-            "mastery": 3050
+            "mastery": 3650,
+            "versatility": 3350
         },
         "squishEra": 2,
         "slot": "Feet"
@@ -284652,7 +285286,7 @@
             "intellect": 5259,
             "stamina": 7889,
             "crit": 3800,
-            "mastery": 3200
+            "versatility": 3200
         },
         "squishEra": 2,
         "slot": "Hands"
@@ -284668,8 +285302,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "haste": 3950,
-            "crit": 3050
+            "crit": 3650,
+            "haste": 3350
         },
         "squishEra": 2,
         "slot": "Hands"
@@ -284685,8 +285319,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "mastery": 3950,
-            "crit": 3050
+            "mastery": 3650,
+            "versatility": 3350
         },
         "squishEra": 2,
         "slot": "Hands"
@@ -284702,8 +285336,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "crit": 3800,
-            "haste": 3200
+            "haste": 3800,
+            "mastery": 3200
         },
         "squishEra": 2,
         "slot": "Hands"
@@ -284719,8 +285353,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "crit": 3800,
-            "mastery": 3200
+            "versatility": 3800,
+            "haste": 3200
         },
         "squishEra": 2,
         "slot": "Legs"
@@ -284736,8 +285370,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "haste": 3800,
-            "mastery": 3200
+            "versatility": 3650,
+            "crit": 3350
         },
         "squishEra": 2,
         "slot": "Legs"
@@ -284753,8 +285387,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "crit": 3950,
-            "mastery": 3050
+            "mastery": 3650,
+            "crit": 3350
         },
         "squishEra": 2,
         "slot": "Legs"
@@ -284770,8 +285404,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "haste": 3950,
-            "versatility": 3050
+            "haste": 3800,
+            "versatility": 3200
         },
         "squishEra": 2,
         "slot": "Legs"
@@ -284787,8 +285421,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "haste": 3950,
-            "versatility": 3050
+            "haste": 3800,
+            "mastery": 3200
         },
         "squishEra": 2,
         "slot": "Waist"
@@ -284804,8 +285438,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "versatility": 3950,
-            "crit": 3050
+            "mastery": 3800,
+            "crit": 3200
         },
         "squishEra": 2,
         "slot": "Waist"
@@ -284821,8 +285455,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "versatility": 3650,
-            "mastery": 3350
+            "haste": 3950,
+            "mastery": 3050
         },
         "squishEra": 2,
         "slot": "Waist"
@@ -284838,8 +285472,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "crit": 3950,
-            "haste": 3050
+            "mastery": 3800,
+            "versatility": 3200
         },
         "squishEra": 2,
         "slot": "Waist"
@@ -284855,8 +285489,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "versatility": 3800,
-            "mastery": 3200
+            "crit": 3800,
+            "haste": 3200
         },
         "squishEra": 2,
         "slot": "Back"
@@ -284872,8 +285506,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "crit": 3650,
-            "haste": 3350
+            "haste": 3950,
+            "versatility": 3050
         },
         "squishEra": 2,
         "slot": "Back"
@@ -284889,8 +285523,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "versatility": 3950,
-            "crit": 3050
+            "mastery": 3650,
+            "crit": 3350
         },
         "squishEra": 2,
         "slot": "Back"
@@ -284974,8 +285608,8 @@
         "stats": {
             "intellect": 0,
             "stamina": 7889,
-            "haste": 10000,
-            "crit": 7500
+            "mastery": 9500,
+            "haste": 8000
         },
         "squishEra": 2,
         "slot": "Neck"
@@ -284991,8 +285625,8 @@
         "stats": {
             "intellect": 0,
             "stamina": 7889,
-            "mastery": 9500,
-            "versatility": 8000
+            "crit": 9250,
+            "versatility": 8250
         },
         "squishEra": 2,
         "slot": "Neck"
@@ -285008,15 +285642,15 @@
         "stats": {
             "intellect": 0,
             "stamina": 7889,
-            "mastery": 9500,
-            "haste": 8000
+            "haste": 9500,
+            "crit": 8000
         },
         "squishEra": 2,
         "slot": "Neck"
     },
     {
         "id": 279217,
-        "name": "Venom-Cursed Eagle's Shroud",
+        "name": "Venom-Cursed Dragonhawk's Shroud",
         "icon": "inv_cape_cloth_outdooramaniloa_c_01",
         "quality": 2,
         "itemClass": 4,
@@ -285050,7 +285684,7 @@
     },
     {
         "id": 279222,
-        "name": "Venom-Cursed Dragonhawk's Mantle",
+        "name": "Venom-Cursed Eagle's Mantle",
         "icon": "inv_cape_mail_outdooramaniloa_c_01",
         "quality": 2,
         "itemClass": 4,
@@ -285093,8 +285727,8 @@
         "stats": {
             "intellect": 30629,
             "stamina": 7889,
-            "crit": 3650,
-            "versatility": 3350
+            "mastery": 3950,
+            "haste": 3050
         },
         "squishEra": 2,
         "slot": "1H Weapon"
@@ -285110,8 +285744,8 @@
         "stats": {
             "intellect": 30629,
             "stamina": 7889,
-            "crit": 3650,
-            "mastery": 3350
+            "mastery": 3650,
+            "versatility": 3350
         },
         "squishEra": 2,
         "slot": "1H Weapon"
@@ -285128,7 +285762,7 @@
             "intellect": 16132,
             "stamina": 7889,
             "versatility": 3800,
-            "crit": 3200
+            "mastery": 3200
         },
         "squishEra": 2,
         "slot": "Shield"
@@ -285144,7 +285778,7 @@
         "stats": {
             "intellect": 16132,
             "stamina": 7889,
-            "crit": 3650,
+            "mastery": 3650,
             "versatility": 3350
         },
         "squishEra": 2,
@@ -285161,8 +285795,8 @@
         "stats": {
             "intellect": 30629,
             "stamina": 7889,
-            "crit": 3650,
-            "versatility": 3350
+            "versatility": 3800,
+            "haste": 3200
         },
         "squishEra": 2,
         "slot": "1H Weapon"
@@ -285292,8 +285926,8 @@
         "stats": {
             "intellect": 0,
             "stamina": 7889,
-            "haste": 9000,
-            "versatility": 8500
+            "haste": 10000,
+            "versatility": 7500
         },
         "squishEra": 2,
         "slot": "Finger"
@@ -285366,8 +286000,8 @@
         "stats": {
             "intellect": 23380,
             "stamina": 7889,
-            "versatility": 3800,
-            "crit": 3200
+            "mastery": 3950,
+            "crit": 3050
         },
         "squishEra": 2,
         "slot": "2H Weapon"
@@ -285383,8 +286017,8 @@
         "stats": {
             "intellect": 23380,
             "stamina": 7889,
-            "haste": 3950,
-            "mastery": 3050
+            "haste": 3800,
+            "versatility": 3200
         },
         "squishEra": 2,
         "slot": "2H Weapon"
@@ -285400,8 +286034,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "haste": 3950,
-            "versatility": 3050
+            "haste": 3800,
+            "crit": 3200
         },
         "squishEra": 2,
         "slot": "Wrist"
@@ -285417,8 +286051,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "versatility": 3950,
-            "mastery": 3050
+            "mastery": 3800,
+            "haste": 3200
         },
         "squishEra": 2,
         "slot": "Waist"
@@ -285434,8 +286068,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "crit": 3950,
-            "versatility": 3050
+            "versatility": 3950,
+            "haste": 3050
         },
         "squishEra": 2,
         "slot": "Shoulder"
@@ -285451,8 +286085,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "versatility": 3650,
-            "haste": 3350
+            "mastery": 3950,
+            "haste": 3050
         },
         "squishEra": 2,
         "slot": "Legs"
@@ -285468,8 +286102,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "haste": 3950,
-            "versatility": 3050
+            "mastery": 3650,
+            "haste": 3350
         },
         "squishEra": 2,
         "slot": "Hands"
@@ -285485,8 +286119,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "haste": 3800,
-            "crit": 3200
+            "crit": 3950,
+            "mastery": 3050
         },
         "squishEra": 2,
         "slot": "Waist"
@@ -285502,8 +286136,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "crit": 3800,
-            "haste": 3200
+            "mastery": 3950,
+            "versatility": 3050
         },
         "squishEra": 2,
         "slot": "Shoulder"
@@ -285519,8 +286153,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "mastery": 3950,
-            "haste": 3050
+            "haste": 3650,
+            "versatility": 3350
         },
         "squishEra": 2,
         "slot": "Waist"
@@ -285536,8 +286170,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "versatility": 3650,
-            "haste": 3350
+            "versatility": 3950,
+            "crit": 3050
         },
         "squishEra": 2,
         "slot": "Wrist"
@@ -285553,8 +286187,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "haste": 3650,
-            "versatility": 3350
+            "haste": 3800,
+            "crit": 3200
         },
         "squishEra": 2,
         "slot": "Wrist"
@@ -285570,8 +286204,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "mastery": 3950,
-            "crit": 3050
+            "versatility": 3650,
+            "mastery": 3350
         },
         "squishEra": 2,
         "slot": "Waist"
@@ -285587,8 +286221,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "haste": 3950,
-            "mastery": 3050
+            "haste": 3800,
+            "versatility": 3200
         },
         "squishEra": 2,
         "slot": "Chest"
@@ -285604,8 +286238,8 @@
         "stats": {
             "intellect": 0,
             "stamina": 7889,
-            "crit": 9250,
-            "haste": 8250
+            "crit": 9000,
+            "haste": 8500
         },
         "squishEra": 2,
         "slot": "Finger"
@@ -285621,8 +286255,8 @@
         "stats": {
             "intellect": 0,
             "stamina": 7889,
-            "crit": 9250,
-            "mastery": 8250
+            "crit": 9000,
+            "mastery": 8500
         },
         "squishEra": 2,
         "slot": "Neck"
@@ -285638,8 +286272,8 @@
         "stats": {
             "intellect": 0,
             "stamina": 7889,
-            "versatility": 9250,
-            "haste": 8250
+            "versatility": 10000,
+            "haste": 7500
         },
         "squishEra": 2,
         "slot": "Neck"
@@ -285655,8 +286289,8 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "mastery": 3650,
-            "haste": 3350
+            "mastery": 3800,
+            "haste": 3200
         },
         "squishEra": 2,
         "slot": "Back"

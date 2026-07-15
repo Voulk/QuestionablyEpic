@@ -72,7 +72,12 @@
             "scalingClass": -1
         }
     ],
-    "Drum of Renewed Bonds": [],
+    "Drum of Renewed Bonds": [
+        {
+            "coefficient": 1.707,
+            "scalingClass": -7
+        }
+    ],
     "Volatile Void Suffuser": [
         {
             "coefficient": 0.858,

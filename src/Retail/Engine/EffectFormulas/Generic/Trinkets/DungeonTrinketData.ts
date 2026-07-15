@@ -469,6 +469,26 @@ export const dungeonTrinketData =
           return bonus_stats;
         }
       },
+      { // 
+        name: "Stormbound Emblem of Dazar",
+        description: "",
+        addonDescription: "",
+        effects: [
+          { // Haste on-use, does have a ramp up period.
+            duration: 20,
+            cooldown: 120, //
+            stat: "haste",
+          },
+        ],
+        runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+          let bonus_stats: Stats = {};
+    
+          bonus_stats[data[0].stat!] = runGenericOnUseTrinket({...data[0], ...trinketRawData["Stormbound Emblem of Dazar"][0]}, itemLevel, additionalData.castModel)
+          bonus_stats.hps = (-1 * player.getHPS(additionalData.contentType) / 60);
+
+          return bonus_stats;
+        }
+      },
        { // 
         name: "Emberwing Feather",
         description: "A solid on-use stat stick. The potential downside (losing stats) is extremely rare and not that punishing anyway.",
