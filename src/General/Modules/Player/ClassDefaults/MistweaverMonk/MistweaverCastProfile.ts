@@ -9,6 +9,37 @@ import { MONKSPELLS as spellDB } from "./Archive/MistweaverSpellDBTWW";
 import { getTrinketData, getSpellEntry, updateSpellCPM, buildCPM } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities";
 
 
+export const mistweaverMonkProfile = {
+    spec: "Mistweaver Monk",
+    name: "Mistweaver Monk Classic",
+    scoreSet: scoreMonkSet,
+    defaultStatProfile: { 
+        // Our stats we want to run through the profile. 
+        // You can change and play with these as much as you want.
+        // All user-facing operations will set their own anyway like in Top Gear.
+        intellect: 2800,
+        haste: 1050,
+        crit: 650,
+        mastery: 1000,
+        versatility: 100,
+        stamina: 19000,
+        critMult: 2,
+    },
+    defaultStatWeights: {
+        // Used in the trinket chart and for Quick Compare. Not used in Top Gear.
+        intellect: 1,
+        crit: 0.5,
+        mastery: 0.4,
+        versatility: 0.431,
+        haste: 0.65,
+        hps: 0.304, // 
+    },
+    specialQueries: {
+        // Any special information we need to pull.
+    },
+    defaultTalents: "CgQAAAAAAAAAAAAAAAAAAAAAAAAAAgBAAAAzMzMLLbDzwYmZmZGzYB2gZsox2AyMwGjhZsNGz0stMzwMmFWMzMjZYWGAAYAzMDmZAgBD",
+}
+
 const getKickCPM = (playerSpells) => {
     const filteredSpells = playerSpells.filter(spell => ["Tiger Palm", "Blackout Kick", "Rising Sun Kick"].includes(spell.spell))
     return filteredSpells.reduce((a, b) => a + b.cpm, 0);
@@ -32,7 +63,7 @@ const getTimeUsed = (castProfile, spellDB, averageHaste) => {
     return timeUsed;
 }
 
-export const runMistweaverMonkCastProfile = (playerData) => {
+export const scoreMonkSet = (stats: Stats, playerData: any, settings: PlayerSettings = {}, reporting = false) => {
     const fightLength = 300;
     playerData.talents = { ...baseTalents };
     let state = {t: 0.01, report: [], activeBuffs: [], healingDone: {}, simType: "CastProfile", damageDone: {}, casts: {}, manaSpent: 0, settings: playerData.settings, 

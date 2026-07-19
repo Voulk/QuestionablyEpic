@@ -17,6 +17,7 @@ import { discPriestOracleSpecialQueries, discPriestOracleStatWeights, runOracleC
 import { restoShamanProfile, scoreShamanSet } from "./ClassDefaults/RestoShaman/RestoShamanProfile";
 import { scoreEvokerSet } from "./ClassDefaults/PreservationEvoker/PreservationEvokerProfile";
 import { scoreDruidSet } from "./ClassDefaults/RestoDruid/RestoDruidProfile";
+import { scoreMonkSet } from "./ClassDefaults/MistweaverMonk/MistweaverCastProfile";
 
 import { holyPriestDefaults } from "General/Modules/Player/ClassDefaults/Classic/Priest/HolyPriestClassic"
 import { discPriestDefaults } from "General/Modules/Player/ClassDefaults/Classic/Priest/DisciplinePriestClassic"
@@ -173,18 +174,20 @@ class CastModel {
         this.baseStatWeights = monkDefaultStatWeights("Dungeon");
         this.fightInfo.dps = 16000;
       }
-      /*
-      else if (modelID === "Chi-Ji (Beta)") {
-        this.modelName = "Chi-Ji (Beta)"
+      
+      else if (modelID === "Chi-Ji") {
+        this.modelName = "Chi-Ji"
         this.modelType["Raid"] = "CastModel";
         this.modelType["Dungeon"] = "Default";
-        this.runCastModel = runChijiCastModel;
+        this.runCastModel = scoreMonkSet;
+        this.heroTree = "Conduit of the Celestials";
+        this.talents = restoShamanProfile.defaultTalents;
         this.modelOnUseTrinket = modelChijiOnUseTrinket;
         spellList = chijiSpellData(contentType);
         specialQueries = chijiSpecialQueries(contentType);
         this.baseStatWeights = chijiStatWeights("Raid");
-        this.fightInfo.dps = 600000;
-      }*/
+        //this.fightInfo.dps = 600000;
+      }
 
     } else if (spec === SPEC.DISCPRIEST) {
         if (modelID === "Oracle") {
