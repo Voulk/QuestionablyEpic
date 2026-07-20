@@ -159,7 +159,7 @@ const specTalents: TalentTree = {
 
 /* Rising Sun Kick now kicks up a Gust of Mist to heal X $Lally:allies; within $446264A2 yds for $191894s1.     Spinning Crane Kick and Blackout Kick have a chance to kick up a Gust of Mist to heal Y $Lally:allies; within $446264A2 yds for $191894s1.  */
 "Crane Style": {id: 446260, values: [2.0, 1.0],  points: 0, maxPoints: 1, icon: "ability_monk_mightyoxkick", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
-
+    console.log("TALENT ENABLED");
 }},
 
 /* You consume a healing elixir when you drop below X% health or generate excess healing elixirs, instantly healing you for $428439s1% of your maximum health.    You generate Y healing elixir every $t2 

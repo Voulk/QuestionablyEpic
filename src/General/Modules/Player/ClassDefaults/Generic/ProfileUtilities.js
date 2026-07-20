@@ -222,6 +222,25 @@ export const applyTalents = (state, spellDB) => {
     });
 };
 
+// The input to this is slightly different than above, but will be the standard moving forward. 
+export const applyTalentsFromString = (state, spellDB, talentInfo) => {
+    let selectedTalents = {};
+    talentInfo.forEach(talentEntry => {
+        selectedTalents[talentEntry.talentName] = {points: talentEntry.talentRanks};
+    });
+
+    Object.keys(state.talents).forEach(talentName => {
+        if (selectedTalents[talentName]) {
+            state.talents[talentName].points = selectedTalents[talentName].points;
+
+            const talent = state.talents[talentName];
+            if (talent.points > 0 && (!talent.heroTree || state.heroTree === talent.heroTree)) {
+                talent.runFunc(state, spellDB, talent.values, talent.points);
+            }
+        } 
+    });
+};
+
 export const completeCastProfile = (castProfile, spellDB, statPercentages) => {
     castProfile.forEach(spell => {
         if (spell.efficiency) spell.cpm = buildCPM(spellDB, spell.spell, spell.efficiency)

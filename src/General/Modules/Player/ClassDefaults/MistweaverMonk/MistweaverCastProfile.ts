@@ -1,5 +1,5 @@
 import { getCurrentStats, getMastery, getSpellRaw, getStatMult, getCrit, getHaste, deepCopyFunction, hasTalent, getSpellAttribute, getTalentPoints } from "General/Modules/Player/ClassDefaults/Generic/RampBase"
-import { applyRaidBuffs, applyTalents, completeCastProfile, convertStatPercentages, getSpellThroughput } from "../Generic/ProfileUtilities";
+import { applyRaidBuffs, applyTalents, applyTalentsFromString, completeCastProfile, convertStatPercentages, getSpellThroughput } from "../Generic/ProfileUtilities";
 import { runHeal, runDamage, MONKCONSTANTS } from "General/Modules/Player/ClassDefaults/MistweaverMonk/MistweaverMonkRamps";
 import { defaultTalents, monkTalents } from "./MistweaverMonkTalents";
 import { STATCONVERSION } from "General/Engine/STAT";
@@ -8,6 +8,7 @@ import specSpellDB from "./MistweaverMonkSpellDB.json";
 import { MONKSPELLS as spellDB } from "./Archive/MistweaverSpellDBTWW";
 import { getTrinketData, getSpellEntry, updateSpellCPM, buildCPM } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities";
 import { runSpellScript } from "../Generic/SpellScripts";
+import { getSelectedTalentsFromString } from "../Generic/TalentStrings/TalentDecoder";
 
 interface SpellProfile {
     spell: string;
@@ -79,18 +80,11 @@ export function scoreMonkSet(stats: Stats, playerData: any, settings: PlayerSett
     console.log("Running Monk Set");
     const fightLength = 300;
 
-    let initialState = {statBonuses: applyRaidBuffs(settings), talents: deepCopyFunction(defaultTalents), heroTree: playerData.heroTree};
-
-    // The state variable that will be passed into each spell calculation.
-    const state = { fightLength: fightLength, spec: "Mistweaver Monk", statPercentages: convertStatPercentages(stats, initialState.statBonuses, "Mistweaver Monk",
-        1), settings: settings, talents: monkTalents};
+    let initialState = {statBonuses: applyRaidBuffs(settings), talents: deepCopyFunction(monkTalents), heroTree: playerData.heroTree};
 
     const localSettings: any = { downtime: 0.15, risingMist: { remStandard: 1, remRapidDiffusion: 0.7, envStandard: 0.9 }, gustsOverhealing: 0.4, chijiGustsOverhealing: 0.4, ancientTeachingsOverhealing: 0.14 };
 
-    state.tierSets = playerData.tierSets.filter(effect => effect.type === "set bonus").map(effect => effect.name);
-
     const spellDB = JSON.parse(JSON.stringify(specSpellDB));
-    state.spellDB = spellDB;
 
     const healingBreakdown: Record<string, number> = {}
     const damageBreakdown: Record<string, number> = {}
@@ -98,8 +92,23 @@ export function scoreMonkSet(stats: Stats, playerData: any, settings: PlayerSett
 
     // Apply Talents
     const talents = initialState.talents;
-    defaultTalents(initialState.talents, playerData.profileName ?? "default");
-    applyTalents(initialState, spellDB, initialState.statBonuses);
+    const talentImport = getSelectedTalentsFromString(mistweaverMonkProfile.defaultTalents, "Mistweaver Monk")
+    applyTalentsFromString(initialState, spellDB, talentImport);
+
+    // The state variable that will be passed into each spell calculation.
+    const state = { fightLength: fightLength, spec: "Mistweaver Monk", statPercentages: convertStatPercentages(stats, initialState.statBonuses, "Mistweaver Monk",
+        1), settings: settings, talents: monkTalents};
+
+    state.tierSets = playerData.tierSets.filter(effect => effect.type === "set bonus").map(effect => effect.name);
+
+    //const ancientTeachingsTransfer = 0.25 + (hasTalent(state.talents, "Jadefire Teachings") ? 3.2 : 0);
+    ["Renewing Mist", "Sheilun's Gift", "Vivify", "Enveloping Mist"].forEach(spellName => {
+        spellDB[spellName][0].gustsValue = 1;
+    });
+    
+    ["Rising Sun Kick", "Blackout Kick", "Tiger Palm", "Crackling Jade Lightning"].forEach(spellName => {
+        spellDB[spellName][0].damageToHeal = 0.25 + (hasTalent(state.talents, "Jadefire Teachings") ? 3.2 : 0);
+    });
 
     const reportingData: Record<string, any> = {};
     let genericHealingIncrease = 1.04;
@@ -256,7 +265,7 @@ export function scoreMonkSet(stats: Stats, playerData: any, settings: PlayerSett
         const spellCPM = spellProfile.cpm// * (spellProfile.hastedCPM ? getHaste(state.currentStats) : 1);
         const spellFlags = spellProfile.flags || {};
 
-        fullSpell.forEach((slice: SpellData) => {
+        fullSpell.forEach((slice: SpellData, index: number) => {
 
             // Regular spells
             let spellOutput = 0;
@@ -273,13 +282,13 @@ export function scoreMonkSet(stats: Stats, playerData: any, settings: PlayerSett
             }
 
             const effectiveCPM = spellProfile.fillerSpell ? 0 : spellProfile.cpm!;
-            console.log(spellName + " " + spellOutput + " " + effectiveCPM + " " );
+
 
             let totalOutput = (spellOutput * effectiveCPM * (spellProfile.mult ?? 1));
 
-            if (slice.mastery) {
+            if (slice.gustsValue) {
                 // Spell procs Gust of Mists.
-                const masteryHeal = ((0.1 + state.statPercentages.mastery) * state.statPercentages.intellect * state.statPercentages.crit * state.statPercentages.versatility) * (1 - localSettings.gustsOverhealing);
+                const masteryHeal = ((0.1 + state.statPercentages.mastery) * slice.gustsValue * state.statPercentages.intellect * state.statPercentages.crit * state.statPercentages.versatility) * (1 - localSettings.gustsOverhealing);
                 healingBreakdown["Gust of Mists"] = Math.round((healingBreakdown["Gust of Mists"] || 0) + (masteryHeal * effectiveCPM));
 
             }
@@ -341,7 +350,7 @@ export function scoreMonkSet(stats: Stats, playerData: any, settings: PlayerSett
 
     const result = { damage: totalDamage / 60, healing: totalHealing / 60 }
 
-    console.log(castBreakdown);
+
     if (reporting) {
         const sortedEntries = Object.entries(healingBreakdown)
                             .sort((a, b) => b[1] - a[1])
@@ -349,7 +358,7 @@ export function scoreMonkSet(stats: Stats, playerData: any, settings: PlayerSett
         const spellBreakdown = []
         sortedEntries.forEach(entry => {
             const realSpellName = castProfile.find(spell => spell.label === entry[0] || spell.spell === entry[0])?.spell || entry[0]
-            console.log(realSpellName + " " + entry[0]);
+
             spellBreakdown.push({
                 spellName: entry[0], 
                 hps: Math.round(entry[1] / 60), 
