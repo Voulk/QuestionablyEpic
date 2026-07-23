@@ -74,7 +74,7 @@ export const getSpellCoeff = (spell) => {
     return Math.round(100*coeff)/100;
 }
 
-export const buildFormulatedChartEntry = (sequence, displayInfo, spell, activeStats, userSettings, playerData, scoreSet) => {
+export const buildFormulatedChartEntry = (sequence, displayInfo, rawSpell, activeStats, userSettings, playerData, scoreSet) => {
     let data = {
         coeff: 0,
         healingDone: 0,
@@ -86,14 +86,33 @@ export const buildFormulatedChartEntry = (sequence, displayInfo, spell, activeSt
         }
     }
 
+    const spell = JSON.parse(JSON.stringify(rawSpell));
+
+    if (sequence.mods) {
+        if (sequence.mods.additionalTargets) {
+            spell.forEach(spellSlice => {
+                if (spellSlice.targets) spellSlice.targets += sequence.mods.additionalTargets;
+            });
+        }
+        if (sequence.mods.manaReduction) spell[0].cost *= sequence.mods.manaReduction;
+        if (sequence.mods.healingIncrease) {
+            spell.forEach(spellSlice => {
+                if (((spellSlice.spellType === "buff" && spellSlice.buffType === "heal") || spellSlice.spellType === "heal") && spellSlice.coeff)  {
+                    spellSlice.coeff *= sequence.mods.healingIncrease;
+                }
+            });
+        }
+            
+    }
+
     data.manaSpent = spell[0].cost * 250000 / 100;
 
-    const statPercentages = {intellect: 2000, crit: 1.23, mastery: 1.3, versatility: 1, haste: 1, critMult: 2, genericHealingMult: 1, genericDamageMult: 1}
+    const statPercentages = {intellect: 2000, crit: 1.23, mastery: 1.3, versatility: 1, haste: 1.4, critMult: 2, genericHealingMult: 1, genericDamageMult: 1}
 
     const result = runProfileSpell(spell, statPercentages, playerData.spec, userSettings, {})
 
     data.coeff = getSpellCoeff(spell);
-    return {cat: sequence.cat, tag: sequence.tag ? sequence.tag : sequence.seq.join(", "), coeff: data.coeff, hps: Math.round(result.healing), hpm: Math.round(result.healing / data.manaSpent*100)/100, damage: Math.round(result.damage) || "-", dps: 0, spell: displayInfo, hpct: 0, advancedReport: {}}
+    return {cat: sequence.cat, tag: sequence.tag ? sequence.tag : sequence.seq.join(", "), cost: Math.round(data.manaSpent), coeff: data.coeff, hps: Math.round(result.healing), hpm: Math.round(result.healing / data.manaSpent*100)/100, damage: Math.round(result.damage) || "-", dps: 0, spell: displayInfo, hpct: 0, advancedReport: {}}
 
 }
 

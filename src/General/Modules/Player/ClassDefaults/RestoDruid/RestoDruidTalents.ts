@@ -1,4 +1,4 @@
-import { addStatPerc, adjBuffDurationFlat, buffSpellCritMult, buffSpellPerc } from "../Generic/TalentBase";
+import { addStatPerc, adjBuffDurationFlat, buffSpellCritChance, buffSpellCritMult, buffSpellPerc, manaCostAdj } from "../Generic/TalentBase";
 
 /**
  * A list of talents to turn on
@@ -10,7 +10,9 @@ export const defaultTalents = (talents: TalentTree, loadoutName: string, heroTre
     if (loadoutName === "default") talentsEnabled = [
         "Nurturing Instinct", "Gift of the Wild", "Lingering Healing", "Lycara's Teachings", "Soul of the Forest", "Verdancy", "Lifetreading", "Grove Guardians", 
         "Flourish", "Improved Wild Growth", "Renewing Surge", "Rampant Growth", "Wild Synthesis", "Power of the Archdruid", "Improved Swiftmend", "Master Shapeshifter",
-        "Convoke the Spirits", "Intensity", "Cenarius' Guidance", "Nature's Bounty", "Thriving Vegetation", "Abundance", "Germination", "Photosynthesis"
+        "Convoke the Spirits", "Intensity", "Cenarius' Guidance", "Nature's Bounty", "Thriving Vegetation", "Abundance", "Germination", "Photosynthesis",
+
+        "Everbloom1", "Everbloom2", "Everbloom3",
     ]
 
     // Apply talents
@@ -369,8 +371,9 @@ const specTalents: TalentTree = {
     }},
 
     /* For each Rejuvenation you have active, Regrowth's cost is reduced by $207640s1% and critical effect chance is increased by $207640s2%, up to a maximum of ${$207640s2*$207640u}%. */
-    "Abundance": {id: 207383, values: [5.0],  points: 0, maxPoints: 1, icon: "ability_druid_empoweredrejuvination", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+    "Abundance": {id: 207383, values: [60],  points: 0, maxPoints: 1, icon: "ability_druid_empoweredrejuvination", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+        //manaCostAdj(spellDB['Regrowth'], -1 * talentValues[0]);
+        //buffSpellCritChance(spellDB['Regrowth'], talentValues[0]);
     }},
 
     /* When your Rejuvenation heals a full health target, its duration is increased by X sec, up to a maximum total increase of Y sec per cast. */
@@ -395,24 +398,23 @@ const specTalents: TalentTree = {
 
     /* You can apply Rejuvenation twice to the same target. Rejuvenation's duration is increased by ${X/1000} sec. */
     "Germination": {id: 155675, values: [0.0],  points: 0, maxPoints: 1, icon: "spell_druid_germination", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-        adjBuffDurationFlat(spellDB['Rejuvenation'], talentValues[0], 0);
+        //adjBuffDurationFlat(spellDB['Rejuvenation'], talentValues[0], 0);
     }},
 
     /* Lifebloom stacks every X sec, stacking up to ${Y+1} times. */
     "Everbloom1": {id: 392167, values: [5.0, 2.0], points: 0, maxPoints: 1, icon: "inv12_apextalent_druid_everbloom", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
         buffSpellPerc(spellDB['Lifebloom'], talentValues[1] * 100); 
+        buffSpellPerc(spellDB['Lifebloom (Bloom)'], talentValues[1] * 100); 
     }},
 
     /* Y% of Lifebloom's healing splashes to X allies within $1244341a1 yds. */
     "Everbloom2": {id: 1244331, values: [2.0, 20.0, 6.0], points: 0, maxPoints: 2, icon: "inv12_apextalent_druid_everbloom", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-        spellDB["Lifebloom"].forEach(slice => {
-            slice.targets =  (slice.targets ? slice.targets : 1) +  (talentValues[0] * talentValues[1] / 100 * points)
-        })
+        spellDB["Lifebloom (Bloom)"][0].targets = (talentValues[2] * talentValues[1] / 100 * points)
     }},
 
-    /* Lifebloom bursts into a Blooming Frenzy when you consume Soul of the Forest, causing it to bloom X times in rapid succession. */
+    /* Lifebloom bursts into a Blooming Frenzy when you cast Swiftmend, causing it to bloom X times in rapid succession. */
     "Everbloom3": {id: 1244470, values: [3.0], points: 0, maxPoints: 1, icon: "inv12_apextalent_druid_everbloom", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        //spellDB["Swiftmend"][0].triggerSpell = {spellName: "Lifebloom (Bloom)", times: talentValues[0]};
     }},
 }
 
@@ -536,7 +538,7 @@ const heroTalents: TalentTree = {
 
     /* $?c1[Entering an Eclipse summons a Dryad to assist you for $1264618d, casting Starsurge dealing $1264677s1 astral damage and Starfall at Y% effectiveness.][Your periodic heals have a chance 
     to empower your next Swiftmend to summon a Dryad to assist you, casting Tranquility at X% effectiveness and Regrowth to heal $1264664s1 damage onto your lowest health ally.] */
-    "Sylvan Beckoning": {id: 1264614, values: [10.0, 200.0], heroTree: "Keeper of the Grove", points: 0, maxPoints: 1, icon: "ui_darkshore_warfront_alliance_dryad", select: true, tier: 2, runFunc: 
+    "Sylvan Beckoning": {id: 1264614, values: [10.0, 250.0], heroTree: "Keeper of the Grove", points: 0, maxPoints: 1, icon: "ui_darkshore_warfront_alliance_dryad", select: true, tier: 2, runFunc: 
     function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
 
     }},
@@ -599,7 +601,7 @@ const heroTalents: TalentTree = {
     }},
 
     /* $?c4[Ironbark summons a Dryad to channel a beam of pure nature onto your target, healing them for $1264905o1 over $1264905d.][Your Starfall damage is increased by X% and your Starsurge damage is increased by Y%.] */
-    "Spirit of the Thicket": {id: 1264899, values: [12.0, 8.0, 0.0], heroTree: "Keeper of the Grove", points: 0, maxPoints: 1, icon: "ability_druid_naturalperfection", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Spirit of the Thicket": {id: 1264899, values: [18.0, 8.0, 0.0], heroTree: "Keeper of the Grove", points: 0, maxPoints: 1, icon: "ability_druid_naturalperfection", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
 
     }},
 

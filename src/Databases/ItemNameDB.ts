@@ -133272,16 +133272,6 @@ export const nameDB =
         "fr": "Cuirasse des béhémoths colossaux",
         "de": "Brustplatte der kolossalen Ungetüme"
     },
-    "260873": {
-        "cn": "",
-        "en": "Cowl of Infinite Gravity",
-        "ru": "Клобук бесконечной гравитации",
-        "es": "Capucha de gravedad infinita",
-        "br": "Capucho da Gravidade Infinita",
-        "kr": "",
-        "fr": "Capuche de gravité infinie",
-        "de": "Gugel der unendlichen Schwerkraft"
-    },
     "262360": {
         "cn": "",
         "en": "Storyteller's Verses",
@@ -137589,7 +137579,7 @@ export const nameDB =
         "es": "Canalizador alado de venenomante",
         "br": "Canalizador Alado do Peçonhante",
         "kr": "",
-        "fr": "Canalisateur ailé du vénomancien",
+        "fr": "Canalisateur ailé de venimancie",
         "de": "Geflügelter Kanalisierer des Giftmischers"
     },
     "268210": {
@@ -137704,13 +137694,13 @@ export const nameDB =
     },
     "268225": {
         "cn": "",
-        "en": "Spelunker's Drenched Legguards",
-        "ru": "Вымокшие набедренники спелеолога",
-        "es": "Musleras caladas de espeleólogo",
-        "br": "Guarda-pernas Ensopados do Espeleologista",
+        "en": "Coiled Hex Legguards",
+        "ru": "Набедренники спирального сглаза",
+        "es": "Musleras de maleficio serpenteante",
+        "br": "Guarda-pernas da Bagata Enrolada",
         "kr": "",
-        "fr": "Garde-jambes ruisselants de spéléologue",
-        "de": "Durchnässte Beinschützer des Höhlenforschers"
+        "fr": "Garde-jambes maléficieux torsadés",
+        "de": "Verdrehte Zauberbeinschützer"
     },
     "268226": {
         "cn": "",
@@ -138405,12 +138395,12 @@ export const nameDB =
     "270162": {
         "cn": "",
         "en": "Soulcoiler Ritual Vessel",
-        "ru": "Soulcoiler Ritual Vessel",
-        "es": "Soulcoiler Ritual Vessel",
-        "br": "Soulcoiler Ritual Vessel",
+        "ru": "Ритуальный сосуд пленительницы душ",
+        "es": "Recipiente ritual de volutador de almas",
+        "br": "Receptáculo Ritual Enrosca-almas",
         "kr": "",
-        "fr": "Soulcoiler Ritual Vessel",
-        "de": "Soulcoiler Ritual Vessel"
+        "fr": "Réceptacle rituel de l’Entortillâme",
+        "de": "Ritualgefäß des Seelenwinders"
     },
     "270163": {
         "cn": "",
@@ -138476,7 +138466,7 @@ export const nameDB =
         "cn": "",
         "en": "Hex Lord's Dooming Idol",
         "ru": "Губительный идол повелителя проклятий",
-        "es": "Ídolo de fatalidad de señor de los maleficios",
+        "es": "Ídolo de fatalidad de señor aojador",
         "br": "Ídolo da Perdição do Grão-bagateiro",
         "kr": "",
         "fr": "Idole funeste du seigneur des maléfices",
@@ -138485,7 +138475,7 @@ export const nameDB =
     "270170": {
         "cn": "",
         "en": "Vexhul's Everflowing Gland",
-        "ru": "Переполненная железа Вексула",
+        "ru": "Переполненная железа Вексул",
         "es": "Glándula infinita de Vexhul",
         "br": "Glândula Transbordante de Vexhul",
         "kr": "",
@@ -138535,4092 +138525,4092 @@ export const nameDB =
     "270347": {
         "cn": "",
         "en": "Venomous Warmonger's Cloak",
-        "ru": "Venomous Warmonger's Cloak",
-        "es": "Venomous Warmonger's Cloak",
-        "br": "Venomous Warmonger's Cloak",
+        "ru": "Плащ ядовитого завоевателя",
+        "es": "Capa de belicista venenoso",
+        "br": "Manto do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Cloak",
-        "de": "Venomous Warmonger's Cloak"
+        "fr": "Cape du belliciste venimeux",
+        "de": "Umhang des toxischen Kriegstreibers"
     },
     "270348": {
         "cn": "",
         "en": "Venomous Warmonger's Drape",
-        "ru": "Venomous Warmonger's Drape",
-        "es": "Venomous Warmonger's Drape",
-        "br": "Venomous Warmonger's Drape",
+        "ru": "Пелерина ядовитого завоевателя",
+        "es": "Mantón de belicista venenoso",
+        "br": "Clâmide do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Drape",
-        "de": "Venomous Warmonger's Drape"
+        "fr": "Drapé du belliciste venimeux",
+        "de": "Tuch des toxischen Kriegstreibers"
     },
     "270349": {
         "cn": "",
         "en": "Venomous Warmonger's Cape",
-        "ru": "Venomous Warmonger's Cape",
-        "es": "Venomous Warmonger's Cape",
-        "br": "Venomous Warmonger's Cape",
+        "ru": "Накидка ядовитого завоевателя",
+        "es": "Manteo de belicista venenoso",
+        "br": "Capa do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Cape",
-        "de": "Venomous Warmonger's Cape"
+        "fr": "Pèlerine du belliciste venimeux",
+        "de": "Cape des toxischen Kriegstreibers"
     },
     "270350": {
         "cn": "",
         "en": "Venomous Warmonger's Shawl",
-        "ru": "Venomous Warmonger's Shawl",
-        "es": "Venomous Warmonger's Shawl",
-        "br": "Venomous Warmonger's Shawl",
+        "ru": "Шаль ядовитого завоевателя",
+        "es": "Chal de belicista venenoso",
+        "br": "Xale do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Shawl",
-        "de": "Venomous Warmonger's Shawl"
+        "fr": "Châle du belliciste venimeux",
+        "de": "Schal des toxischen Kriegstreibers"
     },
     "270351": {
         "cn": "",
         "en": "Venomous Warmonger's Garb",
-        "ru": "Venomous Warmonger's Garb",
-        "es": "Venomous Warmonger's Garb",
-        "br": "Venomous Warmonger's Garb",
+        "ru": "Одеяние ядовитого завоевателя",
+        "es": "Atuendo de belicista venenoso",
+        "br": "Induto do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Garb",
-        "de": "Venomous Warmonger's Garb"
+        "fr": "Atours du belliciste venimeux",
+        "de": "Tracht des toxischen Kriegstreibers"
     },
     "270352": {
         "cn": "",
         "en": "Venomous Warmonger's Slippers",
-        "ru": "Venomous Warmonger's Slippers",
-        "es": "Venomous Warmonger's Slippers",
-        "br": "Venomous Warmonger's Slippers",
+        "ru": "Туфли ядовитого завоевателя",
+        "es": "Zapatillas de belicista venenoso",
+        "br": "Sapatilhas do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Slippers",
-        "de": "Venomous Warmonger's Slippers"
+        "fr": "Mules du belliciste venimeux",
+        "de": "Pantoffeln des toxischen Kriegstreibers"
     },
     "270353": {
         "cn": "",
         "en": "Venomous Warmonger's Gloves",
-        "ru": "Venomous Warmonger's Gloves",
-        "es": "Venomous Warmonger's Gloves",
-        "br": "Venomous Warmonger's Gloves",
+        "ru": "Перчатки ядовитого завоевателя",
+        "es": "Guantes de belicista venenoso",
+        "br": "Luvas do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Gloves",
-        "de": "Venomous Warmonger's Gloves"
+        "fr": "Gants du belliciste venimeux",
+        "de": "Handschuhe des toxischen Kriegstreibers"
     },
     "270354": {
         "cn": "",
         "en": "Venomous Warmonger's Mask",
-        "ru": "Venomous Warmonger's Mask",
-        "es": "Venomous Warmonger's Mask",
-        "br": "Venomous Warmonger's Mask",
+        "ru": "Маска ядовитого завоевателя",
+        "es": "Máscara de belicista venenoso",
+        "br": "Máscara do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Mask",
-        "de": "Venomous Warmonger's Mask"
+        "fr": "Masque du belliciste venimeux",
+        "de": "Maske des toxischen Kriegstreibers"
     },
     "270355": {
         "cn": "",
         "en": "Venomous Warmonger's Pants",
-        "ru": "Venomous Warmonger's Pants",
-        "es": "Venomous Warmonger's Pants",
-        "br": "Venomous Warmonger's Pants",
+        "ru": "Штаны ядовитого завоевателя",
+        "es": "Pantalones de belicista venenoso",
+        "br": "Calças do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Pants",
-        "de": "Venomous Warmonger's Pants"
+        "fr": "Pantalon du belliciste venimeux",
+        "de": "Hose des toxischen Kriegstreibers"
     },
     "270356": {
         "cn": "",
         "en": "Venomous Warmonger's Mantle",
-        "ru": "Venomous Warmonger's Mantle",
-        "es": "Venomous Warmonger's Mantle",
-        "br": "Venomous Warmonger's Mantle",
+        "ru": "Оплечье ядовитого завоевателя",
+        "es": "Manto de belicista venenoso",
+        "br": "Dragonas do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Mantle",
-        "de": "Venomous Warmonger's Mantle"
+        "fr": "Mantelet du belliciste venimeux",
+        "de": "Mantel des toxischen Kriegstreibers"
     },
     "270357": {
         "cn": "",
         "en": "Venomous Warmonger's Cord",
-        "ru": "Venomous Warmonger's Cord",
-        "es": "Venomous Warmonger's Cord",
-        "br": "Venomous Warmonger's Cord",
+        "ru": "Шнурованный ремень ядовитого завоевателя",
+        "es": "Cordón de belicista venenoso",
+        "br": "Cordão do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Cord",
-        "de": "Venomous Warmonger's Cord"
+        "fr": "Corde du belliciste venimeux",
+        "de": "Kordel des toxischen Kriegstreibers"
     },
     "270358": {
         "cn": "",
         "en": "Venomous Warmonger's Bindings",
-        "ru": "Venomous Warmonger's Bindings",
-        "es": "Venomous Warmonger's Bindings",
-        "br": "Venomous Warmonger's Bindings",
+        "ru": "Обвязки ядовитого завоевателя",
+        "es": "Ataduras de belicista venenoso",
+        "br": "Braceletes do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Bindings",
-        "de": "Venomous Warmonger's Bindings"
+        "fr": "Manchettes du belliciste venimeux",
+        "de": "Bindungen des toxischen Kriegstreibers"
     },
     "270359": {
         "cn": "",
         "en": "Venomous Warmonger's Jerkin",
-        "ru": "Venomous Warmonger's Jerkin",
-        "es": "Venomous Warmonger's Jerkin",
-        "br": "Venomous Warmonger's Jerkin",
+        "ru": "Жакет ядовитого завоевателя",
+        "es": "Chaleco de belicista venenoso",
+        "br": "Gibão do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Jerkin",
-        "de": "Venomous Warmonger's Jerkin"
+        "fr": "Pourpoint du belliciste venimeux",
+        "de": "Wams des toxischen Kriegstreibers"
     },
     "270360": {
         "cn": "",
         "en": "Venomous Warmonger's Boots",
-        "ru": "Venomous Warmonger's Boots",
-        "es": "Venomous Warmonger's Boots",
-        "br": "Venomous Warmonger's Boots",
+        "ru": "Сапоги ядовитого завоевателя",
+        "es": "Botas de belicista venenoso",
+        "br": "Botas do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Boots",
-        "de": "Venomous Warmonger's Boots"
+        "fr": "Bottes du belliciste venimeux",
+        "de": "Stiefel des toxischen Kriegstreibers"
     },
     "270361": {
         "cn": "",
         "en": "Venomous Warmonger's Handwraps",
-        "ru": "Venomous Warmonger's Handwraps",
-        "es": "Venomous Warmonger's Handwraps",
-        "br": "Venomous Warmonger's Handwraps",
+        "ru": "Повязки ядовитого завоевателя",
+        "es": "Manijas de belicista venenoso",
+        "br": "Mitenes do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Handwraps",
-        "de": "Venomous Warmonger's Handwraps"
+        "fr": "Protège-mains du belliciste venimeux",
+        "de": "Handlappen des toxischen Kriegstreibers"
     },
     "270362": {
         "cn": "",
         "en": "Venomous Warmonger's Hood",
-        "ru": "Venomous Warmonger's Hood",
-        "es": "Venomous Warmonger's Hood",
-        "br": "Venomous Warmonger's Hood",
+        "ru": "Капюшон ядовитого завоевателя",
+        "es": "Caperuza de belicista venenoso",
+        "br": "Capuz do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Hood",
-        "de": "Venomous Warmonger's Hood"
+        "fr": "Chaperon du belliciste venimeux",
+        "de": "Kapuze des toxischen Kriegstreibers"
     },
     "270363": {
         "cn": "",
         "en": "Venomous Warmonger's Breeches",
-        "ru": "Venomous Warmonger's Breeches",
-        "es": "Venomous Warmonger's Breeches",
-        "br": "Venomous Warmonger's Breeches",
+        "ru": "Брюки ядовитого завоевателя",
+        "es": "Calzones de belicista venenoso",
+        "br": "Calções do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Breeches",
-        "de": "Venomous Warmonger's Breeches"
+        "fr": "Braies du belliciste venimeux",
+        "de": "Bundhosen des toxischen Kriegstreibers"
     },
     "270364": {
         "cn": "",
         "en": "Venomous Warmonger's Shoulderguard",
-        "ru": "Venomous Warmonger's Shoulderguard",
-        "es": "Venomous Warmonger's Shoulderguard",
-        "br": "Venomous Warmonger's Shoulderguard",
+        "ru": "Наплечные щитки ядовитого завоевателя",
+        "es": "Guardahombros de belicista venenoso",
+        "br": "Guarda-ombros do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Shoulderguard",
-        "de": "Venomous Warmonger's Shoulderguard"
+        "fr": "Garde-épaules du belliciste venimeux",
+        "de": "Schulterschutz des toxischen Kriegstreibers"
     },
     "270365": {
         "cn": "",
         "en": "Venomous Warmonger's Belt",
-        "ru": "Venomous Warmonger's Belt",
-        "es": "Venomous Warmonger's Belt",
-        "br": "Venomous Warmonger's Belt",
+        "ru": "Пояс ядовитого завоевателя",
+        "es": "Cinturón de belicista venenoso",
+        "br": "Cinto do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Belt",
-        "de": "Venomous Warmonger's Belt"
+        "fr": "Ceinture du belliciste venimeux",
+        "de": "Gürtel des toxischen Kriegstreibers"
     },
     "270366": {
         "cn": "",
         "en": "Venomous Warmonger's Wraps",
-        "ru": "Venomous Warmonger's Wraps",
-        "es": "Venomous Warmonger's Wraps",
-        "br": "Venomous Warmonger's Wraps",
+        "ru": "Напульсники ядовитого завоевателя",
+        "es": "Cubremuñecas de belicista venenoso",
+        "br": "Faixas do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Wraps",
-        "de": "Venomous Warmonger's Wraps"
+        "fr": "Rubans du belliciste venimeux",
+        "de": "Wickel des toxischen Kriegstreibers"
     },
     "270367": {
         "cn": "",
         "en": "Venomous Warmonger's Chestguard",
-        "ru": "Venomous Warmonger's Chestguard",
-        "es": "Venomous Warmonger's Chestguard",
-        "br": "Venomous Warmonger's Chestguard",
+        "ru": "Нагрудный доспех ядовитого завоевателя",
+        "es": "Coselete de belicista venenoso",
+        "br": "Couraça do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Chestguard",
-        "de": "Venomous Warmonger's Chestguard"
+        "fr": "Corselet du belliciste venimeux",
+        "de": "Brustschutz des toxischen Kriegstreibers"
     },
     "270368": {
         "cn": "",
         "en": "Venomous Warmonger's Greaves",
-        "ru": "Venomous Warmonger's Greaves",
-        "es": "Venomous Warmonger's Greaves",
-        "br": "Venomous Warmonger's Greaves",
+        "ru": "Наголенники ядовитого завоевателя",
+        "es": "Grebas de belicista venenoso",
+        "br": "Grevas do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Greaves",
-        "de": "Venomous Warmonger's Greaves"
+        "fr": "Grèves du belliciste venimeux",
+        "de": "Schienbeinschützer des toxischen Kriegstreibers"
     },
     "270369": {
         "cn": "",
         "en": "Venomous Warmonger's Grips",
-        "ru": "Venomous Warmonger's Grips",
-        "es": "Venomous Warmonger's Grips",
-        "br": "Venomous Warmonger's Grips",
+        "ru": "Захваты ядовитого завоевателя",
+        "es": "Mandiletes de belicista venenoso",
+        "br": "Guantes do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Grips",
-        "de": "Venomous Warmonger's Grips"
+        "fr": "Poignes du belliciste venimeux",
+        "de": "Handschutz des toxischen Kriegstreibers"
     },
     "270370": {
         "cn": "",
         "en": "Venomous Warmonger's Helm",
-        "ru": "Venomous Warmonger's Helm",
-        "es": "Venomous Warmonger's Helm",
-        "br": "Venomous Warmonger's Helm",
+        "ru": "Шлем ядовитого завоевателя",
+        "es": "Yelmo de belicista venenoso",
+        "br": "Elmo do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Helm",
-        "de": "Venomous Warmonger's Helm"
+        "fr": "Heaume du belliciste venimeux",
+        "de": "Helm des toxischen Kriegstreibers"
     },
     "270371": {
         "cn": "",
         "en": "Venomous Warmonger's Leggings",
-        "ru": "Venomous Warmonger's Leggings",
-        "es": "Venomous Warmonger's Leggings",
-        "br": "Venomous Warmonger's Leggings",
+        "ru": "Поножи ядовитого завоевателя",
+        "es": "Leotardos de belicista venenoso",
+        "br": "Perneiras do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Leggings",
-        "de": "Venomous Warmonger's Leggings"
+        "fr": "Jambières du belliciste venimeux",
+        "de": "Gamaschen des toxischen Kriegstreibers"
     },
     "270372": {
         "cn": "",
         "en": "Venomous Warmonger's Epaulets",
-        "ru": "Venomous Warmonger's Epaulets",
-        "es": "Venomous Warmonger's Epaulets",
-        "br": "Venomous Warmonger's Epaulets",
+        "ru": "Эполеты ядовитого завоевателя",
+        "es": "Cubrehombros de belicista venenoso",
+        "br": "Palas do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Epaulets",
-        "de": "Venomous Warmonger's Epaulets"
+        "fr": "Épaulettes du belliciste venimeux",
+        "de": "Schulterklappen des toxischen Kriegstreibers"
     },
     "270373": {
         "cn": "",
         "en": "Venomous Warmonger's Cinch",
-        "ru": "Venomous Warmonger's Cinch",
-        "es": "Venomous Warmonger's Cinch",
-        "br": "Venomous Warmonger's Cinch",
+        "ru": "Кушак ядовитого завоевателя",
+        "es": "Cincho de belicista venenoso",
+        "br": "Cilha do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Cinch",
-        "de": "Venomous Warmonger's Cinch"
+        "fr": "Cordelière du belliciste venimeux",
+        "de": "Hüftgurt des toxischen Kriegstreibers"
     },
     "270374": {
         "cn": "",
         "en": "Venomous Warmonger's Armguards",
-        "ru": "Venomous Warmonger's Armguards",
-        "es": "Venomous Warmonger's Armguards",
-        "br": "Venomous Warmonger's Armguards",
+        "ru": "Боевые наручи ядовитого завоевателя",
+        "es": "Guardabrazos de belicista venenoso",
+        "br": "Guarda-braços do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Armguards",
-        "de": "Venomous Warmonger's Armguards"
+        "fr": "Garde-bras du belliciste venimeux",
+        "de": "Armschützer des toxischen Kriegstreibers"
     },
     "270375": {
         "cn": "",
         "en": "Venomous Warmonger's Cuirass",
-        "ru": "Venomous Warmonger's Cuirass",
-        "es": "Venomous Warmonger's Cuirass",
-        "br": "Venomous Warmonger's Cuirass",
+        "ru": "Кираса ядовитого завоевателя",
+        "es": "Loriga de belicista venenoso",
+        "br": "Corselete do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Cuirass",
-        "de": "Venomous Warmonger's Cuirass"
+        "fr": "Thorax du belliciste venimeux",
+        "de": "Kürass des toxischen Kriegstreibers"
     },
     "270376": {
         "cn": "",
         "en": "Venomous Warmonger's Sabatons",
-        "ru": "Venomous Warmonger's Sabatons",
-        "es": "Venomous Warmonger's Sabatons",
-        "br": "Venomous Warmonger's Sabatons",
+        "ru": "Башмаки ядовитого завоевателя",
+        "es": "Escarpes de belicista venenoso",
+        "br": "Escarpes do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Sabatons",
-        "de": "Venomous Warmonger's Sabatons"
+        "fr": "Solerets du belliciste venimeux",
+        "de": "Sabatons des toxischen Kriegstreibers"
     },
     "270377": {
         "cn": "",
         "en": "Venomous Warmonger's Gauntlets",
-        "ru": "Venomous Warmonger's Gauntlets",
-        "es": "Venomous Warmonger's Gauntlets",
-        "br": "Venomous Warmonger's Gauntlets",
+        "ru": "Рукавицы ядовитого завоевателя",
+        "es": "Guanteletes de belicista venenoso",
+        "br": "Manoplas do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Gauntlets",
-        "de": "Venomous Warmonger's Gauntlets"
+        "fr": "Gantelets du belliciste venimeux",
+        "de": "Stulpen des toxischen Kriegstreibers"
     },
     "270378": {
         "cn": "",
         "en": "Venomous Warmonger's Faceplate",
-        "ru": "Venomous Warmonger's Faceplate",
-        "es": "Venomous Warmonger's Faceplate",
-        "br": "Venomous Warmonger's Faceplate",
+        "ru": "Личина ядовитого завоевателя",
+        "es": "Bacinete de belicista venenoso",
+        "br": "Viseira do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Faceplate",
-        "de": "Venomous Warmonger's Faceplate"
+        "fr": "Mézail du belliciste venimeux",
+        "de": "Gesichtsschutz des toxischen Kriegstreibers"
     },
     "270379": {
         "cn": "",
         "en": "Venomous Warmonger's Legguards",
-        "ru": "Venomous Warmonger's Legguards",
-        "es": "Venomous Warmonger's Legguards",
-        "br": "Venomous Warmonger's Legguards",
+        "ru": "Набедренники ядовитого завоевателя",
+        "es": "Musleras de belicista venenoso",
+        "br": "Guarda-pernas do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Legguards",
-        "de": "Venomous Warmonger's Legguards"
+        "fr": "Garde-jambes du belliciste venimeux",
+        "de": "Beinschützer des toxischen Kriegstreibers"
     },
     "270380": {
         "cn": "",
         "en": "Venomous Warmonger's Spaulders",
-        "ru": "Venomous Warmonger's Spaulders",
-        "es": "Venomous Warmonger's Spaulders",
-        "br": "Venomous Warmonger's Spaulders",
+        "ru": "Наплеч ядовитого завоевателя",
+        "es": "Bufas de belicista venenoso",
+        "br": "Espaldares do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Spaulders",
-        "de": "Venomous Warmonger's Spaulders"
+        "fr": "Spallières du belliciste venimeux",
+        "de": "Schiftung des toxischen Kriegstreibers"
     },
     "270381": {
         "cn": "",
         "en": "Venomous Warmonger's Clasp",
-        "ru": "Venomous Warmonger's Clasp",
-        "es": "Venomous Warmonger's Clasp",
-        "br": "Venomous Warmonger's Clasp",
+        "ru": "Застежка ядовитого завоевателя",
+        "es": "Cinto de belicista venenoso",
+        "br": "Fecho do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Clasp",
-        "de": "Venomous Warmonger's Clasp"
+        "fr": "Fermoir du belliciste venimeux",
+        "de": "Schnallengürtel des toxischen Kriegstreibers"
     },
     "270382": {
         "cn": "",
         "en": "Venomous Warmonger's Bracers",
-        "ru": "Venomous Warmonger's Bracers",
-        "es": "Venomous Warmonger's Bracers",
-        "br": "Venomous Warmonger's Bracers",
+        "ru": "Наручи ядовитого завоевателя",
+        "es": "Brazales de belicista venenoso",
+        "br": "Braçadeiras do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Bracers",
-        "de": "Venomous Warmonger's Bracers"
+        "fr": "Brassards du belliciste venimeux",
+        "de": "Armschienen des toxischen Kriegstreibers"
     },
     "270384": {
         "cn": "",
         "en": "Venomous Warmonger's Slicer",
-        "ru": "Venomous Warmonger's Slicer",
-        "es": "Venomous Warmonger's Slicer",
-        "br": "Venomous Warmonger's Slicer",
+        "ru": "Тесак ядовитого завоевателя",
+        "es": "Cercenador de belicista venenoso",
+        "br": "Fatiador do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Slicer",
-        "de": "Venomous Warmonger's Slicer"
+        "fr": "Tranchoir du belliciste venimeux",
+        "de": "Schnitzler des toxischen Kriegstreibers"
     },
     "270387": {
         "cn": "",
         "en": "Venomous Warmonger's Dagger",
-        "ru": "Venomous Warmonger's Dagger",
-        "es": "Venomous Warmonger's Dagger",
-        "br": "Venomous Warmonger's Dagger",
+        "ru": "Кинжал ядовитого завоевателя",
+        "es": "Daga de belicista venenoso",
+        "br": "Adaga do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Dagger",
-        "de": "Venomous Warmonger's Dagger"
+        "fr": "Dague du belliciste venimeux",
+        "de": "Dolch des toxischen Kriegstreibers"
     },
     "270390": {
         "cn": "",
         "en": "Venomous Warmonger's Cudgel",
-        "ru": "Venomous Warmonger's Cudgel",
-        "es": "Venomous Warmonger's Cudgel",
-        "br": "Venomous Warmonger's Cudgel",
+        "ru": "Дубина ядовитого завоевателя",
+        "es": "Cayada de belicista venenoso",
+        "br": "Clava do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Cudgel",
-        "de": "Venomous Warmonger's Cudgel"
+        "fr": "Casse-tête du belliciste venimeux",
+        "de": "Knüppel des toxischen Kriegstreibers"
     },
     "270394": {
         "cn": "",
         "en": "Venomous Warmonger's Wand",
-        "ru": "Venomous Warmonger's Wand",
-        "es": "Venomous Warmonger's Wand",
-        "br": "Venomous Warmonger's Wand",
+        "ru": "Жезл ядовитого завоевателя",
+        "es": "Varita de belicista venenoso",
+        "br": "Varinha do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Wand",
-        "de": "Venomous Warmonger's Wand"
+        "fr": "Baguette du belliciste venimeux",
+        "de": "Zauberstab des toxischen Kriegstreibers"
     },
     "270395": {
         "cn": "",
         "en": "Venomous Warmonger's Warglaive",
-        "ru": "Venomous Warmonger's Warglaive",
-        "es": "Venomous Warmonger's Warglaive",
-        "br": "Venomous Warmonger's Warglaive",
+        "ru": "Боевой клинок ядовитого завоевателя",
+        "es": "Guja de guerra de belicista venenoso",
+        "br": "Glaive de Guerra do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Warglaive",
-        "de": "Venomous Warmonger's Warglaive"
+        "fr": "Glaive de guerre du belliciste venimeux",
+        "de": "Kriegsgleve des toxischen Kriegstreibers"
     },
     "270400": {
         "cn": "",
         "en": "Venomous Warmonger's Stave",
-        "ru": "Venomous Warmonger's Stave",
-        "es": "Venomous Warmonger's Stave",
-        "br": "Venomous Warmonger's Stave",
+        "ru": "Шест ядовитого завоевателя",
+        "es": "Báculo de belicista venenoso",
+        "br": "Báculo do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Stave",
-        "de": "Venomous Warmonger's Stave"
+        "fr": "Gourdin du belliciste venimeux",
+        "de": "Stock des toxischen Kriegstreibers"
     },
     "270401": {
         "cn": "",
         "en": "Venomous Warmonger's Greatblade",
-        "ru": "Venomous Warmonger's Greatblade",
-        "es": "Venomous Warmonger's Greatblade",
-        "br": "Venomous Warmonger's Greatblade",
+        "ru": "Большой меч ядовитого завоевателя",
+        "es": "Gran hoja de belicista venenoso",
+        "br": "Grande Lâmina do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Greatblade",
-        "de": "Venomous Warmonger's Greatblade"
+        "fr": "Grande lame du belliciste venimeux",
+        "de": "Großklinge des toxischen Kriegstreibers"
     },
     "270403": {
         "cn": "",
         "en": "Venomous Warmonger's Horn",
-        "ru": "Venomous Warmonger's Horn",
-        "es": "Venomous Warmonger's Horn",
-        "br": "Venomous Warmonger's Horn",
+        "ru": "Рог ядовитого завоевателя",
+        "es": "Cuerno de belicista venenoso",
+        "br": "Chifre do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Horn",
-        "de": "Venomous Warmonger's Horn"
+        "fr": "Corne du belliciste venimeux",
+        "de": "Horn des toxischen Kriegstreibers"
     },
     "270404": {
         "cn": "",
         "en": "Venomous Warmonger's Shield",
-        "ru": "Venomous Warmonger's Shield",
-        "es": "Venomous Warmonger's Shield",
-        "br": "Venomous Warmonger's Shield",
+        "ru": "Щит ядовитого завоевателя",
+        "es": "Escudo de belicista venenoso",
+        "br": "Escudo do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Shield",
-        "de": "Venomous Warmonger's Shield"
+        "fr": "Bouclier du belliciste venimeux",
+        "de": "Schild des toxischen Kriegstreibers"
     },
     "270406": {
         "cn": "",
         "en": "Venomous Warmonger's Decapitator",
-        "ru": "Venomous Warmonger's Decapitator",
-        "es": "Venomous Warmonger's Decapitator",
-        "br": "Venomous Warmonger's Decapitator",
+        "ru": "Лабрис ядовитого завоевателя",
+        "es": "Decapitadora de belicista venenoso",
+        "br": "Decapitador do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Decapitator",
-        "de": "Venomous Warmonger's Decapitator"
+        "fr": "Décapiteur du belliciste venimeux",
+        "de": "Enthaupter des toxischen Kriegstreibers"
     },
     "270407": {
         "cn": "",
         "en": "Venomous Warmonger's Spellblade",
-        "ru": "Venomous Warmonger's Spellblade",
-        "es": "Venomous Warmonger's Spellblade",
-        "br": "Venomous Warmonger's Spellblade",
+        "ru": "Чародейский клинок ядовитого завоевателя",
+        "es": "Hoja de hechizo de belicista venenoso",
+        "br": "Magilâmina do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Spellblade",
-        "de": "Venomous Warmonger's Spellblade"
+        "fr": "Sorcelame du belliciste venimeux",
+        "de": "Zauberklinge des toxischen Kriegstreibers"
     },
     "270445": {
         "cn": "",
         "en": "Venomous Aspirant's Shield",
-        "ru": "Venomous Aspirant's Shield",
-        "es": "Venomous Aspirant's Shield",
-        "br": "Venomous Aspirant's Shield",
+        "ru": "Щит ядовитого претендента",
+        "es": "Escudo de aspirante venenoso",
+        "br": "Escudo do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Shield",
-        "de": "Venomous Aspirant's Shield"
+        "fr": "Bouclier de l’aspirant venimeux",
+        "de": "Schild des toxischen Aspiranten"
     },
     "270446": {
         "cn": "",
         "en": "Venomous Aspirant's Sigil",
-        "ru": "Venomous Aspirant's Sigil",
-        "es": "Venomous Aspirant's Sigil",
-        "br": "Venomous Aspirant's Sigil",
+        "ru": "Печать ядовитого претендента",
+        "es": "Sigilo de aspirante venenoso",
+        "br": "Signo do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Sigil",
-        "de": "Venomous Aspirant's Sigil"
+        "fr": "Cachet de l’aspirant venimeux",
+        "de": "Siegel des toxischen Aspiranten"
     },
     "270449": {
         "cn": "",
         "en": "Venomous Aspirant's Greatblade",
-        "ru": "Venomous Aspirant's Greatblade",
-        "es": "Venomous Aspirant's Greatblade",
-        "br": "Venomous Aspirant's Greatblade",
+        "ru": "Большой меч ядовитого претендента",
+        "es": "Gran hoja de aspirante venenoso",
+        "br": "Grande Lâmina do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Greatblade",
-        "de": "Venomous Aspirant's Greatblade"
+        "fr": "Grande lame de l’aspirant venimeux",
+        "de": "Großklinge des toxischen Aspiranten"
     },
     "270450": {
         "cn": "",
         "en": "Venomous Aspirant's Stave",
-        "ru": "Venomous Aspirant's Stave",
-        "es": "Venomous Aspirant's Stave",
-        "br": "Venomous Aspirant's Stave",
+        "ru": "Шест ядовитого претендента",
+        "es": "Báculo de aspirante venenoso",
+        "br": "Báculo do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Stave",
-        "de": "Venomous Aspirant's Stave"
+        "fr": "Gourdin de l’aspirant venimeux",
+        "de": "Stock des toxischen Aspiranten"
     },
     "270454": {
         "cn": "",
         "en": "Venomous Aspirant's Warglaive",
-        "ru": "Venomous Aspirant's Warglaive",
-        "es": "Venomous Aspirant's Warglaive",
-        "br": "Venomous Aspirant's Warglaive",
+        "ru": "Боевой клинок ядовитого претендента",
+        "es": "Guja de guerra de aspirante venenoso",
+        "br": "Glaive de Guerra do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Warglaive",
-        "de": "Venomous Aspirant's Warglaive"
+        "fr": "Glaive de guerre de l’aspirant venimeux",
+        "de": "Kriegsgleve des toxischen Aspiranten"
     },
     "270455": {
         "cn": "",
         "en": "Venomous Aspirant's Wand",
-        "ru": "Venomous Aspirant's Wand",
-        "es": "Venomous Aspirant's Wand",
-        "br": "Venomous Aspirant's Wand",
+        "ru": "Жезл ядовитого претендента",
+        "es": "Varita de aspirante venenoso",
+        "br": "Varinha do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Wand",
-        "de": "Venomous Aspirant's Wand"
+        "fr": "Baguette de l’aspirant venimeux",
+        "de": "Zauberstab des toxischen Aspiranten"
     },
     "270456": {
         "cn": "",
         "en": "Venomous Aspirant's Spellblade",
-        "ru": "Venomous Aspirant's Spellblade",
-        "es": "Venomous Aspirant's Spellblade",
-        "br": "Venomous Aspirant's Spellblade",
+        "ru": "Чародейский клинок ядовитого претендента",
+        "es": "Hoja de hechizo de aspirante venenoso",
+        "br": "Magilâmina do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Spellblade",
-        "de": "Venomous Aspirant's Spellblade"
+        "fr": "Sorcelame de l’aspirant venimeux",
+        "de": "Zauberklinge des toxischen Aspiranten"
     },
     "270460": {
         "cn": "",
         "en": "Venomous Aspirant's Cudgel",
-        "ru": "Venomous Aspirant's Cudgel",
-        "es": "Venomous Aspirant's Cudgel",
-        "br": "Venomous Aspirant's Cudgel",
+        "ru": "Дубина ядовитого претендента",
+        "es": "Cayada de aspirante venenoso",
+        "br": "Clava do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Cudgel",
-        "de": "Venomous Aspirant's Cudgel"
+        "fr": "Casse-tête de l’aspirant venimeux",
+        "de": "Knüppel des toxischen Aspiranten"
     },
     "270464": {
         "cn": "",
         "en": "Venomous Aspirant's Dagger",
-        "ru": "Venomous Aspirant's Dagger",
-        "es": "Venomous Aspirant's Dagger",
-        "br": "Venomous Aspirant's Dagger",
+        "ru": "Кинжал ядовитого претендента",
+        "es": "Daga de aspirante venenoso",
+        "br": "Adaga do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Dagger",
-        "de": "Venomous Aspirant's Dagger"
+        "fr": "Dague de l’aspirant venimeux",
+        "de": "Dolch des toxischen Aspiranten"
     },
     "270468": {
         "cn": "",
         "en": "Venomous Aspirant's Plate Armguards",
-        "ru": "Venomous Aspirant's Plate Armguards",
-        "es": "Venomous Aspirant's Plate Armguards",
-        "br": "Venomous Aspirant's Plate Armguards",
+        "ru": "Латные нарукавники ядовитого претендента",
+        "es": "Guardabrazos de placas de aspirante venenoso",
+        "br": "Guarda-braços de Placa do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Plate Armguards",
-        "de": "Venomous Aspirant's Plate Armguards"
+        "fr": "Garde-bras de l’aspirant venimeux en plaques",
+        "de": "Plattenarmschützer des toxischen Aspiranten"
     },
     "270469": {
         "cn": "",
         "en": "Venomous Aspirant's Plate Cuffs",
-        "ru": "Venomous Aspirant's Plate Cuffs",
-        "es": "Venomous Aspirant's Plate Cuffs",
-        "br": "Venomous Aspirant's Plate Cuffs",
+        "ru": "Латные манжеты ядовитого претендента",
+        "es": "Puños de placas de aspirante venenoso",
+        "br": "Manilhas de Placa do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Plate Cuffs",
-        "de": "Venomous Aspirant's Plate Cuffs"
+        "fr": "Crispins de l’aspirant venimeux en plaques",
+        "de": "Plattenmanschetten des toxischen Aspiranten"
     },
     "270470": {
         "cn": "",
         "en": "Venomous Aspirant's Plate Greatbelt",
-        "ru": "Venomous Aspirant's Plate Greatbelt",
-        "es": "Venomous Aspirant's Plate Greatbelt",
-        "br": "Venomous Aspirant's Plate Greatbelt",
+        "ru": "Латный большой пояс ядовитого претендента",
+        "es": "Gran cinturón de placas de aspirante venenoso",
+        "br": "Correão de Placa do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Plate Greatbelt",
-        "de": "Venomous Aspirant's Plate Greatbelt"
+        "fr": "Grande ceinture de l’aspirant venimeux en plaques",
+        "de": "Plattengroßgürtel des toxischen Aspiranten"
     },
     "270471": {
         "cn": "",
         "en": "Venomous Aspirant's Plate Girdle",
-        "ru": "Venomous Aspirant's Plate Girdle",
-        "es": "Venomous Aspirant's Plate Girdle",
-        "br": "Venomous Aspirant's Plate Girdle",
+        "ru": "Латный ремень ядовитого претендента",
+        "es": "Faja de placas de aspirante venenoso",
+        "br": "Cinturão de Placa do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Plate Girdle",
-        "de": "Venomous Aspirant's Plate Girdle"
+        "fr": "Ceinturon de l’aspirant venimeux en plaques",
+        "de": "Plattengurt des toxischen Aspiranten"
     },
     "270472": {
         "cn": "",
         "en": "Venomous Aspirant's Plate Pauldrons",
-        "ru": "Venomous Aspirant's Plate Pauldrons",
-        "es": "Venomous Aspirant's Plate Pauldrons",
-        "br": "Venomous Aspirant's Plate Pauldrons",
+        "ru": "Латное наплечье ядовитого претендента",
+        "es": "Espaldares de placas de aspirante venenoso",
+        "br": "Brafoneiras de Placa do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Plate Pauldrons",
-        "de": "Venomous Aspirant's Plate Pauldrons"
+        "fr": "Espauliers de l’aspirant venimeux en plaques",
+        "de": "Plattenschulterstücke des toxischen Aspiranten"
     },
     "270473": {
         "cn": "",
         "en": "Venomous Aspirant's Plate Shoulders",
-        "ru": "Venomous Aspirant's Plate Shoulders",
-        "es": "Venomous Aspirant's Plate Shoulders",
-        "br": "Venomous Aspirant's Plate Shoulders",
+        "ru": "Латные наплечники ядовитого претендента",
+        "es": "Sobrehombros de placas de aspirante venenoso",
+        "br": "Omoplatas de Placa do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Plate Shoulders",
-        "de": "Venomous Aspirant's Plate Shoulders"
+        "fr": "Épaulières de l’aspirant venimeux en plaques",
+        "de": "Plattenschultern des toxischen Aspiranten"
     },
     "270474": {
         "cn": "",
         "en": "Venomous Aspirant's Plate Wargreaves",
-        "ru": "Venomous Aspirant's Plate Wargreaves",
-        "es": "Venomous Aspirant's Plate Wargreaves",
-        "br": "Venomous Aspirant's Plate Wargreaves",
+        "ru": "Латные боевые наголенники ядовитого претендента",
+        "es": "Grebas de guerra de placas de aspirante venenoso",
+        "br": "Grevas de Guerra de Placa do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Plate Wargreaves",
-        "de": "Venomous Aspirant's Plate Wargreaves"
+        "fr": "Grèves de guerre de l’aspirant venimeux en plaques",
+        "de": "Plattenkriegsbeinschützer des toxischen Aspiranten"
     },
     "270475": {
         "cn": "",
         "en": "Venomous Aspirant's Plate Legguards",
-        "ru": "Venomous Aspirant's Plate Legguards",
-        "es": "Venomous Aspirant's Plate Legguards",
-        "br": "Venomous Aspirant's Plate Legguards",
+        "ru": "Латные набедренники ядовитого претендента",
+        "es": "Musleras de placas de aspirante venenoso",
+        "br": "Guarda-pernas de Placa do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Plate Legguards",
-        "de": "Venomous Aspirant's Plate Legguards"
+        "fr": "Garde-jambes de l’aspirant venimeux en plaques",
+        "de": "Plattenbeinschützer des toxischen Aspiranten"
     },
     "270476": {
         "cn": "",
         "en": "Venomous Aspirant's Plate Headguard",
-        "ru": "Venomous Aspirant's Plate Headguard",
-        "es": "Venomous Aspirant's Plate Headguard",
-        "br": "Venomous Aspirant's Plate Headguard",
+        "ru": "Латный наголовник ядовитого претендента",
+        "es": "Protegecabezas de placas de aspirante venenoso",
+        "br": "Cimeira de Placa do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Plate Headguard",
-        "de": "Venomous Aspirant's Plate Headguard"
+        "fr": "Protège-front de l’aspirant venimeux en plaques",
+        "de": "Plattenkopfschutz des toxischen Aspiranten"
     },
     "270477": {
         "cn": "",
         "en": "Venomous Aspirant's Plate Helm",
-        "ru": "Venomous Aspirant's Plate Helm",
-        "es": "Venomous Aspirant's Plate Helm",
-        "br": "Venomous Aspirant's Plate Helm",
+        "ru": "Латный шлем ядовитого претендента",
+        "es": "Yelmo de placas de aspirante venenoso",
+        "br": "Elmo de Placa do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Plate Helm",
-        "de": "Venomous Aspirant's Plate Helm"
+        "fr": "Heaume de l’aspirant venimeux en plaques",
+        "de": "Plattenhelm des toxischen Aspiranten"
     },
     "270478": {
         "cn": "",
         "en": "Venomous Aspirant's Plate Handguards",
-        "ru": "Venomous Aspirant's Plate Handguards",
-        "es": "Venomous Aspirant's Plate Handguards",
-        "br": "Venomous Aspirant's Plate Handguards",
+        "ru": "Латные боевые рукавицы ядовитого претендента",
+        "es": "Manoplas de placas de aspirante venenoso",
+        "br": "Protetores de Mão de Placa do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Plate Handguards",
-        "de": "Venomous Aspirant's Plate Handguards"
+        "fr": "Garde-mains de l’aspirant venimeux en plaques",
+        "de": "Plattenhandschützer des toxischen Aspiranten"
     },
     "270479": {
         "cn": "",
         "en": "Venomous Aspirant's Plate Gauntlets",
-        "ru": "Venomous Aspirant's Plate Gauntlets",
-        "es": "Venomous Aspirant's Plate Gauntlets",
-        "br": "Venomous Aspirant's Plate Gauntlets",
+        "ru": "Латные рукавицы ядовитого претендента",
+        "es": "Guanteletes de placas de aspirante venenoso",
+        "br": "Manoplas de Placa do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Plate Gauntlets",
-        "de": "Venomous Aspirant's Plate Gauntlets"
+        "fr": "Gantelets de l’aspirant venimeux en plaques",
+        "de": "Plattenstulpen des toxischen Aspiranten"
     },
     "270480": {
         "cn": "",
         "en": "Venomous Aspirant's Plate Stompers",
-        "ru": "Venomous Aspirant's Plate Stompers",
-        "es": "Venomous Aspirant's Plate Stompers",
-        "br": "Venomous Aspirant's Plate Stompers",
+        "ru": "Латные высокие ботинки ядовитого претендента",
+        "es": "Apisonadoras de placas de aspirante venenoso",
+        "br": "Pisoteadores de Placa do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Plate Stompers",
-        "de": "Venomous Aspirant's Plate Stompers"
+        "fr": "Croquenots de l’aspirant venimeux en plaques",
+        "de": "Plattenstampfer des toxischen Aspiranten"
     },
     "270481": {
         "cn": "",
         "en": "Venomous Aspirant's Plate Warboots",
-        "ru": "Venomous Aspirant's Plate Warboots",
-        "es": "Venomous Aspirant's Plate Warboots",
-        "br": "Venomous Aspirant's Plate Warboots",
+        "ru": "Латные боевые сапоги ядовитого претендента",
+        "es": "Botas de guerra de placas de aspirante venenoso",
+        "br": "Coturnos de Placa do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Plate Warboots",
-        "de": "Venomous Aspirant's Plate Warboots"
+        "fr": "Bottes de guerre de l’aspirant venimeux en plaques",
+        "de": "Plattenkriegsstiefel des toxischen Aspiranten"
     },
     "270482": {
         "cn": "",
         "en": "Venomous Aspirant's Plate Armor",
-        "ru": "Venomous Aspirant's Plate Armor",
-        "es": "Venomous Aspirant's Plate Armor",
-        "br": "Venomous Aspirant's Plate Armor",
+        "ru": "Латный доспех ядовитого претендента",
+        "es": "Armadura de placas de aspirante venenoso",
+        "br": "Armadura de Placa do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Plate Armor",
-        "de": "Venomous Aspirant's Plate Armor"
+        "fr": "Armure de plaques de l’aspirant venimeux",
+        "de": "Plattenrüstung des toxischen Aspiranten"
     },
     "270483": {
         "cn": "",
         "en": "Venomous Aspirant's Chestplate",
-        "ru": "Venomous Aspirant's Chestplate",
-        "es": "Venomous Aspirant's Chestplate",
-        "br": "Venomous Aspirant's Chestplate",
+        "ru": "Бригантина ядовитого претендента",
+        "es": "Peto de placas de aspirante venenoso",
+        "br": "Guarda-peito do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Chestplate",
-        "de": "Venomous Aspirant's Chestplate"
+        "fr": "Pansière de l’aspirant venimeux",
+        "de": "Brustplatte des toxischen Aspiranten"
     },
     "270484": {
         "cn": "",
         "en": "Venomous Aspirant's Chain Bracer",
-        "ru": "Venomous Aspirant's Chain Bracer",
-        "es": "Venomous Aspirant's Chain Bracer",
-        "br": "Venomous Aspirant's Chain Bracer",
+        "ru": "Кольчужные наручи ядовитого претендента",
+        "es": "Brazal de anillas de aspirante venenoso",
+        "br": "Braçadeiras Encadeadas do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Chain Bracer",
-        "de": "Venomous Aspirant's Chain Bracer"
+        "fr": "Brassards de l’aspirant venimeux en anneaux",
+        "de": "Kettenarmschienen des toxischen Aspiranten"
     },
     "270485": {
         "cn": "",
         "en": "Venomous Aspirant's Chain Wristwraps",
-        "ru": "Venomous Aspirant's Chain Wristwraps",
-        "es": "Venomous Aspirant's Chain Wristwraps",
-        "br": "Venomous Aspirant's Chain Wristwraps",
+        "ru": "Кольчужные напульсники ядовитого претендента",
+        "es": "Cubremuñecas de anillas de aspirante venenoso",
+        "br": "Munhecas Encadeadas do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Chain Wristwraps",
-        "de": "Venomous Aspirant's Chain Wristwraps"
+        "fr": "Bandelettes de l’aspirant venimeux en anneaux",
+        "de": "Kettengelenkbänder des toxischen Aspiranten"
     },
     "270486": {
         "cn": "",
         "en": "Venomous Aspirant's Chain Clasp",
-        "ru": "Venomous Aspirant's Chain Clasp",
-        "es": "Venomous Aspirant's Chain Clasp",
-        "br": "Venomous Aspirant's Chain Clasp",
+        "ru": "Кольчужная застежка ядовитого претендента",
+        "es": "Cinto de anillas de aspirante venenoso",
+        "br": "Fecho Encadeado do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Chain Clasp",
-        "de": "Venomous Aspirant's Chain Clasp"
+        "fr": "Fermoir de l’aspirant venimeux en anneaux",
+        "de": "Kettenschnallengürtel des toxischen Aspiranten"
     },
     "270487": {
         "cn": "",
         "en": "Venomous Aspirant's Chain Belt",
-        "ru": "Venomous Aspirant's Chain Belt",
-        "es": "Venomous Aspirant's Chain Belt",
-        "br": "Venomous Aspirant's Chain Belt",
+        "ru": "Кольчужный пояс ядовитого претендента",
+        "es": "Cinturón de anillas de aspirante venenoso",
+        "br": "Cinto Encadeado do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Chain Belt",
-        "de": "Venomous Aspirant's Chain Belt"
+        "fr": "Ceinture de l’aspirant venimeux en anneaux",
+        "de": "Kettengürtel des toxischen Aspiranten"
     },
     "270488": {
         "cn": "",
         "en": "Venomous Aspirant's Chain Shoulderguards",
-        "ru": "Venomous Aspirant's Chain Shoulderguards",
-        "es": "Venomous Aspirant's Chain Shoulderguards",
-        "br": "Venomous Aspirant's Chain Shoulderguards",
+        "ru": "Кольчужные наплечные щитки ядовитого претендента",
+        "es": "Guardahombros de anillas de aspirante venenoso",
+        "br": "Guarda-ombros Encadeados do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Chain Shoulderguards",
-        "de": "Venomous Aspirant's Chain Shoulderguards"
+        "fr": "Garde-épaules de l’aspirant venimeux en anneaux",
+        "de": "Kettenschulterschützer des toxischen Aspiranten"
     },
     "270489": {
         "cn": "",
         "en": "Venomous Aspirant's Chain Spaulders",
-        "ru": "Venomous Aspirant's Chain Spaulders",
-        "es": "Venomous Aspirant's Chain Spaulders",
-        "br": "Venomous Aspirant's Chain Spaulders",
+        "ru": "Кольчужный наплеч ядовитого претендента",
+        "es": "Bufas de anillas de aspirante venenoso",
+        "br": "Espaldares Encadeados do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Chain Spaulders",
-        "de": "Venomous Aspirant's Chain Spaulders"
+        "fr": "Spallières de l’aspirant venimeux en anneaux",
+        "de": "Kettenschiftung des toxischen Aspiranten"
     },
     "270490": {
         "cn": "",
         "en": "Venomous Aspirant's Chain Wargreaves",
-        "ru": "Venomous Aspirant's Chain Wargreaves",
-        "es": "Venomous Aspirant's Chain Wargreaves",
-        "br": "Venomous Aspirant's Chain Wargreaves",
+        "ru": "Кольчужные боевые наголенники ядовитого претендента",
+        "es": "Grebas de guerra de anillas de aspirante venenoso",
+        "br": "Grevas de Guerra Encadeadas do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Chain Wargreaves",
-        "de": "Venomous Aspirant's Chain Wargreaves"
+        "fr": "Grèves de guerre de l’aspirant venimeux en anneaux",
+        "de": "Kettenkriegsbeinschützer des toxischen Aspiranten"
     },
     "270491": {
         "cn": "",
         "en": "Venomous Aspirant's Chain Leggings",
-        "ru": "Venomous Aspirant's Chain Leggings",
-        "es": "Venomous Aspirant's Chain Leggings",
-        "br": "Venomous Aspirant's Chain Leggings",
+        "ru": "Кольчужные поножи ядовитого претендента",
+        "es": "Leotardos de anillas de aspirante venenoso",
+        "br": "Perneiras Encadeadas do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Chain Leggings",
-        "de": "Venomous Aspirant's Chain Leggings"
+        "fr": "Jambières de l’aspirant venimeux en anneaux",
+        "de": "Kettengamaschen des toxischen Aspiranten"
     },
     "270492": {
         "cn": "",
         "en": "Venomous Aspirant's Chain Headguard",
-        "ru": "Venomous Aspirant's Chain Headguard",
-        "es": "Venomous Aspirant's Chain Headguard",
-        "br": "Venomous Aspirant's Chain Headguard",
+        "ru": "Кольчужный наголовник ядовитого претендента",
+        "es": "Protegecabezas de anillas de aspirante venenoso",
+        "br": "Cimeira Encadeada do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Chain Headguard",
-        "de": "Venomous Aspirant's Chain Headguard"
+        "fr": "Protège-front de l’aspirant venimeux en anneaux",
+        "de": "Kettenkopfschutz des toxischen Aspiranten"
     },
     "270493": {
         "cn": "",
         "en": "Venomous Aspirant's Chain Helm",
-        "ru": "Venomous Aspirant's Chain Helm",
-        "es": "Venomous Aspirant's Chain Helm",
-        "br": "Venomous Aspirant's Chain Helm",
+        "ru": "Кольчужный шлем ядовитого претендента",
+        "es": "Yelmo de anillas de aspirante venenoso",
+        "br": "Elmo Encadeado do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Chain Helm",
-        "de": "Venomous Aspirant's Chain Helm"
+        "fr": "Heaume de l’aspirant venimeux en anneaux",
+        "de": "Kettenhelm des toxischen Aspiranten"
     },
     "270494": {
         "cn": "",
         "en": "Venomous Aspirant's Chain Handguards",
-        "ru": "Venomous Aspirant's Chain Handguards",
-        "es": "Venomous Aspirant's Chain Handguards",
-        "br": "Venomous Aspirant's Chain Handguards",
+        "ru": "Кольчужные боевые рукавицы ядовитого претендента",
+        "es": "Manoplas de anillas de aspirante venenoso",
+        "br": "Protetores de Mão Encadeados do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Chain Handguards",
-        "de": "Venomous Aspirant's Chain Handguards"
+        "fr": "Garde-mains de l’aspirant venimeux en anneaux",
+        "de": "Kettenhandschützer des toxischen Aspiranten"
     },
     "270495": {
         "cn": "",
         "en": "Venomous Aspirant's Chain Gauntlets",
-        "ru": "Venomous Aspirant's Chain Gauntlets",
-        "es": "Venomous Aspirant's Chain Gauntlets",
-        "br": "Venomous Aspirant's Chain Gauntlets",
+        "ru": "Кольчужные рукавицы ядовитого претендента",
+        "es": "Guanteletes de anillas de aspirante venenoso",
+        "br": "Manoplas Encadeadas do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Chain Gauntlets",
-        "de": "Venomous Aspirant's Chain Gauntlets"
+        "fr": "Gantelets de l’aspirant venimeux en anneaux",
+        "de": "Kettenstulpen des toxischen Aspiranten"
     },
     "270496": {
         "cn": "",
         "en": "Venomous Aspirant's Chain Stompers",
-        "ru": "Venomous Aspirant's Chain Stompers",
-        "es": "Venomous Aspirant's Chain Stompers",
-        "br": "Venomous Aspirant's Chain Stompers",
+        "ru": "Кольчужные высокие ботинки ядовитого претендента",
+        "es": "Apisonadoras de anillas de aspirante venenoso",
+        "br": "Pisoteadores Encadeados do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Chain Stompers",
-        "de": "Venomous Aspirant's Chain Stompers"
+        "fr": "Croquenots de l’aspirant venimeux en anneaux",
+        "de": "Kettenstampfer des toxischen Aspiranten"
     },
     "270497": {
         "cn": "",
         "en": "Venomous Aspirant's Chain Sabatons",
-        "ru": "Venomous Aspirant's Chain Sabatons",
-        "es": "Venomous Aspirant's Chain Sabatons",
-        "br": "Venomous Aspirant's Chain Sabatons",
+        "ru": "Кольчужные башмаки ядовитого претендента",
+        "es": "Escarpes de anillas de aspirante venenoso",
+        "br": "Escarpes Encadeados do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Chain Sabatons",
-        "de": "Venomous Aspirant's Chain Sabatons"
+        "fr": "Solerets de l’aspirant venimeux en anneaux",
+        "de": "Kettensabatons des toxischen Aspiranten"
     },
     "270498": {
         "cn": "",
         "en": "Venomous Aspirant's Chain Tunic",
-        "ru": "Venomous Aspirant's Chain Tunic",
-        "es": "Venomous Aspirant's Chain Tunic",
-        "br": "Venomous Aspirant's Chain Tunic",
+        "ru": "Кольчужный мундир ядовитого претендента",
+        "es": "Guerrera de anillas de aspirante venenoso",
+        "br": "Túnica Encadeada do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Chain Tunic",
-        "de": "Venomous Aspirant's Chain Tunic"
+        "fr": "Tunique de l’aspirant venimeux en anneaux",
+        "de": "Kettentunika des toxischen Aspiranten"
     },
     "270499": {
         "cn": "",
         "en": "Venomous Aspirant's Chain Vest",
-        "ru": "Venomous Aspirant's Chain Vest",
-        "es": "Venomous Aspirant's Chain Vest",
-        "br": "Venomous Aspirant's Chain Vest",
+        "ru": "Кольчужный жилет ядовитого претендента",
+        "es": "Jubón de anillas de aspirante venenoso",
+        "br": "Colete Encadeado do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Chain Vest",
-        "de": "Venomous Aspirant's Chain Vest"
+        "fr": "Gilet de l’aspirant venimeux en anneaux",
+        "de": "Kettenweste des toxischen Aspiranten"
     },
     "270500": {
         "cn": "",
         "en": "Venomous Aspirant's Leather Armguards",
-        "ru": "Venomous Aspirant's Leather Armguards",
-        "es": "Venomous Aspirant's Leather Armguards",
-        "br": "Venomous Aspirant's Leather Armguards",
+        "ru": "Кожаные боевые наручи ядовитого претендента",
+        "es": "Guardabrazos de cuero de aspirante venenoso",
+        "br": "Guarda-braços de Couro do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Leather Armguards",
-        "de": "Venomous Aspirant's Leather Armguards"
+        "fr": "Garde-bras de l’aspirant venimeux en cuir",
+        "de": "Lederarmschützer des toxischen Aspiranten"
     },
     "270501": {
         "cn": "",
         "en": "Venomous Aspirant's Leather Wristwraps",
-        "ru": "Venomous Aspirant's Leather Wristwraps",
-        "es": "Venomous Aspirant's Leather Wristwraps",
-        "br": "Venomous Aspirant's Leather Wristwraps",
+        "ru": "Кожаные напульсники ядовитого претендента",
+        "es": "Cubremuñecas de cuero de aspirante venenoso",
+        "br": "Munhecas de Couro do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Leather Wristwraps",
-        "de": "Venomous Aspirant's Leather Wristwraps"
+        "fr": "Bandelettes de l’aspirant venimeux en cuir",
+        "de": "Ledergelenkbänder des toxischen Aspiranten"
     },
     "270502": {
         "cn": "",
         "en": "Venomous Aspirant's Leather Cord",
-        "ru": "Venomous Aspirant's Leather Cord",
-        "es": "Venomous Aspirant's Leather Cord",
-        "br": "Venomous Aspirant's Leather Cord",
+        "ru": "Кожаный шнурованный ремень ядовитого претендента",
+        "es": "Cordón de cuero de aspirante venenoso",
+        "br": "Cordão de Couro do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Leather Cord",
-        "de": "Venomous Aspirant's Leather Cord"
+        "fr": "Corde de l’aspirant venimeux en cuir",
+        "de": "Lederkordel des toxischen Aspiranten"
     },
     "270503": {
         "cn": "",
         "en": "Venomous Aspirant's Leather Belt",
-        "ru": "Venomous Aspirant's Leather Belt",
-        "es": "Venomous Aspirant's Leather Belt",
-        "br": "Venomous Aspirant's Leather Belt",
+        "ru": "Кожаный пояс ядовитого претендента",
+        "es": "Cinturón de cuero de aspirante venenoso",
+        "br": "Cinto de Couro do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Leather Belt",
-        "de": "Venomous Aspirant's Leather Belt"
+        "fr": "Ceinture de l’aspirant venimeux en cuir",
+        "de": "Ledergürtel des toxischen Aspiranten"
     },
     "270504": {
         "cn": "",
         "en": "Venomous Aspirant's Leather Mantle",
-        "ru": "Venomous Aspirant's Leather Mantle",
-        "es": "Venomous Aspirant's Leather Mantle",
-        "br": "Venomous Aspirant's Leather Mantle",
+        "ru": "Кожаное оплечье ядовитого претендента",
+        "es": "Manto de cuero de aspirante venenoso",
+        "br": "Dragonas de Couro do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Leather Mantle",
-        "de": "Venomous Aspirant's Leather Mantle"
+        "fr": "Mantelet de l’aspirant venimeux en cuir",
+        "de": "Ledermantel des toxischen Aspiranten"
     },
     "270505": {
         "cn": "",
         "en": "Venomous Aspirant's Leather Spaulders",
-        "ru": "Venomous Aspirant's Leather Spaulders",
-        "es": "Venomous Aspirant's Leather Spaulders",
-        "br": "Venomous Aspirant's Leather Spaulders",
+        "ru": "Кожаный наплеч ядовитого претендента",
+        "es": "Bufas de cuero de aspirante venenoso",
+        "br": "Espaldares de Couro do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Leather Spaulders",
-        "de": "Venomous Aspirant's Leather Spaulders"
+        "fr": "Spallières de l’aspirant venimeux en cuir",
+        "de": "Lederschiftung des toxischen Aspiranten"
     },
     "270506": {
         "cn": "",
         "en": "Venomous Aspirant's Leather Leggings",
-        "ru": "Venomous Aspirant's Leather Leggings",
-        "es": "Venomous Aspirant's Leather Leggings",
-        "br": "Venomous Aspirant's Leather Leggings",
+        "ru": "Кожаные поножи ядовитого претендента",
+        "es": "Leotardos de cuero de aspirante venenoso",
+        "br": "Perneiras de Couro do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Leather Leggings",
-        "de": "Venomous Aspirant's Leather Leggings"
+        "fr": "Jambières de l’aspirant venimeux en cuir",
+        "de": "Ledergamaschen des toxischen Aspiranten"
     },
     "270507": {
         "cn": "",
         "en": "Venomous Aspirant's Leather Breeches",
-        "ru": "Venomous Aspirant's Leather Breeches",
-        "es": "Venomous Aspirant's Leather Breeches",
-        "br": "Venomous Aspirant's Leather Breeches",
+        "ru": "Кожаные штаны ядовитого претендента",
+        "es": "Calzones de cuero de aspirante venenoso",
+        "br": "Calções de Couro do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Leather Breeches",
-        "de": "Venomous Aspirant's Leather Breeches"
+        "fr": "Braies de l’aspirant venimeux en cuir",
+        "de": "Lederbundhosen des toxischen Aspiranten"
     },
     "270508": {
         "cn": "",
         "en": "Venomous Aspirant's Leather Mask",
-        "ru": "Venomous Aspirant's Leather Mask",
-        "es": "Venomous Aspirant's Leather Mask",
-        "br": "Venomous Aspirant's Leather Mask",
+        "ru": "Кожаная маска ядовитого претендента",
+        "es": "Máscara de cuero de aspirante venenoso",
+        "br": "Máscara de Couro do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Leather Mask",
-        "de": "Venomous Aspirant's Leather Mask"
+        "fr": "Masque de l’aspirant venimeux en cuir",
+        "de": "Ledermaske des toxischen Aspiranten"
     },
     "270509": {
         "cn": "",
         "en": "Venomous Aspirant's Leather Helm",
-        "ru": "Venomous Aspirant's Leather Helm",
-        "es": "Venomous Aspirant's Leather Helm",
-        "br": "Venomous Aspirant's Leather Helm",
+        "ru": "Кожаный шлем ядовитого претендента",
+        "es": "Yelmo de cuero de aspirante venenoso",
+        "br": "Elmo de Couro do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Leather Helm",
-        "de": "Venomous Aspirant's Leather Helm"
+        "fr": "Heaume de l’aspirant venimeux en cuir",
+        "de": "Lederhelm des toxischen Aspiranten"
     },
     "270510": {
         "cn": "",
         "en": "Venomous Aspirant's Leather Grips",
-        "ru": "Venomous Aspirant's Leather Grips",
-        "es": "Venomous Aspirant's Leather Grips",
-        "br": "Venomous Aspirant's Leather Grips",
+        "ru": "Кожаные захваты ядовитого претендента",
+        "es": "Mandiletes de cuero de aspirante venenoso",
+        "br": "Guantes de Couro do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Leather Grips",
-        "de": "Venomous Aspirant's Leather Grips"
+        "fr": "Poignes de l’aspirant venimeux en cuir",
+        "de": "Lederhandschutz des toxischen Aspiranten"
     },
     "270511": {
         "cn": "",
         "en": "Venomous Aspirant's Leather Gloves",
-        "ru": "Venomous Aspirant's Leather Gloves",
-        "es": "Venomous Aspirant's Leather Gloves",
-        "br": "Venomous Aspirant's Leather Gloves",
+        "ru": "Кожаные перчатки ядовитого претендента",
+        "es": "Guantes de cuero de aspirante venenoso",
+        "br": "Luvas de Couro do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Leather Gloves",
-        "de": "Venomous Aspirant's Leather Gloves"
+        "fr": "Gants de l’aspirant venimeux en cuir",
+        "de": "Lederhandschuhe des toxischen Aspiranten"
     },
     "270512": {
         "cn": "",
         "en": "Venomous Aspirant's Leather Footpads",
-        "ru": "Venomous Aspirant's Leather Footpads",
-        "es": "Venomous Aspirant's Leather Footpads",
-        "br": "Venomous Aspirant's Leather Footpads",
+        "ru": "Кожаные башмаки ядовитого претендента",
+        "es": "Escarpines de cuero de aspirante venenoso",
+        "br": "Pisantes de Couro do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Leather Footpads",
-        "de": "Venomous Aspirant's Leather Footpads"
+        "fr": "Souliers de l’aspirant venimeux en cuir",
+        "de": "Lederfußpolster des toxischen Aspiranten"
     },
     "270513": {
         "cn": "",
         "en": "Venomous Aspirant's Leather Boots",
-        "ru": "Venomous Aspirant's Leather Boots",
-        "es": "Venomous Aspirant's Leather Boots",
-        "br": "Venomous Aspirant's Leather Boots",
+        "ru": "Кожаные сапоги ядовитого претендента",
+        "es": "Botas de cuero de aspirante venenoso",
+        "br": "Botas de Couro do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Leather Boots",
-        "de": "Venomous Aspirant's Leather Boots"
+        "fr": "Bottes de l’aspirant venimeux en cuir",
+        "de": "Lederstiefel des toxischen Aspiranten"
     },
     "270514": {
         "cn": "",
         "en": "Venomous Aspirant's Leather Tunic",
-        "ru": "Venomous Aspirant's Leather Tunic",
-        "es": "Venomous Aspirant's Leather Tunic",
-        "br": "Venomous Aspirant's Leather Tunic",
+        "ru": "Кожаный мундир ядовитого претендента",
+        "es": "Guerrera de cuero de aspirante venenoso",
+        "br": "Túnica de Couro do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Leather Tunic",
-        "de": "Venomous Aspirant's Leather Tunic"
+        "fr": "Tunique de l’aspirant venimeux en cuir",
+        "de": "Ledertunika des toxischen Aspiranten"
     },
     "270515": {
         "cn": "",
         "en": "Venomous Aspirant's Leather Vest",
-        "ru": "Venomous Aspirant's Leather Vest",
-        "es": "Venomous Aspirant's Leather Vest",
-        "br": "Venomous Aspirant's Leather Vest",
+        "ru": "Кожаный жилет ядовитого претендента",
+        "es": "Jubón de cuero de aspirante venenoso",
+        "br": "Colete de Couro do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Leather Vest",
-        "de": "Venomous Aspirant's Leather Vest"
+        "fr": "Gilet de l’aspirant venimeux en cuir",
+        "de": "Lederweste des toxischen Aspiranten"
     },
     "270516": {
         "cn": "",
         "en": "Venomous Aspirant's Silk Bindings",
-        "ru": "Venomous Aspirant's Silk Bindings",
-        "es": "Venomous Aspirant's Silk Bindings",
-        "br": "Venomous Aspirant's Silk Bindings",
+        "ru": "Шелковые путы ядовитого претендента",
+        "es": "Ataduras de seda de aspirante venenoso",
+        "br": "Braceletes de Seda do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Silk Bindings",
-        "de": "Venomous Aspirant's Silk Bindings"
+        "fr": "Manchettes de l’aspirant venimeux en soie",
+        "de": "Seidenbindungen des toxischen Aspiranten"
     },
     "270517": {
         "cn": "",
         "en": "Venomous Aspirant's Silk Wristwraps",
-        "ru": "Venomous Aspirant's Silk Wristwraps",
-        "es": "Venomous Aspirant's Silk Wristwraps",
-        "br": "Venomous Aspirant's Silk Wristwraps",
+        "ru": "Шелковые напульсники ядовитого претендента",
+        "es": "Cubremuñecas de seda de aspirante venenoso",
+        "br": "Munhecas de Seda do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Silk Wristwraps",
-        "de": "Venomous Aspirant's Silk Wristwraps"
+        "fr": "Bandelettes de l’aspirant venimeux en soie",
+        "de": "Seidengelenkbänder des toxischen Aspiranten"
     },
     "270518": {
         "cn": "",
         "en": "Venomous Aspirant's Silk Belt",
-        "ru": "Venomous Aspirant's Silk Belt",
-        "es": "Venomous Aspirant's Silk Belt",
-        "br": "Venomous Aspirant's Silk Belt",
+        "ru": "Шелковый пояс ядовитого претендента",
+        "es": "Cinturón de seda de aspirante venenoso",
+        "br": "Cinto de Seda do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Silk Belt",
-        "de": "Venomous Aspirant's Silk Belt"
+        "fr": "Ceinture de l’aspirant venimeux en soie",
+        "de": "Seidengürtel des toxischen Aspiranten"
     },
     "270519": {
         "cn": "",
         "en": "Venomous Aspirant's Silk Cord",
-        "ru": "Venomous Aspirant's Silk Cord",
-        "es": "Venomous Aspirant's Silk Cord",
-        "br": "Venomous Aspirant's Silk Cord",
+        "ru": "Шелковый шнурованный ремень ядовитого претендента",
+        "es": "Cordón de seda de aspirante venenoso",
+        "br": "Cordão de Seda do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Silk Cord",
-        "de": "Venomous Aspirant's Silk Cord"
+        "fr": "Corde de l’aspirant venimeux en soie",
+        "de": "Seidenkordel des toxischen Aspiranten"
     },
     "270520": {
         "cn": "",
         "en": "Venomous Aspirant's Silk Shawl",
-        "ru": "Venomous Aspirant's Silk Shawl",
-        "es": "Venomous Aspirant's Silk Shawl",
-        "br": "Venomous Aspirant's Silk Shawl",
+        "ru": "Шелковая шаль ядовитого претендента",
+        "es": "Chal de seda de aspirante venenoso",
+        "br": "Xale de Seda do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Silk Shawl",
-        "de": "Venomous Aspirant's Silk Shawl"
+        "fr": "Châle de l’aspirant venimeux en soie",
+        "de": "Seidenschal des toxischen Aspiranten"
     },
     "270521": {
         "cn": "",
         "en": "Venomous Aspirant's Silk Mantle",
-        "ru": "Venomous Aspirant's Silk Mantle",
-        "es": "Venomous Aspirant's Silk Mantle",
-        "br": "Venomous Aspirant's Silk Mantle",
+        "ru": "Шелковое оплечье ядовитого претендента",
+        "es": "Manto de seda de aspirante venenoso",
+        "br": "Dragonas de Seda do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Silk Mantle",
-        "de": "Venomous Aspirant's Silk Mantle"
+        "fr": "Mantelet de l’aspirant venimeux en soie",
+        "de": "Seidenmantel des toxischen Aspiranten"
     },
     "270522": {
         "cn": "",
         "en": "Venomous Aspirant's Silk Legwraps",
-        "ru": "Venomous Aspirant's Silk Legwraps",
-        "es": "Venomous Aspirant's Silk Legwraps",
-        "br": "Venomous Aspirant's Silk Legwraps",
+        "ru": "Шелковые бриджи ядовитого претендента",
+        "es": "Perneras de seda de aspirante venenoso",
+        "br": "Culotes de Seda do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Silk Legwraps",
-        "de": "Venomous Aspirant's Silk Legwraps"
+        "fr": "Jambards de l’aspirant venimeux en soie",
+        "de": "Seidenbeinwickel des toxischen Aspiranten"
     },
     "270523": {
         "cn": "",
         "en": "Venomous Aspirant's Silk Leggings",
-        "ru": "Venomous Aspirant's Silk Leggings",
-        "es": "Venomous Aspirant's Silk Leggings",
-        "br": "Venomous Aspirant's Silk Leggings",
+        "ru": "Шелковые поножи ядовитого претендента",
+        "es": "Leotardos de seda de aspirante venenoso",
+        "br": "Perneiras de Seda do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Silk Leggings",
-        "de": "Venomous Aspirant's Silk Leggings"
+        "fr": "Jambières de l’aspirant venimeux en soie",
+        "de": "Seidengamaschen des toxischen Aspiranten"
     },
     "270524": {
         "cn": "",
         "en": "Venomous Aspirant's Silk Cover",
-        "ru": "Venomous Aspirant's Silk Cover",
-        "es": "Venomous Aspirant's Silk Cover",
-        "br": "Venomous Aspirant's Silk Cover",
+        "ru": "Шелковый покров ядовитого претендента",
+        "es": "Casquete de seda de aspirante venenoso",
+        "br": "Murça de Seda do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Silk Cover",
-        "de": "Venomous Aspirant's Silk Cover"
+        "fr": "Couvre-chef de l’aspirant venimeux en soie",
+        "de": "Seidenbedeckung des toxischen Aspiranten"
     },
     "270525": {
         "cn": "",
         "en": "Venomous Aspirant's Silk Hood",
-        "ru": "Venomous Aspirant's Silk Hood",
-        "es": "Venomous Aspirant's Silk Hood",
-        "br": "Venomous Aspirant's Silk Hood",
+        "ru": "Шелковый капюшон ядовитого претендента",
+        "es": "Caperuza de seda de aspirante venenoso",
+        "br": "Capuz de Seda do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Silk Hood",
-        "de": "Venomous Aspirant's Silk Hood"
+        "fr": "Chaperon de l’aspirant venimeux en soie",
+        "de": "Seidenkapuze des toxischen Aspiranten"
     },
     "270526": {
         "cn": "",
         "en": "Venomous Aspirant's Silk Handwraps",
-        "ru": "Venomous Aspirant's Silk Handwraps",
-        "es": "Venomous Aspirant's Silk Handwraps",
-        "br": "Venomous Aspirant's Silk Handwraps",
+        "ru": "Шелковые повязки ядовитого претендента",
+        "es": "Manijas de seda de aspirante venenoso",
+        "br": "Mitenes de Seda do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Silk Handwraps",
-        "de": "Venomous Aspirant's Silk Handwraps"
+        "fr": "Protège-mains de l’aspirant venimeux en soie",
+        "de": "Seidenhandlappen des toxischen Aspiranten"
     },
     "270527": {
         "cn": "",
         "en": "Venomous Aspirant's Silk Gloves",
-        "ru": "Venomous Aspirant's Silk Gloves",
-        "es": "Venomous Aspirant's Silk Gloves",
-        "br": "Venomous Aspirant's Silk Gloves",
+        "ru": "Шелковые перчатки ядовитого претендента",
+        "es": "Guantes de seda de aspirante venenoso",
+        "br": "Luvas de Seda do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Silk Gloves",
-        "de": "Venomous Aspirant's Silk Gloves"
+        "fr": "Gants de l’aspirant venimeux en soie",
+        "de": "Seidenhandschuhe des toxischen Aspiranten"
     },
     "270528": {
         "cn": "",
         "en": "Venomous Aspirant's Silk Footwraps",
-        "ru": "Venomous Aspirant's Silk Footwraps",
-        "es": "Venomous Aspirant's Silk Footwraps",
-        "br": "Venomous Aspirant's Silk Footwraps",
+        "ru": "Шелковые обмотки ядовитого претендента",
+        "es": "Borceguíes de seda de aspirante venenoso",
+        "br": "Palmilhas de Seda do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Silk Footwraps",
-        "de": "Venomous Aspirant's Silk Footwraps"
+        "fr": "Bottillons de l’aspirant venimeux en soie",
+        "de": "Seidenfußlappen des toxischen Aspiranten"
     },
     "270529": {
         "cn": "",
         "en": "Venomous Aspirant's Silk Treads",
-        "ru": "Venomous Aspirant's Silk Treads",
-        "es": "Venomous Aspirant's Silk Treads",
-        "br": "Venomous Aspirant's Silk Treads",
+        "ru": "Шелковые ботфорты ядовитого претендента",
+        "es": "Botines de seda de aspirante venenoso",
+        "br": "Botinas de Seda do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Silk Treads",
-        "de": "Venomous Aspirant's Silk Treads"
+        "fr": "Bottines de l’aspirant venimeux en soie",
+        "de": "Seidentreter des toxischen Aspiranten"
     },
     "270530": {
         "cn": "",
         "en": "Venomous Aspirant's Silk Shirt",
-        "ru": "Venomous Aspirant's Silk Shirt",
-        "es": "Venomous Aspirant's Silk Shirt",
-        "br": "Venomous Aspirant's Silk Shirt",
+        "ru": "Шелковая рубашка ядовитого претендента",
+        "es": "Camisa de seda de aspirante venenoso",
+        "br": "Camisa de Seda do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Silk Shirt",
-        "de": "Venomous Aspirant's Silk Shirt"
+        "fr": "Chemise de l’aspirant venimeux en soie",
+        "de": "Seidenhemd des toxischen Aspiranten"
     },
     "270531": {
         "cn": "",
         "en": "Venomous Aspirant's Silk Robe",
-        "ru": "Venomous Aspirant's Silk Robe",
-        "es": "Venomous Aspirant's Silk Robe",
-        "br": "Venomous Aspirant's Silk Robe",
+        "ru": "Шелковое одеяние ядовитого претендента",
+        "es": "Toga de seda de aspirante venenoso",
+        "br": "Veste de Seda do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Silk Robe",
-        "de": "Venomous Aspirant's Silk Robe"
+        "fr": "Robe de l’aspirant venimeux en soie",
+        "de": "Seidenrobe des toxischen Aspiranten"
     },
     "270532": {
         "cn": "",
         "en": "Venomous Aspirant's Pendant",
-        "ru": "Venomous Aspirant's Pendant",
-        "es": "Venomous Aspirant's Pendant",
-        "br": "Venomous Aspirant's Pendant",
+        "ru": "Подвеска ядовитого претендента",
+        "es": "Colgante de aspirante venenoso",
+        "br": "Pingente do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Pendant",
-        "de": "Venomous Aspirant's Pendant"
+        "fr": "Pendentif de l’aspirant venimeux",
+        "de": "Anhänger des toxischen Aspiranten"
     },
     "270533": {
         "cn": "",
         "en": "Venomous Aspirant's Choker",
-        "ru": "Venomous Aspirant's Choker",
-        "es": "Venomous Aspirant's Choker",
-        "br": "Venomous Aspirant's Choker",
+        "ru": "Ошейник ядовитого претендента",
+        "es": "Gargantilla de aspirante venenoso",
+        "br": "Gargantilha do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Choker",
-        "de": "Venomous Aspirant's Choker"
+        "fr": "Sautoir de l’aspirant venimeux",
+        "de": "Halsreif des toxischen Aspiranten"
     },
     "270534": {
         "cn": "",
         "en": "Venomous Aspirant's Necklace",
-        "ru": "Venomous Aspirant's Necklace",
-        "es": "Venomous Aspirant's Necklace",
-        "br": "Venomous Aspirant's Necklace",
+        "ru": "Ожерелье ядовитого претендента",
+        "es": "Collar de aspirante venenoso",
+        "br": "Colar do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Necklace",
-        "de": "Venomous Aspirant's Necklace"
+        "fr": "Collier de l’aspirant venimeux",
+        "de": "Halskette des toxischen Aspiranten"
     },
     "270535": {
         "cn": "",
         "en": "Venomous Aspirant's Signet",
-        "ru": "Venomous Aspirant's Signet",
-        "es": "Venomous Aspirant's Signet",
-        "br": "Venomous Aspirant's Signet",
+        "ru": "Печатка ядовитого претендента",
+        "es": "Sello de aspirante venenoso",
+        "br": "Sinete do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Signet",
-        "de": "Venomous Aspirant's Signet"
+        "fr": "Chevalière de l’aspirant venimeux",
+        "de": "Signet des toxischen Aspiranten"
     },
     "270536": {
         "cn": "",
         "en": "Venomous Aspirant's Band",
-        "ru": "Venomous Aspirant's Band",
-        "es": "Venomous Aspirant's Band",
-        "br": "Venomous Aspirant's Band",
+        "ru": "Перстень ядовитого претендента",
+        "es": "Sortija de aspirante venenoso",
+        "br": "Elo do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Band",
-        "de": "Venomous Aspirant's Band"
+        "fr": "Bague de l’aspirant venimeux",
+        "de": "Band des toxischen Aspiranten"
     },
     "270537": {
         "cn": "",
         "en": "Venomous Aspirant's Ring",
-        "ru": "Venomous Aspirant's Ring",
-        "es": "Venomous Aspirant's Ring",
-        "br": "Venomous Aspirant's Ring",
+        "ru": "Кольцо ядовитого претендента",
+        "es": "Anillo de aspirante venenoso",
+        "br": "Anel do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Ring",
-        "de": "Venomous Aspirant's Ring"
+        "fr": "Anneau de l’aspirant venimeux",
+        "de": "Ring des toxischen Aspiranten"
     },
     "270538": {
         "cn": "",
         "en": "Venomous Aspirant's Greatcloak",
-        "ru": "Venomous Aspirant's Greatcloak",
-        "es": "Venomous Aspirant's Greatcloak",
-        "br": "Venomous Aspirant's Greatcloak",
+        "ru": "Теплый плащ ядовитого претендента",
+        "es": "Gran capa de aspirante venenoso",
+        "br": "Grande Manto do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Greatcloak",
-        "de": "Venomous Aspirant's Greatcloak"
+        "fr": "Grande cape de l’aspirant venimeux",
+        "de": "Großumhang des toxischen Aspiranten"
     },
     "270539": {
         "cn": "",
         "en": "Venomous Aspirant's Cape",
-        "ru": "Venomous Aspirant's Cape",
-        "es": "Venomous Aspirant's Cape",
-        "br": "Venomous Aspirant's Cape",
+        "ru": "Капюшон ядовитого претендента",
+        "es": "Manteo de aspirante venenoso",
+        "br": "Capa do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Cape",
-        "de": "Venomous Aspirant's Cape"
+        "fr": "Pèlerine de l’aspirant venimeux",
+        "de": "Cape des toxischen Aspiranten"
     },
     "270540": {
         "cn": "",
         "en": "Venomous Aspirant's Cloak",
-        "ru": "Venomous Aspirant's Cloak",
-        "es": "Venomous Aspirant's Cloak",
-        "br": "Venomous Aspirant's Cloak",
+        "ru": "Плащ ядовитого претендента",
+        "es": "Capa de aspirante venenoso",
+        "br": "Manto do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Cloak",
-        "de": "Venomous Aspirant's Cloak"
+        "fr": "Cape de l’aspirant venimeux",
+        "de": "Umhang des toxischen Aspiranten"
     },
     "270541": {
         "cn": "",
         "en": "Venomous Aspirant's Drape",
-        "ru": "Venomous Aspirant's Drape",
-        "es": "Venomous Aspirant's Drape",
-        "br": "Venomous Aspirant's Drape",
+        "ru": "Пелерина ядовитого претендента",
+        "es": "Mantón de aspirante venenoso",
+        "br": "Clâmide do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Drape",
-        "de": "Venomous Aspirant's Drape"
+        "fr": "Drapé de l’aspirant venimeux",
+        "de": "Tuch des toxischen Aspiranten"
     },
     "270551": {
         "cn": "",
         "en": "Venomous Warmonger's Reaper",
-        "ru": "Venomous Warmonger's Reaper",
-        "es": "Venomous Warmonger's Reaper",
-        "br": "Venomous Warmonger's Reaper",
+        "ru": "Жнец ядовитого завоевателя",
+        "es": "Segadora de belicista venenoso",
+        "br": "Ceifador do Fomentador da Guerra Peçonhento",
         "kr": "",
-        "fr": "Venomous Warmonger's Reaper",
-        "de": "Venomous Warmonger's Reaper"
+        "fr": "Faucheuse du belliciste venimeux",
+        "de": "Schnitter des toxischen Kriegstreibers"
     },
     "270554": {
         "cn": "",
         "en": "Venomous Aspirant's Reaper",
-        "ru": "Venomous Aspirant's Reaper",
-        "es": "Venomous Aspirant's Reaper",
-        "br": "Venomous Aspirant's Reaper",
+        "ru": "Жнец ядовитого претендента",
+        "es": "Segadora de aspirante venenoso",
+        "br": "Ceifador do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Reaper",
-        "de": "Venomous Aspirant's Reaper"
+        "fr": "Faucheuse de l’aspirant venimeux",
+        "de": "Schnitter des toxischen Aspiranten"
     },
     "270555": {
         "cn": "",
         "en": "Venomous Aspirant's Emblem",
-        "ru": "Venomous Aspirant's Emblem",
-        "es": "Venomous Aspirant's Emblem",
-        "br": "Venomous Aspirant's Emblem",
+        "ru": "Эмблема ядовитого претендента",
+        "es": "Emblema de aspirante venenoso",
+        "br": "Emblema do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Emblem",
-        "de": "Venomous Aspirant's Emblem"
+        "fr": "Emblème de l’aspirant venimeux",
+        "de": "Emblem des toxischen Aspiranten"
     },
     "270556": {
         "cn": "",
         "en": "Venomous Aspirant's Medallion",
-        "ru": "Venomous Aspirant's Medallion",
-        "es": "Venomous Aspirant's Medallion",
-        "br": "Venomous Aspirant's Medallion",
+        "ru": "Медальон ядовитого претендента",
+        "es": "Medallón de aspirante venenoso",
+        "br": "Medalhão do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Medallion",
-        "de": "Venomous Aspirant's Medallion"
+        "fr": "Médaillon de l’aspirant venimeux",
+        "de": "Medaillon des toxischen Aspiranten"
     },
     "270557": {
         "cn": "",
         "en": "Venomous Aspirant's Sigil of Adaptation",
-        "ru": "Venomous Aspirant's Sigil of Adaptation",
-        "es": "Venomous Aspirant's Sigil of Adaptation",
-        "br": "Venomous Aspirant's Sigil of Adaptation",
+        "ru": "Печать адаптации ядовитого претендента",
+        "es": "Sigilo de adaptación de aspirante venenoso",
+        "br": "Signo de Adaptação do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Sigil of Adaptation",
-        "de": "Venomous Aspirant's Sigil of Adaptation"
+        "fr": "Cachet d’adaptation de l’aspirant venimeux",
+        "de": "Siegel der Anpassung des toxischen Aspiranten"
     },
     "270558": {
         "cn": "",
         "en": "Venomous Aspirant's Insignia of Alacrity",
-        "ru": "Venomous Aspirant's Insignia of Alacrity",
-        "es": "Venomous Aspirant's Insignia of Alacrity",
-        "br": "Venomous Aspirant's Insignia of Alacrity",
+        "ru": "Знак расторопности ядовитого претендента",
+        "es": "Insignia de prontitud de aspirante venenoso",
+        "br": "Insígnia de Diligência do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Insignia of Alacrity",
-        "de": "Venomous Aspirant's Insignia of Alacrity"
+        "fr": "Insigne d’empressement de l’aspirant venimeux",
+        "de": "Inbrunstinsigne des toxischen Aspiranten"
     },
     "270559": {
         "cn": "",
         "en": "Venomous Aspirant's Badge of Ferocity",
-        "ru": "Venomous Aspirant's Badge of Ferocity",
-        "es": "Venomous Aspirant's Badge of Ferocity",
-        "br": "Venomous Aspirant's Badge of Ferocity",
+        "ru": "Жетон свирепости ядовитого претендента",
+        "es": "Distintivo de ferocidad de aspirante venenoso",
+        "br": "Distintivo de Ferocidade do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Badge of Ferocity",
-        "de": "Venomous Aspirant's Badge of Ferocity"
+        "fr": "Écusson de férocité de l’aspirant venimeux",
+        "de": "Wildheitsabzeichen des toxischen Aspiranten"
     },
     "270563": {
         "cn": "",
         "en": "Venomous Gladiator's Cloak",
-        "ru": "Venomous Gladiator's Cloak",
-        "es": "Venomous Gladiator's Cloak",
-        "br": "Venomous Gladiator's Cloak",
+        "ru": "Плащ ядовитого гладиатора",
+        "es": "Capa de Gladiador venenoso",
+        "br": "Manto do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Cloak",
-        "de": "Venomous Gladiator's Cloak"
+        "fr": "Cape du gladiateur venimeux",
+        "de": "Umhang des toxischen Gladiators"
     },
     "270564": {
         "cn": "",
         "en": "Venomous Gladiator's Drape",
-        "ru": "Venomous Gladiator's Drape",
-        "es": "Venomous Gladiator's Drape",
-        "br": "Venomous Gladiator's Drape",
+        "ru": "Пелерина ядовитого гладиатора",
+        "es": "Mantón de Gladiador venenoso",
+        "br": "Clâmide do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Drape",
-        "de": "Venomous Gladiator's Drape"
+        "fr": "Drapé du gladiateur venimeux",
+        "de": "Tuch des toxischen Gladiators"
     },
     "270565": {
         "cn": "",
         "en": "Venomous Gladiator's Shawl",
-        "ru": "Venomous Gladiator's Shawl",
-        "es": "Venomous Gladiator's Shawl",
-        "br": "Venomous Gladiator's Shawl",
+        "ru": "Шаль ядовитого гладиатора",
+        "es": "Chal de Gladiador venenoso",
+        "br": "Xale do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Shawl",
-        "de": "Venomous Gladiator's Shawl"
+        "fr": "Châle du gladiateur venimeux",
+        "de": "Schal des toxischen Gladiators"
     },
     "270566": {
         "cn": "",
         "en": "Venomous Gladiator's Cloak",
-        "ru": "Venomous Gladiator's Cloak",
-        "es": "Venomous Gladiator's Cloak",
-        "br": "Venomous Gladiator's Cloak",
+        "ru": "Плащ ядовитого гладиатора",
+        "es": "Capa de Gladiador venenoso",
+        "br": "Manto do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Cloak",
-        "de": "Venomous Gladiator's Cloak"
+        "fr": "Cape du gladiateur venimeux",
+        "de": "Umhang des toxischen Gladiators"
     },
     "270567": {
         "cn": "",
         "en": "Venomous Gladiator's Drape",
-        "ru": "Venomous Gladiator's Drape",
-        "es": "Venomous Gladiator's Drape",
-        "br": "Venomous Gladiator's Drape",
+        "ru": "Пелерина ядовитого гладиатора",
+        "es": "Mantón de Gladiador venenoso",
+        "br": "Clâmide do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Drape",
-        "de": "Venomous Gladiator's Drape"
+        "fr": "Drapé du gladiateur venimeux",
+        "de": "Tuch des toxischen Gladiators"
     },
     "270568": {
         "cn": "",
         "en": "Venomous Gladiator's Shawl",
-        "ru": "Venomous Gladiator's Shawl",
-        "es": "Venomous Gladiator's Shawl",
-        "br": "Venomous Gladiator's Shawl",
+        "ru": "Шаль ядовитого гладиатора",
+        "es": "Chal de Gladiador venenoso",
+        "br": "Xale do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Shawl",
-        "de": "Venomous Gladiator's Shawl"
+        "fr": "Châle du gladiateur venimeux",
+        "de": "Schal des toxischen Gladiators"
     },
     "270569": {
         "cn": "",
         "en": "Venomous Gladiator's Cloak",
-        "ru": "Venomous Gladiator's Cloak",
-        "es": "Venomous Gladiator's Cloak",
-        "br": "Venomous Gladiator's Cloak",
+        "ru": "Плащ ядовитого гладиатора",
+        "es": "Capa de Gladiador venenoso",
+        "br": "Manto do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Cloak",
-        "de": "Venomous Gladiator's Cloak"
+        "fr": "Cape du gladiateur venimeux",
+        "de": "Umhang des toxischen Gladiators"
     },
     "270570": {
         "cn": "",
         "en": "Venomous Gladiator's Drape",
-        "ru": "Venomous Gladiator's Drape",
-        "es": "Venomous Gladiator's Drape",
-        "br": "Venomous Gladiator's Drape",
+        "ru": "Пелерина ядовитого гладиатора",
+        "es": "Mantón de Gladiador venenoso",
+        "br": "Clâmide do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Drape",
-        "de": "Venomous Gladiator's Drape"
+        "fr": "Drapé du gladiateur venimeux",
+        "de": "Tuch des toxischen Gladiators"
     },
     "270571": {
         "cn": "",
         "en": "Venomous Gladiator's Shawl",
-        "ru": "Venomous Gladiator's Shawl",
-        "es": "Venomous Gladiator's Shawl",
-        "br": "Venomous Gladiator's Shawl",
+        "ru": "Шаль ядовитого гладиатора",
+        "es": "Chal de Gladiador venenoso",
+        "br": "Xale do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Shawl",
-        "de": "Venomous Gladiator's Shawl"
+        "fr": "Châle du gladiateur venimeux",
+        "de": "Schal des toxischen Gladiators"
     },
     "270572": {
         "cn": "",
         "en": "Venomous Gladiator's Cloak",
-        "ru": "Venomous Gladiator's Cloak",
-        "es": "Venomous Gladiator's Cloak",
-        "br": "Venomous Gladiator's Cloak",
+        "ru": "Плащ ядовитого гладиатора",
+        "es": "Capa de Gladiador venenoso",
+        "br": "Manto do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Cloak",
-        "de": "Venomous Gladiator's Cloak"
+        "fr": "Cape du gladiateur venimeux",
+        "de": "Umhang des toxischen Gladiators"
     },
     "270573": {
         "cn": "",
         "en": "Venomous Gladiator's Drape",
-        "ru": "Venomous Gladiator's Drape",
-        "es": "Venomous Gladiator's Drape",
-        "br": "Venomous Gladiator's Drape",
+        "ru": "Пелерина ядовитого гладиатора",
+        "es": "Mantón de Gladiador venenoso",
+        "br": "Clâmide do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Drape",
-        "de": "Venomous Gladiator's Drape"
+        "fr": "Drapé du gladiateur venimeux",
+        "de": "Tuch des toxischen Gladiators"
     },
     "270574": {
         "cn": "",
         "en": "Venomous Gladiator's Shawl",
-        "ru": "Venomous Gladiator's Shawl",
-        "es": "Venomous Gladiator's Shawl",
-        "br": "Venomous Gladiator's Shawl",
+        "ru": "Шаль ядовитого гладиатора",
+        "es": "Chal de Gladiador venenoso",
+        "br": "Xale do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Shawl",
-        "de": "Venomous Gladiator's Shawl"
+        "fr": "Châle du gladiateur venimeux",
+        "de": "Schal des toxischen Gladiators"
     },
     "270575": {
         "cn": "",
         "en": "Venomous Gladiator's Ring",
-        "ru": "Venomous Gladiator's Ring",
-        "es": "Venomous Gladiator's Ring",
-        "br": "Venomous Gladiator's Ring",
+        "ru": "Кольцо ядовитого гладиатора",
+        "es": "Anillo de Gladiador venenoso",
+        "br": "Anel do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Ring",
-        "de": "Venomous Gladiator's Ring"
+        "fr": "Anneau du gladiateur venimeux",
+        "de": "Ring des toxischen Gladiators"
     },
     "270576": {
         "cn": "",
         "en": "Venomous Gladiator's Band",
-        "ru": "Venomous Gladiator's Band",
-        "es": "Venomous Gladiator's Band",
-        "br": "Venomous Gladiator's Band",
+        "ru": "Перстень ядовитого гладиатора",
+        "es": "Sortija de Gladiador venenoso",
+        "br": "Elo do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Band",
-        "de": "Venomous Gladiator's Band"
+        "fr": "Bague du gladiateur venimeux",
+        "de": "Band des toxischen Gladiators"
     },
     "270577": {
         "cn": "",
         "en": "Venomous Gladiator's Signet",
-        "ru": "Venomous Gladiator's Signet",
-        "es": "Venomous Gladiator's Signet",
-        "br": "Venomous Gladiator's Signet",
+        "ru": "Печатка ядовитого гладиатора",
+        "es": "Sello de Gladiador venenoso",
+        "br": "Sinete do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Signet",
-        "de": "Venomous Gladiator's Signet"
+        "fr": "Chevalière du gladiateur venimeux",
+        "de": "Signet des toxischen Gladiators"
     },
     "270578": {
         "cn": "",
         "en": "Venomous Gladiator's Cloak",
-        "ru": "Venomous Gladiator's Cloak",
-        "es": "Venomous Gladiator's Cloak",
-        "br": "Venomous Gladiator's Cloak",
+        "ru": "Плащ ядовитого гладиатора",
+        "es": "Capa de Gladiador venenoso",
+        "br": "Manto do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Cloak",
-        "de": "Venomous Gladiator's Cloak"
+        "fr": "Cape du gladiateur venimeux",
+        "de": "Umhang des toxischen Gladiators"
     },
     "270579": {
         "cn": "",
         "en": "Venomous Gladiator's Drape",
-        "ru": "Venomous Gladiator's Drape",
-        "es": "Venomous Gladiator's Drape",
-        "br": "Venomous Gladiator's Drape",
+        "ru": "Пелерина ядовитого гладиатора",
+        "es": "Mantón de Gladiador venenoso",
+        "br": "Clâmide do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Drape",
-        "de": "Venomous Gladiator's Drape"
+        "fr": "Drapé du gladiateur venimeux",
+        "de": "Tuch des toxischen Gladiators"
     },
     "270580": {
         "cn": "",
         "en": "Venomous Gladiator's Shawl",
-        "ru": "Venomous Gladiator's Shawl",
-        "es": "Venomous Gladiator's Shawl",
-        "br": "Venomous Gladiator's Shawl",
+        "ru": "Шаль ядовитого гладиатора",
+        "es": "Chal de Gladiador venenoso",
+        "br": "Xale do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Shawl",
-        "de": "Venomous Gladiator's Shawl"
+        "fr": "Châle du gladiateur venimeux",
+        "de": "Schal des toxischen Gladiators"
     },
     "270581": {
         "cn": "",
         "en": "Venomous Gladiator's Cloak",
-        "ru": "Venomous Gladiator's Cloak",
-        "es": "Venomous Gladiator's Cloak",
-        "br": "Venomous Gladiator's Cloak",
+        "ru": "Плащ ядовитого гладиатора",
+        "es": "Capa de Gladiador venenoso",
+        "br": "Manto do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Cloak",
-        "de": "Venomous Gladiator's Cloak"
+        "fr": "Cape du gladiateur venimeux",
+        "de": "Umhang des toxischen Gladiators"
     },
     "270582": {
         "cn": "",
         "en": "Venomous Gladiator's Drape",
-        "ru": "Venomous Gladiator's Drape",
-        "es": "Venomous Gladiator's Drape",
-        "br": "Venomous Gladiator's Drape",
+        "ru": "Пелерина ядовитого гладиатора",
+        "es": "Mantón de Gladiador venenoso",
+        "br": "Clâmide do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Drape",
-        "de": "Venomous Gladiator's Drape"
+        "fr": "Drapé du gladiateur venimeux",
+        "de": "Tuch des toxischen Gladiators"
     },
     "270583": {
         "cn": "",
         "en": "Venomous Gladiator's Shawl",
-        "ru": "Venomous Gladiator's Shawl",
-        "es": "Venomous Gladiator's Shawl",
-        "br": "Venomous Gladiator's Shawl",
+        "ru": "Шаль ядовитого гладиатора",
+        "es": "Chal de Gladiador venenoso",
+        "br": "Xale do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Shawl",
-        "de": "Venomous Gladiator's Shawl"
+        "fr": "Châle du gladiateur venimeux",
+        "de": "Schal des toxischen Gladiators"
     },
     "270584": {
         "cn": "",
         "en": "Venomous Gladiator's Cloak",
-        "ru": "Venomous Gladiator's Cloak",
-        "es": "Venomous Gladiator's Cloak",
-        "br": "Venomous Gladiator's Cloak",
+        "ru": "Плащ ядовитого гладиатора",
+        "es": "Capa de Gladiador venenoso",
+        "br": "Manto do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Cloak",
-        "de": "Venomous Gladiator's Cloak"
+        "fr": "Cape du gladiateur venimeux",
+        "de": "Umhang des toxischen Gladiators"
     },
     "270585": {
         "cn": "",
         "en": "Venomous Gladiator's Drape",
-        "ru": "Venomous Gladiator's Drape",
-        "es": "Venomous Gladiator's Drape",
-        "br": "Venomous Gladiator's Drape",
+        "ru": "Пелерина ядовитого гладиатора",
+        "es": "Mantón de Gladiador venenoso",
+        "br": "Clâmide do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Drape",
-        "de": "Venomous Gladiator's Drape"
+        "fr": "Drapé du gladiateur venimeux",
+        "de": "Tuch des toxischen Gladiators"
     },
     "270586": {
         "cn": "",
         "en": "Venomous Gladiator's Shawl",
-        "ru": "Venomous Gladiator's Shawl",
-        "es": "Venomous Gladiator's Shawl",
-        "br": "Venomous Gladiator's Shawl",
+        "ru": "Шаль ядовитого гладиатора",
+        "es": "Chal de Gladiador venenoso",
+        "br": "Xale do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Shawl",
-        "de": "Venomous Gladiator's Shawl"
+        "fr": "Châle du gladiateur venimeux",
+        "de": "Schal des toxischen Gladiators"
     },
     "270587": {
         "cn": "",
         "en": "Venomous Gladiator's Necklace",
-        "ru": "Venomous Gladiator's Necklace",
-        "es": "Venomous Gladiator's Necklace",
-        "br": "Venomous Gladiator's Necklace",
+        "ru": "Ожерелье ядовитого гладиатора",
+        "es": "Collar de Gladiador venenoso",
+        "br": "Colar do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Necklace",
-        "de": "Venomous Gladiator's Necklace"
+        "fr": "Collier du gladiateur venimeux",
+        "de": "Halskette des toxischen Gladiators"
     },
     "270588": {
         "cn": "",
         "en": "Venomous Gladiator's Pendant",
-        "ru": "Venomous Gladiator's Pendant",
-        "es": "Venomous Gladiator's Pendant",
-        "br": "Venomous Gladiator's Pendant",
+        "ru": "Подвеска ядовитого гладиатора",
+        "es": "Colgante de Gladiador venenoso",
+        "br": "Pingente do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Pendant",
-        "de": "Venomous Gladiator's Pendant"
+        "fr": "Pendentif du gladiateur venimeux",
+        "de": "Anhänger des toxischen Gladiators"
     },
     "270589": {
         "cn": "",
         "en": "Venomous Gladiator's Amulet",
-        "ru": "Venomous Gladiator's Amulet",
-        "es": "Venomous Gladiator's Amulet",
-        "br": "Venomous Gladiator's Amulet",
+        "ru": "Амулет ядовитого гладиатора",
+        "es": "Amuleto de Gladiador venenoso",
+        "br": "Amuleto do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Amulet",
-        "de": "Venomous Gladiator's Amulet"
+        "fr": "Amulette du gladiateur venimeux",
+        "de": "Amulett des toxischen Gladiators"
     },
     "270590": {
         "cn": "",
         "en": "Venomous Gladiator's Cloak",
-        "ru": "Venomous Gladiator's Cloak",
-        "es": "Venomous Gladiator's Cloak",
-        "br": "Venomous Gladiator's Cloak",
+        "ru": "Плащ ядовитого гладиатора",
+        "es": "Capa de Gladiador venenoso",
+        "br": "Manto do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Cloak",
-        "de": "Venomous Gladiator's Cloak"
+        "fr": "Cape du gladiateur venimeux",
+        "de": "Umhang des toxischen Gladiators"
     },
     "270591": {
         "cn": "",
         "en": "Venomous Gladiator's Drape",
-        "ru": "Venomous Gladiator's Drape",
-        "es": "Venomous Gladiator's Drape",
-        "br": "Venomous Gladiator's Drape",
+        "ru": "Пелерина ядовитого гладиатора",
+        "es": "Mantón de Gladiador venenoso",
+        "br": "Clâmide do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Drape",
-        "de": "Venomous Gladiator's Drape"
+        "fr": "Drapé du gladiateur venimeux",
+        "de": "Tuch des toxischen Gladiators"
     },
     "270592": {
         "cn": "",
         "en": "Venomous Gladiator's Shawl",
-        "ru": "Venomous Gladiator's Shawl",
-        "es": "Venomous Gladiator's Shawl",
-        "br": "Venomous Gladiator's Shawl",
+        "ru": "Шаль ядовитого гладиатора",
+        "es": "Chal de Gladiador venenoso",
+        "br": "Xale do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Shawl",
-        "de": "Venomous Gladiator's Shawl"
+        "fr": "Châle du gladiateur venimeux",
+        "de": "Schal des toxischen Gladiators"
     },
     "270593": {
         "cn": "",
         "en": "Venomous Gladiator's Cloak",
-        "ru": "Venomous Gladiator's Cloak",
-        "es": "Venomous Gladiator's Cloak",
-        "br": "Venomous Gladiator's Cloak",
+        "ru": "Плащ ядовитого гладиатора",
+        "es": "Capa de Gladiador venenoso",
+        "br": "Manto do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Cloak",
-        "de": "Venomous Gladiator's Cloak"
+        "fr": "Cape du gladiateur venimeux",
+        "de": "Umhang des toxischen Gladiators"
     },
     "270594": {
         "cn": "",
         "en": "Venomous Gladiator's Drape",
-        "ru": "Venomous Gladiator's Drape",
-        "es": "Venomous Gladiator's Drape",
-        "br": "Venomous Gladiator's Drape",
+        "ru": "Пелерина ядовитого гладиатора",
+        "es": "Mantón de Gladiador venenoso",
+        "br": "Clâmide do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Drape",
-        "de": "Venomous Gladiator's Drape"
+        "fr": "Drapé du gladiateur venimeux",
+        "de": "Tuch des toxischen Gladiators"
     },
     "270595": {
         "cn": "",
         "en": "Venomous Gladiator's Shawl",
-        "ru": "Venomous Gladiator's Shawl",
-        "es": "Venomous Gladiator's Shawl",
-        "br": "Venomous Gladiator's Shawl",
+        "ru": "Шаль ядовитого гладиатора",
+        "es": "Chal de Gladiador venenoso",
+        "br": "Xale do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Shawl",
-        "de": "Venomous Gladiator's Shawl"
+        "fr": "Châle du gladiateur venimeux",
+        "de": "Schal des toxischen Gladiators"
     },
     "270596": {
         "cn": "",
         "en": "Venomous Gladiator's Cloak",
-        "ru": "Venomous Gladiator's Cloak",
-        "es": "Venomous Gladiator's Cloak",
-        "br": "Venomous Gladiator's Cloak",
+        "ru": "Плащ ядовитого гладиатора",
+        "es": "Capa de Gladiador venenoso",
+        "br": "Manto do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Cloak",
-        "de": "Venomous Gladiator's Cloak"
+        "fr": "Cape du gladiateur venimeux",
+        "de": "Umhang des toxischen Gladiators"
     },
     "270597": {
         "cn": "",
         "en": "Venomous Gladiator's Drape",
-        "ru": "Venomous Gladiator's Drape",
-        "es": "Venomous Gladiator's Drape",
-        "br": "Venomous Gladiator's Drape",
+        "ru": "Пелерина ядовитого гладиатора",
+        "es": "Mantón de Gladiador venenoso",
+        "br": "Clâmide do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Drape",
-        "de": "Venomous Gladiator's Drape"
+        "fr": "Drapé du gladiateur venimeux",
+        "de": "Tuch des toxischen Gladiators"
     },
     "270598": {
         "cn": "",
         "en": "Venomous Gladiator's Shawl",
-        "ru": "Venomous Gladiator's Shawl",
-        "es": "Venomous Gladiator's Shawl",
-        "br": "Venomous Gladiator's Shawl",
+        "ru": "Шаль ядовитого гладиатора",
+        "es": "Chal de Gladiador venenoso",
+        "br": "Xale do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Shawl",
-        "de": "Venomous Gladiator's Shawl"
+        "fr": "Châle du gladiateur venimeux",
+        "de": "Schal des toxischen Gladiators"
     },
     "270599": {
         "cn": "",
         "en": "Venomous Gladiator's Cloak",
-        "ru": "Venomous Gladiator's Cloak",
-        "es": "Venomous Gladiator's Cloak",
-        "br": "Venomous Gladiator's Cloak",
+        "ru": "Плащ ядовитого гладиатора",
+        "es": "Capa de Gladiador venenoso",
+        "br": "Manto do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Cloak",
-        "de": "Venomous Gladiator's Cloak"
+        "fr": "Cape du gladiateur venimeux",
+        "de": "Umhang des toxischen Gladiators"
     },
     "270600": {
         "cn": "",
         "en": "Venomous Gladiator's Drape",
-        "ru": "Venomous Gladiator's Drape",
-        "es": "Venomous Gladiator's Drape",
-        "br": "Venomous Gladiator's Drape",
+        "ru": "Пелерина ядовитого гладиатора",
+        "es": "Mantón de Gladiador venenoso",
+        "br": "Clâmide do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Drape",
-        "de": "Venomous Gladiator's Drape"
+        "fr": "Drapé du gladiateur venimeux",
+        "de": "Tuch des toxischen Gladiators"
     },
     "270601": {
         "cn": "",
         "en": "Venomous Gladiator's Shawl",
-        "ru": "Venomous Gladiator's Shawl",
-        "es": "Venomous Gladiator's Shawl",
-        "br": "Venomous Gladiator's Shawl",
+        "ru": "Шаль ядовитого гладиатора",
+        "es": "Chal de Gladiador venenoso",
+        "br": "Xale do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Shawl",
-        "de": "Venomous Gladiator's Shawl"
+        "fr": "Châle du gladiateur venimeux",
+        "de": "Schal des toxischen Gladiators"
     },
     "270602": {
         "cn": "",
         "en": "Venomous Gladiator's Badge of Ferocity",
-        "ru": "Venomous Gladiator's Badge of Ferocity",
-        "es": "Venomous Gladiator's Badge of Ferocity",
-        "br": "Venomous Gladiator's Badge of Ferocity",
+        "ru": "Жетон свирепости ядовитого гладиатора",
+        "es": "Distintivo de ferocidad de Gladiador venenoso",
+        "br": "Distintivo de Ferocidade do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Badge of Ferocity",
-        "de": "Venomous Gladiator's Badge of Ferocity"
+        "fr": "Écusson de férocité du gladiateur venimeux",
+        "de": "Wildheitsabzeichen des toxischen Gladiators"
     },
     "270603": {
         "cn": "",
         "en": "Venomous Gladiator's Insignia of Alacrity",
-        "ru": "Venomous Gladiator's Insignia of Alacrity",
-        "es": "Venomous Gladiator's Insignia of Alacrity",
-        "br": "Venomous Gladiator's Insignia of Alacrity",
+        "ru": "Знак расторопности ядовитого гладиатора",
+        "es": "Insignia de prontitud de Gladiador venenoso",
+        "br": "Insígnia de Diligência do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Insignia of Alacrity",
-        "de": "Venomous Gladiator's Insignia of Alacrity"
+        "fr": "Insigne d’empressement du gladiateur venimeux",
+        "de": "Inbrunstinsigne des toxischen Gladiators"
     },
     "270604": {
         "cn": "",
         "en": "Venomous Gladiator's Sigil of Adaptation",
-        "ru": "Venomous Gladiator's Sigil of Adaptation",
-        "es": "Venomous Gladiator's Sigil of Adaptation",
-        "br": "Venomous Gladiator's Sigil of Adaptation",
+        "ru": "Печать адаптации ядовитого гладиатора",
+        "es": "Sigilo de adaptación de Gladiador venenoso",
+        "br": "Signo de Adaptação do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Sigil of Adaptation",
-        "de": "Venomous Gladiator's Sigil of Adaptation"
+        "fr": "Cachet d’adaptation du gladiateur venimeux",
+        "de": "Siegel der Anpassung des toxischen Gladiators"
     },
     "270605": {
         "cn": "",
         "en": "Venomous Gladiator's Medallion",
-        "ru": "Venomous Gladiator's Medallion",
-        "es": "Venomous Gladiator's Medallion",
-        "br": "Venomous Gladiator's Medallion",
+        "ru": "Медальон ядовитого гладиатора",
+        "es": "Medallón de Gladiador venenoso",
+        "br": "Medalhão do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Medallion",
-        "de": "Venomous Gladiator's Medallion"
+        "fr": "Médaillon du gladiateur venimeux",
+        "de": "Medaillon des toxischen Gladiators"
     },
     "270606": {
         "cn": "",
         "en": "Venomous Gladiator's Emblem",
-        "ru": "Venomous Gladiator's Emblem",
-        "es": "Venomous Gladiator's Emblem",
-        "br": "Venomous Gladiator's Emblem",
+        "ru": "Эмблема ядовитого гладиатора",
+        "es": "Emblema de Gladiador venenoso",
+        "br": "Emblema do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Emblem",
-        "de": "Venomous Gladiator's Emblem"
+        "fr": "Emblème du gladiateur venimeux",
+        "de": "Emblem des toxischen Gladiators"
     },
     "270607": {
         "cn": "",
         "en": "Venomous Gladiator's Cloak",
-        "ru": "Venomous Gladiator's Cloak",
-        "es": "Venomous Gladiator's Cloak",
-        "br": "Venomous Gladiator's Cloak",
+        "ru": "Плащ ядовитого гладиатора",
+        "es": "Capa de Gladiador venenoso",
+        "br": "Manto do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Cloak",
-        "de": "Venomous Gladiator's Cloak"
+        "fr": "Cape du gladiateur venimeux",
+        "de": "Umhang des toxischen Gladiators"
     },
     "270608": {
         "cn": "",
         "en": "Venomous Gladiator's Drape",
-        "ru": "Venomous Gladiator's Drape",
-        "es": "Venomous Gladiator's Drape",
-        "br": "Venomous Gladiator's Drape",
+        "ru": "Пелерина ядовитого гладиатора",
+        "es": "Mantón de Gladiador venenoso",
+        "br": "Clâmide do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Drape",
-        "de": "Venomous Gladiator's Drape"
+        "fr": "Drapé du gladiateur venimeux",
+        "de": "Tuch des toxischen Gladiators"
     },
     "270609": {
         "cn": "",
         "en": "Venomous Gladiator's Shawl",
-        "ru": "Venomous Gladiator's Shawl",
-        "es": "Venomous Gladiator's Shawl",
-        "br": "Venomous Gladiator's Shawl",
+        "ru": "Шаль ядовитого гладиатора",
+        "es": "Chal de Gladiador venenoso",
+        "br": "Xale do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Shawl",
-        "de": "Venomous Gladiator's Shawl"
+        "fr": "Châle du gladiateur venimeux",
+        "de": "Schal des toxischen Gladiators"
     },
     "270610": {
         "cn": "",
         "en": "Venomous Gladiator's Cloak",
-        "ru": "Venomous Gladiator's Cloak",
-        "es": "Venomous Gladiator's Cloak",
-        "br": "Venomous Gladiator's Cloak",
+        "ru": "Плащ ядовитого гладиатора",
+        "es": "Capa de Gladiador venenoso",
+        "br": "Manto do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Cloak",
-        "de": "Venomous Gladiator's Cloak"
+        "fr": "Cape du gladiateur venimeux",
+        "de": "Umhang des toxischen Gladiators"
     },
     "270611": {
         "cn": "",
         "en": "Venomous Gladiator's Drape",
-        "ru": "Venomous Gladiator's Drape",
-        "es": "Venomous Gladiator's Drape",
-        "br": "Venomous Gladiator's Drape",
+        "ru": "Пелерина ядовитого гладиатора",
+        "es": "Mantón de Gladiador venenoso",
+        "br": "Clâmide do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Drape",
-        "de": "Venomous Gladiator's Drape"
+        "fr": "Drapé du gladiateur venimeux",
+        "de": "Tuch des toxischen Gladiators"
     },
     "270612": {
         "cn": "",
         "en": "Venomous Gladiator's Shawl",
-        "ru": "Venomous Gladiator's Shawl",
-        "es": "Venomous Gladiator's Shawl",
-        "br": "Venomous Gladiator's Shawl",
+        "ru": "Шаль ядовитого гладиатора",
+        "es": "Chal de Gladiador venenoso",
+        "br": "Xale do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Shawl",
-        "de": "Venomous Gladiator's Shawl"
+        "fr": "Châle du gladiateur venimeux",
+        "de": "Schal des toxischen Gladiators"
     },
     "270613": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Robe",
-        "ru": "Venomous Gladiator's Silk Robe",
-        "es": "Venomous Gladiator's Silk Robe",
-        "br": "Venomous Gladiator's Silk Robe",
+        "ru": "Шелковое одеяние ядовитого гладиатора",
+        "es": "Toga de seda de Gladiador venenoso",
+        "br": "Veste de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Robe",
-        "de": "Venomous Gladiator's Silk Robe"
+        "fr": "Robe du gladiateur venimeux en soie",
+        "de": "Seidenrobe des toxischen Gladiators"
     },
     "270614": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Gown",
-        "ru": "Venomous Gladiator's Silk Gown",
-        "es": "Venomous Gladiator's Silk Gown",
-        "br": "Venomous Gladiator's Silk Gown",
+        "ru": "Шелковая мантия ядовитого гладиатора",
+        "es": "Gonela de seda de Gladiador venenoso",
+        "br": "Brial de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Gown",
-        "de": "Venomous Gladiator's Silk Gown"
+        "fr": "Blouse du gladiateur venimeux en soie",
+        "de": "Seidengewand des toxischen Gladiators"
     },
     "270615": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Slippers",
-        "ru": "Venomous Gladiator's Silk Slippers",
-        "es": "Venomous Gladiator's Silk Slippers",
-        "br": "Venomous Gladiator's Silk Slippers",
+        "ru": "Шелковые туфли ядовитого гладиатора",
+        "es": "Zapatillas de seda de Gladiador venenoso",
+        "br": "Sapatilhas de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Slippers",
-        "de": "Venomous Gladiator's Silk Slippers"
+        "fr": "Mules du gladiateur venimeux en soie",
+        "de": "Seidenpantoffeln des toxischen Gladiators"
     },
     "270616": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Treads",
-        "ru": "Venomous Gladiator's Silk Treads",
-        "es": "Venomous Gladiator's Silk Treads",
-        "br": "Venomous Gladiator's Silk Treads",
+        "ru": "Шелковые ботфорты ядовитого гладиатора",
+        "es": "Botines de seda de Gladiador venenoso",
+        "br": "Botinas de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Treads",
-        "de": "Venomous Gladiator's Silk Treads"
+        "fr": "Bottines du gladiateur venimeux en soie",
+        "de": "Seidentreter des toxischen Gladiators"
     },
     "270617": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Gloves",
-        "ru": "Venomous Gladiator's Silk Gloves",
-        "es": "Venomous Gladiator's Silk Gloves",
-        "br": "Venomous Gladiator's Silk Gloves",
+        "ru": "Шелковые перчатки ядовитого гладиатора",
+        "es": "Guantes de seda de Gladiador venenoso",
+        "br": "Luvas de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Gloves",
-        "de": "Venomous Gladiator's Silk Gloves"
+        "fr": "Gants du gladiateur venimeux en soie",
+        "de": "Seidenhandschuhe des toxischen Gladiators"
     },
     "270618": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Handwraps",
-        "ru": "Venomous Gladiator's Silk Handwraps",
-        "es": "Venomous Gladiator's Silk Handwraps",
-        "br": "Venomous Gladiator's Silk Handwraps",
+        "ru": "Шелковые повязки ядовитого гладиатора",
+        "es": "Manijas de seda de Gladiador venenoso",
+        "br": "Mitenes de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Handwraps",
-        "de": "Venomous Gladiator's Silk Handwraps"
+        "fr": "Protège-mains du gladiateur venimeux en soie",
+        "de": "Seidenhandlappen des toxischen Gladiators"
     },
     "270619": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Hat",
-        "ru": "Venomous Gladiator's Silk Hat",
-        "es": "Venomous Gladiator's Silk Hat",
-        "br": "Venomous Gladiator's Silk Hat",
+        "ru": "Шелковая шляпа ядовитого гладиатора",
+        "es": "Sombrero de seda de Gladiador venenoso",
+        "br": "Chapéu de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Hat",
-        "de": "Venomous Gladiator's Silk Hat"
+        "fr": "Chapeau du gladiateur venimeux en soie",
+        "de": "Seidenhut des toxischen Gladiators"
     },
     "270620": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Cap",
-        "ru": "Venomous Gladiator's Silk Cap",
-        "es": "Venomous Gladiator's Silk Cap",
-        "br": "Venomous Gladiator's Silk Cap",
+        "ru": "Шелковая шапка ядовитого гладиатора",
+        "es": "Almete de seda de Gladiador venenoso",
+        "br": "Casquete de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Cap",
-        "de": "Venomous Gladiator's Silk Cap"
+        "fr": "Coiffe du gladiateur venimeux en soie",
+        "de": "Seidenkappe des toxischen Gladiators"
     },
     "270621": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Leggings",
-        "ru": "Venomous Gladiator's Silk Leggings",
-        "es": "Venomous Gladiator's Silk Leggings",
-        "br": "Venomous Gladiator's Silk Leggings",
+        "ru": "Шелковые поножи ядовитого гладиатора",
+        "es": "Leotardos de seda de Gladiador venenoso",
+        "br": "Perneiras de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Leggings",
-        "de": "Venomous Gladiator's Silk Leggings"
+        "fr": "Jambières du gladiateur venimeux en soie",
+        "de": "Seidengamaschen des toxischen Gladiators"
     },
     "270622": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Trousers",
-        "ru": "Venomous Gladiator's Silk Trousers",
-        "es": "Venomous Gladiator's Silk Trousers",
-        "br": "Venomous Gladiator's Silk Trousers",
+        "ru": "Шелковые брюки ядовитого гладиатора",
+        "es": "Calzas de seda de Gladiador venenoso",
+        "br": "Calçotes de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Trousers",
-        "de": "Venomous Gladiator's Silk Trousers"
+        "fr": "Chausses du gladiateur venimeux en soie",
+        "de": "Seidenbeinkleider des toxischen Gladiators"
     },
     "270623": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Mantle",
-        "ru": "Venomous Gladiator's Silk Mantle",
-        "es": "Venomous Gladiator's Silk Mantle",
-        "br": "Venomous Gladiator's Silk Mantle",
+        "ru": "Шелковое оплечье ядовитого гладиатора",
+        "es": "Manto de seda de Gladiador venenoso",
+        "br": "Dragonas de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Mantle",
-        "de": "Venomous Gladiator's Silk Mantle"
+        "fr": "Mantelet du gladiateur venimeux en soie",
+        "de": "Seidenmantel des toxischen Gladiators"
     },
     "270624": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Amice",
-        "ru": "Venomous Gladiator's Silk Amice",
-        "es": "Venomous Gladiator's Silk Amice",
-        "br": "Venomous Gladiator's Silk Amice",
+        "ru": "Шелковый нарамник ядовитого гладиатора",
+        "es": "Amito de seda de Gladiador venenoso",
+        "br": "Sobreveste de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Amice",
-        "de": "Venomous Gladiator's Silk Amice"
+        "fr": "Amict du gladiateur venimeux en soie",
+        "de": "Seidene Amicia des toxischen Gladiators"
     },
     "270625": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Cord",
-        "ru": "Venomous Gladiator's Silk Cord",
-        "es": "Venomous Gladiator's Silk Cord",
-        "br": "Venomous Gladiator's Silk Cord",
+        "ru": "Шелковый шнурованный ремень ядовитого гладиатора",
+        "es": "Cordón de seda de Gladiador venenoso",
+        "br": "Cordão de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Cord",
-        "de": "Venomous Gladiator's Silk Cord"
+        "fr": "Corde du gladiateur venimeux en soie",
+        "de": "Seidenkordel des toxischen Gladiators"
     },
     "270626": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Belt",
-        "ru": "Venomous Gladiator's Silk Belt",
-        "es": "Venomous Gladiator's Silk Belt",
-        "br": "Venomous Gladiator's Silk Belt",
+        "ru": "Шелковый пояс ядовитого гладиатора",
+        "es": "Cinturón de seda de Gladiador venenoso",
+        "br": "Cinto de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Belt",
-        "de": "Venomous Gladiator's Silk Belt"
+        "fr": "Ceinture du gladiateur venimeux en soie",
+        "de": "Seidengürtel des toxischen Gladiators"
     },
     "270627": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Wristwraps",
-        "ru": "Venomous Gladiator's Silk Wristwraps",
-        "es": "Venomous Gladiator's Silk Wristwraps",
-        "br": "Venomous Gladiator's Silk Wristwraps",
+        "ru": "Шелковые напульсники ядовитого гладиатора",
+        "es": "Cubremuñecas de seda de Gladiador venenoso",
+        "br": "Munhecas de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Wristwraps",
-        "de": "Venomous Gladiator's Silk Wristwraps"
+        "fr": "Bandelettes du gladiateur venimeux en soie",
+        "de": "Seidengelenkbänder des toxischen Gladiators"
     },
     "270628": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Armbands",
-        "ru": "Venomous Gladiator's Silk Armbands",
-        "es": "Venomous Gladiator's Silk Armbands",
-        "br": "Venomous Gladiator's Silk Armbands",
+        "ru": "Шелковые поручи ядовитого гладиатора",
+        "es": "Bandas de seda de Gladiador venenoso",
+        "br": "Embraces de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Armbands",
-        "de": "Venomous Gladiator's Silk Armbands"
+        "fr": "Bracières du gladiateur venimeux en soie",
+        "de": "Seidenarmbinden des toxischen Gladiators"
     },
     "270629": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Robe",
-        "ru": "Venomous Gladiator's Silk Robe",
-        "es": "Venomous Gladiator's Silk Robe",
-        "br": "Venomous Gladiator's Silk Robe",
+        "ru": "Шелковое одеяние ядовитого гладиатора",
+        "es": "Toga de seda de Gladiador venenoso",
+        "br": "Veste de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Robe",
-        "de": "Venomous Gladiator's Silk Robe"
+        "fr": "Robe du gladiateur venimeux en soie",
+        "de": "Seidenrobe des toxischen Gladiators"
     },
     "270630": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Vestments",
-        "ru": "Venomous Gladiator's Silk Vestments",
-        "es": "Venomous Gladiator's Silk Vestments",
-        "br": "Venomous Gladiator's Silk Vestments",
+        "ru": "Шелковое облачение ядовитого гладиатора",
+        "es": "Vestimentas de seda de Gladiador venenoso",
+        "br": "Vestimenta de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Vestments",
-        "de": "Venomous Gladiator's Silk Vestments"
+        "fr": "Habits du gladiateur venimeux en soie",
+        "de": "Seidentracht des toxischen Gladiators"
     },
     "270631": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Slippers",
-        "ru": "Venomous Gladiator's Silk Slippers",
-        "es": "Venomous Gladiator's Silk Slippers",
-        "br": "Venomous Gladiator's Silk Slippers",
+        "ru": "Шелковые туфли ядовитого гладиатора",
+        "es": "Zapatillas de seda de Gladiador venenoso",
+        "br": "Sapatilhas de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Slippers",
-        "de": "Venomous Gladiator's Silk Slippers"
+        "fr": "Mules du gladiateur venimeux en soie",
+        "de": "Seidenpantoffeln des toxischen Gladiators"
     },
     "270632": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Treads",
-        "ru": "Venomous Gladiator's Silk Treads",
-        "es": "Venomous Gladiator's Silk Treads",
-        "br": "Venomous Gladiator's Silk Treads",
+        "ru": "Шелковые ботфорты ядовитого гладиатора",
+        "es": "Botines de seda de Gladiador venenoso",
+        "br": "Botinas de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Treads",
-        "de": "Venomous Gladiator's Silk Treads"
+        "fr": "Bottines du gladiateur venimeux en soie",
+        "de": "Seidentreter des toxischen Gladiators"
     },
     "270633": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Gloves",
-        "ru": "Venomous Gladiator's Silk Gloves",
-        "es": "Venomous Gladiator's Silk Gloves",
-        "br": "Venomous Gladiator's Silk Gloves",
+        "ru": "Шелковые перчатки ядовитого гладиатора",
+        "es": "Guantes de seda de Gladiador venenoso",
+        "br": "Luvas de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Gloves",
-        "de": "Venomous Gladiator's Silk Gloves"
+        "fr": "Gants du gladiateur venimeux en soie",
+        "de": "Seidenhandschuhe des toxischen Gladiators"
     },
     "270634": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Handwraps",
-        "ru": "Venomous Gladiator's Silk Handwraps",
-        "es": "Venomous Gladiator's Silk Handwraps",
-        "br": "Venomous Gladiator's Silk Handwraps",
+        "ru": "Шелковые повязки ядовитого гладиатора",
+        "es": "Manijas de seda de Gladiador venenoso",
+        "br": "Mitenes de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Handwraps",
-        "de": "Venomous Gladiator's Silk Handwraps"
+        "fr": "Protège-mains du gladiateur venimeux en soie",
+        "de": "Seidenhandlappen des toxischen Gladiators"
     },
     "270635": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Hood",
-        "ru": "Venomous Gladiator's Silk Hood",
-        "es": "Venomous Gladiator's Silk Hood",
-        "br": "Venomous Gladiator's Silk Hood",
+        "ru": "Шелковый капюшон ядовитого гладиатора",
+        "es": "Caperuza de seda de Gladiador venenoso",
+        "br": "Capuz de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Hood",
-        "de": "Venomous Gladiator's Silk Hood"
+        "fr": "Chaperon du gladiateur venimeux en soie",
+        "de": "Seidenkapuze des toxischen Gladiators"
     },
     "270636": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Guise",
-        "ru": "Venomous Gladiator's Silk Guise",
-        "es": "Venomous Gladiator's Silk Guise",
-        "br": "Venomous Gladiator's Silk Guise",
+        "ru": "Шелковая полумаска ядовитого гладиатора",
+        "es": "Disfraz de seda de Gladiador venenoso",
+        "br": "Socapa de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Guise",
-        "de": "Venomous Gladiator's Silk Guise"
+        "fr": "Semblance du gladiateur venimeux en soie",
+        "de": "Seidenhaube des toxischen Gladiators"
     },
     "270637": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Leggings",
-        "ru": "Venomous Gladiator's Silk Leggings",
-        "es": "Venomous Gladiator's Silk Leggings",
-        "br": "Venomous Gladiator's Silk Leggings",
+        "ru": "Шелковые поножи ядовитого гладиатора",
+        "es": "Leotardos de seda de Gladiador venenoso",
+        "br": "Perneiras de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Leggings",
-        "de": "Venomous Gladiator's Silk Leggings"
+        "fr": "Jambières du gladiateur venimeux en soie",
+        "de": "Seidengamaschen des toxischen Gladiators"
     },
     "270638": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Trousers",
-        "ru": "Venomous Gladiator's Silk Trousers",
-        "es": "Venomous Gladiator's Silk Trousers",
-        "br": "Venomous Gladiator's Silk Trousers",
+        "ru": "Шелковые брюки ядовитого гладиатора",
+        "es": "Calzas de seda de Gladiador venenoso",
+        "br": "Calçotes de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Trousers",
-        "de": "Venomous Gladiator's Silk Trousers"
+        "fr": "Chausses du gladiateur venimeux en soie",
+        "de": "Seidenbeinkleider des toxischen Gladiators"
     },
     "270639": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Mantle",
-        "ru": "Venomous Gladiator's Silk Mantle",
-        "es": "Venomous Gladiator's Silk Mantle",
-        "br": "Venomous Gladiator's Silk Mantle",
+        "ru": "Шелковое оплечье ядовитого гладиатора",
+        "es": "Manto de seda de Gladiador venenoso",
+        "br": "Dragonas de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Mantle",
-        "de": "Venomous Gladiator's Silk Mantle"
+        "fr": "Mantelet du gladiateur venimeux en soie",
+        "de": "Seidenmantel des toxischen Gladiators"
     },
     "270640": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Amice",
-        "ru": "Venomous Gladiator's Silk Amice",
-        "es": "Venomous Gladiator's Silk Amice",
-        "br": "Venomous Gladiator's Silk Amice",
+        "ru": "Шелковый нарамник ядовитого гладиатора",
+        "es": "Amito de seda de Gladiador venenoso",
+        "br": "Sobreveste de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Amice",
-        "de": "Venomous Gladiator's Silk Amice"
+        "fr": "Amict du gladiateur venimeux en soie",
+        "de": "Seidene Amicia des toxischen Gladiators"
     },
     "270641": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Cord",
-        "ru": "Venomous Gladiator's Silk Cord",
-        "es": "Venomous Gladiator's Silk Cord",
-        "br": "Venomous Gladiator's Silk Cord",
+        "ru": "Шелковый шнурованный ремень ядовитого гладиатора",
+        "es": "Cordón de seda de Gladiador venenoso",
+        "br": "Cordão de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Cord",
-        "de": "Venomous Gladiator's Silk Cord"
+        "fr": "Corde du gladiateur venimeux en soie",
+        "de": "Seidenkordel des toxischen Gladiators"
     },
     "270642": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Belt",
-        "ru": "Venomous Gladiator's Silk Belt",
-        "es": "Venomous Gladiator's Silk Belt",
-        "br": "Venomous Gladiator's Silk Belt",
+        "ru": "Шелковый пояс ядовитого гладиатора",
+        "es": "Cinturón de seda de Gladiador venenoso",
+        "br": "Cinto de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Belt",
-        "de": "Venomous Gladiator's Silk Belt"
+        "fr": "Ceinture du gladiateur venimeux en soie",
+        "de": "Seidengürtel des toxischen Gladiators"
     },
     "270643": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Wristwraps",
-        "ru": "Venomous Gladiator's Silk Wristwraps",
-        "es": "Venomous Gladiator's Silk Wristwraps",
-        "br": "Venomous Gladiator's Silk Wristwraps",
+        "ru": "Шелковые напульсники ядовитого гладиатора",
+        "es": "Cubremuñecas de seda de Gladiador venenoso",
+        "br": "Munhecas de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Wristwraps",
-        "de": "Venomous Gladiator's Silk Wristwraps"
+        "fr": "Bandelettes du gladiateur venimeux en soie",
+        "de": "Seidengelenkbänder des toxischen Gladiators"
     },
     "270644": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Armbands",
-        "ru": "Venomous Gladiator's Silk Armbands",
-        "es": "Venomous Gladiator's Silk Armbands",
-        "br": "Venomous Gladiator's Silk Armbands",
+        "ru": "Шелковые поручи ядовитого гладиатора",
+        "es": "Bandas de seda de Gladiador venenoso",
+        "br": "Embraces de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Armbands",
-        "de": "Venomous Gladiator's Silk Armbands"
+        "fr": "Bracières du gladiateur venimeux en soie",
+        "de": "Seidenarmbinden des toxischen Gladiators"
     },
     "270645": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Raiment",
-        "ru": "Venomous Gladiator's Silk Raiment",
-        "es": "Venomous Gladiator's Silk Raiment",
-        "br": "Venomous Gladiator's Silk Raiment",
+        "ru": "Шелковая риза ядовитого гладиатора",
+        "es": "Vestiduras de seda de Gladiador venenoso",
+        "br": "Traje de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Raiment",
-        "de": "Venomous Gladiator's Silk Raiment"
+        "fr": "Grande tenue du gladiateur venimeux en soie",
+        "de": "Seidene Gewandung des toxischen Gladiators"
     },
     "270646": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Vestments",
-        "ru": "Venomous Gladiator's Silk Vestments",
-        "es": "Venomous Gladiator's Silk Vestments",
-        "br": "Venomous Gladiator's Silk Vestments",
+        "ru": "Шелковое облачение ядовитого гладиатора",
+        "es": "Vestimentas de seda de Gladiador venenoso",
+        "br": "Vestimenta de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Vestments",
-        "de": "Venomous Gladiator's Silk Vestments"
+        "fr": "Habits du gladiateur venimeux en soie",
+        "de": "Seidentracht des toxischen Gladiators"
     },
     "270647": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Slippers",
-        "ru": "Venomous Gladiator's Silk Slippers",
-        "es": "Venomous Gladiator's Silk Slippers",
-        "br": "Venomous Gladiator's Silk Slippers",
+        "ru": "Шелковые туфли ядовитого гладиатора",
+        "es": "Zapatillas de seda de Gladiador venenoso",
+        "br": "Sapatilhas de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Slippers",
-        "de": "Venomous Gladiator's Silk Slippers"
+        "fr": "Mules du gladiateur venimeux en soie",
+        "de": "Seidenpantoffeln des toxischen Gladiators"
     },
     "270648": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Treads",
-        "ru": "Venomous Gladiator's Silk Treads",
-        "es": "Venomous Gladiator's Silk Treads",
-        "br": "Venomous Gladiator's Silk Treads",
+        "ru": "Шелковые ботфорты ядовитого гладиатора",
+        "es": "Botines de seda de Gladiador venenoso",
+        "br": "Botinas de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Treads",
-        "de": "Venomous Gladiator's Silk Treads"
+        "fr": "Bottines du gladiateur venimeux en soie",
+        "de": "Seidentreter des toxischen Gladiators"
     },
     "270649": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Gloves",
-        "ru": "Venomous Gladiator's Silk Gloves",
-        "es": "Venomous Gladiator's Silk Gloves",
-        "br": "Venomous Gladiator's Silk Gloves",
+        "ru": "Шелковые перчатки ядовитого гладиатора",
+        "es": "Guantes de seda de Gladiador venenoso",
+        "br": "Luvas de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Gloves",
-        "de": "Venomous Gladiator's Silk Gloves"
+        "fr": "Gants du gladiateur venimeux en soie",
+        "de": "Seidenhandschuhe des toxischen Gladiators"
     },
     "270650": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Handwraps",
-        "ru": "Venomous Gladiator's Silk Handwraps",
-        "es": "Venomous Gladiator's Silk Handwraps",
-        "br": "Venomous Gladiator's Silk Handwraps",
+        "ru": "Шелковые повязки ядовитого гладиатора",
+        "es": "Manijas de seda de Gladiador venenoso",
+        "br": "Mitenes de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Handwraps",
-        "de": "Venomous Gladiator's Silk Handwraps"
+        "fr": "Protège-mains du gladiateur venimeux en soie",
+        "de": "Seidenhandlappen des toxischen Gladiators"
     },
     "270651": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Hood",
-        "ru": "Venomous Gladiator's Silk Hood",
-        "es": "Venomous Gladiator's Silk Hood",
-        "br": "Venomous Gladiator's Silk Hood",
+        "ru": "Шелковый капюшон ядовитого гладиатора",
+        "es": "Caperuza de seda de Gladiador venenoso",
+        "br": "Capuz de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Hood",
-        "de": "Venomous Gladiator's Silk Hood"
+        "fr": "Chaperon du gladiateur venimeux en soie",
+        "de": "Seidenkapuze des toxischen Gladiators"
     },
     "270652": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Guise",
-        "ru": "Venomous Gladiator's Silk Guise",
-        "es": "Venomous Gladiator's Silk Guise",
-        "br": "Venomous Gladiator's Silk Guise",
+        "ru": "Шелковая полумаска ядовитого гладиатора",
+        "es": "Disfraz de seda de Gladiador venenoso",
+        "br": "Socapa de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Guise",
-        "de": "Venomous Gladiator's Silk Guise"
+        "fr": "Semblance du gladiateur venimeux en soie",
+        "de": "Seidenhaube des toxischen Gladiators"
     },
     "270653": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Leggings",
-        "ru": "Venomous Gladiator's Silk Leggings",
-        "es": "Venomous Gladiator's Silk Leggings",
-        "br": "Venomous Gladiator's Silk Leggings",
+        "ru": "Шелковые поножи ядовитого гладиатора",
+        "es": "Leotardos de seda de Gladiador venenoso",
+        "br": "Perneiras de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Leggings",
-        "de": "Venomous Gladiator's Silk Leggings"
+        "fr": "Jambières du gladiateur venimeux en soie",
+        "de": "Seidengamaschen des toxischen Gladiators"
     },
     "270654": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Trousers",
-        "ru": "Venomous Gladiator's Silk Trousers",
-        "es": "Venomous Gladiator's Silk Trousers",
-        "br": "Venomous Gladiator's Silk Trousers",
+        "ru": "Шелковые брюки ядовитого гладиатора",
+        "es": "Calzas de seda de Gladiador venenoso",
+        "br": "Calçotes de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Trousers",
-        "de": "Venomous Gladiator's Silk Trousers"
+        "fr": "Chausses du gladiateur venimeux en soie",
+        "de": "Seidenbeinkleider des toxischen Gladiators"
     },
     "270655": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Mantle",
-        "ru": "Venomous Gladiator's Silk Mantle",
-        "es": "Venomous Gladiator's Silk Mantle",
-        "br": "Venomous Gladiator's Silk Mantle",
+        "ru": "Шелковое оплечье ядовитого гладиатора",
+        "es": "Manto de seda de Gladiador venenoso",
+        "br": "Dragonas de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Mantle",
-        "de": "Venomous Gladiator's Silk Mantle"
+        "fr": "Mantelet du gladiateur venimeux en soie",
+        "de": "Seidenmantel des toxischen Gladiators"
     },
     "270656": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Amice",
-        "ru": "Venomous Gladiator's Silk Amice",
-        "es": "Venomous Gladiator's Silk Amice",
-        "br": "Venomous Gladiator's Silk Amice",
+        "ru": "Шелковый нарамник ядовитого гладиатора",
+        "es": "Amito de seda de Gladiador venenoso",
+        "br": "Sobreveste de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Amice",
-        "de": "Venomous Gladiator's Silk Amice"
+        "fr": "Amict du gladiateur venimeux en soie",
+        "de": "Seidene Amicia des toxischen Gladiators"
     },
     "270657": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Cord",
-        "ru": "Venomous Gladiator's Silk Cord",
-        "es": "Venomous Gladiator's Silk Cord",
-        "br": "Venomous Gladiator's Silk Cord",
+        "ru": "Шелковый шнурованный ремень ядовитого гладиатора",
+        "es": "Cordón de seda de Gladiador venenoso",
+        "br": "Cordão de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Cord",
-        "de": "Venomous Gladiator's Silk Cord"
+        "fr": "Corde du gladiateur venimeux en soie",
+        "de": "Seidenkordel des toxischen Gladiators"
     },
     "270658": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Belt",
-        "ru": "Venomous Gladiator's Silk Belt",
-        "es": "Venomous Gladiator's Silk Belt",
-        "br": "Venomous Gladiator's Silk Belt",
+        "ru": "Шелковый пояс ядовитого гладиатора",
+        "es": "Cinturón de seda de Gladiador venenoso",
+        "br": "Cinto de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Belt",
-        "de": "Venomous Gladiator's Silk Belt"
+        "fr": "Ceinture du gladiateur venimeux en soie",
+        "de": "Seidengürtel des toxischen Gladiators"
     },
     "270659": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Wristwraps",
-        "ru": "Venomous Gladiator's Silk Wristwraps",
-        "es": "Venomous Gladiator's Silk Wristwraps",
-        "br": "Venomous Gladiator's Silk Wristwraps",
+        "ru": "Шелковые напульсники ядовитого гладиатора",
+        "es": "Cubremuñecas de seda de Gladiador venenoso",
+        "br": "Munhecas de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Wristwraps",
-        "de": "Venomous Gladiator's Silk Wristwraps"
+        "fr": "Bandelettes du gladiateur venimeux en soie",
+        "de": "Seidengelenkbänder des toxischen Gladiators"
     },
     "270660": {
         "cn": "",
         "en": "Venomous Gladiator's Silk Armbands",
-        "ru": "Venomous Gladiator's Silk Armbands",
-        "es": "Venomous Gladiator's Silk Armbands",
-        "br": "Venomous Gladiator's Silk Armbands",
+        "ru": "Шелковые поручи ядовитого гладиатора",
+        "es": "Bandas de seda de Gladiador venenoso",
+        "br": "Embraces de Seda do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Silk Armbands",
-        "de": "Venomous Gladiator's Silk Armbands"
+        "fr": "Bracières du gladiateur venimeux en soie",
+        "de": "Seidenarmbinden des toxischen Gladiators"
     },
     "270661": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Vest",
-        "ru": "Venomous Gladiator's Leather Vest",
-        "es": "Venomous Gladiator's Leather Vest",
-        "br": "Venomous Gladiator's Leather Vest",
+        "ru": "Кожаный жилет ядовитого гладиатора",
+        "es": "Jubón de cuero de Gladiador venenoso",
+        "br": "Colete de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Vest",
-        "de": "Venomous Gladiator's Leather Vest"
+        "fr": "Gilet du gladiateur venimeux en cuir",
+        "de": "Lederweste des toxischen Gladiators"
     },
     "270662": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Jerkin",
-        "ru": "Venomous Gladiator's Leather Jerkin",
-        "es": "Venomous Gladiator's Leather Jerkin",
-        "br": "Venomous Gladiator's Leather Jerkin",
+        "ru": "Кожаный жакет ядовитого гладиатора",
+        "es": "Chaleco de cuero de Gladiador venenoso",
+        "br": "Gibão de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Jerkin",
-        "de": "Venomous Gladiator's Leather Jerkin"
+        "fr": "Pourpoint du gladiateur venimeux en cuir",
+        "de": "Lederwams des toxischen Gladiators"
     },
     "270663": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Boots",
-        "ru": "Venomous Gladiator's Leather Boots",
-        "es": "Venomous Gladiator's Leather Boots",
-        "br": "Venomous Gladiator's Leather Boots",
+        "ru": "Кожаные сапоги ядовитого гладиатора",
+        "es": "Botas de cuero de Gladiador venenoso",
+        "br": "Botas de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Boots",
-        "de": "Venomous Gladiator's Leather Boots"
+        "fr": "Bottes du gladiateur venimeux en cuir",
+        "de": "Lederstiefel des toxischen Gladiators"
     },
     "270664": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Treads",
-        "ru": "Venomous Gladiator's Leather Treads",
-        "es": "Venomous Gladiator's Leather Treads",
-        "br": "Venomous Gladiator's Leather Treads",
+        "ru": "Кожаные ботфорты ядовитого гладиатора",
+        "es": "Botines de cuero de Gladiador venenoso",
+        "br": "Botinas de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Treads",
-        "de": "Venomous Gladiator's Leather Treads"
+        "fr": "Bottines du gladiateur venimeux en cuir",
+        "de": "Ledertreter des toxischen Gladiators"
     },
     "270665": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Gloves",
-        "ru": "Venomous Gladiator's Leather Gloves",
-        "es": "Venomous Gladiator's Leather Gloves",
-        "br": "Venomous Gladiator's Leather Gloves",
+        "ru": "Кожаные перчатки ядовитого гладиатора",
+        "es": "Guantes de cuero de Gladiador venenoso",
+        "br": "Luvas de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Gloves",
-        "de": "Venomous Gladiator's Leather Gloves"
+        "fr": "Gants du gladiateur venimeux en cuir",
+        "de": "Lederhandschuhe des toxischen Gladiators"
     },
     "270666": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Grips",
-        "ru": "Venomous Gladiator's Leather Grips",
-        "es": "Venomous Gladiator's Leather Grips",
-        "br": "Venomous Gladiator's Leather Grips",
+        "ru": "Кожаные захваты ядовитого гладиатора",
+        "es": "Mandiletes de cuero de Gladiador venenoso",
+        "br": "Guantes de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Grips",
-        "de": "Venomous Gladiator's Leather Grips"
+        "fr": "Poignes du gladiateur venimeux en cuir",
+        "de": "Lederhandschutz des toxischen Gladiators"
     },
     "270667": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Helm",
-        "ru": "Venomous Gladiator's Leather Helm",
-        "es": "Venomous Gladiator's Leather Helm",
-        "br": "Venomous Gladiator's Leather Helm",
+        "ru": "Кожаный шлем ядовитого гладиатора",
+        "es": "Yelmo de cuero de Gladiador venenoso",
+        "br": "Elmo de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Helm",
-        "de": "Venomous Gladiator's Leather Helm"
+        "fr": "Heaume du gladiateur venimeux en cuir",
+        "de": "Lederhelm des toxischen Gladiators"
     },
     "270668": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Mask",
-        "ru": "Venomous Gladiator's Leather Mask",
-        "es": "Venomous Gladiator's Leather Mask",
-        "br": "Venomous Gladiator's Leather Mask",
+        "ru": "Кожаная маска ядовитого гладиатора",
+        "es": "Máscara de cuero de Gladiador venenoso",
+        "br": "Máscara de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Mask",
-        "de": "Venomous Gladiator's Leather Mask"
+        "fr": "Masque du gladiateur venimeux en cuir",
+        "de": "Ledermaske des toxischen Gladiators"
     },
     "270669": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Breeches",
-        "ru": "Venomous Gladiator's Leather Breeches",
-        "es": "Venomous Gladiator's Leather Breeches",
-        "br": "Venomous Gladiator's Leather Breeches",
+        "ru": "Кожаные штаны ядовитого гладиатора",
+        "es": "Calzones de cuero de Gladiador venenoso",
+        "br": "Calções de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Breeches",
-        "de": "Venomous Gladiator's Leather Breeches"
+        "fr": "Braies du gladiateur venimeux en cuir",
+        "de": "Lederbundhosen des toxischen Gladiators"
     },
     "270670": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Legwraps",
-        "ru": "Venomous Gladiator's Leather Legwraps",
-        "es": "Venomous Gladiator's Leather Legwraps",
-        "br": "Venomous Gladiator's Leather Legwraps",
+        "ru": "Кожаные бриджи ядовитого гладиатора",
+        "es": "Perneras de cuero de Gladiador venenoso",
+        "br": "Culotes de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Legwraps",
-        "de": "Venomous Gladiator's Leather Legwraps"
+        "fr": "Jambards du gladiateur venimeux en cuir",
+        "de": "Lederbeinwickel des toxischen Gladiators"
     },
     "270671": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Spaulders",
-        "ru": "Venomous Gladiator's Leather Spaulders",
-        "es": "Venomous Gladiator's Leather Spaulders",
-        "br": "Venomous Gladiator's Leather Spaulders",
+        "ru": "Кожаный наплеч ядовитого гладиатора",
+        "es": "Bufas de cuero de Gladiador venenoso",
+        "br": "Espaldares de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Spaulders",
-        "de": "Venomous Gladiator's Leather Spaulders"
+        "fr": "Spallières du gladiateur venimeux en cuir",
+        "de": "Lederschiftung des toxischen Gladiators"
     },
     "270672": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Shoulderpads",
-        "ru": "Venomous Gladiator's Leather Shoulderpads",
-        "es": "Venomous Gladiator's Leather Shoulderpads",
-        "br": "Venomous Gladiator's Leather Shoulderpads",
+        "ru": "Кожаные наплечники ядовитого гладиатора",
+        "es": "Hombreras de cuero de Gladiador venenoso",
+        "br": "Ombreiras de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Shoulderpads",
-        "de": "Venomous Gladiator's Leather Shoulderpads"
+        "fr": "Protège-épaules du gladiateur venimeux en cuir",
+        "de": "Lederschulterpolster des toxischen Gladiators"
     },
     "270673": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Belt",
-        "ru": "Venomous Gladiator's Leather Belt",
-        "es": "Venomous Gladiator's Leather Belt",
-        "br": "Venomous Gladiator's Leather Belt",
+        "ru": "Кожаный пояс ядовитого гладиатора",
+        "es": "Cinturón de cuero de Gladiador venenoso",
+        "br": "Cinto de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Belt",
-        "de": "Venomous Gladiator's Leather Belt"
+        "fr": "Ceinture du gladiateur venimeux en cuir",
+        "de": "Ledergürtel des toxischen Gladiators"
     },
     "270674": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Strap",
-        "ru": "Venomous Gladiator's Leather Strap",
-        "es": "Venomous Gladiator's Leather Strap",
-        "br": "Venomous Gladiator's Leather Strap",
+        "ru": "Кожаный ремень ядовитого гладиатора",
+        "es": "Correa de cuero de Gladiador venenoso",
+        "br": "Correia de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Strap",
-        "de": "Venomous Gladiator's Leather Strap"
+        "fr": "Lanière du gladiateur venimeux en cuir",
+        "de": "Lederriemen des toxischen Gladiators"
     },
     "270675": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Wristwraps",
-        "ru": "Venomous Gladiator's Leather Wristwraps",
-        "es": "Venomous Gladiator's Leather Wristwraps",
-        "br": "Venomous Gladiator's Leather Wristwraps",
+        "ru": "Кожаные напульсники ядовитого гладиатора",
+        "es": "Cubremuñecas de cuero de Gladiador venenoso",
+        "br": "Munhecas de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Wristwraps",
-        "de": "Venomous Gladiator's Leather Wristwraps"
+        "fr": "Bandelettes du gladiateur venimeux en cuir",
+        "de": "Ledergelenkbänder des toxischen Gladiators"
     },
     "270676": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Wristguards",
-        "ru": "Venomous Gladiator's Leather Wristguards",
-        "es": "Venomous Gladiator's Leather Wristguards",
-        "br": "Venomous Gladiator's Leather Wristguards",
+        "ru": "Кожаные нарукавники ядовитого гладиатора",
+        "es": "Muñequeras de cuero de Gladiador venenoso",
+        "br": "Munhequeiras de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Wristguards",
-        "de": "Venomous Gladiator's Leather Wristguards"
+        "fr": "Garde-poignets du gladiateur venimeux en cuir",
+        "de": "Lederhandgelenksschützer des toxischen Gladiators"
     },
     "270677": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Vest",
-        "ru": "Venomous Gladiator's Leather Vest",
-        "es": "Venomous Gladiator's Leather Vest",
-        "br": "Venomous Gladiator's Leather Vest",
+        "ru": "Кожаный жилет ядовитого гладиатора",
+        "es": "Jubón de cuero de Gladiador venenoso",
+        "br": "Colete de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Vest",
-        "de": "Venomous Gladiator's Leather Vest"
+        "fr": "Gilet du gladiateur venimeux en cuir",
+        "de": "Lederweste des toxischen Gladiators"
     },
     "270678": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Vestments",
-        "ru": "Venomous Gladiator's Leather Vestments",
-        "es": "Venomous Gladiator's Leather Vestments",
-        "br": "Venomous Gladiator's Leather Vestments",
+        "ru": "Кожаное облачение ядовитого гладиатора",
+        "es": "Vestimentas de cuero de Gladiador venenoso",
+        "br": "Vestimenta de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Vestments",
-        "de": "Venomous Gladiator's Leather Vestments"
+        "fr": "Habits du gladiateur venimeux en cuir",
+        "de": "Ledergewänder des toxischen Gladiators"
     },
     "270679": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Boots",
-        "ru": "Venomous Gladiator's Leather Boots",
-        "es": "Venomous Gladiator's Leather Boots",
-        "br": "Venomous Gladiator's Leather Boots",
+        "ru": "Кожаные сапоги ядовитого гладиатора",
+        "es": "Botas de cuero de Gladiador venenoso",
+        "br": "Botas de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Boots",
-        "de": "Venomous Gladiator's Leather Boots"
+        "fr": "Bottes du gladiateur venimeux en cuir",
+        "de": "Lederstiefel des toxischen Gladiators"
     },
     "270680": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Treads",
-        "ru": "Venomous Gladiator's Leather Treads",
-        "es": "Venomous Gladiator's Leather Treads",
-        "br": "Venomous Gladiator's Leather Treads",
+        "ru": "Кожаные ботфорты ядовитого гладиатора",
+        "es": "Botines de cuero de Gladiador venenoso",
+        "br": "Botinas de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Treads",
-        "de": "Venomous Gladiator's Leather Treads"
+        "fr": "Bottines du gladiateur venimeux en cuir",
+        "de": "Ledertreter des toxischen Gladiators"
     },
     "270681": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Gloves",
-        "ru": "Venomous Gladiator's Leather Gloves",
-        "es": "Venomous Gladiator's Leather Gloves",
-        "br": "Venomous Gladiator's Leather Gloves",
+        "ru": "Кожаные перчатки ядовитого гладиатора",
+        "es": "Guantes de cuero de Gladiador venenoso",
+        "br": "Luvas de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Gloves",
-        "de": "Venomous Gladiator's Leather Gloves"
+        "fr": "Gants du gladiateur venimeux en cuir",
+        "de": "Lederhandschuhe des toxischen Gladiators"
     },
     "270682": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Grips",
-        "ru": "Venomous Gladiator's Leather Grips",
-        "es": "Venomous Gladiator's Leather Grips",
-        "br": "Venomous Gladiator's Leather Grips",
+        "ru": "Кожаные захваты ядовитого гладиатора",
+        "es": "Mandiletes de cuero de Gladiador venenoso",
+        "br": "Guantes de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Grips",
-        "de": "Venomous Gladiator's Leather Grips"
+        "fr": "Poignes du gladiateur venimeux en cuir",
+        "de": "Lederhandschutz des toxischen Gladiators"
     },
     "270683": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Helm",
-        "ru": "Venomous Gladiator's Leather Helm",
-        "es": "Venomous Gladiator's Leather Helm",
-        "br": "Venomous Gladiator's Leather Helm",
+        "ru": "Кожаный шлем ядовитого гладиатора",
+        "es": "Yelmo de cuero de Gladiador venenoso",
+        "br": "Elmo de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Helm",
-        "de": "Venomous Gladiator's Leather Helm"
+        "fr": "Heaume du gladiateur venimeux en cuir",
+        "de": "Lederhelm des toxischen Gladiators"
     },
     "270684": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Mask",
-        "ru": "Venomous Gladiator's Leather Mask",
-        "es": "Venomous Gladiator's Leather Mask",
-        "br": "Venomous Gladiator's Leather Mask",
+        "ru": "Кожаная маска ядовитого гладиатора",
+        "es": "Máscara de cuero de Gladiador venenoso",
+        "br": "Máscara de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Mask",
-        "de": "Venomous Gladiator's Leather Mask"
+        "fr": "Masque du gladiateur venimeux en cuir",
+        "de": "Ledermaske des toxischen Gladiators"
     },
     "270685": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Breeches",
-        "ru": "Venomous Gladiator's Leather Breeches",
-        "es": "Venomous Gladiator's Leather Breeches",
-        "br": "Venomous Gladiator's Leather Breeches",
+        "ru": "Кожаные штаны ядовитого гладиатора",
+        "es": "Calzones de cuero de Gladiador venenoso",
+        "br": "Calções de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Breeches",
-        "de": "Venomous Gladiator's Leather Breeches"
+        "fr": "Braies du gladiateur venimeux en cuir",
+        "de": "Lederbundhosen des toxischen Gladiators"
     },
     "270686": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Legwraps",
-        "ru": "Venomous Gladiator's Leather Legwraps",
-        "es": "Venomous Gladiator's Leather Legwraps",
-        "br": "Venomous Gladiator's Leather Legwraps",
+        "ru": "Кожаные бриджи ядовитого гладиатора",
+        "es": "Perneras de cuero de Gladiador venenoso",
+        "br": "Culotes de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Legwraps",
-        "de": "Venomous Gladiator's Leather Legwraps"
+        "fr": "Jambards du gladiateur venimeux en cuir",
+        "de": "Lederbeinwickel des toxischen Gladiators"
     },
     "270687": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Spaulders",
-        "ru": "Venomous Gladiator's Leather Spaulders",
-        "es": "Venomous Gladiator's Leather Spaulders",
-        "br": "Venomous Gladiator's Leather Spaulders",
+        "ru": "Кожаный наплеч ядовитого гладиатора",
+        "es": "Bufas de cuero de Gladiador venenoso",
+        "br": "Espaldares de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Spaulders",
-        "de": "Venomous Gladiator's Leather Spaulders"
+        "fr": "Spallières du gladiateur venimeux en cuir",
+        "de": "Lederschiftung des toxischen Gladiators"
     },
     "270688": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Shoulderpads",
-        "ru": "Venomous Gladiator's Leather Shoulderpads",
-        "es": "Venomous Gladiator's Leather Shoulderpads",
-        "br": "Venomous Gladiator's Leather Shoulderpads",
+        "ru": "Кожаные наплечники ядовитого гладиатора",
+        "es": "Hombreras de cuero de Gladiador venenoso",
+        "br": "Ombreiras de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Shoulderpads",
-        "de": "Venomous Gladiator's Leather Shoulderpads"
+        "fr": "Protège-épaules du gladiateur venimeux en cuir",
+        "de": "Lederschulterpolster des toxischen Gladiators"
     },
     "270689": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Belt",
-        "ru": "Venomous Gladiator's Leather Belt",
-        "es": "Venomous Gladiator's Leather Belt",
-        "br": "Venomous Gladiator's Leather Belt",
+        "ru": "Кожаный пояс ядовитого гладиатора",
+        "es": "Cinturón de cuero de Gladiador venenoso",
+        "br": "Cinto de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Belt",
-        "de": "Venomous Gladiator's Leather Belt"
+        "fr": "Ceinture du gladiateur venimeux en cuir",
+        "de": "Ledergürtel des toxischen Gladiators"
     },
     "270690": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Strap",
-        "ru": "Venomous Gladiator's Leather Strap",
-        "es": "Venomous Gladiator's Leather Strap",
-        "br": "Venomous Gladiator's Leather Strap",
+        "ru": "Кожаный ремень ядовитого гладиатора",
+        "es": "Correa de cuero de Gladiador venenoso",
+        "br": "Correia de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Strap",
-        "de": "Venomous Gladiator's Leather Strap"
+        "fr": "Lanière du gladiateur venimeux en cuir",
+        "de": "Lederriemen des toxischen Gladiators"
     },
     "270691": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Wristwraps",
-        "ru": "Venomous Gladiator's Leather Wristwraps",
-        "es": "Venomous Gladiator's Leather Wristwraps",
-        "br": "Venomous Gladiator's Leather Wristwraps",
+        "ru": "Кожаные напульсники ядовитого гладиатора",
+        "es": "Cubremuñecas de cuero de Gladiador venenoso",
+        "br": "Munhecas de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Wristwraps",
-        "de": "Venomous Gladiator's Leather Wristwraps"
+        "fr": "Bandelettes du gladiateur venimeux en cuir",
+        "de": "Ledergelenkbänder des toxischen Gladiators"
     },
     "270692": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Wristguards",
-        "ru": "Venomous Gladiator's Leather Wristguards",
-        "es": "Venomous Gladiator's Leather Wristguards",
-        "br": "Venomous Gladiator's Leather Wristguards",
+        "ru": "Кожаные нарукавники ядовитого гладиатора",
+        "es": "Muñequeras de cuero de Gladiador venenoso",
+        "br": "Munhequeiras de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Wristguards",
-        "de": "Venomous Gladiator's Leather Wristguards"
+        "fr": "Garde-poignets du gladiateur venimeux en cuir",
+        "de": "Lederhandgelenksschützer des toxischen Gladiators"
     },
     "270693": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Vest",
-        "ru": "Venomous Gladiator's Leather Vest",
-        "es": "Venomous Gladiator's Leather Vest",
-        "br": "Venomous Gladiator's Leather Vest",
+        "ru": "Кожаный жилет ядовитого гладиатора",
+        "es": "Jubón de cuero de Gladiador venenoso",
+        "br": "Colete de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Vest",
-        "de": "Venomous Gladiator's Leather Vest"
+        "fr": "Gilet du gladiateur venimeux en cuir",
+        "de": "Lederweste des toxischen Gladiators"
     },
     "270694": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Jerkin",
-        "ru": "Venomous Gladiator's Leather Jerkin",
-        "es": "Venomous Gladiator's Leather Jerkin",
-        "br": "Venomous Gladiator's Leather Jerkin",
+        "ru": "Кожаный жакет ядовитого гладиатора",
+        "es": "Chaleco de cuero de Gladiador venenoso",
+        "br": "Gibão de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Jerkin",
-        "de": "Venomous Gladiator's Leather Jerkin"
+        "fr": "Pourpoint du gladiateur venimeux en cuir",
+        "de": "Lederwams des toxischen Gladiators"
     },
     "270695": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Boots",
-        "ru": "Venomous Gladiator's Leather Boots",
-        "es": "Venomous Gladiator's Leather Boots",
-        "br": "Venomous Gladiator's Leather Boots",
+        "ru": "Кожаные сапоги ядовитого гладиатора",
+        "es": "Botas de cuero de Gladiador venenoso",
+        "br": "Botas de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Boots",
-        "de": "Venomous Gladiator's Leather Boots"
+        "fr": "Bottes du gladiateur venimeux en cuir",
+        "de": "Lederstiefel des toxischen Gladiators"
     },
     "270696": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Treads",
-        "ru": "Venomous Gladiator's Leather Treads",
-        "es": "Venomous Gladiator's Leather Treads",
-        "br": "Venomous Gladiator's Leather Treads",
+        "ru": "Кожаные ботфорты ядовитого гладиатора",
+        "es": "Botines de cuero de Gladiador venenoso",
+        "br": "Botinas de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Treads",
-        "de": "Venomous Gladiator's Leather Treads"
+        "fr": "Bottines du gladiateur venimeux en cuir",
+        "de": "Ledertreter des toxischen Gladiators"
     },
     "270697": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Gloves",
-        "ru": "Venomous Gladiator's Leather Gloves",
-        "es": "Venomous Gladiator's Leather Gloves",
-        "br": "Venomous Gladiator's Leather Gloves",
+        "ru": "Кожаные перчатки ядовитого гладиатора",
+        "es": "Guantes de cuero de Gladiador venenoso",
+        "br": "Luvas de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Gloves",
-        "de": "Venomous Gladiator's Leather Gloves"
+        "fr": "Gants du gladiateur venimeux en cuir",
+        "de": "Lederhandschuhe des toxischen Gladiators"
     },
     "270698": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Grips",
-        "ru": "Venomous Gladiator's Leather Grips",
-        "es": "Venomous Gladiator's Leather Grips",
-        "br": "Venomous Gladiator's Leather Grips",
+        "ru": "Кожаные захваты ядовитого гладиатора",
+        "es": "Mandiletes de cuero de Gladiador venenoso",
+        "br": "Guantes de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Grips",
-        "de": "Venomous Gladiator's Leather Grips"
+        "fr": "Poignes du gladiateur venimeux en cuir",
+        "de": "Lederhandschutz des toxischen Gladiators"
     },
     "270699": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Helm",
-        "ru": "Venomous Gladiator's Leather Helm",
-        "es": "Venomous Gladiator's Leather Helm",
-        "br": "Venomous Gladiator's Leather Helm",
+        "ru": "Кожаный шлем ядовитого гладиатора",
+        "es": "Yelmo de cuero de Gladiador venenoso",
+        "br": "Elmo de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Helm",
-        "de": "Venomous Gladiator's Leather Helm"
+        "fr": "Heaume du gladiateur venimeux en cuir",
+        "de": "Lederhelm des toxischen Gladiators"
     },
     "270700": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Mask",
-        "ru": "Venomous Gladiator's Leather Mask",
-        "es": "Venomous Gladiator's Leather Mask",
-        "br": "Venomous Gladiator's Leather Mask",
+        "ru": "Кожаная маска ядовитого гладиатора",
+        "es": "Máscara de cuero de Gladiador venenoso",
+        "br": "Máscara de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Mask",
-        "de": "Venomous Gladiator's Leather Mask"
+        "fr": "Masque du gladiateur venimeux en cuir",
+        "de": "Ledermaske des toxischen Gladiators"
     },
     "270701": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Breeches",
-        "ru": "Venomous Gladiator's Leather Breeches",
-        "es": "Venomous Gladiator's Leather Breeches",
-        "br": "Venomous Gladiator's Leather Breeches",
+        "ru": "Кожаные штаны ядовитого гладиатора",
+        "es": "Calzones de cuero de Gladiador venenoso",
+        "br": "Calções de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Breeches",
-        "de": "Venomous Gladiator's Leather Breeches"
+        "fr": "Braies du gladiateur venimeux en cuir",
+        "de": "Lederbundhosen des toxischen Gladiators"
     },
     "270702": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Legwraps",
-        "ru": "Venomous Gladiator's Leather Legwraps",
-        "es": "Venomous Gladiator's Leather Legwraps",
-        "br": "Venomous Gladiator's Leather Legwraps",
+        "ru": "Кожаные бриджи ядовитого гладиатора",
+        "es": "Perneras de cuero de Gladiador venenoso",
+        "br": "Culotes de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Legwraps",
-        "de": "Venomous Gladiator's Leather Legwraps"
+        "fr": "Jambards du gladiateur venimeux en cuir",
+        "de": "Lederbeinwickel des toxischen Gladiators"
     },
     "270703": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Spaulders",
-        "ru": "Venomous Gladiator's Leather Spaulders",
-        "es": "Venomous Gladiator's Leather Spaulders",
-        "br": "Venomous Gladiator's Leather Spaulders",
+        "ru": "Кожаный наплеч ядовитого гладиатора",
+        "es": "Bufas de cuero de Gladiador venenoso",
+        "br": "Espaldares de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Spaulders",
-        "de": "Venomous Gladiator's Leather Spaulders"
+        "fr": "Spallières du gladiateur venimeux en cuir",
+        "de": "Lederschiftung des toxischen Gladiators"
     },
     "270704": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Shoulderpads",
-        "ru": "Venomous Gladiator's Leather Shoulderpads",
-        "es": "Venomous Gladiator's Leather Shoulderpads",
-        "br": "Venomous Gladiator's Leather Shoulderpads",
+        "ru": "Кожаные наплечники ядовитого гладиатора",
+        "es": "Hombreras de cuero de Gladiador venenoso",
+        "br": "Ombreiras de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Shoulderpads",
-        "de": "Venomous Gladiator's Leather Shoulderpads"
+        "fr": "Protège-épaules du gladiateur venimeux en cuir",
+        "de": "Lederschulterpolster des toxischen Gladiators"
     },
     "270705": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Belt",
-        "ru": "Venomous Gladiator's Leather Belt",
-        "es": "Venomous Gladiator's Leather Belt",
-        "br": "Venomous Gladiator's Leather Belt",
+        "ru": "Кожаный пояс ядовитого гладиатора",
+        "es": "Cinturón de cuero de Gladiador venenoso",
+        "br": "Cinto de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Belt",
-        "de": "Venomous Gladiator's Leather Belt"
+        "fr": "Ceinture du gladiateur venimeux en cuir",
+        "de": "Ledergürtel des toxischen Gladiators"
     },
     "270706": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Strap",
-        "ru": "Venomous Gladiator's Leather Strap",
-        "es": "Venomous Gladiator's Leather Strap",
-        "br": "Venomous Gladiator's Leather Strap",
+        "ru": "Кожаный ремень ядовитого гладиатора",
+        "es": "Correa de cuero de Gladiador venenoso",
+        "br": "Correia de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Strap",
-        "de": "Venomous Gladiator's Leather Strap"
+        "fr": "Lanière du gladiateur venimeux en cuir",
+        "de": "Lederriemen des toxischen Gladiators"
     },
     "270707": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Wristwraps",
-        "ru": "Venomous Gladiator's Leather Wristwraps",
-        "es": "Venomous Gladiator's Leather Wristwraps",
-        "br": "Venomous Gladiator's Leather Wristwraps",
+        "ru": "Кожаные напульсники ядовитого гладиатора",
+        "es": "Cubremuñecas de cuero de Gladiador venenoso",
+        "br": "Munhecas de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Wristwraps",
-        "de": "Venomous Gladiator's Leather Wristwraps"
+        "fr": "Bandelettes du gladiateur venimeux en cuir",
+        "de": "Ledergelenkbänder des toxischen Gladiators"
     },
     "270708": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Wristguards",
-        "ru": "Venomous Gladiator's Leather Wristguards",
-        "es": "Venomous Gladiator's Leather Wristguards",
-        "br": "Venomous Gladiator's Leather Wristguards",
+        "ru": "Кожаные нарукавники ядовитого гладиатора",
+        "es": "Muñequeras de cuero de Gladiador venenoso",
+        "br": "Munhequeiras de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Wristguards",
-        "de": "Venomous Gladiator's Leather Wristguards"
+        "fr": "Garde-poignets du gladiateur venimeux en cuir",
+        "de": "Lederhandgelenksschützer des toxischen Gladiators"
     },
     "270709": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Vest",
-        "ru": "Venomous Gladiator's Leather Vest",
-        "es": "Venomous Gladiator's Leather Vest",
-        "br": "Venomous Gladiator's Leather Vest",
+        "ru": "Кожаный жилет ядовитого гладиатора",
+        "es": "Jubón de cuero de Gladiador venenoso",
+        "br": "Colete de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Vest",
-        "de": "Venomous Gladiator's Leather Vest"
+        "fr": "Gilet du gladiateur venimeux en cuir",
+        "de": "Lederweste des toxischen Gladiators"
     },
     "270710": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Jerkin",
-        "ru": "Venomous Gladiator's Leather Jerkin",
-        "es": "Venomous Gladiator's Leather Jerkin",
-        "br": "Venomous Gladiator's Leather Jerkin",
+        "ru": "Кожаный жакет ядовитого гладиатора",
+        "es": "Chaleco de cuero de Gladiador venenoso",
+        "br": "Gibão de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Jerkin",
-        "de": "Venomous Gladiator's Leather Jerkin"
+        "fr": "Pourpoint du gladiateur venimeux en cuir",
+        "de": "Lederwams des toxischen Gladiators"
     },
     "270711": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Boots",
-        "ru": "Venomous Gladiator's Leather Boots",
-        "es": "Venomous Gladiator's Leather Boots",
-        "br": "Venomous Gladiator's Leather Boots",
+        "ru": "Кожаные сапоги ядовитого гладиатора",
+        "es": "Botas de cuero de Gladiador venenoso",
+        "br": "Botas de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Boots",
-        "de": "Venomous Gladiator's Leather Boots"
+        "fr": "Bottes du gladiateur venimeux en cuir",
+        "de": "Lederstiefel des toxischen Gladiators"
     },
     "270712": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Treads",
-        "ru": "Venomous Gladiator's Leather Treads",
-        "es": "Venomous Gladiator's Leather Treads",
-        "br": "Venomous Gladiator's Leather Treads",
+        "ru": "Кожаные ботфорты ядовитого гладиатора",
+        "es": "Botines de cuero de Gladiador venenoso",
+        "br": "Botinas de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Treads",
-        "de": "Venomous Gladiator's Leather Treads"
+        "fr": "Bottines du gladiateur venimeux en cuir",
+        "de": "Ledertreter des toxischen Gladiators"
     },
     "270713": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Gloves",
-        "ru": "Venomous Gladiator's Leather Gloves",
-        "es": "Venomous Gladiator's Leather Gloves",
-        "br": "Venomous Gladiator's Leather Gloves",
+        "ru": "Кожаные перчатки ядовитого гладиатора",
+        "es": "Guantes de cuero de Gladiador venenoso",
+        "br": "Luvas de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Gloves",
-        "de": "Venomous Gladiator's Leather Gloves"
+        "fr": "Gants du gladiateur venimeux en cuir",
+        "de": "Lederhandschuhe des toxischen Gladiators"
     },
     "270714": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Grips",
-        "ru": "Venomous Gladiator's Leather Grips",
-        "es": "Venomous Gladiator's Leather Grips",
-        "br": "Venomous Gladiator's Leather Grips",
+        "ru": "Кожаные захваты ядовитого гладиатора",
+        "es": "Mandiletes de cuero de Gladiador venenoso",
+        "br": "Guantes de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Grips",
-        "de": "Venomous Gladiator's Leather Grips"
+        "fr": "Poignes du gladiateur venimeux en cuir",
+        "de": "Lederhandschutz des toxischen Gladiators"
     },
     "270715": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Helm",
-        "ru": "Venomous Gladiator's Leather Helm",
-        "es": "Venomous Gladiator's Leather Helm",
-        "br": "Venomous Gladiator's Leather Helm",
+        "ru": "Кожаный шлем ядовитого гладиатора",
+        "es": "Yelmo de cuero de Gladiador venenoso",
+        "br": "Elmo de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Helm",
-        "de": "Venomous Gladiator's Leather Helm"
+        "fr": "Heaume du gladiateur venimeux en cuir",
+        "de": "Lederhelm des toxischen Gladiators"
     },
     "270716": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Mask",
-        "ru": "Venomous Gladiator's Leather Mask",
-        "es": "Venomous Gladiator's Leather Mask",
-        "br": "Venomous Gladiator's Leather Mask",
+        "ru": "Кожаная маска ядовитого гладиатора",
+        "es": "Máscara de cuero de Gladiador venenoso",
+        "br": "Máscara de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Mask",
-        "de": "Venomous Gladiator's Leather Mask"
+        "fr": "Masque du gladiateur venimeux en cuir",
+        "de": "Ledermaske des toxischen Gladiators"
     },
     "270717": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Breeches",
-        "ru": "Venomous Gladiator's Leather Breeches",
-        "es": "Venomous Gladiator's Leather Breeches",
-        "br": "Venomous Gladiator's Leather Breeches",
+        "ru": "Кожаные штаны ядовитого гладиатора",
+        "es": "Calzones de cuero de Gladiador venenoso",
+        "br": "Calções de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Breeches",
-        "de": "Venomous Gladiator's Leather Breeches"
+        "fr": "Braies du gladiateur venimeux en cuir",
+        "de": "Lederbundhosen des toxischen Gladiators"
     },
     "270718": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Legwraps",
-        "ru": "Venomous Gladiator's Leather Legwraps",
-        "es": "Venomous Gladiator's Leather Legwraps",
-        "br": "Venomous Gladiator's Leather Legwraps",
+        "ru": "Кожаные бриджи ядовитого гладиатора",
+        "es": "Perneras de cuero de Gladiador venenoso",
+        "br": "Culotes de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Legwraps",
-        "de": "Venomous Gladiator's Leather Legwraps"
+        "fr": "Jambards du gladiateur venimeux en cuir",
+        "de": "Lederbeinwickel des toxischen Gladiators"
     },
     "270719": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Spaulders",
-        "ru": "Venomous Gladiator's Leather Spaulders",
-        "es": "Venomous Gladiator's Leather Spaulders",
-        "br": "Venomous Gladiator's Leather Spaulders",
+        "ru": "Кожаный наплеч ядовитого гладиатора",
+        "es": "Bufas de cuero de Gladiador venenoso",
+        "br": "Espaldares de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Spaulders",
-        "de": "Venomous Gladiator's Leather Spaulders"
+        "fr": "Spallières du gladiateur venimeux en cuir",
+        "de": "Lederschiftung des toxischen Gladiators"
     },
     "270720": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Shoulderpads",
-        "ru": "Venomous Gladiator's Leather Shoulderpads",
-        "es": "Venomous Gladiator's Leather Shoulderpads",
-        "br": "Venomous Gladiator's Leather Shoulderpads",
+        "ru": "Кожаные наплечники ядовитого гладиатора",
+        "es": "Hombreras de cuero de Gladiador venenoso",
+        "br": "Ombreiras de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Shoulderpads",
-        "de": "Venomous Gladiator's Leather Shoulderpads"
+        "fr": "Protège-épaules du gladiateur venimeux en cuir",
+        "de": "Lederschulterpolster des toxischen Gladiators"
     },
     "270721": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Belt",
-        "ru": "Venomous Gladiator's Leather Belt",
-        "es": "Venomous Gladiator's Leather Belt",
-        "br": "Venomous Gladiator's Leather Belt",
+        "ru": "Кожаный пояс ядовитого гладиатора",
+        "es": "Cinturón de cuero de Gladiador venenoso",
+        "br": "Cinto de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Belt",
-        "de": "Venomous Gladiator's Leather Belt"
+        "fr": "Ceinture du gladiateur venimeux en cuir",
+        "de": "Ledergürtel des toxischen Gladiators"
     },
     "270722": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Strap",
-        "ru": "Venomous Gladiator's Leather Strap",
-        "es": "Venomous Gladiator's Leather Strap",
-        "br": "Venomous Gladiator's Leather Strap",
+        "ru": "Кожаный ремень ядовитого гладиатора",
+        "es": "Correa de cuero de Gladiador venenoso",
+        "br": "Correia de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Strap",
-        "de": "Venomous Gladiator's Leather Strap"
+        "fr": "Lanière du gladiateur venimeux en cuir",
+        "de": "Lederriemen des toxischen Gladiators"
     },
     "270723": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Wristwraps",
-        "ru": "Venomous Gladiator's Leather Wristwraps",
-        "es": "Venomous Gladiator's Leather Wristwraps",
-        "br": "Venomous Gladiator's Leather Wristwraps",
+        "ru": "Кожаные напульсники ядовитого гладиатора",
+        "es": "Cubremuñecas de cuero de Gladiador venenoso",
+        "br": "Munhecas de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Wristwraps",
-        "de": "Venomous Gladiator's Leather Wristwraps"
+        "fr": "Bandelettes du gladiateur venimeux en cuir",
+        "de": "Ledergelenkbänder des toxischen Gladiators"
     },
     "270724": {
         "cn": "",
         "en": "Venomous Gladiator's Leather Wristguards",
-        "ru": "Venomous Gladiator's Leather Wristguards",
-        "es": "Venomous Gladiator's Leather Wristguards",
-        "br": "Venomous Gladiator's Leather Wristguards",
+        "ru": "Кожаные нарукавники ядовитого гладиатора",
+        "es": "Muñequeras de cuero de Gladiador venenoso",
+        "br": "Munhequeiras de Couro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Leather Wristguards",
-        "de": "Venomous Gladiator's Leather Wristguards"
+        "fr": "Garde-poignets du gladiateur venimeux en cuir",
+        "de": "Lederhandgelenksschützer des toxischen Gladiators"
     },
     "270725": {
         "cn": "",
         "en": "Venomous Gladiator's Armored Scales",
-        "ru": "Venomous Gladiator's Armored Scales",
-        "es": "Venomous Gladiator's Armored Scales",
-        "br": "Venomous Gladiator's Armored Scales",
+        "ru": "Бронированная чешуя ядовитого гладиатора",
+        "es": "Coracino blindado de Gladiador venenoso",
+        "br": "Escamas Blindadas do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Armored Scales",
-        "de": "Venomous Gladiator's Armored Scales"
+        "fr": "Écailles cuirassées du gladiateur venimeux",
+        "de": "Gepanzerte Schuppen des toxischen Gladiators"
     },
     "270726": {
         "cn": "",
         "en": "Venomous Gladiator's Scaleguard",
-        "ru": "Venomous Gladiator's Scaleguard",
-        "es": "Venomous Gladiator's Scaleguard",
-        "br": "Venomous Gladiator's Scaleguard",
+        "ru": "Чешуйчатый нагрудный доспех ядовитого гладиатора",
+        "es": "Guardaescama de Gladiador venenoso",
+        "br": "Guarda Escamosa do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Scaleguard",
-        "de": "Venomous Gladiator's Scaleguard"
+        "fr": "Gardécaille du gladiateur venimeux",
+        "de": "Schuppenwache des toxischen Gladiators"
     },
     "270727": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Sabatons",
-        "ru": "Venomous Gladiator's Chain Sabatons",
-        "es": "Venomous Gladiator's Chain Sabatons",
-        "br": "Venomous Gladiator's Chain Sabatons",
+        "ru": "Кольчужные башмаки ядовитого гладиатора",
+        "es": "Escarpes de anillas de Gladiador venenoso",
+        "br": "Escarpes Encadeados do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Sabatons",
-        "de": "Venomous Gladiator's Chain Sabatons"
+        "fr": "Solerets du gladiateur venimeux en anneaux",
+        "de": "Kettensabatons des toxischen Gladiators"
     },
     "270728": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Boots",
-        "ru": "Venomous Gladiator's Chain Boots",
-        "es": "Venomous Gladiator's Chain Boots",
-        "br": "Venomous Gladiator's Chain Boots",
+        "ru": "Кольчужные сапоги ядовитого гладиатора",
+        "es": "Botas de anillas de Gladiador venenoso",
+        "br": "Botas Encadeadas do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Boots",
-        "de": "Venomous Gladiator's Chain Boots"
+        "fr": "Bottes du gladiateur venimeux en anneaux",
+        "de": "Kettenstiefel des toxischen Gladiators"
     },
     "270729": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Gauntlets",
-        "ru": "Venomous Gladiator's Chain Gauntlets",
-        "es": "Venomous Gladiator's Chain Gauntlets",
-        "br": "Venomous Gladiator's Chain Gauntlets",
+        "ru": "Кольчужные рукавицы ядовитого гладиатора",
+        "es": "Guanteletes de anillas de Gladiador venenoso",
+        "br": "Manoplas Encadeadas do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Gauntlets",
-        "de": "Venomous Gladiator's Chain Gauntlets"
+        "fr": "Gantelets du gladiateur venimeux en anneaux",
+        "de": "Kettenstulpen des toxischen Gladiators"
     },
     "270730": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Handguards",
-        "ru": "Venomous Gladiator's Chain Handguards",
-        "es": "Venomous Gladiator's Chain Handguards",
-        "br": "Venomous Gladiator's Chain Handguards",
+        "ru": "Кольчужные боевые рукавицы ядовитого гладиатора",
+        "es": "Manoplas de anillas de Gladiador venenoso",
+        "br": "Protetores de Mão Encadeados do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Handguards",
-        "de": "Venomous Gladiator's Chain Handguards"
+        "fr": "Garde-mains du gladiateur venimeux en anneaux",
+        "de": "Kettenhandschützer des toxischen Gladiators"
     },
     "270731": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Helm",
-        "ru": "Venomous Gladiator's Chain Helm",
-        "es": "Venomous Gladiator's Chain Helm",
-        "br": "Venomous Gladiator's Chain Helm",
+        "ru": "Кольчужный шлем ядовитого гладиатора",
+        "es": "Yelmo de anillas de Gladiador venenoso",
+        "br": "Elmo Encadeado do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Helm",
-        "de": "Venomous Gladiator's Chain Helm"
+        "fr": "Heaume du gladiateur venimeux en anneaux",
+        "de": "Kettenhelm des toxischen Gladiators"
     },
     "270732": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Faceguard",
-        "ru": "Venomous Gladiator's Chain Faceguard",
-        "es": "Venomous Gladiator's Chain Faceguard",
-        "br": "Venomous Gladiator's Chain Faceguard",
+        "ru": "Кольчужный большой шлем ядовитого гладиатора",
+        "es": "Visera de anillas de Gladiador venenoso",
+        "br": "Viseira Encadeada do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Faceguard",
-        "de": "Venomous Gladiator's Chain Faceguard"
+        "fr": "Ventaille du gladiateur venimeux en anneaux",
+        "de": "Kettengesichtsschutz des toxischen Gladiators"
     },
     "270733": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Leggings",
-        "ru": "Venomous Gladiator's Chain Leggings",
-        "es": "Venomous Gladiator's Chain Leggings",
-        "br": "Venomous Gladiator's Chain Leggings",
+        "ru": "Кольчужные поножи ядовитого гладиатора",
+        "es": "Leotardos de anillas de Gladiador venenoso",
+        "br": "Perneiras Encadeadas do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Leggings",
-        "de": "Venomous Gladiator's Chain Leggings"
+        "fr": "Jambières du gladiateur venimeux en anneaux",
+        "de": "Kettengamaschen des toxischen Gladiators"
     },
     "270734": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Breeches",
-        "ru": "Venomous Gladiator's Chain Breeches",
-        "es": "Venomous Gladiator's Chain Breeches",
-        "br": "Venomous Gladiator's Chain Breeches",
+        "ru": "Кольчужные штаны ядовитого гладиатора",
+        "es": "Calzones de anillas de Gladiador venenoso",
+        "br": "Calções Encadeados do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Breeches",
-        "de": "Venomous Gladiator's Chain Breeches"
+        "fr": "Braies du gladiateur venimeux en anneaux",
+        "de": "Kettenbundhosen des toxischen Gladiators"
     },
     "270735": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Monnion",
-        "ru": "Venomous Gladiator's Chain Monnion",
-        "es": "Venomous Gladiator's Chain Monnion",
-        "br": "Venomous Gladiator's Chain Monnion",
+        "ru": "Кольчужные наплечники ядовитого гладиатора",
+        "es": "Sobrehombreras de anillas de Gladiador venenoso",
+        "br": "Espáduas Encadeadas do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Monnion",
-        "de": "Venomous Gladiator's Chain Monnion"
+        "fr": "Espalières du gladiateur venimeux en anneaux",
+        "de": "Kettenschiftung des toxischen Gladiators"
     },
     "270736": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Shoulderguard",
-        "ru": "Venomous Gladiator's Chain Shoulderguard",
-        "es": "Venomous Gladiator's Chain Shoulderguard",
-        "br": "Venomous Gladiator's Chain Shoulderguard",
+        "ru": "Кольчужные наплечные щитки ядовитого гладиатора",
+        "es": "Guardahombros de anillas de Gladiador venenoso",
+        "br": "Guarda-ombros Encadeado do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Shoulderguard",
-        "de": "Venomous Gladiator's Chain Shoulderguard"
+        "fr": "Garde-épaules du gladiateur venimeux en anneaux",
+        "de": "Kettenschulterschutz des toxischen Gladiators"
     },
     "270737": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Belt",
-        "ru": "Venomous Gladiator's Chain Belt",
-        "es": "Venomous Gladiator's Chain Belt",
-        "br": "Venomous Gladiator's Chain Belt",
+        "ru": "Кольчужный пояс ядовитого гладиатора",
+        "es": "Cinturón de anillas de Gladiador venenoso",
+        "br": "Cinto Encadeado do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Belt",
-        "de": "Venomous Gladiator's Chain Belt"
+        "fr": "Ceinture du gladiateur venimeux en anneaux",
+        "de": "Kettengürtel des toxischen Gladiators"
     },
     "270738": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Girdle",
-        "ru": "Venomous Gladiator's Chain Girdle",
-        "es": "Venomous Gladiator's Chain Girdle",
-        "br": "Venomous Gladiator's Chain Girdle",
+        "ru": "Кольчужный ремень ядовитого гладиатора",
+        "es": "Faja de anillas de Gladiador venenoso",
+        "br": "Cinturão Encadeado do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Girdle",
-        "de": "Venomous Gladiator's Chain Girdle"
+        "fr": "Ceinturon du gladiateur venimeux en anneaux",
+        "de": "Kettengurt des toxischen Gladiators"
     },
     "270739": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Wristguards",
-        "ru": "Venomous Gladiator's Chain Wristguards",
-        "es": "Venomous Gladiator's Chain Wristguards",
-        "br": "Venomous Gladiator's Chain Wristguards",
+        "ru": "Кольчужные нарукавники ядовитого гладиатора",
+        "es": "Muñequeras de anillas de Gladiador venenoso",
+        "br": "Munhequeiras Encadeadas do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Wristguards",
-        "de": "Venomous Gladiator's Chain Wristguards"
+        "fr": "Garde-poignets du gladiateur venimeux en anneaux",
+        "de": "Kettenhandgelenksschützer des toxischen Gladiators"
     },
     "270740": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Bracers",
-        "ru": "Venomous Gladiator's Chain Bracers",
-        "es": "Venomous Gladiator's Chain Bracers",
-        "br": "Venomous Gladiator's Chain Bracers",
+        "ru": "Кольчужные наручи ядовитого гладиатора",
+        "es": "Brazales de anillas de Gladiador venenoso",
+        "br": "Braçadeiras Encadeadas do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Bracers",
-        "de": "Venomous Gladiator's Chain Bracers"
+        "fr": "Brassards du gladiateur venimeux en anneaux",
+        "de": "Kettenarmschienen des toxischen Gladiators"
     },
     "270741": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Vest",
-        "ru": "Venomous Gladiator's Chain Vest",
-        "es": "Venomous Gladiator's Chain Vest",
-        "br": "Venomous Gladiator's Chain Vest",
+        "ru": "Кольчужный жилет ядовитого гладиатора",
+        "es": "Jubón de anillas de Gladiador venenoso",
+        "br": "Colete Encadeado do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Vest",
-        "de": "Venomous Gladiator's Chain Vest"
+        "fr": "Gilet du gladiateur venimeux en anneaux",
+        "de": "Kettenweste des toxischen Gladiators"
     },
     "270742": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Tunic",
-        "ru": "Venomous Gladiator's Chain Tunic",
-        "es": "Venomous Gladiator's Chain Tunic",
-        "br": "Venomous Gladiator's Chain Tunic",
+        "ru": "Кольчужный мундир ядовитого гладиатора",
+        "es": "Guerrera de anillas de Gladiador venenoso",
+        "br": "Túnica Encadeada do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Tunic",
-        "de": "Venomous Gladiator's Chain Tunic"
+        "fr": "Tunique du gladiateur venimeux en anneaux",
+        "de": "Kettentunika des toxischen Gladiators"
     },
     "270743": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Sabatons",
-        "ru": "Venomous Gladiator's Chain Sabatons",
-        "es": "Venomous Gladiator's Chain Sabatons",
-        "br": "Venomous Gladiator's Chain Sabatons",
+        "ru": "Кольчужные башмаки ядовитого гладиатора",
+        "es": "Escarpes de anillas de Gladiador venenoso",
+        "br": "Escarpes Encadeados do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Sabatons",
-        "de": "Venomous Gladiator's Chain Sabatons"
+        "fr": "Solerets du gladiateur venimeux en anneaux",
+        "de": "Kettensabatons des toxischen Gladiators"
     },
     "270744": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Boots",
-        "ru": "Venomous Gladiator's Chain Boots",
-        "es": "Venomous Gladiator's Chain Boots",
-        "br": "Venomous Gladiator's Chain Boots",
+        "ru": "Кольчужные сапоги ядовитого гладиатора",
+        "es": "Botas de anillas de Gladiador venenoso",
+        "br": "Botas Encadeadas do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Boots",
-        "de": "Venomous Gladiator's Chain Boots"
+        "fr": "Bottes du gladiateur venimeux en anneaux",
+        "de": "Kettenstiefel des toxischen Gladiators"
     },
     "270745": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Gauntlets",
-        "ru": "Venomous Gladiator's Chain Gauntlets",
-        "es": "Venomous Gladiator's Chain Gauntlets",
-        "br": "Venomous Gladiator's Chain Gauntlets",
+        "ru": "Кольчужные рукавицы ядовитого гладиатора",
+        "es": "Guanteletes de anillas de Gladiador venenoso",
+        "br": "Manoplas Encadeadas do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Gauntlets",
-        "de": "Venomous Gladiator's Chain Gauntlets"
+        "fr": "Gantelets du gladiateur venimeux en anneaux",
+        "de": "Kettenstulpen des toxischen Gladiators"
     },
     "270746": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Handguards",
-        "ru": "Venomous Gladiator's Chain Handguards",
-        "es": "Venomous Gladiator's Chain Handguards",
-        "br": "Venomous Gladiator's Chain Handguards",
+        "ru": "Кольчужные боевые рукавицы ядовитого гладиатора",
+        "es": "Manoplas de anillas de Gladiador venenoso",
+        "br": "Protetores de Mão Encadeados do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Handguards",
-        "de": "Venomous Gladiator's Chain Handguards"
+        "fr": "Garde-mains du gladiateur venimeux en anneaux",
+        "de": "Kettenhandschützer des toxischen Gladiators"
     },
     "270747": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Helm",
-        "ru": "Venomous Gladiator's Chain Helm",
-        "es": "Venomous Gladiator's Chain Helm",
-        "br": "Venomous Gladiator's Chain Helm",
+        "ru": "Кольчужный шлем ядовитого гладиатора",
+        "es": "Yelmo de anillas de Gladiador venenoso",
+        "br": "Elmo Encadeado do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Helm",
-        "de": "Venomous Gladiator's Chain Helm"
+        "fr": "Heaume du gladiateur venimeux en anneaux",
+        "de": "Kettenhelm des toxischen Gladiators"
     },
     "270748": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Faceguard",
-        "ru": "Venomous Gladiator's Chain Faceguard",
-        "es": "Venomous Gladiator's Chain Faceguard",
-        "br": "Venomous Gladiator's Chain Faceguard",
+        "ru": "Кольчужный большой шлем ядовитого гладиатора",
+        "es": "Visera de anillas de Gladiador venenoso",
+        "br": "Viseira Encadeada do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Faceguard",
-        "de": "Venomous Gladiator's Chain Faceguard"
+        "fr": "Ventaille du gladiateur venimeux en anneaux",
+        "de": "Kettengesichtsschutz des toxischen Gladiators"
     },
     "270749": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Leggings",
-        "ru": "Venomous Gladiator's Chain Leggings",
-        "es": "Venomous Gladiator's Chain Leggings",
-        "br": "Venomous Gladiator's Chain Leggings",
+        "ru": "Кольчужные поножи ядовитого гладиатора",
+        "es": "Leotardos de anillas de Gladiador venenoso",
+        "br": "Perneiras Encadeadas do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Leggings",
-        "de": "Venomous Gladiator's Chain Leggings"
+        "fr": "Jambières du gladiateur venimeux en anneaux",
+        "de": "Kettengamaschen des toxischen Gladiators"
     },
     "270750": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Breeches",
-        "ru": "Venomous Gladiator's Chain Breeches",
-        "es": "Venomous Gladiator's Chain Breeches",
-        "br": "Venomous Gladiator's Chain Breeches",
+        "ru": "Кольчужные штаны ядовитого гладиатора",
+        "es": "Calzones de anillas de Gladiador venenoso",
+        "br": "Calções Encadeados do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Breeches",
-        "de": "Venomous Gladiator's Chain Breeches"
+        "fr": "Braies du gladiateur venimeux en anneaux",
+        "de": "Kettenbundhosen des toxischen Gladiators"
     },
     "270751": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Monnion",
-        "ru": "Venomous Gladiator's Chain Monnion",
-        "es": "Venomous Gladiator's Chain Monnion",
-        "br": "Venomous Gladiator's Chain Monnion",
+        "ru": "Кольчужные наплечники ядовитого гладиатора",
+        "es": "Sobrehombreras de anillas de Gladiador venenoso",
+        "br": "Espáduas Encadeadas do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Monnion",
-        "de": "Venomous Gladiator's Chain Monnion"
+        "fr": "Espalières du gladiateur venimeux en anneaux",
+        "de": "Kettenschiftung des toxischen Gladiators"
     },
     "270752": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Shoulderguard",
-        "ru": "Venomous Gladiator's Chain Shoulderguard",
-        "es": "Venomous Gladiator's Chain Shoulderguard",
-        "br": "Venomous Gladiator's Chain Shoulderguard",
+        "ru": "Кольчужные наплечные щитки ядовитого гладиатора",
+        "es": "Guardahombros de anillas de Gladiador venenoso",
+        "br": "Guarda-ombros Encadeado do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Shoulderguard",
-        "de": "Venomous Gladiator's Chain Shoulderguard"
+        "fr": "Garde-épaules du gladiateur venimeux en anneaux",
+        "de": "Kettenschulterschutz des toxischen Gladiators"
     },
     "270753": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Belt",
-        "ru": "Venomous Gladiator's Chain Belt",
-        "es": "Venomous Gladiator's Chain Belt",
-        "br": "Venomous Gladiator's Chain Belt",
+        "ru": "Кольчужный пояс ядовитого гладиатора",
+        "es": "Cinturón de anillas de Gladiador venenoso",
+        "br": "Cinto Encadeado do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Belt",
-        "de": "Venomous Gladiator's Chain Belt"
+        "fr": "Ceinture du gladiateur venimeux en anneaux",
+        "de": "Kettengürtel des toxischen Gladiators"
     },
     "270754": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Girdle",
-        "ru": "Venomous Gladiator's Chain Girdle",
-        "es": "Venomous Gladiator's Chain Girdle",
-        "br": "Venomous Gladiator's Chain Girdle",
+        "ru": "Кольчужный ремень ядовитого гладиатора",
+        "es": "Faja de anillas de Gladiador venenoso",
+        "br": "Cinturão Encadeado do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Girdle",
-        "de": "Venomous Gladiator's Chain Girdle"
+        "fr": "Ceinturon du gladiateur venimeux en anneaux",
+        "de": "Kettengurt des toxischen Gladiators"
     },
     "270755": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Wristguards",
-        "ru": "Venomous Gladiator's Chain Wristguards",
-        "es": "Venomous Gladiator's Chain Wristguards",
-        "br": "Venomous Gladiator's Chain Wristguards",
+        "ru": "Кольчужные нарукавники ядовитого гладиатора",
+        "es": "Muñequeras de anillas de Gladiador venenoso",
+        "br": "Munhequeiras Encadeadas do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Wristguards",
-        "de": "Venomous Gladiator's Chain Wristguards"
+        "fr": "Garde-poignets du gladiateur venimeux en anneaux",
+        "de": "Kettenhandgelenksschützer des toxischen Gladiators"
     },
     "270756": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Bracers",
-        "ru": "Venomous Gladiator's Chain Bracers",
-        "es": "Venomous Gladiator's Chain Bracers",
-        "br": "Venomous Gladiator's Chain Bracers",
+        "ru": "Кольчужные наручи ядовитого гладиатора",
+        "es": "Brazales de anillas de Gladiador venenoso",
+        "br": "Braçadeiras Encadeadas do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Bracers",
-        "de": "Venomous Gladiator's Chain Bracers"
+        "fr": "Brassards du gladiateur venimeux en anneaux",
+        "de": "Kettenarmschienen des toxischen Gladiators"
     },
     "270757": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Vest",
-        "ru": "Venomous Gladiator's Chain Vest",
-        "es": "Venomous Gladiator's Chain Vest",
-        "br": "Venomous Gladiator's Chain Vest",
+        "ru": "Кольчужный жилет ядовитого гладиатора",
+        "es": "Jubón de anillas de Gladiador venenoso",
+        "br": "Colete Encadeado do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Vest",
-        "de": "Venomous Gladiator's Chain Vest"
+        "fr": "Gilet du gladiateur venimeux en anneaux",
+        "de": "Kettenweste des toxischen Gladiators"
     },
     "270758": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Tunic",
-        "ru": "Venomous Gladiator's Chain Tunic",
-        "es": "Venomous Gladiator's Chain Tunic",
-        "br": "Venomous Gladiator's Chain Tunic",
+        "ru": "Кольчужный мундир ядовитого гладиатора",
+        "es": "Guerrera de anillas de Gladiador venenoso",
+        "br": "Túnica Encadeada do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Tunic",
-        "de": "Venomous Gladiator's Chain Tunic"
+        "fr": "Tunique du gladiateur venimeux en anneaux",
+        "de": "Kettentunika des toxischen Gladiators"
     },
     "270759": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Sabatons",
-        "ru": "Venomous Gladiator's Chain Sabatons",
-        "es": "Venomous Gladiator's Chain Sabatons",
-        "br": "Venomous Gladiator's Chain Sabatons",
+        "ru": "Кольчужные башмаки ядовитого гладиатора",
+        "es": "Escarpes de anillas de Gladiador venenoso",
+        "br": "Escarpes Encadeados do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Sabatons",
-        "de": "Venomous Gladiator's Chain Sabatons"
+        "fr": "Solerets du gladiateur venimeux en anneaux",
+        "de": "Kettensabatons des toxischen Gladiators"
     },
     "270760": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Boots",
-        "ru": "Venomous Gladiator's Chain Boots",
-        "es": "Venomous Gladiator's Chain Boots",
-        "br": "Venomous Gladiator's Chain Boots",
+        "ru": "Кольчужные сапоги ядовитого гладиатора",
+        "es": "Botas de anillas de Gladiador venenoso",
+        "br": "Botas Encadeadas do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Boots",
-        "de": "Venomous Gladiator's Chain Boots"
+        "fr": "Bottes du gladiateur venimeux en anneaux",
+        "de": "Kettenstiefel des toxischen Gladiators"
     },
     "270761": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Gauntlets",
-        "ru": "Venomous Gladiator's Chain Gauntlets",
-        "es": "Venomous Gladiator's Chain Gauntlets",
-        "br": "Venomous Gladiator's Chain Gauntlets",
+        "ru": "Кольчужные рукавицы ядовитого гладиатора",
+        "es": "Guanteletes de anillas de Gladiador venenoso",
+        "br": "Manoplas Encadeadas do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Gauntlets",
-        "de": "Venomous Gladiator's Chain Gauntlets"
+        "fr": "Gantelets du gladiateur venimeux en anneaux",
+        "de": "Kettenstulpen des toxischen Gladiators"
     },
     "270762": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Handguards",
-        "ru": "Venomous Gladiator's Chain Handguards",
-        "es": "Venomous Gladiator's Chain Handguards",
-        "br": "Venomous Gladiator's Chain Handguards",
+        "ru": "Кольчужные боевые рукавицы ядовитого гладиатора",
+        "es": "Manoplas de anillas de Gladiador venenoso",
+        "br": "Protetores de Mão Encadeados do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Handguards",
-        "de": "Venomous Gladiator's Chain Handguards"
+        "fr": "Garde-mains du gladiateur venimeux en anneaux",
+        "de": "Kettenhandschützer des toxischen Gladiators"
     },
     "270763": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Helm",
-        "ru": "Venomous Gladiator's Chain Helm",
-        "es": "Venomous Gladiator's Chain Helm",
-        "br": "Venomous Gladiator's Chain Helm",
+        "ru": "Кольчужный шлем ядовитого гладиатора",
+        "es": "Yelmo de anillas de Gladiador venenoso",
+        "br": "Elmo Encadeado do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Helm",
-        "de": "Venomous Gladiator's Chain Helm"
+        "fr": "Heaume du gladiateur venimeux en anneaux",
+        "de": "Kettenhelm des toxischen Gladiators"
     },
     "270764": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Faceguard",
-        "ru": "Venomous Gladiator's Chain Faceguard",
-        "es": "Venomous Gladiator's Chain Faceguard",
-        "br": "Venomous Gladiator's Chain Faceguard",
+        "ru": "Кольчужный большой шлем ядовитого гладиатора",
+        "es": "Visera de anillas de Gladiador venenoso",
+        "br": "Viseira Encadeada do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Faceguard",
-        "de": "Venomous Gladiator's Chain Faceguard"
+        "fr": "Ventaille du gladiateur venimeux en anneaux",
+        "de": "Kettengesichtsschutz des toxischen Gladiators"
     },
     "270765": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Leggings",
-        "ru": "Venomous Gladiator's Chain Leggings",
-        "es": "Venomous Gladiator's Chain Leggings",
-        "br": "Venomous Gladiator's Chain Leggings",
+        "ru": "Кольчужные поножи ядовитого гладиатора",
+        "es": "Leotardos de anillas de Gladiador venenoso",
+        "br": "Perneiras Encadeadas do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Leggings",
-        "de": "Venomous Gladiator's Chain Leggings"
+        "fr": "Jambières du gladiateur venimeux en anneaux",
+        "de": "Kettengamaschen des toxischen Gladiators"
     },
     "270766": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Breeches",
-        "ru": "Venomous Gladiator's Chain Breeches",
-        "es": "Venomous Gladiator's Chain Breeches",
-        "br": "Venomous Gladiator's Chain Breeches",
+        "ru": "Кольчужные штаны ядовитого гладиатора",
+        "es": "Calzones de anillas de Gladiador venenoso",
+        "br": "Calções Encadeados do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Breeches",
-        "de": "Venomous Gladiator's Chain Breeches"
+        "fr": "Braies du gladiateur venimeux en anneaux",
+        "de": "Kettenbundhosen des toxischen Gladiators"
     },
     "270767": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Monnion",
-        "ru": "Venomous Gladiator's Chain Monnion",
-        "es": "Venomous Gladiator's Chain Monnion",
-        "br": "Venomous Gladiator's Chain Monnion",
+        "ru": "Кольчужные наплечники ядовитого гладиатора",
+        "es": "Sobrehombreras de anillas de Gladiador venenoso",
+        "br": "Espáduas Encadeadas do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Monnion",
-        "de": "Venomous Gladiator's Chain Monnion"
+        "fr": "Espalières du gladiateur venimeux en anneaux",
+        "de": "Kettenschiftung des toxischen Gladiators"
     },
     "270768": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Shoulderguard",
-        "ru": "Venomous Gladiator's Chain Shoulderguard",
-        "es": "Venomous Gladiator's Chain Shoulderguard",
-        "br": "Venomous Gladiator's Chain Shoulderguard",
+        "ru": "Кольчужные наплечные щитки ядовитого гладиатора",
+        "es": "Guardahombros de anillas de Gladiador venenoso",
+        "br": "Guarda-ombros Encadeado do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Shoulderguard",
-        "de": "Venomous Gladiator's Chain Shoulderguard"
+        "fr": "Garde-épaules du gladiateur venimeux en anneaux",
+        "de": "Kettenschulterschutz des toxischen Gladiators"
     },
     "270769": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Belt",
-        "ru": "Venomous Gladiator's Chain Belt",
-        "es": "Venomous Gladiator's Chain Belt",
-        "br": "Venomous Gladiator's Chain Belt",
+        "ru": "Кольчужный пояс ядовитого гладиатора",
+        "es": "Cinturón de anillas de Gladiador venenoso",
+        "br": "Cinto Encadeado do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Belt",
-        "de": "Venomous Gladiator's Chain Belt"
+        "fr": "Ceinture du gladiateur venimeux en anneaux",
+        "de": "Kettengürtel des toxischen Gladiators"
     },
     "270770": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Girdle",
-        "ru": "Venomous Gladiator's Chain Girdle",
-        "es": "Venomous Gladiator's Chain Girdle",
-        "br": "Venomous Gladiator's Chain Girdle",
+        "ru": "Кольчужный ремень ядовитого гладиатора",
+        "es": "Faja de anillas de Gladiador venenoso",
+        "br": "Cinturão Encadeado do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Girdle",
-        "de": "Venomous Gladiator's Chain Girdle"
+        "fr": "Ceinturon du gladiateur venimeux en anneaux",
+        "de": "Kettengurt des toxischen Gladiators"
     },
     "270771": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Wristguards",
-        "ru": "Venomous Gladiator's Chain Wristguards",
-        "es": "Venomous Gladiator's Chain Wristguards",
-        "br": "Venomous Gladiator's Chain Wristguards",
+        "ru": "Кольчужные нарукавники ядовитого гладиатора",
+        "es": "Muñequeras de anillas de Gladiador venenoso",
+        "br": "Munhequeiras Encadeadas do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Wristguards",
-        "de": "Venomous Gladiator's Chain Wristguards"
+        "fr": "Garde-poignets du gladiateur venimeux en anneaux",
+        "de": "Kettenhandgelenksschützer des toxischen Gladiators"
     },
     "270772": {
         "cn": "",
         "en": "Venomous Gladiator's Chain Bracers",
-        "ru": "Venomous Gladiator's Chain Bracers",
-        "es": "Venomous Gladiator's Chain Bracers",
-        "br": "Venomous Gladiator's Chain Bracers",
+        "ru": "Кольчужные наручи ядовитого гладиатора",
+        "es": "Brazales de anillas de Gladiador venenoso",
+        "br": "Braçadeiras Encadeadas do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chain Bracers",
-        "de": "Venomous Gladiator's Chain Bracers"
+        "fr": "Brassards du gladiateur venimeux en anneaux",
+        "de": "Kettenarmschienen des toxischen Gladiators"
     },
     "270773": {
         "cn": "",
         "en": "Venomous Gladiator's Chestguard",
-        "ru": "Venomous Gladiator's Chestguard",
-        "es": "Venomous Gladiator's Chestguard",
-        "br": "Venomous Gladiator's Chestguard",
+        "ru": "Нагрудный доспех ядовитого гладиатора",
+        "es": "Coselete de Gladiador venenoso",
+        "br": "Couraça do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chestguard",
-        "de": "Venomous Gladiator's Chestguard"
+        "fr": "Corselet du gladiateur venimeux",
+        "de": "Plattenbrustschutz des toxischen Gladiators"
     },
     "270774": {
         "cn": "",
         "en": "Venomous Gladiator's Chestplate",
-        "ru": "Venomous Gladiator's Chestplate",
-        "es": "Venomous Gladiator's Chestplate",
-        "br": "Venomous Gladiator's Chestplate",
+        "ru": "Бригантина ядовитого гладиатора",
+        "es": "Peto de Gladiador venenoso",
+        "br": "Guarda-peito do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chestplate",
-        "de": "Venomous Gladiator's Chestplate"
+        "fr": "Pansière du gladiateur venimeux",
+        "de": "Brustpanzer des toxischen Gladiators"
     },
     "270775": {
         "cn": "",
         "en": "Venomous Gladiator's Plate Warboots",
-        "ru": "Venomous Gladiator's Plate Warboots",
-        "es": "Venomous Gladiator's Plate Warboots",
-        "br": "Venomous Gladiator's Plate Warboots",
+        "ru": "Латные боевые сапоги ядовитого гладиатора",
+        "es": "Botas de guerra de placas de Gladiador venenoso",
+        "br": "Coturnos de Placa do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Plate Warboots",
-        "de": "Venomous Gladiator's Plate Warboots"
+        "fr": "Bottes de guerre du gladiateur venimeux en plaques",
+        "de": "Plattenkriegsstiefel des toxischen Gladiators"
     },
     "270776": {
         "cn": "",
         "en": "Venomous Gladiator's Plate Stompers",
-        "ru": "Venomous Gladiator's Plate Stompers",
-        "es": "Venomous Gladiator's Plate Stompers",
-        "br": "Venomous Gladiator's Plate Stompers",
+        "ru": "Латные высокие ботинки ядовитого гладиатора",
+        "es": "Apisonadoras de placas de Gladiador venenoso",
+        "br": "Pisoteadores de Placa do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Plate Stompers",
-        "de": "Venomous Gladiator's Plate Stompers"
+        "fr": "Croquenots du gladiateur venimeux en plaques",
+        "de": "Plattenstampfer des toxischen Gladiators"
     },
     "270777": {
         "cn": "",
         "en": "Venomous Gladiator's Plate Gauntlets",
-        "ru": "Venomous Gladiator's Plate Gauntlets",
-        "es": "Venomous Gladiator's Plate Gauntlets",
-        "br": "Venomous Gladiator's Plate Gauntlets",
+        "ru": "Латные рукавицы ядовитого гладиатора",
+        "es": "Guanteletes de placas de Gladiador venenoso",
+        "br": "Manoplas de Placa do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Plate Gauntlets",
-        "de": "Venomous Gladiator's Plate Gauntlets"
+        "fr": "Gantelets du gladiateur venimeux en plaques",
+        "de": "Plattenstulpen des toxischen Gladiators"
     },
     "270778": {
         "cn": "",
         "en": "Venomous Gladiator's Plate Handguards",
-        "ru": "Venomous Gladiator's Plate Handguards",
-        "es": "Venomous Gladiator's Plate Handguards",
-        "br": "Venomous Gladiator's Plate Handguards",
+        "ru": "Латные боевые рукавицы ядовитого гладиатора",
+        "es": "Manoplas de placas de Gladiador venenoso",
+        "br": "Protetores de Mão de Placa do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Plate Handguards",
-        "de": "Venomous Gladiator's Plate Handguards"
+        "fr": "Garde-mains du gladiateur venimeux en plaques",
+        "de": "Plattenhandschützer des toxischen Gladiators"
     },
     "270779": {
         "cn": "",
         "en": "Venomous Gladiator's Plate Helm",
-        "ru": "Venomous Gladiator's Plate Helm",
-        "es": "Venomous Gladiator's Plate Helm",
-        "br": "Venomous Gladiator's Plate Helm",
+        "ru": "Латный шлем ядовитого гладиатора",
+        "es": "Yelmo de placas de Gladiador venenoso",
+        "br": "Elmo de Placa do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Plate Helm",
-        "de": "Venomous Gladiator's Plate Helm"
+        "fr": "Heaume du gladiateur venimeux en plaques",
+        "de": "Plattenhelm des toxischen Gladiators"
     },
     "270780": {
         "cn": "",
         "en": "Venomous Gladiator's Plate Helmet",
-        "ru": "Venomous Gladiator's Plate Helmet",
-        "es": "Venomous Gladiator's Plate Helmet",
-        "br": "Venomous Gladiator's Plate Helmet",
+        "ru": "Латный полный шлем ядовитого гладиатора",
+        "es": "Casco de placas de Gladiador venenoso",
+        "br": "Capacete de Placa do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Plate Helmet",
-        "de": "Venomous Gladiator's Plate Helmet"
+        "fr": "Casque du gladiateur venimeux en plaques",
+        "de": "Plattenhelmkappe des toxischen Gladiators"
     },
     "270781": {
         "cn": "",
         "en": "Venomous Gladiator's Plate Legguards",
-        "ru": "Venomous Gladiator's Plate Legguards",
-        "es": "Venomous Gladiator's Plate Legguards",
-        "br": "Venomous Gladiator's Plate Legguards",
+        "ru": "Латные набедренники ядовитого гладиатора",
+        "es": "Musleras de placas de Gladiador venenoso",
+        "br": "Guarda-pernas de Placa do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Plate Legguards",
-        "de": "Venomous Gladiator's Plate Legguards"
+        "fr": "Garde-jambes du gladiateur venimeux en plaques",
+        "de": "Plattenbeinschützer des toxischen Gladiators"
     },
     "270782": {
         "cn": "",
         "en": "Venomous Gladiator's Plate Wargreaves",
-        "ru": "Venomous Gladiator's Plate Wargreaves",
-        "es": "Venomous Gladiator's Plate Wargreaves",
-        "br": "Venomous Gladiator's Plate Wargreaves",
+        "ru": "Латные боевые наголенники ядовитого гладиатора",
+        "es": "Grebas de guerra de placas de Gladiador venenoso",
+        "br": "Grevas de Guerra de Placa do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Plate Wargreaves",
-        "de": "Venomous Gladiator's Plate Wargreaves"
+        "fr": "Grèves de guerre du gladiateur venimeux en plaques",
+        "de": "Plattenkriegsbeinschützer des toxischen Gladiators"
     },
     "270783": {
         "cn": "",
         "en": "Venomous Gladiator's Plate Shoulders",
-        "ru": "Venomous Gladiator's Plate Shoulders",
-        "es": "Venomous Gladiator's Plate Shoulders",
-        "br": "Venomous Gladiator's Plate Shoulders",
+        "ru": "Латное наплечье ядовитого гладиатора",
+        "es": "Sobrehombros de placas de Gladiador venenoso",
+        "br": "Omoplatas de Placa do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Plate Shoulders",
-        "de": "Venomous Gladiator's Plate Shoulders"
+        "fr": "Épaulières du gladiateur venimeux en plaques",
+        "de": "Plattenschultern des toxischen Gladiators"
     },
     "270784": {
         "cn": "",
         "en": "Venomous Gladiator's Plate Pauldrons",
-        "ru": "Venomous Gladiator's Plate Pauldrons",
-        "es": "Venomous Gladiator's Plate Pauldrons",
-        "br": "Venomous Gladiator's Plate Pauldrons",
+        "ru": "Латные наплечные щитки ядовитого гладиатора",
+        "es": "Espaldares de placas de Gladiador venenoso",
+        "br": "Brafoneiras de Placa do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Plate Pauldrons",
-        "de": "Venomous Gladiator's Plate Pauldrons"
+        "fr": "Espauliers du gladiateur venimeux en plaques",
+        "de": "Plattenschulterstücke des toxischen Gladiators"
     },
     "270785": {
         "cn": "",
         "en": "Venomous Gladiator's Plate Girdle",
-        "ru": "Venomous Gladiator's Plate Girdle",
-        "es": "Venomous Gladiator's Plate Girdle",
-        "br": "Venomous Gladiator's Plate Girdle",
+        "ru": "Латный ремень ядовитого гладиатора",
+        "es": "Faja de placas de Gladiador venenoso",
+        "br": "Cinturão de Placa do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Plate Girdle",
-        "de": "Venomous Gladiator's Plate Girdle"
+        "fr": "Ceinturon du gladiateur venimeux en plaques",
+        "de": "Plattengurt des toxischen Gladiators"
     },
     "270786": {
         "cn": "",
         "en": "Venomous Gladiator's Plate Greatbelt",
-        "ru": "Venomous Gladiator's Plate Greatbelt",
-        "es": "Venomous Gladiator's Plate Greatbelt",
-        "br": "Venomous Gladiator's Plate Greatbelt",
+        "ru": "Латный большой пояс ядовитого гладиатора",
+        "es": "Gran cinturón de placas de Gladiador venenoso",
+        "br": "Correão de Placa do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Plate Greatbelt",
-        "de": "Venomous Gladiator's Plate Greatbelt"
+        "fr": "Grande ceinture du gladiateur venimeux en plaques",
+        "de": "Plattengroßgürtel des toxischen Gladiators"
     },
     "270787": {
         "cn": "",
         "en": "Venomous Gladiator's Plate Wristguards",
-        "ru": "Venomous Gladiator's Plate Wristguards",
-        "es": "Venomous Gladiator's Plate Wristguards",
-        "br": "Venomous Gladiator's Plate Wristguards",
+        "ru": "Латные нарукавники ядовитого гладиатора",
+        "es": "Muñequeras de placas de Gladiador venenoso",
+        "br": "Munhequeiras de Placa do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Plate Wristguards",
-        "de": "Venomous Gladiator's Plate Wristguards"
+        "fr": "Garde-poignets du gladiateur venimeux en plaques",
+        "de": "Plattenhandgelenksschützer des toxischen Gladiators"
     },
     "270788": {
         "cn": "",
         "en": "Venomous Gladiator's Plate Vambraces",
-        "ru": "Venomous Gladiator's Plate Vambraces",
-        "es": "Venomous Gladiator's Plate Vambraces",
-        "br": "Venomous Gladiator's Plate Vambraces",
+        "ru": "Латные тяжелые наручи ядовитого гладиатора",
+        "es": "Avambrazos de placas de Gladiador venenoso",
+        "br": "Avambraços de Placa do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Plate Vambraces",
-        "de": "Venomous Gladiator's Plate Vambraces"
+        "fr": "Protège-bras du gladiateur venimeux en plaques",
+        "de": "Plattenunterarmschienen des toxischen Gladiators"
     },
     "270789": {
         "cn": "",
         "en": "Venomous Gladiator's Chestguard",
-        "ru": "Venomous Gladiator's Chestguard",
-        "es": "Venomous Gladiator's Chestguard",
-        "br": "Venomous Gladiator's Chestguard",
+        "ru": "Нагрудный доспех ядовитого гладиатора",
+        "es": "Coselete de Gladiador venenoso",
+        "br": "Couraça do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chestguard",
-        "de": "Venomous Gladiator's Chestguard"
+        "fr": "Corselet du gladiateur venimeux",
+        "de": "Plattenbrustschutz des toxischen Gladiators"
     },
     "270790": {
         "cn": "",
         "en": "Venomous Gladiator's Chestplate",
-        "ru": "Venomous Gladiator's Chestplate",
-        "es": "Venomous Gladiator's Chestplate",
-        "br": "Venomous Gladiator's Chestplate",
+        "ru": "Бригантина ядовитого гладиатора",
+        "es": "Peto de Gladiador venenoso",
+        "br": "Guarda-peito do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chestplate",
-        "de": "Venomous Gladiator's Chestplate"
+        "fr": "Pansière du gladiateur venimeux",
+        "de": "Brustpanzer des toxischen Gladiators"
     },
     "270791": {
         "cn": "",
         "en": "Venomous Gladiator's Plate Warboots",
-        "ru": "Venomous Gladiator's Plate Warboots",
-        "es": "Venomous Gladiator's Plate Warboots",
-        "br": "Venomous Gladiator's Plate Warboots",
+        "ru": "Латные боевые сапоги ядовитого гладиатора",
+        "es": "Botas de guerra de placas de Gladiador venenoso",
+        "br": "Coturnos de Placa do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Plate Warboots",
-        "de": "Venomous Gladiator's Plate Warboots"
+        "fr": "Bottes de guerre du gladiateur venimeux en plaques",
+        "de": "Plattenkriegsstiefel des toxischen Gladiators"
     },
     "270792": {
         "cn": "",
         "en": "Venomous Gladiator's Plate Stompers",
-        "ru": "Venomous Gladiator's Plate Stompers",
-        "es": "Venomous Gladiator's Plate Stompers",
-        "br": "Venomous Gladiator's Plate Stompers",
+        "ru": "Латные высокие ботинки ядовитого гладиатора",
+        "es": "Apisonadoras de placas de Gladiador venenoso",
+        "br": "Pisoteadores de Placa do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Plate Stompers",
-        "de": "Venomous Gladiator's Plate Stompers"
+        "fr": "Croquenots du gladiateur venimeux en plaques",
+        "de": "Plattenstampfer des toxischen Gladiators"
     },
     "270793": {
         "cn": "",
         "en": "Venomous Gladiator's Plate Gauntlets",
-        "ru": "Venomous Gladiator's Plate Gauntlets",
-        "es": "Venomous Gladiator's Plate Gauntlets",
-        "br": "Venomous Gladiator's Plate Gauntlets",
+        "ru": "Латные рукавицы ядовитого гладиатора",
+        "es": "Guanteletes de placas de Gladiador venenoso",
+        "br": "Manoplas de Placa do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Plate Gauntlets",
-        "de": "Venomous Gladiator's Plate Gauntlets"
+        "fr": "Gantelets du gladiateur venimeux en plaques",
+        "de": "Plattenstulpen des toxischen Gladiators"
     },
     "270794": {
         "cn": "",
         "en": "Venomous Gladiator's Plate Handguards",
-        "ru": "Venomous Gladiator's Plate Handguards",
-        "es": "Venomous Gladiator's Plate Handguards",
-        "br": "Venomous Gladiator's Plate Handguards",
+        "ru": "Латные боевые рукавицы ядовитого гладиатора",
+        "es": "Manoplas de placas de Gladiador venenoso",
+        "br": "Protetores de Mão de Placa do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Plate Handguards",
-        "de": "Venomous Gladiator's Plate Handguards"
+        "fr": "Garde-mains du gladiateur venimeux en plaques",
+        "de": "Plattenhandschützer des toxischen Gladiators"
     },
     "270795": {
         "cn": "",
         "en": "Venomous Gladiator's Plate Helm",
-        "ru": "Venomous Gladiator's Plate Helm",
-        "es": "Venomous Gladiator's Plate Helm",
-        "br": "Venomous Gladiator's Plate Helm",
+        "ru": "Латный шлем ядовитого гладиатора",
+        "es": "Yelmo de placas de Gladiador venenoso",
+        "br": "Elmo de Placa do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Plate Helm",
-        "de": "Venomous Gladiator's Plate Helm"
+        "fr": "Heaume du gladiateur venimeux en plaques",
+        "de": "Plattenhelm des toxischen Gladiators"
     },
     "270796": {
         "cn": "",
         "en": "Venomous Gladiator's Plate Helmet",
-        "ru": "Venomous Gladiator's Plate Helmet",
-        "es": "Venomous Gladiator's Plate Helmet",
-        "br": "Venomous Gladiator's Plate Helmet",
+        "ru": "Латный полный шлем ядовитого гладиатора",
+        "es": "Casco de placas de Gladiador venenoso",
+        "br": "Capacete de Placa do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Plate Helmet",
-        "de": "Venomous Gladiator's Plate Helmet"
+        "fr": "Casque du gladiateur venimeux en plaques",
+        "de": "Plattenhelmkappe des toxischen Gladiators"
     },
     "270797": {
         "cn": "",
         "en": "Venomous Gladiator's Plate Legguards",
-        "ru": "Venomous Gladiator's Plate Legguards",
-        "es": "Venomous Gladiator's Plate Legguards",
-        "br": "Venomous Gladiator's Plate Legguards",
+        "ru": "Латные набедренники ядовитого гладиатора",
+        "es": "Musleras de placas de Gladiador venenoso",
+        "br": "Guarda-pernas de Placa do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Plate Legguards",
-        "de": "Venomous Gladiator's Plate Legguards"
+        "fr": "Garde-jambes du gladiateur venimeux en plaques",
+        "de": "Plattenbeinschützer des toxischen Gladiators"
     },
     "270798": {
         "cn": "",
         "en": "Venomous Gladiator's Plate Tasses",
-        "ru": "Venomous Gladiator's Plate Tasses",
-        "es": "Venomous Gladiator's Plate Tasses",
-        "br": "Venomous Gladiator's Plate Tasses",
+        "ru": "Латные наголенники ядовитого гладиатора",
+        "es": "Perneras de placas de Gladiador venenoso",
+        "br": "Escarcela de Placa do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Plate Tasses",
-        "de": "Venomous Gladiator's Plate Tasses"
+        "fr": "Tassettes du gladiateur venimeux en plaques",
+        "de": "Plattentassetten des toxischen Gladiators"
     },
     "270799": {
         "cn": "",
         "en": "Venomous Gladiator's Plate Shoulders",
-        "ru": "Venomous Gladiator's Plate Shoulders",
-        "es": "Venomous Gladiator's Plate Shoulders",
-        "br": "Venomous Gladiator's Plate Shoulders",
+        "ru": "Латное наплечье ядовитого гладиатора",
+        "es": "Sobrehombros de placas de Gladiador venenoso",
+        "br": "Omoplatas de Placa do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Plate Shoulders",
-        "de": "Venomous Gladiator's Plate Shoulders"
+        "fr": "Épaulières du gladiateur venimeux en plaques",
+        "de": "Plattenschultern des toxischen Gladiators"
     },
     "270800": {
         "cn": "",
         "en": "Venomous Gladiator's Plate Pauldrons",
-        "ru": "Venomous Gladiator's Plate Pauldrons",
-        "es": "Venomous Gladiator's Plate Pauldrons",
-        "br": "Venomous Gladiator's Plate Pauldrons",
+        "ru": "Латные наплечные щитки ядовитого гладиатора",
+        "es": "Espaldares de placas de Gladiador venenoso",
+        "br": "Brafoneiras de Placa do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Plate Pauldrons",
-        "de": "Venomous Gladiator's Plate Pauldrons"
+        "fr": "Espauliers du gladiateur venimeux en plaques",
+        "de": "Plattenschulterstücke des toxischen Gladiators"
     },
     "270801": {
         "cn": "",
         "en": "Venomous Gladiator's Plate Girdle",
-        "ru": "Venomous Gladiator's Plate Girdle",
-        "es": "Venomous Gladiator's Plate Girdle",
-        "br": "Venomous Gladiator's Plate Girdle",
+        "ru": "Латный ремень ядовитого гладиатора",
+        "es": "Faja de placas de Gladiador venenoso",
+        "br": "Cinturão de Placa do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Plate Girdle",
-        "de": "Venomous Gladiator's Plate Girdle"
+        "fr": "Ceinturon du gladiateur venimeux en plaques",
+        "de": "Plattengurt des toxischen Gladiators"
     },
     "270802": {
         "cn": "",
         "en": "Venomous Gladiator's Plate Greatbelt",
-        "ru": "Venomous Gladiator's Plate Greatbelt",
-        "es": "Venomous Gladiator's Plate Greatbelt",
-        "br": "Venomous Gladiator's Plate Greatbelt",
+        "ru": "Латный большой пояс ядовитого гладиатора",
+        "es": "Gran cinturón de placas de Gladiador venenoso",
+        "br": "Correão de Placa do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Plate Greatbelt",
-        "de": "Venomous Gladiator's Plate Greatbelt"
+        "fr": "Grande ceinture du gladiateur venimeux en plaques",
+        "de": "Plattengroßgürtel des toxischen Gladiators"
     },
     "270803": {
         "cn": "",
         "en": "Venomous Gladiator's Plate Wristguards",
-        "ru": "Venomous Gladiator's Plate Wristguards",
-        "es": "Venomous Gladiator's Plate Wristguards",
-        "br": "Venomous Gladiator's Plate Wristguards",
+        "ru": "Латные нарукавники ядовитого гладиатора",
+        "es": "Muñequeras de placas de Gladiador venenoso",
+        "br": "Munhequeiras de Placa do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Plate Wristguards",
-        "de": "Venomous Gladiator's Plate Wristguards"
+        "fr": "Garde-poignets du gladiateur venimeux en plaques",
+        "de": "Plattenhandgelenksschützer des toxischen Gladiators"
     },
     "270804": {
         "cn": "",
         "en": "Venomous Gladiator's Plate Vambraces",
-        "ru": "Venomous Gladiator's Plate Vambraces",
-        "es": "Venomous Gladiator's Plate Vambraces",
-        "br": "Venomous Gladiator's Plate Vambraces",
+        "ru": "Латные тяжелые наручи ядовитого гладиатора",
+        "es": "Avambrazos de placas de Gladiador venenoso",
+        "br": "Avambraços de Placa do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Plate Vambraces",
-        "de": "Venomous Gladiator's Plate Vambraces"
+        "fr": "Protège-bras du gladiateur venimeux en plaques",
+        "de": "Plattenunterarmschienen des toxischen Gladiators"
     },
     "270805": {
         "cn": "",
         "en": "Venomous Gladiator's Chestguard",
-        "ru": "Venomous Gladiator's Chestguard",
-        "es": "Venomous Gladiator's Chestguard",
-        "br": "Venomous Gladiator's Chestguard",
+        "ru": "Нагрудный доспех ядовитого гладиатора",
+        "es": "Coselete de Gladiador venenoso",
+        "br": "Couraça do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chestguard",
-        "de": "Venomous Gladiator's Chestguard"
+        "fr": "Corselet du gladiateur venimeux",
+        "de": "Plattenbrustschutz des toxischen Gladiators"
     },
     "270806": {
         "cn": "",
         "en": "Venomous Gladiator's Chestplate",
-        "ru": "Venomous Gladiator's Chestplate",
-        "es": "Venomous Gladiator's Chestplate",
-        "br": "Venomous Gladiator's Chestplate",
+        "ru": "Бригантина ядовитого гладиатора",
+        "es": "Peto de Gladiador venenoso",
+        "br": "Guarda-peito do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Chestplate",
-        "de": "Venomous Gladiator's Chestplate"
+        "fr": "Pansière du gladiateur venimeux",
+        "de": "Brustpanzer des toxischen Gladiators"
     },
     "270807": {
         "cn": "",
         "en": "Venomous Gladiator's Plate Warboots",
-        "ru": "Venomous Gladiator's Plate Warboots",
-        "es": "Venomous Gladiator's Plate Warboots",
-        "br": "Venomous Gladiator's Plate Warboots",
+        "ru": "Латные боевые сапоги ядовитого гладиатора",
+        "es": "Botas de guerra de placas de Gladiador venenoso",
+        "br": "Coturnos de Placa do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Plate Warboots",
-        "de": "Venomous Gladiator's Plate Warboots"
+        "fr": "Bottes de guerre du gladiateur venimeux en plaques",
+        "de": "Plattenkriegsstiefel des toxischen Gladiators"
     },
     "270808": {
         "cn": "",
         "en": "Venomous Gladiator's Plate Stompers",
-        "ru": "Venomous Gladiator's Plate Stompers",
-        "es": "Venomous Gladiator's Plate Stompers",
-        "br": "Venomous Gladiator's Plate Stompers",
+        "ru": "Латные высокие ботинки ядовитого гладиатора",
+        "es": "Apisonadoras de placas de Gladiador venenoso",
+        "br": "Pisoteadores de Placa do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Plate Stompers",
-        "de": "Venomous Gladiator's Plate Stompers"
+        "fr": "Croquenots du gladiateur venimeux en plaques",
+        "de": "Plattenstampfer des toxischen Gladiators"
     },
     "270809": {
         "cn": "",
         "en": "Venomous Gladiator's Plate Gauntlets",
-        "ru": "Venomous Gladiator's Plate Gauntlets",
-        "es": "Venomous Gladiator's Plate Gauntlets",
-        "br": "Venomous Gladiator's Plate Gauntlets",
+        "ru": "Латные рукавицы ядовитого гладиатора",
+        "es": "Guanteletes de placas de Gladiador venenoso",
+        "br": "Manoplas de Placa do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Plate Gauntlets",
-        "de": "Venomous Gladiator's Plate Gauntlets"
+        "fr": "Gantelets du gladiateur venimeux en plaques",
+        "de": "Plattenstulpen des toxischen Gladiators"
     },
     "270810": {
         "cn": "",
         "en": "Venomous Gladiator's Plate Handguards",
-        "ru": "Venomous Gladiator's Plate Handguards",
-        "es": "Venomous Gladiator's Plate Handguards",
-        "br": "Venomous Gladiator's Plate Handguards",
+        "ru": "Латные боевые рукавицы ядовитого гладиатора",
+        "es": "Manoplas de placas de Gladiador venenoso",
+        "br": "Protetores de Mão de Placa do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Plate Handguards",
-        "de": "Venomous Gladiator's Plate Handguards"
+        "fr": "Garde-mains du gladiateur venimeux en plaques",
+        "de": "Plattenhandschützer des toxischen Gladiators"
     },
     "270811": {
         "cn": "",
         "en": "Venomous Gladiator's Plate Helm",
-        "ru": "Venomous Gladiator's Plate Helm",
-        "es": "Venomous Gladiator's Plate Helm",
-        "br": "Venomous Gladiator's Plate Helm",
+        "ru": "Латный шлем ядовитого гладиатора",
+        "es": "Yelmo de placas de Gladiador venenoso",
+        "br": "Elmo de Placa do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Plate Helm",
-        "de": "Venomous Gladiator's Plate Helm"
+        "fr": "Heaume du gladiateur venimeux en plaques",
+        "de": "Plattenhelm des toxischen Gladiators"
     },
     "270812": {
         "cn": "",
         "en": "Venomous Gladiator's Plate Helmet",
-        "ru": "Venomous Gladiator's Plate Helmet",
-        "es": "Venomous Gladiator's Plate Helmet",
-        "br": "Venomous Gladiator's Plate Helmet",
+        "ru": "Латный полный шлем ядовитого гладиатора",
+        "es": "Casco de placas de Gladiador venenoso",
+        "br": "Capacete de Placa do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Plate Helmet",
-        "de": "Venomous Gladiator's Plate Helmet"
+        "fr": "Casque du gladiateur venimeux en plaques",
+        "de": "Plattenhelmkappe des toxischen Gladiators"
     },
     "270813": {
         "cn": "",
         "en": "Venomous Gladiator's Plate Legguards",
-        "ru": "Venomous Gladiator's Plate Legguards",
-        "es": "Venomous Gladiator's Plate Legguards",
-        "br": "Venomous Gladiator's Plate Legguards",
+        "ru": "Латные набедренники ядовитого гладиатора",
+        "es": "Musleras de placas de Gladiador venenoso",
+        "br": "Guarda-pernas de Placa do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Plate Legguards",
-        "de": "Venomous Gladiator's Plate Legguards"
+        "fr": "Garde-jambes du gladiateur venimeux en plaques",
+        "de": "Plattenbeinschützer des toxischen Gladiators"
     },
     "270814": {
         "cn": "",
         "en": "Venomous Gladiator's Plate Wargreaves",
-        "ru": "Venomous Gladiator's Plate Wargreaves",
-        "es": "Venomous Gladiator's Plate Wargreaves",
-        "br": "Venomous Gladiator's Plate Wargreaves",
+        "ru": "Латные боевые наголенники ядовитого гладиатора",
+        "es": "Grebas de guerra de placas de Gladiador venenoso",
+        "br": "Grevas de Guerra de Placa do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Plate Wargreaves",
-        "de": "Venomous Gladiator's Plate Wargreaves"
+        "fr": "Grèves de guerre du gladiateur venimeux en plaques",
+        "de": "Plattenkriegsbeinschützer des toxischen Gladiators"
     },
     "270815": {
         "cn": "",
         "en": "Venomous Gladiator's Plate Shoulders",
-        "ru": "Venomous Gladiator's Plate Shoulders",
-        "es": "Venomous Gladiator's Plate Shoulders",
-        "br": "Venomous Gladiator's Plate Shoulders",
+        "ru": "Латное наплечье ядовитого гладиатора",
+        "es": "Sobrehombros de placas de Gladiador venenoso",
+        "br": "Omoplatas de Placa do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Plate Shoulders",
-        "de": "Venomous Gladiator's Plate Shoulders"
+        "fr": "Épaulières du gladiateur venimeux en plaques",
+        "de": "Plattenschultern des toxischen Gladiators"
     },
     "270816": {
         "cn": "",
         "en": "Venomous Gladiator's Plate Pauldrons",
-        "ru": "Venomous Gladiator's Plate Pauldrons",
-        "es": "Venomous Gladiator's Plate Pauldrons",
-        "br": "Venomous Gladiator's Plate Pauldrons",
+        "ru": "Латные наплечные щитки ядовитого гладиатора",
+        "es": "Espaldares de placas de Gladiador venenoso",
+        "br": "Brafoneiras de Placa do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Plate Pauldrons",
-        "de": "Venomous Gladiator's Plate Pauldrons"
+        "fr": "Espauliers du gladiateur venimeux en plaques",
+        "de": "Plattenschulterstücke des toxischen Gladiators"
     },
     "270817": {
         "cn": "",
         "en": "Venomous Gladiator's Plate Girdle",
-        "ru": "Venomous Gladiator's Plate Girdle",
-        "es": "Venomous Gladiator's Plate Girdle",
-        "br": "Venomous Gladiator's Plate Girdle",
+        "ru": "Латный ремень ядовитого гладиатора",
+        "es": "Faja de placas de Gladiador venenoso",
+        "br": "Cinturão de Placa do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Plate Girdle",
-        "de": "Venomous Gladiator's Plate Girdle"
+        "fr": "Ceinturon du gladiateur venimeux en plaques",
+        "de": "Plattengurt des toxischen Gladiators"
     },
     "270818": {
         "cn": "",
         "en": "Venomous Gladiator's Plate Greatbelt",
-        "ru": "Venomous Gladiator's Plate Greatbelt",
-        "es": "Venomous Gladiator's Plate Greatbelt",
-        "br": "Venomous Gladiator's Plate Greatbelt",
+        "ru": "Латный большой пояс ядовитого гладиатора",
+        "es": "Gran cinturón de placas de Gladiador venenoso",
+        "br": "Correão de Placa do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Plate Greatbelt",
-        "de": "Venomous Gladiator's Plate Greatbelt"
+        "fr": "Grande ceinture du gladiateur venimeux en plaques",
+        "de": "Plattengroßgürtel des toxischen Gladiators"
     },
     "270819": {
         "cn": "",
         "en": "Venomous Gladiator's Plate Wristguards",
-        "ru": "Venomous Gladiator's Plate Wristguards",
-        "es": "Venomous Gladiator's Plate Wristguards",
-        "br": "Venomous Gladiator's Plate Wristguards",
+        "ru": "Латные нарукавники ядовитого гладиатора",
+        "es": "Muñequeras de placas de Gladiador venenoso",
+        "br": "Munhequeiras de Placa do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Plate Wristguards",
-        "de": "Venomous Gladiator's Plate Wristguards"
+        "fr": "Garde-poignets du gladiateur venimeux en plaques",
+        "de": "Plattenhandgelenksschützer des toxischen Gladiators"
     },
     "270820": {
         "cn": "",
         "en": "Venomous Gladiator's Plate Vambraces",
-        "ru": "Venomous Gladiator's Plate Vambraces",
-        "es": "Venomous Gladiator's Plate Vambraces",
-        "br": "Venomous Gladiator's Plate Vambraces",
+        "ru": "Латные тяжелые наручи ядовитого гладиатора",
+        "es": "Avambrazos de placas de Gladiador venenoso",
+        "br": "Avambraços de Placa do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Plate Vambraces",
-        "de": "Venomous Gladiator's Plate Vambraces"
+        "fr": "Protège-bras du gladiateur venimeux en plaques",
+        "de": "Plattenunterarmschienen des toxischen Gladiators"
     },
     "270822": {
         "cn": "",
         "en": "Venomous Gladiator's Spine",
-        "ru": "Venomous Gladiator's Spine",
-        "es": "Venomous Gladiator's Spine",
-        "br": "Venomous Gladiator's Spine",
+        "ru": "Шип ядовитого гладиатора",
+        "es": "Púa de Gladiador venenoso",
+        "br": "Espinha do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Spine",
-        "de": "Venomous Gladiator's Spine"
+        "fr": "Épine du gladiateur venimeux",
+        "de": "Rückgrat des toxischen Gladiators"
     },
     "270824": {
         "cn": "",
         "en": "Venomous Gladiator's Rippers",
-        "ru": "Venomous Gladiator's Rippers",
-        "es": "Venomous Gladiator's Rippers",
-        "br": "Venomous Gladiator's Rippers",
+        "ru": "Шкуродеры ядовитого гладиатора",
+        "es": "Destripadores de Gladiador venenoso",
+        "br": "Dilaceradores do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Rippers",
-        "de": "Venomous Gladiator's Rippers"
+        "fr": "Éventreurs du gladiateur venimeux",
+        "de": "Reißer des toxischen Gladiators"
     },
     "270827": {
         "cn": "",
         "en": "Venomous Gladiator's Cudgel",
-        "ru": "Venomous Gladiator's Cudgel",
-        "es": "Venomous Gladiator's Cudgel",
-        "br": "Venomous Gladiator's Cudgel",
+        "ru": "Дубина ядовитого гладиатора",
+        "es": "Cayada de Gladiador venenoso",
+        "br": "Clava do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Cudgel",
-        "de": "Venomous Gladiator's Cudgel"
+        "fr": "Casse-tête du gladiateur venimeux",
+        "de": "Knüppel des toxischen Gladiators"
     },
     "270830": {
         "cn": "",
         "en": "Venomous Gladiator's Slicer",
-        "ru": "Venomous Gladiator's Slicer",
-        "es": "Venomous Gladiator's Slicer",
-        "br": "Venomous Gladiator's Slicer",
+        "ru": "Тесак ядовитого гладиатора",
+        "es": "Cercenador de Gladiador venenoso",
+        "br": "Fatiador do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Slicer",
-        "de": "Venomous Gladiator's Slicer"
+        "fr": "Tranchoir du gladiateur venimeux",
+        "de": "Schnitzler des toxischen Gladiators"
     },
     "270833": {
         "cn": "",
         "en": "Venomous Gladiator's Spellblade",
-        "ru": "Venomous Gladiator's Spellblade",
-        "es": "Venomous Gladiator's Spellblade",
-        "br": "Venomous Gladiator's Spellblade",
+        "ru": "Чародейский клинок ядовитого гладиатора",
+        "es": "Hoja de hechizo de Gladiador venenoso",
+        "br": "Magilâmina do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Spellblade",
-        "de": "Venomous Gladiator's Spellblade"
+        "fr": "Sorcelame du gladiateur venimeux",
+        "de": "Zauberklinge des toxischen Gladiators"
     },
     "270834": {
         "cn": "",
         "en": "Venomous Gladiator's Edge",
-        "ru": "Venomous Gladiator's Edge",
-        "es": "Venomous Gladiator's Edge",
-        "br": "Venomous Gladiator's Edge",
+        "ru": "Грань ядовитого гладиатора",
+        "es": "Filo de Gladiador venenoso",
+        "br": "Gume do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Edge",
-        "de": "Venomous Gladiator's Edge"
+        "fr": "Tranchant du gladiateur venimeux",
+        "de": "Schneide des toxischen Gladiators"
     },
     "270837": {
         "cn": "",
         "en": "Venomous Gladiator's Reaper",
-        "ru": "Venomous Gladiator's Reaper",
-        "es": "Venomous Gladiator's Reaper",
-        "br": "Venomous Gladiator's Reaper",
+        "ru": "Жнец ядовитого гладиатора",
+        "es": "Segadora de Gladiador venenoso",
+        "br": "Ceifador do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Reaper",
-        "de": "Venomous Gladiator's Reaper"
+        "fr": "Faucheuse du gladiateur venimeux",
+        "de": "Schnitter des toxischen Gladiators"
     },
     "270845": {
         "cn": "",
         "en": "Venomous Gladiator's Staff",
-        "ru": "Venomous Gladiator's Staff",
-        "es": "Venomous Gladiator's Staff",
-        "br": "Venomous Gladiator's Staff",
+        "ru": "Посох ядовитого гладиатора",
+        "es": "Bastón de Gladiador venenoso",
+        "br": "Cajado do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Staff",
-        "de": "Venomous Gladiator's Staff"
+        "fr": "Bâton du gladiateur venimeux",
+        "de": "Stab des toxischen Gladiators"
     },
     "270846": {
         "cn": "",
         "en": "Venomous Gladiator's Stave",
-        "ru": "Venomous Gladiator's Stave",
-        "es": "Venomous Gladiator's Stave",
-        "br": "Venomous Gladiator's Stave",
+        "ru": "Шест ядовитого гладиатора",
+        "es": "Báculo de Gladiador venenoso",
+        "br": "Báculo do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Stave",
-        "de": "Venomous Gladiator's Stave"
+        "fr": "Gourdin du gladiateur venimeux",
+        "de": "Stock des toxischen Gladiators"
     },
     "270847": {
         "cn": "",
         "en": "Venomous Gladiator's Scepter",
-        "ru": "Venomous Gladiator's Scepter",
-        "es": "Venomous Gladiator's Scepter",
-        "br": "Venomous Gladiator's Scepter",
+        "ru": "Скипетр ядовитого гладиатора",
+        "es": "Cetro de Gladiador venenoso",
+        "br": "Cetro do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Scepter",
-        "de": "Venomous Gladiator's Scepter"
+        "fr": "Sceptre du gladiateur venimeux",
+        "de": "Szepter des toxischen Gladiators"
     },
     "270848": {
         "cn": "",
         "en": "Venomous Gladiator's Sigil",
-        "ru": "Venomous Gladiator's Sigil",
-        "es": "Venomous Gladiator's Sigil",
-        "br": "Venomous Gladiator's Sigil",
+        "ru": "Печать ядовитого гладиатора",
+        "es": "Sigilo de Gladiador venenoso",
+        "br": "Signo do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Sigil",
-        "de": "Venomous Gladiator's Sigil"
+        "fr": "Cachet du gladiateur venimeux",
+        "de": "Siegel des toxischen Gladiators"
     },
     "270849": {
         "cn": "",
         "en": "Venomous Gladiator's Scaleshield",
-        "ru": "Venomous Gladiator's Scaleshield",
-        "es": "Venomous Gladiator's Scaleshield",
-        "br": "Venomous Gladiator's Scaleshield",
+        "ru": "Чешуйчатый щит ядовитого гладиатора",
+        "es": "Escudo de escamas de Gladiador venenoso",
+        "br": "Escudo Escamoso do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Scaleshield",
-        "de": "Venomous Gladiator's Scaleshield"
+        "fr": "Bouclier d’écailles du gladiateur venimeux",
+        "de": "Schuppenschild des toxischen Gladiators"
     },
     "270850": {
         "cn": "",
         "en": "Venomous Gladiator's Spikeshield",
-        "ru": "Venomous Gladiator's Spikeshield",
-        "es": "Venomous Gladiator's Spikeshield",
-        "br": "Venomous Gladiator's Spikeshield",
+        "ru": "Шипастый щит ядовитого гладиатора",
+        "es": "Escudo de pinchos de Gladiador venenoso",
+        "br": "Escudo Espinhoso do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Spikeshield",
-        "de": "Venomous Gladiator's Spikeshield"
+        "fr": "Bouclier à pointes du gladiateur venimeux",
+        "de": "Stachelschild des toxischen Gladiators"
     },
     "270853": {
         "cn": "",
         "en": "Venomous Gladiator's Greatblade",
-        "ru": "Venomous Gladiator's Greatblade",
-        "es": "Venomous Gladiator's Greatblade",
-        "br": "Venomous Gladiator's Greatblade",
+        "ru": "Большой меч ядовитого гладиатора",
+        "es": "Gran hoja de Gladiador venenoso",
+        "br": "Grande Lâmina do Gladiador Peçonhento",
         "kr": "",
-        "fr": "Venomous Gladiator's Greatblade",
-        "de": "Venomous Gladiator's Greatblade"
+        "fr": "Grande lame du gladiateur venimeux",
+        "de": "Großklinge des toxischen Gladiators"
     },
     "270935": {
         "cn": "",
@@ -143072,26 +143062,6 @@ export const nameDB =
         "fr": "Jan’thrazet, le Crochâme",
         "de": "Jan'thrazet, der Seelenfang"
     },
-    "271131": {
-        "cn": "",
-        "en": "Test Weapon",
-        "ru": "Тестовое оружие",
-        "es": "Arma de prueba",
-        "br": "Arma de Teste",
-        "kr": "",
-        "fr": "Arme de test",
-        "de": "Testwaffe"
-    },
-    "271155": {
-        "cn": "",
-        "en": "Test Weapon 2",
-        "ru": "Тестовое оружие 2",
-        "es": "Arma de prueba 2",
-        "br": "Arma de Teste 2",
-        "kr": "",
-        "fr": "Arme de test 2",
-        "de": "Testwaffe 2"
-    },
     "271434": {
         "cn": "",
         "en": "Venom Rite Mantle",
@@ -143226,7 +143196,7 @@ export const nameDB =
         "cn": "",
         "en": "Tempered Horns of the Jade Warlord",
         "ru": "Закаленные рога нефритового полководца",
-        "es": "Cuernos del señor de la guerra de jade",
+        "es": "Cuernos del señor de la guerra de jade templados",
         "br": "Chifres Temperados do Senhor da Guerra de Jade",
         "kr": "",
         "fr": "Cornes trempées du seigneur de guerre de jade",
@@ -143945,12 +143915,12 @@ export const nameDB =
     "271528": {
         "cn": "",
         "en": "Enigmatic Dreamwatcher's Somnolent Stare",
-        "ru": "Enigmatic Dreamwatcher's Somnolent Stare",
-        "es": "Enigmatic Dreamwatcher's Somnolent Stare",
-        "br": "Enigmatic Dreamwatcher's Somnolent Stare",
+        "ru": "Усыпляющий взор таинственного сновидца",
+        "es": "Mirada fija somnolienta de vigía de los sueños enigmático",
+        "br": "Olhar Soporífero do Velassonhos Enigmático",
         "kr": "",
-        "fr": "Enigmatic Dreamwatcher's Somnolent Stare",
-        "de": "Enigmatic Dreamwatcher's Somnolent Stare"
+        "fr": "Regard somnolent de garde-rêve énigmatique",
+        "de": "Schläfriges Starren des geheimnisvollen Traumbehüters"
     },
     "271529": {
         "cn": "",
@@ -144376,8 +144346,8 @@ export const nameDB =
         "cn": "",
         "en": "Gaze of the Coiled Watcher",
         "ru": "Взгляд змеиного наблюдателя",
-        "es": "Mirada del vigía volutado",
-        "br": "Olhar do Observador Espiralado",
+        "es": "Mirada de la vigía volutada",
+        "br": "Olhar da Observadora Enrolada",
         "kr": "",
         "fr": "Regard du guetteur lové",
         "de": "Blick des gewundenen Wächters"
@@ -144405,314 +144375,44 @@ export const nameDB =
     "272147": {
         "cn": "",
         "en": "Colubrine Band",
-        "ru": "Colubrine Band",
-        "es": "Colubrine Band",
-        "br": "Colubrine Band",
+        "ru": "Змеевидный обруч",
+        "es": "Sortija de colubrino",
+        "br": "Elo Colubrino",
         "kr": "",
-        "fr": "Colubrine Band",
-        "de": "Colubrine Band"
+        "fr": "Anneau colubrin",
+        "de": "Geschlängeltes Band"
     },
     "272148": {
         "cn": "",
         "en": "Anguine Gyre",
-        "ru": "Anguine Gyre",
-        "es": "Anguine Gyre",
-        "br": "Anguine Gyre",
+        "ru": "Змееподобное кольцо",
+        "es": "Giro de ofidio",
+        "br": "Torvelinho Anguino",
         "kr": "",
-        "fr": "Anguine Gyre",
-        "de": "Anguine Gyre"
+        "fr": "Bague anguiforme",
+        "de": "Schlangenförmiger Gorkicht"
     },
     "272149": {
         "cn": "",
         "en": "Hex Loop",
-        "ru": "Hex Loop",
-        "es": "Hex Loop",
-        "br": "Hex Loop",
+        "ru": "Колечко со сглазом",
+        "es": "Aro de maleficios",
+        "br": "Aro de Bagata",
         "kr": "",
-        "fr": "Hex Loop",
-        "de": "Hex Loop"
+        "fr": "Jonc maléficieux",
+        "de": "Verhexte Schleife"
     },
     "272150": {
         "cn": "",
         "en": "Ouroboric Signet",
-        "ru": "Ouroboric Signet",
-        "es": "Ouroboric Signet",
-        "br": "Ouroboric Signet",
+        "ru": "Печатка Уробороса",
+        "es": "Sello de uróboros",
+        "br": "Sinete Ourobórico",
         "kr": "",
-        "fr": "Ouroboric Signet",
-        "de": "Ouroboric Signet"
+        "fr": "Chevalière ouroborique",
+        "de": "Ouroborischer Siegelring"
     },
     "272225": {
-        "cn": "",
-        "en": "Galerider's Mantle",
-        "ru": "Galerider's Mantle",
-        "es": "Galerider's Mantle",
-        "br": "Galerider's Mantle",
-        "kr": "",
-        "fr": "Galerider's Mantle",
-        "de": "Galerider's Mantle"
-    },
-    "272226": {
-        "cn": "",
-        "en": "Miststalker's Shroud",
-        "ru": "Miststalker's Shroud",
-        "es": "Miststalker's Shroud",
-        "br": "Miststalker's Shroud",
-        "kr": "",
-        "fr": "Miststalker's Shroud",
-        "de": "Miststalker's Shroud"
-    },
-    "272227": {
-        "cn": "",
-        "en": "Pyrewalker's Veil",
-        "ru": "Pyrewalker's Veil",
-        "es": "Pyrewalker's Veil",
-        "br": "Pyrewalker's Veil",
-        "kr": "",
-        "fr": "Pyrewalker's Veil",
-        "de": "Pyrewalker's Veil"
-    },
-    "272228": {
-        "cn": "",
-        "en": "Whispering Periapt",
-        "ru": "Whispering Periapt",
-        "es": "Whispering Periapt",
-        "br": "Whispering Periapt",
-        "kr": "",
-        "fr": "Whispering Periapt",
-        "de": "Whispering Periapt"
-    },
-    "272229": {
-        "cn": "",
-        "en": "Serpentine Talisman",
-        "ru": "Serpentine Talisman",
-        "es": "Serpentine Talisman",
-        "br": "Serpentine Talisman",
-        "kr": "",
-        "fr": "Serpentine Talisman",
-        "de": "Serpentine Talisman"
-    },
-    "272230": {
-        "cn": "",
-        "en": "Pledgebearer's Pall",
-        "ru": "Pledgebearer's Pall",
-        "es": "Pledgebearer's Pall",
-        "br": "Pledgebearer's Pall",
-        "kr": "",
-        "fr": "Pledgebearer's Pall",
-        "de": "Pledgebearer's Pall"
-    },
-    "272231": {
-        "cn": "",
-        "en": "Galerider's Doublet",
-        "ru": "Galerider's Doublet",
-        "es": "Galerider's Doublet",
-        "br": "Galerider's Doublet",
-        "kr": "",
-        "fr": "Galerider's Doublet",
-        "de": "Galerider's Doublet"
-    },
-    "272232": {
-        "cn": "",
-        "en": "Galerider's Buskins",
-        "ru": "Galerider's Buskins",
-        "es": "Galerider's Buskins",
-        "br": "Galerider's Buskins",
-        "kr": "",
-        "fr": "Galerider's Buskins",
-        "de": "Galerider's Buskins"
-    },
-    "272233": {
-        "cn": "",
-        "en": "Galerider's Gloves",
-        "ru": "Galerider's Gloves",
-        "es": "Galerider's Gloves",
-        "br": "Galerider's Gloves",
-        "kr": "",
-        "fr": "Galerider's Gloves",
-        "de": "Galerider's Gloves"
-    },
-    "272234": {
-        "cn": "",
-        "en": "Galerider's Miter",
-        "ru": "Galerider's Miter",
-        "es": "Galerider's Miter",
-        "br": "Galerider's Miter",
-        "kr": "",
-        "fr": "Galerider's Miter",
-        "de": "Galerider's Miter"
-    },
-    "272235": {
-        "cn": "",
-        "en": "Galerider's Treads",
-        "ru": "Galerider's Treads",
-        "es": "Galerider's Treads",
-        "br": "Galerider's Treads",
-        "kr": "",
-        "fr": "Galerider's Treads",
-        "de": "Galerider's Treads"
-    },
-    "272236": {
-        "cn": "",
-        "en": "Galerider's Mantlet",
-        "ru": "Galerider's Mantlet",
-        "es": "Galerider's Mantlet",
-        "br": "Galerider's Mantlet",
-        "kr": "",
-        "fr": "Galerider's Mantlet",
-        "de": "Galerider's Mantlet"
-    },
-    "272237": {
-        "cn": "",
-        "en": "Galerider's Obi",
-        "ru": "Galerider's Obi",
-        "es": "Galerider's Obi",
-        "br": "Galerider's Obi",
-        "kr": "",
-        "fr": "Galerider's Obi",
-        "de": "Galerider's Obi"
-    },
-    "272238": {
-        "cn": "",
-        "en": "Galerider's Wraps",
-        "ru": "Galerider's Wraps",
-        "es": "Galerider's Wraps",
-        "br": "Galerider's Wraps",
-        "kr": "",
-        "fr": "Galerider's Wraps",
-        "de": "Galerider's Wraps"
-    },
-    "272239": {
-        "cn": "",
-        "en": "Miststalker's Brigandine",
-        "ru": "Miststalker's Brigandine",
-        "es": "Miststalker's Brigandine",
-        "br": "Miststalker's Brigandine",
-        "kr": "",
-        "fr": "Miststalker's Brigandine",
-        "de": "Miststalker's Brigandine"
-    },
-    "272240": {
-        "cn": "",
-        "en": "Miststalker's Striders",
-        "ru": "Miststalker's Striders",
-        "es": "Miststalker's Striders",
-        "br": "Miststalker's Striders",
-        "kr": "",
-        "fr": "Miststalker's Striders",
-        "de": "Miststalker's Striders"
-    },
-    "272241": {
-        "cn": "",
-        "en": "Miststalker's Grips",
-        "ru": "Miststalker's Grips",
-        "es": "Miststalker's Grips",
-        "br": "Miststalker's Grips",
-        "kr": "",
-        "fr": "Miststalker's Grips",
-        "de": "Miststalker's Grips"
-    },
-    "272242": {
-        "cn": "",
-        "en": "Miststalker's Cowl",
-        "ru": "Miststalker's Cowl",
-        "es": "Miststalker's Cowl",
-        "br": "Miststalker's Cowl",
-        "kr": "",
-        "fr": "Miststalker's Cowl",
-        "de": "Miststalker's Cowl"
-    },
-    "272243": {
-        "cn": "",
-        "en": "Miststalker's Cuisses",
-        "ru": "Miststalker's Cuisses",
-        "es": "Miststalker's Cuisses",
-        "br": "Miststalker's Cuisses",
-        "kr": "",
-        "fr": "Miststalker's Cuisses",
-        "de": "Miststalker's Cuisses"
-    },
-    "272244": {
-        "cn": "",
-        "en": "Miststalker's Spaulders",
-        "ru": "Miststalker's Spaulders",
-        "es": "Miststalker's Spaulders",
-        "br": "Miststalker's Spaulders",
-        "kr": "",
-        "fr": "Miststalker's Spaulders",
-        "de": "Miststalker's Spaulders"
-    },
-    "272245": {
-        "cn": "",
-        "en": "Miststalker's Cinch",
-        "ru": "Miststalker's Cinch",
-        "es": "Miststalker's Cinch",
-        "br": "Miststalker's Cinch",
-        "kr": "",
-        "fr": "Miststalker's Cinch",
-        "de": "Miststalker's Cinch"
-    },
-    "272246": {
-        "cn": "",
-        "en": "Miststalker's Wristbands",
-        "ru": "Miststalker's Wristbands",
-        "es": "Miststalker's Wristbands",
-        "br": "Miststalker's Wristbands",
-        "kr": "",
-        "fr": "Miststalker's Wristbands",
-        "de": "Miststalker's Wristbands"
-    },
-    "272247": {
-        "cn": "",
-        "en": "Pyrewalker's Byrnie",
-        "ru": "Pyrewalker's Byrnie",
-        "es": "Pyrewalker's Byrnie",
-        "br": "Pyrewalker's Byrnie",
-        "kr": "",
-        "fr": "Pyrewalker's Byrnie",
-        "de": "Pyrewalker's Byrnie"
-    },
-    "272248": {
-        "cn": "",
-        "en": "Pyrewalker's Chausses",
-        "ru": "Pyrewalker's Chausses",
-        "es": "Pyrewalker's Chausses",
-        "br": "Pyrewalker's Chausses",
-        "kr": "",
-        "fr": "Pyrewalker's Chausses",
-        "de": "Pyrewalker's Chausses"
-    },
-    "272249": {
-        "cn": "",
-        "en": "Pyrewalker's Chain Clasps",
-        "ru": "Pyrewalker's Chain Clasps",
-        "es": "Pyrewalker's Chain Clasps",
-        "br": "Pyrewalker's Chain Clasps",
-        "kr": "",
-        "fr": "Pyrewalker's Chain Clasps",
-        "de": "Pyrewalker's Chain Clasps"
-    },
-    "272250": {
-        "cn": "",
-        "en": "Pyrewalker's Gaze",
-        "ru": "Pyrewalker's Gaze",
-        "es": "Pyrewalker's Gaze",
-        "br": "Pyrewalker's Gaze",
-        "kr": "",
-        "fr": "Pyrewalker's Gaze",
-        "de": "Pyrewalker's Gaze"
-    },
-    "272251": {
-        "cn": "",
-        "en": "Pyrewalker's Chausses",
-        "ru": "Pyrewalker's Chausses",
-        "es": "Pyrewalker's Chausses",
-        "br": "Pyrewalker's Chausses",
-        "kr": "",
-        "fr": "Pyrewalker's Chausses",
-        "de": "Pyrewalker's Chausses"
-    },
-    "272252": {
         "cn": "",
         "en": "Pyrewalker's Mantle",
         "ru": "Pyrewalker's Mantle",
@@ -144722,175 +144422,445 @@ export const nameDB =
         "fr": "Pyrewalker's Mantle",
         "de": "Pyrewalker's Mantle"
     },
+    "272226": {
+        "cn": "",
+        "en": "Miststalker's Shroud",
+        "ru": "Покров туманного странника",
+        "es": "Sudario de acechador de la niebla",
+        "br": "Mortalha do Espreitador das Brumas",
+        "kr": "",
+        "fr": "Voile de traqueur des brumes",
+        "de": "Tuch des Nebelpirschers"
+    },
+    "272227": {
+        "cn": "",
+        "en": "Galerider's Veil",
+        "ru": "Galerider's Veil",
+        "es": "Galerider's Veil",
+        "br": "Galerider's Veil",
+        "kr": "",
+        "fr": "Galerider's Veil",
+        "de": "Galerider's Veil"
+    },
+    "272228": {
+        "cn": "",
+        "en": "Whispering Periapt",
+        "ru": "Шепчущий оберег",
+        "es": "Talismán susurrante",
+        "br": "Periapto Sussurrante",
+        "kr": "",
+        "fr": "Périapte murmurant",
+        "de": "Flüsterndes Amulett"
+    },
+    "272229": {
+        "cn": "",
+        "en": "Serpentine Talisman",
+        "ru": "Змеиный талисман",
+        "es": "Talismán serpentino",
+        "br": "Talismã Serpentino",
+        "kr": "",
+        "fr": "Talisman serpentin",
+        "de": "Schlangentalisman"
+    },
+    "272230": {
+        "cn": "",
+        "en": "Pledgebearer's Pall",
+        "ru": "Пелена давшего клятву",
+        "es": "Velo de guardajuramentos",
+        "br": "Mortalha do Portador do Juramento",
+        "kr": "",
+        "fr": "Linceul de porte-serment",
+        "de": "Sargtuch des Schwurträgers"
+    },
+    "272231": {
+        "cn": "",
+        "en": "Pyrewalker's Doublet",
+        "ru": "Pyrewalker's Doublet",
+        "es": "Pyrewalker's Doublet",
+        "br": "Pyrewalker's Doublet",
+        "kr": "",
+        "fr": "Pyrewalker's Doublet",
+        "de": "Pyrewalker's Doublet"
+    },
+    "272232": {
+        "cn": "",
+        "en": "Pyrewalker's Buskins",
+        "ru": "Pyrewalker's Buskins",
+        "es": "Pyrewalker's Buskins",
+        "br": "Pyrewalker's Buskins",
+        "kr": "",
+        "fr": "Pyrewalker's Buskins",
+        "de": "Pyrewalker's Buskins"
+    },
+    "272233": {
+        "cn": "",
+        "en": "Pyrewalker's Gloves",
+        "ru": "Pyrewalker's Gloves",
+        "es": "Pyrewalker's Gloves",
+        "br": "Pyrewalker's Gloves",
+        "kr": "",
+        "fr": "Pyrewalker's Gloves",
+        "de": "Pyrewalker's Gloves"
+    },
+    "272234": {
+        "cn": "",
+        "en": "Pyrewalker's Miter",
+        "ru": "Pyrewalker's Miter",
+        "es": "Pyrewalker's Miter",
+        "br": "Pyrewalker's Miter",
+        "kr": "",
+        "fr": "Pyrewalker's Miter",
+        "de": "Pyrewalker's Miter"
+    },
+    "272235": {
+        "cn": "",
+        "en": "Pyrewalker's Treads",
+        "ru": "Pyrewalker's Treads",
+        "es": "Pyrewalker's Treads",
+        "br": "Pyrewalker's Treads",
+        "kr": "",
+        "fr": "Pyrewalker's Treads",
+        "de": "Pyrewalker's Treads"
+    },
+    "272236": {
+        "cn": "",
+        "en": "Pyrewalker's Mantlet",
+        "ru": "Pyrewalker's Mantlet",
+        "es": "Pyrewalker's Mantlet",
+        "br": "Pyrewalker's Mantlet",
+        "kr": "",
+        "fr": "Pyrewalker's Mantlet",
+        "de": "Pyrewalker's Mantlet"
+    },
+    "272237": {
+        "cn": "",
+        "en": "Pyrewalker's Obi",
+        "ru": "Pyrewalker's Obi",
+        "es": "Pyrewalker's Obi",
+        "br": "Pyrewalker's Obi",
+        "kr": "",
+        "fr": "Pyrewalker's Obi",
+        "de": "Pyrewalker's Obi"
+    },
+    "272238": {
+        "cn": "",
+        "en": "Pyrewalker's Wraps",
+        "ru": "Pyrewalker's Wraps",
+        "es": "Pyrewalker's Wraps",
+        "br": "Pyrewalker's Wraps",
+        "kr": "",
+        "fr": "Pyrewalker's Wraps",
+        "de": "Pyrewalker's Wraps"
+    },
+    "272239": {
+        "cn": "",
+        "en": "Miststalker's Brigandine",
+        "ru": "Панцирь туманного странника",
+        "es": "Brigantina de acechador de la niebla",
+        "br": "Brigandina do Espreitador das Brumas",
+        "kr": "",
+        "fr": "Brigandine de traqueur des brumes",
+        "de": "Brigantine des Nebelpirschers"
+    },
+    "272240": {
+        "cn": "",
+        "en": "Miststalker's Striders",
+        "ru": "Походные сапоги туманного странника",
+        "es": "Zancos de acechador de la niebla",
+        "br": "Chapins do Espreitador das Brumas",
+        "kr": "",
+        "fr": "Cuissardes de traqueur des brumes",
+        "de": "Schreiter des Nebelpirschers"
+    },
+    "272241": {
+        "cn": "",
+        "en": "Miststalker's Grips",
+        "ru": "Захваты туманного странника",
+        "es": "Mandiletes de acechador de la niebla",
+        "br": "Guantes do Espreitador das Brumas",
+        "kr": "",
+        "fr": "Poignes de traqueur des brumes",
+        "de": "Handschutz des Nebelpirschers"
+    },
+    "272242": {
+        "cn": "",
+        "en": "Miststalker's Cowl",
+        "ru": "Клобук туманного странника",
+        "es": "Capucha de acechador de la niebla",
+        "br": "Capucho do Espreitador das Brumas",
+        "kr": "",
+        "fr": "Capuche de traqueur des brumes",
+        "de": "Gugel des Nebelpirschers"
+    },
+    "272243": {
+        "cn": "",
+        "en": "Miststalker's Cuisses",
+        "ru": "Шоссы туманного странника",
+        "es": "Quijotes de acechador de la niebla",
+        "br": "Cuísses do Espreitador das Brumas",
+        "kr": "",
+        "fr": "Cuissières de traqueur des brumes",
+        "de": "Beinschienen des Nebelpirschers"
+    },
+    "272244": {
+        "cn": "",
+        "en": "Miststalker's Spaulders",
+        "ru": "Наплеч туманного странника",
+        "es": "Bufas de acechador de la niebla",
+        "br": "Espaldares do Espreitador das Brumas",
+        "kr": "",
+        "fr": "Spallières de traqueur des brumes",
+        "de": "Schiftung des Nebelpirschers"
+    },
+    "272245": {
+        "cn": "",
+        "en": "Miststalker's Cinch",
+        "ru": "Кушак туманного странника",
+        "es": "Cincho de acechador de la niebla",
+        "br": "Cilha do Espreitador das Brumas",
+        "kr": "",
+        "fr": "Cordelière de traqueur des brumes",
+        "de": "Gurt des Nebelpirschers"
+    },
+    "272246": {
+        "cn": "",
+        "en": "Miststalker's Wristbands",
+        "ru": "Нарукавье туманного странника",
+        "es": "Braciles de acechador de la niebla",
+        "br": "Pulseiras do Espreitador das Brumas",
+        "kr": "",
+        "fr": "Protège-poignets de traqueur des brumes",
+        "de": "Gelenkbänder des Nebelpirschers"
+    },
+    "272247": {
+        "cn": "",
+        "en": "Galerider's Byrnie",
+        "ru": "Galerider's Byrnie",
+        "es": "Galerider's Byrnie",
+        "br": "Galerider's Byrnie",
+        "kr": "",
+        "fr": "Galerider's Byrnie",
+        "de": "Galerider's Byrnie"
+    },
+    "272248": {
+        "cn": "",
+        "en": "Galerider's Chausses",
+        "ru": "Galerider's Chausses",
+        "es": "Galerider's Chausses",
+        "br": "Galerider's Chausses",
+        "kr": "",
+        "fr": "Galerider's Chausses",
+        "de": "Galerider's Chausses"
+    },
+    "272249": {
+        "cn": "",
+        "en": "Galerider's Chain Clasps",
+        "ru": "Galerider's Chain Clasps",
+        "es": "Galerider's Chain Clasps",
+        "br": "Galerider's Chain Clasps",
+        "kr": "",
+        "fr": "Galerider's Chain Clasps",
+        "de": "Galerider's Chain Clasps"
+    },
+    "272250": {
+        "cn": "",
+        "en": "Galerider's Gaze",
+        "ru": "Galerider's Gaze",
+        "es": "Galerider's Gaze",
+        "br": "Galerider's Gaze",
+        "kr": "",
+        "fr": "Galerider's Gaze",
+        "de": "Galerider's Gaze"
+    },
+    "272251": {
+        "cn": "",
+        "en": "Galerider's Chausses",
+        "ru": "Galerider's Chausses",
+        "es": "Galerider's Chausses",
+        "br": "Galerider's Chausses",
+        "kr": "",
+        "fr": "Galerider's Chausses",
+        "de": "Galerider's Chausses"
+    },
+    "272252": {
+        "cn": "",
+        "en": "Galerider's Mantle",
+        "ru": "Galerider's Mantle",
+        "es": "Galerider's Mantle",
+        "br": "Galerider's Mantle",
+        "kr": "",
+        "fr": "Galerider's Mantle",
+        "de": "Galerider's Mantle"
+    },
     "272253": {
         "cn": "",
-        "en": "Pyrewalker's Mail Skirt",
-        "ru": "Pyrewalker's Mail Skirt",
-        "es": "Pyrewalker's Mail Skirt",
-        "br": "Pyrewalker's Mail Skirt",
+        "en": "Galerider's Mail Skirt",
+        "ru": "Galerider's Mail Skirt",
+        "es": "Galerider's Mail Skirt",
+        "br": "Galerider's Mail Skirt",
         "kr": "",
-        "fr": "Pyrewalker's Mail Skirt",
-        "de": "Pyrewalker's Mail Skirt"
+        "fr": "Galerider's Mail Skirt",
+        "de": "Galerider's Mail Skirt"
     },
     "272254": {
         "cn": "",
-        "en": "Pyrewalker's Mesh Wraps",
-        "ru": "Pyrewalker's Mesh Wraps",
-        "es": "Pyrewalker's Mesh Wraps",
-        "br": "Pyrewalker's Mesh Wraps",
+        "en": "Galerider's Mesh Wraps",
+        "ru": "Galerider's Mesh Wraps",
+        "es": "Galerider's Mesh Wraps",
+        "br": "Galerider's Mesh Wraps",
         "kr": "",
-        "fr": "Pyrewalker's Mesh Wraps",
-        "de": "Pyrewalker's Mesh Wraps"
+        "fr": "Galerider's Mesh Wraps",
+        "de": "Galerider's Mesh Wraps"
     },
     "272255": {
         "cn": "",
         "en": "Pledgebearer's Cuirass",
-        "ru": "Pledgebearer's Cuirass",
-        "es": "Pledgebearer's Cuirass",
-        "br": "Pledgebearer's Cuirass",
+        "ru": "Кираса давшего клятву",
+        "es": "Loriga de guardajuramentos",
+        "br": "Corselete do Portador do Juramento",
         "kr": "",
-        "fr": "Pledgebearer's Cuirass",
-        "de": "Pledgebearer's Cuirass"
+        "fr": "Cuirasse de porte-serment",
+        "de": "Kürass des Schwurträgers"
     },
     "272256": {
         "cn": "",
         "en": "Pledgebearer's Sabatons",
-        "ru": "Pledgebearer's Sabatons",
-        "es": "Pledgebearer's Sabatons",
-        "br": "Pledgebearer's Sabatons",
+        "ru": "Латные башмаки давшего клятву",
+        "es": "Escarpes de guardajuramentos",
+        "br": "Escarpes do Portador do Juramento",
         "kr": "",
-        "fr": "Pledgebearer's Sabatons",
-        "de": "Pledgebearer's Sabatons"
+        "fr": "Solerets de porte-serment",
+        "de": "Sabatons des Schwurträgers"
     },
     "272257": {
         "cn": "",
         "en": "Pledgebearer's Gauntlets",
-        "ru": "Pledgebearer's Gauntlets",
-        "es": "Pledgebearer's Gauntlets",
-        "br": "Pledgebearer's Gauntlets",
+        "ru": "Рукавицы давшего клятву",
+        "es": "Guanteletes de guardajuramentos",
+        "br": "Manoplas do Portador do Juramento",
         "kr": "",
-        "fr": "Pledgebearer's Gauntlets",
-        "de": "Pledgebearer's Gauntlets"
+        "fr": "Gantelets de porte-serment",
+        "de": "Stulpen des Schwurträgers"
     },
     "272258": {
         "cn": "",
         "en": "Pledgebearer's Mask",
-        "ru": "Pledgebearer's Mask",
-        "es": "Pledgebearer's Mask",
-        "br": "Pledgebearer's Mask",
+        "ru": "Маска давшего клятву",
+        "es": "Máscara de guardajuramentos",
+        "br": "Máscara do Portador do Juramento",
         "kr": "",
-        "fr": "Pledgebearer's Mask",
-        "de": "Pledgebearer's Mask"
+        "fr": "Masque de porte-serment",
+        "de": "Maske des Schwurträgers"
     },
     "272259": {
         "cn": "",
         "en": "Pledgebearer's Poleyns",
-        "ru": "Pledgebearer's Poleyns",
-        "es": "Pledgebearer's Poleyns",
-        "br": "Pledgebearer's Poleyns",
+        "ru": "Наколенники давшего клятву",
+        "es": "Polainas de guardajuramentos",
+        "br": "Joelheiras do Portador do Juramento",
         "kr": "",
-        "fr": "Pledgebearer's Poleyns",
-        "de": "Pledgebearer's Poleyns"
+        "fr": "Genouillères de porte-serment",
+        "de": "Kniebuckel des Schwurträgers"
     },
     "272260": {
         "cn": "",
         "en": "Pledgebearer's Pauldrons",
-        "ru": "Pledgebearer's Pauldrons",
-        "es": "Pledgebearer's Pauldrons",
-        "br": "Pledgebearer's Pauldrons",
+        "ru": "Наплечники давшего клятву",
+        "es": "Espaldares de guardajuramentos",
+        "br": "Brafoneiras do Portador do Juramento",
         "kr": "",
-        "fr": "Pledgebearer's Pauldrons",
-        "de": "Pledgebearer's Pauldrons"
+        "fr": "Espauliers de porte-serment",
+        "de": "Schulterstücke des Schwurträgers"
     },
     "272261": {
         "cn": "",
         "en": "Pledgebearer's Girdle",
-        "ru": "Pledgebearer's Girdle",
-        "es": "Pledgebearer's Girdle",
-        "br": "Pledgebearer's Girdle",
+        "ru": "Ремень давшего клятву",
+        "es": "Faja de guardajuramentos",
+        "br": "Cinturão do Portador do Juramento",
         "kr": "",
-        "fr": "Pledgebearer's Girdle",
-        "de": "Pledgebearer's Girdle"
+        "fr": "Ceinturon de porte-serment",
+        "de": "Gurt des Schwurträgers"
     },
     "272262": {
         "cn": "",
         "en": "Pledgebearer's Splints",
-        "ru": "Pledgebearer's Splints",
-        "es": "Pledgebearer's Splints",
-        "br": "Pledgebearer's Splints",
+        "ru": "Наручи давшего клятву",
+        "es": "Braciles de guardajuramentos",
+        "br": "Talas do Portador do Juramento",
         "kr": "",
-        "fr": "Pledgebearer's Splints",
-        "de": "Pledgebearer's Splints"
+        "fr": "Attelles de porte-serment",
+        "de": "Schienen des Schwurträgers"
     },
     "272266": {
         "cn": "",
         "en": "Forgotten Eidolon's Dagger",
-        "ru": "Forgotten Eidolon's Dagger",
-        "es": "Forgotten Eidolon's Dagger",
-        "br": "Forgotten Eidolon's Dagger",
+        "ru": "Кинжал забытого призрака",
+        "es": "Daga de Eidolon olvidada",
+        "br": "Adaga do Eidolon Esquecido",
         "kr": "",
-        "fr": "Forgotten Eidolon's Dagger",
-        "de": "Forgotten Eidolon's Dagger"
+        "fr": "Dague d’Eidolon oubliée",
+        "de": "Dolch des vergessenen Eidolons"
     },
     "272270": {
         "cn": "",
         "en": "Bonedust Pestle",
-        "ru": "Bonedust Pestle",
-        "es": "Bonedust Pestle",
-        "br": "Bonedust Pestle",
+        "ru": "Пестик для перемалывания костей",
+        "es": "Mortero de polvohueso",
+        "br": "Pilão de Pó de Osso",
         "kr": "",
-        "fr": "Bonedust Pestle",
-        "de": "Bonedust Pestle"
+        "fr": "Pilon à poussière-d’os",
+        "de": "Knochenstaubstößel"
     },
     "272271": {
         "cn": "",
         "en": "Spiritbound Focus",
-        "ru": "Spiritbound Focus",
-        "es": "Spiritbound Focus",
-        "br": "Spiritbound Focus",
+        "ru": "Озаренное духами средоточие",
+        "es": "Enfoque vinculado al espíritu",
+        "br": "Foco do Espírito Vinculado",
         "kr": "",
-        "fr": "Spiritbound Focus",
-        "de": "Spiritbound Focus"
+        "fr": "Focalisateur lié par les esprits",
+        "de": "Geistgebundener Fokus"
     },
     "272273": {
         "cn": "",
-        "en": "Unshrined Ceremonial Scepter",
-        "ru": "Unshrined Ceremonial Scepter",
-        "es": "Unshrined Ceremonial Scepter",
-        "br": "Unshrined Ceremonial Scepter",
+        "en": "Enshrined Ceremonial Scepter",
+        "ru": "Enshrined Ceremonial Scepter",
+        "es": "Enshrined Ceremonial Scepter",
+        "br": "Enshrined Ceremonial Scepter",
         "kr": "",
-        "fr": "Unshrined Ceremonial Scepter",
-        "de": "Unshrined Ceremonial Scepter"
+        "fr": "Enshrined Ceremonial Scepter",
+        "de": "Enshrined Ceremonial Scepter"
     },
     "272275": {
         "cn": "",
         "en": "Soulsinger's Horn",
-        "ru": "Soulsinger's Horn",
-        "es": "Soulsinger's Horn",
-        "br": "Soulsinger's Horn",
+        "ru": "Рог певца душ",
+        "es": "Cuerno de cantaalmas",
+        "br": "Trombeta do Canta-almas",
         "kr": "",
-        "fr": "Soulsinger's Horn",
-        "de": "Soulsinger's Horn"
+        "fr": "Corne de chante-âme",
+        "de": "Horn des Seelensängers"
     },
     "272276": {
         "cn": "",
         "en": "Wailing Bulwark",
-        "ru": "Wailing Bulwark",
-        "es": "Wailing Bulwark",
-        "br": "Wailing Bulwark",
+        "ru": "Стенающий бастион",
+        "es": "Baluarte gimiente",
+        "br": "Baluarte Ululante",
         "kr": "",
-        "fr": "Wailing Bulwark",
-        "de": "Wailing Bulwark"
+        "fr": "Rempart hurlant",
+        "de": "Klagendes Bollwerk"
     },
     "272277": {
         "cn": "",
         "en": "Spirit-Reaver",
-        "ru": "Spirit-Reaver",
-        "es": "Spirit-Reaver",
-        "br": "Spirit-Reaver",
+        "ru": "Рассекатель духов",
+        "es": "Robaespíritus",
+        "br": "Aniquilador de Espírito",
         "kr": "",
-        "fr": "Spirit-Reaver",
-        "de": "Spirit-Reaver"
+        "fr": "Arrache-esprit",
+        "de": "Geisthäscher"
     },
     "273649": {
         "cn": "",
@@ -145104,13 +145074,13 @@ export const nameDB =
     },
     "274493": {
         "cn": "",
-        "en": "Effigy of Ula'Tek's Faithful",
-        "ru": "Effigy of Ula'Tek's Faithful",
-        "es": "Effigy of Ula'Tek's Faithful",
-        "br": "Effigy of Ula'Tek's Faithful",
+        "en": "Effigy of Ula'tek's Faithful",
+        "ru": "Истукан последователя Ула'тек",
+        "es": "Efigie de fiel de Ula'tek",
+        "br": "Efígie do Fiel de Ula'tek",
         "kr": "",
-        "fr": "Effigy of Ula'Tek's Faithful",
-        "de": "Effigy of Ula'Tek's Faithful"
+        "fr": "Effigie de fidèle d’Ula’tek",
+        "de": "Bildnis von Ula'teks Getreuen"
     },
     "274494": {
         "cn": "",
@@ -145135,22 +145105,22 @@ export const nameDB =
     "274496": {
         "cn": "",
         "en": "Ophidian Bone Whistle",
-        "ru": "Ophidian Bone Whistle",
-        "es": "Ophidian Bone Whistle",
-        "br": "Ophidian Bone Whistle",
+        "ru": "Змеиный костяной свисток",
+        "es": "Silbato óseo de ofidio",
+        "br": "Apito de Osso Ofídico",
         "kr": "",
-        "fr": "Ophidian Bone Whistle",
-        "de": "Ophidian Bone Whistle"
+        "fr": "Sifflet en os ophidien",
+        "de": "Schlangenknochenflöte"
     },
     "274497": {
         "cn": "",
         "en": "Spirit-Rending Poison",
-        "ru": "Spirit-Rending Poison",
-        "es": "Spirit-Rending Poison",
-        "br": "Spirit-Rending Poison",
+        "ru": "Духораздирающий яд",
+        "es": "Veneno desgarraespíritu",
+        "br": "Veneno Dilacerador de Espírito",
         "kr": "",
-        "fr": "Spirit-Rending Poison",
-        "de": "Spirit-Rending Poison"
+        "fr": "Venin déchire-esprit",
+        "de": "Seelenzerreißendes Gift"
     },
     "274498": {
         "cn": "",
@@ -145165,12 +145135,12 @@ export const nameDB =
     "274499": {
         "cn": "",
         "en": "Toxiferous Transfusion",
-        "ru": "Toxiferous Transfusion",
-        "es": "Toxiferous Transfusion",
-        "br": "Toxiferous Transfusion",
+        "ru": "Отравляющее переливание",
+        "es": "Transfusión toxiferoz",
+        "br": "Transfusão Tóxica",
         "kr": "",
-        "fr": "Toxiferous Transfusion",
-        "de": "Toxiferous Transfusion"
+        "fr": "Transfusion toxique",
+        "de": "Giftführende Transfusion"
     },
     "274818": {
         "cn": "",
@@ -145564,13 +145534,13 @@ export const nameDB =
     },
     "274857": {
         "cn": "",
-        "en": "Chitonous Broodmother's Spaulders",
-        "ru": "Хитиновый наплеч праматери",
-        "es": "Bufas de madre de linaje quitinosas",
-        "br": "Espaldares da Prolemadre de Quitina",
+        "en": "Chitinous Broodmother's Spaulders",
+        "ru": "Chitinous Broodmother's Spaulders",
+        "es": "Chitinous Broodmother's Spaulders",
+        "br": "Chitinous Broodmother's Spaulders",
         "kr": "",
-        "fr": "Spallières chitineuses de la mère des couvées",
-        "de": "Chitinschiftung der Brutmutter"
+        "fr": "Chitinous Broodmother's Spaulders",
+        "de": "Chitinous Broodmother's Spaulders"
     },
     "274858": {
         "cn": "",
@@ -146095,982 +146065,982 @@ export const nameDB =
     "275488": {
         "cn": "",
         "en": "Preyhunter's Polished Brigandine",
-        "ru": "Preyhunter's Polished Brigandine",
-        "es": "Preyhunter's Polished Brigandine",
-        "br": "Preyhunter's Polished Brigandine",
+        "ru": "Отполированный панцирь загонщика",
+        "es": "Brigantina pulida de cazapresas",
+        "br": "Brigandina Polida do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Polished Brigandine",
-        "de": "Preyhunter's Polished Brigandine"
+        "fr": "Brigandine distinguée de traque-proie",
+        "de": "Polierte Brigantine des Beutejägers"
     },
     "275489": {
         "cn": "",
         "en": "Preyhunter's Polished Greatbelt",
-        "ru": "Preyhunter's Polished Greatbelt",
-        "es": "Preyhunter's Polished Greatbelt",
-        "br": "Preyhunter's Polished Greatbelt",
+        "ru": "Отполированный большой пояс загонщика",
+        "es": "Gran cinturón pulido de cazapresas",
+        "br": "Correão Polido do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Polished Greatbelt",
-        "de": "Preyhunter's Polished Greatbelt"
+        "fr": "Grande ceinture distinguée de traque-proie",
+        "de": "Polierter Großgürtel des Beutejägers"
     },
     "275490": {
         "cn": "",
         "en": "Preyhunter's Polished Greatboots",
-        "ru": "Preyhunter's Polished Greatboots",
-        "es": "Preyhunter's Polished Greatboots",
-        "br": "Preyhunter's Polished Greatboots",
+        "ru": "Отполированные большие сапоги загонщика",
+        "es": "Grandes botas pulidas de cazapresas",
+        "br": "Grandes Botas Polidas do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Polished Greatboots",
-        "de": "Preyhunter's Polished Greatboots"
+        "fr": "Grandes bottes distinguées de traque-proie",
+        "de": "Polierte Großstiefel des Beutejägers"
     },
     "275491": {
         "cn": "",
         "en": "Preyhunter's Polished Handguards",
-        "ru": "Preyhunter's Polished Handguards",
-        "es": "Preyhunter's Polished Handguards",
-        "br": "Preyhunter's Polished Handguards",
+        "ru": "Отполированные боевые рукавицы загонщика",
+        "es": "Manoplas pulidas de cazapresas",
+        "br": "Protetores de Mão Polidos do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Polished Handguards",
-        "de": "Preyhunter's Polished Handguards"
+        "fr": "Garde-mains distingués de traque-proie",
+        "de": "Polierte Handschützer des Beutejägers"
     },
     "275492": {
         "cn": "",
         "en": "Preyhunter's Polished Helmet",
-        "ru": "Preyhunter's Polished Helmet",
-        "es": "Preyhunter's Polished Helmet",
-        "br": "Preyhunter's Polished Helmet",
+        "ru": "Отполированный шлем загонщика",
+        "es": "Casco pulido de cazapresas",
+        "br": "Capacete Polido do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Polished Helmet",
-        "de": "Preyhunter's Polished Helmet"
+        "fr": "Casque distingué de traque-proie",
+        "de": "Polierter Helm des Beutejägers"
     },
     "275493": {
         "cn": "",
         "en": "Preyhunter's Polished Pauldrons",
-        "ru": "Preyhunter's Polished Pauldrons",
-        "es": "Preyhunter's Polished Pauldrons",
-        "br": "Preyhunter's Polished Pauldrons",
+        "ru": "Отполированное наплечье загонщика",
+        "es": "Espaldares pulidos de cazapresas",
+        "br": "Brafoneiras Polidas do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Polished Pauldrons",
-        "de": "Preyhunter's Polished Pauldrons"
+        "fr": "Espauliers distingués de traque-proie",
+        "de": "Polierte Schulterstücke des Beutejägers"
     },
     "275494": {
         "cn": "",
         "en": "Preyhunter's Polished Tassets",
-        "ru": "Preyhunter's Polished Tassets",
-        "es": "Preyhunter's Polished Tassets",
-        "br": "Preyhunter's Polished Tassets",
+        "ru": "Отполированные набедренные пластины загонщика",
+        "es": "Escarcelas pulidas de cazapresas",
+        "br": "Escarcela Polida do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Polished Tassets",
-        "de": "Preyhunter's Polished Tassets"
+        "fr": "Tassettes distinguées de traque-proie",
+        "de": "Polierte Tassetten des Beutejägers"
     },
     "275495": {
         "cn": "",
         "en": "Preyhunter's Polished Vambraces",
-        "ru": "Preyhunter's Polished Vambraces",
-        "es": "Preyhunter's Polished Vambraces",
-        "br": "Preyhunter's Polished Vambraces",
+        "ru": "Отполированные тяжелые наручи загонщика",
+        "es": "Avambrazos pulidos de cazapresas",
+        "br": "Avambraços Polidos do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Polished Vambraces",
-        "de": "Preyhunter's Polished Vambraces"
+        "fr": "Protège-bras distingués de traque-proie",
+        "de": "Polierte Unterarmschienen des Beutejägers"
     },
     "275496": {
         "cn": "",
         "en": "Preyhunter's Refined Cord",
-        "ru": "Preyhunter's Refined Cord",
-        "es": "Preyhunter's Refined Cord",
-        "br": "Preyhunter's Refined Cord",
+        "ru": "Изысканный ремень загонщика",
+        "es": "Cordón refinado de cazapresas",
+        "br": "Cordão Refinado do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Refined Cord",
-        "de": "Preyhunter's Refined Cord"
+        "fr": "Corde luxueuse de traque-proie",
+        "de": "Raffinierte Kordel des Beutejägers"
     },
     "275497": {
         "cn": "",
         "en": "Preyhunter's Refined Crown",
-        "ru": "Preyhunter's Refined Crown",
-        "es": "Preyhunter's Refined Crown",
-        "br": "Preyhunter's Refined Crown",
+        "ru": "Изысканная корона загонщика",
+        "es": "Corona refinada de cazapresas",
+        "br": "Coroa Refinada do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Refined Crown",
-        "de": "Preyhunter's Refined Crown"
+        "fr": "Couronne luxueuse de traque-proie",
+        "de": "Raffinierte Krone des Beutejägers"
     },
     "275498": {
         "cn": "",
         "en": "Preyhunter's Refined Cuffs",
-        "ru": "Preyhunter's Refined Cuffs",
-        "es": "Preyhunter's Refined Cuffs",
-        "br": "Preyhunter's Refined Cuffs",
+        "ru": "Изысканные манжеты загонщика",
+        "es": "Puños refinados de cazapresas",
+        "br": "Manilhas Refinadas do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Refined Cuffs",
-        "de": "Preyhunter's Refined Cuffs"
+        "fr": "Crispins luxueux de traque-proie",
+        "de": "Raffinierte Manschetten des Beutejägers"
     },
     "275499": {
         "cn": "",
         "en": "Preyhunter's Refined Epaulet",
-        "ru": "Preyhunter's Refined Epaulet",
-        "es": "Preyhunter's Refined Epaulet",
-        "br": "Preyhunter's Refined Epaulet",
+        "ru": "Изысканный эполет загонщика",
+        "es": "Cubrehombros refinados de cazapresas",
+        "br": "Palas Refinadas do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Refined Epaulet",
-        "de": "Preyhunter's Refined Epaulet"
+        "fr": "Épaulettes luxueuses de traque-proie",
+        "de": "Raffinierte Schulterklappe des Beutejägers"
     },
     "275500": {
         "cn": "",
         "en": "Preyhunter's Refined Gloves",
-        "ru": "Preyhunter's Refined Gloves",
-        "es": "Preyhunter's Refined Gloves",
-        "br": "Preyhunter's Refined Gloves",
+        "ru": "Изысканные перчатки загонщика",
+        "es": "Guantes refinados de cazapresas",
+        "br": "Luvas Refinadas do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Refined Gloves",
-        "de": "Preyhunter's Refined Gloves"
+        "fr": "Gants luxueux de traque-proie",
+        "de": "Raffinierte Handschuhe des Beutejägers"
     },
     "275501": {
         "cn": "",
         "en": "Preyhunter's Refined Slippers",
-        "ru": "Preyhunter's Refined Slippers",
-        "es": "Preyhunter's Refined Slippers",
-        "br": "Preyhunter's Refined Slippers",
+        "ru": "Изысканные туфли загонщика",
+        "es": "Zapatillas refinadas de cazapresas",
+        "br": "Sapatilhas Refinadas do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Refined Slippers",
-        "de": "Preyhunter's Refined Slippers"
+        "fr": "Mules luxueuses de traque-proie",
+        "de": "Raffinierte Pantoffeln des Beutejägers"
     },
     "275502": {
         "cn": "",
         "en": "Preyhunter's Refined Tights",
-        "ru": "Preyhunter's Refined Tights",
-        "es": "Preyhunter's Refined Tights",
-        "br": "Preyhunter's Refined Tights",
+        "ru": "Изысканное трико загонщика",
+        "es": "Mallas refinadas de cazapresas",
+        "br": "Meia-calça Refinada do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Refined Tights",
-        "de": "Preyhunter's Refined Tights"
+        "fr": "Collants luxueux de traque-proie",
+        "de": "Raffinierte Strumpfhose des Beutejägers"
     },
     "275503": {
         "cn": "",
         "en": "Preyhunter's Refined Vestments",
-        "ru": "Preyhunter's Refined Vestments",
-        "es": "Preyhunter's Refined Vestments",
-        "br": "Preyhunter's Refined Vestments",
+        "ru": "Изысканные одежды загонщика",
+        "es": "Vestimentas refinadas de cazapresas",
+        "br": "Vestimenta Refinada do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Refined Vestments",
-        "de": "Preyhunter's Refined Vestments"
+        "fr": "Habits luxueux de traque-proie",
+        "de": "Raffinierte Gewänder des Beutejägers"
     },
     "275504": {
         "cn": "",
         "en": "Preyhunter's Rugged Bindings",
-        "ru": "Preyhunter's Rugged Bindings",
-        "es": "Preyhunter's Rugged Bindings",
-        "br": "Preyhunter's Rugged Bindings",
+        "ru": "Грубые путы загонщика",
+        "es": "Ataduras toscas de cazapresas",
+        "br": "Braceletes Rústicos do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Rugged Bindings",
-        "de": "Preyhunter's Rugged Bindings"
+        "fr": "Manchettes robustes de traque-proie",
+        "de": "Robuste Bindungen des Beutejägers"
     },
     "275505": {
         "cn": "",
         "en": "Preyhunter's Rugged Clasp",
-        "ru": "Preyhunter's Rugged Clasp",
-        "es": "Preyhunter's Rugged Clasp",
-        "br": "Preyhunter's Rugged Clasp",
+        "ru": "Грубая застежка загонщика",
+        "es": "Cinto tosco de cazapresas",
+        "br": "Fecho Rústico do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Rugged Clasp",
-        "de": "Preyhunter's Rugged Clasp"
+        "fr": "Fermoir robuste de traque-proie",
+        "de": "Robuster Schnallengürtel des Beutejägers"
     },
     "275506": {
         "cn": "",
         "en": "Preyhunter's Rugged Grips",
-        "ru": "Preyhunter's Rugged Grips",
-        "es": "Preyhunter's Rugged Grips",
-        "br": "Preyhunter's Rugged Grips",
+        "ru": "Грубые захваты загонщика",
+        "es": "Mandiletes toscos de cazapresas",
+        "br": "Guantes Rústicas do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Rugged Grips",
-        "de": "Preyhunter's Rugged Grips"
+        "fr": "Poignes robustes de traque-proie",
+        "de": "Robuster Handschutz des Beutejägers"
     },
     "275507": {
         "cn": "",
         "en": "Preyhunter's Rugged Haubergeon",
-        "ru": "Preyhunter's Rugged Haubergeon",
-        "es": "Preyhunter's Rugged Haubergeon",
-        "br": "Preyhunter's Rugged Haubergeon",
+        "ru": "Грубый хауберк загонщика",
+        "es": "Camisote tosco de cazapresas",
+        "br": "Cota-menor Rústica do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Rugged Haubergeon",
-        "de": "Preyhunter's Rugged Haubergeon"
+        "fr": "Haubergeon robuste de traque-proie",
+        "de": "Robustes Haubergeon des Beutejägers"
     },
     "275508": {
         "cn": "",
         "en": "Preyhunter's Rugged Legguards",
-        "ru": "Preyhunter's Rugged Legguards",
-        "es": "Preyhunter's Rugged Legguards",
-        "br": "Preyhunter's Rugged Legguards",
+        "ru": "Грубые набедренники загонщика",
+        "es": "Musleras toscas de cazapresas",
+        "br": "Guarda-pernas Rústico do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Rugged Legguards",
-        "de": "Preyhunter's Rugged Legguards"
+        "fr": "Garde-jambes robustes de traque-proie",
+        "de": "Robuste Beinschützer des Beutejägers"
     },
     "275509": {
         "cn": "",
         "en": "Preyhunter's Rugged Plume",
-        "ru": "Preyhunter's Rugged Plume",
-        "es": "Preyhunter's Rugged Plume",
-        "br": "Preyhunter's Rugged Plume",
+        "ru": "Грубое оперение загонщика",
+        "es": "Penacho tosco de cazapresas",
+        "br": "Pluma Rústica do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Rugged Plume",
-        "de": "Preyhunter's Rugged Plume"
+        "fr": "Panache robuste de traque-proie",
+        "de": "Robuster Federbusch des Beutejägers"
     },
     "275510": {
         "cn": "",
         "en": "Preyhunter's Rugged Sabatons",
-        "ru": "Preyhunter's Rugged Sabatons",
-        "es": "Preyhunter's Rugged Sabatons",
-        "br": "Preyhunter's Rugged Sabatons",
+        "ru": "Грубые башмаки загонщика",
+        "es": "Escarpes toscos de cazapresas",
+        "br": "Escarpes Rústicas do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Rugged Sabatons",
-        "de": "Preyhunter's Rugged Sabatons"
+        "fr": "Solerets robustes de traque-proie",
+        "de": "Robuste Sabatons des Beutejägers"
     },
     "275511": {
         "cn": "",
         "en": "Preyhunter's Rugged Shoulderguards",
-        "ru": "Preyhunter's Rugged Shoulderguards",
-        "es": "Preyhunter's Rugged Shoulderguards",
-        "br": "Preyhunter's Rugged Shoulderguards",
+        "ru": "Грубые наплечные щитки загонщика",
+        "es": "Guardahombros toscos de cazapresas",
+        "br": "Guarda-ombros Rústico do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Rugged Shoulderguards",
-        "de": "Preyhunter's Rugged Shoulderguards"
+        "fr": "Garde-épaules robustes de traque-proie",
+        "de": "Robuste Schulterschützer des Beutejägers"
     },
     "275512": {
         "cn": "",
         "en": "Preyhunter's Sleek Armlets",
-        "ru": "Preyhunter's Sleek Armlets",
-        "es": "Preyhunter's Sleek Armlets",
-        "br": "Preyhunter's Sleek Armlets",
+        "ru": "Изящные браслеты загонщика",
+        "es": "Brazaletes elegantes de cazapresas",
+        "br": "Vírias Elegantes do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Sleek Armlets",
-        "de": "Preyhunter's Sleek Armlets"
+        "fr": "Bracelets élégants de traque-proie",
+        "de": "Geschmeidige Armbinden des Beutejägers"
     },
     "275513": {
         "cn": "",
         "en": "Preyhunter's Sleek Belt",
-        "ru": "Preyhunter's Sleek Belt",
-        "es": "Preyhunter's Sleek Belt",
-        "br": "Preyhunter's Sleek Belt",
+        "ru": "Изящный пояс загонщика",
+        "es": "Cinturón elegante de cazapresas",
+        "br": "Cinto Elegante do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Sleek Belt",
-        "de": "Preyhunter's Sleek Belt"
+        "fr": "Ceinture élégante de traque-proie",
+        "de": "Geschmeidiger Gürtel des Beutejägers"
     },
     "275514": {
         "cn": "",
         "en": "Preyhunter's Sleek Boots",
-        "ru": "Preyhunter's Sleek Boots",
-        "es": "Preyhunter's Sleek Boots",
-        "br": "Preyhunter's Sleek Boots",
+        "ru": "Изящные сапоги загонщика",
+        "es": "Botas elegantes de cazapresas",
+        "br": "Botas Elegantes do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Sleek Boots",
-        "de": "Preyhunter's Sleek Boots"
+        "fr": "Bottes élégantes de traque-proie",
+        "de": "Geschmeidige Stiefel des Beutejägers"
     },
     "275515": {
         "cn": "",
         "en": "Preyhunter's Sleek Gauntlets",
-        "ru": "Preyhunter's Sleek Gauntlets",
-        "es": "Preyhunter's Sleek Gauntlets",
-        "br": "Preyhunter's Sleek Gauntlets",
+        "ru": "Изящные рукавицы загонщика",
+        "es": "Guanteletes elegantes de cazapresas",
+        "br": "Manoplas Elegantes do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Sleek Gauntlets",
-        "de": "Preyhunter's Sleek Gauntlets"
+        "fr": "Gantelets élégants de traque-proie",
+        "de": "Geschmeidige Stulpen des Beutejägers"
     },
     "275516": {
         "cn": "",
         "en": "Preyhunter's Sleek Jerkin",
-        "ru": "Preyhunter's Sleek Jerkin",
-        "es": "Preyhunter's Sleek Jerkin",
-        "br": "Preyhunter's Sleek Jerkin",
+        "ru": "Изящный жакет загонщика",
+        "es": "Chaleco elegante de cazapresas",
+        "br": "Gibão Elegante do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Sleek Jerkin",
-        "de": "Preyhunter's Sleek Jerkin"
+        "fr": "Pourpoint élégant de traque-proie",
+        "de": "Geschmeidiges Wams des Beutejägers"
     },
     "275517": {
         "cn": "",
         "en": "Preyhunter's Sleek Mask",
-        "ru": "Preyhunter's Sleek Mask",
-        "es": "Preyhunter's Sleek Mask",
-        "br": "Preyhunter's Sleek Mask",
+        "ru": "Изящная маска загонщика",
+        "es": "Máscara elegante de cazapresas",
+        "br": "Máscara Elegante do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Sleek Mask",
-        "de": "Preyhunter's Sleek Mask"
+        "fr": "Masque élégant de traque-proie",
+        "de": "Geschmeidige Maske des Beutejägers"
     },
     "275518": {
         "cn": "",
         "en": "Preyhunter's Sleek Shoulderpads",
-        "ru": "Preyhunter's Sleek Shoulderpads",
-        "es": "Preyhunter's Sleek Shoulderpads",
-        "br": "Preyhunter's Sleek Shoulderpads",
+        "ru": "Изящные наплечники загонщика",
+        "es": "Hombreras elegantes de cazapresas",
+        "br": "Ombreiras Elegantes do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Sleek Shoulderpads",
-        "de": "Preyhunter's Sleek Shoulderpads"
+        "fr": "Protège-épaules élégants de traque-proie",
+        "de": "Geschmeidige Schulterpolster des Beutejägers"
     },
     "275519": {
         "cn": "",
         "en": "Preyhunter's Sleek Trousers",
-        "ru": "Preyhunter's Sleek Trousers",
-        "es": "Preyhunter's Sleek Trousers",
-        "br": "Preyhunter's Sleek Trousers",
+        "ru": "Изящные брюки загонщика",
+        "es": "Calzas elegantes de cazapresas",
+        "br": "Calçotes Elegantes do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Sleek Trousers",
-        "de": "Preyhunter's Sleek Trousers"
+        "fr": "Chausses élégantes de traque-proie",
+        "de": "Geschmeidige Beinkleider des Beutejägers"
     },
     "275522": {
         "cn": "",
         "en": "Preyhunter's Refined Shawl",
-        "ru": "Preyhunter's Refined Shawl",
-        "es": "Preyhunter's Refined Shawl",
-        "br": "Preyhunter's Refined Shawl",
+        "ru": "Изысканная шаль загонщика",
+        "es": "Chal refinado de cazapresas",
+        "br": "Xale Refinado do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Refined Shawl",
-        "de": "Preyhunter's Refined Shawl"
+        "fr": "Châle luxueux de traque-proie",
+        "de": "Raffinierter Schal des Beutejägers"
     },
     "275523": {
         "cn": "",
         "en": "Preyhunter's Sleek Capelet",
-        "ru": "Preyhunter's Sleek Capelet",
-        "es": "Preyhunter's Sleek Capelet",
-        "br": "Preyhunter's Sleek Capelet",
+        "ru": "Изящная пелерина загонщика",
+        "es": "Manto corto elegante de cazapresas",
+        "br": "Peregrineta Elegante do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Sleek Capelet",
-        "de": "Preyhunter's Sleek Capelet"
+        "fr": "Capelet élégant de traque-proie",
+        "de": "Geschmeidiges Cape des Beutejägers"
     },
     "275524": {
         "cn": "",
         "en": "Preyhunter's Rugged Stole",
-        "ru": "Preyhunter's Rugged Stole",
-        "es": "Preyhunter's Rugged Stole",
-        "br": "Preyhunter's Rugged Stole",
+        "ru": "Грубая накидка загонщика",
+        "es": "Estola tosca de cazapresas",
+        "br": "Estola Rústica do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Rugged Stole",
-        "de": "Preyhunter's Rugged Stole"
+        "fr": "Stola robuste de traque-proie",
+        "de": "Robuste Stola des Beutejägers"
     },
     "275525": {
         "cn": "",
         "en": "Preyhunter's Polished Cloak",
-        "ru": "Preyhunter's Polished Cloak",
-        "es": "Preyhunter's Polished Cloak",
-        "br": "Preyhunter's Polished Cloak",
+        "ru": "Отполированный плащ загонщика",
+        "es": "Capa pulida de cazapresas",
+        "br": "Manto Polido do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Polished Cloak",
-        "de": "Preyhunter's Polished Cloak"
+        "fr": "Cape distinguée de traque-proie",
+        "de": "Polierter Umhang des Beutejägers"
     },
     "275526": {
         "cn": "",
         "en": "Preyhunter's Band",
-        "ru": "Preyhunter's Band",
-        "es": "Preyhunter's Band",
-        "br": "Preyhunter's Band",
+        "ru": "Перстень загонщика",
+        "es": "Sortija de cazapresas",
+        "br": "Elo do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Band",
-        "de": "Preyhunter's Band"
+        "fr": "Bague de traque-proie",
+        "de": "Band des Beutejägers"
     },
     "275527": {
         "cn": "",
         "en": "Preyhunter's Signet",
-        "ru": "Preyhunter's Signet",
-        "es": "Preyhunter's Signet",
-        "br": "Preyhunter's Signet",
+        "ru": "Печатка загонщика",
+        "es": "Sello de cazapresas",
+        "br": "Sinete do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Signet",
-        "de": "Preyhunter's Signet"
+        "fr": "Chevalière de traque-proie",
+        "de": "Siegelring des Beutejägers"
     },
     "275528": {
         "cn": "",
         "en": "Preyhunter's Ring",
-        "ru": "Preyhunter's Ring",
-        "es": "Preyhunter's Ring",
-        "br": "Preyhunter's Ring",
+        "ru": "Кольцо загонщика",
+        "es": "Anillo de cazapresas",
+        "br": "Anel do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Ring",
-        "de": "Preyhunter's Ring"
+        "fr": "Anneau de traque-proie",
+        "de": "Ring des Beutejägers"
     },
     "275529": {
         "cn": "",
         "en": "Preyhunter's Circle",
-        "ru": "Preyhunter's Circle",
-        "es": "Preyhunter's Circle",
-        "br": "Preyhunter's Circle",
+        "ru": "Круг загонщика",
+        "es": "Círculo de cazapresas",
+        "br": "Círculo do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Circle",
-        "de": "Preyhunter's Circle"
+        "fr": "Cercle de traque-proie",
+        "de": "Kreis des Beutejägers"
     },
     "275530": {
         "cn": "",
         "en": "Preyhunter's Clasp",
-        "ru": "Preyhunter's Clasp",
-        "es": "Preyhunter's Clasp",
-        "br": "Preyhunter's Clasp",
+        "ru": "Застежка загонщика",
+        "es": "Cinto de cazapresas",
+        "br": "Fecho do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Clasp",
-        "de": "Preyhunter's Clasp"
+        "fr": "Fermoir de traque-proie",
+        "de": "Spange des Beutejägers"
     },
     "275531": {
         "cn": "",
         "en": "Preyhunter's Choker",
-        "ru": "Preyhunter's Choker",
-        "es": "Preyhunter's Choker",
-        "br": "Preyhunter's Choker",
+        "ru": "Колье загонщика",
+        "es": "Gargantilla de cazapresas",
+        "br": "Gargantilha do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Choker",
-        "de": "Preyhunter's Choker"
+        "fr": "Sautoir de traque-proie",
+        "de": "Halsreif des Beutejägers"
     },
     "275536": {
         "cn": "",
-        "en": "Preyseeker's Scepter",
-        "ru": "Preyseeker's Scepter",
-        "es": "Preyseeker's Scepter",
-        "br": "Preyseeker's Scepter",
+        "en": "Preyhunter's Scepter",
+        "ru": "Preyhunter's Scepter",
+        "es": "Preyhunter's Scepter",
+        "br": "Preyhunter's Scepter",
         "kr": "",
-        "fr": "Preyseeker's Scepter",
-        "de": "Preyseeker's Scepter"
+        "fr": "Preyhunter's Scepter",
+        "de": "Preyhunter's Scepter"
     },
     "275539": {
         "cn": "",
         "en": "Preyhunter's Ritual Blade",
-        "ru": "Preyhunter's Ritual Blade",
-        "es": "Preyhunter's Ritual Blade",
-        "br": "Preyhunter's Ritual Blade",
+        "ru": "Ритуальный клинок загонщика",
+        "es": "Hoja ritual de cazapresas",
+        "br": "Lâmina Ritualística Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Ritual Blade",
-        "de": "Preyhunter's Ritual Blade"
+        "fr": "Lame rituelle de traque-proie",
+        "de": "Ritualklinge des Beutejägers"
     },
     "275541": {
         "cn": "",
         "en": "Preyhunter's Warglaive",
-        "ru": "Preyhunter's Warglaive",
-        "es": "Preyhunter's Warglaive",
-        "br": "Preyhunter's Warglaive",
+        "ru": "Боевой клинок загонщика",
+        "es": "Guja de guerra de cazapresas",
+        "br": "Glaive de Guerra do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Warglaive",
-        "de": "Preyhunter's Warglaive"
+        "fr": "Glaive de guerre de traque-proie",
+        "de": "Kriegsgleve des Beutejägers"
     },
     "275545": {
         "cn": "",
         "en": "Preyhunter's Spire",
-        "ru": "Preyhunter's Spire",
-        "es": "Preyhunter's Spire",
-        "br": "Preyhunter's Spire",
+        "ru": "Шпиль загонщика",
+        "es": "Aguja de cazapresas",
+        "br": "Pináculo do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Spire",
-        "de": "Preyhunter's Spire"
+        "fr": "Flèche de traque-proie",
+        "de": "Spitze des Beutejägers"
     },
     "275547": {
         "cn": "",
         "en": "Preyhunter's Lantern",
-        "ru": "Preyhunter's Lantern",
-        "es": "Preyhunter's Lantern",
-        "br": "Preyhunter's Lantern",
+        "ru": "Фонарь загонщика",
+        "es": "Farol de cazapresas",
+        "br": "Lanterna do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Lantern",
-        "de": "Preyhunter's Lantern"
+        "fr": "Lanterne de traque-proie",
+        "de": "Laterne des Beutejägers"
     },
     "275548": {
         "cn": "",
         "en": "Preyhunter's Tower Shield",
-        "ru": "Preyhunter's Tower Shield",
-        "es": "Preyhunter's Tower Shield",
-        "br": "Preyhunter's Tower Shield",
+        "ru": "Ростовой щит загонщика",
+        "es": "Escudo pavés de cazapresas",
+        "br": "Escudo Torreão do Rapinador",
         "kr": "",
-        "fr": "Preyhunter's Tower Shield",
-        "de": "Preyhunter's Tower Shield"
+        "fr": "Grand bouclier de traque-proie",
+        "de": "Turmschild des Beutejägers"
     },
     "276000": {
         "cn": "",
         "en": "Stonehide Vambraces",
-        "ru": "Stonehide Vambraces",
-        "es": "Stonehide Vambraces",
-        "br": "Stonehide Vambraces",
+        "ru": "Тяжелые наручи каменной шкуры",
+        "es": "Avambrazos de petrapiel",
+        "br": "Avambraços de Couro Pétreo",
         "kr": "",
-        "fr": "Stonehide Vambraces",
-        "de": "Stonehide Vambraces"
+        "fr": "Protège-bras de peau-roche",
+        "de": "Steinbalgunterarmschienen"
     },
     "276001": {
         "cn": "",
-        "en": "Flamebeak Armguards",
-        "ru": "Flamebeak Armguards",
-        "es": "Flamebeak Armguards",
-        "br": "Flamebeak Armguards",
+        "en": "Skytalon Armguards",
+        "ru": "Skytalon Armguards",
+        "es": "Skytalon Armguards",
+        "br": "Skytalon Armguards",
         "kr": "",
-        "fr": "Flamebeak Armguards",
-        "de": "Flamebeak Armguards"
+        "fr": "Skytalon Armguards",
+        "de": "Skytalon Armguards"
     },
     "276002": {
         "cn": "",
         "en": "Shadowclaw Wristguards",
-        "ru": "Shadowclaw Wristguards",
-        "es": "Shadowclaw Wristguards",
-        "br": "Shadowclaw Wristguards",
+        "ru": "Нарукавники тенекогтя",
+        "es": "Muñequeras de zarpasombra",
+        "br": "Munhequeiras de Garrassombra",
         "kr": "",
-        "fr": "Shadowclaw Wristguards",
-        "de": "Shadowclaw Wristguards"
+        "fr": "Garde-poignets d’ombregriffe",
+        "de": "Himmelsklauenhandgelenksschützer"
     },
     "276003": {
         "cn": "",
-        "en": "Skytalon Bracers",
-        "ru": "Skytalon Bracers",
-        "es": "Skytalon Bracers",
-        "br": "Skytalon Bracers",
+        "en": "Flamebeak Bracers",
+        "ru": "Flamebeak Bracers",
+        "es": "Flamebeak Bracers",
+        "br": "Flamebeak Bracers",
         "kr": "",
-        "fr": "Skytalon Bracers",
-        "de": "Skytalon Bracers"
+        "fr": "Flamebeak Bracers",
+        "de": "Flamebeak Bracers"
     },
     "276004": {
         "cn": "",
         "en": "Stonehide Sabatons",
-        "ru": "Stonehide Sabatons",
-        "es": "Stonehide Sabatons",
-        "br": "Stonehide Sabatons",
+        "ru": "Башмаки каменной шкуры",
+        "es": "Escarpes de petrapiel",
+        "br": "Escarpes de Couro Pétreo",
         "kr": "",
-        "fr": "Stonehide Sabatons",
-        "de": "Stonehide Sabatons"
+        "fr": "Solerets de peau-roche",
+        "de": "Steinbalgsabatons"
     },
     "276005": {
         "cn": "",
-        "en": "Flamebeak Treads",
-        "ru": "Flamebeak Treads",
-        "es": "Flamebeak Treads",
-        "br": "Flamebeak Treads",
+        "en": "Skytalon Treads",
+        "ru": "Skytalon Treads",
+        "es": "Skytalon Treads",
+        "br": "Skytalon Treads",
         "kr": "",
-        "fr": "Flamebeak Treads",
-        "de": "Flamebeak Treads"
+        "fr": "Skytalon Treads",
+        "de": "Skytalon Treads"
     },
     "276006": {
         "cn": "",
         "en": "Shadowclaw Footpads",
-        "ru": "Shadowclaw Footpads",
-        "es": "Shadowclaw Footpads",
-        "br": "Shadowclaw Footpads",
+        "ru": "Кожаные башмаки тенекогтя",
+        "es": "Escarpines de zarpasombra",
+        "br": "Pisantes de Garrassombra",
         "kr": "",
-        "fr": "Shadowclaw Footpads",
-        "de": "Shadowclaw Footpads"
+        "fr": "Souliers d’ombregriffe",
+        "de": "Himmelsklauenfußpolster"
     },
     "276007": {
         "cn": "",
-        "en": "Skytalon Sandals",
-        "ru": "Skytalon Sandals",
-        "es": "Skytalon Sandals",
-        "br": "Skytalon Sandals",
+        "en": "Flamebeak Sandals",
+        "ru": "Flamebeak Sandals",
+        "es": "Flamebeak Sandals",
+        "br": "Flamebeak Sandals",
         "kr": "",
-        "fr": "Skytalon Sandals",
-        "de": "Skytalon Sandals"
+        "fr": "Flamebeak Sandals",
+        "de": "Flamebeak Sandals"
     },
     "276008": {
         "cn": "",
         "en": "Stonehide Gauntlets",
-        "ru": "Stonehide Gauntlets",
-        "es": "Stonehide Gauntlets",
-        "br": "Stonehide Gauntlets",
+        "ru": "Рукавицы каменной шкуры",
+        "es": "Guanteletes de petrapiel",
+        "br": "Manoplas de Couro Pétreo",
         "kr": "",
-        "fr": "Stonehide Gauntlets",
-        "de": "Stonehide Gauntlets"
+        "fr": "Gantelets de peau-roche",
+        "de": "Steinbalgstulpen"
     },
     "276009": {
         "cn": "",
-        "en": "Flamebeak Gloves",
-        "ru": "Flamebeak Gloves",
-        "es": "Flamebeak Gloves",
-        "br": "Flamebeak Gloves",
+        "en": "Skytalon Gloves",
+        "ru": "Skytalon Gloves",
+        "es": "Skytalon Gloves",
+        "br": "Skytalon Gloves",
         "kr": "",
-        "fr": "Flamebeak Gloves",
-        "de": "Flamebeak Gloves"
+        "fr": "Skytalon Gloves",
+        "de": "Skytalon Gloves"
     },
     "276010": {
         "cn": "",
         "en": "Shadowclaw Handguards",
-        "ru": "Shadowclaw Handguards",
-        "es": "Shadowclaw Handguards",
-        "br": "Shadowclaw Handguards",
+        "ru": "Боевые рукавицы тенекогтя",
+        "es": "Manoplas de zarpasombra",
+        "br": "Protetores de Mão de Garrassombra",
         "kr": "",
-        "fr": "Shadowclaw Handguards",
-        "de": "Shadowclaw Handguards"
+        "fr": "Garde-mains d’ombregriffe",
+        "de": "Himmelsklauenhandschützer"
     },
     "276011": {
         "cn": "",
-        "en": "Skytalon Grips",
-        "ru": "Skytalon Grips",
-        "es": "Skytalon Grips",
-        "br": "Skytalon Grips",
+        "en": "Flamebeak Grips",
+        "ru": "Flamebeak Grips",
+        "es": "Flamebeak Grips",
+        "br": "Flamebeak Grips",
         "kr": "",
-        "fr": "Skytalon Grips",
-        "de": "Skytalon Grips"
+        "fr": "Flamebeak Grips",
+        "de": "Flamebeak Grips"
     },
     "276012": {
         "cn": "",
         "en": "Stonehide Chestguard",
-        "ru": "Stonehide Chestguard",
-        "es": "Stonehide Chestguard",
-        "br": "Stonehide Chestguard",
+        "ru": "Нагрудник каменной шкуры",
+        "es": "Coselete de petrapiel",
+        "br": "Couraça de Couro Pétreo",
         "kr": "",
-        "fr": "Stonehide Chestguard",
-        "de": "Stonehide Chestguard"
+        "fr": "Corselet de peau-roche",
+        "de": "Steinbalgbrustschutz"
     },
     "276013": {
         "cn": "",
-        "en": "Flamebeak Hauberk",
-        "ru": "Flamebeak Hauberk",
-        "es": "Flamebeak Hauberk",
-        "br": "Flamebeak Hauberk",
+        "en": "Skytalon Hauberk",
+        "ru": "Skytalon Hauberk",
+        "es": "Skytalon Hauberk",
+        "br": "Skytalon Hauberk",
         "kr": "",
-        "fr": "Flamebeak Hauberk",
-        "de": "Flamebeak Hauberk"
+        "fr": "Skytalon Hauberk",
+        "de": "Skytalon Hauberk"
     },
     "276014": {
         "cn": "",
         "en": "Shadowclaw Jerkin",
-        "ru": "Shadowclaw Jerkin",
-        "es": "Shadowclaw Jerkin",
-        "br": "Shadowclaw Jerkin",
+        "ru": "Жакет тенекогтя",
+        "es": "Chaleco de zarpasombra",
+        "br": "Gibão de Garrassombra",
         "kr": "",
-        "fr": "Shadowclaw Jerkin",
-        "de": "Shadowclaw Jerkin"
+        "fr": "Pourpoint d’ombregriffe",
+        "de": "Himmelsklauenwams"
     },
     "276015": {
         "cn": "",
-        "en": "Skytalon Robes",
-        "ru": "Skytalon Robes",
-        "es": "Skytalon Robes",
-        "br": "Skytalon Robes",
+        "en": "Flamebeak Robes",
+        "ru": "Flamebeak Robes",
+        "es": "Flamebeak Robes",
+        "br": "Flamebeak Robes",
         "kr": "",
-        "fr": "Skytalon Robes",
-        "de": "Skytalon Robes"
+        "fr": "Flamebeak Robes",
+        "de": "Flamebeak Robes"
     },
     "276016": {
         "cn": "",
         "en": "Stonehide Casque",
-        "ru": "Stonehide Casque",
-        "es": "Stonehide Casque",
-        "br": "Stonehide Casque",
+        "ru": "Каска каменной шкуры",
+        "es": "Borgoñota de petrapiel",
+        "br": "Casquete de Couro Pétreo",
         "kr": "",
-        "fr": "Stonehide Casque",
-        "de": "Stonehide Casque"
+        "fr": "Cabasset de peau-roche",
+        "de": "Steinbalghelm"
     },
     "276017": {
         "cn": "",
-        "en": "Flamebeak Helmet",
-        "ru": "Flamebeak Helmet",
-        "es": "Flamebeak Helmet",
-        "br": "Flamebeak Helmet",
+        "en": "Skytalon Helmet",
+        "ru": "Skytalon Helmet",
+        "es": "Skytalon Helmet",
+        "br": "Skytalon Helmet",
         "kr": "",
-        "fr": "Flamebeak Helmet",
-        "de": "Flamebeak Helmet"
+        "fr": "Skytalon Helmet",
+        "de": "Skytalon Helmet"
     },
     "276018": {
         "cn": "",
         "en": "Shadowclaw Headdress",
-        "ru": "Shadowclaw Headdress",
-        "es": "Shadowclaw Headdress",
-        "br": "Shadowclaw Headdress",
+        "ru": "Головной убор тенекогтя",
+        "es": "Ornato de zarpasombra",
+        "br": "Cocar de Garrassombra",
         "kr": "",
-        "fr": "Shadowclaw Headdress",
-        "de": "Shadowclaw Headdress"
+        "fr": "Coiffure d’ombregriffe",
+        "de": "Himmelsklauenkopfputz"
     },
     "276019": {
         "cn": "",
-        "en": "Skytalon Crown",
-        "ru": "Skytalon Crown",
-        "es": "Skytalon Crown",
-        "br": "Skytalon Crown",
+        "en": "Flamebeak Crown",
+        "ru": "Flamebeak Crown",
+        "es": "Flamebeak Crown",
+        "br": "Flamebeak Crown",
         "kr": "",
-        "fr": "Skytalon Crown",
-        "de": "Skytalon Crown"
+        "fr": "Flamebeak Crown",
+        "de": "Flamebeak Crown"
     },
     "276020": {
         "cn": "",
         "en": "Stonehide Pauldrons",
-        "ru": "Stonehide Pauldrons",
-        "es": "Stonehide Pauldrons",
-        "br": "Stonehide Pauldrons",
+        "ru": "Наплечники каменной шкуры",
+        "es": "Espaldares de petrapiel",
+        "br": "Brafoneiras de Couro Pétreo",
         "kr": "",
-        "fr": "Stonehide Pauldrons",
-        "de": "Stonehide Pauldrons"
+        "fr": "Espauliers de peau-roche",
+        "de": "Steinbalgschulterstücke"
     },
     "276021": {
         "cn": "",
-        "en": "Flamebeak Spaulders",
-        "ru": "Flamebeak Spaulders",
-        "es": "Flamebeak Spaulders",
-        "br": "Flamebeak Spaulders",
+        "en": "Skytalon Spaulders",
+        "ru": "Skytalon Spaulders",
+        "es": "Skytalon Spaulders",
+        "br": "Skytalon Spaulders",
         "kr": "",
-        "fr": "Flamebeak Spaulders",
-        "de": "Flamebeak Spaulders"
+        "fr": "Skytalon Spaulders",
+        "de": "Skytalon Spaulders"
     },
     "276022": {
         "cn": "",
         "en": "Shadowclaw Shoulderpads",
-        "ru": "Shadowclaw Shoulderpads",
-        "es": "Shadowclaw Shoulderpads",
-        "br": "Shadowclaw Shoulderpads",
+        "ru": "Наплечники тенекогтя",
+        "es": "Hombreras de zarpasombra",
+        "br": "Ombreiras de Garrassombra",
         "kr": "",
-        "fr": "Shadowclaw Shoulderpads",
-        "de": "Shadowclaw Shoulderpads"
+        "fr": "Protège-épaules d’ombregriffe",
+        "de": "Himmelsklauenschulterpolster"
     },
     "276023": {
         "cn": "",
-        "en": "Skytalon Mantle",
-        "ru": "Skytalon Mantle",
-        "es": "Skytalon Mantle",
-        "br": "Skytalon Mantle",
+        "en": "Flamebeak Mantle",
+        "ru": "Flamebeak Mantle",
+        "es": "Flamebeak Mantle",
+        "br": "Flamebeak Mantle",
         "kr": "",
-        "fr": "Skytalon Mantle",
-        "de": "Skytalon Mantle"
+        "fr": "Flamebeak Mantle",
+        "de": "Flamebeak Mantle"
     },
     "276024": {
         "cn": "",
         "en": "Stonehide Greaves",
-        "ru": "Stonehide Greaves",
-        "es": "Stonehide Greaves",
-        "br": "Stonehide Greaves",
+        "ru": "Наголенники каменной шкуры",
+        "es": "Grebas de petrapiel",
+        "br": "Grevas de Couro Pétreo",
         "kr": "",
-        "fr": "Stonehide Greaves",
-        "de": "Stonehide Greaves"
+        "fr": "Grèves de peau-roche",
+        "de": "Steinbalgbeinschützer"
     },
     "276025": {
         "cn": "",
-        "en": "Flamebeak Breeches",
-        "ru": "Flamebeak Breeches",
-        "es": "Flamebeak Breeches",
-        "br": "Flamebeak Breeches",
+        "en": "Skytalon Breeches",
+        "ru": "Skytalon Breeches",
+        "es": "Skytalon Breeches",
+        "br": "Skytalon Breeches",
         "kr": "",
-        "fr": "Flamebeak Breeches",
-        "de": "Flamebeak Breeches"
+        "fr": "Skytalon Breeches",
+        "de": "Skytalon Breeches"
     },
     "276026": {
         "cn": "",
         "en": "Shadowclaw Legguards",
-        "ru": "Shadowclaw Legguards",
-        "es": "Shadowclaw Legguards",
-        "br": "Shadowclaw Legguards",
+        "ru": "Набедренники тенекогтя",
+        "es": "Musleras de zarpasombra",
+        "br": "Guarda-pernas de Garrassombra",
         "kr": "",
-        "fr": "Shadowclaw Legguards",
-        "de": "Shadowclaw Legguards"
+        "fr": "Garde-jambes d’ombregriffe",
+        "de": "Himmelsklauenbeinschützer"
     },
     "276027": {
         "cn": "",
-        "en": "Skytalon Leggings",
-        "ru": "Skytalon Leggings",
-        "es": "Skytalon Leggings",
-        "br": "Skytalon Leggings",
+        "en": "Flamebeak Leggings",
+        "ru": "Flamebeak Leggings",
+        "es": "Flamebeak Leggings",
+        "br": "Flamebeak Leggings",
         "kr": "",
-        "fr": "Skytalon Leggings",
-        "de": "Skytalon Leggings"
+        "fr": "Flamebeak Leggings",
+        "de": "Flamebeak Leggings"
     },
     "276028": {
         "cn": "",
         "en": "Stonehide Girdle",
-        "ru": "Stonehide Girdle",
-        "es": "Stonehide Girdle",
-        "br": "Stonehide Girdle",
+        "ru": "Ремень каменной шкуры",
+        "es": "Faja de petrapiel",
+        "br": "Cinturão de Couro Pétreo",
         "kr": "",
-        "fr": "Stonehide Girdle",
-        "de": "Stonehide Girdle"
+        "fr": "Ceinturon de peau-roche",
+        "de": "Steinbalggurt"
     },
     "276029": {
         "cn": "",
-        "en": "Flamebeak Belt",
-        "ru": "Flamebeak Belt",
-        "es": "Flamebeak Belt",
-        "br": "Flamebeak Belt",
+        "en": "Skytalon Belt",
+        "ru": "Skytalon Belt",
+        "es": "Skytalon Belt",
+        "br": "Skytalon Belt",
         "kr": "",
-        "fr": "Flamebeak Belt",
-        "de": "Flamebeak Belt"
+        "fr": "Skytalon Belt",
+        "de": "Skytalon Belt"
     },
     "276030": {
         "cn": "",
         "en": "Shadowclaw Sash",
-        "ru": "Shadowclaw Sash",
-        "es": "Shadowclaw Sash",
-        "br": "Shadowclaw Sash",
+        "ru": "Кушак тенекогтя",
+        "es": "Fajín de zarpasombra",
+        "br": "Faixa de Garrassombra",
         "kr": "",
-        "fr": "Shadowclaw Sash",
-        "de": "Shadowclaw Sash"
+        "fr": "Écharpe d’ombregriffe",
+        "de": "Himmelsklauenschärpe"
     },
     "276031": {
         "cn": "",
-        "en": "Skytalon Cord",
-        "ru": "Skytalon Cord",
-        "es": "Skytalon Cord",
-        "br": "Skytalon Cord",
+        "en": "Flamebeak Cord",
+        "ru": "Flamebeak Cord",
+        "es": "Flamebeak Cord",
+        "br": "Flamebeak Cord",
         "kr": "",
-        "fr": "Skytalon Cord",
-        "de": "Skytalon Cord"
+        "fr": "Flamebeak Cord",
+        "de": "Flamebeak Cord"
     },
     "276032": {
         "cn": "",
         "en": "Bad Juju Necklace",
-        "ru": "Bad Juju Necklace",
-        "es": "Bad Juju Necklace",
-        "br": "Bad Juju Necklace",
+        "ru": "Ожерелье зловещего джуджу",
+        "es": "Collar de mal yuyu",
+        "br": "Colar da Urucubaca",
         "kr": "",
-        "fr": "Bad Juju Necklace",
-        "de": "Bad Juju Necklace"
+        "fr": "Collier de mauvais juju",
+        "de": "Halskette des bösen Juju"
     },
     "276033": {
         "cn": "",
         "en": "Loa Watcher's Pendant",
-        "ru": "Loa Watcher's Pendant",
-        "es": "Loa Watcher's Pendant",
-        "br": "Loa Watcher's Pendant",
+        "ru": "Подвеска дозорного лоа",
+        "es": "Colgante de vigía de los loa",
+        "br": "Pingente do Vigia dos Loas",
         "kr": "",
-        "fr": "Loa Watcher's Pendant",
-        "de": "Loa Watcher's Pendant"
+        "fr": "Pendentif de veille-Loa",
+        "de": "Anhänger des Loabeobachters"
     },
     "276034": {
         "cn": "",
         "en": "Entangling Brood Ring",
-        "ru": "Entangling Brood Ring",
-        "es": "Entangling Brood Ring",
-        "br": "Entangling Brood Ring",
+        "ru": "Кольцо опутывающего потомства",
+        "es": "Anillo de linaje entrelazado",
+        "br": "Anel da Ninhada Enredante",
         "kr": "",
-        "fr": "Entangling Brood Ring",
-        "de": "Entangling Brood Ring"
+        "fr": "Anneau de couvée enchevêtrante",
+        "de": "Ring der umschlingenden Brut"
     },
     "276035": {
         "cn": "",
         "en": "Soulcoiler's Signet",
-        "ru": "Soulcoiler's Signet",
-        "es": "Soulcoiler's Signet",
-        "br": "Soulcoiler's Signet",
+        "ru": "Печатка душителя душ",
+        "es": "Sello de volutador de almas",
+        "br": "Sinete do Enrosca-almas",
         "kr": "",
-        "fr": "Soulcoiler's Signet",
-        "de": "Soulcoiler's Signet"
+        "fr": "Chevalière de l’Entortillâme",
+        "de": "Siegelring des Seelenwinders"
     },
     "276036": {
         "cn": "",
         "en": "Ever-Constricting Band",
-        "ru": "Ever-Constricting Band",
-        "es": "Ever-Constricting Band",
-        "br": "Ever-Constricting Band",
+        "ru": "Вечножмущее кольцо",
+        "es": "Sortija estranguladora",
+        "br": "Elo da Constrição Eterna",
         "kr": "",
-        "fr": "Ever-Constricting Band",
-        "de": "Ever-Constricting Band"
+        "fr": "Bague de constriction éternelle",
+        "de": "Einschnürendes Band"
     },
     "276037": {
         "cn": "",
         "en": "Counter-Curse Circlet",
-        "ru": "Counter-Curse Circlet",
-        "es": "Counter-Curse Circlet",
-        "br": "Counter-Curse Circlet",
+        "ru": "Браслет контрпроклятий",
+        "es": "Anillo antimaldiciones",
+        "br": "Aro Antimaldição",
         "kr": "",
-        "fr": "Counter-Curse Circlet",
-        "de": "Counter-Curse Circlet"
+        "fr": "Diadème contre-malédiction",
+        "de": "Gegenfluchreif"
     },
     "276038": {
         "cn": "",
-        "en": "Flamebeak Cloak",
-        "ru": "Flamebeak Cloak",
-        "es": "Flamebeak Cloak",
-        "br": "Flamebeak Cloak",
+        "en": "Skytalon Cloak",
+        "ru": "Skytalon Cloak",
+        "es": "Skytalon Cloak",
+        "br": "Skytalon Cloak",
         "kr": "",
-        "fr": "Flamebeak Cloak",
-        "de": "Flamebeak Cloak"
+        "fr": "Skytalon Cloak",
+        "de": "Skytalon Cloak"
     },
     "276039": {
         "cn": "",
-        "en": "Skytalon Drape",
-        "ru": "Skytalon Drape",
-        "es": "Skytalon Drape",
-        "br": "Skytalon Drape",
+        "en": "Flamebeak Drape",
+        "ru": "Flamebeak Drape",
+        "es": "Flamebeak Drape",
+        "br": "Flamebeak Drape",
         "kr": "",
-        "fr": "Skytalon Drape",
-        "de": "Skytalon Drape"
+        "fr": "Flamebeak Drape",
+        "de": "Flamebeak Drape"
     },
     "276040": {
         "cn": "",
         "en": "Shadowclaw Shroud",
-        "ru": "Shadowclaw Shroud",
-        "es": "Shadowclaw Shroud",
-        "br": "Shadowclaw Shroud",
+        "ru": "Покров тенекогтя",
+        "es": "Sudario de zarpasombra",
+        "br": "Mortalha de Garrassombra",
         "kr": "",
-        "fr": "Shadowclaw Shroud",
-        "de": "Shadowclaw Shroud"
+        "fr": "Voile d’ombregriffe",
+        "de": "Schattenklauenschleier"
     },
     "276041": {
         "cn": "",
         "en": "Stonehide Cape",
-        "ru": "Stonehide Cape",
-        "es": "Stonehide Cape",
-        "br": "Stonehide Cape",
+        "ru": "Накидка каменной шкуры",
+        "es": "Manteo de petrapiel",
+        "br": "Capa de Couro Pétreo",
         "kr": "",
-        "fr": "Stonehide Cape",
-        "de": "Stonehide Cape"
+        "fr": "Pèlerine de peau-roche",
+        "de": "Steinbalgcape"
     },
     "276042": {
         "cn": "",
         "en": "Templetusk Shield",
-        "ru": "Templetusk Shield",
-        "es": "Templetusk Shield",
-        "br": "Templetusk Shield",
+        "ru": "Бивневый храмовый щит",
+        "es": "Escudo colmitemplo",
+        "br": "Escudo do Colmilho do Templo",
         "kr": "",
-        "fr": "Templetusk Shield",
-        "de": "Templetusk Shield"
+        "fr": "Bouclier de broche du temple",
+        "de": "Tempelhauerschild"
     },
     "276043": {
         "cn": "",
         "en": "Vilefang Censer",
-        "ru": "Vilefang Censer",
-        "es": "Vilefang Censer",
-        "br": "Vilefang Censer",
+        "ru": "Злоклыкая кадильница",
+        "es": "Incensario dienteabyecto",
+        "br": "Incensório de Presavil",
         "kr": "",
-        "fr": "Vilefang Censer",
-        "de": "Vilefang Censer"
+        "fr": "Encensoir vilcroc",
+        "de": "Grimmzahnräuchergefäß"
     },
     "276050": {
         "cn": "",
         "en": "Victorious Spiritstaff",
-        "ru": "Victorious Spiritstaff",
-        "es": "Victorious Spiritstaff",
-        "br": "Victorious Spiritstaff",
+        "ru": "Победный посох духов",
+        "es": "Bastón espiritual victorioso",
+        "br": "Cajado Espiritual Vitorioso",
         "kr": "",
-        "fr": "Victorious Spiritstaff",
-        "de": "Victorious Spiritstaff"
+        "fr": "Bâton d’esprit victorieux",
+        "de": "Siegreicher Geisterstab"
     },
     "276053": {
         "cn": "",
         "en": "Snakehunter's Warglaive",
-        "ru": "Snakehunter's Warglaive",
-        "es": "Snakehunter's Warglaive",
-        "br": "Snakehunter's Warglaive",
+        "ru": "Боевой клинок охотника на змей",
+        "es": "Guja de guerra de cazador de serpientes",
+        "br": "Glaive de Guerra do Caçador de Cobras",
         "kr": "",
-        "fr": "Snakehunter's Warglaive",
-        "de": "Snakehunter's Warglaive"
+        "fr": "Glaive de guerre de chasse au serpent",
+        "de": "Kriegsgleve des Schlangenjägers"
     },
     "276055": {
         "cn": "",
         "en": "Soulweaver's Curseblade",
-        "ru": "Soulweaver's Curseblade",
-        "es": "Soulweaver's Curseblade",
-        "br": "Soulweaver's Curseblade",
+        "ru": "Проклятый клинок ткача душ",
+        "es": "Hoja maldita de tejealmas",
+        "br": "Pragalâmina do Tece-almas",
         "kr": "",
-        "fr": "Soulweaver's Curseblade",
-        "de": "Soulweaver's Curseblade"
+        "fr": "Lame maudite de tisse-âme",
+        "de": "Fluchklinge des Seelenwebers"
     },
     "276057": {
         "cn": "",
         "en": "Cryptbound Scepter",
-        "ru": "Cryptbound Scepter",
-        "es": "Cryptbound Scepter",
-        "br": "Cryptbound Scepter",
+        "ru": "Скипетр хранителя гробниц",
+        "es": "Cetro vinculado a la cripta",
+        "br": "Cetro Destinado à Cripta",
         "kr": "",
-        "fr": "Cryptbound Scepter",
-        "de": "Cryptbound Scepter"
+        "fr": "Sceptre cryptelié",
+        "de": "Gruftgebundenes Szepter"
     },
     "276060": {
         "cn": "",
         "en": "Hexxer's Blastin' Rod",
-        "ru": "Hexxer's Blastin' Rod",
-        "es": "Hexxer's Blastin' Rod",
-        "br": "Hexxer's Blastin' Rod",
+        "ru": "Взрывной жезл проклинателя",
+        "es": "Vara explosiva de aojador",
+        "br": "Bastão de Disparo do Bagateiro",
         "kr": "",
-        "fr": "Hexxer's Blastin' Rod",
-        "de": "Hexxer's Blastin' Rod"
+        "fr": "Bâtonnet explosif de maléficieur",
+        "de": "Schussstab des Verhexers"
     },
     "276061": {
         "cn": "",
         "en": "Witch Doctor's Bloodletter",
-        "ru": "Witch Doctor's Bloodletter",
-        "es": "Witch Doctor's Bloodletter",
-        "br": "Witch Doctor's Bloodletter",
+        "ru": "Кровопускатель знахаря",
+        "es": "Desangradora del médico brujo",
+        "br": "Dessangrador do Mandingueiro",
         "kr": "",
-        "fr": "Witch Doctor's Bloodletter",
-        "de": "Witch Doctor's Bloodletter"
+        "fr": "Saigneur de féticheur",
+        "de": "Blutvergießer des Hexendoktors"
     },
     "276166": {
         "cn": "",
@@ -147165,82 +147135,82 @@ export const nameDB =
     "276531": {
         "cn": "",
         "en": "Cursebreaker's Vambraces",
-        "ru": "Cursebreaker's Vambraces",
-        "es": "Cursebreaker's Vambraces",
-        "br": "Cursebreaker's Vambraces",
+        "ru": "Тяжелые наручи разбивателя проклятий",
+        "es": "Avambrazos de rompemaldiciones",
+        "br": "Avambraços do Quebra-maldição",
         "kr": "",
-        "fr": "Cursebreaker's Vambraces",
-        "de": "Cursebreaker's Vambraces"
+        "fr": "Protège-bras de brise-malédiction",
+        "de": "Unterarmschienen des Fluchbrechers"
     },
     "276532": {
         "cn": "",
         "en": "Cursebreaker's Bracers",
-        "ru": "Cursebreaker's Bracers",
-        "es": "Cursebreaker's Bracers",
-        "br": "Cursebreaker's Bracers",
+        "ru": "Наручи разбивателя проклятий",
+        "es": "Brazales de rompemaldiciones",
+        "br": "Braçadeiras do Quebra-maldição",
         "kr": "",
-        "fr": "Cursebreaker's Bracers",
-        "de": "Cursebreaker's Bracers"
+        "fr": "Brassards de brise-malédiction",
+        "de": "Armschienen des Fluchbrechers"
     },
     "276533": {
         "cn": "",
         "en": "Cursebreaker's Wristwraps",
-        "ru": "Cursebreaker's Wristwraps",
-        "es": "Cursebreaker's Wristwraps",
-        "br": "Cursebreaker's Wristwraps",
+        "ru": "Напульсники разбивателя проклятий",
+        "es": "Cubremuñecas de rompemaldiciones",
+        "br": "Munhecas do Quebra-maldição",
         "kr": "",
-        "fr": "Cursebreaker's Wristwraps",
-        "de": "Cursebreaker's Wristwraps"
+        "fr": "Bandelettes de brise-malédiction",
+        "de": "Gelenkbänder des Fluchbrechers"
     },
     "276534": {
         "cn": "",
         "en": "Cursebreaker's Cuffs",
-        "ru": "Cursebreaker's Cuffs",
-        "es": "Cursebreaker's Cuffs",
-        "br": "Cursebreaker's Cuffs",
+        "ru": "Манжеты разбивателя проклятий",
+        "es": "Puños de rompemaldiciones",
+        "br": "Manilhas do Quebra-maldição",
         "kr": "",
-        "fr": "Cursebreaker's Cuffs",
-        "de": "Cursebreaker's Cuffs"
+        "fr": "Crispins de brise-malédiction",
+        "de": "Manschetten des Fluchbrechers"
     },
     "276641": {
         "cn": "",
         "en": "Corroded Cursebreaker's Vambraces",
-        "ru": "Corroded Cursebreaker's Vambraces",
-        "es": "Corroded Cursebreaker's Vambraces",
-        "br": "Corroded Cursebreaker's Vambraces",
+        "ru": "Изъеденные тяжелые наручи разбивателя проклятий",
+        "es": "Avambrazos de rompemaldiciones corroídos",
+        "br": "Avambraços Corroídos do Quebra-maldição",
         "kr": "",
-        "fr": "Corroded Cursebreaker's Vambraces",
-        "de": "Corroded Cursebreaker's Vambraces"
+        "fr": "Protège-bras de brise-malédiction corrodé",
+        "de": "Korrodierte Unterarmschienen des Fluchbrechers"
     },
     "276642": {
         "cn": "",
         "en": "Corroded Cursebreaker's Bracers",
-        "ru": "Corroded Cursebreaker's Bracers",
-        "es": "Corroded Cursebreaker's Bracers",
-        "br": "Corroded Cursebreaker's Bracers",
+        "ru": "Изъеденные наручи разбивателя проклятий",
+        "es": "Brazales de rompemaldiciones corroídos",
+        "br": "Braçadeiras Corroídas do Quebra-maldição",
         "kr": "",
-        "fr": "Corroded Cursebreaker's Bracers",
-        "de": "Corroded Cursebreaker's Bracers"
+        "fr": "Brassards de brise-malédiction corrodé",
+        "de": "Korrodierte Armschienen des Fluchbrechers"
     },
     "276643": {
         "cn": "",
         "en": "Corroded Cursebreaker's Wristwraps",
-        "ru": "Corroded Cursebreaker's Wristwraps",
-        "es": "Corroded Cursebreaker's Wristwraps",
-        "br": "Corroded Cursebreaker's Wristwraps",
+        "ru": "Изъеденные напульсники разбивателя проклятий",
+        "es": "Cubremuñecas de rompemaldiciones corroídos",
+        "br": "Munhecas Corroídas do Quebra-maldição",
         "kr": "",
-        "fr": "Corroded Cursebreaker's Wristwraps",
-        "de": "Corroded Cursebreaker's Wristwraps"
+        "fr": "Bandelettes de brise-malédiction corrodé",
+        "de": "Korrodierte Gelenkbänder des Fluchbrechers"
     },
     "276644": {
         "cn": "",
         "en": "Corroded Cursebreaker's Cuffs",
-        "ru": "Corroded Cursebreaker's Cuffs",
-        "es": "Corroded Cursebreaker's Cuffs",
-        "br": "Corroded Cursebreaker's Cuffs",
+        "ru": "Изъеденные манжеты разбивателя проклятий",
+        "es": "Puños de rompemaldiciones corroídos",
+        "br": "Manilhas Corroídas do Quebra-maldição",
         "kr": "",
-        "fr": "Corroded Cursebreaker's Cuffs",
-        "de": "Corroded Cursebreaker's Cuffs"
+        "fr": "Crispins de brise-malédiction corrodé",
+        "de": "Korrodierte Manschetten des Fluchbrechers"
     },
     "276787": {
         "cn": "",
@@ -147332,604 +147302,1174 @@ export const nameDB =
         "fr": "Cape d’ombre de traque-faille",
         "de": "Schattenumhang des Risspirschers"
     },
+    "277764": {
+        "cn": "",
+        "en": "Venom-Cursed Bear's Battle Bands",
+        "ru": "Боевые наручи ядоклятого медведя",
+        "es": "Braciles de batalla de oso maldito por el veneno",
+        "br": "Embraces de Batalha do Urso Amaldiçoado por Peçonha",
+        "kr": "",
+        "fr": "Poignets de combat d’ours affolé par le venin",
+        "de": "Kampfbänder des giftverfluchten Bären"
+    },
+    "277765": {
+        "cn": "",
+        "en": "Venom-Cursed Bear's Warbelt",
+        "ru": "Боевой пояс ядоклятого медведя",
+        "es": "Cinturón de guerra de oso maldito por el veneno",
+        "br": "Cinto de Guerra do Urso Amaldiçoado por Peçonha",
+        "kr": "",
+        "fr": "Ceinture de guerre d’ours affolé par le venin",
+        "de": "Kriegsgürtel des giftverfluchten Bären"
+    },
+    "277766": {
+        "cn": "",
+        "en": "Venom-Cursed Bear's Pauldrons",
+        "ru": "Наплечники ядоклятого медведя",
+        "es": "Espaldares de oso maldito por el veneno",
+        "br": "Brafoneiras do Urso Amaldiçoado por Peçonha",
+        "kr": "",
+        "fr": "Espauliers d’ours affolé par le venin",
+        "de": "Schulterstücke des giftverfluchten Bären"
+    },
+    "277767": {
+        "cn": "",
+        "en": "Venom-Cursed Bear's Greaves",
+        "ru": "Наголенники ядоклятого медведя",
+        "es": "Grebas de oso maldito por el veneno",
+        "br": "Grevas do Urso Amaldiçoado por Peçonha",
+        "kr": "",
+        "fr": "Grèves d’ours affolé par le venin",
+        "de": "Schienbeinschützer des giftverfluchten Bären"
+    },
+    "277768": {
+        "cn": "",
+        "en": "Venom-Cursed Bear's Jaws",
+        "ru": "Челюсти ядоклятого медведя",
+        "es": "Mandíbulas de oso maldito por el veneno",
+        "br": "Mandíbula do Urso Amaldiçoado por Peçonha",
+        "kr": "",
+        "fr": "Mâchoires d’ours affolé par le venin",
+        "de": "Kiefer des giftverfluchten Bären"
+    },
+    "277769": {
+        "cn": "",
+        "en": "Venom-Cursed Bear's Gauntlets",
+        "ru": "Рукавицы ядоклятого медведя",
+        "es": "Guanteletes de oso maldito por el veneno",
+        "br": "Manoplas do Urso Amaldiçoado por Peçonha",
+        "kr": "",
+        "fr": "Gantelets d’ours affolé par le venin",
+        "de": "Stulpen des giftverfluchten Bären"
+    },
+    "277770": {
+        "cn": "",
+        "en": "Venom-Cursed Bear's Charge",
+        "ru": "Рывок ядоклятого медведя",
+        "es": "Carga de oso maldito por el veneno",
+        "br": "Investida do Urso Amaldiçoado por Peçonha",
+        "kr": "",
+        "fr": "Charge d’ours affolé par le venin",
+        "de": "Ansturm des giftverfluchten Bären"
+    },
+    "277771": {
+        "cn": "",
+        "en": "Venom-Cursed Bear's Chestguard",
+        "ru": "Нагрудник ядоклятого медведя",
+        "es": "Coselete de oso maldito por el veneno",
+        "br": "Couraça do Urso Amaldiçoado por Peçonha",
+        "kr": "",
+        "fr": "Corselet d’ours affolé par le venin",
+        "de": "Brustschutz des giftverfluchten Bären"
+    },
+    "277772": {
+        "cn": "",
+        "en": "Venom-Cursed Eagle's Scalebands",
+        "ru": "Venom-Cursed Eagle's Scalebands",
+        "es": "Venom-Cursed Eagle's Scalebands",
+        "br": "Venom-Cursed Eagle's Scalebands",
+        "kr": "",
+        "fr": "Venom-Cursed Eagle's Scalebands",
+        "de": "Venom-Cursed Eagle's Scalebands"
+    },
+    "277773": {
+        "cn": "",
+        "en": "Venom-Cursed Eagle's Waistguard",
+        "ru": "Venom-Cursed Eagle's Waistguard",
+        "es": "Venom-Cursed Eagle's Waistguard",
+        "br": "Venom-Cursed Eagle's Waistguard",
+        "kr": "",
+        "fr": "Venom-Cursed Eagle's Waistguard",
+        "de": "Venom-Cursed Eagle's Waistguard"
+    },
+    "277774": {
+        "cn": "",
+        "en": "Venom-Cursed Eagle's Amice",
+        "ru": "Venom-Cursed Eagle's Amice",
+        "es": "Venom-Cursed Eagle's Amice",
+        "br": "Venom-Cursed Eagle's Amice",
+        "kr": "",
+        "fr": "Venom-Cursed Eagle's Amice",
+        "de": "Venom-Cursed Eagle's Amice"
+    },
+    "277775": {
+        "cn": "",
+        "en": "Venom-Cursed Eagle's Legguards",
+        "ru": "Venom-Cursed Eagle's Legguards",
+        "es": "Venom-Cursed Eagle's Legguards",
+        "br": "Venom-Cursed Eagle's Legguards",
+        "kr": "",
+        "fr": "Venom-Cursed Eagle's Legguards",
+        "de": "Venom-Cursed Eagle's Legguards"
+    },
+    "277776": {
+        "cn": "",
+        "en": "Venom-Cursed Eagle's Guise",
+        "ru": "Venom-Cursed Eagle's Guise",
+        "es": "Venom-Cursed Eagle's Guise",
+        "br": "Venom-Cursed Eagle's Guise",
+        "kr": "",
+        "fr": "Venom-Cursed Eagle's Guise",
+        "de": "Venom-Cursed Eagle's Guise"
+    },
+    "277777": {
+        "cn": "",
+        "en": "Venom-Cursed Eagle's Grips",
+        "ru": "Venom-Cursed Eagle's Grips",
+        "es": "Venom-Cursed Eagle's Grips",
+        "br": "Venom-Cursed Eagle's Grips",
+        "kr": "",
+        "fr": "Venom-Cursed Eagle's Grips",
+        "de": "Venom-Cursed Eagle's Grips"
+    },
+    "277778": {
+        "cn": "",
+        "en": "Venom-Cursed Eagle's Flight",
+        "ru": "Venom-Cursed Eagle's Flight",
+        "es": "Venom-Cursed Eagle's Flight",
+        "br": "Venom-Cursed Eagle's Flight",
+        "kr": "",
+        "fr": "Venom-Cursed Eagle's Flight",
+        "de": "Venom-Cursed Eagle's Flight"
+    },
+    "277779": {
+        "cn": "",
+        "en": "Venom-Cursed Eagle's Crest",
+        "ru": "Venom-Cursed Eagle's Crest",
+        "es": "Venom-Cursed Eagle's Crest",
+        "br": "Venom-Cursed Eagle's Crest",
+        "kr": "",
+        "fr": "Venom-Cursed Eagle's Crest",
+        "de": "Venom-Cursed Eagle's Crest"
+    },
+    "277780": {
+        "cn": "",
+        "en": "Venom-Cursed Lynx's Bracers",
+        "ru": "Наручи ядоклятой рыси",
+        "es": "Brazales de lince maldito por el veneno",
+        "br": "Braçadeiras do Lince Amaldiçoado por Peçonha",
+        "kr": "",
+        "fr": "Brassards de lynx affolé par le venin",
+        "de": "Armschienen des giftverfluchten Drachenfalken"
+    },
+    "277781": {
+        "cn": "",
+        "en": "Venom-Cursed Lynx's Buckle",
+        "ru": "Пояс с пряжкой ядоклятой рыси",
+        "es": "Hebilla de lince maldito por el veneno",
+        "br": "Fivela do Lince Amaldiçoado por Peçonha",
+        "kr": "",
+        "fr": "Boucle de lynx affolé par le venin",
+        "de": "Schnallengürtel des giftverfluchten Luchses"
+    },
+    "277782": {
+        "cn": "",
+        "en": "Venom-Cursed Lynx's Spaulders",
+        "ru": "Наплечья ядоклятой рыси",
+        "es": "Bufas de lince maldito por el veneno",
+        "br": "Espaldares do Lince Amaldiçoado por Peçonha",
+        "kr": "",
+        "fr": "Spallières de lynx affolé par le venin",
+        "de": "Schiftung des giftverfluchten Luchses"
+    },
+    "277783": {
+        "cn": "",
+        "en": "Venom-Cursed Lynx's Breeches",
+        "ru": "Брюки ядоклятой рыси",
+        "es": "Calzones de lince maldito por el veneno",
+        "br": "Calções do Lince Amaldiçoado por Peçonha",
+        "kr": "",
+        "fr": "Braies de lynx affolé par le venin",
+        "de": "Bundhosen des giftverfluchten Luchses"
+    },
+    "277784": {
+        "cn": "",
+        "en": "Venom-Cursed Lynx's Gaze",
+        "ru": "Взор ядоклятой рыси",
+        "es": "Mirada de lince maldito por el veneno",
+        "br": "Olhar do Lince Amaldiçoado por Peçonha",
+        "kr": "",
+        "fr": "Regard de lynx affolé par le venin",
+        "de": "Blick des giftverfluchten Luchses"
+    },
+    "277785": {
+        "cn": "",
+        "en": "Venom-Cursed Lynx's Claws",
+        "ru": "Когти ядоклятой рыси",
+        "es": "Garras de lince maldito por el veneno",
+        "br": "Garras do Lince Amaldiçoado por Peçonha",
+        "kr": "",
+        "fr": "Griffes de lynx affolé par le venin",
+        "de": "Klauen des giftverfluchten Luchses"
+    },
+    "277786": {
+        "cn": "",
+        "en": "Venom-Cursed Lynx's Paws",
+        "ru": "Лапы ядоклятой рыси",
+        "es": "Zarpas de lince maldito por el veneno",
+        "br": "Patas do Lince Amaldiçoado por Peçonha",
+        "kr": "",
+        "fr": "Pattes de lynx affolé par le venin",
+        "de": "Pfoten des giftverfluchten Luchses"
+    },
+    "277787": {
+        "cn": "",
+        "en": "Venom-Cursed Lynx's Harness",
+        "ru": "Портупея ядоклятой рыси",
+        "es": "Arnés de lince maldito por el veneno",
+        "br": "Arnês do Lince Amaldiçoado por Peçonha",
+        "kr": "",
+        "fr": "Harnais de lynx affolé par le venin",
+        "de": "Harnisch des giftverfluchten Luchses"
+    },
+    "277788": {
+        "cn": "",
+        "en": "Venom-Cursed Dragonhawk's Wristbands",
+        "ru": "Venom-Cursed Dragonhawk's Wristbands",
+        "es": "Venom-Cursed Dragonhawk's Wristbands",
+        "br": "Venom-Cursed Dragonhawk's Wristbands",
+        "kr": "",
+        "fr": "Venom-Cursed Dragonhawk's Wristbands",
+        "de": "Venom-Cursed Dragonhawk's Wristbands"
+    },
+    "277789": {
+        "cn": "",
+        "en": "Venom-Cursed Dragonhawk's Cinch",
+        "ru": "Venom-Cursed Dragonhawk's Cinch",
+        "es": "Venom-Cursed Dragonhawk's Cinch",
+        "br": "Venom-Cursed Dragonhawk's Cinch",
+        "kr": "",
+        "fr": "Venom-Cursed Dragonhawk's Cinch",
+        "de": "Venom-Cursed Dragonhawk's Cinch"
+    },
+    "277790": {
+        "cn": "",
+        "en": "Venom-Cursed Dragonhawk's Wingspan",
+        "ru": "Venom-Cursed Dragonhawk's Wingspan",
+        "es": "Venom-Cursed Dragonhawk's Wingspan",
+        "br": "Venom-Cursed Dragonhawk's Wingspan",
+        "kr": "",
+        "fr": "Venom-Cursed Dragonhawk's Wingspan",
+        "de": "Venom-Cursed Dragonhawk's Wingspan"
+    },
+    "277791": {
+        "cn": "",
+        "en": "Venom-Cursed Dragonhawk's Leggings",
+        "ru": "Venom-Cursed Dragonhawk's Leggings",
+        "es": "Venom-Cursed Dragonhawk's Leggings",
+        "br": "Venom-Cursed Dragonhawk's Leggings",
+        "kr": "",
+        "fr": "Venom-Cursed Dragonhawk's Leggings",
+        "de": "Venom-Cursed Dragonhawk's Leggings"
+    },
+    "277792": {
+        "cn": "",
+        "en": "Venom-Cursed Dragonhawk's Plumage",
+        "ru": "Venom-Cursed Dragonhawk's Plumage",
+        "es": "Venom-Cursed Dragonhawk's Plumage",
+        "br": "Venom-Cursed Dragonhawk's Plumage",
+        "kr": "",
+        "fr": "Venom-Cursed Dragonhawk's Plumage",
+        "de": "Venom-Cursed Dragonhawk's Plumage"
+    },
+    "277793": {
+        "cn": "",
+        "en": "Venom-Cursed Dragonhawk's Handwraps",
+        "ru": "Venom-Cursed Dragonhawk's Handwraps",
+        "es": "Venom-Cursed Dragonhawk's Handwraps",
+        "br": "Venom-Cursed Dragonhawk's Handwraps",
+        "kr": "",
+        "fr": "Venom-Cursed Dragonhawk's Handwraps",
+        "de": "Venom-Cursed Dragonhawk's Handwraps"
+    },
+    "277794": {
+        "cn": "",
+        "en": "Venom-Cursed Dragonhawk's Talons",
+        "ru": "Venom-Cursed Dragonhawk's Talons",
+        "es": "Venom-Cursed Dragonhawk's Talons",
+        "br": "Venom-Cursed Dragonhawk's Talons",
+        "kr": "",
+        "fr": "Venom-Cursed Dragonhawk's Talons",
+        "de": "Venom-Cursed Dragonhawk's Talons"
+    },
+    "277795": {
+        "cn": "",
+        "en": "Venom-Cursed Dragonhawk's Robes",
+        "ru": "Venom-Cursed Dragonhawk's Robes",
+        "es": "Venom-Cursed Dragonhawk's Robes",
+        "br": "Venom-Cursed Dragonhawk's Robes",
+        "kr": "",
+        "fr": "Venom-Cursed Dragonhawk's Robes",
+        "de": "Venom-Cursed Dragonhawk's Robes"
+    },
+    "277798": {
+        "cn": "",
+        "en": "Venom-Cursed Spellfang",
+        "ru": "Ядоклятый чароклык",
+        "es": "Colmihechizo maldito por el veneno",
+        "br": "Presafeitiço Amaldiçoada por Peçonha",
+        "kr": "",
+        "fr": "Sorcecroc affolé par le venin",
+        "de": "Giftverfluchter Zauberzahn"
+    },
+    "277800": {
+        "cn": "",
+        "en": "Venom-Cursed Focus",
+        "ru": "Ядоклятое средоточие",
+        "es": "Enfoque maldito por el veneno",
+        "br": "Foco Amaldiçoado por Peçonha",
+        "kr": "",
+        "fr": "Canalisateur affolé par le venin",
+        "de": "Giftverfluchter Fokus"
+    },
+    "277801": {
+        "cn": "",
+        "en": "Venom-Cursed Boneglaive",
+        "ru": "Ядоклятая костяная глефа",
+        "es": "Guja ósea maldita por el veneno",
+        "br": "Glaive de Osso Amaldiçoada por Peçonha",
+        "kr": "",
+        "fr": "Glaive d’os affolé par le venin",
+        "de": "Giftverfluchte Knochengleve"
+    },
     "277803": {
         "cn": "",
         "en": "Venom-Cursed Spellcarver",
-        "ru": "Venom-Cursed Spellcarver",
-        "es": "Venom-Cursed Spellcarver",
-        "br": "Venom-Cursed Spellcarver",
+        "ru": "Ядоклятый чарорез",
+        "es": "Tallahechizos maldito por el veneno",
+        "br": "Talha-feitiço Amaldiçoado por Peçonha",
         "kr": "",
-        "fr": "Venom-Cursed Spellcarver",
-        "de": "Venom-Cursed Spellcarver"
+        "fr": "Sculpte-sort affolé par le venin",
+        "de": "Giftverfluchter Spruchschnitzer"
+    },
+    "277807": {
+        "cn": "",
+        "en": "Venom-Cursed Ritual Staff",
+        "ru": "Ядоклятый ритуальный посох",
+        "es": "Bastón ritual maldito por el veneno",
+        "br": "Cajado Ritualístico Amaldiçoado por Peçonha",
+        "kr": "",
+        "fr": "Bâton rituel affolé par le venin",
+        "de": "Giftverfluchter Ritualstab"
+    },
+    "277810": {
+        "cn": "",
+        "en": "Venom-Cursed Aegis",
+        "ru": "Ядоклятая эгида",
+        "es": "Égida maldita por el veneno",
+        "br": "Égide Amaldiçoada por Peçonha",
+        "kr": "",
+        "fr": "Égide affolée par le venin",
+        "de": "Giftverfluchte Aegis"
     },
     "277951": {
         "cn": "",
         "en": "Venomous Aspirant's Slicer",
-        "ru": "Venomous Aspirant's Slicer",
-        "es": "Venomous Aspirant's Slicer",
-        "br": "Venomous Aspirant's Slicer",
+        "ru": "Тесак ядовитого претендента",
+        "es": "Cercenador de aspirante venenoso",
+        "br": "Fatiador do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Slicer",
-        "de": "Venomous Aspirant's Slicer"
+        "fr": "Tranchoir de l’aspirant venimeux",
+        "de": "Schnitzler des toxischen Aspiranten"
     },
     "278877": {
         "cn": "",
         "en": "Crypt Cleanser Cuirass",
-        "ru": "Crypt Cleanser Cuirass",
-        "es": "Crypt Cleanser Cuirass",
-        "br": "Crypt Cleanser Cuirass",
+        "ru": "Кираса очистителя склепов",
+        "es": "Loriga de purificador de criptas",
+        "br": "Corselete do Purificador de Criptas",
         "kr": "",
-        "fr": "Crypt Cleanser Cuirass",
-        "de": "Crypt Cleanser Cuirass"
+        "fr": "Cuirasse purificatrice de crypte",
+        "de": "Kürass des Gruftläuterers"
     },
     "278878": {
         "cn": "",
         "en": "Crypt Cleanser Chestguard",
-        "ru": "Crypt Cleanser Chestguard",
-        "es": "Crypt Cleanser Chestguard",
-        "br": "Crypt Cleanser Chestguard",
+        "ru": "Нагрудник очистителя склепов",
+        "es": "Coselete de purificador de criptas",
+        "br": "Couraça do Purificador de Criptas",
         "kr": "",
-        "fr": "Crypt Cleanser Chestguard",
-        "de": "Crypt Cleanser Chestguard"
+        "fr": "Corselet purificateur de crypte",
+        "de": "Brustschutz des Gruftläuterers"
     },
     "278879": {
         "cn": "",
         "en": "Crypt Cleanser Harness",
-        "ru": "Crypt Cleanser Harness",
-        "es": "Crypt Cleanser Harness",
-        "br": "Crypt Cleanser Harness",
+        "ru": "Портупея очистителя склепов",
+        "es": "Arnés de purificador de criptas",
+        "br": "Arnês do Purificador de Criptas",
         "kr": "",
-        "fr": "Crypt Cleanser Harness",
-        "de": "Crypt Cleanser Harness"
+        "fr": "Harnais purificateur de crypte",
+        "de": "Harnisch des Gruftläuterers"
     },
     "278880": {
         "cn": "",
         "en": "Crypt Cleanser Raiment",
-        "ru": "Crypt Cleanser Raiment",
-        "es": "Crypt Cleanser Raiment",
-        "br": "Crypt Cleanser Raiment",
+        "ru": "Облачение очистителя склепов",
+        "es": "Vestiduras de purificador de criptas",
+        "br": "Indumentária do Purificador de Criptas",
         "kr": "",
-        "fr": "Crypt Cleanser Raiment",
-        "de": "Crypt Cleanser Raiment"
+        "fr": "Grande tenue purificatrice de crypte",
+        "de": "Gewandung des Gruftläuterers"
     },
     "278881": {
         "cn": "",
         "en": "Ophidian General's Crown",
-        "ru": "Ophidian General's Crown",
-        "es": "Ophidian General's Crown",
-        "br": "Ophidian General's Crown",
+        "ru": "Корона змеиного генерала",
+        "es": "Corona de general ofídico",
+        "br": "Coroa do General Ofídico",
         "kr": "",
-        "fr": "Ophidian General's Crown",
-        "de": "Ophidian General's Crown"
+        "fr": "Couronne de général ophidien",
+        "de": "Krone des Schlangengenerals"
     },
     "278882": {
         "cn": "",
         "en": "Ophidian General's Barbute",
-        "ru": "Ophidian General's Barbute",
-        "es": "Ophidian General's Barbute",
-        "br": "Ophidian General's Barbute",
+        "ru": "Барбют змеиного генерала",
+        "es": "Barbuta de guerra de general ofídico",
+        "br": "Celada do General Ofídico",
         "kr": "",
-        "fr": "Ophidian General's Barbute",
-        "de": "Ophidian General's Barbute"
+        "fr": "Barbute de général ophidien",
+        "de": "Barbuta des Schlangengenerals"
     },
     "278883": {
         "cn": "",
         "en": "Ophidian General's Headgear",
-        "ru": "Ophidian General's Headgear",
-        "es": "Ophidian General's Headgear",
-        "br": "Ophidian General's Headgear",
+        "ru": "Головной убор змеиного генерала",
+        "es": "Casco de general ofídico",
+        "br": "Almofre do General Ofídico",
         "kr": "",
-        "fr": "Ophidian General's Headgear",
-        "de": "Ophidian General's Headgear"
+        "fr": "Couvre-chef de général ophidien",
+        "de": "Kopfbedeckung des Schlangengenerals"
     },
     "278884": {
         "cn": "",
         "en": "Ophidian General's Warbonnet",
-        "ru": "Ophidian General's Warbonnet",
-        "es": "Ophidian General's Warbonnet",
-        "br": "Ophidian General's Warbonnet",
+        "ru": "Оперенный венец змеиного генерала",
+        "es": "Penacho de guerra de general ofídico",
+        "br": "Cocar de Guerra do General Ofídico",
         "kr": "",
-        "fr": "Ophidian General's Warbonnet",
-        "de": "Ophidian General's Warbonnet"
+        "fr": "Panache de général ophidien",
+        "de": "Kriegshaube des Schlangengenerals"
     },
     "278885": {
         "cn": "",
         "en": "Spaulders of the Sacrificer",
-        "ru": "Spaulders of the Sacrificer",
-        "es": "Spaulders of the Sacrificer",
-        "br": "Spaulders of the Sacrificer",
+        "ru": "Наплеч приносящего жертвы",
+        "es": "Bufas del sacrificador",
+        "br": "Espaldares do Sacrificador",
         "kr": "",
-        "fr": "Spaulders of the Sacrificer",
-        "de": "Spaulders of the Sacrificer"
+        "fr": "Spallières du sacrifice",
+        "de": "Schiftung des Opferers"
     },
     "278886": {
         "cn": "",
         "en": "Pauldrons of the Sacrificer",
-        "ru": "Pauldrons of the Sacrificer",
-        "es": "Pauldrons of the Sacrificer",
-        "br": "Pauldrons of the Sacrificer",
+        "ru": "Наплечники приносящего жертвы",
+        "es": "Espaldares del sacrificador",
+        "br": "Brafoneiras do Sacrificador",
         "kr": "",
-        "fr": "Pauldrons of the Sacrificer",
-        "de": "Pauldrons of the Sacrificer"
+        "fr": "Espauliers du sacrifice",
+        "de": "Schulterstücke des Opferers"
     },
     "278887": {
         "cn": "",
         "en": "Mantle of the Sacrificer",
-        "ru": "Mantle of the Sacrificer",
-        "es": "Mantle of the Sacrificer",
-        "br": "Mantle of the Sacrificer",
+        "ru": "Оплечье приносящего жертвы",
+        "es": "Manto del sacrificador",
+        "br": "Dragonas do Sacrificador",
         "kr": "",
-        "fr": "Mantle of the Sacrificer",
-        "de": "Mantle of the Sacrificer"
+        "fr": "Mantelet du sacrifice",
+        "de": "Mantel des Opferers"
     },
     "278888": {
         "cn": "",
         "en": "Amice of the Sacrificer",
-        "ru": "Amice of the Sacrificer",
-        "es": "Amice of the Sacrificer",
-        "br": "Amice of the Sacrificer",
+        "ru": "Нарамник приносящего жертвы",
+        "es": "Amito del sacrificador",
+        "br": "Sobreombros do Sacrificador",
         "kr": "",
-        "fr": "Amice of the Sacrificer",
-        "de": "Amice of the Sacrificer"
+        "fr": "Amict du sacrifice",
+        "de": "Amicia des Opferers"
     },
     "278889": {
         "cn": "",
         "en": "Warbands of Brothers",
-        "ru": "Warbands of Brothers",
-        "es": "Warbands of Brothers",
-        "br": "Warbands of Brothers",
+        "ru": "Братские тяжелые поручи",
+        "es": "Bandas guerreras fraternales",
+        "br": "Embraces de Guerra dos Irmãos",
         "kr": "",
-        "fr": "Warbands of Brothers",
-        "de": "Warbands of Brothers"
+        "fr": "Poignets de guerre fraternels",
+        "de": "Kriegsbänder der Brüder"
     },
     "278890": {
         "cn": "",
         "en": "Armbands of Brothers",
-        "ru": "Armbands of Brothers",
-        "es": "Armbands of Brothers",
-        "br": "Armbands of Brothers",
+        "ru": "Братские поручи",
+        "es": "Bandas fraternales",
+        "br": "Embraces dos Irmãos",
         "kr": "",
-        "fr": "Armbands of Brothers",
-        "de": "Armbands of Brothers"
+        "fr": "Bracières fraternelles",
+        "de": "Armbänder der Brüder"
     },
     "278891": {
         "cn": "",
         "en": "Wristbands of Brothers",
-        "ru": "Wristbands of Brothers",
-        "es": "Wristbands of Brothers",
-        "br": "Wristbands of Brothers",
+        "ru": "Братские напульсники",
+        "es": "Braciles fraternales",
+        "br": "Pulseiras dos Irmãos",
         "kr": "",
-        "fr": "Wristbands of Brothers",
-        "de": "Wristbands of Brothers"
+        "fr": "Protège-poignets fraternels",
+        "de": "Gelenkbänder der Brüder"
     },
     "278892": {
         "cn": "",
         "en": "Bands of Brothers",
-        "ru": "Bands of Brothers",
-        "es": "Bands of Brothers",
-        "br": "Bands of Brothers",
+        "ru": "Братские обвязки",
+        "es": "Muñequeras fraternales",
+        "br": "Elos dos Irmãos",
         "kr": "",
-        "fr": "Bands of Brothers",
-        "de": "Bands of Brothers"
+        "fr": "Liens fraternels",
+        "de": "Bande der Brüder"
     },
     "278893": {
         "cn": "",
         "en": "Faithleaper's Greaves",
-        "ru": "Faithleaper's Greaves",
-        "es": "Faithleaper's Greaves",
-        "br": "Faithleaper's Greaves",
+        "ru": "Наголенники прыжка веры",
+        "es": "Grebas de saltafé",
+        "br": "Grevas do Saltador de Fé",
         "kr": "",
-        "fr": "Faithleaper's Greaves",
-        "de": "Faithleaper's Greaves"
+        "fr": "Grèves d’acte de foi",
+        "de": "Schienbeinschützer des Glaubensspringers"
     },
     "278894": {
         "cn": "",
         "en": "Faithleaper's Sabatons",
-        "ru": "Faithleaper's Sabatons",
-        "es": "Faithleaper's Sabatons",
-        "br": "Faithleaper's Sabatons",
+        "ru": "Латные башмаки прыжка веры",
+        "es": "Escarpes de saltafé",
+        "br": "Escarpes do Saltador de Fé",
         "kr": "",
-        "fr": "Faithleaper's Sabatons",
-        "de": "Faithleaper's Sabatons"
+        "fr": "Solerets d’acte de foi",
+        "de": "Sabatons des Glaubensspringers"
     },
     "278895": {
         "cn": "",
         "en": "Faithleaper's Treads",
-        "ru": "Faithleaper's Treads",
-        "es": "Faithleaper's Treads",
-        "br": "Faithleaper's Treads",
+        "ru": "Ботфорты прыжка веры",
+        "es": "Botines de saltafé",
+        "br": "Botinas do Saltador de Fé",
         "kr": "",
-        "fr": "Faithleaper's Treads",
-        "de": "Faithleaper's Treads"
+        "fr": "Bottines d’acte de foi",
+        "de": "Treter des Glaubensspringers"
     },
     "278896": {
         "cn": "",
         "en": "Faithleaper's Slippers",
-        "ru": "Faithleaper's Slippers",
-        "es": "Faithleaper's Slippers",
-        "br": "Faithleaper's Slippers",
+        "ru": "Туфли прыжка веры",
+        "es": "Zapatillas de saltafé",
+        "br": "Sapatilhas do Saltador de Fé",
         "kr": "",
-        "fr": "Faithleaper's Slippers",
-        "de": "Faithleaper's Slippers"
+        "fr": "Mules d’acte de foi",
+        "de": "Pantoffeln des Glaubensspringers"
     },
     "278897": {
         "cn": "",
         "en": "Fangsmasher Crushers",
-        "ru": "Fangsmasher Crushers",
-        "es": "Fangsmasher Crushers",
-        "br": "Fangsmasher Crushers",
+        "ru": "Костоломы клыкокрушителя",
+        "es": "Machacadoras de trituracolmillos",
+        "br": "Esmagadores do Esmagapresa",
         "kr": "",
-        "fr": "Fangsmasher Crushers",
-        "de": "Fangsmasher Crushers"
+        "fr": "Écraseurs de brise-crocs",
+        "de": "Zermalmer des Fangbrechers"
     },
     "278898": {
         "cn": "",
         "en": "Fangsmasher Gauntlets",
-        "ru": "Fangsmasher Gauntlets",
-        "es": "Fangsmasher Gauntlets",
-        "br": "Fangsmasher Gauntlets",
+        "ru": "Рукавицы клыкокрушителя",
+        "es": "Guanteletes de trituracolmillos",
+        "br": "Manoplas do Esmagapresa",
         "kr": "",
-        "fr": "Fangsmasher Gauntlets",
-        "de": "Fangsmasher Gauntlets"
+        "fr": "Gantelets de brise-crocs",
+        "de": "Stulpen des Fangbrechers"
     },
     "278899": {
         "cn": "",
         "en": "Fangsmasher Handwraps",
-        "ru": "Fangsmasher Handwraps",
-        "es": "Fangsmasher Handwraps",
-        "br": "Fangsmasher Handwraps",
+        "ru": "Повязки клыкокрушителя",
+        "es": "Manijas de trituracolmillos",
+        "br": "Mitenes do Esmagapresa",
         "kr": "",
-        "fr": "Fangsmasher Handwraps",
-        "de": "Fangsmasher Handwraps"
+        "fr": "Protège-mains de brise-crocs",
+        "de": "Handwickel des Fangbrechers"
     },
     "278900": {
         "cn": "",
         "en": "Fangsmasher Grips",
-        "ru": "Fangsmasher Grips",
-        "es": "Fangsmasher Grips",
-        "br": "Fangsmasher Grips",
+        "ru": "Захваты клыкокрушителя",
+        "es": "Mandiletes de trituracolmillos",
+        "br": "Guantes do Esmagapresa",
         "kr": "",
-        "fr": "Fangsmasher Grips",
-        "de": "Fangsmasher Grips"
+        "fr": "Poignes de brise-crocs",
+        "de": "Handschutz des Fangbrechers"
     },
     "278901": {
         "cn": "",
         "en": "Swampdredger Greaves",
-        "ru": "Swampdredger Greaves",
-        "es": "Swampdredger Greaves",
-        "br": "Swampdredger Greaves",
+        "ru": "Наголенники болотокопателя",
+        "es": "Grebas de excavapantanos",
+        "br": "Grevas do Draga-pântano",
         "kr": "",
-        "fr": "Swampdredger Greaves",
-        "de": "Swampdredger Greaves"
+        "fr": "Grèves de drague-marais",
+        "de": "Schienbeinschützer des Sumpfgräbers"
     },
     "278902": {
         "cn": "",
         "en": "Swampdredger Legguards",
-        "ru": "Swampdredger Legguards",
-        "es": "Swampdredger Legguards",
-        "br": "Swampdredger Legguards",
+        "ru": "Набедренники болотокопателя",
+        "es": "Musleras de excavapantanos",
+        "br": "Guarda-pernas do Draga-pântano",
         "kr": "",
-        "fr": "Swampdredger Legguards",
-        "de": "Swampdredger Legguards"
+        "fr": "Garde-jambes de drague-marais",
+        "de": "Beinschützer des Sumpfgräbers"
     },
     "278903": {
         "cn": "",
         "en": "Swampdredger Leggings",
-        "ru": "Swampdredger Leggings",
-        "es": "Swampdredger Leggings",
-        "br": "Swampdredger Leggings",
+        "ru": "Поножи болотокопателя",
+        "es": "Leotardos de excavapantanos",
+        "br": "Perneiras do Draga-pântano",
         "kr": "",
-        "fr": "Swampdredger Leggings",
-        "de": "Swampdredger Leggings"
+        "fr": "Jambières de drague-marais",
+        "de": "Gamaschen des Sumpfgräbers"
     },
     "278904": {
         "cn": "",
         "en": "Swampdredger Trousers",
-        "ru": "Swampdredger Trousers",
-        "es": "Swampdredger Trousers",
-        "br": "Swampdredger Trousers",
+        "ru": "Штаны болотокопателя",
+        "es": "Calzas de excavapantanos",
+        "br": "Calçotes do Draga-pântano",
         "kr": "",
-        "fr": "Swampdredger Trousers",
-        "de": "Swampdredger Trousers"
+        "fr": "Chausses de drague-marais",
+        "de": "Beinkleider des Sumpfgräbers"
     },
     "278905": {
         "cn": "",
         "en": "Tomb-Sealed Clasp",
-        "ru": "Tomb-Sealed Clasp",
-        "es": "Tomb-Sealed Clasp",
-        "br": "Tomb-Sealed Clasp",
+        "ru": "Застежка с печатью гробницы",
+        "es": "Cinto sellado en la tumba",
+        "br": "Fecho Selado na Tumba",
         "kr": "",
-        "fr": "Tomb-Sealed Clasp",
-        "de": "Tomb-Sealed Clasp"
+        "fr": "Fermoir du sceau macabre",
+        "de": "Grabversiegelter Schnallengürtel"
     },
     "278906": {
         "cn": "",
         "en": "Tomb-Sealed Girdle",
-        "ru": "Tomb-Sealed Girdle",
-        "es": "Tomb-Sealed Girdle",
-        "br": "Tomb-Sealed Girdle",
+        "ru": "Ремень с печатью гробницы",
+        "es": "Faja sellada en la tumba",
+        "br": "Cinturão Selado na Tumba",
         "kr": "",
-        "fr": "Tomb-Sealed Girdle",
-        "de": "Tomb-Sealed Girdle"
+        "fr": "Ceinturon du sceau macabre",
+        "de": "Grabversiegelte Gürtung"
     },
     "278907": {
         "cn": "",
         "en": "Tomb-Sealed Cinch",
-        "ru": "Tomb-Sealed Cinch",
-        "es": "Tomb-Sealed Cinch",
-        "br": "Tomb-Sealed Cinch",
+        "ru": "Кушак с печатью гробницы",
+        "es": "Cincho sellado en la tumba",
+        "br": "Cilha Selada na Tumba",
         "kr": "",
-        "fr": "Tomb-Sealed Cinch",
-        "de": "Tomb-Sealed Cinch"
+        "fr": "Cordelière du sceau macabre",
+        "de": "Grabversiegelter Hüftgurt"
     },
     "278908": {
         "cn": "",
         "en": "Tomb-Sealed Sash",
-        "ru": "Tomb-Sealed Sash",
-        "es": "Tomb-Sealed Sash",
-        "br": "Tomb-Sealed Sash",
+        "ru": "Кушак с печатью гробницы",
+        "es": "Fajín sellado en la tumba",
+        "br": "Faixa Selada na Tumba",
         "kr": "",
-        "fr": "Tomb-Sealed Sash",
-        "de": "Tomb-Sealed Sash"
+        "fr": "Écharpe du sceau macabre",
+        "de": "Grabversiegelte Schärpe"
     },
     "278909": {
         "cn": "",
         "en": "Cloak of Chumming",
-        "ru": "Cloak of Chumming",
-        "es": "Cloak of Chumming",
-        "br": "Cloak of Chumming",
+        "ru": "Плащ прикормки",
+        "es": "Capa de carnada",
+        "br": "Manto do Engodo",
         "kr": "",
-        "fr": "Cloak of Chumming",
-        "de": "Cloak of Chumming"
+        "fr": "Cape d’appât",
+        "de": "Umhang der Beköderung"
     },
     "278910": {
         "cn": "",
         "en": "Yl'mul's Waterlogged Wrap",
-        "ru": "Yl'mul's Waterlogged Wrap",
-        "es": "Yl'mul's Waterlogged Wrap",
-        "br": "Yl'mul's Waterlogged Wrap",
+        "ru": "Промокшее полотнище Иль'мула",
+        "es": "Envoltura calada de Yl'mul",
+        "br": "Faixas Encharcadas de Yl'mul",
         "kr": "",
-        "fr": "Yl'mul's Waterlogged Wrap",
-        "de": "Yl'mul's Waterlogged Wrap"
+        "fr": "Houppelande trempée d’Yl’mul",
+        "de": "Yl'muls durchnässtes Wickeltuch"
     },
     "278911": {
         "cn": "",
         "en": "Shipwrecked Shroud",
-        "ru": "Shipwrecked Shroud",
-        "es": "Shipwrecked Shroud",
-        "br": "Shipwrecked Shroud",
+        "ru": "Покров кораблекрушения",
+        "es": "Sudario naufragado",
+        "br": "Mortalha do Naufrágio",
         "kr": "",
-        "fr": "Shipwrecked Shroud",
-        "de": "Shipwrecked Shroud"
+        "fr": "Voile naufragé",
+        "de": "Schleier des Schiffsbrüchigen"
     },
     "278912": {
         "cn": "",
         "en": "Gral-Blessed Greatcloak",
-        "ru": "Gral-Blessed Greatcloak",
-        "es": "Gral-Blessed Greatcloak",
-        "br": "Gral-Blessed Greatcloak",
+        "ru": "Теплый плащ благословения Грала",
+        "es": "Gran capa bendecida por Gral",
+        "br": "Grande Manto Abençoado por Gral",
         "kr": "",
-        "fr": "Gral-Blessed Greatcloak",
-        "de": "Gral-Blessed Greatcloak"
+        "fr": "Gande cape bénie par Gral",
+        "de": "Gral-gesegneter Großumhang"
     },
     "279009": {
         "cn": "",
         "en": "Gore Rattler Coil",
-        "ru": "Gore Rattler Coil",
-        "es": "Gore Rattler Coil",
-        "br": "Gore Rattler Coil",
+        "ru": "Кольца кровавой трещотки",
+        "es": "Sello de cascabel de crúor",
+        "br": "Bobina do Chocalho Sanguinolento",
         "kr": "",
-        "fr": "Gore Rattler Coil",
-        "de": "Gore Rattler Coil"
+        "fr": "Spirale d’étripage caudal",
+        "de": "Blutrasselwindung"
     },
     "279010": {
         "cn": "",
         "en": "Ula'tek's Bind",
-        "ru": "Ula'tek's Bind",
-        "es": "Ula'tek's Bind",
-        "br": "Ula'tek's Bind",
+        "ru": "Узы Ула'тек",
+        "es": "Sello de Ula'tek",
+        "br": "Vínculo de Ula'tek",
         "kr": "",
-        "fr": "Ula'tek's Bind",
-        "de": "Ula'tek's Bind"
+        "fr": "Entrave d’Ula’tek",
+        "de": "Ula'tek's Fessel"
     },
     "279011": {
         "cn": "",
         "en": "Venomjade Necklace",
-        "ru": "Venomjade Necklace",
-        "es": "Venomjade Necklace",
-        "br": "Venomjade Necklace",
+        "ru": "Ожерелье из ядовитого нефрита",
+        "es": "Collar de jade venenoso",
+        "br": "Colar de Venenita",
         "kr": "",
-        "fr": "Venomjade Necklace",
-        "de": "Venomjade Necklace"
+        "fr": "Collier de jade-venin",
+        "de": "Giftjadekette"
     },
     "279194": {
         "cn": "",
         "en": "Collar of Jealousy",
-        "ru": "Collar of Jealousy",
-        "es": "Collar of Jealousy",
-        "br": "Collar of Jealousy",
+        "ru": "Ошейник зависти",
+        "es": "Collar de la envidia",
+        "br": "Colar do Ciúme",
         "kr": "",
-        "fr": "Collar of Jealousy",
-        "de": "Collar of Jealousy"
+        "fr": "Collier de jalousie",
+        "de": "Halsband des Neids"
     },
     "279195": {
         "cn": "",
         "en": "Choker of Anger",
-        "ru": "Choker of Anger",
-        "es": "Choker of Anger",
-        "br": "Choker of Anger",
+        "ru": "Колье гнева",
+        "es": "Gargantilla de la ira",
+        "br": "Gargantilha da Ira",
         "kr": "",
-        "fr": "Choker of Anger",
-        "de": "Choker of Anger"
+        "fr": "Sautoir de colère",
+        "de": "Halsreif des Zorns"
     },
     "279196": {
         "cn": "",
         "en": "Chain of Vengeance",
-        "ru": "Chain of Vengeance",
-        "es": "Chain of Vengeance",
-        "br": "Chain of Vengeance",
+        "ru": "Цепь отмщения",
+        "es": "Cadena de venganza",
+        "br": "Corrente da Vingança",
         "kr": "",
-        "fr": "Chain of Vengeance",
-        "de": "Chain of Vengeance"
+        "fr": "Chaîne de vengeance",
+        "de": "Halskette der Rache"
     },
     "279217": {
         "cn": "",
-        "en": "Venom-Cursed Eagle's Shroud",
-        "ru": "Venom-Cursed Eagle's Shroud",
-        "es": "Venom-Cursed Eagle's Shroud",
-        "br": "Venom-Cursed Eagle's Shroud",
+        "en": "Venom-Cursed Dragonhawk's Shroud",
+        "ru": "Venom-Cursed Dragonhawk's Shroud",
+        "es": "Venom-Cursed Dragonhawk's Shroud",
+        "br": "Venom-Cursed Dragonhawk's Shroud",
         "kr": "",
-        "fr": "Venom-Cursed Eagle's Shroud",
-        "de": "Venom-Cursed Eagle's Shroud"
+        "fr": "Venom-Cursed Dragonhawk's Shroud",
+        "de": "Venom-Cursed Dragonhawk's Shroud"
     },
     "279220": {
         "cn": "",
         "en": "Venom-Cursed Lynx's Mane",
-        "ru": "Venom-Cursed Lynx's Mane",
-        "es": "Venom-Cursed Lynx's Mane",
-        "br": "Venom-Cursed Lynx's Mane",
+        "ru": "Грива ядоклятой рыси",
+        "es": "Crin de lince maldito por el veneno",
+        "br": "Juba do Lince Amaldiçoado por Peçonha",
         "kr": "",
-        "fr": "Venom-Cursed Lynx's Mane",
-        "de": "Venom-Cursed Lynx's Mane"
+        "fr": "Crinière de lynx affolé par le venin",
+        "de": "Mähne des giftverfluchten Luchses"
     },
     "279222": {
         "cn": "",
-        "en": "Venom-Cursed Dragonhawk's Mantle",
-        "ru": "Venom-Cursed Dragonhawk's Mantle",
-        "es": "Venom-Cursed Dragonhawk's Mantle",
-        "br": "Venom-Cursed Dragonhawk's Mantle",
+        "en": "Venom-Cursed Eagle's Mantle",
+        "ru": "Venom-Cursed Eagle's Mantle",
+        "es": "Venom-Cursed Eagle's Mantle",
+        "br": "Venom-Cursed Eagle's Mantle",
         "kr": "",
-        "fr": "Venom-Cursed Dragonhawk's Mantle",
-        "de": "Venom-Cursed Dragonhawk's Mantle"
+        "fr": "Venom-Cursed Eagle's Mantle",
+        "de": "Venom-Cursed Eagle's Mantle"
     },
     "279223": {
         "cn": "",
         "en": "Venom-Cursed Bear's Greatcloak",
-        "ru": "Venom-Cursed Bear's Greatcloak",
-        "es": "Venom-Cursed Bear's Greatcloak",
-        "br": "Venom-Cursed Bear's Greatcloak",
+        "ru": "Боевой плащ ядоклятого медведя",
+        "es": "Gran capa de oso maldito por el veneno",
+        "br": "Grande Manto do Urso Amaldiçoado por Peçonha",
         "kr": "",
-        "fr": "Venom-Cursed Bear's Greatcloak",
-        "de": "Venom-Cursed Bear's Greatcloak"
+        "fr": "Grande cape d’ours affolé par le venin",
+        "de": "Großumhang des giftverfluchten Bären"
     },
     "279233": {
         "cn": "",
         "en": "Ancient Amani Spellblade",
-        "ru": "Ancient Amani Spellblade",
-        "es": "Ancient Amani Spellblade",
-        "br": "Ancient Amani Spellblade",
+        "ru": "Древний аманийский чародейский клинок",
+        "es": "Hoja de hechizo Amani antigua",
+        "br": "Magilâmina Amani Ancestral",
         "kr": "",
-        "fr": "Ancient Amani Spellblade",
-        "de": "Ancient Amani Spellblade"
+        "fr": "Sorcelame amani ancienne",
+        "de": "Uralte Zauberklinge der Amani"
     },
     "279236": {
         "cn": "",
         "en": "Ancient Amani Athame",
-        "ru": "Ancient Amani Athame",
-        "es": "Ancient Amani Athame",
-        "br": "Ancient Amani Athame",
+        "ru": "Древний аманийский ритуальный нож",
+        "es": "Athame Amani antiguo",
+        "br": "Athame Amani Ancestral",
         "kr": "",
-        "fr": "Ancient Amani Athame",
-        "de": "Ancient Amani Athame"
+        "fr": "Athamé amani ancien",
+        "de": "Uralte Athame der Amani"
     },
     "279243": {
         "cn": "",
         "en": "Exorcised Shield",
-        "ru": "Exorcised Shield",
-        "es": "Exorcised Shield",
-        "br": "Exorcised Shield",
+        "ru": "Очищенный щит",
+        "es": "Escudo exorcizado",
+        "br": "Escudo Exorcizado",
         "kr": "",
-        "fr": "Exorcised Shield",
-        "de": "Exorcised Shield"
+        "fr": "Bouclier exorcisé",
+        "de": "Exorzierter Schild"
     },
     "279244": {
         "cn": "",
         "en": "Exorcised Focus",
-        "ru": "Exorcised Focus",
-        "es": "Exorcised Focus",
-        "br": "Exorcised Focus",
+        "ru": "Очищенное средоточие",
+        "es": "Enfoque exorcizado",
+        "br": "Foco Exorcizado",
         "kr": "",
-        "fr": "Exorcised Focus",
-        "de": "Exorcised Focus"
+        "fr": "Focalisateur exorcisé",
+        "de": "Exorzierter Fokus"
     },
     "279282": {
         "cn": "",
         "en": "Exorcised Spellblade",
-        "ru": "Exorcised Spellblade",
-        "es": "Exorcised Spellblade",
-        "br": "Exorcised Spellblade",
+        "ru": "Очищенный чародейский клинок",
+        "es": "Hoja de hechizo exorcizada",
+        "br": "Magilâmina Exorcizada",
         "kr": "",
-        "fr": "Exorcised Spellblade",
-        "de": "Exorcised Spellblade"
+        "fr": "Sorcelame exorcisée",
+        "de": "Exorzierte Zauberklinge"
     },
     "280047": {
         "cn": "",
         "en": "Feathered Bell",
-        "ru": "Feathered Bell",
-        "es": "Feathered Bell",
-        "br": "Feathered Bell",
+        "ru": "Перьевой колокол",
+        "es": "Campana con plumas",
+        "br": "Sino Emplumado",
         "kr": "",
-        "fr": "Feathered Bell",
-        "de": "Feathered Bell"
+        "fr": "Cloche emplumée",
+        "de": "Gefiederte Glocke"
     },
     "280091": {
         "cn": "",
         "en": "Latent Purifier",
-        "ru": "Latent Purifier",
-        "es": "Latent Purifier",
-        "br": "Latent Purifier",
+        "ru": "Дремлющий очиститель",
+        "es": "Purificador latente",
+        "br": "Purificador Latente",
         "kr": "",
-        "fr": "Latent Purifier",
-        "de": "Latent Purifier"
+        "fr": "Purificateur latent",
+        "de": "Latenter Läuterer"
     },
     "280097": {
         "cn": "",
         "en": "Venomous Aspirant's Insignia of Alacrity",
-        "ru": "Venomous Aspirant's Insignia of Alacrity",
-        "es": "Venomous Aspirant's Insignia of Alacrity",
-        "br": "Venomous Aspirant's Insignia of Alacrity",
+        "ru": "Знак расторопности ядовитого претендента",
+        "es": "Insignia de prontitud de aspirante venenoso",
+        "br": "Insígnia de Diligência do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Insignia of Alacrity",
-        "de": "Venomous Aspirant's Insignia of Alacrity"
+        "fr": "Insigne d’empressement de l’aspirant venimeux",
+        "de": "Inbrunstinsigne des toxischen Aspiranten"
     },
     "280118": {
         "cn": "",
         "en": "Venomous Aspirant's Medallion",
-        "ru": "Venomous Aspirant's Medallion",
-        "es": "Venomous Aspirant's Medallion",
-        "br": "Venomous Aspirant's Medallion",
+        "ru": "Медальон ядовитого претендента",
+        "es": "Medallón de aspirante venenoso",
+        "br": "Medalhão do Aspirante Peçonhento",
         "kr": "",
-        "fr": "Venomous Aspirant's Medallion",
-        "de": "Venomous Aspirant's Medallion"
+        "fr": "Médaillon de l’aspirant venimeux",
+        "de": "Medaillon des toxischen Aspiranten"
     },
     "280123": {
         "cn": "",
         "en": "Sharp Axe Holster",
-        "ru": "Sharp Axe Holster",
-        "es": "Sharp Axe Holster",
-        "br": "Sharp Axe Holster",
+        "ru": "Чехол острого топора",
+        "es": "Funda para hacha afilada",
+        "br": "Coldre de Machado Afiado",
         "kr": "",
-        "fr": "Sharp Axe Holster",
-        "de": "Sharp Axe Holster"
+        "fr": "Étui de hache aiguisée",
+        "de": "Holster der scharfen Axt"
     },
     "280277": {
         "cn": "",
         "en": "Weathered Med'jai Signet",
-        "ru": "Weathered Med'jai Signet",
-        "es": "Weathered Med'jai Signet",
-        "br": "Weathered Med'jai Signet",
+        "ru": "Истертая печатка мед'жай",
+        "es": "Sello de Med'jai desgastado",
+        "br": "Sinete dos Med'jai Desgastado",
         "kr": "",
-        "fr": "Weathered Med'jai Signet",
-        "de": "Weathered Med'jai Signet"
+        "fr": "Chevalière des Med’jai abîmée",
+        "de": "Verwitterter Siegelring der Med'jai"
     },
     "280278": {
         "cn": "",
         "en": "Temple Guardian's Ring",
-        "ru": "Temple Guardian's Ring",
-        "es": "Temple Guardian's Ring",
-        "br": "Temple Guardian's Ring",
+        "ru": "Кольцо храмового стража",
+        "es": "Anillo de guardián del templo",
+        "br": "Anel do Guardião do Templo",
         "kr": "",
-        "fr": "Temple Guardian's Ring",
-        "de": "Temple Guardian's Ring"
+        "fr": "Anneau du gardien du temple",
+        "de": "Ring des Tempelwächters"
+    },
+    "280376": {
+        "cn": "",
+        "en": "Shadow Shard Sliver",
+        "ru": "Фрагмент теневого осколка",
+        "es": "Esquirla de fragmento de las Sombras",
+        "br": "Lasca de Estilhaço das Sombras",
+        "kr": "",
+        "fr": "Fragment d’éclat d’ombre",
+        "de": "Schattensplitterbruchstück"
+    },
+    "280377": {
+        "cn": "",
+        "en": "Breath of Jan'alai",
+        "ru": "Дыхание Джан'алай",
+        "es": "Aliento de Jan'alai",
+        "br": "Sopro de Jan'alai",
+        "kr": "",
+        "fr": "Souffle de Jan’alai",
+        "de": "Atem von Jan'alai"
+    },
+    "280693": {
+        "cn": "",
+        "en": "Staff of All-Knowing",
+        "ru": "Staff of All-Knowing",
+        "es": "Staff of All-Knowing",
+        "br": "Staff of All-Knowing",
+        "kr": "",
+        "fr": "Staff of All-Knowing",
+        "de": "Staff of All-Knowing"
+    },
+    "280698": {
+        "cn": "",
+        "en": "Szarith's Underbelly Slicer",
+        "ru": "Szarith's Underbelly Slicer",
+        "es": "Szarith's Underbelly Slicer",
+        "br": "Szarith's Underbelly Slicer",
+        "kr": "",
+        "fr": "Szarith's Underbelly Slicer",
+        "de": "Szarith's Underbelly Slicer"
+    },
+    "280700": {
+        "cn": "",
+        "en": "Armbands of the Rotten Claw",
+        "ru": "Armbands of the Rotten Claw",
+        "es": "Armbands of the Rotten Claw",
+        "br": "Armbands of the Rotten Claw",
+        "kr": "",
+        "fr": "Armbands of the Rotten Claw",
+        "de": "Armbands of the Rotten Claw"
+    },
+    "280701": {
+        "cn": "",
+        "en": "Waistwrap of the Fanged",
+        "ru": "Waistwrap of the Fanged",
+        "es": "Waistwrap of the Fanged",
+        "br": "Waistwrap of the Fanged",
+        "kr": "",
+        "fr": "Waistwrap of the Fanged",
+        "de": "Waistwrap of the Fanged"
+    },
+    "280702": {
+        "cn": "",
+        "en": "Mantle of the Riser",
+        "ru": "Mantle of the Riser",
+        "es": "Mantle of the Riser",
+        "br": "Mantle of the Riser",
+        "kr": "",
+        "fr": "Mantle of the Riser",
+        "de": "Mantle of the Riser"
+    },
+    "280704": {
+        "cn": "",
+        "en": "Siltmouth's Venom Waders",
+        "ru": "Siltmouth's Venom Waders",
+        "es": "Siltmouth's Venom Waders",
+        "br": "Siltmouth's Venom Waders",
+        "kr": "",
+        "fr": "Siltmouth's Venom Waders",
+        "de": "Siltmouth's Venom Waders"
+    },
+    "280706": {
+        "cn": "",
+        "en": "Sss'alik's Rotting Claws",
+        "ru": "Sss'alik's Rotting Claws",
+        "es": "Sss'alik's Rotting Claws",
+        "br": "Sss'alik's Rotting Claws",
+        "kr": "",
+        "fr": "Sss'alik's Rotting Claws",
+        "de": "Sss'alik's Rotting Claws"
+    },
+    "280708": {
+        "cn": "",
+        "en": "Venom-Shelled Sash",
+        "ru": "Venom-Shelled Sash",
+        "es": "Venom-Shelled Sash",
+        "br": "Venom-Shelled Sash",
+        "kr": "",
+        "fr": "Venom-Shelled Sash",
+        "de": "Venom-Shelled Sash"
+    },
+    "280709": {
+        "cn": "",
+        "en": "Triple Threat Pauldrons",
+        "ru": "Triple Threat Pauldrons",
+        "es": "Triple Threat Pauldrons",
+        "br": "Triple Threat Pauldrons",
+        "kr": "",
+        "fr": "Triple Threat Pauldrons",
+        "de": "Triple Threat Pauldrons"
+    },
+    "280710": {
+        "cn": "",
+        "en": "Garsecg's Barnacled Girdle",
+        "ru": "Garsecg's Barnacled Girdle",
+        "es": "Garsecg's Barnacled Girdle",
+        "br": "Garsecg's Barnacled Girdle",
+        "kr": "",
+        "fr": "Garsecg's Barnacled Girdle",
+        "de": "Garsecg's Barnacled Girdle"
+    },
+    "280711": {
+        "cn": "",
+        "en": "Pitted Specter Shackles",
+        "ru": "Pitted Specter Shackles",
+        "es": "Pitted Specter Shackles",
+        "br": "Pitted Specter Shackles",
+        "kr": "",
+        "fr": "Pitted Specter Shackles",
+        "de": "Pitted Specter Shackles"
+    },
+    "280712": {
+        "cn": "",
+        "en": "Bracers of the Sleeping Hydra",
+        "ru": "Bracers of the Sleeping Hydra",
+        "es": "Bracers of the Sleeping Hydra",
+        "br": "Bracers of the Sleeping Hydra",
+        "kr": "",
+        "fr": "Bracers of the Sleeping Hydra",
+        "de": "Bracers of the Sleeping Hydra"
+    },
+    "280713": {
+        "cn": "",
+        "en": "Big Mon's Buckle",
+        "ru": "Big Mon's Buckle",
+        "es": "Big Mon's Buckle",
+        "br": "Big Mon's Buckle",
+        "kr": "",
+        "fr": "Big Mon's Buckle",
+        "de": "Big Mon's Buckle"
+    },
+    "280714": {
+        "cn": "",
+        "en": "Hull Render Hauberk",
+        "ru": "Hull Render Hauberk",
+        "es": "Hull Render Hauberk",
+        "br": "Hull Render Hauberk",
+        "kr": "",
+        "fr": "Hull Render Hauberk",
+        "de": "Hull Render Hauberk"
+    },
+    "280715": {
+        "cn": "",
+        "en": "Eye of Skully",
+        "ru": "Eye of Skully",
+        "es": "Eye of Skully",
+        "br": "Eye of Skully",
+        "kr": "",
+        "fr": "Eye of Skully",
+        "de": "Eye of Skully"
+    },
+    "280716": {
+        "cn": "",
+        "en": "Locket of the Omnilegent",
+        "ru": "Locket of the Omnilegent",
+        "es": "Locket of the Omnilegent",
+        "br": "Locket of the Omnilegent",
+        "kr": "",
+        "fr": "Locket of the Omnilegent",
+        "de": "Locket of the Omnilegent"
+    },
+    "280717": {
+        "cn": "",
+        "en": "Farthik's Precious Pendant",
+        "ru": "Farthik's Precious Pendant",
+        "es": "Farthik's Precious Pendant",
+        "br": "Farthik's Precious Pendant",
+        "kr": "",
+        "fr": "Farthik's Precious Pendant",
+        "de": "Farthik's Precious Pendant"
+    },
+    "280718": {
+        "cn": "",
+        "en": "Unflappable Flapping Cape",
+        "ru": "Unflappable Flapping Cape",
+        "es": "Unflappable Flapping Cape",
+        "br": "Unflappable Flapping Cape",
+        "kr": "",
+        "fr": "Unflappable Flapping Cape",
+        "de": "Unflappable Flapping Cape"
     }
 };

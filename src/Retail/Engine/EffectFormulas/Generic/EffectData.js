@@ -1,5 +1,20 @@
 import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket, forceGenericOnUseTrinket, runGenericRandomPPMTrinket, runGenericOnUseTrinket, getHighestStat, runGenericPPMTrinketHasted, runGenericFlatProc } from "../EffectUtilities";
 
+/*
+S2 Special Effect Items
+- All Necks / Rings from raid - Damage taken from Deadly Venom reduced by 7%.
+- Full Crit Neck - Spells have a chance to increase Crit, lower other stats
+- 1H Dagger - Haste - Chance to increase haste. No penalty.
+
+- Mail Chest - Chance to increase Crit, lower other stats
+- Leather Helm - Haste - Chance to increase Haste, lower other stats
+- Cloth Helm - Mastery - Chance to increase Mastery, lower other stats
+- Plate Legs - Mastery - Chance to increase Mastery, lower other stats
+
+
+*/
+
+
 export const effectData = [
   { 
     name: "Rotmire's Sporeheart",

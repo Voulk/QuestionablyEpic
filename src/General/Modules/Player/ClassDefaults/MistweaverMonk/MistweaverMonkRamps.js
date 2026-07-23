@@ -8,7 +8,7 @@ import { runRampTidyUp, addReport, getCurrentStats, getHaste, getSpellRaw, getSt
 import { getSqrt } from "General/Modules/Player/ClassDefaults/Generic/TargetScripts"
 
 export const MONKCONSTANTS = {
-    masteryMod: 6.93, 
+    masteryMod: 31.185, 
     masteryEfficiency: 0.82, 
     baseMana: 250000,
 

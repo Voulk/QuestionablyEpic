@@ -151,7 +151,7 @@ const specTalents: TalentTree = {
     }},
 
     /* $?a455630[Surging Totem][Healing Rain] instantly restores $383223s1 health to Z allies within its area, and its radius is increased by X $Lyard:yards;. */
-    "Overflowing Shores": {id: 383222, values: [2.0, 2.0, 5.0],  points: 0, maxPoints: 1, icon: "spell_nature_giftofthewaterspirit", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Overflowing Shores": {id: 383222, values: [2.0, 2.0, 5.0, 2.0],  points: 0, maxPoints: 1, icon: "spell_nature_giftofthewaterspirit", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
         //attachSpellEffect(spellDB["Healing Rain"], spellDB["Overflowing Shores"]),
         //attachSpellEffect(spellDB["Surging Totem"], spellDB["Overflowing Shores"])
     }},
@@ -180,7 +180,7 @@ const specTalents: TalentTree = {
     }},
 
     /* Reduces the mana cost of Healing Wave by 15%. */
-    "Current Control": {id: 1253093, values: [-15.0],  points: 0, maxPoints: 1, icon: "inv_misc_volatilewater", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Current Control": {id: 1253093, values: [-15.0, -15.0],  points: 0, maxPoints: 1, icon: "inv_misc_volatilewater", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
         manaCostAdj(spellDB["Healing Wave"], talentValues[0])
     }},
 
@@ -466,7 +466,7 @@ const heroTalents: TalentTree = {
     }},
 
     /* $?a137041[Increases the damage of Surging Totem by X%.][Increases the healing done by Surging Totem by Y%.] */
-    "Pulse Capacitor": {id: 445032, values: [18.0, 25.0, 18.0], heroTree: "Totemic", choice: true, points: 0, maxPoints: 1, icon: "spell_nature_elementalprecision_1", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Pulse Capacitor": {id: 445032, values: [18.0, 10.0, 18.0], heroTree: "Totemic", choice: true, points: 0, maxPoints: 1, icon: "spell_nature_elementalprecision_1", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
         buffSpellPerc(spellDB["Surging Totem"], talentValues[1])
     }},
 
