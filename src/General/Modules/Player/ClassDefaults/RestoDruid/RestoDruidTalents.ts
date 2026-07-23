@@ -1,4 +1,4 @@
-import { addStatPerc, adjBuffDurationFlat, buffSpellCritMult, buffSpellPerc } from "../Generic/TalentBase";
+import { addStatPerc, adjBuffDurationFlat, buffSpellCritChance, buffSpellCritMult, buffSpellPerc, manaCostAdj } from "../Generic/TalentBase";
 
 /**
  * A list of talents to turn on
@@ -371,8 +371,9 @@ const specTalents: TalentTree = {
     }},
 
     /* For each Rejuvenation you have active, Regrowth's cost is reduced by $207640s1% and critical effect chance is increased by $207640s2%, up to a maximum of ${$207640s2*$207640u}%. */
-    "Abundance": {id: 207383, values: [5.0],  points: 0, maxPoints: 1, icon: "ability_druid_empoweredrejuvination", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+    "Abundance": {id: 207383, values: [60],  points: 0, maxPoints: 1, icon: "ability_druid_empoweredrejuvination", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+        //manaCostAdj(spellDB['Regrowth'], -1 * talentValues[0]);
+        //buffSpellCritChance(spellDB['Regrowth'], talentValues[0]);
     }},
 
     /* When your Rejuvenation heals a full health target, its duration is increased by X sec, up to a maximum total increase of Y sec per cast. */
@@ -537,7 +538,7 @@ const heroTalents: TalentTree = {
 
     /* $?c1[Entering an Eclipse summons a Dryad to assist you for $1264618d, casting Starsurge dealing $1264677s1 astral damage and Starfall at Y% effectiveness.][Your periodic heals have a chance 
     to empower your next Swiftmend to summon a Dryad to assist you, casting Tranquility at X% effectiveness and Regrowth to heal $1264664s1 damage onto your lowest health ally.] */
-    "Sylvan Beckoning": {id: 1264614, values: [10.0, 200.0], heroTree: "Keeper of the Grove", points: 0, maxPoints: 1, icon: "ui_darkshore_warfront_alliance_dryad", select: true, tier: 2, runFunc: 
+    "Sylvan Beckoning": {id: 1264614, values: [10.0, 250.0], heroTree: "Keeper of the Grove", points: 0, maxPoints: 1, icon: "ui_darkshore_warfront_alliance_dryad", select: true, tier: 2, runFunc: 
     function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
 
     }},
@@ -600,7 +601,7 @@ const heroTalents: TalentTree = {
     }},
 
     /* $?c4[Ironbark summons a Dryad to channel a beam of pure nature onto your target, healing them for $1264905o1 over $1264905d.][Your Starfall damage is increased by X% and your Starsurge damage is increased by Y%.] */
-    "Spirit of the Thicket": {id: 1264899, values: [12.0, 8.0, 0.0], heroTree: "Keeper of the Grove", points: 0, maxPoints: 1, icon: "ability_druid_naturalperfection", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Spirit of the Thicket": {id: 1264899, values: [18.0, 8.0, 0.0], heroTree: "Keeper of the Grove", points: 0, maxPoints: 1, icon: "ability_druid_naturalperfection", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
 
     }},
 

@@ -2,7 +2,7 @@
 import { runSpellScript } from "../Generic/SpellScripts";
 import specSpellDB from "./RestoDruidSpellDB.json";
 import { defaultTalents, druidTalents } from "./RestoDruidTalents";
-import { printHealingBreakdownWithCPM, convertStatPercentages, getSpellEntry, updateSpellCPM, buildCPM, getSpellThroughput, applyTalents, completeCastProfile } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities";
+import { printHealingBreakdownWithCPM, convertStatPercentages, getSpellEntry, updateSpellCPM, buildCPM, getSpellThroughput, applyTalents, completeCastProfile, getTimeUsed } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities";
 
 
 export const restoDruidProfile = {
@@ -98,15 +98,15 @@ export function scoreDruidSet(stats: Stats, playerData: any, settings: PlayerSet
       //{spell: "Tranquility", cpm: 0.3},
       
       {spell: "Swiftmend", efficiency: 0.9 },
-      {spell: "Wild Growth", efficiency: 0.8 },
+      {spell: "Wild Growth", efficiency: 0.5 },
       {spell: "Efflorescence", cpm: 2 }, // If Lifetreading, remove mana & cast time cost. Maybe via flag?
       {spell: "Lifebloom", cpm: 4 }, // Does not include blooms.
       {spell: "Lifebloom (Bloom)", cpm: 4 }, // Consider possible Overgrowth usage.
 
-      {spell: "Grove Guardians", cpm: 0 },
-      {spell: "Dream Bloom", cpm: 0 },
+      {spell: "Grove Guardians", cpm: 0, autoSpell: true },
+      {spell: "Dream Bloom", cpm: 0, autoSpell: true },
       {spell: "Rejuvenation", cpm: 0 },
-      //{spell: "Regrowth", efficiency: 0 },
+      {spell: "Regrowth", cpm: 0 },
     ]
 
     completeCastProfile(castProfile, spellDB);
@@ -118,16 +118,22 @@ export function scoreDruidSet(stats: Stats, playerData: any, settings: PlayerSet
     const manaAvailable = manaPool / fightLength + regen;
     reportingData.manaAvailable = manaAvailable;
 
-
-    const spellCosts = Object.fromEntries(Object.keys(spellDB).map((s: string) => [s, spellDB[s][0].cost * 250000 / 100]));
-    const baselineCostPerMinute = castProfile.reduce((acc, spell) => acc + (spell.autoSpell ? 0 : (spellCosts[spell.spell] * spell.cpm! * (spell.manaOverride ?? 1))), 0);
-
+    console.log(castProfile);
+    const spellCosts = Object.fromEntries(Object.keys(spellDB).map((s: string) => [s, (spellDB[s][0].cost || 0) * 250000 / 100]));
+    const baselineCostPerMinute = castProfile.reduce((acc, spell) => acc + (spell.autoSpell ? 0 : ((spellCosts[spell.spell] || 0) * spell.cpm! * (spell.manaOverride ?? 1))), 0);
+    reportingData.spellCosts = spellCosts;
     reportingData.baselineManaPerMinute = baselineCostPerMinute;
 
     const fillerMana = manaAvailable - baselineCostPerMinute;
     reportingData.fillerManaPerMinute = fillerMana;
 
-    // Apex4
+    // Handle Apex & HoTs on the target
+
+    // Calculate Rejuvs needed to maintain 5.
+    getSpellEntry(castProfile, "Rejuvenation").cpm = 10;
+
+
+    // Fill with Regrowths
 
 
     // Insert Grove Guardians
@@ -137,11 +143,12 @@ export function scoreDruidSet(stats: Stats, playerData: any, settings: PlayerSet
 
 
     // Calculate initial filler via mana costs
-    getSpellEntry(castProfile, "Rejuvenation").cpm = fillerMana / spellCosts["Rejuvenation"];
-    console.log(spellCosts["Rejuvenation"], fillerMana, getSpellEntry(castProfile, "Rejuvenation").cpm);
+    getSpellEntry(castProfile, "Regrowth").cpm = fillerMana / spellCosts["Regrowth"];
+    console.log("REGROWTH CPM: " + fillerMana / spellCosts["Regrowth"]);
 
     // Calculate *time* left, fill it with packages.
-
+    let timeAvailable = 60 - getTimeUsed(castProfile, spellDB, state.statPercentages.haste);
+    reportingData.timeAvailable = timeAvailable;
 
     // Cast triggers
 
@@ -201,6 +208,7 @@ export function scoreDruidSet(stats: Stats, playerData: any, settings: PlayerSet
         })
         
         console.log(spellBreakdown);
+        console.log(reportingData);
         result.spellBreakdown = spellBreakdown;
     }
 

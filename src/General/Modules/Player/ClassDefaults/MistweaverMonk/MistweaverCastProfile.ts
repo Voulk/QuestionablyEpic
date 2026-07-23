@@ -133,9 +133,9 @@ export function scoreMonkSet(stats: Stats, playerData: any, settings: PlayerSett
     let averageHaste = state.statPercentages.haste; // TODO
 
     const castProfile: CastProfile = [
-        { spell: "Renewing Mist", efficiency: 0.9 },
-        { spell: "Enveloping Mist", cpm: 4 }, // This needs to be at a minimum the same as the number of box procs
-        //{ spell: "Vivify", cpm: 4, hastedCPM: true },
+        { spell: "Renewing Mist", efficiency: 0.7 },
+        { spell: "Enveloping Mist", cpm: 0.1 }, // This needs to be at a minimum the same as the number of box procs
+        //{ spell: "Vivify", cpm: 0, hastedCPM: true },
         { spell: "Tiger Palm", cpm: 7.5, hastedCPM: true },
         { spell: "Blackout Kick", cpm: 6.7, hastedCPM: true },
         { spell: "Rising Sun Kick", cpm: 6.4, hastedCPM: true }, // Adjust CPM dynamically and then lower.

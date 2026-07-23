@@ -293,19 +293,6 @@
             "spellType": "damage"
         }
     ],
-    "Moonfire": [
-        {
-            "coeff": 0.212,
-            "aura": 3.078,
-            "expectedOverheal": 0.2,
-            "secondaries": [
-                "crit",
-                "versatility",
-                "mastery"
-            ],
-            "spellType": "energize"
-        }
-    ],
     "Grove Guardians": [
         {
             "displayInfo": {
