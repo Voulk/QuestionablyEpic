@@ -7,12 +7,11 @@
                 "spellName": "Enveloping Mist",
                 "cat": "heal"
             },
-            "mastery": true,
             "castTime": 2.0,
             "school": "nature",
             "cost": 3.6,
             "coeff": 1.248,
-            "aura": 0.87,
+            "aura": 0.8,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -29,7 +28,7 @@
         },
         {
             "coeff": 7.488,
-            "aura": 0.87,
+            "aura": 0.8,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -47,7 +46,6 @@
                 "cat": "heal"
             },
             "castTime": 0.0,
-            "mastery": true,
             "school": "nature",
             "cost": 1.8,
             "cooldownData": {
@@ -65,7 +63,7 @@
             ],
             "spellType": "buff",
             "buffType": "heal",
-            "buffDuration": 20,
+            "buffDuration": 0,
             "tickData": {
                 "tickRate": 2.0,
                 "canPartialTick": true,
@@ -81,12 +79,11 @@
                 "spellName": "Vivify",
                 "cat": "heal"
             },
-            "mastery": true,
             "castTime": 1.5,
             "school": "nature",
             "cost": 3.0,
             "coeff": 2.58,
-            "aura": 1.67,
+            "aura": 1.536,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -104,11 +101,10 @@
                 "cat": "heal"
             },
             "castTime": 2.0,
-            "mastery": true,
             "school": "nature",
             "cost": 3.0,
             "coeff": 4.1696,
-            "aura": 0.87,
+            "aura": 0.8,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -176,7 +172,7 @@
             "school": "nature",
             "cost": 1.25,
             "cooldownData": {
-                "cooldown": 10.0,
+                "cooldown": 12.0,
                 "hasted": false,
                 "charges": 1,
                 "maxCharges": 1
@@ -218,7 +214,7 @@
             "school": "physical",
             "cost": 2.5,
             "cooldownData": {
-                "cooldown": 10.0,
+                "cooldown": 12.0,
                 "hasted": false,
                 "charges": 1,
                 "maxCharges": 1
@@ -322,6 +318,26 @@
                 "canPartialTick": true,
                 "tickOnCast": false
             }
+        }
+    ],
+    "Jadefire Stomp": [
+        {
+            "displayInfo": {
+                "id": 1248815,
+                "icon": "inv_ability_monk_jadefirestomp",
+                "spellName": "Jadefire Stomp",
+                "cat": "damage"
+            },
+            "castTime": 0.0,
+            "school": "nature",
+            "cost": 0.0,
+            "coeff": 1.04,
+            "aura": 15.2,
+            "secondaries": [
+                "crit",
+                "versatility"
+            ],
+            "spellType": "damage"
         }
     ]
 }
