@@ -63,7 +63,7 @@
             ],
             "spellType": "buff",
             "buffType": "heal",
-            "buffDuration": 0,
+            "buffDuration": 20,
             "tickData": {
                 "tickRate": 2.0,
                 "canPartialTick": true,
