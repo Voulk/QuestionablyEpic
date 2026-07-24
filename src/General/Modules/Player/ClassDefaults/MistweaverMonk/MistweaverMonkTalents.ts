@@ -296,7 +296,7 @@ points: number) {
 }},
 
 /* Rising Sun Kick's damage is increased by your Mastery rating and Thunder Focus Tea resets its cooldown. */
-"Morning Breeze": {id: 1277302, values: [20.0],  points: 0, maxPoints: 1, icon: "expansionicon_mistsofpandaria", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: any, 
+"Morning Breeze": {id: 1277302, values: [8.0],  points: 0, maxPoints: 1, icon: "expansionicon_mistsofpandaria", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: any, 
 points: number) {
     const slice = spellDB["Rising Sun Kick"][0];
     if (!slice.statMods) slice.statMods = {};
