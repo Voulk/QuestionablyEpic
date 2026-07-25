@@ -1,5 +1,5 @@
 import React from "react";
-import { raidStyles } from "./PanelStyles";
+import { raidStyles, sharedAccordionStyles, sharedAccordionSummaryStyles, sharedAccordionDetailsStyles } from "./PanelStyles";
 import { Typography, Grid, Divider, AppBar, Tabs, Tab } from "@mui/material";
 import ItemUpgradeCard from "./ItemUpgradeCard";
 import "./Panels.css";
@@ -116,18 +116,18 @@ export default function RaidGearContainer(props) {
               <AppBar
                 position="static"
                 style={{
-                  backgroundColor: "#000",
-                  borderRadius: "4px 4px 4px 4px",
+                  background: "linear-gradient(180deg, rgba(12, 14, 18, 0.96) 0%, rgba(22, 25, 32, 0.92) 100%)",
+                  borderRadius: 12,
                 }}
-                elevation={1}
+                elevation={0}
               >
                 <Tabs
                   value={tabvalue}
                   onChange={handleTabChange}
                   aria-label="simple tabs example"
                   variant="fullWidth"
-                  style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.22)" }}
-                  TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
+                  style={{ borderRadius: 12, border: "1px solid rgba(255, 255, 255, 0.12)" }}
+                  TabIndicatorProps={{ style: { backgroundColor: "#F2BF59", height: 3, borderRadius: 999 } }}
                 >
                   {raidList.map((raidID, index) => (
                     <Tab key={raidID} className={getRaidHeaderClass(raidID)} label={getTranslatedRaidName(raidID)} {...a11yProps(index)} />
@@ -145,16 +145,26 @@ export default function RaidGearContainer(props) {
                         {encounterDB[raidID].bossOrder
                           //.filter((key) => key === raidID)
                           .map((key, i) => (
-                            <UFAccordion key={encounterDB[raidID].bosses[key] + "-accordian" + i} defaultExpanded={true} elevation={0} style={{ backgroundColor: "rgba(255, 255, 255, 0.12)" }}>
-                              <UFAccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header" style={{ verticalAlign: "middle" }}>
+                            <UFAccordion
+                              key={encounterDB[raidID].bosses[key] + "-accordian" + i}
+                              defaultExpanded={true}
+                              elevation={0}
+                              style={sharedAccordionStyles}
+                            >
+                              <UFAccordionSummary
+                                expandIcon={<ExpandMoreIcon />}
+                                aria-controls="panel1a-content"
+                                id="panel1a-header"
+                                style={sharedAccordionSummaryStyles}
+                              >
                                 <Typography
                                   variant="h6"
                                   color="primary"
                                   align="left"
                                   style={{
-                                    // backgroundColor: "#35383e",
-                                    borderRadius: "4px 4px 0px 0px",
                                     display: "flex",
+                                    alignItems: "center",
+                                    gap: 8,
                                   }}
                                 >
                                   {bossHeaders(key, { height: 36, verticalAlign: "middle" }, "UpgradeFinder")}
@@ -167,7 +177,7 @@ export default function RaidGearContainer(props) {
                                   Upgrades
                                 </Typography>
                               </UFAccordionSummary>
-                              <AccordionDetails style={{ backgroundColor: "#191c23" }}>
+                              <AccordionDetails style={sharedAccordionDetailsStyles}>
                                 <Grid item xs={12} sm container direction="row" spacing={1}>
                                   <Grid item xs={12} container spacing={1}>
                                     <Grid item xs={12}>
@@ -176,17 +186,13 @@ export default function RaidGearContainer(props) {
                                         color="primary"
                                         align="left"
                                         style={{
-                                          backgroundColor: "#35383e",
-                                          borderRadius: 4,
+                                          background: "rgba(255, 255, 255, 0.06)",
+                                          borderRadius: 8,
+                                          padding: "6px 10px",
                                         }}
                                       >
-                                        <div style={{ marginLeft: 8 }}>
-                                          {getDifficultyName(firstDifficulty)} -{" "}
-                                          {
-                                            getNumUpgrades(itemDifferentials, raidID, key, firstDifficulty)
-                                          }{" "}
-                                          Upgrades
-                                        </div>
+                                        {getDifficultyName(firstDifficulty)} -{" "}
+                                        {getNumUpgrades(itemDifferentials, raidID, key, firstDifficulty)} Upgrades
                                       </Typography>
                                     </Grid>
 
@@ -203,17 +209,13 @@ export default function RaidGearContainer(props) {
                                           color="primary"
                                           align="left"
                                           style={{
-                                            backgroundColor: "#35383e",
-                                            borderRadius: 4,
+                                            background: "rgba(255, 255, 255, 0.06)",
+                                            borderRadius: 8,
+                                            padding: "6px 10px",
                                           }}
                                         >
-                                          <div style={{ marginLeft: 8 }}>
-                                            {getDifficultyName(secondDifficulty)} -{" "}
-                                            {
-                                              getNumUpgrades(itemDifferentials, raidID, key, secondDifficulty)
-                                            }{" "}
-                                            Upgrades
-                                          </div>
+                                          {getDifficultyName(secondDifficulty)} -{" "}
+                                          {getNumUpgrades(itemDifferentials, raidID, key, secondDifficulty)} Upgrades
                                         </Typography>
                                       </Grid>
 
