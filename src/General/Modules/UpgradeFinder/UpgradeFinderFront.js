@@ -152,21 +152,23 @@ const sendReport = (shortReport) => {
 /* ---------------------------- Burning Crusade Dungeon Difficulties ---------------------------- */
 // const burningCrusadeDungeonDifficulty = ["Normal", "Heroic"];
 
+
+
 const mythicPlusLevels = [
-  { value: 246, label: "M0" },
-  { value: 250, label: "+2/3" },
-  { value: 253, label: "+4" },
-  { value: 256, label: "+5" },
-  { value: 259, label: "+6/7" },
-  { value: 263, label: "+8/9" },
-  { value: 266, label: "+10" },
-  { value: 269, label: "Vault" },
-  { value: 272, label: "" },
-  { value: 276, label: "" },
-  { value: 279, label: "" },
-  { value: 282, label: "" },
-  { value: 285, label: "" },
-  { value: 289, label: "" },
+  { value: 292, label: "M0" },
+  { value: 295, label: "+2/3" },
+  { value: 298, label: "+4" },
+  { value: 302, label: "+5" },
+  { value: 305, label: "+6/7" },
+  { value: 308, label: "+8/9" },
+  { value: 311, label: "+10" },
+  { value: 315, label: "Vault" },
+  { value: 318, label: "" },
+  { value: 321, label: "" },
+  { value: 328, label: "" },
+  { value: 334, label: "" },
+  // { value: 285, label: "" },
+  // { value: 289, label: "" },
 ]
 
 const getSessionStorageOrDefault = (key, defaultValue) => {
