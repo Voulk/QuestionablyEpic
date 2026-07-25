@@ -593,7 +593,9 @@ const heroTalents: TalentTree = {
 
     /* Ancient Teachings transfers an additional X% damage to healing. */
     "Meditative Focus": {id: 1271105, values: [50.0, 50.0, 1000.0, 100.0, 250.0], heroTree: "Master of Harmony", points: 0, maxPoints: 1, icon: "inv_misc_herb_mountainsilversage", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: any, points: number) {
-
+        ["Rising Sun Kick", "Blackout Kick", "Tiger Palm", "Crackling Jade Lightning"].forEach(spellName => {
+            spellDB[spellName][0].damageToHeal += (talentValues[0] / 100);
+        })
     }},
 
     /* When Aspect of Harmony heals, it has a chance to spread to a nearby ally. When you directly heal an affected target, it has a chance to intensify, withdrawing additional vitality to increase its effect by up to 20%. Vivify no longer contributes vitality, instead drawing on available vitality to increase healing done by up to 100%. Vitality stored by other abilities is increased by 50%. */
