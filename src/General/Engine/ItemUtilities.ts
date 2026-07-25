@@ -604,6 +604,7 @@ export function getItemIcon(id: number, gameType = "Retail") {
   if (item !== "" && "icon" in item) return process.env.PUBLIC_URL + "/Images/Icons/" + item.icon + ".jpg";
   else if (item !== "") {
     reportError("", "ItemUtilities", "Icon not found for ID", id.toString());
+    console.error("Icon missing");
     return process.env.PUBLIC_URL + "/Images/Icons/missing.jpg";
   }
 }

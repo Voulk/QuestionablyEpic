@@ -53,7 +53,7 @@ export const UpgradeFinderStyles = makeStyles((theme) => ({
     borderRadius: 12,
   },
   raidHeaderStyle: {
-    backgroundImage: `url(${require("Images/Bosses/Amirdrassil/AmirdrassilRaid.png")})`,
+    backgroundImage: `url(${require("Images/Bosses/VenomousAbyssRaid.jpg")})`,
     ...commonTabStyles,
   },
   classicRaidHeaderStyle: {
@@ -62,7 +62,7 @@ export const UpgradeFinderStyles = makeStyles((theme) => ({
     borderRadius: "4px 0px 0px 4px",
   },
   mythicPlusHeaderStyle: {
-    backgroundImage: `url(${require("../../../Images/Bosses/MythicPlus.png")})`,
+    backgroundImage: `url(${require("../../../Images/Bosses/DungeonsIconSeasonTwo.png")})`,
     ...commonTabStyles,
   },
   dungeonBCPlusHeaderStyle: {
