@@ -7,6 +7,16 @@ const commonTabStyles = {
   color: "#fff",
   backgroundPosition: "center",
   fontSize: "1.1rem",
+  transition: "filter 160ms ease, opacity 160ms ease",
+  opacity: 0.82,
+  "&.Mui-selected": {
+    opacity: 1,
+    filter: "saturate(1.08) brightness(1.05)",
+  },
+  "&:hover": {
+    opacity: 0.94,
+    filter: "brightness(1.04)",
+  },
 };
 
 const commonHeadertyles = {
@@ -32,6 +42,15 @@ export const UpgradeFinderStyles = makeStyles((theme) => ({
   },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
+  },
+  reportTabShell: {
+    background: "linear-gradient(180deg, rgba(12, 14, 18, 0.96) 0%, rgba(22, 25, 32, 0.92) 100%)",
+    borderRadius: 12,
+    border: "1px solid rgba(255, 255, 255, 0.12)",
+    overflow: "hidden",
+  },
+  reportTabs: {
+    borderRadius: 12,
   },
   raidHeaderStyle: {
     backgroundImage: `url(${require("Images/Bosses/Amirdrassil/AmirdrassilRaid.png")})`,

@@ -147,7 +147,7 @@ export default function RaidGearContainer(props) {
                           .map((key, i) => (
                             <UFAccordion
                               key={encounterDB[raidID].bosses[key] + "-accordian" + i}
-                              defaultExpanded={true}
+                              defaultExpanded={false}
                               elevation={0}
                               style={sharedAccordionStyles}
                             >

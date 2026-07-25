@@ -27,17 +27,39 @@ const useStyles = makeStyles((theme) => ({
     width: 150,
     height: 50,
   },
-  red: {},
+  difficultyToggle: {
+    height: 42,
+    width: "100%",
+    borderRadius: 5,
+    border: "1px solid rgba(255, 255, 255, 0.16)",
+    background: "linear-gradient(180deg, rgba(34, 38, 48, 0.95) 0%, rgba(26, 30, 38, 0.98) 100%)",
+    color: "rgba(255, 255, 255, 0.88)",
+    textTransform: "none",
+    fontWeight: 600,
+    letterSpacing: 0.2,
+    transition: "border-color 160ms ease, background 160ms ease, transform 120ms ease",
+    "&:hover": {
+      background: "linear-gradient(180deg, rgba(40, 45, 56, 0.96) 0%, rgba(30, 35, 44, 0.99) 100%)",
+      borderColor: "rgba(242, 191, 89, 0.3)",
+      transform: "translateY(-1px)",
+    },
+  },
   labels: { fontSize: 12 },
-  selectedRed: {
-    "&$red": {
+  difficultyToggleSelected: {
+    "&$difficultyToggle": {
       color: "#000",
-      backgroundColor: "#F2BF59",
+      background: "linear-gradient(180deg, rgba(242, 191, 89, 0.98) 0%, rgba(214, 165, 71, 0.98) 100%)",
+      borderColor: "rgba(242, 191, 89, 0.95)",
+      boxShadow: "0 0 0 1px rgba(242, 191, 89, 0.25)",
     },
-    "&$red:hover": {
+    "&$difficultyToggle:hover": {
       color: "#000",
-      backgroundColor: "rgb(169, 133, 62)",
+      background: "linear-gradient(180deg, rgba(235, 182, 77, 0.98) 0%, rgba(202, 153, 61, 0.98) 100%)",
     },
+  },
+  difficultyGrid: {
+    marginTop: 10,
+    padding: "0px 6px 4px 6px",
   },
   header: {
     [theme.breakpoints.down("md")]: {
@@ -344,12 +366,6 @@ export default function UpgradeFinderFront(props) {
     }
   };
 
-  const [selected, setSelected] = React.useState(raidDifficulty.reduce((acc, curr) => ({ ...acc, [curr]: false }), {}));
-
-  const toggleSelected = (key) => {
-    setSelected((prev) => ({ ...prev, [key]: !prev[key] }));
-  };
-
   const unleashUpgradeFinder = () => {
     if (gameType === "Retail") {
 
@@ -441,29 +457,23 @@ export default function UpgradeFinderFront(props) {
                   </Grid>
                 </Grid>
 
-                <Grid container justifyContent="center" spacing={1} columns={8}>
+                <Grid container justifyContent="center" spacing={1} columns={8} className={classes.difficultyGrid}>
                   {raidDifficulty.map((key, i) => (
                     <Grid item xs={2} key={i} style={{ order: i % 2 === 0 ? 0 : 1 }}>
-                      <Grid container justifyContent="center" spacing={1}>
-                        <Grid item xs={12}>
-                          <ToggleButton
-                            classes={{
-                              root: classes.red,
-                              selected: classes.selectedRed,
-                            }}
-                            value="check"
-                            fullWidth
-                            selected={ufRaidDifficulty.includes(i)}
-                            style={{ height: 40 }}
-                            onChange={() => {
-                              toggleSelected(key);
-                              setRaidDifficulty(i);
-                            }}
-                          >
-                            {t("RaidDifficulty." + key)}
-                          </ToggleButton>
-                        </Grid>
-                      </Grid>
+                      <ToggleButton
+                        classes={{
+                          root: classes.difficultyToggle,
+                          selected: classes.difficultyToggleSelected,
+                        }}
+                        value="check"
+                        fullWidth
+                        selected={ufRaidDifficulty.includes(i)}
+                        onChange={() => {
+                          setRaidDifficulty(i);
+                        }}
+                      >
+                        {t("RaidDifficulty." + key)}
+                      </ToggleButton>
                     </Grid>
                   ))}
                 </Grid>
