@@ -156,11 +156,11 @@ function processItem(line, player, contentType, autoUpgradeItem = false) {
     const maxUpgrades = getItemProp(itemID, "maxUpgrades", "Classic")
     let baseRarity = getItemProp(itemID, "quality", "Classic");
     if (!(itemID in exceptionList)) {
-      if (itemLevel == 541 || itemLevel == 528) {
+      /*if (itemLevel == 541 || itemLevel == 528) {
         // Titanforged items
         itemLevel += 4 * upgradeLevel
-      }
-      else if (itemLevel > 520 && maxUpgrades) itemLevel += (maxUpgrades / 2) * upgradeLevel;
+      }*/
+      if (itemLevel > 520 && maxUpgrades) itemLevel += (maxUpgrades / 2) * upgradeLevel;
       else if (itemLevel < 520 && maxUpgrades) itemLevel += (baseRarity >= 4) ? (4 * upgradeLevel) : 8;
     }
 
