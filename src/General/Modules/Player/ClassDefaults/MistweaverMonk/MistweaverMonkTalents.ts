@@ -161,7 +161,7 @@ const specTalents: TalentTree = {
 
 /* Rising Sun Kick now kicks up a Gust of Mist to heal X $Lally:allies; within $446264A2 yds for $191894s1.     Spinning Crane Kick and Blackout Kick have a chance to kick up a Gust of Mist to heal Y $Lally:allies; within $446264A2 yds for $191894s1.  */
 "Crane Style": {id: 446260, values: [2.0, 1.0],  points: 0, maxPoints: 1, icon: "ability_monk_mightyoxkick", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: any, points: number) {
-    console.log("TALENT ENABLED");
+
 }},
 
 /* You consume a healing elixir when you drop below X% health or generate excess healing elixirs, instantly healing you for $428439s1% of your maximum health.    You generate Y healing elixir every $t2 
@@ -240,7 +240,7 @@ number) {
 
 /* When Life Cocoon expires, it releases a burst of mist that restores $399230s2 health to Z nearby allies. */
 "Burst of Life": {id: 399226, values: [3.0],  points: 0, maxPoints: 1, icon: "ability_rogue_imrovedrecuperate", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: any, points: number) {
-
+    spellDB["Life Cocoon"].push(spellDB["Burst of Life"][0]);
 }},
 
 /* While channeling Mana Tea you exhale the breath of Yu'lon, healing up to X allies within $388044a1 yards for $388044s1 every ${$388040t1}.1 sec. */
@@ -272,7 +272,9 @@ points: number) {
 /* The healing of Gusts of Mist caused by Renewing Mist is increased by X%.  */
 "Amplified Rush": {id: 1271431, values: [100.0],  points: 0, maxPoints: 1, icon: "ability_monk_rushingjadewind", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: any, 
 points: number) {
-
+    const renewingMist = spellDB["Renewing Mist"][0];
+    if (renewingMist.gustsValue === undefined) renewingMist.gustsValue = 1;
+    renewingMist.gustsValue *= (1 + talentValues[0] / 100);
 }},
 
 /* Renewing Mist now has ${$s5+$m1} charges and reduces the remaining cooldown of Rising Sun Kick by ${Z/1000}.1 sec.    Rising Sun Kick now reduces the remaining cooldown of Renewing Mist by ${$s4/1000}.1 sec. */
@@ -313,7 +315,9 @@ points: number) {
 
 /* Ancient Teachings transfers an additional $388026s2% damage to healing.    Your Stamina is increased by Y%. */
 "Jadefire Teachings": {id: 467293, values: [320.0, 8.0],  points: 0, maxPoints: 1, icon: "inv_misc_book_07", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: any, points: number) {
-
+    ["Rising Sun Kick", "Blackout Kick", "Tiger Palm", "Crackling Jade Lightning"].forEach(spellName => {
+        spellDB[spellName][0].damageToHeal += (talentValues[0] / 100);
+    })
 }},
 
 /* Gust of Mists has a Y% chance to do X% more healing. */

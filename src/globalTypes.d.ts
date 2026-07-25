@@ -40,6 +40,10 @@ type SpellData = {
     customScript?: string; // For spells that are very unique, or that are mostly scripted in game too.
     statMods?: { [key: string]: number };
     targets?: number;
+
+    // Spec specific stuff
+    gustsValue?: number; // Mistweaver Monk mastery effect.
+    damageToHeal?: number; // Used across all specs. Convert damage to healing at this rate.
 }
 
 interface TalentTemplate {

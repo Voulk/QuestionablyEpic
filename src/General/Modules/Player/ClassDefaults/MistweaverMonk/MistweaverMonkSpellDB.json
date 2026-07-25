@@ -339,5 +339,26 @@
             ],
             "spellType": "damage"
         }
+    ],
+    "Burst of Life": [
+        {
+            "displayInfo": {
+                "id": 399230,
+                "icon": "ability_rogue_imrovedrecuperate",
+                "spellName": "Burst of Life",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "school": "nature",
+            "cost": 0.0,
+            "coeff": 8.06,
+            "aura": 0.8,
+            "expectedOverheal": 0.2,
+            "secondaries": [
+                "crit",
+                "versatility"
+            ],
+            "spellType": "heal"
+        }
     ]
 }
