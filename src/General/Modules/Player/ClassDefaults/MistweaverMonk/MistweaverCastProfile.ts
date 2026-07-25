@@ -1,5 +1,5 @@
 import { getCurrentStats, getMastery, getSpellRaw, getStatMult, getCrit, getHaste, deepCopyFunction, hasTalent, getSpellAttribute, getTalentPoints } from "General/Modules/Player/ClassDefaults/Generic/RampBase"
-import { applyRaidBuffs, applyTalents, applyTalentsFromString, completeCastProfile, convertStatPercentages, getSpellThroughput } from "../Generic/ProfileUtilities";
+import { applyRaidBuffs, applyTalents, applyTalentsFromString, compileProfileReportingData, completeCastProfile, convertStatPercentages, getSpellThroughput } from "../Generic/ProfileUtilities";
 import { runHeal, runDamage, MONKCONSTANTS } from "General/Modules/Player/ClassDefaults/MistweaverMonk/MistweaverMonkRamps";
 import {  monkTalents } from "./MistweaverMonkTalents";
 
@@ -334,32 +334,11 @@ export function scoreMonkSet(stats: Stats, playerData: any, settings: PlayerSett
         totalHealing += healingBreakdown["Leech"];
     }
 
-    const result = { damage: totalDamage / 60, healing: totalHealing / 60 }
+    const result = { damage: totalDamage / 60, healing: totalHealing / 60, spellBreakdowns: {healingBreakdown: [], damageBreakdown: []} }
 
 
     if (reporting) {
-        const sortedEntries = Object.entries(healingBreakdown)
-                            .sort((a, b) => b[1] - a[1])
-                           // .map(([key, value]) => `${key}: ${Math.round(value / 60).toLocaleString()} (${((value / totalHealing * 10000) / 100).toFixed(2)}%) - CPM: ${Math.round(100*castProfile.reduce((acc, spell) => acc + ((spell.cpm && (spell.label ? spell.label === key : spell.spell === key)) ? spell.cpm : 0), 0))/100}`);
-        const spellBreakdown = []
-        sortedEntries.forEach(entry => {
-            const realSpellName = castProfile.find(spell => spell.label === entry[0] || spell.spell === entry[0])?.spell || entry[0]
-
-            spellBreakdown.push({
-                spellName: entry[0], 
-                hps: Math.round(entry[1] / 60), 
-                percentHealing: ((entry[1] / totalHealing * 10000) / 100).toFixed(2), 
-                overhealing: 0.25,
-                cpm: Math.round(100*castProfile.reduce((acc, spell) => acc + ((spell.cpm && (spell.label ? spell.label === entry[0] : spell.spell === entry[0])) ? spell.cpm : 0), 0))/100,
-                icon: spellDB[realSpellName] ? spellDB[realSpellName][0].displayInfo.icon : null
-
-
-            });
-        })
-        
-        //console.log(spellBreakdown);
-        console.log(reportingData);
-        result.spellBreakdown = spellBreakdown;
+        result.spellBreakdowns = compileProfileReportingData(healingBreakdown, damageBreakdown, castProfile, spellDB, totalHealing, totalDamage)
     }
 
     return result;

@@ -116,6 +116,51 @@ export const convertStatPercentages = (statProfile, statBonuses, spec, masteryEf
     return stats;
 }
 
+export const compileProfileReportingData = (healingEntries, damageEntries, castProfile, spellDB, totalHealing, totalDamage) => {
+
+    const spellBreakdowns = {healingBreakdown: [], damageBreakdown: []};
+
+    const sortedEntries = Object.entries(healingEntries)
+                        .sort((a, b) => b[1] - a[1])
+                        // .map(([key, value]) => `${key}: ${Math.round(value / 60).toLocaleString()} (${((value / totalHealing * 10000) / 100).toFixed(2)}%) - CPM: ${Math.round(100*castProfile.reduce((acc, spell) => acc + ((spell.cpm && (spell.label ? spell.label === key : spell.spell === key)) ? spell.cpm : 0), 0))/100}`);
+    const healingBreakdown = []
+    sortedEntries.forEach(entry => {
+        const realSpellName = castProfile.find(spell => spell.label === entry[0] || spell.spell === entry[0])?.spell || entry[0]
+
+        healingBreakdown.push({
+            spellName: entry[0], 
+            hps: Math.round(entry[1] / 60), 
+            percentHealing: ((entry[1] / totalHealing * 10000) / 100).toFixed(2), 
+            overhealing: 0.25,
+            cpm: Math.round(100*castProfile.reduce((acc, spell) => acc + ((spell.cpm && (spell.label ? spell.label === entry[0] : spell.spell === entry[0])) ? spell.cpm : 0), 0))/100,
+            icon: spellDB[realSpellName] ? spellDB[realSpellName][0].displayInfo.icon : null
+
+
+        });
+    })
+
+    // DPS
+    const sortedDamageEntries = Object.entries(damageEntries)
+                        .sort((a, b) => b[1] - a[1])
+    const damageBreakdown = []
+    sortedDamageEntries.forEach(entry => {
+        const realSpellName = castProfile.find(spell => spell.label === entry[0] || spell.spell === entry[0])?.spell || entry[0]
+        damageBreakdown.push({
+            spellName: entry[0], 
+            dps: Math.round(entry[1] / 60), 
+            percentDamage: ((entry[1] / totalDamage * 10000) / 100).toFixed(2), 
+            cpm: Math.round(100*castProfile.reduce((acc, spell) => acc + ((spell.cpm && (spell.label ? spell.label === entry[0] : spell.spell === entry[0])) ? spell.cpm : 0), 0))/100,
+            icon: spellDB[realSpellName] ? spellDB[realSpellName][0].displayInfo.icon : null
+        });
+    });
+    
+    //console.log(spellBreakdown);
+    spellBreakdowns.healingBreakdown = healingBreakdown;
+    spellBreakdowns.damageBreakdown = damageBreakdown;
+
+    return spellBreakdowns;
+}
+
 export const runProfileSpell = (fullSpell, statPercentages, spec, settings, flags = {}) => {
     const throughput = {damage: 0, healing: 0};
 
@@ -132,6 +177,7 @@ export const runProfileSpell = (fullSpell, statPercentages, spec, settings, flag
     //console.log(throughput);
     return throughput;
 }
+
 
 export const runProfileSlice = (fullSpell, statPercentages, spec, settings, flags = {}) => {
     const throughput = {damage: 0, healing: 0};

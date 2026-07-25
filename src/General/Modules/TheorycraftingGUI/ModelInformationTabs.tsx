@@ -3,7 +3,7 @@ import TCPanel from "./TCPanel";
 import SpellBreakdown from "./SpellBreakdownPanel";
 import TalentList from "./SelectedTalentsPanel";
 
-const tabs = ['Healing Breakdown', 'Talents Selected', 'Unused Panel'] as const;
+const tabs = ['Healing Breakdown', 'Damage Breakdown', 'Talents Selected', 'Unused Panel'] as const;
 type Tab = typeof tabs[number];
 
 interface ModelInformationTabsProps {
@@ -49,7 +49,12 @@ export default function ModelInformationTabs({ activeResult, selectedTalents }: 
 
             {activeTab === 'Healing Breakdown' && (
                 <TCPanel title="">
-                    <SpellBreakdown rows={activeResult.spellBreakdown} activeResult={activeResult} />
+                    <SpellBreakdown rows={activeResult.spellBreakdowns.healingBreakdown} activeResult={activeResult} tag="healing" />
+                </TCPanel>
+            )}
+            {activeTab === 'Damage Breakdown' && (
+                <TCPanel title="">
+                    <SpellBreakdown rows={activeResult.spellBreakdowns.damageBreakdown} activeResult={activeResult} tag="damage" />
                 </TCPanel>
             )}
             {activeTab === 'Talents Selected' && (

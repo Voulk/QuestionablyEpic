@@ -13,13 +13,16 @@ export interface SpellRow {
   icon?: string;
   cpm: number;
   overhealing: number;
-  hps: number;
-  percentHealing: string;
+  hps?: number;
+  dps?: number;
+  percentHealing?: string;
+  percentDamage?: string;
 }
 
 export interface SpellBreakdownProps {
   rows: SpellRow[];
   activeResult?: any;
+  tag: string;
 }
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -62,7 +65,7 @@ const sxTdNumeric = {
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
-const SpellBreakdown: React.FC<SpellBreakdownProps> = ({ rows, activeResult }) => {
+const SpellBreakdown: React.FC<SpellBreakdownProps> = ({ rows, activeResult, tag }) => {
   // const totalHps = rows.reduce((sum, row) => sum + (Number(row.hps) || 0), 0);
 
   return (
@@ -72,8 +75,8 @@ const SpellBreakdown: React.FC<SpellBreakdownProps> = ({ rows, activeResult }) =
           <TableHead>
             <TableRow>
               <TableCell sx={sxTh}>Spell Name</TableCell>
-              <TableCell sx={{ ...sxTh, textAlign: "right" }}>HPS</TableCell>
-              <TableCell sx={{ ...sxTh, textAlign: "right" }}>% Healing</TableCell>
+              <TableCell sx={{ ...sxTh, textAlign: "right" }}>{tag === "healing" ? "HPS" : "DPS"}</TableCell>
+              <TableCell sx={{ ...sxTh, textAlign: "right" }}>{tag === "healing" ? "% Healing" : "% Damage"}</TableCell>
               <TableCell sx={{ ...sxTh, textAlign: "right" }}>CPM</TableCell>
               <TableCell sx={{ ...sxTh, textAlign: "right" }}>Overhealing</TableCell>
 
@@ -102,10 +105,10 @@ const SpellBreakdown: React.FC<SpellBreakdownProps> = ({ rows, activeResult }) =
                     {row.spellName}
                   </div>
                 </TableCell>
-                <TableCell sx={sxTdNumeric}>{fmtInt(row.hps)}</TableCell>
-                <TableCell sx={sxTdNumeric}>{row.percentHealing}</TableCell>
+                <TableCell sx={sxTdNumeric}>{fmtInt(tag === "healing" ? row.hps : row.dps)}</TableCell>
+                <TableCell sx={sxTdNumeric}>{tag === "healing" ? row.percentHealing : row.percentDamage}</TableCell>
                 <TableCell sx={sxTdNumeric}>{fmt2(row.cpm)}</TableCell>
-                <TableCell sx={sxTdNumeric}>{fmt2(row.overhealing)}</TableCell>
+                <TableCell sx={sxTdNumeric}>{fmt2(row.overhealing ? row.overhealing : 0)}</TableCell>
 
               </TableRow>
             ))}

@@ -21,14 +21,17 @@ export default function TheorycraftingGUI(props) {
     const contentType = useSelector((state: RootState) => state.contentType);
     const profiles = player.getAllModels(contentType);
 
-    const [activeResult, setActiveResult] = useState({healing: 1,
-        spellBreakdown: [
+    const [activeResult, setActiveResult] = useState({healing: 1, damage: 1,
+        spellBreakdowns: {
+            healingBreakdown: [
             /*{ spellName: "Healing Wave",    cpm: 4.21, overhealing: 0.18, hps: 12450, percentHealing: "34.2%", icon: "spell_nature_healingwavelesser" },
             { spellName: "Chain Heal",      cpm: 2.87, overhealing: 0.31, hps: 9870,  percentHealing: "27.1%", icon: "inv_1115_shaman_chainheal" },
             { spellName: "Riptide",         cpm: 6.10, overhealing: 0.09, hps: 7320,  percentHealing: "20.1%", icon: "spell_nature_riptide" },
             { spellName: "Healing Stream",  cpm: 1.00, overhealing: 0.22, hps: 4100,  percentHealing: "11.3%", icon: "inv_spear_04" },
             { spellName: "Healing Tide Totem",    cpm: 0.33, overhealing: 0.05, hps: 2680,  percentHealing: "7.3%", icon: "ability_shaman_healingtide"  },*/
-        ]
+            ],
+            damageBreakdown: []
+        }
     });
     const [statChart, setStatChart] = useState([]);
     const [currentWeights, setCurrentWeights] = useState({ haste: 0.2, crit: 0.2, mastery: 0.2, versatility: 0.2, intellect: 1 });
