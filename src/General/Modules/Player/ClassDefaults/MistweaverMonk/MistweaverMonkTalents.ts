@@ -1,4 +1,4 @@
-import { buffSpellPerc } from "../Generic/TalentBase"
+import { buffSpellPerc, adjBuffDurationFlat, adjTargetCount, modCastTimeFlat, cooldownAdjFlat } from "../Generic/TalentBase"
 
 /**
  * A list of talents to turn on
@@ -78,7 +78,9 @@ or $132463s1 healing. Bounces up to $115098s1 times to targets within $132466a2 
 
 /* Vivify and Sheilun's Gift trigger a Gust of Mist on yourself. */
 "Mist Caller": {id: 1266811, values: [0.0],  points: 0, maxPoints: 1, icon: "ability_monk_serenity", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentValues: any, points: number) {
-
+    for (const spellName of ["Vivify", "Sheilun's Gift"]) {
+        spellDB[spellName][0].gustsValue = 1;
+    }
 }},
 
 /* Find resilience in the flow of chi in battle, gaining a magic absorb shield for ${X/10}.1% of your max health every $t sec in combat, stacking up to Y%. */
@@ -161,7 +163,15 @@ const specTalents: TalentTree = {
 
 /* Rising Sun Kick now kicks up a Gust of Mist to heal X $Lally:allies; within $446264A2 yds for $191894s1.     Spinning Crane Kick and Blackout Kick have a chance to kick up a Gust of Mist to heal Y $Lally:allies; within $446264A2 yds for $191894s1.  */
 "Crane Style": {id: 446260, values: [2.0, 1.0],  points: 0, maxPoints: 1, icon: "ability_monk_mightyoxkick", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: any, points: number) {
-
+    for (const spellName of ["Rising Sun Kick", "Rushing Wind Kick"]) {
+        spellDB[spellName][0].gustsValue = talentValues[0];
+    }
+    for (const spellName of ["Spinning Crane Kick", "Blackout Kick"]) {
+        // 10% chance, roughly, per main instance of damage
+        // ie Spinning Crane Kick ticks but not individual hits
+        // Blackout Kick hits but not cleaves
+        spellDB[spellName][0].gustsValue = talentValues[1] * 0.1;
+    }
 }},
 
 /* You consume a healing elixir when you drop below X% health or generate excess healing elixirs, instantly healing you for $428439s1% of your maximum health.    You generate Y healing elixir every $t2 
@@ -184,12 +194,15 @@ number) {
 
 /* The cooldown of $?s388615[Restoral][Revival] is reduced by ${Y/-1000} sec and $?s388615[Restoral][Revival] healing increased by X%. */
 "Uplifted Spirits": {id: 388551, values: [15.0, -30000.0],  points: 0, maxPoints: 1, icon: "inv_helm_leather_raidmonkgoblin_d_01", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: any, points: number) {
-
+    buffSpellPerc(spellDB["Revival"], talentValues[0]);
+    cooldownAdjFlat(spellDB["Revival"], talentValues[1]);
 }},
 
 /* Soothing Mist and Crackling Jade Lightning may be channeled while moving, but movement speed is reduced by $1268958s1% while channeling.    $?s399491[Sheilun's Gift][Vivify] healing increased by X% and Renewing Mist's healing is increased by Y%. */
 "Way of the Serpent": {id: 1243155, values: [15.0, 30.0],  points: 0, maxPoints: 1, icon: "monk_stance_wiseserpent", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: any, points: number) {
-
+    buffSpellPerc(spellDB["Sheilun's Gift"], talentValues[0]);
+    buffSpellPerc(spellDB["Vivify"], talentValues[0]);
+    buffSpellPerc(spellDB["Renewing Mist"], talentValues[1]);
 }},
 
 /* Tiger Palms strike twice, Blackout Kicks strike an additional $s5 targets at $s6% effectiveness, and Spinning Crane Kick heals $s4 nearby allies for X% of the damage done. */
@@ -233,9 +246,9 @@ number) {
 }},
 
 /* Reduces the cooldown of Life Cocoon by ${$m1/-1000} sec. */
-"Chrysalis": {id: 202424, values: [-45000.0],  points: 0, maxPoints: 1, icon: "ability_monk_domeofmist", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: any, points: 
+"Chrysalis": {id: 202424, values: [-45000.0],  points: 0, maxPoints: 1, icon: "ability_monk_domeofmist", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: any, points:
 number) {
-
+    cooldownAdjFlat(spellDB["Life Cocoon"], talentValues[0]);
 }},
 
 /* When Life Cocoon expires, it releases a burst of mist that restores $399230s2 health to Z nearby allies. */
@@ -250,7 +263,7 @@ number) {
 
 /* Increases Enveloping Mist's duration by ${$m2/1000} sec and its healing bonus by X%. */
 "Mist Wrap": {id: 197900, values: [10.0, 1000.0],  points: 0, maxPoints: 1, icon: "ability_monk_pathofmists", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: any, points: number) {
-
+    adjBuffDurationFlat(spellDB["Enveloping Mist"], talentValues[1]);
 }},
 
 /* When activated, Yu'lon and Chi-Ji apply Chi Cocoons to $406139s3 targets within $406139r yds, absorbing $<newshield> damage for $406139d.    Chi-Ji grants $s4 stacks of Teachings of the Monastery when invoked.    Yu'lon reduces the cast speed of Enveloping Mist by $322118s6%. */
@@ -264,9 +277,9 @@ number) {
 }},
 
 /* Allies with Renewing Mist receive X% more healing from you and Renewing Mist's duration is increased by ${Y/1000} sec. */
-"Lotus Infusion": {id: 458431, values: [6.0, 2000.0],  points: 0, maxPoints: 1, icon: "inv_misc_herb_chamlotus", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: any, 
+"Lotus Infusion": {id: 458431, values: [6.0, 2000.0],  points: 0, maxPoints: 1, icon: "inv_misc_herb_chamlotus", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: any,
 points: number) {
-
+    adjBuffDurationFlat(spellDB["Renewing Mist"], talentValues[1]);
 }},
 
 /* The healing of Gusts of Mist caused by Renewing Mist is increased by X%.  */
@@ -379,7 +392,8 @@ number) {
 
 /* Sheilun's Gift heals X additional allies and its cast time is reduced by ${Y/-1000}.1 sec. */
 "Legacy of Wisdom": {id: 404408, values: [2.0, -500.0],  points: 0, maxPoints: 1, icon: "misc_legionfall_monk", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: any, points: number) {
-
+    adjTargetCount(spellDB["Sheilun's Gift"], talentValues[0]);
+    modCastTimeFlat(spellDB["Sheilun's Gift"], talentValues[1]);
 }},
 
 /* Sheilun's Gift's healing is increased by Z% and its cast time is reduced by Y%, but it now only heals a single ally. */
@@ -394,6 +408,12 @@ talentValues: any, points: number) {
 
 /* Rising Sun Kick damage increased by Y% and Enveloping Mist healing increased by X%. These bonuses are increased by Z% while Spiritfont is active. */
 "Spiritfont2": {id: 1260677,  values: [10.0, 10.0, 50.0], points: 0, maxPoints: 4, icon: "inv12_apextalent_monk_spiritfont", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: any, points: number) {
+    // accrue 10% on points 2/3 each
+    const ranks = Math.max(0, Math.min(points, 3) - 1);
+    if (ranks > 0) {
+        buffSpellPerc(spellDB["Rising Sun Kick"], talentValues[0] * ranks);
+        buffSpellPerc(spellDB["Enveloping Mist"], talentValues[1] * ranks);
+    }
 }},
 
 /* Thunder Focus Tea activates Spiritfont and Spiritfont applies Chi Cocoons at X% effectiveness to allies targeted. */
@@ -429,7 +449,8 @@ const heroTalents: TalentTree = {
 
     /* Rising Sun Kick damage increased by X%. */
     "Yu'lon's Knowledge": {id: 443625, values: [15.0], heroTree: "Conduit of the Celestials", points: 0, maxPoints: 1, icon: "inv_jewelcrafting_jadeserpent", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: any, points: number) {
-
+        buffSpellPerc(spellDB["Rising Sun Kick"], talentValues[0]);
+        buffSpellPerc(spellDB["Rushing Wind Kick"], talentValues[0]);
     }},
 
     /* $?c2[Thunder Focus Tea calls]?c3[Strike of the Windlord and Whirling Dragon Punch call][] upon Yu'lon to increase the cooldown recovery rate of $?c2[Renewing Mist, Rising Sun Kick, Life Cocoon, and Thunder Focus Tea]?c3[Fists of Fury, Strike of the Windlord, Rising Sun Kick, and Whirling Dragon Punch][] by $443421s2% for $?c2[${X/1000} sec]?c3[$443421d][].$?c3[     The channel time of Fists of Fury is reduced by $443421s5% while Yu'lon is active.][] */
