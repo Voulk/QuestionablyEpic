@@ -208,7 +208,7 @@ number) {
 
 /* Tiger Palms strike twice, Blackout Kicks strike an additional $s5 targets at $s6% effectiveness, and Spinning Crane Kick heals $s4 nearby allies for X% of the damage done. */
 "Way of the Crane": {id: 388779, values: [280.0, 100.0, 2.0, 1.0, 2.0, 20.0],  points: 0, maxPoints: 1, icon: "monk_stance_redcrane", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: any, points: number) {
-
+    spellDB["Spinning Crane Kick"][0].damageToHeal = talentValues[0] / 100;
 }},
 
 /* Mana Tea now channels X% faster and generates Y% more Mana. */
@@ -293,7 +293,7 @@ points: number) {
 
 /* Renewing Mist now has ${$s5+$m1} charges and reduces the remaining cooldown of Rising Sun Kick by ${Z/1000}.1 sec.    Rising Sun Kick now reduces the remaining cooldown of Renewing Mist by ${$s4/1000}.1 sec. */
 "Pool of Mists": {id: 173841, values: [1.0, 1.0, 1000.0, 1000.0, 2.0, 1.0],  points: 0, maxPoints: 1, icon: "achievement_zone_sholazar_10", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: any, points: number) {
-
+    spellDB["Renewing Mist"][0].cooldownData!.charges += talentValues[0];
 }},
 
 /* Chi Cocoons now apply Enveloping Mist for ${Y/1000} sec when they expire or are consumed, and Chi-Ji's Gusts of Mists healing is increased by X% and Yu'lon's Soothing Breath healing is increased by Z%. */
@@ -556,7 +556,7 @@ const heroTalents: TalentTree = {
     /* $?a137023[Celestial Brew][Thunder Focus Tea] has X additional charge. */
     "Endless Draught": {id: 450892, values: [1.0, 1.0], heroTree: "Master of Harmony", points: 0, maxPoints: 1, icon: "inv_drink_25_honeytea", select: true, tier: 2, runFunc: function (state: any, spellDB: 
     SpellDB, talentValues: any, points: number) {
-
+        spellDB["Thunder Focus Tea"][0].cooldownData!.charges += talentValues[1];
     }},
 
     /* When cast on yourself, your single-target healing spells heal for X% more and restore an additional (Y% of Spell Power) health over 6 sec. */
