@@ -427,12 +427,14 @@ talentValues: any, points: number) {
 const heroTalents: TalentTree = {
     /* $?c2[The healing of Enveloping Mist, Vivify, and Sheilun's Gift is increased by X%.]?c3[Fists of Fury and Spinning Crane Kick deal Y% more damage.][] */
     "Temple Training": {id: 442743, values: [6.0, 30.0, 6.0], heroTree: "Conduit of the Celestials", points: 0, maxPoints: 1, icon: "ability_monk_provoke", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: any, points: number) {
-
+        ["Enveloping Mist", "Vivify", "Sheilun's Gift"].forEach(spellName => {
+            buffSpellPerc(spellDB[spellName], talentValues[0]);
+        });
     }},
 
     /* Teachings of the Monastery has a X% chance to refund a charge when consumed.     The damage of Tiger Palm is increased by Y%. */
     "Xuen's Guidance": {id: 442687, values: [15.0, 10.0], heroTree: "Conduit of the Celestials", points: 0, maxPoints: 1, icon: "ability_monk_dpsstance", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: any, points: number) {
-
+        buffSpellPerc(spellDB["Tiger Palm"], talentValues[1]);
     }},
 
     /* $?c2[Tiger Palm, Vivify, and Sheilun's Gift have a chance to cause Xuen to claw a nearby enemy for $457917s1 Physical damage, healing a nearby ally for Y% of the damage done.]?c3[Tiger Palm has a chance to cause Xuen to claw your target for $457917s1 Physical damage, healing a nearby ally for Y% of the damage done.][Xuen claws your target for $457917s1 Physical damage, healing a nearby ally for Y% 
