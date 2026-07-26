@@ -90,6 +90,10 @@ export default function RaidGearContainer(props) {
         return classes.voidspireHeader;
       case 1305:
         return classes.sporefallHeader;
+      case 1320:
+        return classes.venomousAbyssHeader;
+      case 1317:
+        return classes.tideboundGrottoHeader;
       default:
         return classes.defaultHeader;
     }

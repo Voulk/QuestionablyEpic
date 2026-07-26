@@ -173,6 +173,14 @@ export const raidStyles = makeStyles((theme) => {
       backgroundImage: `url(${require("../../../../Images/Bosses/MidnightS1/MarchShort.png")})`,
       ...commonStyles,
     },
+    venomousAbyssHeader: {
+      background: "linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, rgba(10, 17, 12, 0.88) 62%, rgba(21, 38, 27, 0.8) 82%, #3da55d 100%)",
+      ...commonStyles,
+    },
+    tideboundGrottoHeader: {
+      background: "linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, rgba(9, 14, 24, 0.88) 62%, rgba(19, 30, 46, 0.8) 82%, #3e7bd1 100%)",
+      ...commonStyles,
+    },
     voidspireHeader: {
       backgroundImage: `url(${require("../../../../Images/Bosses/MidnightS1/VoidspireShort.png")})`,
       ...commonStyles,

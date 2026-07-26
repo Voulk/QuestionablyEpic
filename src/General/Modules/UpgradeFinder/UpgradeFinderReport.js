@@ -131,7 +131,7 @@ export default function UpgradeFinderReport(props) {
     itemDifferentials.sort((a, b) => a.rawDiff < b.rawDiff ? 1 : -1);
     return (
       <div className={classes.header}>
-        <div style={{ height: 96 }} />
+        <div style={{ height: 15 }} />
         <Grid container spacing={0}>
           <Grid item xs={12} style={{ padding: "0px 0px 40px 0px" }} >
             <div>
