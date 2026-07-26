@@ -129,7 +129,8 @@ number) {
 
 /* Magical damage done increased by X% and healing done increased by Y%. */
 "Chi Proficiency": {id: 450426, values: [5.0, 5.0, 5.0],  points: 0, maxPoints: 2, icon: "ability_monk_chiswirl", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentValues: any, points: number) {
-
+    // uses traits for r1/r2 to mod to 2 and 4 points each
+    // values should be [4.0, 4.0, 4.0] at maxPoints == 2
 }},
 
 
