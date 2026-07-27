@@ -153,7 +153,7 @@ const applyPoolOfMists = (talents: any, castProfile: CastProfile, spellDB: Recor
 const applyTierSet = (playerData: any, castProfile: CastProfile, spellDB: Record<string, any[]>): void => {
     if (playerData.tierSets.includes("Mistweaver Monk S2-2")) {
         buffSpellPerc(spellDB["Rising Sun Kick"], 30); // damage
-        buffSpellPerc(spellDB["Rushing Wind Kick"], 100); // needs healing portion in db to buff
+        buffSpellPerc(spellDB["Rushing Wind Kick"], 100, 1); // healing only
 
         if (playerData.tierSets.includes("Mistweaver Monk S2-4")) {
             // using 0.15 as opposed to 0.2 since procs cannot proc their own reset
@@ -554,6 +554,9 @@ const applyCoverageMultipliers = (
         const averageRaidHealth = ("averageRaidHealth" in state.settings ? getSetting(state.settings, "averageRaidHealth") : 85) / 100;
         state.statPercentages.genericHealingMult *= 1 + (talents["Save Them All"].values[0] / 100) * (1 - averageRaidHealth);
     }
+
+    const rwkHealSlice = spellDB["Rushing Wind Kick"][1];
+    rwkHealSlice.targets = Math.min(reportingData.averageRemCount + reportingData.averageEnvCount, rwkHealSlice.targets);
 }
 
 const runCastLoop = (
@@ -566,16 +569,6 @@ const runCastLoop = (
     damageBreakdown: Record<string, number>,
     castBreakdown: Record<string, number>,
 ) => {
-    // rwk's heal component - to be added to spelldb/talents for use
-    const rwkHealSpell = {
-        coeff: 5,
-        aura: 1 - 0.2 + 2.0,
-        expectedOverheal: 0.2,
-        secondaries: ["crit", "versatility"],
-        spellType: "heal",
-        targets: Math.min(reportingData.averageRemCount + reportingData.averageEnvCount, 5), // hits a max of 5 players with HoTs
-    };
-
     // Run healing
     castProfile.forEach(spellProfile => {
         const fullSpell = spellDB[spellProfile.spell];
@@ -634,10 +627,6 @@ const runCastLoop = (
             if (slice.spellType === "damage") {
                 if (spellName === "Blackout Kick") {
                     totalOutput *= 1 + reportingData.averageTeachingsStacks;
-                }
-                if (spellName === "Rushing Wind Kick") {
-                    const rwkHeal = getSpellThroughput(rwkHealSpell, state.statPercentages, state.spec, state.settings);
-                    healingBreakdown["Rushing Wind Kick"] = (healingBreakdown["Rushing Wind Kick"] || 0) + rwkHeal * effectiveCPM;
                 }
                 if (slice.damageToHeal) {
                     if (spellName === "Courage of the White Tiger") {
