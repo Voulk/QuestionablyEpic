@@ -173,7 +173,7 @@
             "cost": 1.25,
             "cooldownData": {
                 "cooldown": 12.0,
-                "hasted": false,
+                "hasted": true,
                 "charges": 1,
                 "maxCharges": 1
             },
@@ -247,7 +247,7 @@
             "cost": 2.5,
             "cooldownData": {
                 "cooldown": 12.0,
-                "hasted": false,
+                "hasted": true,
                 "charges": 1,
                 "maxCharges": 1
             },

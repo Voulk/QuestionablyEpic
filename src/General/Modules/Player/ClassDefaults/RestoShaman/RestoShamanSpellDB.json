@@ -321,7 +321,7 @@
             "cost": 1.8,
             "targets": 2,
             "coeff": 0.74448,
-            "aura": 1.65,
+            "aura": 1.8975,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -339,7 +339,7 @@
         },
         {
             "coeff": 13.23,
-            "aura": 1.65,
+            "aura": 1.8975,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -475,11 +475,6 @@
     ],
     "Lava Burst": [
         {
-            "displayInfo": {
-                "id": 51505,
-                "icon": "spell_shaman_lavaburst",
-                "spellName": "Lava Burst"
-            },
             "coeff": 1.81,
             "aura": 4.978,
             "secondaries": [
