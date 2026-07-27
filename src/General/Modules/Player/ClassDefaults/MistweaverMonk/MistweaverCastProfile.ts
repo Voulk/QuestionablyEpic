@@ -152,13 +152,13 @@ const applyPoolOfMists = (talents: any, castProfile: CastProfile, spellDB: Recor
 
 const applyTierSet = (playerData: any, castProfile: CastProfile, spellDB: Record<string, any[]>): void => {
     if (playerData.tierSets.includes("Mistweaver Monk S2-2")) {
-        buffSpellPerc(spellDB["Rising Sun Kick"], 30);
-        buffSpellPerc(spellDB["Rushing Wind Kick"], 100);
+        buffSpellPerc(spellDB["Rising Sun Kick"], 30); // damage
+        buffSpellPerc(spellDB["Rushing Wind Kick"], 100); // needs healing portion in db to buff
 
         if (playerData.tierSets.includes("Mistweaver Monk S2-4")) {
             // using 0.15 as opposed to 0.2 since procs cannot proc their own reset
             const entry = getSpellEntry(castProfile, getSelectedKick(castProfile));
-            if (entry) entry.cpm *= 0.15;
+            if (entry) entry.cpm *= 1.15;
         }
     }
 }
@@ -715,11 +715,12 @@ function runMonkCastProfile(
     applyChiProficiency(talents, state);
     applySecretInfusion(talents, state, profileKey);
     applyHeroTreeBonuses(talents, castProfile, spellDB, state, reportingData, playerData);
-    applyApexBonuses(castProfile, reportingData);
-    applyTierSet(playerData, castProfile, spellDB);
 
     // Convert efficiencies to effect CPMs. Handle any special overrides.
     completeCastProfile(castProfile, spellDB, state.statPercentages);
+
+    applyApexBonuses(castProfile, reportingData);
+    applyTierSet(playerData, castProfile, spellDB);
 
     applyPoolOfMists(talents, castProfile, spellDB);
     applyHeartOfJadeSerpent(talents, castProfile, reportingData.tftCpm);
