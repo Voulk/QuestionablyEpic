@@ -171,7 +171,7 @@ export default function RaidGearContainer(props) {
                                     gap: 8,
                                   }}
                                 >
-                                  {bossHeaders(key, { height: 36, verticalAlign: "middle" }, "UpgradeFinder")}
+                                  {bossHeaders({ id: key, style: { height: 36, verticalAlign: "middle" } })}
                                   <Divider flexItem orientation="vertical" style={{ margin: "0px 5px 0px 0px" }} />
                                   {encounterDB[raidID].bosses[key]} -{" "}
                                   {getNumUpgrades(itemDifferentials, raidID, key, firstDifficulty) +
