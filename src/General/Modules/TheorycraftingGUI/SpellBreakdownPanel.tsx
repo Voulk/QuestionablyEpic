@@ -107,7 +107,7 @@ const SpellBreakdown: React.FC<SpellBreakdownProps> = ({ rows, activeResult, tag
                 </TableCell>
                 <TableCell sx={sxTdNumeric}>{fmtInt(tag === "healing" ? row.hps : row.dps)}</TableCell>
                 <TableCell sx={sxTdNumeric}>{tag === "healing" ? row.percentHealing : row.percentDamage}</TableCell>
-                <TableCell sx={sxTdNumeric}>{fmt2(row.cpm)}</TableCell>
+                <TableCell sx={sxTdNumeric}>{row.cpm === 0.0 ? "-" : fmt2(row.cpm)}</TableCell>
                 <TableCell sx={sxTdNumeric}>{fmt2(row.overhealing ? row.overhealing : 0)}</TableCell>
 
               </TableRow>
