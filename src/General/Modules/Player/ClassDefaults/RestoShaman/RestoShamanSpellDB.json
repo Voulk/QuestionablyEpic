@@ -666,7 +666,7 @@
             "school": "nature",
             "cost": 0.0,
             "coeff": 3.826,
-            "aura": 1.0,
+            "aura": 0.38,
             "secondaries": [
                 "crit",
                 "versatility"
@@ -686,7 +686,7 @@
             "school": "fire",
             "cost": 0.0,
             "coeff": 1.74,
-            "aura": 1.0,
+            "aura": 0.38,
             "secondaries": [
                 "crit",
                 "versatility"
@@ -762,6 +762,29 @@
                 "versatility",
                 "mastery"
             ],
+            "spellType": "heal"
+        }
+    ],
+    "Condensation": [
+        {
+            "displayInfo": {
+                "id": 1300642,
+                "icon": "ability_shaman_fortifyingwaters",
+                "spellName": "Condensation"
+            },
+            "castTime": 0.0,
+            "school": "physical",
+            "cost": 0.0,
+            "coeff": 2.8,
+            "aura": 1,
+            "expectedOverheal": 0.03,
+            "secondaries": [
+                "mastery",
+                "versatility"
+            ],
+            "specialFields": {
+                "absorb": true
+            },
             "spellType": "heal"
         }
     ]
