@@ -354,9 +354,9 @@ const getAverageRemCount = (castProfile: CastProfile, spellDB: Record<string, an
 const getMistyPeaksEnvSec = (talents: any, castProfile: CastProfile, spellDB: Record<string, any[]>, haste: number): number => {
     if (!hasTalent(talents, "Misty Peaks")) return 0;
 
-    const procChancePerPoint = 0.04; // Trait #106404 Rank 2 Mode 0 Value: 0.004
+    const procDuration = talents["Misty Peaks"].values[1];
+    const procChancePerPoint = talents["Misty Peaks"].values[2];
     const procChance = procChancePerPoint * getTalentPoints(talents, "Misty Peaks");
-    const procDuration = talents["Misty Peaks"].values[2];
 
     const remCPM = getSpellEntry(castProfile, "Renewing Mist").cpm;
     const remDuration = spellDB["Renewing Mist"][0].buffDuration;

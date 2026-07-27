@@ -345,7 +345,7 @@ points: number) {
 }},
 
 /* Renewing Mist's heal over time effect has a ${Z}.1% chance to apply Enveloping Mist for Y sec. */
-"Misty Peaks": {id: 388682, values: [0.00067500002, 2.0, 5.0],  points: 0, maxPoints: 2, icon: "achievement_zone_stormpeaks_10", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: any, points: number) {
+"Misty Peaks": {id: 388682, values: [0.00067500002, 2.0, 4.0],  points: 0, maxPoints: 2, icon: "achievement_zone_stormpeaks_10", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: any, points: number) {
 
 }},
 
