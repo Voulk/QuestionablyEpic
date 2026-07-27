@@ -627,8 +627,8 @@ const runCastLoop = (
             }
 
             if (spellName === "Spiritfont") {
-                const chiCocoon = getSpellThroughput(spellDB["Chi Cocoon"][0], state.statPercentages, state.spec, state.settings);
-                healingBreakdown["Chi Cocoon"] = (healingBreakdown["Chi Cocoon"] || 0) + chiCocoon;
+                const chiCocoon = getSpellThroughput(spellDB["Chi Cocoon (Spiritfont)"][0], state.statPercentages, state.spec, state.settings);
+                healingBreakdown["Chi Cocoon (Spiritfont)"] = (healingBreakdown["Chi Cocoon (Spiritfont)"] || 0) + chiCocoon;
             }
 
             if (slice.spellType === "damage") {

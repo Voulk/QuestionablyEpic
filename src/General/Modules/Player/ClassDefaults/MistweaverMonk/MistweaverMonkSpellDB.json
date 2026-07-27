@@ -184,6 +184,17 @@
                 "versatility"
             ],
             "spellType": "damage"
+        },
+        {
+            "coeff": 5,
+            "aura": 0.8,
+            "expectedOverheal": 0.2,
+            "secondaries": [
+                "crit",
+                "versatility"
+            ],
+            "spellType": "heal",
+            "targets": 5
         }
     ],
     "Celestial Conduit": [
@@ -199,7 +210,14 @@
             "cooldownData": {
                 "cooldown": 90.0,
                 "hasted": false
-            }
+            },
+            "coeff": 55,
+            "aura": 0.8,
+            "secondaries": [
+                "crit",
+                "versatility"
+            ],
+            "spellType": "heal"
         }
     ],
     "Revival": [
@@ -434,12 +452,14 @@
             "cost": 0.0,
             "coeff": 3.51,
             "aura": 1.0,
+            "offGCD": true,
+            "damageType": "physical",
             "secondaries": [
                 "crit",
                 "versatility"
             ],
             "spellType": "damage",
-            "damageToHeal": 1
+            "damageToHeal": 2
         }
     ],
     "Strength of the Black Ox": [
@@ -454,7 +474,9 @@
             "cost": 0.0,
             "coeff": 1.5,
             "aura": 1,
+            "offGCD": true,
             "expectedOverheal": 0.03,
+            "targets": 5,
             "secondaries": [
                 "versatility"
             ],
@@ -500,6 +522,91 @@
             "expectedOverheal": 0.03,
             "secondaries": [
                 "mastery",
+                "versatility"
+            ],
+            "specialFields": {
+                "absorb": true
+            },
+            "spellType": "heal"
+        }
+    ],
+    "Gust of Mists": [
+        {
+            "displayInfo": {
+                "id": 191894,
+                "icon": "ability_monk_souldance",
+                "spellName": "Gust of Mists",
+                "cat": "heal"
+            }
+        }
+    ],
+    "Ancient Teachings": [
+        {
+            "displayInfo": {
+                "id": 388023,
+                "icon": "inv_misc_book_07",
+                "spellName": "Ancient Teachings",
+                "cat": "heal"
+            }
+        }
+    ],
+    "Invigorating Mists": [
+        {
+            "displayInfo": {
+                "id": 425804,
+                "icon": "ability_monk_vivify",
+                "spellName": "Invigorating Mists",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "school": "nature",
+            "cost": 0.0,
+            "coeff": 3.2318,
+            "aura": 0.8,
+            "expectedOverheal": 0.2,
+            "secondaries": [
+                "crit",
+                "versatility"
+            ],
+            "spellType": "heal"
+        }
+    ],
+    "Spiritfont": [
+        {
+            "displayInfo": {
+                "id": 1260617,
+                "icon": "ability_monk_soothingmists",
+                "spellName": "Spiritfont",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "cost": 0.0,
+            "coeff": 16.8,
+            "aura": 0.8,
+            "offGCD": true,
+            "expectedOverheal": 0.05,
+            "spellType": "heal",
+            "secondaries": [
+                "crit",
+                "versatility"
+            ]
+        }
+    ],
+    "Chi Cocoon (Spiritfont)": [
+        {
+            "displayInfo": {
+                "id": 1260681,
+                "icon": "ability_monk_chiexplosion",
+                "spellName": "Chi Cocoon",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "cost": 0.0,
+            "coeff": 87.0968,
+            "aura": 1,
+            "offGCD": true,
+            "expectedOverheal": 0.03,
+            "secondaries": [
                 "versatility"
             ],
             "specialFields": {
