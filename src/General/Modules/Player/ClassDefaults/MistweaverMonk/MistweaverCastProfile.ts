@@ -1,56 +1,24 @@
-import { getCurrentStats, getMastery, getSpellRaw, getStatMult, getCrit, getHaste, deepCopyFunction, hasTalent, getSpellAttribute, getTalentPoints } from "General/Modules/Player/ClassDefaults/Generic/RampBase"
-import { applyRaidBuffs, applyTalents, applyTalentsFromString, compileProfileReportingData, completeCastProfile, convertStatPercentages, getSpellThroughput } from "../Generic/ProfileUtilities";
-import { runHeal, runDamage, MONKCONSTANTS } from "General/Modules/Player/ClassDefaults/MistweaverMonk/MistweaverMonkRamps";
-import {  monkTalents } from "./MistweaverMonkTalents";
+import { getMastery, getStatMult, deepCopyFunction, hasTalent, getTalentPoints } from "General/Modules/Player/ClassDefaults/Generic/RampBase"
+import { applyRaidBuffs, applyTalentsFromString, compileProfileReportingData, completeCastProfile, convertStatPercentages, getSpellThroughput, getTrinketData, getSpellEntry, buildCPM } from "../Generic/ProfileUtilities";
+import { MONKCONSTANTS } from "General/Modules/Player/ClassDefaults/MistweaverMonk/MistweaverMonkRamps";
+import { monkTalents } from "./MistweaverMonkTalents";
+import { MONK_HERO_TREES, monkTalentStrings } from "./MonkDefaults";
 
 import specSpellDB from "./MistweaverMonkSpellDB.json";
-import { getTrinketData, getSpellEntry, updateSpellCPM, buildCPM } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities";
 import { runSpellScript } from "../Generic/SpellScripts";
 import { getSelectedTalentsFromString } from "../Generic/TalentStrings/TalentDecoder";
+import { buffSpellPerc } from "../Generic/TalentBase";
+import SPECS from "General/Engine/SPECS";
+import { STATCONVERSION } from "General/Engine/STAT";
+import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
 
-interface SpellProfile {
-    spell: string;
-    cpm: number;
-    hastedCPM?: boolean;
-    mult?: number;
-}
+const EFFICIENCY = 0.9;
 
+const getSelectedKick = (castProfile: CastProfile): "Rising Sun Kick" | "Rushing Wind Kick" =>
+    getSpellEntry(castProfile, "Rushing Wind Kick") ? "Rushing Wind Kick" : "Rising Sun Kick";
 
-export const mistweaverMonkProfile = {
-    spec: "Mistweaver Monk",
-    name: "Mistweaver Monk Classic",
-    scoreSet: scoreMonkSet,
-    defaultStatProfile: {
-        // Our stats we want to run through the profile.
-        // You can change and play with these as much as you want.
-        // All user-facing operations will set their own anyway like in Top Gear.
-        intellect: 2800,
-        haste: 1050,
-        crit: 650,
-        mastery: 1000,
-        versatility: 100,
-        stamina: 19000,
-        critMult: 2,
-    },
-    defaultStatWeights: {
-        // Used in the trinket chart and for Quick Compare. Not used in Top Gear.
-        intellect: 1,
-        crit: 0.5,
-        mastery: 0.4,
-        versatility: 0.431,
-        haste: 0.65,
-        hps: 0.304, //
-    },
-    specialQueries: {
-        // Any special information we need to pull.
-    },
-    defaultTalents: "C4QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAghxyMLjZx2MmZ2WMAMbPwMbbbzMWYGNjZADGMmlZmZGmtBDWMBAAAAQAWsNz2sNzAAADYAmBMGGLyYGA",
-}
-
-const getKickCPM = (spellDB: CastProfile): number => {
-    const filteredSpells = spellDB.filter(spell => ["Tiger Palm", "Blackout Kick", "Rising Sun Kick"].includes(spell.spell))
-    return filteredSpells.reduce((a, b) => a + b.cpm, 0);
-}
+const getSelectedPrimaryHeal = (castProfile: CastProfile): "Vivify" | "Sheilun's Gift" =>
+    getSpellEntry(castProfile, "Sheilun's Gift") ? "Sheilun's Gift" : "Vivify";
 
 const getMasteryHeal = (currentStats: Stats, mult: number = 1): number => {
     return (0.1 + getMastery(currentStats, MONKCONSTANTS)) * currentStats.intellect! * getStatMult(currentStats, ["crit", "versatility"], {}, MONKCONSTANTS)
@@ -68,138 +36,23 @@ const getTimeUsed = (castProfile: CastProfile, spellDB: Record<string, any[]>, a
         }
         else console.error("Missing Spell: " + spellProfile.spell)
 
-    }
-    )
+    })
 
     return timeUsed;
 }
 
-export function scoreMonkSet(stats: Stats, playerData: any, settings: PlayerSettings = {}, reporting: boolean = false) {
-    console.log("Running Monk Set");
-    const fightLength = 300;
 
-    let initialState = {statBonuses: applyRaidBuffs(settings), talents: deepCopyFunction(monkTalents), heroTree: playerData.heroTree};
+type SequencingFn = (
+    state: any,
+    spellDB: any,
+    localSettings: any,
+    reportingData: Record<string, any>,
+    healingBreakdown: Record<string, number>,
+    onUseData: any,
+    talents: any,
+) => void;
 
-    const localSettings: any = { downtime: 0.15, risingMist: { remStandard: 1, remRapidDiffusion: 0.7, envStandard: 0.9 }, gustsOverhealing: 0.4, chijiGustsOverhealing: 0.4, ancientTeachingsOverhealing: 0.14 };
-
-    const spellDB = JSON.parse(JSON.stringify(specSpellDB));
-
-    const healingBreakdown: Record<string, number> = {}
-    const damageBreakdown: Record<string, number> = {}
-    const castBreakdown: Record<string, number> = {};
-
-    ["Renewing Mist", "Sheilun's Gift", "Vivify", "Enveloping Mist"].forEach(spellName => {
-        spellDB[spellName][0].gustsValue = 1;
-    });
-    
-    ["Rising Sun Kick", "Blackout Kick", "Tiger Palm", "Crackling Jade Lightning"].forEach(spellName => {
-        spellDB[spellName][0].damageToHeal = 0.25// + (hasTalent(state.talents, "Jadefire Teachings") ? 3.2 : 0);
-    });
-
-    // Apply Talents
-    const talents = initialState.talents;
-    const talentImport = getSelectedTalentsFromString(mistweaverMonkProfile.defaultTalents, "Mistweaver Monk")
-    applyTalentsFromString(initialState, spellDB, talentImport);
-
-    // The state variable that will be passed into each spell calculation.
-    const state = { fightLength: fightLength, spec: "Mistweaver Monk", statPercentages: convertStatPercentages(stats, initialState.statBonuses, "Mistweaver Monk",
-        1), settings: settings, talents: monkTalents};
-
-    state.tierSets = playerData.tierSets.filter(effect => effect.type === "set bonus").map(effect => effect.name);
-
-    const reportingData: Record<string, any> = {};
-    let genericHealingIncrease = 1.04;
-    let freeRenewingMistSec = 0;
-    let averageTeachingsStacks = 0;
-
-    // Prio: House of Cards > Signet. Only matters if someone is wearing double on-use. Poor thing.
-    let onUseData: any = {};
-
-    if (playerData.effects && playerData.effects.filter(effect => effect.name === "Freightrunner's Flask").length > 0) {
-        onUseData = getTrinketData("Freightrunner's Flask", playerData.effects.filter(effect => effect.name === "Freightrunner's Flask")[0].level);
-        onUseData.name = "Freightrunner's Flask";
-        state.currentStats.crit += (onUseData.value * onUseData.duration / 120);
-    }
-
-    let averageHaste = state.statPercentages.haste; // TODO
-
-    const castProfile: CastProfile = [
-        { spell: "Renewing Mist", efficiency: 0.7 },
-        { spell: "Enveloping Mist", cpm: 0.1 }, // This needs to be at a minimum the same as the number of box procs
-        //{ spell: "Vivify", cpm: 0, hastedCPM: true },
-        { spell: "Tiger Palm", cpm: 7.5, hastedCPM: true },
-        { spell: "Blackout Kick", cpm: 6.7, hastedCPM: true },
-        { spell: "Rising Sun Kick", cpm: 6.4, hastedCPM: true }, // Adjust CPM dynamically and then lower.
-        //{ spell: "Revival", cpm: buildCPM(spellDB, "Revival") },
-        //{ spell: "Celestial Conduit", cpm: buildCPM(spellDB, "Celestial Conduit") },
-        { spell: "Life Cocoon", efficiency: buildCPM(spellDB, "Life Cocoon") }, //
-
-        // "Spells"
-        // Here we'll put any procs that we'd like to calculate as if they were spells, even if they aren't buttons we'll press.
-        // Note that these should be tagged offGcd in spellDB so we don't calculate cast times for them.
-        
-        /*{ spell: "Courage of the White Tiger", cpm: 4 * averageHaste + 0.5 },
-        { spell: "Strength of the Black Ox", cpm: 4 * averageHaste + 0.5 }, // Identical to White Tiger
-        { spell: "Crane Style", cpm: 10, hastedCPM: true }, // This is RPPM. Technically the procs would drop if you don't kick much but this build does.
-         */
-    ]
-
-    
-    // Convert efficiencies to effect CPMs. Handle any special overrides.
-    completeCastProfile(castProfile, spellDB, state.statPercentages);
-
-
-    // Sheilun's Gift
-    localSettings.sheilunsClouds = 0 //Math.min(10, (60 / 8 / getSpellEntry(castProfile, "Sheilun's Gift").cpm))
-    reportingData.sheilunsClouds = localSettings.sheilunsClouds;
-
-    // Expected Downtime
-    const timeUsed = getTimeUsed(castProfile, spellDB, averageHaste);
-    reportingData.timeUsed = timeUsed;
-
-    // TotM
-    averageTeachingsStacks = 0// (getSpellEntry(castProfile, "Tiger Palm").cpm * (hasTalent(talents, "awakenedJadefire") ? 2 : 1)) / getSpellEntry(castProfile, "Blackout Kick").cpm;
-    if (hasTalent(talents, "xuensGuidance")) averageTeachingsStacks *= 1.15; // Doesn't apply to our base BoK.
-    reportingData.averageTeachingsStacks = averageTeachingsStacks;
-
-    // Adjust CPMs
-    //getSpellEntry(castProfile, "Jadefire Stomp").cpm += (getKickCPM(castProfile) * 0.12 * 0.6); // High wastage
-    reportingData.extraStomps = getKickCPM(castProfile) * 0.12 * 0.5;
-
-    // Rising Mist
-    // This section in particular could use more analysis. It's important that Rising Mist scales with haste since it's a key factor in our resets,
-    // however modelling getting 5 in a ReM duration is trickier. We also don't want to introduce "fake" breakpoints.
-    localSettings.risingMist.remStandard = Math.min(1, (getSpellEntry(castProfile, "Rising Sun Kick").cpm * (40 / 60) / 5 * 0.9));
-    localSettings.risingMist.envStandard = Math.min(1, (getSpellEntry(castProfile, "Enveloping Mist").cpm * (hasTalent(talents, "mistWrap") ? 14 : 12 / 60) / 2 * 0.9));
-
-
-    // Get free Renewing Mists
-    // Rapid Diffusion
-    if (hasTalent(talents, "rapidDiffusion")) {
-        // 3/6s of Renewing Mist for each RSK / EnV cast.
-        const duration = getTalentPoints(talents, "rapidDiffusion") === 1 ? 3 : 6;
-        const casts = getSpellEntry(castProfile, "Enveloping Mist").cpm + getSpellEntry(castProfile, "Rising Sun Kick").cpm;
-        freeRenewingMistSec = casts * duration;
-        freeRenewingMistSec *= (1 + localSettings.risingMist.remRapidDiffusion);
-    }
-
-    // Calculate average ReM count
-    const averageRemCount = (getSpellEntry(castProfile, "Renewing Mist").cpm * spellDB['Renewing Mist'][0].buffDuration * (1 + localSettings.risingMist.remStandard)
-        + freeRenewingMistSec) / 60;
-    reportingData.averageRemCount = averageRemCount;
-    const zenPulsePPM = 0; // 1.2 + hasTalent(talents, "deepClarity") ? 2 : 0; // TODO
-     (0.5 * averageRemCount / 20 * (8 / 20) + 1); // TODO: Only applies for 8s so don't count all 20.
-
-    const remDuration = spellDB["Renewing Mist"][0].buffDuration * (1 + (hasTalent(talents, "Rising Mist") ? 1 : 0));
-    state.statPercentages.genericHealingMult *= 1 + (0.06 * averageRemCount * remDuration / 60 / 60);
-
-    // Uplifted Spirits
-    if (hasTalent(talents, "upliftedSpirits")) {
-        const adjustedCooldown = 180 - getSpellEntry(castProfile, "Rising Sun Kick").cpm
-        getSpellEntry(castProfile, "Revival").cpm = 60 / adjustedCooldown;
-        //getSpellEntry(castProfile, "Revival").cpm *= getSpellEntry(castProfile, "Rising Sun Kick").cpm / 180;
-    }
-
+const chijiSequence: SequencingFn = (state, spellDB, localSettings, reportingData, healingBreakdown, onUseData, talents) => {
     if (false) {
         // Sequence Chi-ji
         // Store 4x TotM stacks before pressing Chi-ji
@@ -211,8 +64,7 @@ export function scoreMonkSet(stats: Stats, playerData: any, settings: PlayerSett
         if (onUseData.name === "Freightrunner's Flask") tempStats.haste += (onUseData.value * onUseData.duration / chijiDuration);
 
         let hastePercentage = tempStats.haste;
-        //if (hasTalent(talents, "invokersDelight")) hastePercentage *= (1 + 0.2 * 0.8);
-        //if (hasTalent(talents, "secretInfusion")) hastePercentage *= (1 + 0.15 * 0.4);
+        //if (hasTalent(talents, "Secret Infusion")) hastePercentage *= (1 + 0.15 * 0.4);
         reportingData.chijiHaste = hastePercentage;
 
         const chijiCasts = (chijiDuration / (1.5 / hastePercentage) - 1) * (1 - localSettings.downtime);; // Casting Chiji itself takes away from the # of casts in the window
@@ -246,13 +98,445 @@ export function scoreMonkSet(stats: Stats, playerData: any, settings: PlayerSett
         healingBreakdown["Gust of Mists (Chi-ji)"] = chijiProcs * getMasteryHeal(tempStats) * chijiMult * (60 / chijiCooldown) * (1 - localSettings.chijiGustsOverhealing);
 
     }
+}
 
+const yulonSequence: SequencingFn = (state, spellDB, localSettings, reportingData, healingBreakdown, onUseData, talents) => {
+    // TODO: sequence yu'lon
+    // probably can create "perfect" sequence and do an efficiency mod on it
+    // likely effic is somewhere around 0.6 to 0.7, just from extra gcds
+    // outside of enveloping mist, rushing wind kick, and vivify
+}
+
+const celestialSequences = {
+    "Chi-Ji": chijiSequence,
+    "Yu'lon": yulonSequence,
+} satisfies Record<string, SequencingFn>;
+
+
+const applyEmperorsElixir = (talents: any, spellDB: Record<string, any[]>, castProfile: CastProfile): void => {
+    // can mostly ignore the enveloping mist empower here, it's useless
+    if (hasTalent(talents, "Emperor's Elixir")) {
+        const effectiveness = talents["Emperor's Elixir"].values[1] / 100;
+        spellDB["Jadefire Stomp"][0].damageToHeal = spellDB[getSelectedKick(castProfile)][0].damageToHeal * effectiveness;
+
+        // TODO: jfs casts from thunder focus tea empowering RSK/RWK
+        // needs tft's own cpm + charges (like from focused thunder) in order to get a true depiction of how many are used with rsk/rwk
+    }
+}
+
+const applyPoolOfMists = (talents: any, castProfile: CastProfile, spellDB: Record<string, any[]>): void => {
+    if (!hasTalent(talents, "Pool of Mists")) return;
+
+    const remCdReducedSec = talents["Pool of Mists"].values[3] / 1000;
+    const kickCdReducedSec = talents["Pool of Mists"].values[2] / 1000;
+
+    const remEntry = getSpellEntry(castProfile, "Renewing Mist");
+    const kickEntry = getSpellEntry(castProfile, getSelectedKick(castProfile));
+    if (!remEntry || !kickEntry) return;
+
+    const remCooldown = spellDB["Renewing Mist"][0].cooldownData.cooldown;
+    const kickCooldown = spellDB[getSelectedKick(castProfile)][0].cooldownData.cooldown;
+
+    const bonusRemCpm = (kickEntry.cpm * kickCdReducedSec) / remCooldown;
+    const bonusKickCpm = (remEntry.cpm * remCdReducedSec) / kickCooldown;
+
+    remEntry.cpm += bonusRemCpm;
+    kickEntry.cpm += bonusKickCpm;
+}
+
+const applyTierSet = (playerData: any, castProfile: CastProfile, spellDB: Record<string, any[]>): void => {
+    if (playerData.tierSets.includes("Mistweaver Monk S2-2")) {
+        buffSpellPerc(spellDB["Rising Sun Kick"], 30);
+        buffSpellPerc(spellDB["Rushing Wind Kick"], 100);
+
+        if (playerData.tierSets.includes("Mistweaver Monk S2-4")) {
+            // using 0.15 as opposed to 0.2 since procs cannot proc their own reset
+            const entry = getSpellEntry(castProfile, getSelectedKick(castProfile));
+            if (entry) entry.cpm *= 0.15;
+        }
+    }
+}
+
+// Freightrunner's Flask on-use: applies its crit bonus directly to state and returns the effect data for later use.
+const applyFreightrunnersFlask = (playerData: any, state: any): any => {
+    let onUseData: any = {};
+    const effects = playerData.effects?.filter(effect => effect.name === "Freightrunner's Flask") ?? [];
+    if (effects.length > 0) {
+        onUseData = getTrinketData("Freightrunner's Flask", effects[0].level);
+        onUseData.name = "Freightrunner's Flask";
+
+        const averageCritRating = onUseData.value * onUseData.duration / 120;
+        state.statPercentages.crit += averageCritRating / STATCONVERSION.CRIT / 100;
+    }
+    return onUseData;
+}
+
+// applying rem for yu'lon, rsk for chi-ji
+const applySecretInfusion = (talents: any, state: any, profileKey: MonkProfileKey): void => {
+    if (!hasTalent(talents, "Secret Infusion")) return;
+
+    const statPerPoint = talents["Secret Infusion"].values[0] / 100;
+    const statBonus = statPerPoint * getTalentPoints(talents, "Secret Infusion");
+    const stat = profileKey === "Chi-Ji" ? "versatility" : "haste";
+
+    if (stat === "haste") {
+        state.statPercentages.haste *= 1 + statBonus;
+    }
+    else {
+        state.statPercentages.versatility += statBonus;
+    }
+}
+
+const getHeartOfJadeSerpentUptimes = (talents: any, castProfile: CastProfile, tftCpm: number): { uptimeStandard: number, uptimeConduit: number } => {
+    const procDurationSec = talents["Heart of the Jade Serpent"].values[0] / 1000;
+
+    let uptimeSecPerMinStandard = tftCpm * procDurationSec;
+    if (hasTalent(talents, "Yu'lon's Avatar")) {
+        // we can assume vivify is always being cast to fulfil the ppm, but the cpm proably needs to be higher than yu'lon's avatar's 1.5ppm to hit it effectively
+        // revisit for models that skip viv/sg completely
+        const primaryHealCpm = getSpellEntry(castProfile, getSelectedPrimaryHeal(castProfile))?.cpm ?? 0;
+        const avatarPpm = primaryHealCpm > 1.5 ? 1.5 : 0;
+        const avatarDurationSec = talents["Yu'lon's Avatar"].values[0] / 1000;
+        uptimeSecPerMinStandard += avatarPpm * avatarDurationSec;
+    }
+    const uptimeStandard = Math.min(uptimeSecPerMinStandard / 60, 1);
+
+    let uptimeConduit = 0;
+    if (hasTalent(talents, "Unity Within")) {
+        const conduitCpm = getSpellEntry(castProfile, "Celestial Conduit")?.cpm ?? 0;
+        uptimeConduit = Math.min((conduitCpm * procDurationSec) / 60, 1);
+    }
+
+    return { uptimeStandard, uptimeConduit };
+}
+
+const HOTJS_CDR_PERC = 75;
+
+const getBoostedTftCpm = (talents: any, castProfile: CastProfile, baseTftCpm: number): number => {
+    if (!hasTalent(talents, "Heart of the Jade Serpent")) return baseTftCpm;
+
+    const { uptimeStandard, uptimeConduit } = getHeartOfJadeSerpentUptimes(talents, castProfile, baseTftCpm);
+    const standardCdr = HOTJS_CDR_PERC / 100;
+    const unityWithinMult = hasTalent(talents, "Unity Within") ? talents["Unity Within"].values[0] / 100 : 1;
+    const conduitCdr = standardCdr * unityWithinMult;
+
+    return baseTftCpm * (1 + standardCdr * uptimeStandard) * (1 + conduitCdr * uptimeConduit);
+}
+
+const applyFlowingWisdom = (talents: any, state: any, castProfile: CastProfile, tftCpm: number): void => {
+    if (!hasTalent(talents, "Flowing Wisdom")) return;
+
+    const { uptimeStandard, uptimeConduit } = getHeartOfJadeSerpentUptimes(talents, castProfile, tftCpm);
+    const hasteBonus = talents["Flowing Wisdom"].values[0] / 100;
+
+    state.statPercentages.haste *= (1 + hasteBonus * uptimeStandard) * (1 + hasteBonus * uptimeConduit);
+}
+
+const applyHeartOfJadeSerpent = (talents: any, castProfile: CastProfile, tftCpm: number): void => {
+    if (!hasTalent(talents, "Heart of the Jade Serpent")) return;
+
+    const { uptimeStandard, uptimeConduit } = getHeartOfJadeSerpentUptimes(talents, castProfile, tftCpm);
+    const standardCdr = HOTJS_CDR_PERC / 100;
+    const unityWithinMult = hasTalent(talents, "Unity Within") ? talents["Unity Within"].values[0] / 100 : 1;
+    const conduitCdr = standardCdr * unityWithinMult;
+
+    const affectedSpells = [getSelectedKick(castProfile), "Renewing Mist", "Life Cocoon", "Thunder Focus Tea"];
+    affectedSpells.forEach(spellName => {
+        const entry = getSpellEntry(castProfile, spellName);
+        if (!entry) return;
+
+        entry.cpm *= (1 + standardCdr * uptimeStandard) * (1 + conduitCdr * uptimeConduit);
+    });
+}
+
+const applyInnerCompass = (talents: any, state: any): void => {
+    if (!hasTalent(talents, "Inner Compass")) return;
+
+    const statBonus = talents["Inner Compass"].values[0] / 100 / 4;
+
+    state.statPercentages.crit += statBonus;
+    state.statPercentages.versatility += statBonus;
+    state.statPercentages.mastery += statBonus;
+    state.statPercentages.haste *= 1 + statBonus;
+}
+
+const getAverageTeachingsStacks = (talents: any, castProfile: CastProfile): number => {
+    const tigerPalmStrikes = hasTalent(talents, "Way of the Crane") ? talents["Way of the Crane"].values[2] : 1;
+    const tigerPalmCPM = getSpellEntry(castProfile, "Tiger Palm").cpm;
+    const blackoutKickCPM = getSpellEntry(castProfile, "Blackout Kick").cpm;
+
+    let averageTeachingsStacks = (tigerPalmCPM * tigerPalmStrikes) / blackoutKickCPM;
+    if (hasTalent(talents, "Xuen's Guidance")) averageTeachingsStacks *= 1 + talents["Xuen's Guidance"].values[1] / 100; // Doesn't apply to our base BoK.
+
+    return averageTeachingsStacks;
+}
+
+const getRisingMistRates = (talents: any, castProfile: CastProfile, spellDB: Record<string, any[]>): { remStandard: number, envStandard: number } => {
+    if (!hasTalent(talents, "Rising Mist")) return { remStandard: 0, envStandard: 0 };
+
+    const secPerExtension = talents["Rising Mist"].values[0];
+    const maxExtension = 1 + talents["Rising Mist"].values[1] / 100;
+
+    const getHotRisingMistRate = (spellName: string): number => {
+        const cpm = spellName === "Renewing Mist" ? getSpellEntry(castProfile, getSelectedKick(castProfile)).cpm : getSpellEntry(castProfile, spellName).cpm;
+        const hotDuration = spellDB[spellName][0].buffDuration;
+        const maxDuration = hotDuration * maxExtension;
+        const extensionsToMax = hotDuration / secPerExtension;
+        const rate = Math.min(1, (cpm * maxDuration / 60) / extensionsToMax * EFFICIENCY);
+
+        console.log(`[RisingMist] ${spellName}: cpm=${cpm}, hotDuration=${hotDuration}, maxDuration=${maxDuration}, extensionsToMax=${extensionsToMax}, rate=${rate}`);
+
+        return rate;
+    }
+
+    const remStandard = getHotRisingMistRate("Renewing Mist");
+    const envStandard = getHotRisingMistRate("Enveloping Mist");
+    return { remStandard, envStandard };
+}
+
+const getRapidDiffusionRemSec = (talents: any, castProfile: CastProfile, remRapidDiffusion: number): number => {
+    if (!hasTalent(talents, "Rapid Diffusion")) return 0;
+
+    const duration = talents["Rapid Diffusion"].values[0] * (getTalentPoints(talents, "Rapid Diffusion") / talents["Rapid Diffusion"].maxPoints);
+    const rskCPM = getSpellEntry(castProfile, getSelectedKick(castProfile)).cpm;
+    const envCPM = getSpellEntry(castProfile, "Enveloping Mist").cpm;
+
+    return (envCPM + rskCPM) * duration * (1 + remRapidDiffusion);
+}
+
+const getAverageRemCount = (castProfile: CastProfile, spellDB: Record<string, any[]>, remStandard: number, freeRenewingMistSec: number): number => {
+    const remCPM = getSpellEntry(castProfile, "Renewing Mist").cpm;
+    const remDuration = spellDB["Renewing Mist"][0].buffDuration;
+    const standardRemSec = remCPM * remDuration * (1 + remStandard);
+
+    return (standardRemSec + freeRenewingMistSec) / 60;
+}
+
+const getAverageEnvCount = (castProfile: CastProfile, spellDB: Record<string, any[]>, envStandard: number): number => {
+    const envCPM = getSpellEntry(castProfile, "Enveloping Mist").cpm;
+    const envDuration = spellDB["Enveloping Mist"][0].buffDuration;
+
+    return (envCPM * envDuration * (1 + envStandard)) / 60;
+}
+
+const getEnvelopingMistHealAmpMult = (talents: any, averageEnvCount: number, profileKey: MonkProfileKey): number => {
+    const baselineAmpPerc = 10;
+    const healAmpPerc = hasTalent(talents, "Mist Wrap") ? baselineAmpPerc + talents["Mist Wrap"].values[0] : baselineAmpPerc;
+
+    return 1 + (healAmpPerc / 100) * Math.min(averageEnvCount / getGroupSize(profileKey), 1);
+}
+
+// assuming max group size of 5 for dungeon, 20 for mythic raid.
+// do we want to change this away from mythic?
+const getGroupSize = (profileKey: MonkProfileKey): number => profileKey.includes("Dungeon") ? 5 : 20;
+
+const getMistyCoalescenceMult = (talents: any, averageRemCount: number, profileKey: MonkProfileKey): number => {
+    if (!hasTalent(talents, "Misty Coalescence")) return 1;
+
+    const maxMultPerc = talents["Misty Coalescence"].values[0];
+    const maxCoverageAllowed = talents["Misty Coalescence"].values[1];
+    const maxCoverage = Math.min(getGroupSize(profileKey), maxCoverageAllowed);
+
+    return 1 + (maxMultPerc / 100) * Math.min(averageRemCount / maxCoverage, 1);
+}
+
+type MonkProfileKey = keyof typeof monkTalentStrings;
+
+function runMonkCastProfile(
+    stats: Stats,
+    playerData: any,
+    settings: PlayerSettings = {},
+    reporting: boolean = false,
+    castProfile: CastProfile,
+    profileKey: MonkProfileKey,
+) {
+    console.log("Running Monk Set: " + profileKey);
+    const fightLength = 300;
+
+    let initialState = {
+        statBonuses: applyRaidBuffs(settings), 
+        talents: deepCopyFunction(monkTalents), 
+        heroTree: playerData.heroTree
+    };
+
+    const localSettings: any = { 
+        downtime: 0.15,
+        risingMist: {
+            remStandard: 1,
+            envStandard: 0.9
+        },
+        gustsOverhealing: 0.4,
+        chijiGustsOverhealing: 0.4, 
+        ancientTeachingsOverhealing: 0.14 
+    };
+
+    const spellDB = JSON.parse(JSON.stringify(specSpellDB));
+
+    const healingBreakdown: Record<string, number> = {}
+    const damageBreakdown: Record<string, number> = {}
+    const castBreakdown: Record<string, number> = {};
+
+    // gust of mists
+    ["Renewing Mist", "Enveloping Mist"].forEach(spellName => {
+        spellDB[spellName][0].gustsValue = 1;
+    });
+    
+    // baseline ancient teachings transfer
+    [getSelectedKick(castProfile), "Blackout Kick", "Tiger Palm", "Crackling Jade Lightning"].forEach(spellName => {
+        spellDB[spellName][0].damageToHeal = 0.25;
+    });
+
+    const talents = initialState.talents;
+    const talentImport = getSelectedTalentsFromString(monkTalentStrings[profileKey], SPECS.MISTWEAVERMONK);
+    applyTalentsFromString(initialState, spellDB, talentImport);
+
+    // must be done after applyTalents to get jft/mf additive transfer rates
+    applyEmperorsElixir(talents, spellDB, castProfile);
+
+    // The state variable that will be passed into each spell calculation.
+    const state = {
+        fightLength: fightLength,
+        spec: SPECS.MISTWEAVERMONK,
+        statPercentages:
+            convertStatPercentages(
+                stats,
+                initialState.statBonuses,
+                SPECS.MISTWEAVERMONK,
+                1
+            ),
+        settings: settings,
+        talents: monkTalents
+    };
+
+    state.tierSets = playerData.tierSets.filter(effect => effect.type === "set bonus").map(effect => effect.name);
+
+    const reportingData: Record<string, any> = {};
+    if (hasTalent(talents, "Chi Proficiency")) {
+        state.statPercentages.genericHealingMult *= 1 + getTalentPoints(talents, "Chi Proficiency") * 2 / 100;
+    }
+    let freeRenewingMistSec = 0;
+    let averageTeachingsStacks = 0;
+    let zenPulsePPM = 0;
+
+    // Prio: House of Cards > Signet. Only matters if someone is wearing double on-use. Poor thing.
+    const onUseData: any = applyFreightrunnersFlask(playerData, state);
+
+    // stat bonuses from talents
+    applySecretInfusion(talents, state, profileKey);
+
+    let tftCpm = 60 / spellDB["Thunder Focus Tea"][0].cooldownData.cooldown;
+    if (playerData.heroTree === MONK_HERO_TREES.CONDUIT) {
+        tftCpm = getBoostedTftCpm(talents, castProfile, tftCpm);
+        applyInnerCompass(talents, state);
+        applyFlowingWisdom(talents, state, castProfile, tftCpm);
+    }
+    else if (playerData.heroTree === MONK_HERO_TREES.MOH) {
+        applyHarmonicSurgeCpm(castProfile, spellDB, talents, tftCpm);
+    }
+
+    // hasTalent(talents, "Spiritfont3") do not work :(
+    // can just assume we have all 4 points for now
+    const spiritfontEntry = getSpellEntry(castProfile, "Spiritfont");
+    if (spiritfontEntry) {
+        spiritfontEntry.cpm += tftCpm;
+
+        const envEntry = getSpellEntry(castProfile, "Enveloping Mist");
+        if (envEntry) envEntry.cpm += tftCpm;
+    }
+
+    applyTierSet(playerData, castProfile, spellDB);
+
+    // Convert efficiencies to effect CPMs. Handle any special overrides.
+    completeCastProfile(castProfile, spellDB, state.statPercentages);
+
+    applyPoolOfMists(talents, castProfile, spellDB);
+    applyHeartOfJadeSerpent(talents, castProfile, tftCpm);
+
+    // Sheilun's Gift
+    localSettings.sheilunsClouds = 0; //Math.min(10, (60 / 8 / getSpellEntry(castProfile, "Sheilun's Gift").cpm))
+    reportingData.sheilunsClouds = localSettings.sheilunsClouds;
+
+    // Expected Downtime
+    let averageHaste = state.statPercentages.haste; // TODO
+    const timeUsed = getTimeUsed(castProfile, spellDB, averageHaste);
+    reportingData.timeUsed = timeUsed;
+
+    // TotM
+    averageTeachingsStacks = getAverageTeachingsStacks(talents, castProfile);
+    reportingData.averageTeachingsStacks = averageTeachingsStacks;
+
+    // Rising Mist
+    // This section in particular could use more analysis. It's important that Rising Mist scales with haste since it's a key factor in our resets,
+    // however modelling getting 5 in a ReM duration is trickier. We also don't want to introduce "fake" breakpoints.
+    const risingMistRates = getRisingMistRates(talents, castProfile, spellDB);
+    localSettings.risingMist.remStandard = risingMistRates.remStandard;
+    localSettings.risingMist.envStandard = risingMistRates.envStandard;
+
+    // Rapid Diffusion
+    freeRenewingMistSec = getRapidDiffusionRemSec(talents, castProfile, localSettings.risingMist.remStandard);
+
+    // Calculate average ReM count
+    const averageRemCount = getAverageRemCount(castProfile, spellDB, localSettings.risingMist.remStandard, freeRenewingMistSec);
+    reportingData.averageRemCount = averageRemCount;
+
+    // misty coalescence multiplier onto renewing mist
+    const remEntry = getSpellEntry(castProfile, "Renewing Mist");
+    remEntry.mult = (remEntry.mult ?? 1) * getMistyCoalescenceMult(talents, averageRemCount, profileKey);
+
+    if (hasTalent(talents, "Zen Pulse")) {
+        // does not have a direct ppm, as it scales with rem count (albeit not a lot)
+        // using real log examples (fight duration, observed procs) to get avg ppm
+        const getPpmFromExample = ([fightMin, fightSec]: [number, number], procs: number): number => procs / (fightMin + fightSec / 60);
+
+        const examples: [[number, number], number][] = [
+            [[6, 27], 9], // jGMtJFCRq2amYgvW
+            [[4, 41], 7], // BL3dTX7qhWvb2MkA
+            [[4, 44], 6], // 81MTVarg62zdn7ym
+            [[7, 51], 10], // zrLTxtRZ4nahvd9b
+        ];
+        const calcedBasePpm = examples.reduce((sum, [duration, procs]) => sum + getPpmFromExample(duration, procs), 0) / examples.length; // 1.37 cpm base
+
+        // todo: tft cpm = additional zen pulse buffs
+        zenPulsePPM = calcedBasePpm * EFFICIENCY + (hasTalent(talents, "Deep Clarity") ? 2 : 0);
+
+        const zenPulseEntry = spellDB["Zen Pulse"][0];
+        zenPulseEntry.mult = (zenPulseEntry.mult ?? 1) * (1 + Math.min(talents["Zen Pulse"].values[0] / 100 * averageRemCount, talents["Zen Pulse"].values[1] / 100));
+    }
+
+    // 6% amp applied on whoever has rem - just averaging multi across the group by coverage
+    if (hasTalent(talents, "Lotus Infusion")) {
+        const lotusInfusionMult = talents["Lotus Infusion"].values[0] / 100;
+        state.statPercentages.genericHealingMult *= 1 + lotusInfusionMult * Math.min(averageRemCount / getGroupSize(profileKey), 1);
+    }
+
+    // mirrors lotus infusion as a coverage point
+    const averageEnvCount = getAverageEnvCount(castProfile, spellDB, risingMistRates.envStandard);
+    reportingData.averageEnvCount = averageEnvCount;
+    state.statPercentages.genericHealingMult *= getEnvelopingMistHealAmpMult(talents, averageEnvCount, profileKey);
+
+    // extending these durations is a bit dirty by the avg rising mist rate, but their output will reflect most of the uptime
+    spellDB["Renewing Mist"][0].buffDuration *= 1 + risingMistRates.remStandard;
+    spellDB["Enveloping Mist"][0].buffDuration *= 1 + risingMistRates.envStandard;
+
+    const remCPM = getSpellEntry(castProfile, "Renewing Mist").cpm;
+    spellDB["Renewing Mist"][0].buffDuration += freeRenewingMistSec / remCPM;
+
+    if (hasTalent(talents, "Save Them All")) {
+        // averageRaidHealth 85% default mirrors the Redux settings registry
+        // getSetting's 0 fallback would wrongly imply targets are dead lol
+        const averageRaidHealth = ("averageRaidHealth" in state.settings ? getSetting(state.settings, "averageRaidHealth") : 85) / 100;
+        state.statPercentages.genericHealingMult *= 1 + (talents["Save Them All"].values[0] / 100) * (1 - averageRaidHealth);
+    }
+
+    const sequence = (celestialSequences as Record<string, SequencingFn>)[profileKey];
+    if (sequence) {
+        sequence(state, spellDB, localSettings, reportingData, healingBreakdown, onUseData, talents);
+    }
 
     // Run healing
     castProfile.forEach(spellProfile => {
         const fullSpell = spellDB[spellProfile.spell];
         const spellName = spellProfile.spell;
-        const spellCPM = spellProfile.cpm// * (spellProfile.hastedCPM ? getHaste(state.currentStats) : 1);
         const spellFlags = spellProfile.flags || {};
 
         fullSpell.forEach((slice: SpellData, index: number) => {
@@ -273,26 +557,35 @@ export function scoreMonkSet(stats: Stats, playerData: any, settings: PlayerSett
 
             const effectiveCPM = spellProfile.fillerSpell ? 0 : spellProfile.cpm!;
 
-
             let totalOutput = (spellOutput * effectiveCPM * (spellProfile.mult ?? 1));
 
             if (slice.gustsValue) {
                 // Spell procs Gust of Mists.
-                const masteryHeal = ((0.1 + state.statPercentages.mastery) * slice.gustsValue * state.statPercentages.intellect * state.statPercentages.crit * state.statPercentages.versatility) * (1 - localSettings.gustsOverhealing);
+                const masteryHeal = ((0.1 + state.statPercentages.mastery) * slice.gustsValue * state.statPercentages.intellect * state.statPercentages.crit * state.statPercentages.versatility) * (1 - localSettings.gustsOverhealing) * state.statPercentages.genericHealingMult;
                 healingBreakdown["Gust of Mists"] = Math.round((healingBreakdown["Gust of Mists"] || 0) + (masteryHeal * effectiveCPM));
 
             }
             // Spell specifics
             if (spellName === "Vivify") {
-                const invig = runHeal(state, spellDB["Invigorating Mist"][0], "Invigorating Mist");
-
-                healingBreakdown["Invigorating Mist"] = (healingBreakdown["Invigorating Mist"] || 0) + invig * averageRemCount * effectiveCPM;
-
-                const zenPulse = runHeal(state, spellDB["Zen Pulse"][0], "Zen Pulse");
-                healingBreakdown["Zen Pulse"] = (healingBreakdown["Zen Pulse"] || 0) + zenPulse * averageRemCount * Math.min(zenPulsePPM, effectiveCPM);
+                const invig = getSpellThroughput(spellDB["Invigorating Mists"][0], state.statPercentages, state.spec, state.settings);
+                healingBreakdown["Invigorating Mists"] = (healingBreakdown["Invigorating Mists"] || 0) + invig * averageRemCount * effectiveCPM;
             }
             else if (spellName === "Sheilun's Gift") {
                 totalOutput *= localSettings.sheilunsClouds;
+            }
+
+            if (spellName === "Vivify" || spellName === "Sheilun's Gift") {
+                const zenPulse = getSpellThroughput(spellDB["Zen Pulse"][0], state.statPercentages, state.spec, state.settings);
+                healingBreakdown["Zen Pulse"] = (healingBreakdown["Zen Pulse"] || 0) + zenPulse * (spellDB["Zen Pulse"][0].mult ?? 1) * averageRemCount * Math.min(zenPulsePPM, effectiveCPM);
+            }
+
+            if (spellName === "Celestial Conduit") {
+                // todo: unity running courage, sotbo, and fotrc (bug!) at 2x value
+            }
+
+            if (spellName === "Spiritfont") {
+                const chiCocoon = getSpellThroughput(spellDB["Chi Cocoon"][0], state.statPercentages, state.spec, state.settings);
+                healingBreakdown["Chi Cocoon"] = (healingBreakdown["Chi Cocoon"] || 0) + chiCocoon;
             }
 
             if (slice.spellType === "damage") {
@@ -301,9 +594,11 @@ export function scoreMonkSet(stats: Stats, playerData: any, settings: PlayerSett
                 }
                 if (slice.damageToHeal) {
                     if (spellName === "Courage of the White Tiger") {
-                        healingBreakdown["Courage of the White Tiger"] = (healingBreakdown["Courage of the White Tiger"] || 0) + totalOutput * slice.damageToHeal * spellCPM;
+                        healingBreakdown["Courage of the White Tiger"] = (healingBreakdown["Courage of the White Tiger"] || 0) + totalOutput * slice.damageToHeal;
                     }
-                    else healingBreakdown["Ancient Teachings"] = (healingBreakdown["Ancient Teachings"] || 0) + totalOutput * slice.damageToHeal * spellCPM * (1 - localSettings.ancientTeachingsOverhealing);
+                    else {
+                        healingBreakdown["Ancient Teachings"] = (healingBreakdown["Ancient Teachings"] || 0) + totalOutput * slice.damageToHeal * (1 - localSettings.ancientTeachingsOverhealing);
+                    }
                 }
             }
 
@@ -314,17 +609,7 @@ export function scoreMonkSet(stats: Stats, playerData: any, settings: PlayerSett
                 if (slice.spellType === "damage") damageBreakdown[label] = (damageBreakdown[label] ?? 0) + (totalOutput);
                 else healingBreakdown[label] = (healingBreakdown[label] ?? 0) + (totalOutput);
             }
-
-
-
         });
-    })
-
-    // Grace Period
-    Object.keys(healingBreakdown).forEach(key => {
-        //healingBreakdown[key] *= (1);
-        healingBreakdown[key] *= genericHealingIncrease;
-
     })
 
     let totalHealing = Object.values(healingBreakdown).reduce((sum: number, val: number) => sum + val, 0);
@@ -334,12 +619,91 @@ export function scoreMonkSet(stats: Stats, playerData: any, settings: PlayerSett
         totalHealing += healingBreakdown["Leech"];
     }
 
-    const result = { damage: totalDamage / 60, healing: totalHealing / 60, spellBreakdowns: {healingBreakdown: [], damageBreakdown: []} }
-
+    const result = { 
+        damage: totalDamage / 60, 
+        healing: totalHealing / 60, 
+        spellBreakdowns: {
+            healingBreakdown: [], 
+            damageBreakdown: []
+        }
+    }
 
     if (reporting) {
         result.spellBreakdowns = compileProfileReportingData(healingBreakdown, damageBreakdown, castProfile, spellDB, totalHealing, totalDamage)
     }
 
     return result;
+}
+
+const conduitCastProfile: CastProfile = [
+    { spell: "Celestial Conduit", efficiency: 0.9, },
+    { spell: "Courage of the White Tiger", cpm: 4, hastedCPM: true },
+    { spell: "Strength of the Black Ox", cpm: 4, hastedCPM: true, } // identical to courage
+]
+
+const mohCastProfile: CastProfile = [ 
+    // adjusted by cpm of tft and rsk/rwk
+    { spell: "Harmonic Surge", cpm: 0 }
+]
+
+const applyHarmonicSurgeCpm = (castProfile: CastProfile, spellDB: Record<string, any[]>, talents: any, tftCpm: number): void => {
+    const harmonicSurgeEntry = getSpellEntry(castProfile, "Harmonic Surge");
+    if (!harmonicSurgeEntry) return;
+
+    const rskCpm = getSpellEntry(castProfile, getSelectedKick(castProfile)).cpm;
+    harmonicSurgeEntry.cpm = talents["Harmonic Surge"].values[5] * tftCpm + rskCpm;
+}
+
+const getHeroTreeCastProfile = (playerData: any): CastProfile => {
+    if (playerData.heroTree === MONK_HERO_TREES.CONDUIT) return conduitCastProfile;
+    if (playerData.heroTree === MONK_HERO_TREES.MOH) return mohCastProfile;
+    return [];
+}
+
+export function scoreMonkYulonSet(stats: Stats, playerData: any, settings: PlayerSettings = {}, reporting: boolean = false) {
+    const castProfile: CastProfile = [
+        { spell: "Renewing Mist", efficiency: 0.8, hastedCPM: true },
+        { spell: "Enveloping Mist", cpm: 5, hastedCPM: true }, // must be a minimum of sotbo + spiritfont r1, adjusted even more with yu'lon sequencing
+        { spell: "Vivify", cpm: 8.5, hastedCPM: true },
+        { spell: "Tiger Palm", cpm: 0.05, hastedCPM: true },
+        { spell: "Blackout Kick", cpm: 0.1, hastedCPM: true },
+        { spell: "Rushing Wind Kick", efficiency: 0.85, hastedCPM: true },
+
+        // cooldowns
+        // { spell: "Revival", efficiency: 0.9, },
+        { spell: "Life Cocoon", efficiency: 0.9, },
+
+        // spells
+        { spell: "Spiritfont", cpm: 1, },
+
+        ...getHeroTreeCastProfile(playerData)
+    ];
+    return runMonkCastProfile(stats, playerData, settings, reporting, castProfile, "Yu'lon");
+}
+
+export function scoreMonkChijiSet(stats: Stats, playerData: any, settings: PlayerSettings = {}, reporting: boolean = false) {
+    const castProfile: CastProfile = [
+        { spell: "Renewing Mist", efficiency: 0.7 },
+        { spell: "Enveloping Mist", cpm: 0.1 }, // we could do a model that never casts ever
+        //{ spell: "Vivify", cpm: 0, hastedCPM: true },
+        { spell: "Tiger Palm", cpm: 7.5, hastedCPM: true },
+        { spell: "Blackout Kick", cpm: 6.7, hastedCPM: true },
+        { spell: "Rising Sun Kick", cpm: 6.4, hastedCPM: true },
+        { spell: "Life Cocoon", efficiency: 0.9, },
+        ...getHeroTreeCastProfile(playerData)
+    ];
+    return runMonkCastProfile(stats, playerData, settings, reporting, castProfile, "Chi-Ji");
+}
+
+export function scoreMonkDungeonSet(stats: Stats, playerData: any, settings: PlayerSettings = {}, reporting: boolean = false) {
+    // TODO: fill in generic Dungeon cast profile.
+    const castProfile: CastProfile = [
+        // TODO: fill in Dungeon Default cast profile.
+    ];
+    return runMonkCastProfile(stats, playerData, settings, reporting, castProfile, "Dungeon Default");
+}
+
+// reverse compat might not be needed here
+export function scoreMonkSet(stats: Stats, playerData: any, settings: PlayerSettings = {}, reporting: boolean = false) {
+    return scoreMonkYulonSet(stats, playerData, settings, reporting);
 }
