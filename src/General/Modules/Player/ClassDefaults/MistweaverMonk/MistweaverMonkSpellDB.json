@@ -537,7 +537,13 @@
                 "icon": "ability_monk_souldance",
                 "spellName": "Gust of Mists",
                 "cat": "heal"
-            }
+            },
+            "aura": 0.8,
+            "secondaries": [
+                "crit",
+                "versatility"
+            ],
+            "spellType": "heal"
         }
     ],
     "Ancient Teachings": [

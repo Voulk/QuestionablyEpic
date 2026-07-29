@@ -1,6 +1,5 @@
-import { getMastery, getStatMult, deepCopyFunction, hasTalent, getTalentPoints } from "General/Modules/Player/ClassDefaults/Generic/RampBase"
+import { deepCopyFunction, hasTalent, getTalentPoints } from "General/Modules/Player/ClassDefaults/Generic/RampBase"
 import { applyRaidBuffs, applyTalentsFromString, compileProfileReportingData, completeCastProfile, convertStatPercentages, getSpellThroughput, getTrinketData, getSpellEntry, buildCPM } from "../Generic/ProfileUtilities";
-import { MONKCONSTANTS } from "General/Modules/Player/ClassDefaults/MistweaverMonk/MistweaverMonkRamps";
 import { monkTalents } from "./MistweaverMonkTalents";
 import { MONK_HERO_TREES, monkTalentStrings } from "./MonkDefaults";
 
@@ -26,8 +25,11 @@ const getSelectedKick = (castProfile: CastProfile): any =>
 const getSelectedPrimaryHeal = (castProfile: CastProfile): any =>
     getSpellEntry(castProfile, "Sheilun's Gift") ?? getSpellEntry(castProfile, "Vivify");
 
-const getMasteryHeal = (currentStats: Stats, mult: number = 1): number => {
-    return (0.1 + getMastery(currentStats, MONKCONSTANTS)) * currentStats.intellect! * getStatMult(currentStats, ["crit", "versatility"], {}, MONKCONSTANTS)
+const getGustHeal = (spellDB: Record<string, any[]>, state: any, overhealing: number, statPercentages: any = state.statPercentages): number => {
+    const gust = spellDB["Gust of Mists"][0];
+    const gustWithMastery = { ...gust, coeff: statPercentages.mastery };
+
+    return getSpellThroughput(gustWithMastery, statPercentages, state.spec, state.settings, { overrideOverhealing: overhealing });
 }
 
 const getTimeUsed = (castProfile: CastProfile, spellDB: Record<string, any[]>, averageHaste: number): number => {
@@ -101,7 +103,7 @@ const chijiSequence: SequencingFn = (state, spellDB, localSettings, reportingDat
         reportingData.chijiGusts = chijiProcs;
         if (hasTalent(talents, "jadeBond")) chijiMult *= 1.2;
 
-        healingBreakdown["Gust of Mists (Chi-ji)"] = chijiProcs * getMasteryHeal(tempStats) * chijiMult * (60 / chijiCooldown) * (1 - localSettings.chijiGustsOverhealing);
+        healingBreakdown["Gust of Mists (Chi-ji)"] = chijiProcs * getGustHeal(spellDB, state, localSettings.chijiGustsOverhealing, tempStats) * chijiMult * (60 / chijiCooldown);
 
     }
 }
@@ -598,13 +600,15 @@ const runCastLoop = (
 
             if (slice.gustsValue) {
                 // Spell procs Gust of Mists.
-                const masteryHeal = ((0.1 + state.statPercentages.mastery) * slice.gustsValue * state.statPercentages.intellect * state.statPercentages.crit * state.statPercentages.versatility) * (1 - localSettings.gustsOverhealing) * state.statPercentages.genericHealingMult;
+                const masteryHeal = getGustHeal(spellDB, state, localSettings.gustsOverhealing) * slice.gustsValue;
+
                 healingBreakdown["Gust of Mists"] = Math.round((healingBreakdown["Gust of Mists"] || 0) + (masteryHeal * effectiveCPM));
 
             }
             // Spell specifics
             if (spellName === "Vivify") {
                 const invig = getSpellThroughput(spellDB["Invigorating Mists"][0], state.statPercentages, state.spec, state.settings);
+                
                 healingBreakdown["Invigorating Mists"] = (healingBreakdown["Invigorating Mists"] || 0) + invig * reportingData.averageRemCount * effectiveCPM;
             }
             else if (spellName === "Sheilun's Gift") {
