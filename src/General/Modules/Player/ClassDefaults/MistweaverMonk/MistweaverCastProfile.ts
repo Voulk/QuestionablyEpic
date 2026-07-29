@@ -20,11 +20,11 @@ const getAveragePpmFromLogs = (examples: [[number, number], number][]): number =
     return examples.reduce((sum, [duration, procs]) => sum + getPpmFromExample(duration, procs), 0) / examples.length; 
 }
 
-const getSelectedKick = (castProfile: CastProfile): "Rising Sun Kick" | "Rushing Wind Kick" =>
-    getSpellEntry(castProfile, "Rushing Wind Kick") ? "Rushing Wind Kick" : "Rising Sun Kick";
+const getSelectedKick = (castProfile: CastProfile): any =>
+    getSpellEntry(castProfile, "Rushing Wind Kick") ?? getSpellEntry(castProfile, "Rising Sun Kick");
 
-const getSelectedPrimaryHeal = (castProfile: CastProfile): "Vivify" | "Sheilun's Gift" =>
-    getSpellEntry(castProfile, "Sheilun's Gift") ? "Sheilun's Gift" : "Vivify";
+const getSelectedPrimaryHeal = (castProfile: CastProfile): any =>
+    getSpellEntry(castProfile, "Sheilun's Gift") ?? getSpellEntry(castProfile, "Vivify");
 
 const getMasteryHeal = (currentStats: Stats, mult: number = 1): number => {
     return (0.1 + getMastery(currentStats, MONKCONSTANTS)) * currentStats.intellect! * getStatMult(currentStats, ["crit", "versatility"], {}, MONKCONSTANTS)
@@ -123,7 +123,7 @@ const applyEmperorsElixir = (talents: any, spellDB: Record<string, any[]>, castP
     // can mostly ignore the enveloping mist empower here, it's useless
     if (hasTalent(talents, "Emperor's Elixir")) {
         const effectiveness = talents["Emperor's Elixir"].values[1] / 100;
-        spellDB["Jadefire Stomp"][0].damageToHeal = spellDB[getSelectedKick(castProfile)][0].damageToHeal * effectiveness;
+        spellDB["Jadefire Stomp"][0].damageToHeal = spellDB[getSelectedKick(castProfile).spell][0].damageToHeal * effectiveness;
 
         // TODO: jfs casts from thunder focus tea empowering RSK/RWK
         // needs tft's own cpm + charges (like from focused thunder) in order to get a true depiction of how many are used with rsk/rwk
@@ -137,11 +137,11 @@ const applyPoolOfMists = (talents: any, castProfile: CastProfile, spellDB: Recor
     const kickCdReducedSec = talents["Pool of Mists"].values[2] / 1000;
 
     const remEntry = getSpellEntry(castProfile, "Renewing Mist");
-    const kickEntry = getSpellEntry(castProfile, getSelectedKick(castProfile));
+    const kickEntry = getSelectedKick(castProfile);
     if (!remEntry || !kickEntry) return;
 
     const remCooldown = spellDB["Renewing Mist"][0].cooldownData.cooldown;
-    const kickCooldown = spellDB[getSelectedKick(castProfile)][0].cooldownData.cooldown;
+    const kickCooldown = spellDB[kickEntry.spell][0].cooldownData.cooldown;
 
     const bonusRemCpm = (kickEntry.cpm * kickCdReducedSec) / remCooldown;
     const bonusKickCpm = (remEntry.cpm * remCdReducedSec) / kickCooldown;
@@ -157,7 +157,7 @@ const applyTierSet = (playerData: any, castProfile: CastProfile, spellDB: Record
 
         if (playerData.tierSets.includes("Mistweaver Monk S2-4")) {
             // using 0.15 as opposed to 0.2 since procs cannot proc their own reset
-            const entry = getSpellEntry(castProfile, getSelectedKick(castProfile));
+            const entry = getSelectedKick(castProfile);
             if (entry) entry.cpm *= 1.15;
         }
     }
@@ -200,7 +200,7 @@ const getHeartOfJadeSerpentUptimes = (talents: any, castProfile: CastProfile, tf
     if (hasTalent(talents, "Yu'lon's Avatar")) {
         // we can assume vivify is always being cast to fulfil the ppm, but the cpm proably needs to be higher than yu'lon's avatar's 1.5ppm to hit it effectively
         // revisit for models that skip viv/sg completely
-        const primaryHealCpm = getSpellEntry(castProfile, getSelectedPrimaryHeal(castProfile))?.cpm ?? 0;
+        const primaryHealCpm = getSelectedPrimaryHeal(castProfile)?.cpm ?? 0;
         const avatarPpm = primaryHealCpm > 1.5 ? 1.5 : 0;
         const avatarDurationSec = talents["Yu'lon's Avatar"].values[0] / 1000;
         uptimeSecPerMinStandard += avatarPpm * avatarDurationSec;
@@ -246,7 +246,8 @@ const applyHeartOfJadeSerpent = (talents: any, castProfile: CastProfile, tftCpm:
     const unityWithinMult = hasTalent(talents, "Unity Within") ? talents["Unity Within"].values[0] / 100 : 1;
     const conduitCdr = standardCdr * unityWithinMult;
 
-    const affectedSpells = [getSelectedKick(castProfile), "Renewing Mist", "Life Cocoon", "Thunder Focus Tea"];
+    const selectedKick = getSelectedKick(castProfile).spell;
+    const affectedSpells = [selectedKick, "Renewing Mist", "Life Cocoon", "Thunder Focus Tea"];
     affectedSpells.forEach(spellName => {
         const entry = getSpellEntry(castProfile, spellName);
         if (!entry) return;
@@ -259,7 +260,7 @@ const applyHarmonicSurgeCpm = (talents: any, castProfile: CastProfile, spellDB: 
     const harmonicSurgeEntry = getSpellEntry(castProfile, "Harmonic Surge");
     if (!harmonicSurgeEntry) return;
 
-    const rskCpm = getSpellEntry(castProfile, getSelectedKick(castProfile)).cpm;
+    const rskCpm = getSelectedKick(castProfile).cpm;
     harmonicSurgeEntry.cpm = talents["Harmonic Surge"].values[5] * tftCpm + rskCpm;
 }
 
@@ -292,7 +293,7 @@ const getRisingMistRates = (talents: any, castProfile: CastProfile, spellDB: Rec
     const maxExtension = 1 + talents["Rising Mist"].values[1] / 100;
 
     const getHotRisingMistRate = (spellName: string): number => {
-        const cpm = spellName === "Renewing Mist" ? getSpellEntry(castProfile, getSelectedKick(castProfile)).cpm : getSpellEntry(castProfile, spellName).cpm;
+        const cpm = spellName === "Renewing Mist" ? getSelectedKick(castProfile).cpm : getSpellEntry(castProfile, spellName).cpm;
         const hotDuration = spellDB[spellName][0].buffDuration;
         const maxDuration = hotDuration * maxExtension;
         const extensionsToMax = hotDuration / secPerExtension;
@@ -312,7 +313,7 @@ const getRapidDiffusionRemSec = (talents: any, castProfile: CastProfile, remRapi
     if (!hasTalent(talents, "Rapid Diffusion")) return 0;
 
     const duration = talents["Rapid Diffusion"].values[0] * (getTalentPoints(talents, "Rapid Diffusion") / talents["Rapid Diffusion"].maxPoints);
-    const rskCPM = getSpellEntry(castProfile, getSelectedKick(castProfile)).cpm;
+    const rskCPM = getSelectedKick(castProfile).cpm;
     const envCPM = getSpellEntry(castProfile, "Enveloping Mist").cpm;
 
     return (envCPM + rskCPM) * duration * (1 + remRapidDiffusion);
@@ -423,7 +424,7 @@ const initMonkCastState = (castProfile: CastProfile, playerData: any, settings: 
     });
 
     // baseline ancient teachings transfer
-    [getSelectedKick(castProfile), "Blackout Kick", "Tiger Palm", "Crackling Jade Lightning"].forEach(spellName => {
+    [getSelectedKick(castProfile).spell, "Blackout Kick", "Tiger Palm", "Crackling Jade Lightning"].forEach(spellName => {
         spellDB[spellName][0].damageToHeal = 0.25;
     });
 
