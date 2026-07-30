@@ -635,7 +635,7 @@ const runCastLoop = (
                 }
                 if (slice.damageToHeal) {
                     if (spellName === "Courage of the White Tiger") {
-                        healingBreakdown["Courage of the White Tiger"] = (healingBreakdown["Courage of the White Tiger"] || 0) + totalOutput * slice.damageToHeal;
+                        healingBreakdown["Courage of the White Tiger"] = (healingBreakdown["Courage of the White Tiger"] || 0) + totalOutput * slice.damageToHeal * 1.3; // ignores armor
                     }
                     else {
                         healingBreakdown["Ancient Teachings"] = (healingBreakdown["Ancient Teachings"] || 0) + totalOutput * slice.damageToHeal * (1 - localSettings.ancientTeachingsOverhealing);
