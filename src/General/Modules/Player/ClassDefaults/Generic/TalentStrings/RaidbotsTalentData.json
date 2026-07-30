@@ -1597,30 +1597,30 @@
         ],
         "entries": [
           {
-            "id": 103137,
-            "definitionId": 108142,
+            "id": 137508,
+            "definitionId": 142268,
             "maxRanks": 1,
             "type": "passive",
             "name": "Verdant Infusion",
             "spellId": 392410,
             "icon": "inv_relics_totemoflife",
-            "index": 100
+            "index": 300
           },
           {
-            "id": 103136,
-            "definitionId": 108141,
+            "id": 137507,
+            "definitionId": 142267,
             "maxRanks": 1,
             "type": "passive",
             "name": "Prosperity",
             "spellId": 200383,
             "icon": "ability_druid_giftoftheearthmother",
-            "index": 200
+            "index": 400
           }
         ]
       },
       {
         "id": 82051,
-        "name": "Nature's Splendor / Passing Seasons",
+        "name": "Overgrowth / Passing Seasons",
         "type": "choice",
         "posX": 12300,
         "posY": 2700,
@@ -1638,9 +1638,9 @@
             "definitionId": 108108,
             "maxRanks": 1,
             "type": "passive",
-            "name": "Nature's Splendor",
-            "spellId": 392288,
-            "icon": "spell_nature_spiritarmor",
+            "name": "Overgrowth",
+            "spellId": 203651,
+            "icon": "ability_druid_overgrowth",
             "index": 100
           },
           {
@@ -1828,7 +1828,7 @@
       },
       {
         "id": 82059,
-        "name": "Verdancy",
+        "name": "Germination",
         "type": "single",
         "posX": 10500,
         "posY": 4500,
@@ -1848,9 +1848,9 @@
             "definitionId": 108118,
             "maxRanks": 1,
             "type": "passive",
-            "name": "Verdancy",
-            "spellId": 392325,
-            "icon": "inv_10_herb_seed_magiccolor5",
+            "name": "Germination",
+            "spellId": 155675,
+            "icon": "spell_druid_germination",
             "index": 100
           }
         ]
@@ -1913,8 +1913,8 @@
       },
       {
         "id": 82053,
-        "name": "Inner Peace / Flourish",
-        "type": "choice",
+        "name": "Flourish",
+        "type": "single",
         "posX": 12300,
         "posY": 4500,
         "reqPoints": 8,
@@ -1926,16 +1926,6 @@
           82054
         ],
         "entries": [
-          {
-            "id": 103107,
-            "definitionId": 108112,
-            "maxRanks": 1,
-            "type": "passive",
-            "name": "Inner Peace",
-            "spellId": 197073,
-            "icon": "ability_druid_dreamstate",
-            "index": 200
-          },
           {
             "id": 103106,
             "definitionId": 108111,
@@ -1950,7 +1940,7 @@
       },
       {
         "id": 82056,
-        "name": "Cultivation",
+        "name": "Flash of Clarity",
         "type": "single",
         "posX": 12900,
         "posY": 4500,
@@ -1958,6 +1948,7 @@
         "maxRanks": 1,
         "next": [
           82065,
+          110694,
           82080
         ],
         "prev": [
@@ -1969,9 +1960,9 @@
             "definitionId": 108115,
             "maxRanks": 1,
             "type": "passive",
-            "name": "Cultivation",
-            "spellId": 200390,
-            "icon": "spell_nature_healingtouch",
+            "name": "Flash of Clarity",
+            "spellId": 392220,
+            "icon": "spell_nature_crystalball",
             "index": 100
           }
         ]
@@ -2185,6 +2176,33 @@
         ]
       },
       {
+        "id": 110694,
+        "name": "Cultivation",
+        "type": "single",
+        "posX": 12900,
+        "posY": 5100,
+        "reqPoints": 8,
+        "maxRanks": 2,
+        "next": [
+          82067
+        ],
+        "prev": [
+          82056
+        ],
+        "entries": [
+          {
+            "id": 137510,
+            "definitionId": 142270,
+            "maxRanks": 2,
+            "type": "passive",
+            "name": "Cultivation",
+            "spellId": 200390,
+            "icon": "spell_nature_healingtouch",
+            "index": 100
+          }
+        ]
+      },
+      {
         "id": 82080,
         "name": "Unstoppable Growth",
         "type": "single",
@@ -2356,7 +2374,8 @@
         ],
         "prev": [
           82080,
-          82065
+          82065,
+          110694
         ],
         "entries": [
           {
@@ -2746,7 +2765,7 @@
       },
       {
         "id": 82071,
-        "name": "Germination",
+        "name": "Verdancy",
         "type": "single",
         "posX": 14100,
         "posY": 6900,
@@ -2764,9 +2783,9 @@
             "definitionId": 108132,
             "maxRanks": 1,
             "type": "passive",
-            "name": "Germination",
-            "spellId": 155675,
-            "icon": "spell_druid_germination",
+            "name": "Verdancy",
+            "spellId": 392325,
+            "icon": "inv_10_herb_seed_magiccolor5",
             "index": 100
           }
         ]
@@ -4009,7 +4028,8 @@
       110421,
       110424,
       110426,
-      110431
+      110431,
+      110694
     ]
   },
   {
@@ -9856,6 +9876,7 @@
         "maxRanks": 1,
         "next": [
           82568,
+          110648,
           110277
         ],
         "prev": [
@@ -9869,7 +9890,7 @@
             "maxRanks": 1,
             "type": "passive",
             "name": "Shadow Mend",
-            "spellId": 1252215,
+            "spellId": 1252217,
             "icon": "spell_shadow_shadowmend",
             "index": 0
           }
@@ -9910,8 +9931,10 @@
         "posX": 11100,
         "posY": 6300,
         "reqPoints": 20,
-        "maxRanks": 2,
-        "next": [],
+        "maxRanks": 1,
+        "next": [
+          86730
+        ],
         "prev": [
           82599
         ],
@@ -9919,7 +9942,7 @@
           {
             "id": 103694,
             "definitionId": 108699,
-            "maxRanks": 2,
+            "maxRanks": 1,
             "type": "passive",
             "name": "Greater Smite",
             "spellId": 1253724,
@@ -9965,6 +9988,7 @@
         "reqPoints": 20,
         "maxRanks": 2,
         "next": [
+          86730,
           82573
         ],
         "prev": [
@@ -9988,7 +10012,7 @@
         "id": 82568,
         "name": "Blaze of Light",
         "type": "single",
-        "posX": 13500,
+        "posX": 12900,
         "posY": 6300,
         "reqPoints": 20,
         "maxRanks": 2,
@@ -10009,6 +10033,34 @@
             "spellId": 215768,
             "icon": "spell_holy_searinglight",
             "index": 100
+          }
+        ]
+      },
+      {
+        "id": 110648,
+        "name": "Grim Deliverance",
+        "type": "single",
+        "posX": 13500,
+        "posY": 6300,
+        "reqPoints": 20,
+        "maxRanks": 1,
+        "next": [
+          82586,
+          82585
+        ],
+        "prev": [
+          82567
+        ],
+        "entries": [
+          {
+            "id": 137463,
+            "definitionId": 142223,
+            "maxRanks": 1,
+            "type": "passive",
+            "name": "Grim Deliverance",
+            "spellId": 1298779,
+            "icon": "spell_bastion_priest_shadow",
+            "index": 0
           }
         ]
       },
@@ -10048,7 +10100,9 @@
         "posY": 6300,
         "reqPoints": 20,
         "maxRanks": 1,
-        "next": [],
+        "next": [
+          82585
+        ],
         "prev": [
           82570
         ],
@@ -10075,7 +10129,9 @@
         "maxRanks": 1,
         "next": [],
         "prev": [
-          82602
+          82602,
+          82572,
+          82569
         ],
         "entries": [
           {
@@ -10119,13 +10175,14 @@
         "id": 82586,
         "name": "Searing Light",
         "type": "single",
-        "posX": 13500,
+        "posX": 12900,
         "posY": 6900,
         "reqPoints": 20,
         "maxRanks": 1,
         "next": [],
         "prev": [
-          82568
+          82568,
+          110648
         ],
         "entries": [
           {
@@ -10150,7 +10207,9 @@
         "maxRanks": 2,
         "next": [],
         "prev": [
-          110277
+          110277,
+          110278,
+          110648
         ],
         "entries": [
           {
@@ -11315,7 +11374,8 @@
       110278,
       110408,
       110409,
-      110410
+      110410,
+      110648
     ]
   },
   {
@@ -14657,7 +14717,7 @@
             "type": "passive",
             "name": "Resonant Energy",
             "spellId": 453845,
-            "icon": "ability_priest_halo",
+            "icon": "inv_ability_holyfire_orb",
             "index": 100
           }
         ]
@@ -15072,7 +15132,8 @@
       110278,
       110408,
       110409,
-      110410
+      110410,
+      110648
     ]
   },
   {
@@ -16619,7 +16680,7 @@
             "type": "active",
             "name": "Ascendance",
             "spellId": 114052,
-            "icon": "spell_fire_elementaldevastation",
+            "icon": "",
             "index": 100
           },
           {
@@ -16761,7 +16822,7 @@
         "maxRanks": 1,
         "next": [
           81047,
-          81019
+          103427
         ],
         "prev": [
           81021,
@@ -16788,7 +16849,7 @@
         "posY": 3000,
         "maxRanks": 1,
         "next": [
-          81019,
+          103427,
           81048
         ],
         "prev": [
@@ -16869,13 +16930,13 @@
         ]
       },
       {
-        "id": 81019,
-        "name": "Calm Waters",
+        "id": 103427,
+        "name": "Wavespeaker's Blessing",
         "type": "single",
         "posX": 14400,
         "posY": 3600,
         "reqPoints": 8,
-        "maxRanks": 1,
+        "maxRanks": 2,
         "next": [
           81049,
           81046,
@@ -16887,14 +16948,14 @@
         ],
         "entries": [
           {
-            "id": 101896,
-            "definitionId": 106923,
-            "maxRanks": 1,
+            "id": 127671,
+            "definitionId": 132480,
+            "maxRanks": 2,
             "type": "passive",
-            "name": "Calm Waters",
-            "spellId": 1252841,
-            "icon": "inv_10_elementalshardfoozles_water",
-            "index": 300
+            "name": "Wavespeaker's Blessing",
+            "spellId": 381946,
+            "icon": "inv_alchemist_81_spiritedalchemiststone",
+            "index": 100
           }
         ]
       },
@@ -17053,7 +17114,7 @@
         ],
         "prev": [
           81047,
-          81019
+          103427
         ],
         "entries": [
           {
@@ -17082,7 +17143,7 @@
         ],
         "prev": [
           81048,
-          81019
+          103427
         ],
         "entries": [
           {
@@ -17225,8 +17286,8 @@
         ],
         "prev": [
           81046,
-          81019,
-          81049
+          81049,
+          103427
         ],
         "entries": [
           {
@@ -17322,7 +17383,7 @@
         "next": [
           81052,
           103915,
-          103427
+          113376
         ],
         "prev": [
           81044,
@@ -17351,7 +17412,7 @@
         "reqPoints": 20,
         "maxRanks": 1,
         "next": [
-          103427,
+          113376,
           81051
         ],
         "prev": [
@@ -17510,13 +17571,13 @@
         ]
       },
       {
-        "id": 103427,
-        "name": "Wavespeaker's Blessing",
+        "id": 113376,
+        "name": "Swelling Tides",
         "type": "single",
         "posX": 14400,
         "posY": 6000,
         "reqPoints": 20,
-        "maxRanks": 2,
+        "maxRanks": 1,
         "next": [
           81042,
           81051
@@ -17527,13 +17588,13 @@
         ],
         "entries": [
           {
-            "id": 127671,
-            "definitionId": 132480,
-            "maxRanks": 2,
+            "id": 140663,
+            "definitionId": 145345,
+            "maxRanks": 1,
             "type": "passive",
-            "name": "Wavespeaker's Blessing",
-            "spellId": 381946,
-            "icon": "inv_alchemist_81_spiritedalchemiststone",
+            "name": "Swelling Tides",
+            "spellId": 1312843,
+            "icon": "ability_shaman_manatidetotem",
             "index": 100
           }
         ]
@@ -17601,8 +17662,8 @@
         "next": [],
         "prev": [
           103915,
-          103427,
-          81052
+          81052,
+          113376
         ],
         "entries": [
           {
@@ -17627,8 +17688,8 @@
         "maxRanks": 1,
         "next": [],
         "prev": [
-          103427,
-          103430
+          103430,
+          113376
         ],
         "entries": [
           {
@@ -18650,7 +18711,6 @@
       81015,
       81016,
       81018,
-      81019,
       81021,
       81022,
       81024,
@@ -18807,7 +18867,8 @@
       110186,
       110401,
       110402,
-      110403
+      110403,
+      113376
     ]
   },
   {
@@ -22619,10 +22680,7 @@
       81469,
       81470,
       81471,
-      81472,
-      81473,
       81474,
-      81475,
       81476,
       81477,
       81479,
@@ -22645,7 +22703,6 @@
       81497,
       81498,
       81499,
-      81500,
       81501,
       81502,
       81503,
@@ -22725,7 +22782,6 @@
       81618,
       81621,
       81628,
-      81629,
       81630,
       81631,
       81632,
@@ -22852,7 +22908,8 @@
       110257,
       110417,
       110418,
-      110419
+      110419,
+      110862
     ]
   },
   {
@@ -25069,8 +25126,8 @@
       },
       {
         "id": 101112,
-        "name": "Dancing Mists",
-        "type": "single",
+        "name": "Dancing Mists / Vital Expenditure",
+        "type": "choice",
         "posX": 13200,
         "posY": 5100,
         "reqPoints": 8,
@@ -25093,6 +25150,16 @@
             "spellId": 388701,
             "icon": "ability_monk_serenity",
             "index": 100
+          },
+          {
+            "id": 137474,
+            "definitionId": 142234,
+            "maxRanks": 1,
+            "type": "passive",
+            "name": "Vital Expenditure",
+            "spellId": 1299572,
+            "icon": "ability_monk_soothingmists",
+            "index": 200
           }
         ]
       },
