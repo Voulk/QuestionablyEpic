@@ -161,28 +161,78 @@ export default function RaidGearContainer(props) {
                                 id="panel1a-header"
                                 style={sharedAccordionSummaryStyles}
                               >
-                                <Typography
-                                  variant="h6"
-                                  color="primary"
-                                  align="left"
+                                <div
                                   style={{
                                     display: "flex",
                                     alignItems: "center",
-                                    gap: 8,
+                                    justifyContent: "space-between",
+                                    width: "100%",
+                                    gap: 12,
                                   }}
                                 >
-                                  {bossHeaders({ id: key, style: { height: 36, verticalAlign: "middle" } })}
-                                  <Divider flexItem orientation="vertical" style={{ margin: "0px 5px 0px 0px" }} />
-                                  {encounterDB[raidID].bosses[key]} -{" "}
-                                  {getNumUpgrades(itemDifferentials, raidID, key, firstDifficulty) +
-                                    (secondDifficulty !== -1
-                                      ? getNumUpgrades(itemDifferentials, raidID, key, secondDifficulty)
-                                      : 0)}{" "}
-                                  Upgrades
-                                </Typography>
+                                  <Typography
+                                    variant="h6"
+                                    color="primary"
+                                    align="left"
+                                    style={{
+                                      display: "flex",
+                                      alignItems: "center",
+                                      gap: 8,
+                                    }}
+                                  >
+                                    {bossHeaders({ id: key, style: { height: 36, verticalAlign: "middle" } })}
+                                    <Divider flexItem orientation="vertical" style={{ margin: "0px 5px 0px 0px" }} />
+                                    {encounterDB[raidID].bosses[key]} -{" "}
+                                    {getNumUpgrades(itemDifferentials, raidID, key, firstDifficulty) +
+                                      (secondDifficulty !== -1
+                                        ? getNumUpgrades(itemDifferentials, raidID, key, secondDifficulty)
+                                        : 0)}{" "}
+                                    Upgrades
+                                  </Typography>
+
+                                  <div
+                                    style={{
+                                      display: "inline-flex",
+                                      alignItems: "center",
+                                      gap: 12,
+                                      color: "rgba(255, 255, 255, 0.82)",
+                                      fontSize: "0.84rem",
+                                      whiteSpace: "nowrap",
+                                    }}
+                                  >
+                                    <span>Bonus roll chance: --%</span>
+                                    <span>Avg bonus upgrade: --%</span>
+                                  </div>
+                                </div>
                               </UFAccordionSummary>
                               <AccordionDetails style={sharedAccordionDetailsStyles}>
                                 <Grid item xs={12} sm container direction="row" spacing={1}>
+                                  <Grid item xs={12} container spacing={1}>
+                                    <Grid item xs={12}>
+                                      <div
+                                        style={{
+                                          background: "linear-gradient(180deg, rgba(242, 191, 89, 0.16) 0%, rgba(242, 191, 89, 0.08) 100%)",
+                                          borderRadius: 8,
+                                          padding: "7px 12px",
+                                          border: "1px solid rgba(242, 191, 89, 0.34)",
+                                          boxShadow: "inset 0 0 0 1px rgba(242, 191, 89, 0.14)",
+                                          display: "flex",
+                                          alignItems: "center",
+                                          justifyContent: "space-between",
+                                          gap: 12,
+                                        }}
+                                      >
+                                        <Typography variant="h6" color="primary" align="left">
+                                          {getDifficultyName(firstDifficulty).replace("(Max)", "")} - Bonus Rolls
+                                        </Typography>
+                                      </div>
+                                    </Grid>
+
+                                    {[...filterItemListByDropLoc(itemDifferentials, raidID, key, "Raid", firstDifficulty)].map((item, index) => (
+                                      <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
+                                    ))}
+                                  </Grid>
+
                                   <Grid item xs={12} container spacing={1}>
                                     <Grid item xs={12}>
                                       <Typography
@@ -218,7 +268,7 @@ export default function RaidGearContainer(props) {
                                             padding: "6px 10px",
                                           }}
                                         >
-                                          {getDifficultyName(secondDifficulty)} -{" "}
+                                          {"Mythic"} -{" "}
                                           {getNumUpgrades(itemDifferentials, raidID, key, secondDifficulty)} Upgrades
                                         </Typography>
                                       </Grid>
