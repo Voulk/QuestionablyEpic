@@ -89,6 +89,31 @@ export const timewalkingDB = {
   7: "Legion",
 }
 
+export const bonusLootCaches = {
+      2849: 274708, //"Nymrissa Wavecaller",
+      2888: 278285, //"Nek'zali the Soulcoiler",
+      2874: 278283, //"Entomed Sentinels",
+      2894: 278286, //"The Lost Explorers",
+      2882: 278287, //"Vashnik the Malignant",
+      2871: 278288, // "Sszorak",
+      2887: 278289, //"The Twin Fangs",
+      2883: 278290, //"The Coiled Alter",
+      2895: 278284, //"Ula'tek",
+
+      // Dungeons
+      1322: 279618, //"Alter of Fangs",
+      1311: 279620, //"Den of Nalorakk",
+      1304: 279623, //"Murder Row",
+      1309: 279619, //"The Blinding Vale",
+
+      1313: 279625, //"Voidscar Arena", 
+      1041: 279621, //"Kings Rest", 
+      1202: 279622, //"Ruby Life Pools", 
+      1030: 279624, //"Temple of Sethraliss", 
+
+
+}
+
 
 export const retailInstanceDB = {
   /* ---------------------------------------------------------------------------------------------- */

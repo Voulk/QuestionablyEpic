@@ -22,19 +22,11 @@ const getDifficultyName = (difficulty, gameType = "Retail") => {
       case 0:
         return "LFR";
       case 1:
-        return "LFR (Max)";
-      case 2:
         return "Normal";
-      case 3:
-        return "Normal (Max)";
-      case 4:
+      case 2:
         return "Heroic";
-      case 5:
-        return "Heroic (Max)";
-      case 6:
+      case 3:
         return "Mythic";
-      case 7:
-        return "Mythic (Max)";
     }
   }
   else {
@@ -223,7 +215,7 @@ export default function RaidGearContainer(props) {
                                         }}
                                       >
                                         <Typography variant="h6" color="primary" align="left">
-                                          {getDifficultyName(firstDifficulty)} - Bonus Rolls
+                                          {getDifficultyName(firstDifficulty)} - Upgraded Bonus Rolls
                                         </Typography>
                                       </div>
                                     </Grid>
@@ -268,7 +260,7 @@ export default function RaidGearContainer(props) {
                                             padding: "6px 10px",
                                           }}
                                         >
-                                          {"Mythic"} -{" "}
+                                          {getDifficultyName(firstDifficulty)} -{" "}
                                           {getNumUpgrades(itemDifferentials, raidID, key, firstDifficulty)} Upgrades
                                         </Typography>
                                       </Grid>

@@ -102,7 +102,7 @@ const useStyles = makeStyles((theme) => ({
 /* ---------------------------------------------------------------------------------------------- */
 
 /* ---------------------------------- Retail Raid Difficulties ---------------------------------- */
-const raidDifficulty = ["Raid Finder", "Raid Finder (Max)", "Normal", "Normal (Max)", "Heroic", "Heroic (Max)", "Mythic", "Mythic (Max)"];
+const raidDifficulty = ["Raid Finder", "Normal", "Heroic", "Mythic"];
 
 /* -------------------------------------- Retail PVP Ranks -------------------------------------- */
 
@@ -215,10 +215,10 @@ export default function UpgradeFinderFront(props) {
   const gameType = useSelector((state) => state.gameType);
   const helpBlurb = t("UpgradeFinderFront.HelpText");
   const [ufRaidDifficulty, setUfRaidDifficulty] = useState(() => {
-    const stored = getSessionStorageOrDefault("ufRaidDifficulty", [7]);
+    const stored = Math.min(getSessionStorageOrDefault("ufRaidDifficulty", [3]), 3);
 
     if (!Array.isArray(stored) || stored.length === 0) {
-      return [7];
+      return [3];
     }
 
     // Keep only one value in case older session data contains two selections.
@@ -461,7 +461,7 @@ export default function UpgradeFinderFront(props) {
 
                 <Grid container justifyContent="center" spacing={1} columns={8} className={classes.difficultyGrid}>
                   {raidDifficulty.map((key, i) => (
-                    <Grid item xs={2} key={i} style={{ order: i % 2 === 0 ? 0 : 1 }}>
+                    <Grid item xs={2} key={i}>
                       <ToggleButton
                         classes={{
                           root: classes.difficultyToggle,

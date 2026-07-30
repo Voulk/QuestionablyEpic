@@ -610,7 +610,7 @@
       "MythicPlusHeader": "Mythic Plus Key Level",
       "PvPBody": "Select  your Rating",
       "PvPHeader": "PvP Rating",
-      "RaidDifficultyBody": "Select 1-2 difficulties to check for upgrades.",
+      "RaidDifficultyBody": "Select a difficulty to check for upgrades.",
       "RaidDifficultyHeader": "Raid Difficulty",
       "SimCBody1Good": "Import - All Set!",
       "SimCBody1Invalid": "Import - Empty Item Slot",

@@ -142,11 +142,26 @@ export function getSetItemLevel(itemSource, playerSettings, difficultyType = "dr
     // If difficultyType == "max" then we return the highest item level on the track that it drops at.
     // If difficultyType == "bonus" then we return the highest item level on the bonus track it drops at. For Mythic this will match Max.
 
+    if (difficultyType === "max") {
+      itemLevel = itemLevels.raid[difficulty + 4]
+    }
+    if (difficultyType === "bonus") {
+      if (difficulty === 3) itemLevel = itemLevels.raid[difficulty + 4] // Mythic is the same as Mythic Max.
+      else itemLevel = itemLevels.raid[difficulty + 5]; // Go up one difficulty and then Max.
+    }
+
+    if (difficulty === 3 && [2895, 2883].includes(bossID)) {
+      itemLevel = 344 // 9/6 Mythic
+    }
+    else if (difficultyType === "drop") {
+      itemLevel += getItemLevelBoost(bossID, difficulty)// + getVeryRareItemLevelBoost(itemID, bossID, difficulty);
+    }
+
     // If we're looking at Max difficulties then only grab the very rare boost.
     //if (difficulty === CONSTANTS.difficulties.heroicMax || difficulty === CONSTANTS.difficulties.heroicMax || difficulty === CONSTANTS.difficulties.mythicMax) itemLevel += getVeryRareItemLevelBoost(itemID, bossID, difficulty);
 
     // Otherwise grab both the very rare and any boss-specific item level increase.
-    //itemLevel += getItemLevelBoost(bossID, difficulty)// + getVeryRareItemLevelBoost(itemID, bossID, difficulty);
+    //
 
   }
 
