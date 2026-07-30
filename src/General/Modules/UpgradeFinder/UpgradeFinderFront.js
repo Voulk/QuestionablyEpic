@@ -214,7 +214,16 @@ export default function UpgradeFinderFront(props) {
   const userSettings = useSelector((state) => state.playerSettings);
   const gameType = useSelector((state) => state.gameType);
   const helpBlurb = t("UpgradeFinderFront.HelpText");
-  const [ufRaidDifficulty, setUfRaidDifficulty] = useState(() => getSessionStorageOrDefault("ufRaidDifficulty", [5,7]));
+  const [ufRaidDifficulty, setUfRaidDifficulty] = useState(() => {
+    const stored = getSessionStorageOrDefault("ufRaidDifficulty", [7]);
+
+    if (!Array.isArray(stored) || stored.length === 0) {
+      return [7];
+    }
+
+    // Keep only one value in case older session data contains two selections.
+    return [stored[stored.length - 1]];
+  });
   const [ufDungeonDifficulty, setUfDungeonDifficulty] = useState(() => getSessionStorageOrDefault("ufDungeonDifficulty", gameType === "Retail" ? 6 : 1));
   const [ufPvPRank, setUfPvPRank] = useState(() => getSessionStorageOrDefault("ufPvPRank", 0));
   const [ufCraftedLevel, setUfCraftedLevel] = useState(() => Math.min(getSessionStorageOrDefault("ufCraftedLevel", 2), 2));
@@ -253,14 +262,7 @@ export default function UpgradeFinderFront(props) {
   }, []);
 
   const setRaidDifficulty = (difficulty) => {
-    let currDiff = ufRaidDifficulty;
-    let difficultyIndex = currDiff.indexOf(difficulty);
-    if (difficultyIndex > -1) currDiff.splice(difficultyIndex, 1);
-    else {
-      currDiff.push(difficulty);
-      if (currDiff.length > 2) currDiff.splice(0, 1);
-    }
-    setUfRaidDifficulty(currDiff);
+    setUfRaidDifficulty((current) => (current.includes(difficulty) ? current : [difficulty]));
   };
 
   const changeCraftedStats = (event) => {

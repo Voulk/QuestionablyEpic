@@ -223,12 +223,12 @@ export default function RaidGearContainer(props) {
                                         }}
                                       >
                                         <Typography variant="h6" color="primary" align="left">
-                                          {getDifficultyName(firstDifficulty).replace("(Max)", "")} - Bonus Rolls
+                                          {getDifficultyName(firstDifficulty)} - Bonus Rolls
                                         </Typography>
                                       </div>
                                     </Grid>
 
-                                    {[...filterItemListByDropLoc(itemDifferentials, raidID, key, "Raid", firstDifficulty)].map((item, index) => (
+                                    {[...filterItemListByDropLoc(itemDifferentials, raidID, key, "Raid", firstDifficulty, "bonus")].map((item, index) => (
                                       <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
                                     ))}
                                   </Grid>
@@ -245,17 +245,17 @@ export default function RaidGearContainer(props) {
                                           padding: "6px 10px",
                                         }}
                                       >
-                                        {getDifficultyName(firstDifficulty)} -{" "}
+                                        {getDifficultyName(firstDifficulty) + " - Upgraded "} -{" "}
                                         {getNumUpgrades(itemDifferentials, raidID, key, firstDifficulty)} Upgrades
                                       </Typography>
                                     </Grid>
 
-                                    {[...filterItemListByDropLoc(itemDifferentials, raidID, key, "Raid", firstDifficulty)].map((item, index) => (
+                                    {[...filterItemListByDropLoc(itemDifferentials, raidID, key, "Raid", firstDifficulty, "max")].map((item, index) => (
                                       <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
                                     ))}
                                   </Grid>
 
-                                  {secondDifficulty !== -1 ? (
+                                  {firstDifficulty !== -1 ? (
                                     <Grid item xs={12} container spacing={1}>
                                       <Grid item xs={12}>
                                         <Typography
@@ -269,11 +269,11 @@ export default function RaidGearContainer(props) {
                                           }}
                                         >
                                           {"Mythic"} -{" "}
-                                          {getNumUpgrades(itemDifferentials, raidID, key, secondDifficulty)} Upgrades
+                                          {getNumUpgrades(itemDifferentials, raidID, key, firstDifficulty)} Upgrades
                                         </Typography>
                                       </Grid>
 
-                                      {[...filterItemListByDropLoc(itemDifferentials, raidID, key, "Raid", secondDifficulty)].map((item, index) => (
+                                      {[...filterItemListByDropLoc(itemDifferentials, raidID, key, "Raid", firstDifficulty, "drop")].map((item, index) => (
                                         <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
                                       ))}
                                     </Grid>
