@@ -8,6 +8,7 @@ describe("decodeBlizzardString", () => {
 
 
     const result = decodeBlizzardString(talentString, 105);
+    //console.log(result);
     const enabledTalents = result.selectedTalents.map(talent => talent.nodeId);
 
 
@@ -25,6 +26,22 @@ describe("decodeBlizzardString", () => {
         //console.log(result);
 
         expect(enabledTalents).toEqual(expect.arrayContaining(["Lifebind", "Nozdormu's Teachings", "Temporality"]));
+
+    })
+
+    
+    it("should decode a Resto Shaman talent string without picking both hero trees", () => {
+        const talentString = "CgQAAAAAAAAAAAAAAAAAAAAAAAAAAgBAAAAzMzsssNjZGjZGzMjxiZWgBMBzCTgxiZYGsNGz0stMzwMmFWMzMjZYWGAAAYmZAwMDMYG";
+
+
+        const result = decodeBlizzardString(talentString, 264);
+        const enabledTalents = result.selectedTalents.map(talent => talent.entryName);
+
+        //console.log(result);
+        console.log(enabledTalents);
+
+        //expect(enabledTalents).toEqual(expect.arrayContaining(["Final Calling", "Ancestral Swiftness", "Primal Tide Core"]));
+        expect(enabledTalents).not.toEqual(expect.arrayContaining(["Splitstream"]));
 
     })
 })

@@ -312,7 +312,7 @@
         {
             "displayInfo": {
                 "id": 1267068,
-                "icon": false,
+                "icon": "inv12_apextalent_shaman_stormstreamtotem",
                 "spellName": "Stormstream Totem",
                 "cat": "heal"
             },
@@ -354,7 +354,7 @@
         {
             "displayInfo": {
                 "id": 114052,
-                "icon": false,
+                "icon": "ascendance_8026698",
                 "spellName": "Ascendance",
                 "cat": "heal"
             },
