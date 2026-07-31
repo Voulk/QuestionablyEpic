@@ -91,6 +91,14 @@ const wowheadCodes = {
   2739: "[icon name=inv_120_raid_marchonqueldanas_lightvoidphoenix][/icon][url guide=33233]Belo'ren[/url] [i](Raid)[/i]", // Belo'ren
   2740: "[icon name=inv_120_raid_marchonqueldanas_lura][/icon][url guide=33234]Midnight Falls[/url] [i](Raid)[/i]", // Midnight Falls
 
+  2888: "[icon name=inv_121_raid_achievement_priestess][/icon][url guide=34244]Nek'zali the Soulcoiler[/url]",
+  2874: "[icon name=inv_121_raid_achievement_golems][/icon][url guide=34245]Entomed Sentinels[/url]",
+  2894: "[icon name=inv_121_raid_achievement_tortollans][/icon][url guide=34247]The Lost Explorers[/url]",
+  2882: "[icon name=inv_121_raid_achievement_alchemist][/icon][url guide=34248]Vashnik the Malignant[/url]", 
+  2871: "[icon name=inv_121_raid_achievement_brute][/icon][url guide=34249]Sszorak[/url]",
+  2887: "[icon name=inv_121_raid_achievement_twins][/icon][url guide=34250]The Twin Fangs[/url]",
+  2883: "[icon name=inv_121_raid_achievement_zuljinmalacrass][/icon][url guide=34251]The Coiled Alter[/url]",
+  2895: "[icon name=Inv_121_raid_achievement_ulatek][/icon][url guide=34252]Ula'tek[/url] [i](Raid)[/i]",
 
   // Dungeons
   1210: "[=retail-dun-darkflame-cleft]", // Darkflame Cleft
@@ -112,17 +120,22 @@ const wowheadCodes = {
 
   1315: "[icon name=inv_achievement_dungeon_maisarahills][/icon][url guide=33181]Maisara Caverns[/url]", // Maisara Cavern
   1316: "[icon name=inv_achievement_dungeon_nexuspointxenas][/icon][url guide=33182]Nexus Point Xenas[/url]", // Nexus-Point Xenas
-  1311: "", // Den of Nalorakk
-  1309: "", // The Blinding Vale
-  1304: "", // Murder Row
+  1311: "[icon name=inv_achievement_dungeon_proveyourworth][/icon][url guide=33190]Den of Nalorakk[/url]", // Den of Nalorakk
+  1309: "[icon name=inv_achievement_dungeon_lightbloom][/icon][url guide=33193]The Blinding Vale[/url]", // The Blinding Vale
+  1304: "[icon name=inv_achievement_dungeon_murderrow][/icon][url guide=33189]Murder Row[/url]", // Murder Row
   1300: "[icon name=inv_achievement_dungeon_magistersterrace][/icon][url guide=33155]Magister's Terrace[/url]", // Magisters Terrace
   1299: "[icon name=inv_achievement_dungeon_windrunnerspire][/icon][url guide=33184]Windrunner Spire[/url]", // Windrunner Spire
-  1313: "", // Voidscar Arena
+  1313: "[icon name=inv_achievement_dungeon_voidscararena][/icon][url guide=33183]Voidscar Arena[/url]", // Voidscar Arena
 
   1201: "[icon name=achievement_dungeon_dragonacademy][/icon][url guide=33197]Algeth'ar Academy[/url]", // Algethar Academy
   278: "[icon name=inv_achievement_dungeon_pitofsaron][/icon][url guide=33198]Pit of Saron[/url]", // Pit of Saron
   476: "[icon name=achievement_dungeon_arakkoaspires][/icon][url guide=33199]Skyreach[/url]", // Skyreach
   945: "[icon name=achievement_dungeon_argusdungeon][/icon][url guide=33200]Seat of the Triumvirate[/url]", // Seat of the Triumvirate
+
+  1322: "[icon name=inv_achievement_dungeon_altaroffangs][/icon][url guide=33272]Alter of Fangs[/url]",
+  1041: "[icon name=achievement_dungeon_kingsrest][/icon][url guide=33272]Kings Rest[/url]",
+  1202: "[icon name=achievement_dungeon_lifepools][/icon][url guide=33272]Ruby Life Pools[/url]",
+  1030: "[icon name=achievement_dungeon_templeofsethraliss][/icon][url guide=33272]Temple of Sethraliss[/url]",
 
 
   // Classic
@@ -418,7 +431,7 @@ export function exportWowheadGearList(itemSet, spec, gameType = "Retail") {
       else source = wowheadCodes[item.source.encounterId] || "";
 
       if (gameType === "Retail") {
-        bonusTag = ` bonus=${getWowheadBonusTag(item.id)}`;
+        //bonusTag = ` bonus=${getWowheadBonusTag(item.id)}`;
       }
 
     }
