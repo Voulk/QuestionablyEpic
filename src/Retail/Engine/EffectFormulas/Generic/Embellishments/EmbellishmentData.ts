@@ -27,6 +27,27 @@ export const getEmbellishmentEffect = (effectName, itemLevel, additionalData) =>
 
 export const embellishmentData = [
   // 
+          { // 
+        id: 0,
+        name: "Adorned Fang",
+        description: "",
+        effects: [
+        { // This might also be able to stack. It also "procs more on low health targets". Untested.
+            scalingClass: -790,
+            coefficient: 0.512372,
+            stat: "haste",
+            duration: 15,
+            ppm: 2,
+        },
+        ],
+        runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+            let bonus_stats: Stats = {};
+
+            bonus_stats.haste = runGenericPPMTrinket(data[0], itemLevel);
+
+            return bonus_stats;
+        }
+    },
     { // Proc for all secondary stats. +1% power for each unique gem colour in gear.
         id: 241140,
         name: "Signet of Azerothian Blessings",
@@ -274,7 +295,7 @@ export const embellishmentData = [
             let bonus_stats: Stats = {};
 
             const uptime = getSetting(additionalData.settings, "liningUptime") / 100
-            console.log(processedValue(data[0], itemLevel) )
+
             bonus_stats.crit = processedValue(data[0], itemLevel) * uptime;
 
             return bonus_stats;

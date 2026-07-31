@@ -90,26 +90,28 @@ export const timewalkingDB = {
 }
 
 export const bonusLootCaches = {
-      2849: 274708, //"Nymrissa Wavecaller",
-      2888: 278285, //"Nek'zali the Soulcoiler",
-      2874: 278283, //"Entomed Sentinels",
-      2894: 278286, //"The Lost Explorers",
-      2882: 278287, //"Vashnik the Malignant",
-      2871: 278288, // "Sszorak",
-      2887: 278289, //"The Twin Fangs",
-      2883: 278290, //"The Coiled Alter",
-      2895: 278284, //"Ula'tek",
+  268459: 2733, // Imperator for Testing
+
+  274708: 2849, //"Nymrissa Wavecaller",
+  278285: 2888, //"Nek'zali the Soulcoiler",
+  278283: 2874, //"Entomed Sentinels",
+  278286: 2894, //"The Lost Explorers",
+  278287: 2882, //"Vashnik the Malignant",
+  278288: 2871, // "Sszorak",
+  278289: 2887, //"The Twin Fangs",
+  278290: 2883, //"The Coiled Alter",
+  278284: 2895, //"Ula'tek",
 
       // Dungeons
-      1322: 279618, //"Alter of Fangs",
-      1311: 279620, //"Den of Nalorakk",
-      1304: 279623, //"Murder Row",
-      1309: 279619, //"The Blinding Vale",
+  279618: 1322, //"Alter of Fangs",
+  279620: 1311, //"Den of Nalorakk",
+  279623: 1304, //"Murder Row",
+  279619: 1309, //"The Blinding Vale",
 
-      1313: 279625, //"Voidscar Arena", 
-      1041: 279621, //"Kings Rest", 
-      1202: 279622, //"Ruby Life Pools", 
-      1030: 279624, //"Temple of Sethraliss", 
+  279625: 1313, //"Voidscar Arena", 
+  279621: 1041, //"Kings Rest", 
+  279622: 1202, //"Ruby Life Pools", 
+  279624: 1030, //"Temple of Sethraliss", 
 
 
 }
