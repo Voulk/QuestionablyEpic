@@ -131,7 +131,7 @@ export default function UpgradeFinderReport(props) {
     itemDifferentials.sort((a, b) => a.rawDiff < b.rawDiff ? 1 : -1);
     return (
       <div className={classes.header}>
-        <div style={{ height: 96 }} />
+        <div style={{ height: 15 }} />
         <Grid container spacing={0}>
           <Grid item xs={12} style={{ padding: "0px 0px 40px 0px" }} >
             <div>
@@ -143,28 +143,25 @@ export default function UpgradeFinderReport(props) {
               </Typography>*/}
             </div>
           </Grid>
-          <Grid item xs={12}>
+          {/*<Grid item xs={12}>
             <InformationBox variant={"yellow"} title={"Tier Pieces"} information={"Remember that Tier Set pieces are very valuable but will NOT show as major upgrades unless they complete a set for you. Aim to obtain these anyway."}></InformationBox>
-          </Grid>
-          <Grid item sm xs={12} spacing={0} style={{ padding: "4px 0px 5px 0px" }}>
+          </Grid>*/}
+          <Grid item xs={12} style={{ padding: "4px 0px 5px 0px" }}>
            <EquippedItems items={result.equippedItems} gameType={result.gameType} contentType={result.contentType} />
           </Grid>
           <Grid item xs={12}>
             <AppBar
               position="static"
-              style={{
-                backgroundColor: "#000",
-                borderRadius: "4px 4px 4px 4px",
-              }}
-              elevation={1}
+              className={classes.reportTabShell}
+              elevation={0}
             >
               <Tabs
                 value={tabValue}
                 onChange={handleTabChange}
                 aria-label="simple tabs example"
                 variant="fullWidth"
-                style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.22)" }}
-                TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
+                className={classes.reportTabs}
+                TabIndicatorProps={{ style: { backgroundColor: "#F2BF59", height: 3, borderRadius: 999 } }}
               >
                 {/* Raid */}
                 <Tab className={gameType === "Retail" ? classes.raidHeaderStyle : classes.classicRaidHeaderStyle} label={t("Raid")} {...a11yProps(0)} />
@@ -296,19 +293,16 @@ export default function UpgradeFinderReport(props) {
           <Grid item xs={12}>
             <AppBar
               position="static"
-              style={{
-                backgroundColor: "#000",
-                borderRadius: "4px 4px 4px 4px",
-              }}
-              elevation={1}
+              className={classes.reportTabShell}
+              elevation={0}
             >
               <Tabs
                 value={tabValue}
                 onChange={handleTabChange}
                 aria-label="simple tabs example"
                 variant="fullWidth"
-                style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.22)" }}
-                TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
+                className={classes.reportTabs}
+                TabIndicatorProps={{ style: { backgroundColor: "#F2BF59", height: 3, borderRadius: 999 } }}
               >
                 {/* -------------------------------------------- Raid -------------------------------------------- */}
                 <Tab className={classes.raidBCHeaderStyle} label={t("Raids")} {...a11yProps(0)} />

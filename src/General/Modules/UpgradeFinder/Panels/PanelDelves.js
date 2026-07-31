@@ -1,5 +1,5 @@
 import React from "react";
-import { rootStyles } from "./PanelStyles";
+import { rootStyles, sharedAccordionStyles, sharedAccordionSummaryStyles, sharedAccordionDetailsStyles } from "./PanelStyles";
 import { Typography, Grid } from "@mui/material";
 import ItemUpgradeCard from "./ItemUpgradeCard";
 import "./Panels.css";
@@ -85,15 +85,24 @@ export default function DelvesContainer(props) {
   };
   const contentGenerator = () => {
     return slotList.map((key, i) => (
-      <UFAccordion key={getTranslatedSlotName(key.label, currentLanguage) + "-accordian" + i} elevation={0} style={{ backgroundColor: "rgba(255, 255, 255, 0.12)" }}>
-        <UFAccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header" style={{ verticalAlign: "middle" }}>
+      <UFAccordion
+        key={getTranslatedSlotName(key.label, currentLanguage) + "-accordian" + i}
+        elevation={0}
+        style={sharedAccordionStyles}
+      >
+        <UFAccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+          style={sharedAccordionSummaryStyles}
+        >
           <img src={iconReturn(key.slot, spec)} height={30} width={30} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
           <Typography align="center" variant="h6" noWrap color="primary">
             {getTranslatedSlotName(key.label, currentLanguage)} -{" "}
             {[...filterItemListBySlot(itemDifferentials, key.slot)].filter((item) => item.score > 0).length} Upgrades
           </Typography>
         </UFAccordionSummary>
-        <AccordionDetails style={{ backgroundColor: "#191c23" }}>
+        <AccordionDetails style={sharedAccordionDetailsStyles}>
           <Grid xs={12} container spacing={1}>
             {[...filterItemListBySlot(itemDifferentials, key.slot)].map((item, index) => (
               <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />

@@ -12,6 +12,26 @@ const commonStyles = {
   fontSize: "0.9rem",
 };
 
+export const sharedAccordionStyles = {
+  background: "linear-gradient(180deg, rgba(18, 22, 30, 0.96) 0%, rgba(12, 15, 20, 0.98) 100%)",
+  border: "1px solid rgba(242, 191, 89, 0.12)",
+  borderRadius: 10,
+  overflow: "hidden",
+};
+
+export const sharedAccordionSummaryStyles = {
+  verticalAlign: "middle",
+  minHeight: 58,
+  paddingLeft: 8,
+  paddingRight: 12,
+  background: "linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0) 100%)",
+};
+
+export const sharedAccordionDetailsStyles = {
+  background: "linear-gradient(180deg, rgba(22, 25, 32, 0.98) 0%, rgba(17, 19, 24, 0.98) 100%)",
+  borderTop: "1px solid rgba(255, 255, 255, 0.06)",
+};
+
 // Basic Root Style
 export const rootStyles = makeStyles((theme) => {
   return {
@@ -151,6 +171,14 @@ export const raidStyles = makeStyles((theme) => {
     },
     marchOnQueldanasHeader: {
       backgroundImage: `url(${require("../../../../Images/Bosses/MidnightS1/MarchShort.png")})`,
+      ...commonStyles,
+    },
+    venomousAbyssHeader: {
+      background: "linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, rgba(10, 17, 12, 0.88) 62%, rgba(21, 38, 27, 0.8) 82%, #3da55d 100%)",
+      ...commonStyles,
+    },
+    tideboundGrottoHeader: {
+      background: "linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, rgba(9, 14, 24, 0.88) 62%, rgba(19, 30, 46, 0.8) 82%, #3e7bd1 100%)",
       ...commonStyles,
     },
     voidspireHeader: {

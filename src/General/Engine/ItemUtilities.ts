@@ -368,16 +368,16 @@ export function getValidWeaponTypesBySpec(spec: string) {
 
 export function getItemLevelBoost(bossID: number, difficulty: number) {
   // Handle max difficulties
-  if (difficulty === CONSTANTS.difficulties.mythicMax) {
+  /*if (difficulty === CONSTANTS.difficulties.mythicMax) {
     if (bossID === 2523 || bossID === 2520) return 0;
     else return 0;
   } // The Mythic Max base level is 447, which means these 450 drops are a small upgrade.
-  else if (isMaxxed(difficulty)) return 0;
+  else if (isMaxxed(difficulty)) return 0;*/
 
   // Handle non-max difficulties.
-  if (bossID === 2734 || bossID === 2736 || bossID === 2795) return 4; // Cauldron, Rik
-  else if (bossID === 2735 || bossID === 2737) return 7; // Stix, Sprocket, OAB
-  else if (bossID === 2738 || bossID === 2739 || bossID === 2740) return 10; // Mug'zee, Gallywix
+  if (bossID === 2874 || bossID === 2894) return 3; // Cauldron, Rik
+  else if (bossID === 2882 || bossID === 2871 || bossID === 2887) return 6; // Stix, Sprocket, OAB
+  else if (bossID === 2895 || bossID === 2883) return 10; // Mug'zee, Gallywix
 
   return 0;
 }
@@ -428,13 +428,13 @@ export function getVeryRareItemLevelBoost(itemID: number, bossID: number, diffic
   else return 0;
 }
 
-export function filterItemListByDropLoc(itemList: any[], sourceInstance: number, sourceBoss: number, loc: any, difficulty: number) {
+export function filterItemListByDropLoc(itemList: any[], sourceInstance: number, sourceBoss: number, loc: any, difficulty: number, dropType: string = "drop") {
 
   let temp = itemList.filter(function (item) {
     //else if (sourceInstance === -17 && pvpRank === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(item.slot)) expectedItemLevel += 7;
     //console.log("loc: " + loc + " vs " + item.dropLoc + " diff: " + difficulty + " vs " + item.dropDifficulty + " source: " + sourceInstance + " vs " + item.source.instanceId + " boss: " + sourceBoss + " vs " + item.source.encounterId)
-    
-    return loc === item.dropLoc && difficulty === item.dropDifficulty && ((item.source.instanceId == sourceInstance && item.source.encounterId == sourceBoss) || (item.source.instanceId == sourceInstance && sourceBoss == 0));
+    console.log("Drop type: " + dropType + " vs " + item.dropType)
+    return loc === item.dropLoc && difficulty === item.dropDifficulty && dropType === item.dropType && ((item.source.instanceId == sourceInstance && item.source.encounterId == sourceBoss) || (item.source.instanceId == sourceInstance && sourceBoss == 0));
   });
   return temp;
 
@@ -604,6 +604,7 @@ export function getItemIcon(id: number, gameType = "Retail") {
   if (item !== "" && "icon" in item) return process.env.PUBLIC_URL + "/Images/Icons/" + item.icon + ".jpg";
   else if (item !== "") {
     reportError("", "ItemUtilities", "Icon not found for ID", id.toString());
+    console.error("Icon missing");
     return process.env.PUBLIC_URL + "/Images/Icons/missing.jpg";
   }
 }

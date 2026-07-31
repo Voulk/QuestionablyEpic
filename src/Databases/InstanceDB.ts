@@ -1,38 +1,35 @@
-import { CONSTANTS } from "General/Engine/CONSTANTS"
+import { CONSTANTS } from "General/Engine/CONSTANTS";
 
-export const getSeasonalDungeons = () => {
+
+export const getSeasonalDungeons = (): number[] => {
   //return encounterDB['-1']['Retail']['bossOrderMythicPlus']
   return CONSTANTS.currentDungeonIDs;
-}
+};
 
-export const getMoPDungeons = () => {
+export const getMoPDungeons = (): number[] => {
   //return encounterDB['-1']['Retail']['bossOrderMythicPlus']
-    return [246, 316, 313, 312, 311, 303, 302, 324, 321];
-}
+  return [246, 316, 313, 312, 311, 303, 302, 324, 321];
+};
 
-export const getSourceName = (instanceID, encounterID) => {
+export const getSourceName = (instanceID: number, encounterID: number): string => {
   if (encounterID === 999) {
     return "Catalyst";
-  }
-  else if (instanceID === -1) {
-    return encounterDB["-1"]["Retail"][encounterID] || ""
-  }
-  else if (instanceID === -4) {
+  } else if (instanceID === -1) {
+    return (encounterDB["-1"] as any)["Retail"][encounterID] || "";
+  } else if (instanceID === -4) {
     return "Crafted";
+  } else {
+    return (encounterDB as any)[instanceID]?.bosses?.[encounterID] || "";
   }
-  else {
-    return encounterDB[instanceID].bosses[encounterID] || ""
-  }
+};
 
-}
-
-export const getInstanceName = (instanceID) => {
+export const getInstanceName = (instanceID: number): string | undefined => {
   if (instanceID !== -1) {
-    return encounterDB[instanceID].name || "";
+    return (encounterDB as any)[instanceID]?.name || "";
   }
-}
+};
 
-export const instanceDB = {
+export const instanceDB: Record<string | number, string> = {
   "0": "Test Instance",
   "-31": "PVP Season 1 (Conquest)",
   "-30": "PVP Season 1 (Honor)",
@@ -43,8 +40,9 @@ export const instanceDB = {
   "1308": "March on Quel'Danas",
   "1273": "Nerub-ar Palace",
   "1296": "Liberation of Undermine",
-  "1320": "The Venomous Abyss",
   "1305": "Sporefall",
+  "1320": "The Venomous Abyss",
+  "1317": "The Tidebound Grotto",
 
   "-4": "Crafted",
   "-12": "Reputation",
@@ -61,7 +59,7 @@ export const instanceDB = {
   "-8": "Elemental Rune Twilight",
 };
 
-export const craftedDB = {
+export const craftedDB: Record<number, string> = {
   1: "Tailoring",
   2: "Leatherworking",
   3: "Blacksmithing",
@@ -69,16 +67,16 @@ export const craftedDB = {
   5: "Inscription",
   6: "Alchemy",
   7: "Jewelcrafting",
-}
+};
 
-export const reputationDB = {
+export const reputationDB: Record<number, string> = {
   1: "Klaxxi",
   2: "Golden Lotus",
   3: "Shado-Pan",
   4: "August Celestials",
-}
+};
 
-export const timewalkingDB = {
+export const timewalkingDB: Record<number, string> = {
   1: "Vanilla",
   2: "Burning Crusade",
   3: "Wrath of the Lich King",
@@ -86,13 +84,59 @@ export const timewalkingDB = {
   5: "Mists of Pandaria",
   6: "Warlords of Draenor",
   7: "Legion",
-}
+};
 
+export const bonusLootCaches: Record<number, number> = {
+  268459: 2733, // Imperator for Testing
 
-export const retailInstanceDB = {
+  274708: 2849, //"Nymrissa Wavecaller",
+  278285: 2888, //"Nek'zali the Soulcoiler",
+  278283: 2874, //"Entomed Sentinels",
+  278286: 2894, //"The Lost Explorers",
+  278287: 2882, //"Vashnik the Malignant",
+  278288: 2871, // "Sszorak",
+  278289: 2887, //"The Twin Fangs",
+  278290: 2883, //"The Coiled Alter",
+  278284: 2895, //"Ula'tek",
+
+  // Dungeons
+  279618: 1322, //"Alter of Fangs",
+  279620: 1311, //"Den of Nalorakk",
+  279623: 1304, //"Murder Row",
+  279619: 1309, //"The Blinding Vale",
+
+  279625: 1313, //"Voidscar Arena",
+  279621: 1041, //"Kings Rest",
+  279622: 1202, //"Ruby Life Pools",
+  279624: 1030, //"Temple of Sethraliss",
+};
+
+export const retailInstanceDB: Record<string | number, any> = {
   /* ---------------------------------------------------------------------------------------------- */
   /*                                              Raids                                             */
   /* ---------------------------------------------------------------------------------------------- */
+  // Venomous Abyss
+  1320: {
+    name: "Venomous Abyss",
+    bossOrder: [2888, 2874, 2894, 2882, 2871, 2887, 2883, 2895],
+    bosses: {
+      2888: "Nek'zali the Soulcoiler",
+      2874: "Entomed Sentinels",
+      2894: "The Lost Explorers",
+      2882: "Vashnik the Malignant",
+      2871: "Sszorak",
+      2887: "The Twin Fangs",
+      2883: "The Coiled Alter",
+      2895: "Ula'tek",
+    },
+  },
+  1317: {
+    name: "Tidebound Grotto",
+    bossOrder: [2849],
+    bosses: {
+      2849: "Nymrissa Wavecaller",
+    },
+  },
   // Voidspire
   1307: {
     name: "The Voidspire",
@@ -104,7 +148,7 @@ export const retailInstanceDB = {
       2735: "Vaelgor & Ezzorak",
       2737: "Lightblinded Vanguard",
       2738: "Crown of the Cosmos",
-    }
+    },
   },
 
   1314: {
@@ -112,7 +156,7 @@ export const retailInstanceDB = {
     bossOrder: [2795],
     bosses: {
       2795: "Chimaerus",
-    }
+    },
   },
   1308: {
     name: "March on Quel'Danas",
@@ -120,14 +164,14 @@ export const retailInstanceDB = {
     bosses: {
       2739: "Belo'ren",
       2740: "Midnight Falls",
-    }
+    },
   },
   1305: {
     name: "Sporefall",
     bossOrder: [2711],
     bosses: {
       2711: "Rotmire",
-    }
+    },
   },
 
   // Nerub'ar Palace
@@ -143,62 +187,60 @@ export const retailInstanceDB = {
       2601: "Nexus-Princess Ky'veza",
       2608: "The Silken Court",
       2602: "Queen Ansurek",
-    }
+    },
   },
-    // Undermine
-    1296: {
-      name: "Liberation of Undermine",
-      bossOrder: [2639, 2640, 2641, 2642, 2653, 2644, 2645, 2646, 999],
-      bosses: {
-        2639: "Vexie and the Geargrinders", // Vexie and the Geargrinders.
-        2640: "Cauldron of Carnage", // Cauldron of Carnage
-        2641: "Rik Reverb", // Rik Reverb
-        2642: "Stix Bunkjunker", // Stix Bunkjunker
-        2653: "Sprocketmonger Lockenstock", // Sprocketmonger Lockenstock
-        2644: "One Armed Bandit", // One Armed Bandit
-        2645: "Mug'zee", // Mug'Zee
-        2646: "Chrome King Gallywix", // Chrome King Gallywix
-        999: "BoE Trash Drops & Catalyst",
-      }
+  // Undermine
+  1296: {
+    name: "Liberation of Undermine",
+    bossOrder: [2639, 2640, 2641, 2642, 2653, 2644, 2645, 2646, 999],
+    bosses: {
+      2639: "Vexie and the Geargrinders", // Vexie and the Geargrinders.
+      2640: "Cauldron of Carnage", // Cauldron of Carnage
+      2641: "Rik Reverb", // Rik Reverb
+      2642: "Stix Bunkjunker", // Stix Bunkjunker
+      2653: "Sprocketmonger Lockenstock", // Sprocketmonger Lockenstock
+      2644: "One Armed Bandit", // One Armed Bandit
+      2645: "Mug'zee", // Mug'Zee
+      2646: "Chrome King Gallywix", // Chrome King Gallywix
+      999: "BoE Trash Drops & Catalyst",
     },
-    // Manaforge Omega
-    1302: {
-      name: "Manaforge Omega",
-      bossOrder: [2684, 2686, 2685, 2687, 2688, 2747, 2690, 2691, 999],
-      bosses: {
-        2684: "Plexus Sentinel", 
-        2686: "Loomithar", 
-        2685: "Soulbinder Naazindhri", 
-        2687: "Forgeweaver Araz", 
-        2688: "Soul Hunters", 
-        2747: "Fractillus",
-        2690: "Nexus King", 
-        2691: "Dimensius the All-Devouring", 
-        999: "BoE Trash Drops & Catalyst",
-      }
+  },
+  // Manaforge Omega
+  1302: {
+    name: "Manaforge Omega",
+    bossOrder: [2684, 2686, 2685, 2687, 2688, 2747, 2690, 2691, 999],
+    bosses: {
+      2684: "Plexus Sentinel",
+      2686: "Loomithar",
+      2685: "Soulbinder Naazindhri",
+      2687: "Forgeweaver Araz",
+      2688: "Soul Hunters",
+      2747: "Fractillus",
+      2690: "Nexus King",
+      2691: "Dimensius the All-Devouring",
+      999: "BoE Trash Drops & Catalyst",
     },
+  },
 
   /* ---------------------------------------------------------------------------------------------- */
   /*                                            Dungeons                                            */
   /* ---------------------------------------------------------------------------------------------- */
   "-1": {
-    "Retail": {
+    Retail: {
       bossOrder: [], // Optionally used for M0s when we want to show both. Rare outside of the first season of a new expansion.
-      bossOrderMythicPlus: [1315, 1316, 1300, 1299, 1201, 278, 476, 945], // Dungeon Order
+      bossOrderMythicPlus: [1322, 1311, 1304, 1309, 1313, 1041, 1202, 1030], // Dungeon Order
 
-      1315: "Maisara Caverns",
-      1316: "Nexus-Point Xenas",
-      1300: "Magisters Terrace",
-      1299: "Windrunner Spire",
+      1322: "Alter of Fangs",
+      1311: "Den of Nalorakk",
+      1304: "Murder Row",
+      1309: "The Blinding Vale",
 
-      1201: "Algeth'ar Academy", // Algethar Academy 
-      278: "Pit of Saron", // Pit of Saron 
-      476: "Skyreach", // Skyreach
-      945: "Seat of the Triumvirate", // Seat of the Triumvirate
-
-
+      1313: "Voidscar Arena",
+      1041: "Kings Rest",
+      1202: "Ruby Life Pools",
+      1030: "Temple of Sethraliss",
     },
-    "Classic": {
+    Classic: {
       //# 316 = Scarlet Monastery, 313 = Jade Temple, 312 = Shadowpan Monastary, 311 = Scarlet Halls, 303 = Gate of Setting Sun, 302 = Stormstout, 324 = Siege of Niuzao.
       bossOrder: [],
       bossOrderMythicPlus: [246, 316, 313, 312, 311, 303, 302, 324, 321], // Dungeon Order
@@ -212,13 +254,11 @@ export const retailInstanceDB = {
       302: "Stormstout Brewery",
       324: "Siege of Niuzao Temple",
       321: "Mogu'shan Palace",
-      
-      },
+    },
   },
-}
+};
 
-
-const classicInstanceDB = {
+const classicInstanceDB: Record<string | number, any> = {
   317: {
     name: "Mogushan Vaults",
     bossOrder: [679, 689, 682, 687, 726, 677],
@@ -229,7 +269,7 @@ const classicInstanceDB = {
       687: "Spirit Kings",
       726: "Elegon",
       677: "Will of the Emperor",
-    }
+    },
   },
   330: {
     name: "Heart of Fear",
@@ -241,7 +281,7 @@ const classicInstanceDB = {
       741: "Wind Lord Mel'jarak",
       737: "Amber-Shaper Un'sok",
       743: "Grand Empress Shek'zeer",
-    }
+    },
   },
   320: {
     name: "Terrace of Endless Spring",
@@ -251,7 +291,7 @@ const classicInstanceDB = {
       742: "Tsulong",
       729: "Lei Shi",
       709: "Sha of Fear",
-    }
+    },
   },
   362: {
     name: "Throne of Thunder",
@@ -270,12 +310,11 @@ const classicInstanceDB = {
       829: "Twin Empyreans",
       831: "Ra-den",
       832: "Lei Shen",
-    }
+    },
   },
+};
 
-}
-
-export const encounterDB = {
+export const encounterDB: Record<string | number, any> = {
   ...classicInstanceDB,
   ...retailInstanceDB,
-}
+};

@@ -16,34 +16,69 @@ import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 const useStyles = makeStyles({
   root: {
     minWidth: 250,
+    background: "linear-gradient(180deg, rgba(28, 31, 38, 0.96) 0%, rgba(20, 23, 29, 0.98) 100%)",
+    border: "1px solid rgba(255, 255, 255, 0.08)",
+    borderRadius: 12,
+    transition: "transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease",
+    "&:hover": {
+      transform: "translateY(-1px)",
+      borderColor: "rgba(242, 191, 89, 0.35)",
+      boxShadow: "0 10px 22px rgba(0, 0, 0, 0.24)",
+    },
   },
   dom: {
     borderColor: "#169600",
-    //backgroundColor: "#515751",
     borderStyle: "dashed",
     minWidth: 250,
+    background: "linear-gradient(180deg, rgba(23, 34, 24, 0.96) 0%, rgba(18, 22, 20, 0.98) 100%)",
+    borderRadius: 12,
+    transition: "transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease",
+    "&:hover": {
+      transform: "translateY(-1px)",
+      boxShadow: "0 10px 22px rgba(0, 0, 0, 0.24)",
+    },
   },
   downgrade: {
     minWidth: 250,
-    backgroundColor: "#303030",
-    opacity: 0.5,
+    background: "linear-gradient(180deg, rgba(34, 34, 34, 0.92) 0%, rgba(26, 26, 26, 0.94) 100%)",
+    opacity: 0.72,
+    borderRadius: 12,
   },
   vault: {
     borderColor: "#0288d1",
-    backgroundColor: "#464E5B",
     borderStyle: "dashed",
     minWidth: 250,
+    background: "linear-gradient(180deg, rgba(28, 44, 60, 0.96) 0%, rgba(22, 29, 39, 0.98) 100%)",
+    borderRadius: 12,
+    transition: "transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease",
+    "&:hover": {
+      transform: "translateY(-1px)",
+      boxShadow: "0 10px 22px rgba(0, 0, 0, 0.24)",
+    },
   },
-  bullet: {
-    display: "inline-block",
-    margin: "0 2px",
-    transform: "scale(0.8)",
+  infoButton: {
+    color: "#d8b25a",
+    padding: 6,
+    marginRight: 4,
   },
-  title: {
-    fontSize: 14,
+  scoreBadge: {
+    minWidth: 58,
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 8,
+    minHeight: 28,
+    padding: "5px 10px",
+    background: "rgba(255, 255, 255, 0.06)",
+    border: "1px solid rgba(255, 255, 255, 0.08)",
   },
-  pos: {
-    marginBottom: 12,
+  sourceLine: {
+    paddingTop: 6,
+    lineHeight: 1.4,
+    color: "rgba(255, 255, 255, 0.78)",
+  },
+  titleLine: {
+    letterSpacing: 0.1,
   },
 });
 
@@ -195,11 +230,11 @@ export default function ItemCard(props) {
   return (
     <Grid item xs={12} sm={12} md={12} lg={6} xl={4}>
       <Card className={itemDifferential == 0 ? classes.downgrade : isTierPiece ? classes.dom : classes.root} variant="outlined">
-        <Grid container display="inline-flex" wrap="nowrap" justifyContent="space-between">
+        <Grid container display="inline-flex" wrap="nowrap" justifyContent="space-between" alignItems="stretch">
           <Grid item xs="auto">
             <CardContent
               style={{
-                padding: "4.5px 4.5px 0.5px 4.5px",
+                padding: "8px 6px 8px 8px",
                 display: "inline-flex",
               }}
             >
@@ -222,13 +257,17 @@ export default function ItemCard(props) {
               </WowheadTooltip>
             </CardContent>
           </Grid>
-          <Divider orientation="vertical" flexItem />
-            {itemTooltips[itemID] ? <Tooltip title={itemTooltips[itemID]}>
-              <IconButton sx={{ color: 'goldenrod' }}>
-                <HelpOutlineIcon />
+          <Divider orientation="vertical" flexItem style={{ opacity: 0.18 }} />
+          {itemTooltips[itemID] ? (
+            <Tooltip title={itemTooltips[itemID]}>
+              <IconButton className={classes.infoButton}>
+                <HelpOutlineIcon fontSize="small" />
               </IconButton>
-          </Tooltip> : ""}
-          <CardContent style={{ padding: 4, width: "100%", alignSelf: "center" }}>
+            </Tooltip>
+          ) : (
+            ""
+          )}
+          <CardContent style={{ padding: "8px", width: "100%", alignSelf: "center" }}>
             <Grid item container display="inline" direction="column" justifyContent="space-around" xs="auto">
               <Grid container item wrap="nowrap" justifyContent="space-between" alignItems="center" style={{ width: "100%" }}>
                 <Grid item xs={10} display="inline">
@@ -237,42 +276,43 @@ export default function ItemCard(props) {
                     wrap="nowrap"
                     display="inline"
                     align="left"
+                    className={classes.titleLine}
                     style={{ color: itemQuality, justifyContent: "center" }}
                   >
                     {itemName}
                   </Typography>
                 </Grid>
-                <Divider orientation="vertical" flexItem />
                 <Grid
                   item
-                  xs={2}
+                  xs="auto"
                   style={{
                     display: "inline-flex",
                     justifyContent: "center",
-                    paddingLeft: 3,
+                    paddingLeft: 0,
                   }}
                 >
-                  <Typography
-                    variant="subtitle2" // h6 formerly // subtitle1 formerly
-                    wrap="nowrap"
-                    display="inline"
-                    align="center"
-                    style={{
-                      color: upgradeColor(itemDifferential),
-                      paddingLeft: "3px",
-                      paddingRight: "3px",
-                      justifyContent: "center",
-                    }}
-                  >
-                    {itemDifferential > 0 && itemDifferential < 0.2 ? "+" + Math.round(10000 * itemDifferential) / 100 + "%" : "+" + itemDifferential}
-                  </Typography>
+                  <div className={classes.scoreBadge}>
+                    <Typography
+                      variant="subtitle2"
+                      wrap="nowrap"
+                      display="inline"
+                      align="center"
+                      style={{
+                        color: upgradeColor(itemDifferential),
+                        justifyContent: "center",
+                        lineHeight: 1,
+                      }}
+                    >
+                      {itemDifferential > 0 && itemDifferential < 0.2 ? "+" + Math.round(10000 * itemDifferential) / 100 + "%" : "+" + itemDifferential}
+                    </Typography>
+                  </div>
                 </Grid>
               </Grid>
               {/* Source Location for Slot Panel */}
               {props.slotPanel ? (
                 <Grid item xs={12}>
                   <Divider />
-                  <Typography variant={props.slotPanel ? "subtitle2" : "subtitle1"} style={{ paddingTop: 4, lineHeight: props.slotPanel ? "normal" : 1.57 }}>
+                  <Typography variant={props.slotPanel ? "subtitle2" : "subtitle1"} className={classes.sourceLine}>
                     Source: {sourceName(item)}{" "}
                   </Typography>
                 </Grid>

@@ -66,7 +66,17 @@ const bossImageMap: Record<number, any> = {
   2486: require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-ThePrimalCouncil.png"),
   2590: require("Images/Bosses/VaultOfTheIncarnates/EJ/UI-EJ-BOSS-ThePrimalCouncil.png"),
 
-  // ... (Add other mappings here following the same pattern)
+  //Images\Bosses\MidnightS2/ui-ej-boss-nagasorcerer.png
+  2849: require("Images/Bosses/MidnightS2/ui-ej-boss-nagasorcerer.png"),
+  2888: require("Images/Bosses/MidnightS2/ui-ej-boss-priestess.png"),
+  2874: require("Images/Bosses/MidnightS2/ui-ej-boss-golems.png"),
+  2894: require("Images/Bosses/MidnightS2/ui-ej-boss-tortollans.png"),
+  2882: require("Images/Bosses/MidnightS2/ui-ej-boss-alchemist.png"),
+  2871: require("Images/Bosses/MidnightS2/ui-ej-boss-brute.png"),
+  2887: require("Images/Bosses/MidnightS2/ui-ej-boss-twins.png"),
+  2883: require("Images/Bosses/MidnightS2/ui-ej-boss-zuljan.png"),
+  2895: require("Images/Bosses/MidnightS2/ui-ej-boss-ulatek.png"),
+
 
   // Special / BOE
   999: require("Images/Classic/Raid/JournalImages/BOE.png"),
@@ -80,6 +90,7 @@ const bossImageMap: Record<number, any> = {
  */
 export default function BossHeader({ id, style }: BossHeaderProps) {
   let source = bossImageMap[id] || "";
+
 
   // Fallback / Manual overrides for complex logic (e.g., Nerub'ar Palace or Midnight)
   if (!source) {

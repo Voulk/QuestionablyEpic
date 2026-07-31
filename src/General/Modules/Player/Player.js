@@ -30,6 +30,9 @@ export class Player {
     this.setupDefaults(specName);
     this.talents = [];
 
+    // {boss: {difficulty: [itemIDs]}}
+    this.bonusRolledItems = {};
+
     
     
     if (gameType === "Retail") {
