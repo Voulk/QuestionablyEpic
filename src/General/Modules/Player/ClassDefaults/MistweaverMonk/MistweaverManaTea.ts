@@ -38,6 +38,6 @@ export const getLifecyclesStacks = (talents: any, primaryHealCPM: number, kickCP
     const kickToHealChance = talents["Lifecycles"].values[2] / 100;
 
     return stacksPerProc * crit * LIFECYCLES_STACK_EFFICIENCY
-         * (Math.min(primaryHealCPM * healToKickChance, kickCPM)
-          + Math.min(kickCPM * kickToHealChance, primaryHealCPM));
+        * (Math.min(primaryHealCPM * healToKickChance, kickCPM)
+        + Math.min(kickCPM * kickToHealChance, primaryHealCPM));
 }
