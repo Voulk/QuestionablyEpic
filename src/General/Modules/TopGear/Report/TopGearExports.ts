@@ -439,9 +439,11 @@ export function exportWowheadGearList(itemSet, spec, gameType = "Retail") {
       }
 
     }
+    let catalystTag = "";
+    if (item.catalyzedID) catalystTag = ` original-item=${item.catalyzedID}`;
 
     if (item.id !== 228411 && item.id !== 235499 && gameType === "Retail") results.push(`[tr][td]${getTranslatedSlotName(item.slot, "en") || item.slot}[/td][td][color=q4][item=${item.id}${bonusTag}][/color][/td][td]${source}[/td][/tr]`)
-    else if (item.id !== 102247 && gameType === "Classic") results.push(`[tr][td]${getTranslatedSlotName(item.slot, "en") || item.slot}[/td][td][item=${item.id}${bonusTag}][/td][td]${source}[/td][/tr]`)
+    else if (item.id !== 102247 && gameType === "Classic") results.push(`[tr][td]${getTranslatedSlotName(item.slot, "en") || item.slot}[/td][td][item=${item.id}${catalystTag}${bonusTag}][/td][td]${source}[/td][/tr]`)
     })
   results.push(`[/table][/center]`)
 

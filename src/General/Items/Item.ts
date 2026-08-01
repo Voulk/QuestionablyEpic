@@ -1,4 +1,4 @@
-import { calcStatsAtLevel, calcStatsAtLevelClassic, getItemAllocations, getItemProp } from "../Engine/ItemUtilities";
+import { calcStatsAtLevel, calcStatsAtLevelClassic, getItemAllocations, getItemDB, getItemProp } from "../Engine/ItemUtilities";
 import { CONSTRAINTS, setBounds } from "../Engine/CONSTRAINTS";
 import { CONSTANTS } from "General/Engine/CONSTANTS";
 
@@ -25,6 +25,10 @@ export class Item {
     gems: number[],
     enchants: number[],
   }
+
+  // If an item gets converted into catalyst, it keeps the stats and effects of the old item but is renamed to match the tier.
+  // This holds the old ID.
+  catalyzedID?: number; 
 
   // Used for items where we might have multiple variations at the same item level. 
   // Single option items like Unbound Changeling would end up as a 1 length array but
@@ -242,6 +246,26 @@ export class Item {
   // We only use this to color Tier pieces differently so it's ok if it colors non-tier set pieces.
   isTierPiece(): boolean {
     return this.setID !== 0 && this.setID !== "" && this.slot !== "Trinket" && this.slot !== "Finger";
+  }
+
+  // Converts an item in-place to the tier set equivalent.
+  convertToTier(spec: string) {
+    const classTag = CONSTANTS.tierSetIDs[spec];
+
+    const temp = getItemDB("Retail").filter((item) => {
+      return item.slot === this.slot && item.itemSetId === classTag;
+    });
+
+    if (temp.length > 0) {
+      // Change item ID, name, add setID, set catalyzedID to old ID. Stats can be kept.
+      const tierItem = temp[temp.length - 1]
+
+      this.catalyzedID = this.id;
+      this.id = tierItem.id;
+      this.name = tierItem.name;
+      this.setID = tierItem.itemSetId;
+
+    };
   }
 
   // This compiles an additional stat array into an item.

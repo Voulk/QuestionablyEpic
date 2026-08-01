@@ -1094,8 +1094,11 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
           if (source === "S3 Dinar") newItem.exclusiveItem = true;
           if (gameType === "Retail") newItem.quality = 4;
           
-
-      if (player.activeItems.filter((i) => i.id === item.id && i.level === newItem.level).length === 0) player.activeItems.push(newItem);
+      if (["Chest", "Shoulders", "Legs", "Head", "Hands"].includes(newItem.slot)) {
+        // Catalyze item
+        newItem.convertToTier(player.spec);
+      }
+      if (player.activeItems.filter((i) => i.id === item.id && i.level === newItem.level && (i.catalyzedID === newItem.catalyzedID || !newItem.catalyzedID)).length === 0) player.activeItems.push(newItem);
       //player.activeItems.push(newItem);
     }
 
