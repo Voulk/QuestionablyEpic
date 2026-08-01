@@ -122,6 +122,10 @@ const applyEmperorsElixir = (talents: any, spellDB: Record<string, any[]>, castP
     }
 }
 
+// pool has an icd, so a lot of it is eaten on rwk by constant rem -> rwk or env -> rwk casts
+const POOL_KICK_EFFECTIVENESS = 0.5;
+const POOL_REM_EFFECTIVENESS = 0.90;
+
 const applyPoolOfMists = (talents: any, castProfile: CastProfile, spellDB: Record<string, any[]>): void => {
     if (!hasTalent(talents, "Pool of Mists")) return;
 
@@ -139,8 +143,8 @@ const applyPoolOfMists = (talents: any, castProfile: CastProfile, spellDB: Recor
     const envEntry = hasTalent(talents, "Rapid Diffusion") ? getSpellEntry(castProfile, "Enveloping Mist") : null;
     const kickCdrCpm = remEntry.cpm + (envEntry?.cpm ?? 0);
 
-    const bonusRemCpm = (kickEntry.cpm * kickCdReducedSec) / remCooldown;
-    const bonusKickCpm = (kickCdrCpm * remCdReducedSec) / kickCooldown;
+    const bonusRemCpm = (kickEntry.cpm * kickCdReducedSec * POOL_REM_EFFECTIVENESS) / remCooldown;
+    const bonusKickCpm = (kickCdrCpm * remCdReducedSec * POOL_KICK_EFFECTIVENESS) / kickCooldown;
 
     remEntry.cpm += bonusRemCpm;
     kickEntry.cpm += bonusKickCpm;
@@ -211,6 +215,13 @@ const getHeartOfJadeSerpentUptimes = (talents: any, castProfile: CastProfile, tf
 }
 
 const HOTJS_CDR_PERC = 75;
+const KICK_KEY = "Selected Kick";
+const HOTJS_EFFECTIVENESS: Record<string, number> = {
+    "Renewing Mist": 0.6,
+    [KICK_KEY]: 0.4,
+    "Thunder Focus Tea": 0.8,
+    "Life Cocoon": 0.8,
+};
 
 const getHotjsTftCpm = (talents: any, castProfile: CastProfile, baseTftCpm: number): number => {
     if (!hasTalent(talents, "Heart of the Jade Serpent")) return baseTftCpm;
@@ -241,12 +252,11 @@ const applyHeartOfJadeSerpent = (talents: any, castProfile: CastProfile, tftCpm:
     const conduitCdr = standardCdr * unityWithinMult;
 
     const selectedKick = getSelectedKick(castProfile).spell;
-    const affectedSpells = [selectedKick, "Renewing Mist", "Life Cocoon", "Thunder Focus Tea"];
-    affectedSpells.forEach(spellName => {
-        const entry = getSpellEntry(castProfile, spellName);
+    Object.entries(HOTJS_EFFECTIVENESS).forEach(([spellName, effectiveness]) => {
+        const entry = getSpellEntry(castProfile, spellName === KICK_KEY ? selectedKick : spellName);
         if (!entry) return;
 
-        entry.cpm *= (1 + standardCdr * uptimeStandard) * (1 + conduitCdr * uptimeConduit);
+        entry.cpm *= (1 + standardCdr * uptimeStandard * effectiveness) * (1 + conduitCdr * uptimeConduit * effectiveness);
     });
 }
 
@@ -794,8 +804,8 @@ const getHeroTreeCastProfile = (playerData: any): CastProfile => {
 
 export function scoreMonkYulonSet(stats: Stats, playerData: any, settings: PlayerSettings = {}, reporting: boolean = false) {
     const castProfile: CastProfile = [
-        { spell: "Renewing Mist", efficiency: 0.9, hastedCPM: true },
-        { spell: "Enveloping Mist", cpm: 5, hastedCPM: true }, // must be a minimum of sotbo + spiritfont r1, adjusted even more with yu'lon sequencing
+        { spell: "Renewing Mist", efficiency: EFFICIENCY },
+        { spell: "Enveloping Mist", cpm: 5 }, // must be a minimum of sotbo + spiritfont r1, adjusted even more with yu'lon sequencing
         { spell: "Vivify", cpm: 0 }, // our filler, the downtime fill solves the real cpm
         { spell: "Rushing Wind Kick", efficiency: 0.85, hastedCPM: true },
 
