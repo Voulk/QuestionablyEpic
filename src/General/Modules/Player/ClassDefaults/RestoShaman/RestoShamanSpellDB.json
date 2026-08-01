@@ -312,7 +312,7 @@
         {
             "displayInfo": {
                 "id": 1267068,
-                "icon": false,
+                "icon": "inv12_apextalent_shaman_stormstreamtotem",
                 "spellName": "Stormstream Totem",
                 "cat": "heal"
             },
@@ -321,7 +321,7 @@
             "cost": 1.8,
             "targets": 2,
             "coeff": 0.74448,
-            "aura": 1.65,
+            "aura": 1.8975,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -339,7 +339,7 @@
         },
         {
             "coeff": 13.23,
-            "aura": 1.65,
+            "aura": 1.8975,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -354,7 +354,7 @@
         {
             "displayInfo": {
                 "id": 114052,
-                "icon": false,
+                "icon": "ascendance_8026698",
                 "spellName": "Ascendance",
                 "cat": "heal"
             },
@@ -661,7 +661,7 @@
             "school": "nature",
             "cost": 0.0,
             "coeff": 3.826,
-            "aura": 1.0,
+            "aura": 0.38,
             "secondaries": [
                 "crit",
                 "versatility"
@@ -681,7 +681,7 @@
             "school": "fire",
             "cost": 0.0,
             "coeff": 1.74,
-            "aura": 1.0,
+            "aura": 0.38,
             "secondaries": [
                 "crit",
                 "versatility"
@@ -757,6 +757,29 @@
                 "versatility",
                 "mastery"
             ],
+            "spellType": "heal"
+        }
+    ],
+    "Condensation": [
+        {
+            "displayInfo": {
+                "id": 1300642,
+                "icon": "ability_shaman_fortifyingwaters",
+                "spellName": "Condensation"
+            },
+            "castTime": 0.0,
+            "school": "physical",
+            "cost": 0.0,
+            "coeff": 2.8,
+            "aura": 1,
+            "expectedOverheal": 0.03,
+            "secondaries": [
+                "mastery",
+                "versatility"
+            ],
+            "specialFields": {
+                "absorb": true
+            },
             "spellType": "heal"
         }
     ]

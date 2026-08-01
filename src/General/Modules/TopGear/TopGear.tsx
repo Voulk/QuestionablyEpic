@@ -422,12 +422,14 @@ export default function TopGear(props: any) {
 
   const shortenReport = (report: TopGearResult, player: Player, itemList: Item[]) => {
     const itemsAdded: String[] = []
+    console.log(report);
     if (report) {
       const shortReport: ShortReport = {id: report.id, 
         differentials: report.differentials, 
         new: false,
         contentType: report.contentType,
         effectList: report.itemSet.effectList, 
+        
        
         itemSet: {itemList: [],
                   setStats: report.itemSet.setStats,
@@ -439,6 +441,7 @@ export default function TopGear(props: any) {
                   reforges: report.itemSet.reforges || {},
                   firstSocket: report.itemSet.firstSocket,
                   hardScore: report.itemSet.hardScore,
+                  statBreakdown: report.itemSet.statBreakdown,
                 },
         player: {name: player.charName, realm: player.realm, race: player.race || "", region: player.region, spec: player.spec, model: player.getActiveModel(report.contentType).modelName},
         version: getVersion(),
