@@ -148711,5 +148711,11 @@ export const nameDB =
         "kr": "",
         "fr": "Cape flottante imperturbable",
         "de": "Unflatterbarer Flatterumhang"
+    },
+    "282425": {
+        "en": "Band of the Beast Reaper"
+    },
+    "282426": {
+        "en": "Draenic Drive Chain"
     }
 };
