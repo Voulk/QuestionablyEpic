@@ -298,12 +298,16 @@ points: number) {
 
 /* Chi Cocoons now apply Enveloping Mist for ${Y/1000} sec when they expire or are consumed, and Chi-Ji's Gusts of Mists healing is increased by X% and Yu'lon's Soothing Breath healing is increased by Z%. */
 "Jade Bond": {id: 388031, values: [20.0, 4000.0, 500.0],  points: 0, maxPoints: 1, icon: "inv_inscription_deck_jadeserpent", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: any, points: number) {
-
+    buffSpellPerc(spellDB["Gust of Mists (Chi-Ji)"], talentValues[0]);
+    buffSpellPerc(spellDB["Soothing Breath"], talentValues[2]);
 }},
 
 /* Reduces the cooldown of $?s325197[Invoke Chi-Ji, the Red Crane][Invoke Yul'on, the Jade Serpent] by ${X/-60000} min, but decreases its duration to ${($s4+Y)/1000} sec.  */
 "Gift of the Celestials": {id: 388212, values: [-60000.0, -13000.0, 7000.0, 25000.0, -12.0],  points: 0, maxPoints: 1, icon: "inv_pet_jadeserpentpet", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: any, points: number) {
-
+    ["Invoke Yu'lon, the Jade Serpent", "Invoke Chi-Ji, the Red Crane"].forEach(celestial => {
+        cooldownAdjFlat(spellDB[celestial], talentValues[0]);
+        adjBuffDurationFlat(spellDB[celestial], talentValues[1]);
+    });
 }},
 
 /* Crackling Jade Lightning's damage is increased by Y% and now chains to X additional enemies at $s4% effectiveness. */

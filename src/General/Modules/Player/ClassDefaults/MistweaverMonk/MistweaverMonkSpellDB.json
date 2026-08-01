@@ -441,6 +441,35 @@
             }
         }
     ],
+    "Soothing Breath": [
+        {
+            "displayInfo": {
+                "id": 0,
+                "icon": "ability_monk_jadeserpentbreath",
+                "spellName": "Soothing Breath",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "school": "nature",
+            "cost": 0.0,
+            "coeff": 0.7,
+            "aura": 0.8,
+            "expectedOverheal": 0.4,
+            "targets": 3,
+            "secondaries": [
+                "crit",
+                "versatility"
+            ],
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 8.5,
+            "tickData": {
+                "tickRate": 1.5,
+                "canPartialTick": true,
+                "tickOnCast": false
+            }
+        }
+    ],
     "Courage of the White Tiger": [
         {
             "displayInfo": {
@@ -673,6 +702,31 @@
             }
         }
     ],
+    "Chi Cocoon (Invoke)" : [
+        {
+            "displayInfo": {
+                "id": 406139,
+                "icon": "ability_monk_chiexplosion",
+                "spellName": "Chi Cocoon (Invoke)",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "cost": 0.0,
+            "coeff": 0.0,
+            "healthPerc": 24.0,
+            "aura": 1,
+            "offGCD": true,
+            "expectedOverheal": 0.03,
+            "targets": 5,
+            "secondaries": [
+                "versatility"
+            ],
+            "specialFields": {
+                "absorb": true
+            },
+            "spellType": "heal"
+        }
+    ],
     "Invoke Yu'lon, the Jade Serpent": [
         {
             "displayInfo": {
@@ -710,7 +764,8 @@
             "displayInfo": {
                 "id": 325197,
                 "icon": "inv_pet_cranegod",
-                "spellName": "Invoke Chi-Ji, the Red Crane"
+                "spellName": "Invoke Chi-Ji, the Red Crane",
+                "cat": "heal"
             },
             "castTime": 0.0,
             "school": "nature",
@@ -718,6 +773,35 @@
             "cooldownData": {
                 "cooldown": 120.0,
                 "hasted": false
+            }
+        }
+    ],
+    "Gust of Mists (Chi-Ji)": [
+        {
+            "displayInfo": {
+                "id": 343819,
+                "icon": "monk_stance_redcrane",
+                "spellName": "Gust of Mists (Chi-Ji)",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "school": "nature",
+            "cost": 0.0,
+            "coeff": 0.7,
+            "aura": 0.8,
+            "expectedOverheal": 0.4,
+            "targets": 3,
+            "secondaries": [
+                "crit",
+                "versatility"
+            ],
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 8.5,
+            "tickData": {
+                "tickRate": 1.5,
+                "canPartialTick": true,
+                "tickOnCast": false
             }
         }
     ]
