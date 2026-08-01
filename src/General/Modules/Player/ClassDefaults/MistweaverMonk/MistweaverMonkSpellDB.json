@@ -213,6 +213,8 @@
             },
             "coeff": 55,
             "aura": 0.8,
+            "expectedOverheal": 0.62,
+            "targets": 5,
             "secondaries": [
                 "crit",
                 "versatility"
@@ -483,6 +485,28 @@
             "specialFields": {
                 "absorb": true
             },
+            "spellType": "heal"
+        }
+    ],
+    "Flight of the Red Crane": [
+        {
+            "displayInfo": {
+                "id": 443263,
+                "icon": "monk_stance_redcrane",
+                "spellName": "Flight of the Red Crane"
+            },
+            "castTime": 0.0,
+            "school": "nature",
+            "cost": 0.0,
+            "coeff": 1.25,
+            "aura": 1,
+            "offGCD": true,
+            "expectedOverheal": 0.07,
+            "targets": 5,
+            "secondaries": [
+                "crit",
+                "versatility"
+            ],
             "spellType": "heal"
         }
     ],

@@ -1,6 +1,7 @@
 import { deepCopyFunction, hasTalent, getTalentPoints } from "General/Modules/Player/ClassDefaults/Generic/RampBase"
-import { applyRaidBuffs, applyTalentsFromString, compileProfileReportingData, completeCastProfile, convertStatPercentages, getSpellThroughput, getTrinketData, getSpellEntry, buildCPM } from "../Generic/ProfileUtilities";
+import { applyRaidBuffs, applyTalentsFromString, compileProfileReportingData, completeCastProfile, convertStatPercentages, getSpellThroughput, getTrinketData, getSpellEntry, getCPM, buildCPM } from "../Generic/ProfileUtilities";
 import { monkTalents } from "./MistweaverMonkTalents";
+import { getManaTeaStackValues, getNaturalStacks, getRefreshmentStacks, getLifecyclesStacks } from "./MistweaverManaTea";
 import { MONK_HERO_TREES, monkTalentStrings } from "./MonkDefaults";
 
 import specSpellDB from "./MistweaverMonkSpellDB.json";
@@ -8,15 +9,21 @@ import { runSpellScript } from "../Generic/SpellScripts";
 import { getSelectedTalentsFromString } from "../Generic/TalentStrings/TalentDecoder";
 import { buffSpellPerc } from "../Generic/TalentBase";
 import SPECS from "General/Engine/SPECS";
-import { STATCONVERSION } from "General/Engine/STAT";
+import { STATCONVERSION, BASEMANA } from "General/Engine/STAT";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
 
 const EFFICIENCY = 0.9;
 
+// 4%/5 sec, 12 ticks per min
+const MANA_REGEN_PER_MINUTE = 0.04 * 12;
+
+const TOTM_MAX_STACKS = 4;
+const TOTM_RESET_CHANCE = 0.2;
+
 // averages a proc rate across real log examples: [[fightMin, fightSec], observedProcs][].
 const getAveragePpmFromLogs = (examples: [[number, number], number][]): number => {
     const getPpmFromExample = ([fightMin, fightSec]: [number, number], procs: number): number => procs / (fightMin + fightSec / 60);
-    return examples.reduce((sum, [duration, procs]) => sum + getPpmFromExample(duration, procs), 0) / examples.length; 
+    return examples.reduce((sum, [duration, procs]) => sum + getPpmFromExample(duration, procs), 0) / examples.length;
 }
 
 const getSelectedKick = (castProfile: CastProfile): any =>
@@ -32,23 +39,112 @@ const getGustHeal = (spellDB: Record<string, any[]>, state: any, overhealing: nu
     return getSpellThroughput(gustWithMastery, statPercentages, state.spec, state.settings, { overrideOverhealing: overhealing });
 }
 
+const getCastTime = (spell: any, averageHaste: number): number => {
+    const castTime = (spell.castTime / averageHaste) || 0;
+    if (castTime === 0 && !spell.offGCD) return 1.5 / averageHaste;
+
+    return castTime;
+}
+
 const getTimeUsed = (castProfile: CastProfile, spellDB: Record<string, any[]>, averageHaste: number): number => {
     let timeUsed = 0;
     castProfile.forEach(spellProfile => {
-        if (spellDB[spellProfile.spell]) {
-            const spell = spellDB[spellProfile.spell][0];
-            let castTime = (spell.castTime / averageHaste) || 0;
-
-            if (castTime === 0 && !spell.offGCD) castTime = 1.5 / averageHaste;
-            timeUsed += castTime * spellProfile.cpm;
-        }
+        if (spellDB[spellProfile.spell]) timeUsed += getCastTime(spellDB[spellProfile.spell][0], averageHaste) * spellProfile.cpm!;
         else console.error("Missing Spell: " + spellProfile.spell)
-
     })
 
     return timeUsed;
 }
 
+const applyDowntimeFill = (talents: any, castProfile: CastProfile, spellDB: Record<string, any[]>, state: any,
+                           reportingData: Record<string, any>, localSettings: any): void => {
+    const haste = state.statPercentages.haste;
+    const fightMinutes = state.fightLength / 60;
+    const baseMana = BASEMANA * MANA_REGEN_PER_MINUTE + BASEMANA / fightMinutes;
+    const { manaPerStack, secPerStack } = getManaTeaStackValues(talents, haste);
+
+    const spellCost = (spellName: string): number => (spellDB[spellName][0].cost || 0) * BASEMANA / 100;
+    const baselineCost = castProfile.reduce((acc, spell) => acc + spellCost(spell.spell) * spell.cpm!, 0);
+    const castableTime = 60 * (1 - localSettings.downtime) - getTimeUsed(castProfile, spellDB, haste);
+
+    const primaryHeal = getSelectedPrimaryHeal(castProfile);
+    const fillerCastTime = primaryHeal ? getCastTime(spellDB[primaryHeal.spell][0], haste) : 0;
+    const fillerCost = primaryHeal ? spellCost(primaryHeal.spell) : 0;
+
+    const lifeCocoonCPM = getCPM(castProfile, "Life Cocoon");
+    const kickCPM = getCPM(castProfile, getSelectedKick(castProfile).spell) + getCPM(castProfile, "Enveloping Mist");
+
+    const getFillerCPM = (stacksDrunk: number): number => primaryHeal ? (castableTime - stacksDrunk * secPerStack) / fillerCastTime : 0;
+
+    // demand: how many stacks are needed to fund our costs
+    const getStacksNeeded = (fillerCPM: number): number => (baselineCost + fillerCPM * fillerCost - baseMana) / manaPerStack;
+
+    // supply: the modded sources, plus natty generated
+    const getFlatStacks = (fillerCPM: number): number => getRefreshmentStacks(talents, lifeCocoonCPM)
+                                                       + getLifecyclesStacks(talents, fillerCPM, kickCPM, state.statPercentages.crit);
+
+    const getStacksBuilt = (stacksDrunk: number, fillerCPM: number): number =>
+        getFlatStacks(fillerCPM) + getNaturalStacks(baseMana + stacksDrunk * manaPerStack, state.statPercentages.crit);
+
+    // this should find the intersection of supply and demand, but they're all
+    // kinda functions of each other so iterating to solve
+    const RELAXATION = 0.5; // half steps, to oscillate around instead of overshoot 
+    let stacks = 0;
+    for (let _ = 0; _ < 30; _++) {
+        const fillerCPM = getFillerCPM(stacks);
+        const target = Math.min(Math.max(getStacksNeeded(fillerCPM), 0), getStacksBuilt(stacks, fillerCPM));
+
+        stacks += (target - stacks) * RELAXATION;
+    }
+
+    const settledFillerCPM = getFillerCPM(stacks);
+    const flatStacks = getFlatStacks(settledFillerCPM);
+    const stacksGenerated = getStacksBuilt(stacks, settledFillerCPM);
+
+    // time to spend whatever's leftover!!
+    const channelTimePerMin = stacks * secPerStack;
+    const timeLeft = castableTime - channelTimePerMin;
+    const manaLeft = baseMana + stacks * manaPerStack - baselineCost;
+    const fillerCPM = primaryHeal ? Math.max(Math.min(timeLeft / fillerCastTime, manaLeft / fillerCost), 0) : 0;
+    if (primaryHeal) primaryHeal.cpm = fillerCPM;
+
+    // stacksGenerated > stacksDrunk = mana to spare, crit not good :(
+    reportingData.manaTea = {
+        stacksDrunk: stacks,
+        stacksGenerated,
+        isCritGood: stacksGenerated < stacks, // crit is still good, but not because of mana tea
+        flatStacks,
+        channelTimePerMin,
+        secPerStack,
+        totalMana: baseMana + stacks * manaPerStack 
+    };
+    reportingData.fillerBudget = {
+        baseMana,
+        baselineCost,
+        castableTime,
+        primaryHealCpm: fillerCPM,
+        manaLeftOver: manaLeft - fillerCPM * fillerCost
+    };
+
+    // todo: is this necessary? can we just do this for chi-ji anyways?
+    if (getSpellEntry(castProfile, "Tiger Palm")) return;
+
+    // severe downtime is bok > tp
+    const idleGlobals = Math.max(timeLeft - fillerCPM * fillerCastTime, 0) / (1.5 / haste);
+    const resetsPerKick = TOTM_RESET_CHANCE * EFFICIENCY;
+
+    const blackoutKickCPM = Math.min(idleGlobals / (1 + resetsPerKick), 60 / spellDB["Blackout Kick"][0].cooldownData.cooldown);
+    const kickResets = blackoutKickCPM * resetsPerKick;
+    const tigerPalmCPM = Math.max(idleGlobals - blackoutKickCPM - kickResets, 0);
+
+    castProfile.push({ spell: "Blackout Kick", cpm: blackoutKickCPM });
+    castProfile.push({ spell: "Tiger Palm", cpm: tigerPalmCPM });
+
+    const kickEntry = getSelectedKick(castProfile);
+    if (kickEntry) kickEntry.cpm += kickResets;
+
+    reportingData.downtimeFill = { idleGlobals, blackoutKickCPM, tigerPalmCPM, kickResets };
+}
 
 type SequencingFn = (
     state: any,
@@ -200,10 +296,8 @@ const getHeartOfJadeSerpentUptimes = (talents: any, castProfile: CastProfile, tf
 
     let uptimeSecPerMinStandard = tftCpm * procDurationSec;
     if (hasTalent(talents, "Yu'lon's Avatar")) {
-        // we can assume vivify is always being cast to fulfil the ppm, but the cpm proably needs to be higher than yu'lon's avatar's 1.5ppm to hit it effectively
-        // revisit for models that skip viv/sg completely
-        const primaryHealCpm = getSelectedPrimaryHeal(castProfile)?.cpm ?? 0;
-        const avatarPpm = primaryHealCpm > 1.5 ? 1.5 : 0;
+        // any profile that casts viv/sg at all clears YA 1.5ppm pretty comfortably
+        const avatarPpm = getSelectedPrimaryHeal(castProfile) ? 1.5 : 0;
         const avatarDurationSec = talents["Yu'lon's Avatar"].values[0] / 1000;
         uptimeSecPerMinStandard += avatarPpm * avatarDurationSec;
     }
@@ -279,20 +373,22 @@ const applyInnerCompass = (talents: any, state: any): void => {
 
 const getAverageTeachingsStacks = (talents: any, castProfile: CastProfile): number => {
     const tigerPalmStrikes = hasTalent(talents, "Way of the Crane") ? talents["Way of the Crane"].values[2] : 1;
-    const tigerPalmCPM = getSpellEntry(castProfile, "Tiger Palm").cpm;
-    const blackoutKickCPM = getSpellEntry(castProfile, "Blackout Kick").cpm;
+    const tigerPalmCPM = getCPM(castProfile, "Tiger Palm");
+    const blackoutKickCPM = getCPM(castProfile, "Blackout Kick");
+    if (blackoutKickCPM === 0) return 0;
 
     let averageTeachingsStacks = (tigerPalmCPM * tigerPalmStrikes) / blackoutKickCPM;
     if (hasTalent(talents, "Xuen's Guidance")) averageTeachingsStacks *= 1 + talents["Xuen's Guidance"].values[1] / 100; // Doesn't apply to our base BoK.
 
-    return averageTeachingsStacks;
+    return Math.min(averageTeachingsStacks, TOTM_MAX_STACKS);
 }
 
-const getRisingMistRates = (talents: any, castProfile: CastProfile, spellDB: Record<string, any[]>): { remStandard: number, envStandard: number } => {
+const getRisingMistRates = (talents: any, castProfile: CastProfile, spellDB: Record<string, any[]>, reportingData: Record<string, any>): { remStandard: number, envStandard: number } => {
     if (!hasTalent(talents, "Rising Mist")) return { remStandard: 0, envStandard: 0 };
 
     const secPerExtension = talents["Rising Mist"].values[0];
     const maxExtension = 1 + talents["Rising Mist"].values[1] / 100;
+    reportingData.risingMist = {};
 
     const getHotRisingMistRate = (spellName: string): number => {
         const cpm = spellName === "Renewing Mist" ? getSelectedKick(castProfile).cpm : getSpellEntry(castProfile, spellName).cpm;
@@ -301,7 +397,7 @@ const getRisingMistRates = (talents: any, castProfile: CastProfile, spellDB: Rec
         const extensionsToMax = hotDuration / secPerExtension;
         const rate = Math.min(1, (cpm * maxDuration / 60) / extensionsToMax * EFFICIENCY);
 
-        console.log(`[RisingMist] ${spellName}: cpm=${cpm}, hotDuration=${hotDuration}, maxDuration=${maxDuration}, extensionsToMax=${extensionsToMax}, rate=${rate}`);
+        reportingData.risingMist[spellName] = { cpm, hotDuration, maxDuration, extensionsToMax, rate };
 
         return rate;
     }
@@ -342,13 +438,13 @@ const getDancingMistsRemSec = (talents: any, castProfile: CastProfile, spellDB: 
     return castDrivenRemSec + bounceDrivenRemSec;
 }
 
-const getAverageRemCount = (castProfile: CastProfile, spellDB: Record<string, any[]>, remStandard: number, freeRenewingMistSec: number): number => {
+const getAverageRemCount = (castProfile: CastProfile, spellDB: Record<string, any[]>, remStandard: number, freeRenewingMistSec: number, reportingData: Record<string, any>): number => {
     const remCPM = getSpellEntry(castProfile, "Renewing Mist").cpm;
     const remDuration = spellDB["Renewing Mist"][0].buffDuration;
     const standardRemSec = remCPM * remDuration * (1 + remStandard);
     const result = (standardRemSec + freeRenewingMistSec) / 60;
 
-    console.log(`[AverageRemCount] remCPM=${remCPM}, remDuration=${remDuration}, remStandard=${remStandard}, standardRemSec=${standardRemSec}, freeRenewingMistSec=${freeRenewingMistSec}, result=${result}`);
+    reportingData.remCoverage = { remCPM, remDuration, remStandard, standardRemSec, freeRenewingMistSec, averageRemCount: result };
 
     return result;
 }
@@ -358,7 +454,7 @@ const getMistyPeaksEnvSec = (talents: any, castProfile: CastProfile, spellDB: Re
     if (!hasTalent(talents, "Misty Peaks")) return 0;
 
     const procDuration = talents["Misty Peaks"].values[1];
-    const procChancePerPoint = talents["Misty Peaks"].values[2];
+    const procChancePerPoint = talents["Misty Peaks"].values[2] / 100;
     const procChance = procChancePerPoint * getTalentPoints(talents, "Misty Peaks");
 
     const remCPM = getSpellEntry(castProfile, "Renewing Mist").cpm;
@@ -408,7 +504,7 @@ const initMonkCastState = (castProfile: CastProfile, playerData: any, settings: 
     };
 
     const localSettings: any = {
-        downtime: 0.15,
+        downtime: 0,
         risingMist: {
             remStandard: 1,
             envStandard: 0.9
@@ -442,7 +538,7 @@ const initMonkCastState = (castProfile: CastProfile, playerData: any, settings: 
 
 const buildMonkState = (initialState: any, playerData: any, stats: Stats, settings: PlayerSettings) => {
     const state = {
-        fightLength: 300,
+        fightLength: 480,
         spec: SPECS.MISTWEAVERMONK,
         statPercentages:
             convertStatPercentages(
@@ -525,7 +621,7 @@ const applyCoverageMultipliers = (
     profileKey: MonkProfileKey,
 ) => {
     // Calculate average ReM count
-    reportingData.averageRemCount = getAverageRemCount(castProfile, spellDB, localSettings.risingMist.remStandard, reportingData.freeRenewingMistSec);
+    reportingData.averageRemCount = getAverageRemCount(castProfile, spellDB, localSettings.risingMist.remStandard, reportingData.freeRenewingMistSec, reportingData);
 
     // misty coalescence multiplier onto renewing mist
     const remEntry = getSpellEntry(castProfile, "Renewing Mist");
@@ -562,6 +658,33 @@ const applyCoverageMultipliers = (
     rwkHealSlice.targets = Math.min(reportingData.averageRemCount + reportingData.averageEnvCount, rwkHealSlice.targets);
 }
 
+const runSpell = (state: any, slice: SpellData, flags: any = {}): number =>
+    getSpellThroughput(slice, state.statPercentages, state.spec, state.settings, flags);
+
+const addOutput = (breakdown: Record<string, number>, label: string, output: number): void => {
+    breakdown[label] = (breakdown[label] ?? 0) + output;
+}
+
+const unityWithinFields = (talents: any, state: any, spellDB: Record<string, any[]>) => {
+    if (!hasTalent(talents, "Unity Within")) return null;
+
+    const mult = talents["Unity Within"].values[0] / 100;
+
+    const courage = spellDB["Courage of the White Tiger"][0];
+    const courageDamage = runSpell(state, courage) * mult;
+
+    return {
+        healing: {
+            "Courage of the White Tiger": courageDamage * courage.damageToHeal * 1.3, // ignores armor
+            "Strength of the Black Ox": runSpell(state, spellDB["Strength of the Black Ox"][0]) * mult,
+            "Flight of the Red Crane": runSpell(state, spellDB["Flight of the Red Crane"][0]) * mult,
+        } as Record<string, number>,
+        damage: {
+            "Courage of the White Tiger": courageDamage,
+        } as Record<string, number>,
+    };
+}
+
 const runCastLoop = (
     castProfile: CastProfile,
     spellDB: Record<string, any[]>,
@@ -591,7 +714,7 @@ const runCastLoop = (
             else {
                 // Get how much healing or damage we expect the spell to do.
                 // We'll need to make a damage vs healing determination at some point but I'm still thinking about it.
-                spellOutput = getSpellThroughput(slice, state.statPercentages, state.spec, state.settings, spellFlags)
+                spellOutput = runSpell(state, slice, spellFlags);
             }
 
             const effectiveCPM = spellProfile.fillerSpell ? 0 : spellProfile.cpm!;
@@ -602,31 +725,30 @@ const runCastLoop = (
                 // Spell procs Gust of Mists.
                 const masteryHeal = getGustHeal(spellDB, state, localSettings.gustsOverhealing) * slice.gustsValue;
 
-                healingBreakdown["Gust of Mists"] = Math.round((healingBreakdown["Gust of Mists"] || 0) + (masteryHeal * effectiveCPM));
-
+                addOutput(healingBreakdown, "Gust of Mists", masteryHeal * effectiveCPM);
             }
             // Spell specifics
             if (spellName === "Vivify") {
-                const invig = getSpellThroughput(spellDB["Invigorating Mists"][0], state.statPercentages, state.spec, state.settings);
-                
-                healingBreakdown["Invigorating Mists"] = (healingBreakdown["Invigorating Mists"] || 0) + invig * reportingData.averageRemCount * effectiveCPM;
+                const invig = runSpell(state, spellDB["Invigorating Mists"][0]);
+                addOutput(healingBreakdown, "Invigorating Mists", invig * reportingData.averageRemCount * effectiveCPM);
             }
             else if (spellName === "Sheilun's Gift") {
                 totalOutput *= localSettings.sheilunsClouds;
             }
 
             if (spellName === "Vivify" || spellName === "Sheilun's Gift") {
-                const zenPulse = getSpellThroughput(spellDB["Zen Pulse"][0], state.statPercentages, state.spec, state.settings);
-                healingBreakdown["Zen Pulse"] = (healingBreakdown["Zen Pulse"] || 0) + zenPulse * (spellDB["Zen Pulse"][0].mult ?? 1) * reportingData.averageRemCount * Math.min(reportingData.zenPulsePPM, effectiveCPM);
+                const zenPulse = runSpell(state, spellDB["Zen Pulse"][0]);
+                const zpOutput = zenPulse * (spellDB["Zen Pulse"][0].mult ?? 1) * reportingData.averageRemCount * Math.min(reportingData.zenPulsePPM, effectiveCPM);
+                addOutput(healingBreakdown, "Zen Pulse", zpOutput);
             }
 
-            if (spellName === "Celestial Conduit") {
-                // todo: unity running courage, sotbo, and fotrc (bug!) at 2x value
+            if (spellName === "Celestial Conduit" && reportingData.unityWithin) {
+                Object.entries(reportingData.unityWithin.healing).forEach(([label, output]) => addOutput(healingBreakdown, label, (output as number) * effectiveCPM));
+                Object.entries(reportingData.unityWithin.damage).forEach(([label, output]) => addOutput(damageBreakdown, label, (output as number) * effectiveCPM));
             }
 
             if (spellName === "Spiritfont") {
-                const chiCocoon = getSpellThroughput(spellDB["Chi Cocoon (Spiritfont)"][0], state.statPercentages, state.spec, state.settings);
-                healingBreakdown["Chi Cocoon (Spiritfont)"] = (healingBreakdown["Chi Cocoon (Spiritfont)"] || 0) + chiCocoon;
+                addOutput(healingBreakdown, "Chi Cocoon (Spiritfont)", runSpell(state, spellDB["Chi Cocoon (Spiritfont)"][0]));
             }
 
             if (slice.spellType === "damage") {
@@ -635,20 +757,18 @@ const runCastLoop = (
                 }
                 if (slice.damageToHeal) {
                     if (spellName === "Courage of the White Tiger") {
-                        healingBreakdown["Courage of the White Tiger"] = (healingBreakdown["Courage of the White Tiger"] || 0) + totalOutput * slice.damageToHeal * 1.3; // ignores armor
+                        addOutput(healingBreakdown, "Courage of the White Tiger", totalOutput * slice.damageToHeal * 1.3); // ignores armor
                     }
                     else {
-                        healingBreakdown["Ancient Teachings"] = (healingBreakdown["Ancient Teachings"] || 0) + totalOutput * slice.damageToHeal * (1 - localSettings.ancientTeachingsOverhealing);
+                        addOutput(healingBreakdown, "Ancient Teachings", totalOutput * slice.damageToHeal * (1 - localSettings.ancientTeachingsOverhealing));
                     }
                 }
             }
 
             if (totalOutput > 0) {
                 const label = spellProfile.label || spellName;
-                castBreakdown[label] = (castBreakdown[label] ?? 0) + (effectiveCPM);
-
-                if (slice.spellType === "damage") damageBreakdown[label] = (damageBreakdown[label] ?? 0) + (totalOutput);
-                else healingBreakdown[label] = (healingBreakdown[label] ?? 0) + (totalOutput);
+                addOutput(castBreakdown, label, effectiveCPM);
+                addOutput(slice.spellType === "damage" ? damageBreakdown : healingBreakdown, label, totalOutput);
             }
         });
     })
@@ -693,8 +813,6 @@ function runMonkCastProfile(
     castProfile: CastProfile,
     profileKey: MonkProfileKey,
 ) {
-    console.log("Running Monk Set: " + profileKey);
-
     const { initialState, localSettings, spellDB, talents } = initMonkCastState(castProfile, playerData, settings, profileKey);
     const state = buildMonkState(initialState, playerData, stats, settings);
 
@@ -725,7 +843,7 @@ function runMonkCastProfile(
 
     // Expected Downtime
     reportingData.averageHaste = state.statPercentages.haste; // TODO
-    reportingData.timeUsed = getTimeUsed(castProfile, spellDB, reportingData.averageHaste);
+    applyDowntimeFill(talents, castProfile, spellDB, state, reportingData, localSettings);
 
     // TotM
     reportingData.averageTeachingsStacks = getAverageTeachingsStacks(talents, castProfile);
@@ -733,7 +851,7 @@ function runMonkCastProfile(
     // Rising Mist
     // This section in particular could use more analysis. It's important that Rising Mist scales with haste since it's a key factor in our resets,
     // however modelling getting 5 in a ReM duration is trickier. We also don't want to introduce "fake" breakpoints.
-    const risingMistRates = getRisingMistRates(talents, castProfile, spellDB);
+    const risingMistRates = getRisingMistRates(talents, castProfile, spellDB, reportingData);
     localSettings.risingMist.remStandard = risingMistRates.remStandard;
     localSettings.risingMist.envStandard = risingMistRates.envStandard;
 
@@ -742,6 +860,8 @@ function runMonkCastProfile(
     reportingData.freeRenewingMistSec += getDancingMistsRemSec(talents, castProfile, spellDB, reportingData.freeRenewingMistSec);
 
     applyCoverageMultipliers(talents, castProfile, spellDB, state, localSettings, reportingData, risingMistRates, profileKey);
+
+    reportingData.unityWithin = unityWithinFields(talents, state, spellDB);
 
     const sequence = (celestialSequences as Record<string, SequencingFn>)[profileKey];
     if (sequence) {
@@ -752,13 +872,13 @@ function runMonkCastProfile(
 
     const result = compileMonkResult(healingBreakdown, damageBreakdown, castProfile, spellDB, state, reporting);
 
-    console.log(reportingData);
+    if (reporting) console.log(reportingData);
 
     return result;
 }
 
 const conduitCastProfile: CastProfile = [
-    { spell: "Celestial Conduit", efficiency: 0.9, },
+    { spell: "Celestial Conduit", efficiency: EFFICIENCY, },
     { spell: "Courage of the White Tiger", cpm: 4, hastedCPM: true },
     { spell: "Strength of the Black Ox", cpm: 4, hastedCPM: true, } // identical to courage
 ]
@@ -769,23 +889,21 @@ const mohCastProfile: CastProfile = [
 ]
 
 const getHeroTreeCastProfile = (playerData: any): CastProfile => {
-    if (playerData.heroTree === MONK_HERO_TREES.CONDUIT) return conduitCastProfile;
-    if (playerData.heroTree === MONK_HERO_TREES.MOH) return mohCastProfile;
+    if (playerData.heroTree === MONK_HERO_TREES.CONDUIT) return deepCopyFunction(conduitCastProfile);
+    if (playerData.heroTree === MONK_HERO_TREES.MOH) return deepCopyFunction(mohCastProfile);
     return [];
 }
 
 export function scoreMonkYulonSet(stats: Stats, playerData: any, settings: PlayerSettings = {}, reporting: boolean = false) {
     const castProfile: CastProfile = [
-        { spell: "Renewing Mist", efficiency: 0.8, hastedCPM: true },
+        { spell: "Renewing Mist", efficiency: 0.9, hastedCPM: true },
         { spell: "Enveloping Mist", cpm: 5, hastedCPM: true }, // must be a minimum of sotbo + spiritfont r1, adjusted even more with yu'lon sequencing
-        { spell: "Vivify", cpm: 8.5, hastedCPM: true },
-        { spell: "Tiger Palm", cpm: 0.05, hastedCPM: true },
-        { spell: "Blackout Kick", cpm: 0.1, hastedCPM: true },
+        { spell: "Vivify", cpm: 0 }, // our filler, the downtime fill solves the real cpm
         { spell: "Rushing Wind Kick", efficiency: 0.85, hastedCPM: true },
 
         // cooldowns
-        { spell: "Revival", efficiency: 0.9, },
-        { spell: "Life Cocoon", efficiency: 0.9, },
+        { spell: "Revival", efficiency: EFFICIENCY, },
+        { spell: "Life Cocoon", efficiency: EFFICIENCY, },
 
         // spells
         { spell: "Spiritfont", cpm: 1, },
