@@ -40,6 +40,7 @@ const initialState : RootState = {
 
     topGearAutoGem: { value: false, options: [true, false], category: "topGear", type: "selector", gameType: "Retail" },
     cosmicCrescendoUsage: { value: 75, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
+    rubyWhelpShell: { value: "Untrained", options: ["Untrained", "AoE Heal", "ST Heal", "Haste", "Crit"], category: "trinkets", type: "selector", gameType: "Retail" },
     averageRaidHealth: { value: 85, options: [], category: "trinkets", type: "Entry", gameType: "Retail" },
     
     crucibleUpgrades: { value: "Fully Upgraded", options: ["Fully Upgraded", "Not Upgraded"], category: "trinkets", type: "selector", gameType: "Retail" },
@@ -56,6 +57,7 @@ const initialState : RootState = {
 
     // Spec values:
     masteryEffectivenessShaman: { value: 30, options: [], category: "specSpecific", type: "Entry", gameType: "Retail", spec: "Restoration Shaman" },
+    waterShieldBugShaman: { value: 'No', options: ['No', 'Yes'], category: "specSpecific", type: "selector", gameType: "Retail", spec: "Restoration Shaman" },
 
     // Classic Settings
     manaProfile: {value: "Standard", options: ["Standard", "More Efficient", "More Burst Healing"], category: "topGear", type: "selector", gameType: "Classic"},
@@ -69,9 +71,12 @@ const initialState : RootState = {
     professionTwo: {value: "Leatherworking", options: ["Alchemy", "Blacksmithing", "Enchanting", "Engineering (NYI)", "Herbalism (NYI)", "Inscription", "Jewelcrafting (NYI)", "Leatherworking", "Mining", "Skinning", "Tailoring (NYI)"], category: "topGear", type: "selector", gameType: "Classic"},
     gloveEnchant: {value: "Haste", options: ["Haste", "Mastery"], category: "enchants", type: "selector", gameType: "Classic"},
     classicGems: {value: "Prefer Match", options: ["Prefer Match", "Prefer Optimal", "Keep Equipped Gems"], category: "topGear", type: "selector", gameType: "Classic"},
-    classicGemTypes: {value: "Intellect Focus", options: ["Intellect Focus", "Secondary Focus"], category: "topGear", type: "selector", gameType: "Classic"},
+    classicGemTypes: {value: "Secondary Focus", options: ["Intellect Focus", "Secondary Focus"], category: "topGear", type: "selector", gameType: "Classic"},
     classicMetaGem: {value: "Courageous Primal Diamond", options: ["Burning Primal Diamond", "Courageous Primal Diamond"], category: "topGear", type: "selector", gameType: "Classic"},
     includeEnchants: {value: "Yes", options: ["Yes", "No"], category: "topGear", type: "selector", gameType: "Classic"},
+
+    thokTargets: {value: 2, options: [0, 1, 2, 3, 4, 5], category: "topGear", type: "selector", gameType: "Classic"},
+
 
     druidLevelSixtyTalent: {value: "Soul of the Forest", options: ["Soul of the Forest", "Force of Nature", "Incarnation"], category: "specSpecific", type: "selector", gameType: "Classic", spec: "Restoration Druid Classic"},
     

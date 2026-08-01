@@ -20,6 +20,48 @@ export function getGenericEffectClassic(effectName, player, itemLevel, additiona
 }
 
 export const classicEffectData = [
+    { 
+    name: "Jina-Kang, Kindness of Chi-Ji",
+    effects: [
+      {
+        duration: 10,
+        ppm: {
+          
+          "Restoration Druid Classic": 0.46,
+          
+          "Mistweaver Monk Classic": 0.46,
+          
+          "Discipline Priest Classic": 0.81,
+          
+          "Holy Priest Classic": 0.58,
+          
+          "Restoration Shaman Classic": 0.41,
+          
+          "Holy Paladin Classic": 0.64,
+
+          "Restoration Shaman": 0.41,
+          "Restoration Druid": 0.46,
+          "Mistweaver Monk": 0.46,
+          "Holy Priest": 0.58,
+          "Holy Paladin": 0.64,
+          "Discipline Priest": 0.81,
+          
+        },
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats = {};
+      // Needs Renovation
+      const ppm = data[0].ppm[player.spec] || 0.5;
+      const uptime = data[0].duration * ppm / 60;
+
+      bonus_stats.hps = uptime * 0.15 * player.getHPS("Raid");
+
+      return bonus_stats;
+
+    }
+
+  },
   { 
     name: "Maw of the Dragonlord",
     effects: [

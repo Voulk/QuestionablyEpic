@@ -78,7 +78,7 @@ describe("Test APL", () => {
         
         console.log("Testing APL");
 
-        const data = getData("Holy Priest");
+        const data = getData("Discipline Priest");
 
         const spec = data.spec
         const testSuite = "TopGearProfile" //"TopGearProfile" //"Stat" //;
@@ -101,7 +101,7 @@ describe("Test APL", () => {
             //console.log(getTalentedSpellDB("Restoration Druid"));
             //const data = runClassicStatSuite(playerData, paladinShockProfile, runCastSequence)
             const data = runClassicStatSuite(profile, "healing")
-            
+            console.log(data.baselineHPS / 60)
             console.log(data.weights);
 
         }

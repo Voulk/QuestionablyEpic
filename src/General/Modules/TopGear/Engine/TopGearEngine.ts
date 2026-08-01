@@ -18,6 +18,7 @@ import Item from "General/Items/Item";
 import { gemDB } from "Databases/GemDB";
 import { processedValue } from "Retail/Engine/EffectFormulas/EffectUtilities";
 import { getTitanBeltEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/TitanDiscBeltData";
+import { getFolioEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/OmniumFolioData";
 
 /**
  * == Top Gear Engine ==
@@ -28,7 +29,7 @@ import { getTitanBeltEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEf
  */
 
 const softSlice = 3000;
-const DR_CONST = 0.00306669230769231; // 0.00497669230769231;
+const DR_CONST = 0.00293669230769231; // 0.00497669230769231;
 const DR_CONSTLEECH = 0.05122569230769231;
 
 // This is just a timer function. We might eventually just move it to a timeUtility file for better re-use.
@@ -105,7 +106,7 @@ function getMidnightGemOptions(spec: string, contentType: contentTypes, settings
   }
   else if (spec === "Discipline Priest") {
     // Haste / Crit, Crit / Haste
-    gemArray.fill(getGemID('haste', 'crit'), 1);
+    gemArray.fill(getGemID('haste', 'mastery'), 1);
     return gemArray;
     return [metaGem, getGemID('haste', 'mastery')]/*, getGemID('mastery', 'haste'), getGemID('crit', 'haste'), getGemID('versatility', 'haste'),
       getGemID('haste', 'mastery'), getGemID('haste', 'mastery'), getGemID('haste', 'mastery'), getGemID('haste', 'mastery')];*/
@@ -838,6 +839,31 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
       effectStats.push(getEffectValue(effect, player, castModel, contentType, effect.level, userSettings, "Retail", setStats, setVariables));
     }
   }
+
+  // Omnium Folio
+  // Handle user entry / unlocks later.
+  const folioGems = [1279599]
+  const folioStats = getFolioEffect(folioGems, {player: player, contentType: contentType, settings: userSettings, setStats: setStats, castModel: castModel, setVariables: setVariables});
+
+  effectStats.push(folioStats);
+
+  // Special 10.0.7 Ring
+  // No longer necessary in season 4.
+  /*
+  if (builtSet.checkHasItem(203460)) {
+    // Auto gen best gems.
+    
+    const itemLevel = builtSet.itemList.filter(item => item.id === 203460)[0].level || 424;
+
+    const combo = player.getBestPrimordialIDs(userSettings, contentType, itemLevel);
+    // 10.2 note - We'll actually just use the default best healing set now. Options have long since been removed and generating every possible set is no longer useful.
+
+    // Handle Annulet
+    const annuletStats = getOnyxAnnuletEffect(combo, player, contentType, itemLevel, player.activeStats, userSettings);
+
+    builtSet.primGems = combo; 
+    effectStats.push(annuletStats);
+ } */
 
   // == Cyrce's Circlet ==
   if (builtSet.checkHasItem(228411)) {

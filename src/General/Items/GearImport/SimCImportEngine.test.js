@@ -1,6 +1,6 @@
 
 import Player from "General/Modules/Player/Player";
-import { processItem, processCurve, processAllLines, runSimC, getItemLevel} from "General/Items/GearImport/SimCImportEngine"
+import { processItem, processCurve, processAllLines, runSimC, getItemLevel, loadBonusRolls} from "General/Items/GearImport/SimCImportEngine"
 
 const testDruidSet = 
 `
@@ -60,6 +60,15 @@ const settings = {
     healingDartsOverheal: { value: 55, options: [], category: "embellishments", type: "Entry" },
     lariatGems: { value: 3, options: [], category: "embellishments", type: "Entry" },
   } 
+
+describe("Test Bonus Rolls", () => {
+    const string = ["3418:268459:4:1:249306:103"];
+
+    const rolls = loadBonusRolls(string);
+    console.log(rolls);
+
+    expect(rolls[2733][4]).toContain(249306);
+});
 
 describe("Test Item Level Imports", () => {
     test("Standard 730 Pre-Squish Tier Item", () => {

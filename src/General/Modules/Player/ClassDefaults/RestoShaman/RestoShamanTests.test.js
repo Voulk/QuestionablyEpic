@@ -39,7 +39,7 @@ describe("Generic Profile Testing Environment", () => {
             }
             const playerData = { spec: "Restoration Shaman", heroTree: profile, profileName: profile, stats: activeStats,
                                     masteryEffectiveness: 0.3, tierSets: ["Restoration Shaman S1-2", "Restoration Shaman S1-4"], params: params }
-            const data = restoShamanProfile.scoreSet(activeStats, playerData);
+            const data = restoShamanProfile.scoreSet(activeStats, playerData, { waterShieldBugShaman: { value: 'Yes' } });
             buildStatWeights(playerData, scoreShamanSet, {});
             results[profile] = data.healing
         })

@@ -26,8 +26,8 @@ export const CONSTANTS = {
 
     // SEASONAL CONSTANTS
     seasonalItemConversion: 12, // 6 = S2, 7 = S3, 8 = ??, 9 = S4. This value is used to determine if an item can be catalyzed.
-    currentRaidIDs: [1307, 1314, 1308], // This should be an array even with one raid. This value is used in various array specific functions.
-    currentDungeonIDs: [1315, 1316, 1300, 1299, 1201, 278, 476, 945],
+    currentRaidIDs: [1320, 1317], // This should be an array even with one raid. This value is used in various array specific functions. 1317 = new world boss
+    currentDungeonIDs: [1322, 1311, 1304, 1309, 1313, 1041, 1202, 1030],
     fullItemLevels: [200, 203, 206, 210, 214, 217, 220, 224, 227, 230, 233, 237, 240, 243, 246, 250, 253, 256, 259, 263, 266, 269, 272, 276, 279, 282, 285, 289],
     itemLevelCaps: { Explorer: 224, Adventurer: 237, Veteran: 250, Champion: 263, Hero: 276, Myth: 289, "Runed Crafted": 272, "Gilded Crafted": 285 },
     seasonID: 34,
@@ -40,6 +40,16 @@ export const CONSTANTS = {
       "Mistweaver Monk": "of Ra-den's Chosen", 
       "Restoration Druid": "of the Luminous Bloom"
     },
+
+    specIDs: {
+        "Preservation Evoker": 1468,
+        "Holy Paladin": 65,
+        "Holy Priest": 257,
+        "Discipline Priest": 256,
+        "Restoration Shaman": 264,
+        "Mistweaver Monk": 270,
+        "Restoration Druid": 105,
+    }
 
 }
 

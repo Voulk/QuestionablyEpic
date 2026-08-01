@@ -20,11 +20,41 @@ export const getVersion = (): string => {
 
 export const changeLog: entry[] = [
   {
-    version: "12.0.5 / 5.5.3",
-    update: 17,
-    date: "May 13",
+    version: "12.1 / 5.5.4",
+    update: 1,
+    date: "August",
     changes: [ 
-      "Added better support for the new Voidcore system in Top Gear & Upgrade Finder."
+      "All Season 2 items and effects.",
+      "Upgrade Finder Revamped. New UI & bonus roll functionality.",
+      "Top Gear Stat panel Revamped. New UI, better accuracy, includes breakdown of where stats come from.",
+      "Many UI upgrades around the rest of the app including a new way to view trinkets, new item tags and more.",
+      "New Embellishment: Adorned Fang.",
+      "New auto-catalyze button on import.",
+    ]
+  },
+    {
+    version: "12.0.7 / 5.5.4",
+    update: 19,
+    date: "June 17",
+    changes: [ 
+      "Various bug fixes",
+    ]
+  },
+  {
+    version: "12.0.7 / 5.5.4",
+    update: 18,
+    date: "June 17",
+    changes: [ 
+      "Added Omnium Folio.",
+      "Added Sporefall raid loot & Upgrade Finder."
+    ]
+  },
+          {
+    version: "12.0.5 / 5.5.4",
+    update: 17,
+    date: "June 8",
+    changes: [ 
+      "Classic: Added Siege of Orgrimmar",
     ]
   },
         {

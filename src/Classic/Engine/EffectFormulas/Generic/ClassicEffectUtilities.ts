@@ -13,11 +13,12 @@ import { randPropPointsClassic } from "Retail/Engine/RandPropPointsBylevelClassi
  * @param {*} roundType Blizzard are inconsistent on whether they floor or round data. Most of the time they'll floor, but the function can support both via optional parameters.
  * @returns A flat value representing the in-game effect number at whatever item level we're given.
  */
-export const processedValue = (data: ClassicEffectData, itemLevel: number, efficiency: number = 1, roundType: "floor" | "ceil" | "round" = "round") => {
+export const processedValue = (data: ClassicEffectData, itemLevel: number, efficiency: number = 1, roundType: "floor" | "ceil" | "round" | "none" = "round") => {
   const value = data.coefficient * randPropPointsClassic[itemLevel]["slotValues"][0] * efficiency;
   if (roundType === "floor") return Math.floor(value);
   else if (roundType === "ceil") return Math.ceil(value);
   else if (roundType === "round") return Math.round(value);
+  else if (roundType === "none") return value;
   else return value;
 }
 

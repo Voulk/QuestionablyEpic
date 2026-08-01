@@ -27,17 +27,39 @@ const useStyles = makeStyles((theme) => ({
     width: 150,
     height: 50,
   },
-  red: {},
+  difficultyToggle: {
+    height: 42,
+    width: "100%",
+    borderRadius: 5,
+    border: "1px solid rgba(255, 255, 255, 0.16)",
+    background: "linear-gradient(180deg, rgba(34, 38, 48, 0.95) 0%, rgba(26, 30, 38, 0.98) 100%)",
+    color: "rgba(255, 255, 255, 0.88)",
+    textTransform: "none",
+    fontWeight: 600,
+    letterSpacing: 0.2,
+    transition: "border-color 160ms ease, background 160ms ease, transform 120ms ease",
+    "&:hover": {
+      background: "linear-gradient(180deg, rgba(40, 45, 56, 0.96) 0%, rgba(30, 35, 44, 0.99) 100%)",
+      borderColor: "rgba(242, 191, 89, 0.3)",
+      transform: "translateY(-1px)",
+    },
+  },
   labels: { fontSize: 12 },
-  selectedRed: {
-    "&$red": {
+  difficultyToggleSelected: {
+    "&$difficultyToggle": {
       color: "#000",
-      backgroundColor: "#F2BF59",
+      background: "linear-gradient(180deg, rgba(242, 191, 89, 0.98) 0%, rgba(214, 165, 71, 0.98) 100%)",
+      borderColor: "rgba(242, 191, 89, 0.95)",
+      boxShadow: "0 0 0 1px rgba(242, 191, 89, 0.25)",
     },
-    "&$red:hover": {
+    "&$difficultyToggle:hover": {
       color: "#000",
-      backgroundColor: "rgb(169, 133, 62)",
+      background: "linear-gradient(180deg, rgba(235, 182, 77, 0.98) 0%, rgba(202, 153, 61, 0.98) 100%)",
     },
+  },
+  difficultyGrid: {
+    marginTop: 10,
+    padding: "0px 6px 4px 6px",
   },
   header: {
     [theme.breakpoints.down("md")]: {
@@ -80,7 +102,7 @@ const useStyles = makeStyles((theme) => ({
 /* ---------------------------------------------------------------------------------------------- */
 
 /* ---------------------------------- Retail Raid Difficulties ---------------------------------- */
-const raidDifficulty = ["Raid Finder", "Raid Finder (Max)", "Normal", "Normal (Max)", "Heroic", "Heroic (Max)", "Mythic", "Mythic (Max)"];
+const raidDifficulty = ["Raid Finder", "Normal", "Heroic", "Mythic"];
 
 /* -------------------------------------- Retail PVP Ranks -------------------------------------- */
 
@@ -152,21 +174,23 @@ const sendReport = (shortReport) => {
 /* ---------------------------- Burning Crusade Dungeon Difficulties ---------------------------- */
 // const burningCrusadeDungeonDifficulty = ["Normal", "Heroic"];
 
+
+
 const mythicPlusLevels = [
-  { value: 246, label: "M0" },
-  { value: 250, label: "+2/3" },
-  { value: 253, label: "+4" },
-  { value: 256, label: "+5" },
-  { value: 259, label: "+6/7" },
-  { value: 263, label: "+8/9" },
-  { value: 266, label: "+10" },
-  { value: 269, label: "Vault" },
-  { value: 272, label: "" },
-  { value: 276, label: "" },
-  { value: 279, label: "" },
-  { value: 282, label: "" },
-  { value: 285, label: "" },
-  { value: 289, label: "" },
+  { value: 292, label: "M0" },
+  { value: 295, label: "+2/3" },
+  { value: 298, label: "+4" },
+  { value: 302, label: "+5" },
+  { value: 305, label: "+6/7" },
+  { value: 308, label: "+8/9" },
+  { value: 311, label: "+10" },
+  { value: 315, label: "Vault" },
+  { value: 318, label: "" },
+  { value: 321, label: "" },
+  { value: 328, label: "" },
+  { value: 334, label: "" },
+  // { value: 285, label: "" },
+  // { value: 289, label: "" },
 ]
 
 const getSessionStorageOrDefault = (key, defaultValue) => {
@@ -190,7 +214,16 @@ export default function UpgradeFinderFront(props) {
   const userSettings = useSelector((state) => state.playerSettings);
   const gameType = useSelector((state) => state.gameType);
   const helpBlurb = t("UpgradeFinderFront.HelpText");
-  const [ufRaidDifficulty, setUfRaidDifficulty] = useState(() => getSessionStorageOrDefault("ufRaidDifficulty", [5,7]));
+  const [ufRaidDifficulty, setUfRaidDifficulty] = useState(() => {
+    const stored = Math.min(getSessionStorageOrDefault("ufRaidDifficulty", [3]), 3);
+
+    if (!Array.isArray(stored) || stored.length === 0) {
+      return [3];
+    }
+
+    // Keep only one value in case older session data contains two selections.
+    return [stored[stored.length - 1]];
+  });
   const [ufDungeonDifficulty, setUfDungeonDifficulty] = useState(() => getSessionStorageOrDefault("ufDungeonDifficulty", gameType === "Retail" ? 6 : 1));
   const [ufPvPRank, setUfPvPRank] = useState(() => getSessionStorageOrDefault("ufPvPRank", 0));
   const [ufCraftedLevel, setUfCraftedLevel] = useState(() => Math.min(getSessionStorageOrDefault("ufCraftedLevel", 2), 2));
@@ -229,14 +262,7 @@ export default function UpgradeFinderFront(props) {
   }, []);
 
   const setRaidDifficulty = (difficulty) => {
-    let currDiff = ufRaidDifficulty;
-    let difficultyIndex = currDiff.indexOf(difficulty);
-    if (difficultyIndex > -1) currDiff.splice(difficultyIndex, 1);
-    else {
-      currDiff.push(difficulty);
-      if (currDiff.length > 2) currDiff.splice(0, 1);
-    }
-    setUfRaidDifficulty(currDiff);
+    setUfRaidDifficulty((current) => (current.includes(difficulty) ? current : [difficulty]));
   };
 
   const changeCraftedStats = (event) => {
@@ -342,12 +368,6 @@ export default function UpgradeFinderFront(props) {
     }
   };
 
-  const [selected, setSelected] = React.useState(raidDifficulty.reduce((acc, curr) => ({ ...acc, [curr]: false }), {}));
-
-  const toggleSelected = (key) => {
-    setSelected((prev) => ({ ...prev, [key]: !prev[key] }));
-  };
-
   const unleashUpgradeFinder = () => {
     if (gameType === "Retail") {
 
@@ -439,29 +459,23 @@ export default function UpgradeFinderFront(props) {
                   </Grid>
                 </Grid>
 
-                <Grid container justifyContent="center" spacing={1} columns={8}>
+                <Grid container justifyContent="center" spacing={1} columns={8} className={classes.difficultyGrid}>
                   {raidDifficulty.map((key, i) => (
-                    <Grid item xs={2} key={i} style={{ order: i % 2 === 0 ? 0 : 1 }}>
-                      <Grid container justifyContent="center" spacing={1}>
-                        <Grid item xs={12}>
-                          <ToggleButton
-                            classes={{
-                              root: classes.red,
-                              selected: classes.selectedRed,
-                            }}
-                            value="check"
-                            fullWidth
-                            selected={ufRaidDifficulty.includes(i)}
-                            style={{ height: 40 }}
-                            onChange={() => {
-                              toggleSelected(key);
-                              setRaidDifficulty(i);
-                            }}
-                          >
-                            {t("RaidDifficulty." + key)}
-                          </ToggleButton>
-                        </Grid>
-                      </Grid>
+                    <Grid item xs={2} key={i}>
+                      <ToggleButton
+                        classes={{
+                          root: classes.difficultyToggle,
+                          selected: classes.difficultyToggleSelected,
+                        }}
+                        value="check"
+                        fullWidth
+                        selected={ufRaidDifficulty.includes(i)}
+                        onChange={() => {
+                          setRaidDifficulty(i);
+                        }}
+                      >
+                        {t("RaidDifficulty." + key)}
+                      </ToggleButton>
                     </Grid>
                   ))}
                 </Grid>

@@ -5,11 +5,31 @@ const commonStyles = {
   backgroundPosition: "center 60%",
   backgroundSize: "101%",
   borderRadius: "4px 0px 0px 4px",
-  height: 45,
+  height: 42,
   whiteSpace: "nowrap",
   textShadow: "0px 0px 6px black, 1px 1px 2px black, -1px -1px 2px black",
   color: "#fff",
   fontSize: "0.9rem",
+};
+
+export const sharedAccordionStyles = {
+  background: "linear-gradient(180deg, rgba(18, 22, 30, 0.96) 0%, rgba(12, 15, 20, 0.98) 100%)",
+  border: "1px solid rgba(242, 191, 89, 0.12)",
+  borderRadius: 10,
+  overflow: "hidden",
+};
+
+export const sharedAccordionSummaryStyles = {
+  verticalAlign: "middle",
+  minHeight: 58,
+  paddingLeft: 8,
+  paddingRight: 12,
+  background: "linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0) 100%)",
+};
+
+export const sharedAccordionDetailsStyles = {
+  background: "linear-gradient(180deg, rgba(22, 25, 32, 0.98) 0%, rgba(17, 19, 24, 0.98) 100%)",
+  borderTop: "1px solid rgba(255, 255, 255, 0.06)",
 };
 
 // Basic Root Style
@@ -29,15 +49,16 @@ export const raidStyles = makeStyles((theme) => {
     root: {
       width: "100%",
       marginTop: 4,
-      padding: 4,
+      padding: 0,
+      objectFit: "cover",
     },
     header: {
       [theme.breakpoints.down("lg")]: {
         justifyContent: "center",
         display: "block",
-        marginLeft: "auto",
-        marginRight: "auto",
-        flexGrow: 1,
+        //marginLeft: "auto",
+        //marginRight: "auto",
+        //flexGrow: 1,
         maxWidth: "100%",
       },
       [theme.breakpoints.up("md")]: {
@@ -145,15 +166,27 @@ export const raidStyles = makeStyles((theme) => {
       ...commonStyles,
     },
     dreamriftHeader: {
-      backgroundImage: `url(${require("../../../../Images/Bosses/MidnightS1/DreamriftLong.png")})`,
+      backgroundImage: `url(${require("../../../../Images/Bosses/MidnightS1/DreamriftShort.png")})`,
       ...commonStyles,
     },
     marchOnQueldanasHeader: {
-      backgroundImage: `url(${require("../../../../Images/Bosses/MidnightS1/MarchLong.png")})`,
+      backgroundImage: `url(${require("../../../../Images/Bosses/MidnightS1/MarchShort.png")})`,
+      ...commonStyles,
+    },
+    venomousAbyssHeader: {
+      background: "linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, rgba(10, 17, 12, 0.88) 62%, rgba(21, 38, 27, 0.8) 82%, #3da55d 100%)",
+      ...commonStyles,
+    },
+    tideboundGrottoHeader: {
+      background: "linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, rgba(9, 14, 24, 0.88) 62%, rgba(19, 30, 46, 0.8) 82%, #3e7bd1 100%)",
       ...commonStyles,
     },
     voidspireHeader: {
-      backgroundImage: `url(${require("../../../../Images/Bosses/MidnightS1/VoidspireLong.png")})`,
+      backgroundImage: `url(${require("../../../../Images/Bosses/MidnightS1/VoidspireShort.png")})`,
+      ...commonStyles,
+    },
+    sporefallHeader: {
+      backgroundImage: `url(${require("../../../../Images/Bosses/MidnightS1/SporefallShort.png")})`,
       ...commonStyles,
     },
   };

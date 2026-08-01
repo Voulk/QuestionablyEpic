@@ -30,6 +30,9 @@ export class Player {
     this.setupDefaults(specName);
     this.talents = [];
 
+    // {boss: {difficulty: [itemIDs]}}
+    this.bonusRolledItems = {};
+
     
     
     if (gameType === "Retail") {
@@ -715,9 +718,10 @@ export class Player {
         }
     } else if (spec === SPEC.MISTWEAVERMONK) {
       const models = [
+        { identifier: "Chi-Ji", content: "Raid" },
         { identifier: "Yu'lon", content: "Raid" },
         { identifier: "Dungeon Default", content: "Dungeon" },
-        //{ identifier: "Chi-Ji (Beta)", content: "Raid" },
+        
       ];
       models.forEach((model, i) => this.castModels.push(new CastModel(spec, model.content, model.identifier, i)));
 

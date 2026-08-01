@@ -368,16 +368,16 @@ export function getValidWeaponTypesBySpec(spec: string) {
 
 export function getItemLevelBoost(bossID: number, difficulty: number) {
   // Handle max difficulties
-  if (difficulty === CONSTANTS.difficulties.mythicMax) {
+  /*if (difficulty === CONSTANTS.difficulties.mythicMax) {
     if (bossID === 2523 || bossID === 2520) return 0;
     else return 0;
   } // The Mythic Max base level is 447, which means these 450 drops are a small upgrade.
-  else if (isMaxxed(difficulty)) return 0;
+  else if (isMaxxed(difficulty)) return 0;*/
 
   // Handle non-max difficulties.
-  if (bossID === 2734 || bossID === 2736 || bossID === 2795) return 4; // Cauldron, Rik
-  else if (bossID === 2735 || bossID === 2737) return 7; // Stix, Sprocket, OAB
-  else if (bossID === 2738 || bossID === 2739 || bossID === 2740) return 10; // Mug'zee, Gallywix
+  if (bossID === 2874 || bossID === 2894) return 3; // Cauldron, Rik
+  else if (bossID === 2882 || bossID === 2871 || bossID === 2887) return 6; // Stix, Sprocket, OAB
+  else if (bossID === 2895 || bossID === 2883) return 10; // Mug'zee, Gallywix
 
   return 0;
 }
@@ -428,13 +428,13 @@ export function getVeryRareItemLevelBoost(itemID: number, bossID: number, diffic
   else return 0;
 }
 
-export function filterItemListByDropLoc(itemList: any[], sourceInstance: number, sourceBoss: number, loc: any, difficulty: number) {
+export function filterItemListByDropLoc(itemList: any[], sourceInstance: number, sourceBoss: number, loc: any, difficulty: number, dropType: string = "drop") {
 
   let temp = itemList.filter(function (item) {
     //else if (sourceInstance === -17 && pvpRank === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(item.slot)) expectedItemLevel += 7;
     //console.log("loc: " + loc + " vs " + item.dropLoc + " diff: " + difficulty + " vs " + item.dropDifficulty + " source: " + sourceInstance + " vs " + item.source.instanceId + " boss: " + sourceBoss + " vs " + item.source.encounterId)
-    
-    return loc === item.dropLoc && difficulty === item.dropDifficulty && ((item.source.instanceId == sourceInstance && item.source.encounterId == sourceBoss) || (item.source.instanceId == sourceInstance && sourceBoss == 0));
+    console.log("Drop type: " + dropType + " vs " + item.dropType)
+    return loc === item.dropLoc && difficulty === item.dropDifficulty && dropType === item.dropType && ((item.source.instanceId == sourceInstance && item.source.encounterId == sourceBoss) || (item.source.instanceId == sourceInstance && sourceBoss == 0));
   });
   return temp;
 
@@ -604,6 +604,7 @@ export function getItemIcon(id: number, gameType = "Retail") {
   if (item !== "" && "icon" in item) return process.env.PUBLIC_URL + "/Images/Icons/" + item.icon + ".jpg";
   else if (item !== "") {
     reportError("", "ItemUtilities", "Icon not found for ID", id.toString());
+    console.error("Icon missing");
     return process.env.PUBLIC_URL + "/Images/Icons/missing.jpg";
   }
 }
@@ -934,6 +935,7 @@ export function buildStatStringSlim(stats: Stats, effect: ItemEffect, lang: stri
   let statString = "";
   let statsList = [];
   const ignoreList = ["stamina", "bonus_stats", "strength", "agility", "intellect", "leech", "hit", "weaponSwingSpeed", "averageDamage"];
+
   for (const [statkey, statvalue] of Object.entries(stats)) {
     if (!ignoreList.includes(statkey)) statsList.push({ key: statkey, val: statvalue });
   }
@@ -960,7 +962,6 @@ export function buildStatStringSlim(stats: Stats, effect: ItemEffect, lang: stri
   //if (effect.name === "Onyx Annulet Trigger") statString += getAnnuletGemTag({automatic: true}, false);
   if (effect) statString += "Effect" + " / "; // t("itemTags.effect")
   
-
   return statString.slice(0, -3); // We slice here to remove excess slashes and white space from the end.
 }
 
@@ -1057,13 +1058,15 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
       //else if (item.itemSetId && item.classRestriction && item.classRestriction.includes(player.spec) && item.itemLevel >= 650 && source !== "S3 Dinar") sourceCheck = true;
       if (source === "Undermine" && sources) sourceCheck = (sources.instanceId === 1296);
       else if (source === "Retail Raid" && sources) sourceCheck = ([1314, 1308, 1307].includes(sources.instanceId));
+      else if (source === "Sporefall" && sources) sourceCheck = ([1305].includes(sources.instanceId));
       else if (source === "Mythic+" && sources) sourceCheck = sources.instanceId === -1 && getSeasonalDungeons().includes(sources.encounterId); // TODO
       else if (source === "S3 Dinar" && sources) {
         sourceCheck = ((getSeasonalDungeons().includes(sources.encounterId) || sources.instanceId === 1302) && item.effect && ['Feet', 'Finger', 'Trinket', '1H Weapon', '2H Weapon'].includes(item.slot));
       }
-
-      else if (source === "T15" && sources) sourceCheck = (sources.instanceId === 362 && sources.difficulty === 0);
-      else if (source === "T15+" && sources) sourceCheck = (sources.instanceId === 362 && sources.difficulty === 1);
+      else if (gameType === "Classic" && (item.id === 102247 || item.id === 102246)) sourceCheck = true; // Legendary capes
+      else if (source === "T15" && sources) sourceCheck = (sources.instanceId === 362 && sources.difficulty === 1 && item.itemSetId && item.classRestriction && player.spec.includes((player.spec)));
+      else if (source === "T16" && sources) sourceCheck = (sources.instanceId === 369 && sources.difficulty === 0);
+      else if (source === "T16+" && sources) sourceCheck = (sources.instanceId === 369 && sources.difficulty === 1);
       else if (source === "World Bosses" && sources) sourceCheck = ([725, 826].includes(sources.encounterId));
       else if (source === "MoP Dungeons" && sources) sourceCheck = sources.instanceId === -1 && getMoPDungeons().includes(sources.encounterId) && sources.difficulty === 1; // TODO
       else if (source === "Celestial Vendor" && sources) sourceCheck = sources.instanceId === -8
@@ -1083,13 +1086,18 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
           185836, 185846, 190652, 219309, 232545, 219317, 178826, 232543
         ].includes(item.id)))
         && sourceCheck) { 
-          const ilvlBoost = (maxChecked && gameType === "Classic" && ["T15", "T15+"].includes(source) && item.maxUpgrades) ? item.maxUpgrades : 0;
+          let ilvlBoost = (maxChecked && gameType === "Classic" && ["T16", "T16+"].includes(source) && item.maxUpgrades) ? item.maxUpgrades : 0;
+          if (gameType === "Retail") {
+            if (["1H Weapon", "2H Weapon", "Shield", "Offhand", "Trinket"].includes(item.slot) && item.id !== 268292) ilvlBoost = 9;
+            else ilvlBoost = 0;
+          }
           const tert = [249912, 249913, 249914, 249915].includes(item.id) ? "Leech" : "";
-          const newItem = new Item(item.id, item.name, slot, 0, tert, 0, gameType === "Classic" ? item.itemLevel + ilvlBoost : itemLevel, "", gameType);
+          
+          const newItem = new Item(item.id, item.name, slot, 0, tert, 0, gameType === "Classic" ? (item.itemLevel + ilvlBoost) : (itemLevel + ilvlBoost), "", gameType);
          
           if (source === "S3 Dinar") newItem.exclusiveItem = true;
           if (gameType === "Retail") newItem.quality = 4;
-          if (gameType === "Retail" && ["1H Weapon", "2H Weapon", "Shield", "Offhand", "Trinket"].includes(item.slot)) newItem.level += 9;
+          
 
       if (player.activeItems.filter((i) => i.id === item.id && i.level === newItem.level).length === 0) player.activeItems.push(newItem);
       //player.activeItems.push(newItem);
@@ -1105,6 +1113,7 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
 // Return an item score.
 // Score is calculated by multiplying out an items stats against the players stat weights.
 // Special effects, sockets and leech are then added afterwards.
+// Not used in Top Gear / Upgrade Finder
 export function scoreItem(item: Item, player: Player, contentType: contentTypes, gameType: gameTypes = "Retail", playerSettings: any) {
   let score = 0;
   let bonus_stats: Stats = gameType === "Retail" ? {mastery: 0, crit: 0, versatility: 0, intellect: 0, haste: 0, hps: 0, mana: 0, dps: 0, allyStats: 0} :
@@ -1135,7 +1144,23 @@ export function scoreItem(item: Item, player: Player, contentType: contentTypes,
   // Calculate Effect.
   if (item.effect) {
     const effectStats = getEffectValue(item.effect, player, player.getActiveModel(contentType), contentType, item.level, playerSettings, gameType, player.activeStats);
+
+    if (effectStats.amp) {
+      // We have an amp trinket. Convert it to regular stats.
+      const playerBaseStats = player.getActiveModel("Raid").profile.defaultStatProfile;
+      const playerBaseWeights = player.getActiveModel("Raid").profile.defaultStatWeights;
+      ["mastery", "haste", "spirit"].forEach(statName => {
+        effectStats[statName] = (effectStats[statName] || 0) + (effectStats.amp) * playerBaseStats[statName];
+        //console.log("Adding " + (effectStats.amp) * playerBaseStats[statName] + " " + statName + " from amp effect");
+      })
+
+      bonus_stats.hps = (bonus_stats.hps || 0) + (effectStats.amp) * 100 * playerBaseWeights["critMultHPS"];
+      bonus_stats.hps = (bonus_stats.hps || 0) + (effectStats.amp) * 100 * playerBaseWeights["critMultDPS"];
+      
+    }
+
     bonus_stats = compileStats(bonus_stats, effectStats as Stats);
+
   }
 
   // Handle Annulet
@@ -1205,6 +1230,7 @@ export function scoreItem(item: Item, player: Player, contentType: contentTypes,
 // Return an item score.
 // Score is calculated by multiplying out an items stats against the players stat weights.
 // Special effects, sockets and leech are then added afterwards.
+// This is only used for the trinket chart. Never used in Top Gear / Upgrade Finder.
 export function scoreTrinket(item: Item, player: Player, contentType: contentTypes, gameType: gameTypes = "Retail", playerSettings: any) {
   let score = 0;
   let bonus_stats: Stats = {mastery: 0, crit: 0, versatility: 0, intellect: 0, haste: 0, hps: 0, mana: 0, dps: 0, allyStats: 0};
@@ -1217,15 +1243,19 @@ export function scoreTrinket(item: Item, player: Player, contentType: contentTyp
 
 
   // Multiply the item's stats by our stat weights.
+
   let sumStats = compileStats(item_stats, bonus_stats);
   //if (gameType === "Classic") sumStats = applyClassicStatMods(player.getSpec(), sumStats);
+
+
 
   for (var stat in sumStats) {
     if (stat !== "bonus_stats") {
       let statSum = sumStats[stat];
       // The default weights are built around ~12500 int. Ideally we replace this with a more dynamic function like in top gear.
-      const weight = player.getStatWeight(contentType, stat);
-      score += statSum * weight / 2000 * player.getHPS(contentType);
+      let weight = player.getStatWeight(contentType, stat);
+      if (weight !== "intellect" && weight !== "hps") weight *= 1.3;
+      score += statSum * weight / 3000 * player.getHPS(contentType);
     }
   }
 
