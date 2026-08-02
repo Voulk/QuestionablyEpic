@@ -151,7 +151,6 @@
             "aura": 1,
             "expectedOverheal": 0.03,
             "secondaries": [
-                "mastery",
                 "versatility"
             ],
             "specialFields": {
@@ -166,7 +165,7 @@
                 "id": 467307,
                 "icon": "inv12_ability_monk_rushingwindkick",
                 "spellName": "Rushing Wind Kick",
-                "cat": "damage"
+                "cat": "heal"
             },
             "castTime": 0.0,
             "school": "nature",
@@ -184,6 +183,16 @@
                 "versatility"
             ],
             "spellType": "damage"
+        },
+        {
+            "coeff": 5.0,
+            "aura": 1.41,
+            "expectedOverheal": 0.2,
+            "secondaries": [
+                "crit",
+                "versatility"
+            ],
+            "spellType": "heal"
         }
     ],
     "Celestial Conduit": [
@@ -191,7 +200,8 @@
             "displayInfo": {
                 "id": 443028,
                 "icon": "inv_ability_conduitofthecelestialsmonk_celestialconduit",
-                "spellName": "Celestial Conduit"
+                "spellName": "Celestial Conduit",
+                "cat": "heal"
             },
             "castTime": 0.0,
             "school": "nature",
@@ -199,7 +209,16 @@
             "cooldownData": {
                 "cooldown": 90.0,
                 "hasted": false
-            }
+            },
+            "targets": 5,
+            "coeff": 11.0,
+            "aura": 1.0,
+            "expectedOverheal": 0.2,
+            "secondaries": [
+                "crit",
+                "versatility"
+            ],
+            "spellType": "heal"
         }
     ],
     "Revival": [
@@ -439,7 +458,8 @@
                 "versatility"
             ],
             "spellType": "damage",
-            "damageToHeal": 1
+            "damageToHeal": 2,
+            "offGCD": true
         }
     ],
     "Strength of the Black Ox": [
@@ -452,6 +472,7 @@
             "castTime": 0.0,
             "school": "nature",
             "cost": 0.0,
+            "targets": 5,
             "coeff": 1.5,
             "aura": 1,
             "expectedOverheal": 0.03,
@@ -461,7 +482,8 @@
             "specialFields": {
                 "absorb": true
             },
-            "spellType": "heal"
+            "spellType": "heal",
+            "offGCD": true
         }
     ],
     "Burst of Life": [
@@ -499,7 +521,6 @@
             "aura": 1,
             "expectedOverheal": 0.03,
             "secondaries": [
-                "mastery",
                 "versatility"
             ],
             "specialFields": {
@@ -582,6 +603,48 @@
                 "cooldown": 120.0,
                 "hasted": false
             }
+        }
+    ],
+    "Invigorating Mists": [
+        {
+            "displayInfo": {
+                "id": 425804,
+                "icon": "ability_monk_vivify",
+                "spellName": "Invigorating Mists",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "school": "nature",
+            "cost": 0.0,
+            "coeff": 3.2318,
+            "aura": 0.8,
+            "expectedOverheal": 0.2,
+            "secondaries": [
+                "crit",
+                "versatility"
+            ],
+            "spellType": "heal"
+        }
+    ],
+    "Gust of Mists": [
+        {
+            "displayInfo": {
+                "id": 191894,
+                "icon": "ability_monk_souldance",
+                "spellName": "Gust of Mists",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "school": "nature",
+            "cost": 0.0,
+            "coeff": 0.001,
+            "aura": 0.8,
+            "expectedOverheal": 0.2,
+            "secondaries": [
+                "crit",
+                "versatility"
+            ],
+            "spellType": "heal"
         }
     ]
 }
