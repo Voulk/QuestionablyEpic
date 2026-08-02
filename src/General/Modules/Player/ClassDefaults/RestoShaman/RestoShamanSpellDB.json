@@ -774,8 +774,8 @@
             "aura": 1,
             "expectedOverheal": 0.03,
             "secondaries": [
-                "mastery",
-                "versatility"
+                "versatility",
+                "crit"
             ],
             "specialFields": {
                 "absorb": true
