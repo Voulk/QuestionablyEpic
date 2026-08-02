@@ -51,12 +51,12 @@ const specTalents: TalentTree = {
     }},
 
     /* Emerald Blossom sends out flying seedlings when it bursts, healing X $Lally:allies; up to Y yds away for $361361s1. */
-    "Fluttering Seedlings": {id: 359793, values: [2.0, 40.0],  points: 0, maxPoints: 2, icon: "inv_herbalism_70_yserallineseed", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
+    "Fluttering Seedlings": {id: 359793, values: [1.0, 40.0, 2.0],  points: 0, maxPoints: 2, icon: "inv_herbalism_70_yserallineseed", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
 
     }},
 
     /* Your empower spells' maximum level is increased by 1. */
-    "Font of Magic": {id: 375783, values: [382266.0, 382614.0, 382731.0],  points: 0, maxPoints: 1, icon: "ability_evoker_fontofmagic", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
+    "Font of Magic": {id: 375783, values: [382266.0, 382614.0, 382731.0, -20.0],  points: 0, maxPoints: 1, icon: "ability_evoker_fontofmagic", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
 
     }},
 
@@ -71,7 +71,7 @@ const specTalents: TalentTree = {
     }},
 
     /* Dream Breath's cooldown is reduced by ${X/-1000} sec. */
-    "Spiritual Clarity": {id: 376150, values: [-10000.0],  points: 0, maxPoints: 1, icon: "ability_evoker_spiritbloom", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
+    "Spiritual Clarity": {id: 376150, values: [-6000.0],  points: 0, maxPoints: 1, icon: "ability_evoker_spiritbloom", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
         cooldownAdjFlat(spellDB["Dream Breath"], talentData[0])
     }},
 
@@ -144,7 +144,7 @@ const specTalents: TalentTree = {
     }},
 
     /* Rewind's cooldown is reduced by ${X/-1000} sec. */
-    "Temporal Artificer": {id: 381922, values: [-120000.0],  points: 0, maxPoints: 1, icon: "ability_evoker_rewind", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, 
+    "Temporal Artificer": {id: 381922, values: [-60000.0],  points: 0, maxPoints: 1, icon: "ability_evoker_rewind", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, 
     points: number) {
 
     }},
@@ -195,7 +195,7 @@ const specTalents: TalentTree = {
     }},
 
     /* Reversion healing has a chance to cause your next Living Flame to cast instantly and deal Y% increased healing or damage. Stacks up to $394552u charges. */
-    "Lifespark": {id: 443177, values: [100.0, 50.0],  points: 0, maxPoints: 1, icon: "ability_evoker_masterylifebinder_red", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
+    "Lifespark": {id: 443177, values: [100.0, 100.0],  points: 0, maxPoints: 1, icon: "ability_evoker_masterylifebinder_red", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
 
     }},
 
@@ -206,24 +206,24 @@ const specTalents: TalentTree = {
     }},
 
     /* Bronze healing and absorption increased by X%. */
-    "Tempo Charged": {id: 1237978, values: [15.0, 15.0, 15.0],  points: 0, maxPoints: 1, icon: "classicon_evoker_preservation", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
+    "Tempo Charged": {id: 1237978, values: [15.0, 15.0, 15.0, 15.0],  points: 0, maxPoints: 1, icon: "classicon_evoker_preservation", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
         buffSpellPerc(spellDB["Reversion"], talentData[0]);
         buffSpellPerc(spellDB["Echo"], talentData[0]);
         buffSpellPerc(spellDB["Temporal Anomaly"], talentData[0]);
     }},
 
     /* Essence abilities have a chance to infuse your next Reversion with the power of the Green Dragonflight, upgrading it to Merithra's Blessing:    $@spellicon1256581 $@spellname1256581  $@spelldesc1256581 */
-    "Merithra's Blessing1": {id: 1256577, values: [], points: 0, maxPoints: 1, icon: "inv12_apextalent_evoker_merithrasblessing", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
+    "Merithra's Blessing1": {id: 1256577, values: [0.0], points: 0, maxPoints: 1, icon: "inv12_apextalent_evoker_merithrasblessing", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
 
     }},
 
     /* Reversion protects allies, reversing ${X/10}.1% of all damage taken and healing them instead. */
-    "Merithra's Blessing2": {id: 1256682, values: [], points: 0, maxPoints: 2, icon: "ability_evoker_reversion_green", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
+    "Merithra's Blessing2": {id: 1256682, values: [5.0], points: 0, maxPoints: 2, icon: "ability_evoker_reversion_green", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
 
     }},
 
     /* Dream Breath's instant healing is increased by X% and Dream Breath has a Y% chance to grant Merithra's Blessing. */
-    "Merithra's Blessing3": {id: 1256689, values: [250.00], points: 0, maxPoints: 1, icon: "ability_evoker_giftoftheaspects", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
+    "Merithra's Blessing3": {id: 1256689, values: [60.0, 100.0, 60.0], points: 0, maxPoints: 1, icon: "ability_evoker_giftoftheaspects", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
         buffSpellPerc(spellDB["Dream Breath"], talentData[0], 1);
     }},
 }
@@ -356,7 +356,7 @@ const heroTalents: TalentTree = {
     }},
 
     /* Fire Breath's damage over time is increased by X%. Dream Breath's heal over time is increased by X%. */
-    "Expanded Lungs": {id: 444845, values: [30.0], heroTree: "Flameshaper", points: 0, maxPoints: 1, icon: "inv_fyrakk_dragonbreath", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, 
+    "Expanded Lungs": {id: 444845, values: [30.0, 20.0], heroTree: "Flameshaper", points: 0, maxPoints: 1, icon: "inv_fyrakk_dragonbreath", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, 
     talentData: any, points: number) {
         buffSpellPerc(spellDB["Fire Breath"], talentData[0]);
         buffSpellPerc(spellDB["Dream Breath"], talentData[0]);
@@ -368,7 +368,7 @@ const heroTalents: TalentTree = {
     }},
 
     /* Critical strike chance against targets above Y% health increased by X%. */
-    "Conduit of Flame": {id: 444843, values: [15.0, 50.0], heroTree: "Flameshaper", points: 0, maxPoints: 1, icon: "ability_evoker_innatemagic5", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
+    "Conduit of Flame": {id: 444843, values: [10.0, 50.0], heroTree: "Flameshaper", points: 0, maxPoints: 1, icon: "ability_evoker_innatemagic5", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
         addStatPerc(state.statBonuses, "crit", talentData[0] * 0.95);
     }},
 
@@ -378,7 +378,7 @@ const heroTalents: TalentTree = {
     }},
 
     /* Fire Breath and Dream Breath deal their damage and healing X% more often. */
-    "Fulminous Roar": {id: 1218447, values: [-20.0], heroTree: "Flameshaper", points: 0, maxPoints: 1, icon: "ability_evoker_oppressingroar2", select: true, tier: 2, runFunc: function (state: any, spellDB: 
+    "Fulminous Roar": {id: 1218447, values: [-15.0], heroTree: "Flameshaper", points: 0, maxPoints: 1, icon: "ability_evoker_oppressingroar2", select: true, tier: 2, runFunc: function (state: any, spellDB: 
     SpellDB, talentData: any, points: number) {
         spellDB["Dream Breath"][0]['tickData']!['tickRate']! *= (1 + talentData[0] / 100);
         spellDB["Fire Breath"][1]['tickData']!['tickRate']! *= (1 + talentData[0] / 100);
@@ -415,7 +415,7 @@ const heroTalents: TalentTree = {
     }},
 
     /* Verdant Embrace healing consumes 4 sec of Dream Breath from allies it heals, detonating it and healing them for 200% of the amount consumed. Verdant Embrace healing consumes 4 sec of Dream Breath from allies it heals, detonating it and healing them for 200% of the amount consumed. Emerald Blossom healing consumes 2 sec of Dream Breath from allies it heals, detonating it and healing them for 200% of the amount consumed. */
-    "Consume Flame": {id: 444088, values: [2000.0, 1500.0, 8000.0, 125.0, 4000.0, 200.0], heroTree: "Flameshaper", points: 0, maxPoints: 1, icon: "inv_shadowflames_wave", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
+    "Consume Flame": {id: 444088, values: [2000.0, 1000.0, 4000.0, 150.0, 4000.0, 300.0, 115.0], heroTree: "Flameshaper", points: 0, maxPoints: 1, icon: "inv_shadowflames_wave", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
 
     }},
 
@@ -437,7 +437,7 @@ const heroTalents: TalentTree = {
     }},
 
     /* $?c2[Verdant Embrace heals for an additional X% over $409895d.][Upheaval deals Y% additional damage over $431620d.] */
-    "Reverberations": {id: 431615, values: [60.0, 50.0], heroTree: "Chronowarden", points: 0, maxPoints: 1, icon: "ability_evoker_giftoftheaspects", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
+    "Reverberations": {id: 431615, values: [40.0, 50.0], heroTree: "Chronowarden", points: 0, maxPoints: 1, icon: "ability_evoker_giftoftheaspects", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
         buffSpellPerc(spellDB["Verdant Embrace"], talentData[0] * points);
         // TODO: Convert to a real HoT.
     }},

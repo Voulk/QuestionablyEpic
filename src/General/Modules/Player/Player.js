@@ -249,28 +249,33 @@ export class Player {
       item.active = true;
     })
   }
+
+  catalyzeItemInPlace = (item) => {
+    item.convertToTier(this.spec);
+  }
   
-  catalyzeItem = (item) => {
-    const slot = item.slot;
+  catalyzeItem = (originalItem) => {
+    const slot = originalItem.slot;
     const pClass = this.spec;
-    const classTag = CONSTANTS.tierNames;
+    const classTag = CONSTANTS.tierSetIDs[pClass];
 
     const temp = getItemDB("Retail").filter(function (item) {
-      return item.slot === slot && item.name.includes(classTag[pClass]);
+      return item.slot === slot && item.itemSetId === classTag;
     });
 
     if (temp.length > 0) {
       const match = temp[temp.length - 1];
-      const newItem = new Item(match.id, "", slot, item.socket, item.tertiary, 0, item.level, "");
+      const newItem = new Item(match.id, "", slot, originalItem.socket, originalItem.tertiary, 0, originalItem.level, "");
       Object.assign(newItem, { isCatalystItem: true });
+      newItem.stats = originalItem.stats;
       newItem.active = true;
-      if (item.uniqueEquip === "vault") {
+      if (originalItem.uniqueEquip === "vault") {
         newItem.uniqueEquip = "vault";
         newItem.vaultItem = true;
       }
       newItem.quality = 4;
-      newItem.upgradeTrack = item.upgradeTrack;
-      newItem.upgradeRank = item.upgradeRank;
+      newItem.upgradeTrack = originalItem.upgradeTrack;
+      newItem.upgradeRank = originalItem.upgradeRank;
       this.activeItems = this.activeItems.concat(newItem);
     } else {
       // We should probably write an error check here.

@@ -462,6 +462,7 @@ export default function TopGear(props: any) {
         if (item.craftedStats) newItem.craftedStats = item.craftedStats;
         if (item.selectedOptions) newItem.selectedOptions = item.selectedOptions;
         if (isChosen) newItem.isChosen = true;
+        if (item.catalyzedID) newItem.catalyzedID = item.catalyzedID;
   
         shortReport.itemSet.itemList.push(newItem)
         itemsAdded.push(item.uniqueHash)
@@ -486,6 +487,8 @@ export default function TopGear(props: any) {
           addItem(item, true);
         }
       }
+
+      
 
       itemList.forEach((item) => {
         if (itemsAdded.includes(item.uniqueHash)) return; // Already added.

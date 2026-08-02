@@ -16,6 +16,170 @@ S2 Special Effect Items
 
 
 export const effectData = [
+        { 
+    name: "Chausses of Unbound Rancor",
+    effects: [
+      {
+        coefficient: 1.264787, 
+        scalingClass: -7,
+        ppm: 2,
+        duration: 12,
+      },
+      {
+        coefficient: -0.210792, 
+        scalingClass: -7,
+        ppm: 2,
+        duration: 12,
+      },
+    ],
+    runFunc: function(data, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.mastery = runGenericPPMTrinket(data[0], itemLevel);
+      const negativeStats = runGenericPPMTrinket(data[1], itemLevel);
+      bonus_stats.versatility = negativeStats;
+      bonus_stats.crit = negativeStats;
+      bonus_stats.haste = negativeStats;
+
+      return bonus_stats;
+    },
+  },
+      { 
+    name: "Venomkeeper's Horrific Cowl",
+    effects: [
+      {
+        coefficient: 1.264787, 
+        scalingClass: -7,
+        ppm: 2,
+        duration: 12,
+      },
+      {
+        coefficient: -0.210792, 
+        scalingClass: -7,
+        ppm: 2,
+        duration: 12,
+      },
+    ],
+    runFunc: function(data, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.mastery = runGenericPPMTrinket(data[0], itemLevel);
+      const negativeStats = runGenericPPMTrinket(data[1], itemLevel);
+      bonus_stats.versatility = negativeStats;
+      bonus_stats.crit = negativeStats;
+      bonus_stats.haste = negativeStats;
+
+      return bonus_stats;
+    },
+  },
+        { 
+    name: "Awoken Dreadfang Cuirass",
+    effects: [
+      {
+        coefficient: 1.264787, 
+        scalingClass: -7,
+        ppm: 2,
+        duration: 12,
+      },
+      {
+        coefficient: -0.210792, 
+        scalingClass: -7,
+        ppm: 2,
+        duration: 12,
+      },
+    ],
+    runFunc: function(data, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.crit = runGenericPPMTrinket(data[0], itemLevel);
+      const negativeStats = runGenericPPMTrinket(data[1], itemLevel);
+      bonus_stats.versatility = negativeStats;
+      bonus_stats.haste = negativeStats;
+      bonus_stats.mastery = negativeStats;
+
+      console.log("Cuirass", bonus_stats);
+
+      return bonus_stats;
+    },
+  },
+      { 
+    name: "Aqirbane Reliquary",
+    effects: [
+      {
+        coefficient: 1.264787, 
+        scalingClass: -72,
+        ppm: 2,
+        duration: 12,
+      },
+      {
+        coefficient: -0.210792, 
+        scalingClass: -72,
+        ppm: 2,
+        duration: 12,
+      },
+    ],
+    runFunc: function(data, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.crit = runGenericPPMTrinket(data[0], itemLevel);
+      const negativeStats = runGenericPPMTrinket(data[1], itemLevel);
+      bonus_stats.versatility = negativeStats;
+      bonus_stats.haste = negativeStats;
+      bonus_stats.mastery = negativeStats;
+
+      console.log("Neck", bonus_stats);
+
+      return bonus_stats;
+    },
+  },
+    { 
+    name: "Gaze of the Coiled Watcher",
+    effects: [
+      {
+        coefficient: 1.264787, 
+        scalingClass: -7,
+        ppm: 2,
+        duration: 12,
+      },
+      {
+        coefficient: -0.210792, 
+        scalingClass: -7,
+        ppm: 2,
+        duration: 12,
+      },
+    ],
+    runFunc: function(data, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.haste = runGenericPPMTrinket(data[0], itemLevel);
+      const negativeStats = runGenericPPMTrinket(data[1], itemLevel);
+      bonus_stats.versatility = negativeStats;
+      bonus_stats.crit = negativeStats;
+      bonus_stats.mastery = negativeStats;
+
+      return bonus_stats;
+    },
+  },
+    { 
+    name: "Jan'thrazet, the Soul Fang",
+    effects: [
+      {
+        coefficient: 0.462915, 
+        scalingClass: -7,
+        ppm: 3,
+        duration: 12,
+      },
+    ],
+    runFunc: function(data, itemLevel, additionalData) {
+      let bonus_stats = {};
+
+      bonus_stats.haste = runGenericPPMTrinket(data[0], itemLevel);
+
+      console.log("Dagger", bonus_stats);
+
+      return bonus_stats;
+    },
+  },
   { 
     name: "Rotmire's Sporeheart",
     effects: [

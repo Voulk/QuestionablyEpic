@@ -94,7 +94,7 @@ export default function TopSetStatsPanel(props) {
     ))}
     <Divider sx={{ borderColor: "rgba(255,255,255,0.15)", mt: 0.75, mb: 0.5 }} />
     <Box sx={{ display: "flex", justifyContent: "space-between", gap: 2 }}>
-      <Typography variant="caption" sx={{ color: "rgba(255,255,255,0.85)", fontWeight: "bold" }}>Total Rating</Typography>
+      <Typography variant="caption" sx={{ color: "rgba(255,255,255,0.85)", fontWeight: "bold" }}>Effective Rating</Typography>
       <Typography variant="caption" sx={{ color: "white", fontWeight: "bold" }}>{breakdown.total.toLocaleString()}</Typography>
     </Box>
   </Box>

@@ -1051,18 +1051,14 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
         );
 
   itemDB.forEach((item: any) => {
+    const sources = getItemProp(item.id, "sources", gameType)[0];
     let sourceCheck = true;
     if (source !== "") {
-      const sources = getItemProp(item.id, "sources", gameType)[0];
+      
       // Check the item drops from the expected location
       //else if (item.itemSetId && item.classRestriction && item.classRestriction.includes(player.spec) && item.itemLevel >= 650 && source !== "S3 Dinar") sourceCheck = true;
-      if (source === "Undermine" && sources) sourceCheck = (sources.instanceId === 1296);
-      else if (source === "Retail Raid" && sources) sourceCheck = ([1314, 1308, 1307].includes(sources.instanceId));
-      else if (source === "Sporefall" && sources) sourceCheck = ([1305].includes(sources.instanceId));
+      if (source === "Retail Raid" && sources) sourceCheck = (CONSTANTS.currentRaidIDs.includes(sources.instanceId));
       else if (source === "Mythic+" && sources) sourceCheck = sources.instanceId === -1 && getSeasonalDungeons().includes(sources.encounterId); // TODO
-      else if (source === "S3 Dinar" && sources) {
-        sourceCheck = ((getSeasonalDungeons().includes(sources.encounterId) || sources.instanceId === 1302) && item.effect && ['Feet', 'Finger', 'Trinket', '1H Weapon', '2H Weapon'].includes(item.slot));
-      }
       else if (gameType === "Classic" && (item.id === 102247 || item.id === 102246)) sourceCheck = true; // Legendary capes
       else if (source === "T15" && sources) sourceCheck = (sources.instanceId === 362 && sources.difficulty === 1 && item.itemSetId && item.classRestriction && player.spec.includes((player.spec)));
       else if (source === "T16" && sources) sourceCheck = (sources.instanceId === 369 && sources.difficulty === 0);
@@ -1088,7 +1084,7 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
         && sourceCheck) { 
           let ilvlBoost = (maxChecked && gameType === "Classic" && ["T16", "T16+"].includes(source) && item.maxUpgrades) ? item.maxUpgrades : 0;
           if (gameType === "Retail") {
-            if (["1H Weapon", "2H Weapon", "Shield", "Offhand", "Trinket"].includes(item.slot) && item.id !== 268292) ilvlBoost = 9;
+            if ([2883, 2895].includes(sources.encounterId) && itemLevel === 334) ilvlBoost = 10;
             else ilvlBoost = 0;
           }
           const tert = [249912, 249913, 249914, 249915].includes(item.id) ? "Leech" : "";
@@ -1098,8 +1094,11 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
           if (source === "S3 Dinar") newItem.exclusiveItem = true;
           if (gameType === "Retail") newItem.quality = 4;
           
-
-      if (player.activeItems.filter((i) => i.id === item.id && i.level === newItem.level).length === 0) player.activeItems.push(newItem);
+      if (["Chest", "Shoulders", "Legs", "Head", "Hands"].includes(newItem.slot)) {
+        // Catalyze item
+        newItem.convertToTier(player.spec);
+      }
+      if (player.activeItems.filter((i) => i.id === item.id && i.level === newItem.level && (i.catalyzedID === newItem.catalyzedID || !newItem.catalyzedID)).length === 0) player.activeItems.push(newItem);
       //player.activeItems.push(newItem);
     }
 

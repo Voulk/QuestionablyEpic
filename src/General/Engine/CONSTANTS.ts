@@ -40,6 +40,15 @@ export const CONSTANTS = {
       "Mistweaver Monk": "of Ra-den's Chosen", 
       "Restoration Druid": "of the Luminous Bloom"
     },
+    tierSetIDs: {
+      "Preservation Evoker": 2058, 
+      "Holy Paladin": 2062, 
+      "Holy Priest": 2063, 
+      "Discipline Priest": 2063, 
+      "Restoration Shaman": 2065, 
+      "Mistweaver Monk": 2061, 
+      "Restoration Druid": 2057,
+    },
 
     specIDs: {
         "Preservation Evoker": 1468,
