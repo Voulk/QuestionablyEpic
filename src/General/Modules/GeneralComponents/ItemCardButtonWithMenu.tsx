@@ -38,13 +38,13 @@ const getMenuItems = (item: any): MenuItemType[] => {
   const fullItemLevels = [...CONSTANTS.fullItemLevels];
   const itemLevelCap = {...CONSTANTS.itemLevelCaps};
   
-  if (item.slot.includes("Weapon") || item.slot === "Offhand" || item.slot === "Shield" || item.slot === "Trinket") {
+  /*if (item.slot.includes("Weapon") || item.slot === "Offhand" || item.slot === "Shield" || item.slot === "Trinket") {
     // Voidcores 
     if (item.upgradeTrack === "Myth") itemLevelCap["Myth"] = 298;
     else if (item.upgradeTrack === "Gilded Crafted") itemLevelCap["Gilded Crafted"] = 295;
     else if (item.upgradeTrack === "Hero") itemLevelCap["Hero"] = 285;
     else if (item.upgradeTrack === "Runed Crafted") itemLevelCap["Runed Crafted"] = 282;
-  }
+  }*/
 
   const itemLevelCaps: { [key: string]: number } = itemLevelCap;
   if (item.upgradeTrack !== "" && item.upgradeTrack in itemLevelCaps) {

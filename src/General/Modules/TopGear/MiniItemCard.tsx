@@ -88,6 +88,7 @@ const getItemTags: React.FC<{ showTags: any; isVault: boolean; isExclusive: bool
     { key: "tier",      show: showTags.tier,       color: "yellow", label: t("Tier")                   },
     { key: "catalyst",  show: showTags.catalyst,   color: "plum",   label: t("Catalyst")               },
     { key: "embellishment", show: showTags.embellishment, color: "lightblue", label: "Embellishment"   },
+    { key: "effect", show: showTags.effect, color: "goldenrod", label: "Effect"   },
   ].filter((tag) => tag.show);
 
   return (
@@ -202,12 +203,13 @@ export default function ItemCard(props: ItemCardProps) {
   const itemQuality = item.getQualityColor();
   const deleteActive = item.offhandID === 0;
   
-  const showTags: {tier: boolean, tertiary: boolean, catalyst: boolean, reforge: boolean, embellishment: boolean} = 
+  const showTags: {tier: boolean, tertiary: boolean, catalyst: boolean, reforge: boolean, embellishment: boolean, effect: boolean} = 
                   {tier: item.isTierPiece(),
                     tertiary: ("leech" in item.stats && item.stats.leech !== 0),
                     catalyst: item.isCatalystItem,
                     reforge: item.checkHasFlag("Reforged"),
-                    embellishment: item.hasEmbellishment()};
+                    embellishment: item.hasEmbellishment(),
+                    effect: item.effect !== ""};
 
 
   // Special tags.
@@ -258,7 +260,7 @@ export default function ItemCard(props: ItemCardProps) {
   return (
     <Grid item xs={12} sm={6} md={4} lg={4} xl={3}>
       <div style={{ position: "relative" }}>
-        <div style={{ position: "absolute", right: 4, bottom: 2, zIndex: 1, padding: 0 }}>
+        <div style={{ position: "absolute", right: 4, bottom: 0, zIndex: 1, padding: 0 }}>
           <Grid container display="inline-flex" wrap="nowrap" spacing={0} sx={{ verticalAlign: "middle" }}>
             <Grid item>
               <ItemCardButtonWithMenu

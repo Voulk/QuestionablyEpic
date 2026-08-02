@@ -925,7 +925,7 @@ export function buildStatString(stats: Stats, effect: ItemEffect, lang: string =
 
   // Add an "effect" tag. We exclude Dom gems and Legendaries here because it's already clear they are giving you an effect.
   //if (effect.name === "Onyx Annulet Trigger") statString += getAnnuletGemTag({automatic: true}, false);
-  if (effect) statString += "Effect" + " / "; // t("itemTags.effect")
+  //if (effect) statString += "Effect" + " / "; // t("itemTags.effect")
   
 
   return statString.slice(0, -3); // We slice here to remove excess slashes and white space from the end.
@@ -960,7 +960,7 @@ export function buildStatStringSlim(stats: Stats, effect: ItemEffect, lang: stri
 
   // Add an "effect" tag. We exclude Dom gems and Legendaries here because it's already clear they are giving you an effect.
   //if (effect.name === "Onyx Annulet Trigger") statString += getAnnuletGemTag({automatic: true}, false);
-  if (effect) statString += "Effect" + " / "; // t("itemTags.effect")
+  //if (effect) statString += "Effect" + " / "; // t("itemTags.effect")
   
   return statString.slice(0, -3); // We slice here to remove excess slashes and white space from the end.
 }
