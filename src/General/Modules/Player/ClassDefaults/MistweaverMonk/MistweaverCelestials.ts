@@ -2,8 +2,6 @@ import { hasTalent } from "General/Modules/Player/ClassDefaults/Generic/RampBase
 import { getSpellEntry } from "../Generic/ProfileUtilities";
 import { runSpell, addOutput, getSelectedKick, getGustHeal, getCastTime, getGCD, getGroupSize, getRapidDiffusionRemDuration } from "./MistweaverUtilities";
 
-const JADE_BOND_COCOON_MULT = 2;
-
 const YULON_ENVELOPING_CAST_SPEED_PERC = 30;
 const YULON_ENVELOPING_COST_MULT = 0.5;
 
@@ -11,17 +9,6 @@ const CELESTIAL_SPELLS: Record<string, string> = {
     "Yu'lon": "Invoke Yu'lon, the Jade Serpent",
     "Chi-Ji": "Invoke Chi-Ji, the Red Crane",
 };
-
-// todo: drop assumed for actual calc once module has been impl
-const ASSUMED_MAX_HEALTH = 750000;
-
-const getChiCocoon = (spellDB: Record<string, any[]>, talents: any, intellect: number): SpellData => {
-    const cocoon = spellDB["Chi Cocoon (Invoke)"][0];
-    const jadeBondMult = hasTalent(talents, "Jade Bond") ? JADE_BOND_COCOON_MULT : 1;
-    const absorb = ASSUMED_MAX_HEALTH * (cocoon.healthPerc / 100) * jadeBondMult;
-
-    return { ...cocoon, coeff: absorb / intellect };
-}
 
 const getCelestialEnvelopingCastTime = (talents: any, spellDB: Record<string, any[]>, haste: number): number => {
     const speedMult = hasTalent(talents, "Celestial Harmony") ? 1 - YULON_ENVELOPING_CAST_SPEED_PERC / 100 : 1;
@@ -31,8 +18,6 @@ const getCelestialEnvelopingCastTime = (talents: any, spellDB: Record<string, an
 
 const getJadeBondEnvelopingSec = (talents: any): number =>
     hasTalent(talents, "Jade Bond") ? talents["Jade Bond"].values[1] / 1000 : 0;
-
-const getChiCocoonTargets = (spellDB: Record<string, any[]>): number => spellDB["Chi Cocoon (Invoke)"][0].targets;
 
 const celestialLabel = (profileKey: string, spellName: string): string => `${spellName} (${profileKey})`;
 
@@ -192,7 +177,7 @@ const yulonSequence: SequencingFn = (state, spellDB, localSettings, reportingDat
     addOutput(healingBreakdown, "Soothing Breath", soobOutput);
 
     if (hasTalent(talents, "Celestial Harmony")) {
-        const cocoon = getChiCocoon(spellDB, talents, state.statPercentages.intellect);
+        const cocoon = spellDB["Chi Cocoon"][0];
         addOutput(healingBreakdown, celestialLabel(celestial.profileKey, "Chi Cocoon"), runSpell(state, cocoon) * celestial.cpm);
 
         const jadeBondEnvSec = getJadeBondEnvelopingSec(talents);
@@ -200,7 +185,7 @@ const yulonSequence: SequencingFn = (state, spellDB, localSettings, reportingDat
             const envHot = {
                 ...spellDB["Enveloping Mist"][0],
                 buffDuration: jadeBondEnvSec * (1 + localSettings.risingMist.envStandard),
-                targets: getChiCocoonTargets(spellDB),
+                targets: cocoon.targets,
             };
             addOutput(healingBreakdown, "Enveloping Mist (Jade Bond)", runSpell(state, envHot) * celestial.cpm);
         }

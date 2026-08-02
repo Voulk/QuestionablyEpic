@@ -25,6 +25,36 @@ export const getGustHeal = (spellDB: Record<string, any[]>, state: any, overheal
     return getSpellThroughput(gustWithMastery, statPercentages, state.spec, state.settings, { overrideOverhealing: overhealing });
 }
 
+const ASSUMED_MAX_HEALTH = 750000;
+const ABSORB_MULTIPLIERS: Record<string, number> = {
+    "Life Cocoon": 48,
+    "Chi Cocoon": 24,
+};
+const GOTC_CHI_COCOON_MULT = 0.5;
+
+export const applyHealthAbsorbs = (spellDB: Record<string, any[]>, stats: Stats, talents: any, intellect: number): void => {
+    const getCoeff = (healthPerc: number): number => ASSUMED_MAX_HEALTH * (healthPerc / 100) / intellect;
+
+    Object.entries(ABSORB_MULTIPLIERS).forEach(([spellName, healthPerc]) => {
+        const gotcMult = (spellName === "Chi Cocoon" && hasTalent(talents, "Gift of the Celestials")) ? GOTC_CHI_COCOON_MULT : 1;
+        spellDB[spellName][0].coeff = getCoeff(healthPerc) * gotcMult;
+    });
+
+    const sf3Entry = talents["Spiritfont3"];
+    if (sf3Entry) {
+        let targets = 1;
+        const sf1Entry = talents["Spiritfont1"];
+        if (sf1Entry) targets = sf1Entry.values[1];
+
+        const sfMult = sf3Entry.values[0] / 100;
+        spellDB["Chi Cocoon (Spiritfont)"] = [{
+            ...spellDB["Chi Cocoon"][0],
+            coeff: getCoeff(ABSORB_MULTIPLIERS["Chi Cocoon"]) * sfMult,
+            targets: targets,
+        }];
+    }
+}
+
 const GCD_BASE = 1.5;
 const GCD_FLOOR = 0.75;
 

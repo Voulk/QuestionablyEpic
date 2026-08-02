@@ -2,7 +2,7 @@ import { deepCopyFunction, hasTalent, getTalentPoints } from "General/Modules/Pl
 import { applyRaidBuffs, applyTalentsFromString, compileProfileReportingData, completeCastProfile, convertStatPercentages, getTrinketData, getSpellEntry, getCPM, buildCPM } from "../Generic/ProfileUtilities";
 import { monkTalents } from "./MistweaverMonkTalents";
 import { getManaTeaStackValues, getNaturalStacks, getRefreshmentStacks, getLifecyclesStacks } from "./MistweaverManaTea";
-import { runSpell, addOutput, getSelectedKick, getSelectedPrimaryHeal, getGustHeal, getGCD, getGroupSize, getRapidDiffusionRemDuration, getAveragePpmFromLogs, getEntryCastTime, getEntryCost, getTimeUsed } from "./MistweaverUtilities";
+import { runSpell, addOutput, getSelectedKick, getSelectedPrimaryHeal, getGustHeal, getGCD, getGroupSize, getRapidDiffusionRemDuration, applyHealthAbsorbs, getAveragePpmFromLogs, getEntryCastTime, getEntryCost, getTimeUsed } from "./MistweaverUtilities";
 import { applyYulonWindow, getCelestialSequence } from "./MistweaverCelestials";
 import { MONK_HERO_TREES, monkTalentStrings } from "./MonkDefaults";
 
@@ -432,6 +432,24 @@ const initMonkCastState = (castProfile: CastProfile, playerData: any, settings: 
     const talentImport = getSelectedTalentsFromString(monkTalentStrings[profileKey], SPECS.MISTWEAVERMONK);
     applyTalentsFromString(initialState, spellDB, talentImport);
 
+    if (hasTalent(talents, "Celestial Harmony")) {
+        const celestialHarmony = talents["Celestial Harmony"];
+        const chiCocoon = spellDB["Chi Cocoon"][0];
+        chiCocoon.targets = celestialHarmony.values[2];
+    }
+
+    const sfEntry = talents["Spiritfont1"];
+    if (sfEntry) {
+        const effectiveness = sfEntry.values[0] / 100;
+        const targets = sfEntry.values[1];
+        spellDB["Spiritfont"] = [{
+            ...spellDB["Soothing Mist"][0],
+            coeff: spellDB["Soothing Mist"][0].coeff * effectiveness,
+            targets: targets,
+            offGCD: true
+        }];
+    }
+
     // must be done after applyTalents to get jft/mf additive transfer rates
     applyEmperorsElixir(talents, spellDB, castProfile);
 
@@ -573,7 +591,8 @@ const unityWithinFields = (talents: any, state: any, spellDB: Record<string, any
         healing: {
             "Courage of the White Tiger": courageDamage * courage.damageToHeal * 1.3, // ignores armor
             "Strength of the Black Ox": runSpell(state, spellDB["Strength of the Black Ox"][0]) * mult,
-            "Flight of the Red Crane": runSpell(state, spellDB["Flight of the Red Crane"][0]) * mult,
+            // ignored, incredibly small contribution anyways to include bug
+            // "Flight of the Red Crane": runSpell(state, spellDB["Flight of the Red Crane"][0]) * mult,
         } as Record<string, number>,
         damage: {
             "Courage of the White Tiger": courageDamage,
@@ -718,6 +737,8 @@ function runMonkCastProfile(
 ) {
     const { initialState, localSettings, spellDB, talents } = initMonkCastState(castProfile, playerData, settings, profileKey);
     const state = buildMonkState(initialState, playerData, stats, settings);
+
+    applyHealthAbsorbs(spellDB, stats, talents, state.statPercentages.intellect);
 
     const healingBreakdown: Record<string, number> = {}
     const damageBreakdown: Record<string, number> = {}
