@@ -279007,7 +279007,11 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Chest"
+        "slot": "Chest",
+        "effect": {
+            "type": "special",
+            "name": "Awoken Dreadfang Cuirass"
+        }
     },
     {
         "id": 271878,
@@ -279029,7 +279033,11 @@
             }
         ],
         "squishEra": 2,
-        "slot": "Legs"
+        "slot": "Legs",
+        "effect": {
+            "type": "special",
+            "name": "Chausses of Unbound Rancor"
+        }
     },
     {
         "id": 272147,

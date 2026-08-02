@@ -229,7 +229,7 @@ export default function EmbellishmentAnalysis(props) {
       if (props.player !== null) gemAtLevels["r" + itemLevels[x]] = getEmbellishAtLevel(domGem.effect.name, itemLevels[x], props.player, contentType, metric, playerSettings);
       
     }
-    gemAtLevels.tooltip = buildRetailEffectTooltip(domGem.effect.name, props.player, 285, playerSettings)
+    gemAtLevels.tooltip = buildRetailEffectTooltip(domGem.effect.name, props.player, 331, playerSettings)
     activeGems.push(gemAtLevels);
   }
 

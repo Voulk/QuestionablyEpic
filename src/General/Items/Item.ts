@@ -198,7 +198,7 @@ export class Item {
   updateLevel(level: number, missiveStats: string[] = []) {
     this.level = level;
     if (Object.keys(this.specialAllocations).length > 0) this.stats = (calcStatsAtLevel(level, getItemProp(this.id, "slot", this.gameType), this.specialAllocations, this.tertiary));
-    else this.stats = calcStatsAtLevel(level, getItemProp(this.id, "slot", this.gameType), getItemAllocations(this.id, missiveStats), this.tertiary);
+    else this.stats = calcStatsAtLevel(level, getItemProp(this.id, "slot", this.gameType), getItemAllocations(this.catalyzedID ? this.catalyzedID : this.id, missiveStats), this.tertiary);
   }
 
   // To be replaced with a proper method of assigning ID's but this will do for now since duplicates will be very rare and

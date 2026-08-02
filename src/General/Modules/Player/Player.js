@@ -257,10 +257,10 @@ export class Player {
   catalyzeItem = (originalItem) => {
     const slot = originalItem.slot;
     const pClass = this.spec;
-    const classTag = CONSTANTS.tierNames;
+    const classTag = CONSTANTS.tierSetIDs[pClass];
 
     const temp = getItemDB("Retail").filter(function (item) {
-      return item.slot === slot && item.name.includes(classTag[pClass]);
+      return item.slot === slot && item.itemSetId === classTag;
     });
 
     if (temp.length > 0) {
