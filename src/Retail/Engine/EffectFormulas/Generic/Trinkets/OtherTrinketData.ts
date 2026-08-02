@@ -3,13 +3,15 @@ import { Player } from "General/Modules/Player/Player";
 import trinketRawData from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketData.json"
 import { STATCONVERSION } from "General/Engine/STAT"
 
+// Pulse Seeker's Oculus, Effigy of Ula'tek's Faithful, 
+
 export const otherTrinketData = [
     {
       name: "Drum of Renewed Bonds",
       description: "Not available on Myth track but quite good as an early trinket. You are able to pick which secondary stat it gives.",
       addonDescription: "Not available on Myth track but quite good as an early trinket. You are able to pick which secondary stat it gives.",
       effects: [
-        {
+        { 
           duration: 12,
           ppm: 1.5,
           stat: "highest",

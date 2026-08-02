@@ -1094,7 +1094,7 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
           if (source === "S3 Dinar") newItem.exclusiveItem = true;
           if (gameType === "Retail") newItem.quality = 4;
           
-      if (["Chest", "Shoulders", "Legs", "Head", "Hands"].includes(newItem.slot)) {
+      if (["Chest", "Shoulder", "Legs", "Head", "Hands"].includes(newItem.slot) && !newItem.setID) {
         // Catalyze item
         newItem.convertToTier(player.spec);
       }

@@ -256,7 +256,7 @@ function displayReport(
   fullItemList.forEach((item) => {
     item.slot = getItemProp(item.id, "slot", gameType);
     item.setID = getItemProp(item.id, "itemSetId", gameType);
-    item.sources = getItemProp(item.id, "sources", gameType);
+    item.sources = item.catalyzedID ? getItemProp(item.catalyzedID, "sources", gameType) : getItemProp(item.id, "sources", gameType);
     if (item.sources) item.source = item.sources[0];
     item.socketedGems =
       topSet.socketedGems && item.id in topSet.socketedGems
