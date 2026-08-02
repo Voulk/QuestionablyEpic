@@ -357,18 +357,15 @@ const getAverageRemCount = (castProfile: CastProfile, spellDB: Record<string, an
     return result;
 }
 
-// TODO: confirm validity
-const getMistyPeaksEnvSec = (talents: any, castProfile: CastProfile, spellDB: Record<string, any[]>, haste: number): number => {
+const getMistyPeaksEnvSec = (talents: any, spellDB: Record<string, any[]>, averageRemCount: number, haste: number): number => {
     if (!hasTalent(talents, "Misty Peaks")) return 0;
 
     const procDuration = talents["Misty Peaks"].values[1];
     const procChancePerPoint = talents["Misty Peaks"].values[2] / 100;
     const procChance = procChancePerPoint * getTalentPoints(talents, "Misty Peaks");
 
-    const remCPM = getSpellEntry(castProfile, "Renewing Mist").cpm;
-    const remDuration = spellDB["Renewing Mist"][0].buffDuration;
     const remTickRate = spellDB["Renewing Mist"][0].tickData.tickRate;
-    const ticksPerMin = remCPM * (remDuration / (remTickRate / haste));
+    const ticksPerMin = (averageRemCount * 60) / (remTickRate / haste);
 
     return ticksPerMin * procChance * procDuration;
 }
@@ -541,16 +538,17 @@ const applyCoverageMultipliers = (
     }
 
     // mirrors lotus infusion as a coverage point
-    const freeEnvelopingMistSec = getMistyPeaksEnvSec(talents, castProfile, spellDB, state.statPercentages.haste);
+    const freeEnvelopingMistSec = getMistyPeaksEnvSec(talents, spellDB, reportingData.averageRemCount, state.statPercentages.haste);
     reportingData.averageEnvCount = getAverageEnvCount(castProfile, spellDB, risingMistRates.envStandard, freeEnvelopingMistSec);
     state.statPercentages.genericHealingMult *= getEnvelopingMistHealAmpMult(talents, reportingData.averageEnvCount, profileKey);
+    reportingData.freeEnvelopingMistSec = freeEnvelopingMistSec;
 
     // extending these durations is a bit dirty by the avg rising mist rate, but their output will reflect most of the uptime
     spellDB["Renewing Mist"][0].buffDuration *= 1 + risingMistRates.remStandard;
     spellDB["Enveloping Mist"][0].buffDuration *= 1 + risingMistRates.envStandard;
 
-    const remCPM = getSpellEntry(castProfile, "Renewing Mist").cpm;
-    spellDB["Renewing Mist"][0].buffDuration += reportingData.freeRenewingMistSec / remCPM;
+    spellDB["Renewing Mist"][0].buffDuration += reportingData.freeRenewingMistSec / getCPM(castProfile, "Renewing Mist");
+    spellDB["Enveloping Mist"][0].buffDuration += freeEnvelopingMistSec / getCPM(castProfile, "Enveloping Mist");
 
     if (hasTalent(talents, "Save Them All")) {
         // averageRaidHealth 85% default mirrors the Redux settings registry
