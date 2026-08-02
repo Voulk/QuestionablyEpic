@@ -2,8 +2,10 @@ import React, { MouseEvent, useState } from "react";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import IconButton from "@mui/material/IconButton";
+import Tooltip from "@mui/material/Tooltip";
 import { useTranslation } from "react-i18next";
 import SettingsIcon from "@mui/icons-material/Settings";
+import UnarchiveIcon from "@mui/icons-material/Unarchive";
 import { CONSTANTS } from "General/Engine/CONSTANTS";
 import { getItemEffectOptions, getItemProp } from "General/Engine/ItemUtilities";
 
@@ -103,6 +105,7 @@ const getExtraMenuItems = (item: any, gameType: gameTypes): MenuItemType[] => {
 const ItemCardButtonWithMenu: React.FC<ItemCardButtonWithMenuProps> = ({ key, deleteActive, deleteItem, canBeCatalyzed, catalyseItemCard, itemLevel, upgradeItem, setCustomItemOptions, embellishItem, item, gameType }) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const { t } = useTranslation();
+  const hasCatalyzedID = item?.catalyzedID !== undefined && item?.catalyzedID !== null && item?.catalyzedID !== "";
 
   const menuItems = getMenuItems(item);
   const extraMenuItems = getExtraMenuItems(item, gameType);
@@ -140,7 +143,12 @@ const ItemCardButtonWithMenu: React.FC<ItemCardButtonWithMenuProps> = ({ key, de
   };
 
   return (
-    <div>
+    <div style={{ display: "inline-flex", alignItems: "center", gap: 4 }}>
+      {hasCatalyzedID ? (
+        <Tooltip title={"Item Catalyzed from : " + getItemProp(item.catalyzedID, "name", "Retail")} arrow>
+          <UnarchiveIcon sx={{ fontSize: "18px", color: "goldenrod", cursor: "help" }} />
+        </Tooltip>
+      ) : null}
       <IconButton sx={{ padding: 0 }} color="primary" onClick={handleClick} aria-label={"buttonMenu" + key} size="small">
         <SettingsIcon style={{ fontSize: "18px" }} fontSize="small" />
       </IconButton>

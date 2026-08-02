@@ -111,6 +111,8 @@ export default function ItemCardReport(props) {
   let isVault = item.vaultItem;
   let isExclusive = item.exclusiveItem;
 
+  const catalyzedID = item.catalyzedID || null;
+
   let socket = [];
 
   /*if (item.id === 203460) {
