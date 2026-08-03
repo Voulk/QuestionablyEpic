@@ -371,11 +371,11 @@ export const embellishmentData = [
             // Work out which buffs are possible
             // Split the proc rate by that number
 
-            bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel, additionalData.setStats);
+            /*bonus_stats.intellect = runGenericPPMTrinket(data[0], itemLevel, additionalData.setStats);
 
             if (player.spec !== "Discipline Priest" && additionalData.contentType === "Raid") {
                 bonus_stats.intellect = bonus_stats.intellect * 0.5; // DPS procs only
-            }
+            }*/
 
 
             return bonus_stats;

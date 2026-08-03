@@ -324,7 +324,7 @@ export default function ItemCard(props: ItemCardProps) {
                           style={{
                             color: itemQuality,
                             lineHeight: showTags.tertiary || isVault || showTags.tier || showTags.catalyst ? "normal" : 1.57,
-                            fontSize: itemName.length > 28 ? "11px" : "14px",
+                            fontSize: itemName.length > 29 ? "11px" : "14px",
                             
                           }}
                         >

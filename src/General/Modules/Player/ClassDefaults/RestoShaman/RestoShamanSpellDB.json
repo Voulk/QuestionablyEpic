@@ -473,17 +473,6 @@
             }
         }
     ],
-    "Lava Burst": [
-        {
-            "coeff": 1.81,
-            "aura": 4.978,
-            "secondaries": [
-                "crit",
-                "versatility"
-            ],
-            "spellType": "damage"
-        }
-    ],
     "Spirit Link Totem": [
         {
             "displayInfo": {
@@ -499,7 +488,8 @@
                 "hasted": false,
                 "charges": 1,
                 "maxCharges": 1
-            }
+            },
+            "secondaries": []
         }
     ],
     "Hydrobubble": [

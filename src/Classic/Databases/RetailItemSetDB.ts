@@ -26,8 +26,9 @@ type ItemSetData = {
 } 
 
 export const itemSets: ItemSetData[] = [
+  // Season 2
 
-  // Season 3
+  // Season 1
   {
     id: [1967],
     class: "All",

@@ -145,7 +145,37 @@ const ItemCardButtonWithMenu: React.FC<ItemCardButtonWithMenuProps> = ({ key, de
   return (
     <div style={{ display: "inline-flex", alignItems: "center", gap: 4 }}>
       {hasCatalyzedID ? (
-        <Tooltip title={"Item Catalyzed from : " + getItemProp(item.catalyzedID, "name", "Retail")} arrow>
+        <Tooltip
+          title={
+            <div style={{ display: "flex", flexDirection: "column", gap: 1 }}>
+              <div style={{ fontSize: 10, color: "#b0b0b0" }}>Catalyzed From</div>
+              <div style={{ fontSize: 12 }}>{getItemProp(item.catalyzedID, "name", "Retail")}</div>
+              <div style={{ fontSize: 11, color: "goldenrod" }}>ID: {item.catalyzedID}</div>
+            </div>
+          }
+          arrow
+          componentsProps={{
+            tooltip: {
+              sx: {
+                bgcolor: "#2b2b2b",
+                color: "#f1f1f1",
+                border: "1px solid #DAA520",
+                borderRadius: "4px",
+                boxShadow: "0 2px 8px rgba(0, 0, 0, 0.35)",
+                px: 1,
+                py: 0.75,
+              },
+            },
+            arrow: {
+              sx: {
+                color: "#2b2b2b",
+                "&:before": {
+                  border: "1px solid #DAA520",
+                },
+              },
+            },
+          }}
+        >
           <UnarchiveIcon sx={{ fontSize: "18px", color: "goldenrod", cursor: "help" }} />
         </Tooltip>
       ) : null}
@@ -156,35 +186,84 @@ const ItemCardButtonWithMenu: React.FC<ItemCardButtonWithMenuProps> = ({ key, de
         anchorEl={anchorEl}
         open={Boolean(anchorEl)}
         onClose={handleClose}
+        slotProps={{
+          paper: {
+            sx: {
+              mt: 0.5,
+              backgroundColor: "#2b2b2b",
+              border: "1px solid #DAA520",
+              borderRadius: "4px",
+              boxShadow: "0 2px 8px rgba(0, 0, 0, 0.35)",
+              color: "#f1f1f1",
+            },
+          },
+        }}
         MenuListProps={{
           sx: {
             padding: 0,
-            border: "1px solid #DAA520",
-            borderRadius: "4px",
+            "& .MuiMenuItem-divider": {
+              borderBottomColor: "rgba(218, 165, 32, 0.3)",
+            },
           },
         }}
       >
         {canBeCatalyzed ? (
-          <MenuItem style={{ fontSize: "12px", color: "plum" }} onClick={handlecatalyseItemCard} divider>
+          <MenuItem
+            sx={{
+              fontSize: "12px",
+              color: "plum",
+              minHeight: 28,
+              "&:hover": { backgroundColor: "rgba(218, 165, 32, 0.14)" },
+            }}
+            onClick={handlecatalyseItemCard}
+            divider
+          >
             {t("Catalyst")}
           </MenuItem>
         ) : null}
         {menuItems
           .filter((filter) => filter.ilvlMinimum > itemLevel)
           .map((item) => (
-            <MenuItem style={{ color: "plum", fontSize: "12px" }} key={item.id} onClick={() => handleMenuItemClick(item)} divider>
+            <MenuItem
+              sx={{
+                color: "plum",
+                fontSize: "12px",
+                minHeight: 28,
+                "&:hover": { backgroundColor: "rgba(218, 165, 32, 0.14)" },
+              }}
+              key={item.id}
+              onClick={() => handleMenuItemClick(item)}
+              divider
+            >
               {item.label}
             </MenuItem>
         ))}
         {extraMenuItems
           .map((item) => (
-            <MenuItem style={{  fontSize: "12px" }} key={item.id} onClick={() => handleExtraMenuItemClick(item)} divider>
+            <MenuItem
+              sx={{
+                fontSize: "12px",
+                minHeight: 28,
+                "&:hover": { backgroundColor: "rgba(218, 165, 32, 0.14)" },
+              }}
+              key={item.id}
+              onClick={() => handleExtraMenuItemClick(item)}
+              divider
+            >
               {item.label}
             </MenuItem>
           ))}
 
         {deleteActive ? (
-          <MenuItem style={{  fontSize: "12px", color: "#ff1744" }} onClick={handledeleteItem}>
+          <MenuItem
+            sx={{
+              fontSize: "12px",
+              color: "#ff1744",
+              minHeight: 28,
+              "&:hover": { backgroundColor: "rgba(255, 23, 68, 0.12)" },
+            }}
+            onClick={handledeleteItem}
+          >
             {t("Delete")}
           </MenuItem>
         ) : null}

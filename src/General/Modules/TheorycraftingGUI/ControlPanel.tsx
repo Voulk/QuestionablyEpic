@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Button from "@mui/material/Button";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -21,6 +21,12 @@ export interface ControlPanelProps {
   stats: Stats;
   setStats: (stats: Stats) => void;
   onRunProfile?: (profileId: string, stats: StatWeights) => void;
+}
+
+interface AdditionalSetting {
+  label: string;
+  options: string[];
+  defaultSetting?: string;
 }
  
 // ─── Styles ───────────────────────────────────────────────────────────────────
@@ -189,10 +195,28 @@ const styles: Record<string, React.CSSProperties> = {
   },
 
   settingsSection: {
-    padding: "0 20px 20px 20px",
+    padding: "6px 20px 20px 20px",
     display: "flex",
     flexDirection: "column" as const,
     gap: "16px",
+  },
+
+  settingsGrid: {
+    display: "flex",
+    flexDirection: "row" as const,
+    flexWrap: "wrap" as const,
+    alignItems: "flex-start",
+    gap: "12px",
+    width: "fit-content",
+    maxWidth: "760px",
+  },
+
+  settingCol: {
+    display: "flex",
+    flexDirection: "column" as const,
+    gap: "5px",
+    width: "160px",
+    flex: "0 0 160px",
   },
 
   settingsPlaceholder: {
@@ -214,7 +238,10 @@ const STAT_FIELDS: { key: keyof StatWeights; label: string }[] = [
   { key: "versatility", label: "Versatility" },
 ];
 
-const ADDITIONAL_SETTINGS: string[] = [];
+const ADDITIONAL_SETTINGS: AdditionalSetting[] = [
+  { "label": "Season 1 Tier Set", "options": ["0pc", "2pc", "4pc"], defaultSetting: "4pc"},
+  { "label": "Season 2 Tier Set", "options": ["0pc", "2pc", "4pc"], defaultSetting: "4pc"},
+];
  
 // ─── Component ────────────────────────────────────────────────────────────────
  
@@ -230,7 +257,15 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
 
   const [selectHovered, setSelectHovered] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
-  const [headerHovered, setHeaderHovered] = useState(false);
+  const [hoveredSettingLabel, setHoveredSettingLabel] = useState<string | null>(null);
+  const [focusedSettingLabel, setFocusedSettingLabel] = useState<string | null>(null);
+  const [additionalSettings, setAdditionalSettings] = useState<Record<string, string>>(() => {
+    const defaults: Record<string, string> = {};
+    ADDITIONAL_SETTINGS.forEach((setting) => {
+      defaults[setting.label] = setting.defaultSetting ?? setting.options[0] ?? "";
+    });
+    return defaults;
+  });
  
   const handleStatChange = (key: keyof StatWeights, raw: string) => {
     const value = parseInt(raw, 10);
@@ -239,6 +274,10 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
  
   const handleRun = () => {
     onRunProfile?.(selectedProfileId, stats);
+  };
+
+  const handleAdditionalSettingChange = (label: string, value: string) => {
+    setAdditionalSettings((prev) => ({ ...prev, [label]: value }));
   };
  
   return (
@@ -361,9 +400,40 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
               Additional settings coming soon...
             </div>
           ) : (
-            ADDITIONAL_SETTINGS.map((setting, idx) => (
-              <div key={idx}>{setting}</div>
-            ))
+            <div style={styles.settingsGrid}>
+              {ADDITIONAL_SETTINGS.map((setting) => (
+                <div key={setting.label} style={styles.settingCol}>
+                  <label style={styles.statLabel}>{setting.label}</label>
+                  <div style={styles.selectWrapper}>
+                    <select
+                      value={additionalSettings[setting.label] ?? ""}
+                      onChange={(e) => handleAdditionalSettingChange(setting.label, e.target.value)}
+                      style={{
+                        ...styles.select,
+                        background: "#1a1a1a",
+                        padding: "7px 28px 7px 10px",
+                        fontSize: "12px",
+                        borderColor:
+                          focusedSettingLabel === setting.label || hoveredSettingLabel === setting.label
+                            ? "#DAA520"
+                            : "#3a3a3a",
+                      }}
+                      onFocus={() => setFocusedSettingLabel(setting.label)}
+                      onBlur={() => setFocusedSettingLabel(null)}
+                      onMouseEnter={() => setHoveredSettingLabel(setting.label)}
+                      onMouseLeave={() => setHoveredSettingLabel(null)}
+                    >
+                      {setting.options.map((option) => (
+                        <option key={option} value={option}>
+                          {option}
+                        </option>
+                      ))}
+                    </select>
+                    <span style={styles.selectChevron}>▾</span>
+                  </div>
+                </div>
+              ))}
+            </div>
           )}
         </div>
       </div>
