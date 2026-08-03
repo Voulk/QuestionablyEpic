@@ -354,7 +354,7 @@
         {
             "displayInfo": {
                 "id": 114052,
-                "icon": "ascendance_8026698",
+                "icon": "8026698",
                 "spellName": "Ascendance",
                 "cat": "heal"
             },
@@ -488,8 +488,7 @@
                 "hasted": false,
                 "charges": 1,
                 "maxCharges": 1
-            },
-            "secondaries": []
+            }
         }
     ],
     "Hydrobubble": [
