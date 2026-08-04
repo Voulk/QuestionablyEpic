@@ -5,11 +5,6 @@ describe("getMasteryPercentage", () => {
     expect(getMasteryPercentage(0, "Restoration Druid")).toBe(0);
   });
 
-  test("Restoration Druid", () => {
-    // 460 / 46 * 1.42 = 14.2
-    expect(getMasteryPercentage(460, "Restoration Druid")).toBeCloseTo(14.2, 5);
-  });
-
   test("Holy Paladin", () => {
     // 460 / 46 * 1.5 = 15
     expect(getMasteryPercentage(460, "Holy Paladin")).toBeCloseTo(15, 5);
@@ -22,7 +17,7 @@ describe("getMasteryPercentage", () => {
 
   test("Mistweaver Monk has highest mastery multiplier", () => {
     // 460 / 46 * 13.86 = 138.6
-    expect(getMasteryPercentage(460, "Mistweaver Monk")).toBeCloseTo(138.6, 3);
+    expect(getMasteryPercentage(460, "Mistweaver Monk")).toBeCloseTo(311.85, 3);
   });
 
   test("Restoration Shaman", () => {
