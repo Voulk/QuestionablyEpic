@@ -289,7 +289,7 @@ function displayReport(
   if (window.location.href.includes("localhost") || window.location.href.includes("ptr")) {
     exportOptions.push("Wowhead BIS List");
     exportOptions.push("Icy Veins Gear Planner");
-    exportOptions.push("Icy Veins BIS List");
+    //exportOptions.push("Icy Veins BIS List");
     
   }
 
