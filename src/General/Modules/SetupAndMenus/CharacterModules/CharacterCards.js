@@ -38,7 +38,7 @@ import Autocomplete from "@mui/material/Autocomplete";
 import ClearIcon from "@mui/icons-material/Clear";
 import { red } from "@mui/material/colors";
 import { classColours } from "General/Engine/ClassData";
-import classIcons from "General/Modules/IconFunctions/ClassIcons";
+import ClassIcon from "General/Modules/IconFunctions/ClassIcons";
 import { getRaceIcon } from "General/Modules/IconFunctions/RaceIcons";
 import { classRaceDB } from "../../../../Databases/ClassRaceDB";
 import { serverDB, serverDBBurningCrusade } from "../../../../Databases/ServerDB";
@@ -48,8 +48,8 @@ import { apiGetPlayerImage } from "../ConnectionUtilities";
 import { CONSTRAINTS } from "../../../Engine/CONSTRAINTS";
 import { useSelector } from "react-redux";
 import { getTranslatedRaceName } from "Databases/RacesDB";
-import { getTranslatedClassName } from "locale/ClassNames.js";
-import { getTranslatedStats } from "locale/statsLocale.js";
+import { getTranslatedClassName } from "locale/ClassNames";
+import { getTranslatedStats } from "locale/statsLocale";
 
 /* ------------------------------ Spec Images. ------------------------------ */
 const specImages = {
@@ -391,14 +391,14 @@ export default function CharCards(props) {
                       {props.name}
                       <Tooltip title={getTranslatedClassName(spec, currentLanguage)} style={{ color: classColours(spec) }} placement="top">
                         {/* ----------------------------------------- Class Icon -----------------------------------------  */}
-                        {classIcons(spec, {
+                        {ClassIcon({name: spec, style: {
                           height: 20,
                           width: 20,
                           margin: "0px 0px 0px 5px",
                           verticalAlign: "middle",
                           borderRadius: 4,
                           border: "1px solid rgba(255, 255, 255, 0.12)",
-                        })}
+                      }})}
                       </Tooltip>
                     </Typography>
                   </Grid>
@@ -512,7 +512,17 @@ export default function CharCards(props) {
                               return (
                                 <MenuItem divider={lastItem} key={"charCardClass" + i} value={key}>
                                   <div style={{ display: "inline-flex" }}>
-                                    {classIcons(key, { height: 20, width: 20, margin: "0px 5px 0px 5px", verticalAlign: "middle", borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" })}
+                                    <ClassIcon
+                                      name={key}
+                                      style={{
+                                        height: 20,
+                                        width: 20,
+                                        margin: "0px 5px 0px 5px",
+                                        verticalAlign: "middle",
+                                        borderRadius: 4,
+                                        border: "1px solid rgba(255, 255, 255, 0.12)",
+                                      }}
+                                    />
                                     {getTranslatedClassName(key, currentLanguage)}
                                   </div>
                                 </MenuItem>

@@ -11,7 +11,7 @@
             "school": "holy",
             "cost": 0.4,
             "coeff": 0.987,
-            "aura": 1.9,
+            "aura": 2.66,
             "secondaries": [
                 "crit",
                 "versatility"
@@ -199,7 +199,7 @@
             "school": "holy",
             "cost": 3.6,
             "coeff": 6.82,
-            "aura": 1.76,
+            "aura": 2.2,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",

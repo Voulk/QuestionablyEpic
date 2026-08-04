@@ -40,6 +40,20 @@ export const CLASSICSHAMANSPELLDB = {
         targets: 4, // There is drop off per heal.
         secondaries: ['crit', 'mastery'],
     }],
+    "Earth Shield": [{
+        spellData: {id: 974, icon: "spell_nature_skinofearth", cat: "heal"},
+        type: "heal",
+        healType: "direct",
+        castTime: 0, 
+        cost: 0, 
+        coeff: 0.1625, 
+        flat: 2552,
+        expectedOverheal: 0.1,
+        specialCoeff: 0, // Earthliving chance multiplier
+        cooldownData: {cooldown: 40, charges: 1}, // This is a fake cooldown to represent re-casts over a fight.
+        targets: 9, //
+        secondaries: ['crit', 'mastery'],
+    }],
     "Greater Healing Wave": [{
         spellData: {id: 1064, icon: "spell_nature_healingwavegreater", cat: "heal"},
         type: "heal",

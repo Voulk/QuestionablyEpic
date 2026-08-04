@@ -1,5 +1,5 @@
 import React from "react";
-import { dungeonStyles } from "./PanelStyles";
+import { dungeonStyles, sharedAccordionStyles, sharedAccordionSummaryStyles, sharedAccordionDetailsStyles } from "./PanelStyles";
 import { Typography, Grid, Divider, AppBar, Tabs, Tab } from "@mui/material";
 import ItemUpgradeCard from "./ItemUpgradeCard";
 import DungeonHeaderIcons from "General/Modules/IconFunctions/DungeonHeaderIcons";
@@ -74,17 +74,13 @@ export default function CraftedGearContainer(props) {
                         <UFAccordion
                           key={craftedDB[key] + "-accordian" + i}
                           elevation={0}
-                          style={{
-                            backgroundColor: "rgba(255, 255, 255, 0.12)",
-                          }}
+                            style={sharedAccordionStyles}
                         >
                           <UFAccordionSummary
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="panel1a-content"
                             id="panel1a-header"
-                            style={{
-                              verticalAlign: "middle",
-                            }}
+                              style={sharedAccordionSummaryStyles}
                           >
                             <Typography
                               variant="h6"
@@ -105,7 +101,7 @@ export default function CraftedGearContainer(props) {
                               Upgrades
                             </Typography>
                           </UFAccordionSummary>
-                          <AccordionDetails style={{ backgroundColor: "#191c23" }}>
+                          <AccordionDetails style={sharedAccordionDetailsStyles}>
                             <Grid xs={12} container spacing={1}>
                               {[...filterItemListBySource(itemDifferentials, "-4", key, itemLevels.crafted[difficulty])].map((item, index) => (
                                 <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
@@ -131,17 +127,13 @@ export default function CraftedGearContainer(props) {
       <UFAccordion
         key={encounterDB[123][key].name[currentLanguage] + "-accordian" + i}
         elevation={0}
-        style={{
-          backgroundColor: "rgba(255, 255, 255, 0.12)",
-        }}
+        style={sharedAccordionStyles}
       >
         <UFAccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
           id="panel1a-header"
-          style={{
-            verticalAlign: "middle",
-          }}
+          style={sharedAccordionSummaryStyles}
         >
           <Typography
             variant="h6"
@@ -159,7 +151,7 @@ export default function CraftedGearContainer(props) {
             {[...filterClassicItemListBySource(itemDifferentials, -1, key)].map((item) => getDifferentialByID(itemDifferentials, item.id, item.level)).filter((item) => item !== 0).length} Upgrades
           </Typography>
         </UFAccordionSummary>
-        <AccordionDetails style={{ backgroundColor: "#191c23" }}>
+        <AccordionDetails style={sharedAccordionDetailsStyles}>
           <Grid xs={12} container spacing={1}>
             {[...filterClassicItemListBySource(itemDifferentials, -1, key)].map((item, index) => (
               <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />

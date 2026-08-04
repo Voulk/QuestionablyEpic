@@ -95289,6 +95289,9 @@
             "type": "trinket",
             "name": "Relic of Chi-Ji"
         },
+        "levelRange": [
+            476
+        ],
         "uniqueEquip": "Darkmoon Card",
         "sources": [
             {
@@ -327967,6 +327970,9 @@
             "type": "trinket",
             "name": "Yu'lon's Bite"
         },
+        "levelRange": [
+            535
+        ],
         "allocations": {
             "intellect": 6667
         },
@@ -327997,6 +328003,9 @@
             "type": "trinket",
             "name": "Contemplation of Chi-Ji"
         },
+        "levelRange": [
+            535
+        ],
         "allocations": {
             "intellect": 6667
         },
@@ -333845,6 +333854,9 @@
             "type": "trinket",
             "name": "Yu'lon's Bite"
         },
+        "levelRange": [
+            535
+        ],
         "allocations": {
             "intellect": 6667
         },
@@ -333875,6 +333887,9 @@
             "type": "trinket",
             "name": "Contemplation of Chi-Ji"
         },
+        "levelRange": [
+            535
+        ],
         "allocations": {
             "intellect": 6667
         },
@@ -352850,7 +352865,7 @@
             "spirit": 1057,
             "crit": 918
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Ichor-Dripping Shoulderpads",
@@ -352893,7 +352908,7 @@
             "spirit": 1104,
             "crit": 850
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Hood of Swirling Senses",
@@ -352936,7 +352951,7 @@
             "mastery": 1347,
             "crit": 1347
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Cloak of Misguided Power",
@@ -352969,7 +352984,7 @@
             "hit": 817,
             "haste": 817
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Purified Bindings of Immerseus",
@@ -353004,7 +353019,7 @@
             "intellect": 0,
             "stamina": 0
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Seal of Eternal Sorrow",
@@ -353046,7 +353061,7 @@
             "spirit": 857,
             "mastery": 624
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Salt Water Sandals",
@@ -353088,7 +353103,7 @@
             "spirit": 1042,
             "haste": 1058
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Bracers of Purified Spirit",
@@ -353122,7 +353137,7 @@
             "spirit": 621,
             "crit": 932
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Soul-Soaked Gloves",
@@ -353165,7 +353180,7 @@
             "spirit": 994,
             "crit": 1026
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Greatbelt of Living Waters",
@@ -353208,7 +353223,7 @@
             "spirit": 956,
             "mastery": 1042
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Waterwalker Greatboots",
@@ -353250,7 +353265,7 @@
             "spirit": 1042,
             "haste": 1058
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Rook's Unlucky Talisman",
@@ -353278,7 +353293,7 @@
             "intellect": 0,
             "stamina": 3108
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Sha-Seared Sandals",
@@ -353319,7 +353334,7 @@
             "hit": 780,
             "haste": 1210
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Robes of the Tendered Heart",
@@ -353362,7 +353377,7 @@
             "hit": 994,
             "haste": 1552
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Shoulderpads of Dou Dou Chong",
@@ -353404,7 +353419,7 @@
             "hit": 799,
             "mastery": 1134
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Lifebane Bracers",
@@ -353438,7 +353453,7 @@
             "spirit": 853,
             "mastery": 757
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Petrified Pennyroyal Ring",
@@ -353471,7 +353486,7 @@
             "hit": 877,
             "crit": 717
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Purehearted Cricket Cage",
@@ -353513,7 +353528,7 @@
             "spirit": 881,
             "haste": 600
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Shoulders of the Roiling Inferno",
@@ -353556,7 +353571,7 @@
             "spirit": 1058,
             "crit": 929
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Sabatons of Defilement",
@@ -353598,7 +353613,7 @@
             "spirit": 1042,
             "haste": 1058
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Shoulderguards of Dark Meditations",
@@ -353641,7 +353656,7 @@
             "spirit": 982,
             "crit": 1026
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Grips of the Fallen Council",
@@ -353684,7 +353699,7 @@
             "spirit": 1010,
             "haste": 998
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Gaze of Echoing Despair",
@@ -353727,7 +353742,7 @@
             "spirit": 994,
             "crit": 1552
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Fusion-Fire Core",
@@ -353755,7 +353770,7 @@
             "intellect": 0,
             "stamina": 0
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Bracers of Broken Causation",
@@ -353788,7 +353803,7 @@
             "hit": 853,
             "mastery": 757
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Blight Hurlers",
@@ -353830,7 +353845,7 @@
             "hit": 860,
             "crit": 1105
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Sash of the Last Guardian",
@@ -353873,7 +353888,7 @@
             "spirit": 1104,
             "crit": 850
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Rime-Rift Shoulders",
@@ -353916,7 +353931,7 @@
             "mastery": 1042,
             "crit": 956
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Untainted Guardian's Chain",
@@ -353949,7 +353964,7 @@
             "hit": 777,
             "mastery": 841
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Norushen's Enigmatic Barrier",
@@ -353991,7 +354006,7 @@
             "spirit": 653,
             "mastery": 861
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Boots of Broken Reliance",
@@ -354033,7 +354048,7 @@
             "spirit": 961,
             "crit": 1106
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Confident Grips",
@@ -354076,7 +354091,7 @@
             "crit": 1010,
             "mastery": 998
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Bracers of Final Serenity",
@@ -354110,7 +354125,7 @@
             "spirit": 921,
             "crit": 640
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Shadow-Binder's Kilt",
@@ -354153,7 +354168,7 @@
             "spirit": 1514,
             "crit": 1172
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Wristplates of Broken Doubt",
@@ -354187,7 +354202,7 @@
             "spirit": 877,
             "crit": 717
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Assurance of Consequence",
@@ -354215,7 +354230,7 @@
             "intellect": 0,
             "stamina": 0
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Necklace of Fading Light",
@@ -354249,7 +354264,7 @@
             "spirit": 830,
             "haste": 797
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Prismatic Prison of Pride",
@@ -354284,7 +354299,7 @@
             "intellect": 0,
             "stamina": 0
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Gaze of Arrogance",
@@ -354330,7 +354345,7 @@
             "averageDamage": 13260.0,
             "weaponSwingSpeed": 3.3
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Self-Reflecting Mask",
@@ -354373,7 +354388,7 @@
             "spirit": 1347,
             "mastery": 1347
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Crown of Boastful Words",
@@ -354416,7 +354431,7 @@
             "spirit": 1369,
             "haste": 1310
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Evil Eye of Galakras",
@@ -354444,7 +354459,7 @@
             "intellect": 0,
             "stamina": 0
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Bone-Inlaid Sandals",
@@ -354486,7 +354501,7 @@
             "haste": 1058,
             "mastery": 1030
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Scalebane Bracers",
@@ -354519,7 +354534,7 @@
             "hit": 899,
             "crit": 678
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Flameslinger's Fiery Cowl",
@@ -354561,7 +354576,7 @@
             "hit": 994,
             "haste": 1552
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Skydancer Boots",
@@ -354603,7 +354618,7 @@
             "spirit": 1151,
             "haste": 872
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Shoulderpads of Pulsing Protection",
@@ -354646,7 +354661,7 @@
             "spirit": 1010,
             "haste": 1010
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Extinguished Ember of Galakras",
@@ -354679,7 +354694,7 @@
             "hit": 817,
             "haste": 817
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Drakebinder Greatstaff",
@@ -354725,7 +354740,7 @@
             "averageDamage": 13260.0,
             "weaponSwingSpeed": 3.3
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Dragonmaw Emergency Strap",
@@ -354768,7 +354783,7 @@
             "spirit": 1104,
             "crit": 850
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Grips of Tidal Force",
@@ -354811,7 +354826,7 @@
             "crit": 1088,
             "mastery": 866
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Smoldering Drakescale Bracers",
@@ -354845,7 +354860,7 @@
             "spirit": 853,
             "mastery": 757
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Windfire Legplates",
@@ -354888,7 +354903,7 @@
             "spirit": 1514,
             "crit": 1172
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Juggernaut's Focusing Crystal",
@@ -354916,7 +354931,7 @@
             "intellect": 0,
             "stamina": 0
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Belt of Ominous Trembles",
@@ -354958,7 +354973,7 @@
             "hit": 1089,
             "mastery": 876
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Leggings of Furious Flame",
@@ -355001,7 +355016,7 @@
             "haste": 1409,
             "mastery": 1350
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Bracers of the Broken Fault",
@@ -355035,7 +355050,7 @@
             "spirit": 865,
             "haste": 737
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Earthripper Gloves",
@@ -355078,7 +355093,7 @@
             "spirit": 1103,
             "haste": 840
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Shock Pulse Robes",
@@ -355122,7 +355137,7 @@
             "spirit": 1432,
             "crit": 1202
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Laser-Slice Signet",
@@ -355164,7 +355179,7 @@
             "spirit": 789,
             "haste": 741
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Juggernaut's Power Core",
@@ -355206,7 +355221,7 @@
             "crit": 777,
             "haste": 672
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Castlebreaker Bracers",
@@ -355240,7 +355255,7 @@
             "spirit": 888,
             "mastery": 697
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Treads of Autonomic Motion",
@@ -355282,7 +355297,7 @@
             "spirit": 961,
             "crit": 1106
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Cavemaker Wristguards",
@@ -355316,7 +355331,7 @@
             "spirit": 841,
             "mastery": 777
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Borer Drill Boots",
@@ -355358,7 +355373,7 @@
             "spirit": 961,
             "crit": 1106
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Haromm's Talisman",
@@ -355386,7 +355401,7 @@
             "intellect": 0,
             "stamina": 0
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Toxic Tornado Treads",
@@ -355428,7 +355443,7 @@
             "crit": 908,
             "mastery": 1137
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Iron Wolf Hood",
@@ -355471,7 +355486,7 @@
             "spirit": 1474,
             "haste": 1132
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Ashflare Pendant",
@@ -355504,7 +355519,7 @@
             "hit": 932,
             "haste": 621
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Kardris' Toxic Totem",
@@ -355532,7 +355547,7 @@
             "intellect": 0,
             "stamina": 0
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Kardris' Scepter",
@@ -355578,7 +355593,7 @@
             "averageDamage": 7152.25,
             "weaponSwingSpeed": 2.4
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Darkfang Mask",
@@ -355621,7 +355636,7 @@
             "mastery": 1369,
             "crit": 1310
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Belt of the Iron Prison",
@@ -355664,7 +355679,7 @@
             "spirit": 1104,
             "crit": 850
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Shoulderguards of Foul Streams",
@@ -355707,7 +355722,7 @@
             "spirit": 1073,
             "haste": 902
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Shackles of Stinking Slime",
@@ -355741,7 +355756,7 @@
             "spirit": 817,
             "haste": 817
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Shoulderplates of Gushing Geysers",
@@ -355784,7 +355799,7 @@
             "spirit": 1010,
             "crit": 1010
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Sandals of Two Little Bees",
@@ -355826,7 +355841,7 @@
             "spirit": 934,
             "mastery": 1121
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Nazgrim's Burnished Insignia",
@@ -355861,7 +355876,7 @@
             "intellect": 0,
             "stamina": 0
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Arcweaver Spell Sword",
@@ -355907,7 +355922,7 @@
             "averageDamage": 6556.0,
             "weaponSwingSpeed": 2.2
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Robes of the Warrior's Fall",
@@ -355951,7 +355966,7 @@
             "spirit": 1369,
             "crit": 1310
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Crown of Tragic Truth",
@@ -355994,7 +356009,7 @@
             "spirit": 994,
             "crit": 1552
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Spaulders of Kor'kron Fealty",
@@ -356036,7 +356051,7 @@
             "hit": 748,
             "haste": 1162
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Vial of Living Corruption",
@@ -356064,7 +356079,7 @@
             "intellect": 0,
             "stamina": 3108
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Miasmic Skullbelt",
@@ -356106,7 +356121,7 @@
             "hit": 1104,
             "crit": 850
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Hood of Perpetual Implosion",
@@ -356149,7 +356164,7 @@
             "spirit": 1369,
             "crit": 1310
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Robes of Riven Dreams",
@@ -356193,7 +356208,7 @@
             "spirit": 1474,
             "haste": 1132
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Frenzied Crystal of Rage",
@@ -356221,7 +356236,7 @@
             "intellect": 0,
             "stamina": 0
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Black-Blooded Drape",
@@ -356255,7 +356270,7 @@
             "spirit": 888,
             "mastery": 697
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Seal of Sullen Fury",
@@ -356297,7 +356312,7 @@
             "spirit": 824,
             "crit": 681
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Visage of the Monstrous",
@@ -356339,7 +356354,7 @@
             "spirit": 753,
             "haste": 801
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Boots of Perilous Infusion",
@@ -356381,7 +356396,7 @@
             "haste": 1121,
             "mastery": 924
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Bracers of Averted Fatality",
@@ -356415,7 +356430,7 @@
             "spirit": 853,
             "haste": 757
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Ebon Blood Chestguard",
@@ -356459,7 +356474,7 @@
             "spirit": 1097,
             "crit": 1494
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Terrorguard Chestplate",
@@ -356503,7 +356518,7 @@
             "spirit": 1453,
             "crit": 1167
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Sigil of Rampage",
@@ -356531,7 +356546,7 @@
             "intellect": 0,
             "stamina": 0
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Avool's Ancestral Bracers",
@@ -356565,7 +356580,7 @@
             "haste": 830,
             "mastery": 797
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Mantid Vizier's Robes",
@@ -356609,7 +356624,7 @@
             "haste": 1390,
             "crit": 1274
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Lost Necklace of the Mogu Empress",
@@ -356643,7 +356658,7 @@
             "spirit": 888,
             "mastery": 697
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Immaculately Preserved Wand",
@@ -356689,7 +356704,7 @@
             "averageDamage": 2831.0,
             "weaponSwingSpeed": 1.9
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Klaxxi Grips of Rejuvenation",
@@ -356732,7 +356747,7 @@
             "spirit": 783,
             "mastery": 1150
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Shado-Pan Reliquary Kilt",
@@ -356775,7 +356790,7 @@
             "spirit": 1514,
             "crit": 1172
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Chitin-Link Chain Belt",
@@ -356818,7 +356833,7 @@
             "spirit": 956,
             "mastery": 1042
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Bracers of the Pristine Purifier",
@@ -356852,7 +356867,7 @@
             "spirit": 817,
             "haste": 817
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Plate Belt of the War-Healer",
@@ -356895,7 +356910,7 @@
             "spirit": 1104,
             "crit": 850
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Mogu Mindbender's Greaves",
@@ -356937,7 +356952,7 @@
             "haste": 1121,
             "mastery": 924
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Montak's Grips of Scorching Breath",
@@ -356980,7 +356995,7 @@
             "crit": 1010,
             "haste": 998
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Akolik's Acid-Soaked Robes",
@@ -357024,7 +357039,7 @@
             "mastery": 1347,
             "crit": 1347
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Festering Primordial Globule",
@@ -357065,7 +357080,7 @@
             "hit": 657,
             "haste": 848
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Signet of the Dinomancers",
@@ -357107,7 +357122,7 @@
             "haste": 765,
             "mastery": 781
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Thok's Acid-Grooved Tooth",
@@ -357142,7 +357157,7 @@
             "intellect": 0,
             "stamina": 0
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Thok's Tail Tip",
@@ -357170,7 +357185,7 @@
             "intellect": 0,
             "stamina": 0
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Ticking Ebon Detonator",
@@ -357204,7 +357219,7 @@
             "stamina": 0,
             "mastery": 2072
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Fusespark Gloves",
@@ -357247,7 +357262,7 @@
             "crit": 994,
             "mastery": 1026
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Lever of the Megantholithic Apparatus",
@@ -357293,7 +357308,7 @@
             "averageDamage": 13260.0,
             "weaponSwingSpeed": 3.3
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Dysmorphic Samophlange of Discontinuity",
@@ -357330,7 +357345,7 @@
             "intellect": 2072,
             "stamina": 0
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Powder-Stained Totemic Treads",
@@ -357372,7 +357387,7 @@
             "haste": 1121,
             "mastery": 924
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Bracers of Sonic Projection",
@@ -357406,7 +357421,7 @@
             "crit": 817,
             "haste": 817
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Rik'kal's Bloody Scalpel",
@@ -357451,7 +357466,7 @@
             "averageDamage": 5364.0,
             "weaponSwingSpeed": 1.8
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Iyyokuk's Hereditary Seal",
@@ -357484,7 +357499,7 @@
             "hit": 757,
             "mastery": 853
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Amber Parasite Wraps",
@@ -357528,7 +357543,7 @@
             "spirit": 1097,
             "haste": 1494
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Chestguard of Toxic Injections",
@@ -357572,7 +357587,7 @@
             "spirit": 1474,
             "haste": 1132
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Gauntlets of Insane Calculations",
@@ -357615,7 +357630,7 @@
             "mastery": 1088,
             "haste": 866
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Curse of Hubris",
@@ -357643,7 +357658,7 @@
             "intellect": 0,
             "stamina": 3108
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Belt of the Broken Pact",
@@ -357686,7 +357701,7 @@
             "spirit": 956,
             "mastery": 1042
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Ebon Ritual Hood",
@@ -357729,7 +357744,7 @@
             "mastery": 1411,
             "haste": 1238
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Black Blood of Y'Shaarj",
@@ -357763,7 +357778,7 @@
             "stamina": 0,
             "haste": 2072
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Horned Mace of the Old Ones",
@@ -357809,7 +357824,7 @@
             "averageDamage": 7152.25,
             "weaponSwingSpeed": 2.4
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Revelations of Y'Shaarj",
@@ -357851,7 +357866,7 @@
             "mastery": 790,
             "haste": 757
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Seal of Karmic Return",
@@ -357894,7 +357909,7 @@
             "spirit": 956,
             "mastery": 1042
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Hopeglow Spaulders",
@@ -357937,7 +357952,7 @@
             "spirit": 1010,
             "haste": 1010
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Cowl of Smoking Dreams",
@@ -357980,7 +357995,7 @@
             "spirit": 1369,
             "mastery": 1310
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Chestplate of Fallen Passion",
@@ -358024,7 +358039,7 @@
             "spirit": 1411,
             "mastery": 1238
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Mantle of Looming Darkness",
@@ -358067,7 +358082,7 @@
             "spirit": 1119,
             "haste": 824
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Bolt-Burster Grips",
@@ -358110,7 +358125,7 @@
             "spirit": 1206,
             "crit": 1045
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Ichor-Dripping Shoulderpads",
@@ -358153,7 +358168,7 @@
             "spirit": 1257,
             "crit": 970
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Hood of Swirling Senses",
@@ -358196,7 +358211,7 @@
             "mastery": 1536,
             "crit": 1536
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Cloak of Misguided Power",
@@ -358229,7 +358244,7 @@
             "hit": 922,
             "haste": 922
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Purified Bindings of Immerseus",
@@ -358264,7 +358279,7 @@
             "intellect": 0,
             "stamina": 0
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Seal of Eternal Sorrow",
@@ -358306,7 +358321,7 @@
             "spirit": 976,
             "mastery": 706
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Salt Water Sandals",
@@ -358348,7 +358363,7 @@
             "spirit": 1182,
             "haste": 1198
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Bracers of Purified Spirit",
@@ -358382,7 +358397,7 @@
             "spirit": 701,
             "crit": 1052
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Soul-Soaked Gloves",
@@ -358425,7 +358440,7 @@
             "spirit": 1134,
             "crit": 1166
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Greatbelt of Living Waters",
@@ -358468,7 +358483,7 @@
             "spirit": 1089,
             "mastery": 1186
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Waterwalker Greatboots",
@@ -358510,7 +358525,7 @@
             "spirit": 1182,
             "haste": 1198
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Rook's Unlucky Talisman",
@@ -358538,7 +358553,7 @@
             "intellect": 0,
             "stamina": 3508
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Sha-Seared Sandals",
@@ -358579,7 +358594,7 @@
             "hit": 887,
             "haste": 1370
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Robes of the Tendered Heart",
@@ -358622,7 +358637,7 @@
             "hit": 1138,
             "haste": 1767
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Shoulderpads of Dou Dou Chong",
@@ -358664,7 +358679,7 @@
             "hit": 912,
             "mastery": 1290
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Lifebane Bracers",
@@ -358698,7 +358713,7 @@
             "spirit": 963,
             "mastery": 854
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Petrified Pennyroyal Ring",
@@ -358731,7 +358746,7 @@
             "hit": 990,
             "crit": 809
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Purehearted Cricket Cage",
@@ -358773,7 +358788,7 @@
             "spirit": 1000,
             "haste": 682
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Shoulders of the Roiling Inferno",
@@ -358816,7 +358831,7 @@
             "spirit": 1204,
             "crit": 1059
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Sabatons of Defilement",
@@ -358858,7 +358873,7 @@
             "spirit": 1182,
             "haste": 1198
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Shoulderguards of Dark Meditations",
@@ -358901,7 +358916,7 @@
             "spirit": 1119,
             "crit": 1168
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Grips of the Fallen Council",
@@ -358944,7 +358959,7 @@
             "spirit": 1152,
             "haste": 1135
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Gaze of Echoing Despair",
@@ -358987,7 +359002,7 @@
             "spirit": 1138,
             "crit": 1767
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Fusion-Fire Core",
@@ -359015,7 +359030,7 @@
             "intellect": 0,
             "stamina": 0
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Bracers of Broken Causation",
@@ -359048,7 +359063,7 @@
             "hit": 963,
             "mastery": 854
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Blight Hurlers",
@@ -359090,7 +359105,7 @@
             "hit": 983,
             "crit": 1255
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Sash of the Last Guardian",
@@ -359133,7 +359148,7 @@
             "spirit": 1257,
             "crit": 970
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Rime-Rift Shoulders",
@@ -359176,7 +359191,7 @@
             "mastery": 1186,
             "crit": 1089
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Untainted Guardian's Chain",
@@ -359209,7 +359224,7 @@
             "hit": 877,
             "mastery": 950
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Norushen's Enigmatic Barrier",
@@ -359251,7 +359266,7 @@
             "spirit": 745,
             "mastery": 974
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Boots of Broken Reliance",
@@ -359293,7 +359308,7 @@
             "spirit": 1091,
             "crit": 1252
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Confident Grips",
@@ -359336,7 +359351,7 @@
             "crit": 1152,
             "mastery": 1135
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Bracers of Final Serenity",
@@ -359370,7 +359385,7 @@
             "spirit": 1040,
             "crit": 722
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Shadow-Binder's Kilt",
@@ -359413,7 +359428,7 @@
             "spirit": 1719,
             "crit": 1333
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Wristplates of Broken Doubt",
@@ -359447,7 +359462,7 @@
             "spirit": 990,
             "crit": 809
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Assurance of Consequence",
@@ -359475,7 +359490,7 @@
             "intellect": 0,
             "stamina": 0
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Necklace of Fading Light",
@@ -359509,7 +359524,7 @@
             "spirit": 936,
             "haste": 899
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Prismatic Prison of Pride",
@@ -359544,7 +359559,7 @@
             "intellect": 0,
             "stamina": 0
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Gaze of Arrogance",
@@ -359590,7 +359605,7 @@
             "averageDamage": 14967.25,
             "weaponSwingSpeed": 3.3
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Self-Reflecting Mask",
@@ -359633,7 +359648,7 @@
             "spirit": 1536,
             "mastery": 1536
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Crown of Boastful Words",
@@ -359676,7 +359691,7 @@
             "spirit": 1561,
             "haste": 1494
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Evil Eye of Galakras",
@@ -359704,7 +359719,7 @@
             "intellect": 0,
             "stamina": 0
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Bone-Inlaid Sandals",
@@ -359746,7 +359761,7 @@
             "haste": 1200,
             "mastery": 1167
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Scalebane Bracers",
@@ -359779,7 +359794,7 @@
             "hit": 1015,
             "crit": 765
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Flameslinger's Fiery Cowl",
@@ -359821,7 +359836,7 @@
             "hit": 1138,
             "haste": 1767
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Skydancer Boots",
@@ -359863,7 +359878,7 @@
             "spirit": 1305,
             "haste": 988
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Shoulderpads of Pulsing Protection",
@@ -359906,7 +359921,7 @@
             "spirit": 1150,
             "haste": 1150
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Extinguished Ember of Galakras",
@@ -359939,7 +359954,7 @@
             "hit": 922,
             "haste": 922
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Drakebinder Greatstaff",
@@ -359985,7 +360000,7 @@
             "averageDamage": 14967.25,
             "weaponSwingSpeed": 3.3
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Dragonmaw Emergency Strap",
@@ -360028,7 +360043,7 @@
             "spirit": 1257,
             "crit": 970
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Grips of Tidal Force",
@@ -360071,7 +360086,7 @@
             "crit": 1241,
             "mastery": 986
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Smoldering Drakescale Bracers",
@@ -360105,7 +360120,7 @@
             "spirit": 963,
             "mastery": 854
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Windfire Legplates",
@@ -360148,7 +360163,7 @@
             "spirit": 1719,
             "crit": 1333
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Juggernaut's Focusing Crystal",
@@ -360176,7 +360191,7 @@
             "intellect": 0,
             "stamina": 0
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Belt of Ominous Trembles",
@@ -360218,7 +360233,7 @@
             "hit": 1239,
             "mastery": 999
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Leggings of Furious Flame",
@@ -360261,7 +360276,7 @@
             "haste": 1601,
             "mastery": 1534
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Bracers of the Broken Fault",
@@ -360295,7 +360310,7 @@
             "spirit": 976,
             "haste": 832
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Earthripper Gloves",
@@ -360338,7 +360353,7 @@
             "spirit": 1257,
             "haste": 956
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Shock Pulse Robes",
@@ -360382,7 +360397,7 @@
             "spirit": 1632,
             "crit": 1373
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Laser-Slice Signet",
@@ -360424,7 +360439,7 @@
             "spirit": 899,
             "haste": 838
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Juggernaut's Power Core",
@@ -360466,7 +360481,7 @@
             "crit": 882,
             "haste": 764
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Castlebreaker Bracers",
@@ -360500,7 +360515,7 @@
             "spirit": 1002,
             "mastery": 787
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Treads of Autonomic Motion",
@@ -360542,7 +360557,7 @@
             "spirit": 1091,
             "crit": 1252
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Cavemaker Wristguards",
@@ -360576,7 +360591,7 @@
             "spirit": 950,
             "mastery": 877
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Borer Drill Boots",
@@ -360618,7 +360633,7 @@
             "spirit": 1091,
             "crit": 1252
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Haromm's Talisman",
@@ -360646,7 +360661,7 @@
             "intellect": 0,
             "stamina": 0
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Toxic Tornado Treads",
@@ -360688,7 +360703,7 @@
             "crit": 1031,
             "mastery": 1287
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Iron Wolf Hood",
@@ -360731,7 +360746,7 @@
             "spirit": 1679,
             "haste": 1293
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Ashflare Pendant",
@@ -360764,7 +360779,7 @@
             "hit": 1052,
             "haste": 701
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Kardris' Toxic Totem",
@@ -360792,7 +360807,7 @@
             "intellect": 0,
             "stamina": 0
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Kardris' Scepter",
@@ -360838,7 +360853,7 @@
             "averageDamage": 8073.25,
             "weaponSwingSpeed": 2.4
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Darkfang Mask",
@@ -360881,7 +360896,7 @@
             "mastery": 1561,
             "crit": 1494
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Belt of the Iron Prison",
@@ -360924,7 +360939,7 @@
             "spirit": 1257,
             "crit": 970
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Shoulderguards of Foul Streams",
@@ -360967,7 +360982,7 @@
             "spirit": 1222,
             "haste": 1029
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Shackles of Stinking Slime",
@@ -361001,7 +361016,7 @@
             "spirit": 922,
             "haste": 922
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Shoulderplates of Gushing Geysers",
@@ -361044,7 +361059,7 @@
             "spirit": 1150,
             "crit": 1150
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Sandals of Two Little Bees",
@@ -361086,7 +361101,7 @@
             "spirit": 1061,
             "mastery": 1270
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Nazgrim's Burnished Insignia",
@@ -361121,7 +361136,7 @@
             "intellect": 0,
             "stamina": 0
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Arcweaver Spell Sword",
@@ -361167,7 +361182,7 @@
             "averageDamage": 7400.25,
             "weaponSwingSpeed": 2.2
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Robes of the Warrior's Fall",
@@ -361211,7 +361226,7 @@
             "spirit": 1561,
             "crit": 1494
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Crown of Tragic Truth",
@@ -361254,7 +361269,7 @@
             "spirit": 1138,
             "crit": 1767
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Spaulders of Kor'kron Fealty",
@@ -361296,7 +361311,7 @@
             "hit": 855,
             "haste": 1322
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Vial of Living Corruption",
@@ -361324,7 +361339,7 @@
             "intellect": 0,
             "stamina": 3508
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Miasmic Skullbelt",
@@ -361366,7 +361381,7 @@
             "hit": 1257,
             "crit": 970
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Hood of Perpetual Implosion",
@@ -361409,7 +361424,7 @@
             "spirit": 1561,
             "crit": 1494
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Robes of Riven Dreams",
@@ -361453,7 +361468,7 @@
             "spirit": 1679,
             "haste": 1293
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Frenzied Crystal of Rage",
@@ -361481,7 +361496,7 @@
             "intellect": 0,
             "stamina": 0
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Black-Blooded Drape",
@@ -361515,7 +361530,7 @@
             "spirit": 1002,
             "mastery": 787
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Seal of Sullen Fury",
@@ -361557,7 +361572,7 @@
             "spirit": 938,
             "crit": 771
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Visage of the Monstrous",
@@ -361599,7 +361614,7 @@
             "spirit": 858,
             "haste": 906
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Boots of Perilous Infusion",
@@ -361641,7 +361656,7 @@
             "haste": 1271,
             "mastery": 1047
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Bracers of Averted Fatality",
@@ -361675,7 +361690,7 @@
             "spirit": 963,
             "haste": 854
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Ebon Blood Chestguard",
@@ -361719,7 +361734,7 @@
             "spirit": 1254,
             "crit": 1702
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Terrorguard Chestplate",
@@ -361763,7 +361778,7 @@
             "spirit": 1656,
             "crit": 1332
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Sigil of Rampage",
@@ -361791,7 +361806,7 @@
             "intellect": 0,
             "stamina": 0
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Avool's Ancestral Bracers",
@@ -361825,7 +361840,7 @@
             "haste": 936,
             "mastery": 899
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Mantid Vizier's Robes",
@@ -361869,7 +361884,7 @@
             "haste": 1585,
             "crit": 1453
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Lost Necklace of the Mogu Empress",
@@ -361903,7 +361918,7 @@
             "spirit": 1002,
             "mastery": 787
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Immaculately Preserved Wand",
@@ -361949,7 +361964,7 @@
             "averageDamage": 3195.5,
             "weaponSwingSpeed": 1.9
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Klaxxi Grips of Rejuvenation",
@@ -361992,7 +362007,7 @@
             "spirit": 896,
             "mastery": 1306
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Shado-Pan Reliquary Kilt",
@@ -362035,7 +362050,7 @@
             "spirit": 1719,
             "crit": 1333
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Chitin-Link Chain Belt",
@@ -362078,7 +362093,7 @@
             "spirit": 1089,
             "mastery": 1186
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Bracers of the Pristine Purifier",
@@ -362112,7 +362127,7 @@
             "spirit": 922,
             "haste": 922
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Plate Belt of the War-Healer",
@@ -362155,7 +362170,7 @@
             "spirit": 1257,
             "crit": 970
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Mogu Mindbender's Greaves",
@@ -362197,7 +362212,7 @@
             "haste": 1271,
             "mastery": 1047
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Montak's Grips of Scorching Breath",
@@ -362240,7 +362255,7 @@
             "crit": 1152,
             "haste": 1135
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Akolik's Acid-Soaked Robes",
@@ -362284,7 +362299,7 @@
             "mastery": 1536,
             "crit": 1536
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Festering Primordial Globule",
@@ -362325,7 +362340,7 @@
             "hit": 747,
             "haste": 962
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Signet of the Dinomancers",
@@ -362367,7 +362382,7 @@
             "haste": 872,
             "mastery": 883
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Thok's Acid-Grooved Tooth",
@@ -362402,7 +362417,7 @@
             "intellect": 0,
             "stamina": 0
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Thok's Tail Tip",
@@ -362430,7 +362445,7 @@
             "intellect": 0,
             "stamina": 0
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Ticking Ebon Detonator",
@@ -362464,7 +362479,7 @@
             "stamina": 0,
             "mastery": 2339
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Fusespark Gloves",
@@ -362507,7 +362522,7 @@
             "crit": 1134,
             "mastery": 1166
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Lever of the Megantholithic Apparatus",
@@ -362553,7 +362568,7 @@
             "averageDamage": 14967.25,
             "weaponSwingSpeed": 3.3
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Dysmorphic Samophlange of Discontinuity",
@@ -362590,7 +362605,7 @@
             "intellect": 2339,
             "stamina": 0
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Powder-Stained Totemic Treads",
@@ -362632,7 +362647,7 @@
             "haste": 1271,
             "mastery": 1047
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Bracers of Sonic Projection",
@@ -362666,7 +362681,7 @@
             "crit": 922,
             "haste": 922
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Rik'kal's Bloody Scalpel",
@@ -362711,7 +362726,7 @@
             "averageDamage": 6054.75,
             "weaponSwingSpeed": 1.8
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Iyyokuk's Hereditary Seal",
@@ -362744,7 +362759,7 @@
             "hit": 854,
             "mastery": 963
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Amber Parasite Wraps",
@@ -362788,7 +362803,7 @@
             "spirit": 1254,
             "haste": 1702
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Chestguard of Toxic Injections",
@@ -362832,7 +362847,7 @@
             "spirit": 1679,
             "haste": 1293
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Gauntlets of Insane Calculations",
@@ -362875,7 +362890,7 @@
             "mastery": 1241,
             "haste": 986
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Curse of Hubris",
@@ -362903,7 +362918,7 @@
             "intellect": 0,
             "stamina": 3508
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Belt of the Broken Pact",
@@ -362946,7 +362961,7 @@
             "spirit": 1089,
             "mastery": 1186
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Ebon Ritual Hood",
@@ -362989,7 +363004,7 @@
             "mastery": 1609,
             "haste": 1413
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Black Blood of Y'Shaarj",
@@ -363023,7 +363038,7 @@
             "stamina": 0,
             "haste": 2339
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Horned Mace of the Old Ones",
@@ -363069,7 +363084,7 @@
             "averageDamage": 8073.25,
             "weaponSwingSpeed": 2.4
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Revelations of Y'Shaarj",
@@ -363111,7 +363126,7 @@
             "mastery": 896,
             "haste": 859
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Seal of Karmic Return",
@@ -363154,7 +363169,7 @@
             "spirit": 1089,
             "mastery": 1186
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Hopeglow Spaulders",
@@ -363197,7 +363212,7 @@
             "spirit": 1150,
             "haste": 1150
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Cowl of Smoking Dreams",
@@ -363240,7 +363255,7 @@
             "spirit": 1561,
             "mastery": 1494
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Chestplate of Fallen Passion",
@@ -363284,7 +363299,7 @@
             "spirit": 1609,
             "mastery": 1413
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Mantle of Looming Darkness",
@@ -363327,7 +363342,7 @@
             "spirit": 1273,
             "haste": 940
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Hellscream's Barrier",
@@ -363749,7 +363764,7 @@
             "spirit": 1207,
             "haste": 1493
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Poxleitner's Leggings of Lights",
@@ -363799,7 +363814,7 @@
             "spirit": 1207,
             "crit": 1493
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Shipley's Shady Silks",
@@ -363849,7 +363864,7 @@
             "haste": 1314,
             "mastery": 1430
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Hamlet's Wind-Whipped Leggings",
@@ -363899,7 +363914,7 @@
             "spirit": 1137,
             "crit": 1534
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Penate's Perilous Pendant",
@@ -363939,7 +363954,7 @@
             "hit": 830,
             "mastery": 797
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Rising New Moon Talisman",
@@ -363980,7 +363995,7 @@
             "spirit": 777,
             "haste": 841
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Zoo-Per's Superior Chestguard",
@@ -364031,7 +364046,7 @@
             "spirit": 1274,
             "crit": 1390
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Chestguard of Pyrrhic Immolation",
@@ -364082,7 +364097,7 @@
             "spirit": 1474,
             "crit": 1132
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Ulmaas' Robes of Crushing Magma",
@@ -364132,7 +364147,7 @@
             "hit": 1533,
             "haste": 1028
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Catia's Flowing Robes",
@@ -364183,7 +364198,7 @@
             "spirit": 1167,
             "crit": 1453
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Gleaming Eye Spellplate",
@@ -364234,7 +364249,7 @@
             "spirit": 1202,
             "mastery": 1432
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Belt of the Burning Soul",
@@ -364284,7 +364299,7 @@
             "spirit": 1026,
             "mastery": 982
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Derevka's Gleaming Girdle",
@@ -364334,7 +364349,7 @@
             "spirit": 824,
             "crit": 1119
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Windflame Girdle",
@@ -364384,7 +364399,7 @@
             "spirit": 824,
             "crit": 1119
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Venruki's Venerable Sash",
@@ -364433,7 +364448,7 @@
             "hit": 850,
             "mastery": 1104
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Binkenstein's Burnished Belt",
@@ -364483,7 +364498,7 @@
             "spirit": 824,
             "haste": 1119
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Burnseal Bracers",
@@ -364524,7 +364539,7 @@
             "spirit": 921,
             "crit": 640
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Paululum's Doodled Wraps",
@@ -364565,7 +364580,7 @@
             "spirit": 737,
             "mastery": 865
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Bjam's Blasting Bracers",
@@ -364605,7 +364620,7 @@
             "hit": 737,
             "mastery": 865
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Firetotem Bracers",
@@ -364646,7 +364661,7 @@
             "spirit": 621,
             "mastery": 932
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Bracers of Unquestioning Belief",
@@ -364687,7 +364702,7 @@
             "spirit": 697,
             "crit": 888
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Bo He Me's Deathwind Mantle",
@@ -364737,7 +364752,7 @@
             "spirit": 824,
             "crit": 1119
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Shay-Nii's Popping Shoulderpads",
@@ -364786,7 +364801,7 @@
             "hit": 1119,
             "mastery": 824
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Flame Healer's Shoulderguards",
@@ -364836,7 +364851,7 @@
             "spirit": 902,
             "crit": 1073
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Fleshsmoke Chain Shoulders",
@@ -364886,7 +364901,7 @@
             "spirit": 1010,
             "crit": 1010
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Yaungol Deathcult Shoulderguards",
@@ -364936,7 +364951,7 @@
             "spirit": 982,
             "crit": 1026
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Aladya's Spiritfire Greathelm",
@@ -364986,7 +365001,7 @@
             "spirit": 1533,
             "crit": 1028
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Circlet of the Panser",
@@ -365036,7 +365051,7 @@
             "spirit": 1310,
             "mastery": 1369
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Damien's Ice-Vein Mask",
@@ -365085,7 +365100,7 @@
             "hit": 1533,
             "haste": 1028
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Buc-Zakai Burning Hood",
@@ -365135,7 +365150,7 @@
             "spirit": 1097,
             "haste": 1494
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Olivia's Graceful Gaze",
@@ -365185,7 +365200,7 @@
             "spirit": 1533,
             "crit": 1028
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Kalaena's Arcane Handwraps",

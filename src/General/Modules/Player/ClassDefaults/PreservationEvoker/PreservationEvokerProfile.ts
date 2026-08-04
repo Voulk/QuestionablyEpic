@@ -36,6 +36,7 @@ export const preservationEvokerProfile = {
     specialQueries: {
         // Any special information we need to pull.
     },
+    defaultTalents: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 }
 
 
@@ -304,10 +305,10 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
         totalHealing += healingBreakdown["Leech"];
     }
 
-    printHealingBreakdown(healingBreakdown, totalHealing);
+    //printHealingBreakdown(healingBreakdown, totalHealing);
 
-    console.log(reportingData)
-    printHealingBreakdownWithCPM(healingBreakdown, totalHealing, castProfile);
+    //console.log(reportingData)
+    //printHealingBreakdownWithCPM(healingBreakdown, totalHealing, castProfile);
 
     return { healing: totalHealing / 60, damage: 0 }
 }

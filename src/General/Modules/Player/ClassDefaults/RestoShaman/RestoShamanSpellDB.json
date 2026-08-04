@@ -9,15 +9,15 @@
             },
             "castTime": 0.0,
             "school": "nature",
-            "cost": 1.6,
+            "cost": 1.52,
             "cooldownData": {
                 "cooldown": 6.0,
                 "hasted": false,
                 "charges": 1,
                 "maxCharges": 1
             },
-            "coeff": 4.8029,
-            "aura": 1.11,
+            "coeff": 6.0,
+            "aura": 1.15,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -27,8 +27,8 @@
             "spellType": "heal"
         },
         {
-            "coeff": 0.3984,
-            "aura": 1.11,
+            "coeff": 0.797,
+            "aura": 1.15,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -63,7 +63,7 @@
                 "maxCharges": 0
             },
             "coeff": 0.6768,
-            "aura": 1.8315000000000001,
+            "aura": 1.897,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -92,12 +92,12 @@
             "school": "nature",
             "cost": 4.32,
             "cooldownData": {
-                "cooldown": 18.0,
+                "cooldown": 12.0,
                 "hasted": false
             },
-            "targets": 5,
-            "coeff": 0.9,
-            "aura": 1.11,
+            "targets": 6,
+            "coeff": 1.08,
+            "aura": 1.15,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -132,7 +132,7 @@
             "targets": 20,
             "targetScript": "Sqrt",
             "coeff": 5.145,
-            "aura": 1.11,
+            "aura": 1.15,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -162,11 +162,11 @@
             },
             "castTime": 2.0,
             "school": "nature",
-            "cost": 4.5,
+            "cost": 4.28,
             "targets": 4,
             "targetScript": "Chain Heal",
             "coeff": 2.31,
-            "aura": 3.774,
+            "aura": 3.91,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -190,7 +190,7 @@
             "school": "nature",
             "cost": 2.0,
             "coeff": 0.73,
-            "aura": 1.6317000000000002,
+            "aura": 1.69,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -211,8 +211,8 @@
             "castTime": 2.0,
             "school": "nature",
             "cost": 0.2,
-            "coeff": 0.7303,
-            "aura": 6.763999999999999,
+            "coeff": 1.164,
+            "aura": 6.764,
             "secondaries": [
                 "crit",
                 "versatility"
@@ -230,9 +230,9 @@
             },
             "castTime": 2.0,
             "school": "nature",
-            "cost": 2.5,
-            "coeff": 13.6458,
-            "aura": 1.11,
+            "cost": 2.38,
+            "coeff": 15.01,
+            "aura": 1.15,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -259,8 +259,8 @@
                 "charges": 1,
                 "maxCharges": 1
             },
-            "coeff": 6.0999,
-            "aura": 1.11,
+            "coeff": 12.2,
+            "aura": 1.15,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -290,8 +290,8 @@
                 "hasted": false
             },
             "targets": 5,
-            "coeff": 1.08,
-            "aura": 1.11,
+            "coeff": 1.1880000000000002,
+            "aura": 1.15,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -312,7 +312,7 @@
         {
             "displayInfo": {
                 "id": 1267068,
-                "icon": false,
+                "icon": "inv12_apextalent_shaman_stormstreamtotem",
                 "spellName": "Stormstream Totem",
                 "cat": "heal"
             },
@@ -321,7 +321,7 @@
             "cost": 1.8,
             "targets": 2,
             "coeff": 0.74448,
-            "aura": 1.65,
+            "aura": 1.8975,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -339,7 +339,7 @@
         },
         {
             "coeff": 13.23,
-            "aura": 1.65,
+            "aura": 1.8975,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -354,7 +354,7 @@
         {
             "displayInfo": {
                 "id": 114052,
-                "icon": "spell_fire_elementaldevastation",
+                "icon": "8026698",
                 "spellName": "Ascendance",
                 "cat": "heal"
             },
@@ -366,7 +366,7 @@
                 "hasted": false
             },
             "coeff": 12.8772,
-            "aura": 1.11,
+            "aura": 1.15,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -378,7 +378,7 @@
         },
         {
             "coeff": 12.8772,
-            "aura": 1.11,
+            "aura": 1.15,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -401,7 +401,7 @@
             "cost": 0.0,
             "targets": 5,
             "coeff": 3.234,
-            "aura": 1.11,
+            "aura": 1.15,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -422,7 +422,7 @@
             "castTime": 2.5,
             "school": "nature",
             "cost": 0.2,
-            "coeff": 1.311,
+            "coeff": 1.7,
             "aura": 6.612,
             "secondaries": [
                 "crit",
@@ -473,17 +473,6 @@
             }
         }
     ],
-    "Lava Burst": [
-        {
-            "coeff": 1.39,
-            "aura": 4.978,
-            "secondaries": [
-                "crit",
-                "versatility"
-            ],
-            "spellType": "damage"
-        }
-    ],
     "Spirit Link Totem": [
         {
             "displayInfo": {
@@ -499,8 +488,7 @@
                 "hasted": false,
                 "charges": 1,
                 "maxCharges": 1
-            },
-            "secondaries": []
+            }
         }
     ],
     "Hydrobubble": [
@@ -540,7 +528,7 @@
             "cost": 0.0,
             "targets": 5,
             "coeff": 0.7568,
-            "aura": 1.11,
+            "aura": 1.15,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -562,7 +550,7 @@
             "school": "nature",
             "cost": 0.0,
             "coeff": 0.4631,
-            "aura": 1.11,
+            "aura": 1.15,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -591,7 +579,7 @@
             "school": "nature",
             "cost": 0.0,
             "coeff": 2.1291,
-            "aura": 1.11,
+            "aura": 1.15,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -613,7 +601,7 @@
             "school": "nature",
             "cost": 0.0,
             "coeff": 2.549,
-            "aura": 1.11,
+            "aura": 1.15,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -636,8 +624,8 @@
             "cost": 0.0,
             "targets": 3,
             "targetScript": "Chain Heal",
-            "coeff": 1.6493,
-            "aura": 1.11,
+            "coeff": 2.475,
+            "aura": 1.15,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -661,8 +649,8 @@
             "castTime": 0.0,
             "school": "nature",
             "cost": 0.0,
-            "coeff": 3.8258,
-            "aura": 1,
+            "coeff": 3.826,
+            "aura": 0.38,
             "secondaries": [
                 "crit",
                 "versatility"
@@ -681,8 +669,8 @@
             "castTime": 0.0,
             "school": "fire",
             "cost": 0.0,
-            "coeff": 1.7399,
-            "aura": 1,
+            "coeff": 1.74,
+            "aura": 0.38,
             "secondaries": [
                 "crit",
                 "versatility"
@@ -704,7 +692,7 @@
             "targets": 3,
             "targetScript": "Chain Heal",
             "coeff": 2.205,
-            "aura": 1.11,
+            "aura": 1.15,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -729,7 +717,7 @@
             "school": "nature",
             "cost": 0.0,
             "coeff": 3.22,
-            "aura": 1,
+            "aura": 1.0,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -751,13 +739,36 @@
             "school": "nature",
             "cost": 0.0,
             "coeff": 11.466,
-            "aura": 1.11,
+            "aura": 1.15,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility",
                 "mastery"
             ],
+            "spellType": "heal"
+        }
+    ],
+    "Condensation": [
+        {
+            "displayInfo": {
+                "id": 1300642,
+                "icon": "ability_shaman_fortifyingwaters",
+                "spellName": "Condensation"
+            },
+            "castTime": 0.0,
+            "school": "physical",
+            "cost": 0.0,
+            "coeff": 2.8,
+            "aura": 1,
+            "expectedOverheal": 0.03,
+            "secondaries": [
+                "versatility",
+                "crit"
+            ],
+            "specialFields": {
+                "absorb": true
+            },
             "spellType": "heal"
         }
     ]

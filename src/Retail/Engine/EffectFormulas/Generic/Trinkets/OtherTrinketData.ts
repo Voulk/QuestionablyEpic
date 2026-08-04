@@ -3,13 +3,15 @@ import { Player } from "General/Modules/Player/Player";
 import trinketRawData from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketData.json"
 import { STATCONVERSION } from "General/Engine/STAT"
 
+// Pulse Seeker's Oculus, Effigy of Ula'tek's Faithful, 
+
 export const otherTrinketData = [
     {
       name: "Drum of Renewed Bonds",
       description: "Not available on Myth track but quite good as an early trinket. You are able to pick which secondary stat it gives.",
       addonDescription: "Not available on Myth track but quite good as an early trinket. You are able to pick which secondary stat it gives.",
       effects: [
-        {
+        { 
           duration: 12,
           ppm: 1.5,
           stat: "highest",
@@ -81,14 +83,14 @@ export const otherTrinketData = [
   },
       { 
     name: "Magister's Alchemist Stone",
-    description: "High variance, low uptime and uses an embellishment slot. Do not craft.",
-    addonDescription: "High variance, low uptime and uses an embellishment slot. Do not craft.",
+    description: "Uses an embellishment slot. Do not craft.",
+    addonDescription: "Uses an embellishment slot. Do not craft.",
     effects: [
       {
         coefficient: 2, //0.277491, 
         table: -1,
         duration: 15,
-        ppm: 1,
+        ppm: 2.5,
         stat: "intellect",
       },
     ],

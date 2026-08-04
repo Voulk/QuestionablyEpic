@@ -3,6 +3,7 @@ import Player from "General/Modules/Player/Player";
 
 import { getGenericStatEffect, getEffectPPM, getGenericHealingIncrease, getGenericOnUseTrinket, processedValue, getGenericFlatProc } from "./ClassicEffectUtilities";
 import { getHaste } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
+import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
 
 
 /* 
@@ -93,6 +94,88 @@ export const raidTrinketData: Effect[] = [
     }
   },
   // Siege of Orgrimmar
+        {
+    name: "Dysmorphic Samophlange of Discontinuity", 
+    effects: [ // coefficient is for 1 stack. You get 20 on proc.
+      { 
+        value: {0: 0},
+        coefficient: 0.29730001092,
+        ppm: 0.85,
+        stat: "spirit",
+        duration: 10,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = getGenericStatEffect(data[0], itemLevel, additionalData.setStats, player.spec);
+
+      bonus_stats.spirit! *= 10.5; // Average stack count.
+
+      return bonus_stats;
+    }
+  },
+        {
+    name: "Nazgrim's Burnished Insignia", 
+    effects: [ 
+      // Cleave Heal
+      { 
+        value: {0: 0},
+        coefficient: 0.03539999947, // This is the percentage chance to cleave. 
+        stat: "hps",
+      },
+            { 
+        value: {0: 0},
+        coefficient: 2.97300004959, 
+        ppm: 0.92,
+        stat: "intellect",
+        duration: 10,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+
+      let bonus_stats = getGenericStatEffect(data[1], itemLevel); // Intellect proc
+      const isTrinketChart = true //window.location.href.includes("trinkets")
+
+      if (isTrinketChart) {
+        const healingBuffed = player.getActiveModel("Raid").profile.specialQueries["cleavePercentage"] || 1;
+        bonus_stats.hps = processedValue(data[0], itemLevel, 1, "none") * healingBuffed * player.getHPS("Raid") / 1000 * 0.33;
+        //console.log(processedValue(data[0], itemLevel) / 10, healingBuffed, player.getHPS("Raid"));
+      }
+
+      return bonus_stats;
+    }
+  },
+      {
+    name: "Thok's Acid-Grooved Tooth", 
+    effects: [ 
+      // Cleave Heal
+      { 
+        value: {0: 0},
+        coefficient: 0.07859999686, // This is the percentage chance to cleave. 
+        stat: "hps",
+      },
+            { 
+        value: {0: 0},
+        coefficient: 2.97300004959, 
+        ppm: getEffectPPM(0.15, 115, 1.25),
+        stat: "intellect",
+        duration: 15,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+
+      let bonus_stats = getGenericStatEffect(data[1], itemLevel); // Intellect proc
+      const isTrinketChart = true //window.location.href.includes("trinkets")
+
+      if (isTrinketChart) {
+        const healingBuffed = player.getActiveModel("Raid").profile.specialQueries["cleavePercentage"] || 1;
+        const avgTargets = getSetting(additionalData.settings, "thokTargets") || 3;
+        bonus_stats.hps = processedValue(data[0], itemLevel, 1, "none") * healingBuffed * player.getHPS("Raid") * avgTargets / 10000;
+        //console.log(processedValue(data[0], itemLevel), healingBuffed, player.getHPS("Raid"), avgTargets);
+      }
+
+      return bonus_stats;
+    }
+  },
     {
     name: "Purified Bindings of Immerseus", 
     effects: [ 
@@ -112,10 +195,12 @@ export const raidTrinketData: Effect[] = [
     ],
     runFunc: function(data, player, itemLevel, additionalData) {
 
-      let bonus_stats = getGenericStatEffect(data[0], itemLevel);
-      bonus_stats.intellect! *= dpsProcMult(player.spec); //; // Multiply by crit chance.
-      bonus_stats.amp = processedValue(data[1], itemLevel, 1, "none") / 100;
+      let bonus_stats = {}
+      if (player.spec.includes("Holy Paladin") || player.spec.includes("Mistweaver Monk")) {
+        bonus_stats = getGenericStatEffect(data[0], itemLevel);
+      }
 
+      bonus_stats.amp = processedValue(data[1], itemLevel, 1, "none") / 100;
       return bonus_stats;
     }
   },
@@ -186,6 +271,26 @@ export const raidTrinketData: Effect[] = [
       return bonus_stats;
     }
   },
+        {
+    name: "Yu'lon's Bite",
+    effects: [
+      { 
+        value: {0: 0}, 
+        coefficient: 2.97300004959,
+        ppm: getEffectPPM(0.2, 115, 1.25),
+        stat: "crit",
+        duration: 20,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats = getGenericStatEffect(data[0], itemLevel);
+      bonus_stats.crit! *= dpsProcMult(player.spec); //; // Multiply by crit chance.
+      
+      return bonus_stats;
+    }
+  },
       {
     name: "Cha-Ye's Essence of Brilliance", 
     effects: [ // Chance on *crit* to proc an intellect buff. RPPM might also scale with crit chance? 
@@ -201,6 +306,24 @@ export const raidTrinketData: Effect[] = [
     runFunc: function(data, player, itemLevel, additionalData) {
       let bonus_stats: Stats = getGenericStatEffect(data[0], itemLevel, additionalData.setStats, player.spec);
       bonus_stats.intellect! *= dpsProcMult(player.spec); //; // Multiply by crit chance.
+      return bonus_stats;
+    }
+  },
+  {
+    name: "Breath of the Hydra", 
+    effects: [ // Chance on DoT tick to give intellect.
+      { 
+        value: {0: 0},
+        coefficient: 2.47499990463,
+        ppm: 1.1,
+        stat: "intellect",
+        secondaries: [],
+        duration: 10,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = getGenericStatEffect(data[0], itemLevel, additionalData.setStats, player.spec);
+      bonus_stats.intellect! *= (player.spec.includes("Discipline Priest") ? 0.95 : 0);
       return bonus_stats;
     }
   },
@@ -332,6 +455,24 @@ export const raidTrinketData: Effect[] = [
         stat: "spirit",
         duration: 20,
         cooldown: 120,
+      },
+    ],
+    runFunc: function(data, player, itemLevel, additionalData) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats = getGenericOnUseTrinket(data[0], itemLevel);
+
+      return bonus_stats;
+    }
+  },
+  {name: "Contemplation of Chi-Ji", 
+    effects: [
+      { 
+        value: {0: 0},
+        coefficient: 2.48000001907,
+        stat: "spirit",
+        duration: 15,
+        cooldown: 90,
       },
     ],
     runFunc: function(data, player, itemLevel, additionalData) {

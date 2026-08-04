@@ -1,10 +1,5 @@
 {
-    "Nevermelting Ice Crystal": [
-        {
-            "coefficient": 0.863833,
-            "scalingClass": -7
-        }
-    ],
+    "Nevermelting Ice Crystal": [],
     "Necromantic Focus": [
         {
             "coefficient": 0.047,
@@ -32,6 +27,42 @@
     "Emerald Coach's Whistle": [
         {
             "coefficient": 1.013,
+            "scalingClass": -7
+        }
+    ],
+    "Kyrakka's Searing Embers": [
+        {
+            "coefficient": 89.46,
+            "scalingClass": -8
+        },
+        {
+            "coefficient": 28.374,
+            "scalingClass": -8
+        }
+    ],
+    "Ruby Whelp Shell": [
+        {
+            "coefficient": 143.249,
+            "scalingClass": -9
+        },
+        {
+            "coefficient": 119.376,
+            "scalingClass": -9
+        },
+        {
+            "coefficient": 214.692,
+            "scalingClass": -9
+        },
+        {
+            "coefficient": 178.912,
+            "scalingClass": -9
+        },
+        {
+            "coefficient": 2.418,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": 2.418,
             "scalingClass": -7
         }
     ],
@@ -89,12 +120,12 @@
     ],
     "Emberwing Feather": [
         {
-            "coefficient": 2.065,
-            "scalingClass": -9
+            "coefficient": 3.406,
+            "scalingClass": -7
         },
         {
-            "coefficient": 0.641,
-            "scalingClass": -9
+            "coefficient": 1.058,
+            "scalingClass": -7
         }
     ],
     "Lightspire Core": [
@@ -109,8 +140,8 @@
     ],
     "Freightrunner's Flask": [
         {
-            "coefficient": 1.456,
-            "scalingClass": -9
+            "coefficient": 2.4014,
+            "scalingClass": -7
         }
     ],
     "Refueling Orb": [
@@ -263,6 +294,150 @@
         {
             "coefficient": 776.821,
             "scalingClass": -9
+        }
+    ],
+    "Sporelord's Mycelial Insignia": [
+        {
+            "coefficient": 1.409,
+            "scalingClass": -7
+        }
+    ],
+    "Soulcoiler Ritual Vessel": [
+        {
+            "coefficient": 504.405,
+            "scalingClass": -9
+        }
+    ],
+    "Gebbo's Bottomless Bag": [
+        {
+            "coefficient": 0.207,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": 2.472,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": 2.472,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": 1.236,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": 2.506,
+            "scalingClass": -9
+        },
+        {
+            "coefficient": 0.773,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": 0.153,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": 0.178,
+            "scalingClass": -7
+        }
+    ],
+    "Wavecaller's Seastone": [
+        {
+            "coefficient": 0.18,
+            "scalingClass": -1
+        }
+    ],
+    "Hex Lord's Dooming Idol": [
+        {
+            "coefficient": 0.012,
+            "scalingClass": -1
+        },
+        {
+            "coefficient": 0.086,
+            "scalingClass": -1
+        },
+        {
+            "coefficient": 0.016,
+            "scalingClass": -1
+        }
+    ],
+    "Preternatural Antivenom": [
+        {
+            "coefficient": 370.6,
+            "scalingClass": -8
+        }
+    ],
+    "Stormbound Emblem of Dazar": [
+        {
+            "coefficient": 3.666,
+            "scalingClass": -7
+        }
+    ],
+    "Vile Vial of Volatile Venom": [
+        {
+            "coefficient": 3.36,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": 3.36,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": 3.36,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": 3.36,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": 3.36,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": -0.48,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": -0.48,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": -0.48,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": -0.48,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": -0.48,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": 3.36,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": -0.48,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": -0.48,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": -0.48,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": -0.48,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": -0.48,
+            "scalingClass": -7
         }
     ]
 }

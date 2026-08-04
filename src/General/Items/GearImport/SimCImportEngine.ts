@@ -6,6 +6,7 @@ import Player from "General/Modules/Player/Player";
 import { CONSTANTS } from "General/Engine/CONSTANTS";
 import { getTitanDiscName } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/TitanDiscBeltData"
 import ItemSquishEras from "Retail/Engine/ItemSquishEras.json"
+import { bonusLootCaches } from "Databases/InstanceDB";
 
 /**
  * This entire page is a bit of a disaster, owing mostly to how bizarrely some things are implemented in game. 
@@ -59,6 +60,46 @@ function getPlayerRace(lines: string[]) {
   return playerRace;
 }
 
+export function loadBonusRolls(bonusRollsUsed: string[]) {
+    // {boss: {difficulty: [itemIDs]}}
+    const bonusRolledItems: { [source: number]: { [context: number]: number[] } } = {};
+
+     //roll.currency .. ':' .. roll.source .. ':' .. roll.context .. ':' .. roll.keyLevel .. ':' .. roll.itemId .. ':' .. roll.spec
+
+    bonusRollsUsed.forEach((bonusRoll) => {
+      const [currency, source, context, keyLevel, itemId, spec] = bonusRoll.split(":");
+
+      const parsedCurrency = parseInt(currency, 10);
+      const parsedSourceId = parseInt(source, 10);
+      const parsedContext = parseInt(context, 10);
+      const parsedKeyLevel = parseInt(keyLevel, 10);
+      const parsedItemId = parseInt(itemId, 10);
+      const parsedSpec = parseInt(spec, 10);
+
+      if ([parsedCurrency, parsedSourceId, parsedContext, parsedKeyLevel, parsedItemId, parsedSpec].some(Number.isNaN)) {
+        return;
+      }
+
+      const parsedSourceKey = parsedSourceId as keyof typeof bonusLootCaches;
+
+      if (!(parsedSourceKey in bonusLootCaches)) {
+        return;
+      }
+
+      const parsedSource = bonusLootCaches[parsedSourceKey];
+
+      if (!bonusRolledItems[parsedSource]) {
+        bonusRolledItems[parsedSource] = {};
+      }
+      if (!bonusRolledItems[parsedSource][parsedContext]) {
+        bonusRolledItems[parsedSource][parsedContext] = [];
+      }
+
+      bonusRolledItems[parsedSource][parsedContext].push(parsedItemId);
+    });
+
+    return bonusRolledItems;
+}
 
 // Item levels are way too complicated to not have a specific function for now.
 export function getItemLevel(itemID: number, bonusIDs: number[], dropLevel: number = -1) : number {
@@ -226,6 +267,13 @@ export function runSimC(simCInput: string, player: Player, contentType: contentT
 
     player.savedPTRString = simCInput;
 
+    // Character Bonus Rolls
+    // Example: bonus_roll_items=3418:268459:4:1:249306:103/3418:268969:108:11:249625:103
+    if (lines.indexOf("bonus_roll_items") !== -1) {
+      const bonusRollLines = lines[lines.indexOf("bonus_roll_items")];
+      const bonusRolls = loadBonusRolls(bonusRollLines.split("=")[1].split("/"));
+      player.bonusRolledItems = bonusRolls;
+    }
 
 
 

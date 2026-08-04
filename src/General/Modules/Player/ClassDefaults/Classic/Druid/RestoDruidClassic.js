@@ -16,33 +16,36 @@ export const restoDruidDefaults = {
     initializeSet: initializeDruidSet,
     defaultStatProfile: { 
         // The default stat profile is used to generate default stat weights, and to compare specs. Each spec should have the same rough gear level.
-      intellect: 27293, //21000,
-      spirit: 12158, //9000,
-      spellpower: 11399, //7907,
+      intellect: 33600, //21000,
+      spirit: 15000, //9000,
+      spellpower: 15000, //7907,
       averageDamage: 5585,
       weaponSwingSpeed: 3.4,
       haste: 5176, //3043,
-      crit: 3894, //8000,
-      mastery: 10801, //9000,
+      crit: 4100, //8000,
+      mastery: 17000, //9000,
       stamina: 5000,
       mp5: 0,
-      critMult: 2,
+      critMultDPS: 2,
+      critMultHPS: 1,
       hps: 0,
     },
     defaultStatWeights: {
         // Used in the trinket chart and for Quick Compare. Not used in Top Gear.
         spellpower: 1,
-        intellect: 1.11,
-        crit: 0.452,
-        mastery: 0.538,
-        haste: 0.331,
-        mp5: 0.683,
-        spirit: 0.519,
-        hit: 0,
-        hps: 0.304, // 
+        intellect: 1.211,
+        crit: 0.683,
+        mastery: 0.89,
+        haste: 0.7,
+        spirit: 1.022,
+        mp5: 1.425,
+        hps: 0.275,
+        critMultHPS: 640, // In HPS value, not normalized
+        critMultDPS: 0, // In HPS value, not normalized
     },
     specialQueries: {
         // Any special information we need to pull.
+        cleavePercentage: 1, // The percentage of our healing in the base set that can cleave via Thok / Nazgrim. Only used for the trinket chart. 
     },
     autoReforgeOrder: ["mastery", "spirit", "crit", "haste", "hit"],
 }
@@ -128,17 +131,19 @@ export function scoreDruidSet(druidBaseline, statProfile, userSettings, tierSets
     const metaGem = getSetting(userSettings, "classicMetaGem");
     let freeCastsUptime = metaGem === "Courageous Primal Diamond" ? (1.61 * 4 / 60) : 0; // 1.61 rppm, 4s duration
 
-    if (statProfile.amp) {
+    /*if (statProfile.amp) {
       ["spirit", "mastery", "haste"].forEach(statName => {
         statProfile[statName] = statProfile[statName] * (1 + statProfile.amp);
       })
-    }
+    }*/
 
     const statPercentages = {
       spellpower: statProfile.intellect + statProfile.spellpower,
       crit: 1 + getCritPercentage(statProfile, "Restoration Druid"),
       haste: getHasteClassic(statProfile, hasteBuff),
       mastery: (statProfile.mastery / STATCONVERSIONCLASSIC.MASTERY / 100 + 0.08) * 1.25, // 1.25 is Resto Druids mastery coefficient.
+      critMultHPS: statProfile.critMultHPS + 1,
+      critMultDPS: statProfile.critMultDPS,
     }
 
     

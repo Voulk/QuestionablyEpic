@@ -18,7 +18,7 @@
             },
             "targets": 5,
             "coeff": 1.6341,
-            "aura": 1,
+            "aura": 1.0,
             "secondaries": [
                 "crit",
                 "versatility"
@@ -27,7 +27,7 @@
         },
         {
             "coeff": 0.3948,
-            "aura": 1,
+            "aura": 1.0,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -87,7 +87,7 @@
                 "maxCharges": 1
             },
             "targets": 6,
-            "coeff": 0.3072,
+            "coeff": 0.5352,
             "aura": 0.8,
             "expectedOverheal": 0.2,
             "secondaries": [
@@ -105,7 +105,7 @@
             }
         },
         {
-            "coeff": 1.8432,
+            "coeff": 0.9216,
             "aura": 0.8,
             "expectedOverheal": 0.2,
             "secondaries": [
@@ -129,12 +129,12 @@
             "school": "nature",
             "cost": 2.4,
             "cooldownData": {
-                "cooldown": 24.0,
-                "hasted": false,
+                "cooldown": 18.0,
+                "hasted": true,
                 "charges": 1,
                 "maxCharges": 1
             },
-            "coeff": 10.58,
+            "coeff": 13.754,
             "aura": 0.8,
             "expectedOverheal": 0.2,
             "secondaries": [
@@ -188,7 +188,7 @@
             "cost": 2.2,
             "cooldownData": {
                 "cooldown": 9.0,
-                "hasted": false,
+                "hasted": true,
                 "charges": 2,
                 "maxCharges": 2
             },
@@ -257,7 +257,7 @@
             "targets": 20,
             "targetScript": "Sqrt",
             "coeff": 2.0,
-            "aura": 1,
+            "aura": 1.0,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -278,7 +278,7 @@
         },
         {
             "coeff": 5.0,
-            "aura": 1,
+            "aura": 1.0,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -353,7 +353,7 @@
             "castTime": 0.0,
             "school": "nature",
             "cost": 0.0,
-            "coeff": 2.0,
+            "coeff": 2.5,
             "aura": 0.8,
             "expectedOverheal": 0.2,
             "secondaries": [
@@ -376,7 +376,7 @@
             "school": "nature",
             "cost": 1.54,
             "targets": 5,
-            "coeff": 2.5,
+            "coeff": 2.25,
             "aura": 0.8,
             "expectedOverheal": 0.2,
             "secondaries": [
@@ -398,7 +398,7 @@
             "castTime": 2.0,
             "school": "fire",
             "cost": 2.2,
-            "coeff": 6.0,
+            "coeff": 7.8,
             "aura": 1.0,
             "expectedOverheal": 0.2,
             "secondaries": [

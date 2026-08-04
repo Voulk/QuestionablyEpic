@@ -14,32 +14,38 @@ export const holyPaladinDefaults = {
     initializeSet: initializePaladinSet,
     defaultStatProfile: { 
         // The default stat profile is used to generate default stat weights, and to compare specs. Each spec should have the same rough gear level.
-        intellect: 21000,
-        spirit: 8000,
-        spellpower: 7907,
-        averageDamage: 5585,
-        weaponSwingSpeed: 3.4,
-        haste: 2500,
-        crit: 9000,
-        mastery: 9000,
-        stamina: 5000,
-        mp5: 0,
-        critMult: 2,
-        hps: 0,
+      intellect: 33600, //21000,
+      spirit: 15000, //9000,
+      spellpower: 15000, //7907,
+      averageDamage: 5585,
+      weaponSwingSpeed: 3.4,
+      haste: 4800, //3043,
+      crit: 11000, //8000,
+      mastery: 14000, //9000,
+      stamina: 5000,
+      mp5: 0,
+      critMult: 2,
+      critMultHPS: 1,
+      critMultDPS: 2,
+      hps: 0,
     },
     defaultStatWeights: {
         // Used in the trinket chart and for Quick Compare. Not used in Top Gear.
         spellpower: 1,
-        intellect: 1.107,
-        crit: 0.442,
-        mastery: 0.6,
-        haste: 0.31,
-        spirit: 0.57,
-        mp5: 0.82,
-        hps: 0.34,
+        intellect: 1.204,
+        crit: 0.661,
+        mastery: 1.084,
+        haste: 0.527,
+        spirit: 0.712,
+        mp5: 0.972,
+        hps: 0.293,
+        critMultHPS: 640, // In HPS value, not normalized
+        critMultDPS: 0, // In HPS value, not normalized
     },
     specialQueries: {
         // Any special information we need to pull.
+        cleavePercentage: 0.55, // The percentage of our healing in the base set that can cleave via Thok / Nazgrim. Only used for the trinket chart. 
+
     },
     autoReforgeOrder: ["mastery", "crit", "spirit", 'haste', 'hit'],
 }
@@ -105,7 +111,7 @@ export function initializePaladinSet(userSettings, talents = paladinTalents, ign
     const healingBreakdown = {};
     const damageBreakdown = {};
     const castBreakdown = {};
-    const fightLength = 6;
+    const fightLength = 5;
     const talents = specBaseline.talents || paladinTalents;
     const specSettings = {} // We'll eventually put atonement overhealing etc in here.
     let hopoGenerated = 0;
@@ -114,6 +120,12 @@ export function initializePaladinSet(userSettings, talents = paladinTalents, ign
   
     const hasteSetting = getSetting(userSettings, "hasteBuff");
     const hasteBuff = (hasteSetting.includes("Haste Aura") ? 1.05 : 1)
+
+    let divineFavorUptime = 20 / 180;
+    if (tierSets.includes("Paladin T16-2")) {
+        divineFavorUptime = 20 / 120;
+        statProfile.mastery += 4500 * divineFavorUptime;
+    }
   
     const statPercentages = convertStatPercentages(statProfile, hasteBuff, spec);
   
@@ -153,7 +165,7 @@ export function initializePaladinSet(userSettings, talents = paladinTalents, ign
       // We'll probably rework this to be a package.
       let fillerCost = getSpellEntry(castProfile, "Holy Radiance").cost * (1 - freeCastsUptime); //specBaseline.castProfile.filter(spell => spell.spell === "Rejuvenation")[0]['cost']; // This could be more efficient;
       if (tierSets.includes("Paladin T14-2")) fillerCost *= 0.9;
-      const fillerWastage = 0.8;
+      const fillerWastage = 0.6;
 
       // Update Cost Per Minute with our more frequent hasted casts.
       let costPerMinute = castProfile.reduce((acc, spell) => acc + (spell.fillerSpell ? 0 : (spell.cost * spell.cpm)), 0) * (1 - freeCastsUptime);
@@ -207,6 +219,7 @@ export function initializePaladinSet(userSettings, talents = paladinTalents, ign
       // Guardian of Ancient Kings: 10% haste + 100% heal replication. 15s duration.
       // Divine Favor: 20% spell casting haste + 20% crit chance. 20s duration.
       const cdUptime = 18 / 180;
+
       const cdWastage = 0.2;
       const availableCDCasts = 18 / 1.5 * statPercentages.haste * 1.1 * 1.2 * (1 - cdWastage);
       const lodCasts = availableCDCasts / 2;
@@ -237,16 +250,13 @@ export function initializePaladinSet(userSettings, talents = paladinTalents, ign
         castProfile.forEach(spellProfile => {
           spellProfile.cpm *= (1 - cdUptime)
           spellProfile.bonus = (spellProfile.bonus || 1) * (0.2 * cdUptime + 1)
-          spellProfile.critBonus = (spellProfile.critBonus || 0) + (0.2 * cdUptime);
+          spellProfile.critBonus = (spellProfile.critBonus || 0) + (0.2 * divineFavorUptime);
           if (["Holy Shock", "Judgment", "Crusader Strike", "Holy Radiance"].includes(spellProfile.spell)) {
             spellProfile.bonus *= (0.3 * cdUptime + 1); // Divine Favor
           }
           
         })
-
-
       }
-
         castProfile.forEach(spellProfile => {
             const fullSpell = specBaseline.spellDB[spellProfile.spell];
             const spellName = spellProfile.spell;
@@ -288,9 +298,6 @@ export function initializePaladinSet(userSettings, talents = paladinTalents, ign
               }
 
               // Beacon
-
-      
-
               if (rawHeal > 0) {
 
                 // Beacon
