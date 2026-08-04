@@ -296,7 +296,7 @@ const icyVeinsSlotNames = {
   "Shield": "Offhand",
 }
 
-const cleanupText = (str: string) => str.replaceAll(" ", "").replaceAll("'", "").replaceAll(":", "").replaceAll("&", "and").replaceAll("-", "");
+const cleanupText = (str: string) => str.replaceAll(" ", "").replaceAll("'", "").replaceAll(":", "").replaceAll("&", "and").replaceAll("-", "").replaceAll(",");
 
 // SlotName, Rarity, Name, Source, Enchant, Gem, Gem, Gem, Embellishment
 export function exportIcyVeinsGearPlanner(itemSet, spec, enchants, gameType = "Retail") {

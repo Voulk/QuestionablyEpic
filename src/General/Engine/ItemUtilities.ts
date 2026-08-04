@@ -1098,8 +1098,15 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
         // Catalyze item
         newItem.convertToTier(player.spec);
       }
-      if (player.activeItems.filter((i) => i.id === item.id && i.level === newItem.level && (i.catalyzedID === newItem.catalyzedID || !newItem.catalyzedID)).length === 0) player.activeItems.push(newItem);
-      //player.activeItems.push(newItem);
+      const isDuplicate = player.activeItems.some(
+        (i) => i.id === newItem.id && 
+              i.level === newItem.level && 
+              (i.catalyzedID ?? null) === (newItem.catalyzedID ?? null)
+      );
+
+      if (!isDuplicate) {
+        player.activeItems.push(newItem);
+      }      //player.activeItems.push(newItem);
     }
 
   })
