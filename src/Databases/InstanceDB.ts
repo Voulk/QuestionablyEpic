@@ -120,10 +120,10 @@ export const retailInstanceDB: Record<string | number, any> = {
     name: "Venomous Abyss",
     bossOrder: [2888, 2874, 2894, 2882, 2871, 2887, 2883, 2895],
     bosses: {
-      2888: "Nek'zali the Soulcoiler",
+      2888: "Nek'zali",
       2874: "Entomed Sentinels",
-      2894: "The Lost Explorers",
-      2882: "Vashnik the Malignant",
+      2894: "Lost Explorers",
+      2882: "Vashnikt",
       2871: "Sszorak",
       2887: "Twin Fangs",
       2883: "Coiled Altar",
