@@ -100,7 +100,7 @@ export const bonusLootCaches: Record<number, number> = {
   278284: 2895, //"Ula'tek",
 
   // Dungeons
-  279618: 1322, //"Alter of Fangs",
+  279618: 1322, //"Altar of Fangs",
   279620: 1311, //"Den of Nalorakk",
   279623: 1304, //"Murder Row",
   279619: 1309, //"The Blinding Vale",
@@ -125,8 +125,8 @@ export const retailInstanceDB: Record<string | number, any> = {
       2894: "The Lost Explorers",
       2882: "Vashnik the Malignant",
       2871: "Sszorak",
-      2887: "The Twin Fangs",
-      2883: "The Coiled Alter",
+      2887: "Twin Fangs",
+      2883: "Coiled Altar",
       2895: "Ula'tek",
     },
   },
@@ -230,7 +230,7 @@ export const retailInstanceDB: Record<string | number, any> = {
       bossOrder: [], // Optionally used for M0s when we want to show both. Rare outside of the first season of a new expansion.
       bossOrderMythicPlus: [1322, 1311, 1304, 1309, 1313, 1041, 1202, 1030], // Dungeon Order
 
-      1322: "Alter of Fangs",
+      1322: "Altar of Fangs",
       1311: "Den of Nalorakk",
       1304: "Murder Row",
       1309: "The Blinding Vale",

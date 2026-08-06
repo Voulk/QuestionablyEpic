@@ -113,7 +113,7 @@ export function getEffectValue(effect, player, castModel, contentType, itemLevel
       bonus_stats = getGenericEffectClassic(effectName, player, itemLevel, additionalData);
     } 
   }
-  console.log("ITEM EFFECT" + JSON.stringify(effectName) + ". Level" + itemLevel + ". Stats: " + JSON.stringify(bonus_stats));
+  //console.log("ITEM EFFECT" + JSON.stringify(effectName) + ". Level" + itemLevel + ". Stats: " + JSON.stringify(bonus_stats));
   return bonus_stats;
 }
 

@@ -49,7 +49,7 @@ export const raidTrinketData = [
     runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
         let bonus_stats: Stats = {};
 
-        const buffShare = 1/6;
+        const buffShare = 1/6 * data[0].ppm! * 1.13;;
 
         // Vers portion
         const versBuff = processedValue({...data[1], ...trinketRawData["Gebbo's Bottomless Bag"][1]}, itemLevel);
