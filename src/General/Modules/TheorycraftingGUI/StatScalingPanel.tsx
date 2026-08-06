@@ -26,6 +26,27 @@ export interface StatScalingChartProps {
   data?: StatScalingDataPoint[];
   currentWeights: { haste: number; crit: number; mastery: number; versatility: number; intellect: number };
 }
+
+// ─── Design tokens ────────────────────────────────────────────────────────────
+// Shared with SpellBreakdown / ControlPanel / ModelInformationTabs: cool slate
+// base, Space Grotesk for labels, monospace for numeric values, gold as the
+// neutral chrome accent (used here just for Intellect's line, same as before).
+
+const FONT_DISPLAY = "'Space Grotesk', 'Segoe UI', system-ui, sans-serif";
+const FONT_MONO = "'JetBrains Mono', ui-monospace, 'SF Mono', monospace";
+
+const COLORS = {
+  bg: "#15171c",
+  rowA: "#181a20",
+  rowB: "#1d2028",
+  border: "rgba(255,255,255,0.06)",
+  gridLine: "rgba(255,255,255,0.05)",
+  textPrimary: "#e6e8ee",
+  textMuted: "#7d8394",
+  textFaint: "#565b6b",
+};
+
+const PRIMARY = "#e3b341";
  
 // ─── Colour palette ───────────────────────────────────────────────────────────
 // One distinct colour per stat, chosen to be legible on a dark background.
@@ -35,7 +56,7 @@ const STAT_LINES: { key: keyof Omit<StatScalingDataPoint, "amount">; label: stri
   { key: "crit",        label: "Crit",        color: "#ff6b6b" },
   { key: "mastery",     label: "Mastery",     color: "#a78bfa" },
   { key: "versatility", label: "Versatility", color: "#34d399" },
-  { key: "intellect",   label: "Intellect",   color: "#DAA520" },
+  { key: "intellect",   label: "Intellect",   color: PRIMARY },
 ];
  
 // ─── Placeholder data ─────────────────────────────────────────────────────────
@@ -64,19 +85,19 @@ const CustomTooltip: React.FC<{
   return (
     <div
       style={{
-        background: "#252525",
-        border: "1px solid #3a3a3a",
-        borderRadius: "4px",
+        background: COLORS.rowB,
+        border: `1px solid ${COLORS.border}`,
+        borderRadius: "6px",
         padding: "10px 14px",
-        fontFamily: "'Cinzel', Georgia, serif",
+        fontFamily: FONT_DISPLAY,
         fontSize: "12px",
       }}
     >
-      <p style={{ color: "#DAA520", marginBottom: "6px", letterSpacing: "0.08em" }}>
+      <p style={{ color: PRIMARY, marginBottom: "6px", letterSpacing: "0.06em", fontWeight: 600 }}>
         Amount: {label}
       </p>
       {payload.map((entry) => (
-        <p key={entry.name} style={{ color: entry.color, margin: "2px 0" }}>
+        <p key={entry.name} style={{ color: entry.color, margin: "2px 0", fontFamily: FONT_MONO }}>
           {entry.name}: {Math.round(entry.value).toLocaleString()}
         </p>
       ))}
@@ -114,32 +135,32 @@ const StatScalingChart: React.FC<StatScalingChartProps> = ({
 
   return (
     <TCPanel title="Stat Scaling" height={500}>
-      <div style={{ padding: "20px 8px 16px" }}>
+      <div style={{ padding: "20px 8px 16px", background: COLORS.bg }}>
         <ResponsiveContainer width="100%" height={340}>
           <LineChart data={data} margin={{ top: 4, right: 24, left: 8, bottom: 4 }}>
             <CartesianGrid
               strokeDasharray="3 3"
-              stroke="#2a2a2a"
+              stroke={COLORS.gridLine}
               vertical={false}
             />
             <XAxis
               dataKey="amount"
-              tick={{ fill: "#777", fontSize: 11, fontFamily: "'Cinzel', Georgia, serif" }}
-              axisLine={{ stroke: "#3a3a3a" }}
+              tick={{ fill: COLORS.textMuted, fontSize: 11, fontFamily: FONT_DISPLAY }}
+              axisLine={{ stroke: COLORS.border }}
               tickLine={false}
               label={{
                 value: "Amount",
                 position: "insideBottom",
                 offset: -2,
-                fill: "#555",
+                fill: COLORS.textFaint,
                 fontSize: 10,
-                fontFamily: "'Cinzel', Georgia, serif",
-                letterSpacing: "0.1em",
+                fontFamily: FONT_DISPLAY,
+                letterSpacing: "0.08em",
               }}
             />
             <YAxis
               domain={[yAxisMin, "auto"]}
-              tick={{ fill: "#777", fontSize: 11, fontFamily: "monospace" }}
+              tick={{ fill: COLORS.textMuted, fontSize: 11, fontFamily: FONT_MONO }}
               axisLine={false}
               tickLine={false}
               tickFormatter={(v) => `${(v / 1000).toFixed(0)}k`}
@@ -148,10 +169,10 @@ const StatScalingChart: React.FC<StatScalingChartProps> = ({
                 angle: -90,
                 position: "insideLeft",
                 offset: 16,
-                fill: "#555",
+                fill: COLORS.textFaint,
                 fontSize: 10,
-                fontFamily: "'Cinzel', Georgia, serif",
-                letterSpacing: "0.1em",
+                fontFamily: FONT_DISPLAY,
+                letterSpacing: "0.08em",
               }}
               width={48}
             />
@@ -159,9 +180,9 @@ const StatScalingChart: React.FC<StatScalingChartProps> = ({
             <Legend
               wrapperStyle={{
                 paddingTop: "16px",
-                fontFamily: "'Cinzel', Georgia, serif",
+                fontFamily: FONT_DISPLAY,
                 fontSize: "11px",
-                color: "#999",
+                color: COLORS.textMuted,
               }}
             />
             {STAT_LINES.map(({ key, label, color }) => (
@@ -183,7 +204,7 @@ const StatScalingChart: React.FC<StatScalingChartProps> = ({
           style={{
             marginTop: "14px",
             paddingTop: "12px",
-            borderTop: "1px solid #2e2e2e",
+            borderTop: `1px solid ${COLORS.border}`,
             display: "flex",
             justifyContent: "center",
           }}
@@ -196,9 +217,9 @@ const StatScalingChart: React.FC<StatScalingChartProps> = ({
               gap: "18px",
               flexWrap: "wrap",
               padding: "10px 16px",
-              background: "#1f1f1f",
-              border: "1px solid #2e2e2e",
-              borderRadius: "6px",
+              background: COLORS.rowA,
+              border: `1px solid ${COLORS.border}`,
+              borderRadius: "8px",
               minWidth: "fit-content",
             }}
           >
@@ -210,13 +231,13 @@ const StatScalingChart: React.FC<StatScalingChartProps> = ({
                   alignItems: "center",
                   gap: "6px",
                   fontSize: "12px",
-                  fontFamily: "'Cinzel', Georgia, serif",
-                  color: "#bbb",
+                  fontFamily: FONT_DISPLAY,
+                  color: COLORS.textMuted,
                   whiteSpace: "nowrap",
                 }}
               >
                 <span style={{ color, fontWeight: 600 }}>{label}:</span>
-                <span style={{ fontFamily: "monospace", color: "#e0e0e0" }}>
+                <span style={{ fontFamily: FONT_MONO, color: COLORS.textPrimary }}>
                   {currentWeights[key].toFixed(2)}
                 </span>
               </div>

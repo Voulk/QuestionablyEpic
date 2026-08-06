@@ -95,6 +95,7 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
     const state = { fightLength: fightLength, spec: "Restoration Shaman", statPercentages: convertStatPercentages(stats, initialState.statBonuses, "Restoration Shaman",
         playerData.masteryEffectiveness), settings: settings, talents: shamanTalents};
 
+
     let castProfile: CastProfile = [
         // Add Spells here
         {spell: "Riptide", efficiency: 1},

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Button from "@mui/material/Button";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -23,17 +23,46 @@ export interface ControlPanelProps {
   setStats: (stats: Stats) => void;
   onRunProfile?: () => void;
 }
+
+interface AdditionalSetting {
+  label: string;
+  options: string[];
+  defaultSetting?: string;
+}
+
+// ─── Design tokens ────────────────────────────────────────────────────────────
+// Shared with SpellBreakdown so both panels read as one system: cool slate
+// base, Space Grotesk for labels, monospace for entered/numeric values, mint
+// as the single "primary" accent (this panel has no healing/damage split, so
+// unlike SpellBreakdown's dual-hue meters it just uses the one accent throughout).
+
+const FONT_DISPLAY = "'Space Grotesk', 'Segoe UI', system-ui, sans-serif";
+const FONT_MONO = "'JetBrains Mono', ui-monospace, 'SF Mono', monospace";
+
+const COLORS = {
+  bg: "#15171c",
+  rowA: "#181a20",
+  rowB: "#1d2028",
+  border: "rgba(255,255,255,0.06)",
+  divider: "rgba(0,0,0,0.4)",
+  textPrimary: "#e6e8ee",
+  textMuted: "#7d8394",
+  textFaint: "#565b6b",
+} as const;
+
+const PRIMARY = "#e3b341";
+const PRIMARY_DIM = "rgba(227, 179, 65, 0.15)";
  
 // ─── Styles ───────────────────────────────────────────────────────────────────
  
 const styles: Record<string, React.CSSProperties> = {
   accordion: {
     width: "100%",
-    background: "#1e1e1e",
-    border: "1px solid #3a3a3a",
-    borderRadius: "6px",
-    fontFamily: "'Cinzel', 'Georgia', serif",
-    color: "#e0e0e0",
+    background: COLORS.bg,
+    border: `1px solid ${COLORS.border}`,
+    borderRadius: "8px",
+    fontFamily: FONT_DISPLAY,
+    color: COLORS.textPrimary,
     boxSizing: "border-box" as const,
   },
 
@@ -49,12 +78,12 @@ const styles: Record<string, React.CSSProperties> = {
   },
 
   accordionHeaderHover: {
-    background: "#252525",
+    background: COLORS.rowB,
   },
 
   expandArrow: {
     fontSize: "16px",
-    color: "#DAA520",
+    color: PRIMARY,
     transition: "transform 0.3s",
     flexShrink: 0,
   },
@@ -74,20 +103,20 @@ const styles: Record<string, React.CSSProperties> = {
  
   sectionTitle: {
     fontSize: "10px",
-    fontFamily: "'Cinzel', 'Georgia', serif",
+    fontFamily: FONT_DISPLAY,
     fontWeight: 600,
-    letterSpacing: "0.16em",
+    letterSpacing: "0.1em",
     textTransform: "uppercase" as const,
-    color: "#DAA520",
+    color: COLORS.textMuted,
     marginBottom: "7px",
     paddingBottom: "5px",
-    borderBottom: "1px solid #2e2e2e",
+    borderBottom: `1px solid ${COLORS.border}`,
   },
  
   divider: {
     width: "1px",
     alignSelf: "stretch",
-    background: "#2e2e2e",
+    background: COLORS.border,
     flexShrink: 0,
   },
  
@@ -106,11 +135,11 @@ const styles: Record<string, React.CSSProperties> = {
   select: {
     width: "100%",
     padding: "8px 28px 8px 10px",
-    background: "#2a2a2a",
-    border: "1px solid #3a3a3a",
-    borderRadius: "4px",
-    color: "#e0e0e0",
-    fontFamily: "'Cinzel', 'Georgia', serif",
+    background: COLORS.rowA,
+    border: `1px solid ${COLORS.border}`,
+    borderRadius: "5px",
+    color: COLORS.textPrimary,
+    fontFamily: FONT_DISPLAY,
     fontSize: "13px",
     appearance: "none" as const,
     cursor: "pointer",
@@ -125,7 +154,7 @@ const styles: Record<string, React.CSSProperties> = {
     top: "50%",
     transform: "translateY(-50%)",
     pointerEvents: "none" as const,
-    color: "#DAA520",
+    color: PRIMARY,
     fontSize: "11px",
   },
  
@@ -152,20 +181,20 @@ const styles: Record<string, React.CSSProperties> = {
  
   statLabel: {
     fontSize: "10px",
-    color: "#777",
+    color: COLORS.textMuted,
     letterSpacing: "0.06em",
     textTransform: "uppercase" as const,
-    fontFamily: "'Cinzel', 'Georgia', serif",
+    fontFamily: FONT_DISPLAY,
   },
  
   statInput: {
     width: "100%",
     padding: "7px 8px",
-    background: "#1a1a1a",
-    border: "1px solid #3a3a3a",
-    borderRadius: "3px",
-    color: "#e0e0e0",
-    fontFamily: "monospace",
+    background: COLORS.rowA,
+    border: `1px solid ${COLORS.border}`,
+    borderRadius: "4px",
+    color: COLORS.textPrimary,
+    fontFamily: FONT_MONO,
     fontSize: "13px",
     textAlign: "right" as const,
     outline: "none",
@@ -179,7 +208,7 @@ const styles: Record<string, React.CSSProperties> = {
     maxHeight: "1000px",
     overflow: "hidden",
     transition: "max-height 0.3s ease, padding 0.3s ease",
-    borderTop: "1px solid #2e2e2e",
+    borderTop: `1px solid ${COLORS.border}`,
     paddingTop: "16px",
   },
 
@@ -190,15 +219,33 @@ const styles: Record<string, React.CSSProperties> = {
   },
 
   settingsSection: {
-    padding: "0 20px 20px 20px",
+    padding: "6px 20px 20px 20px",
     display: "flex",
     flexDirection: "column" as const,
     gap: "16px",
   },
 
+  settingsGrid: {
+    display: "flex",
+    flexDirection: "row" as const,
+    flexWrap: "wrap" as const,
+    alignItems: "flex-start",
+    gap: "12px",
+    width: "fit-content",
+    maxWidth: "760px",
+  },
+
+  settingCol: {
+    display: "flex",
+    flexDirection: "column" as const,
+    gap: "5px",
+    width: "160px",
+    flex: "0 0 160px",
+  },
+
   settingsPlaceholder: {
     fontSize: "13px",
-    color: "#777",
+    color: COLORS.textMuted,
     fontStyle: "italic",
   },
  
@@ -215,7 +262,10 @@ const STAT_FIELDS: { key: keyof StatWeights; label: string }[] = [
   { key: "versatility", label: "Versatility" },
 ];
 
-const ADDITIONAL_SETTINGS: string[] = [];
+const ADDITIONAL_SETTINGS: AdditionalSetting[] = [
+  { "label": "Season 1 Tier Set", "options": ["0pc", "2pc", "4pc"], defaultSetting: "4pc"},
+  { "label": "Season 2 Tier Set", "options": ["0pc", "2pc", "4pc"], defaultSetting: "4pc"},
+];
  
 // ─── Component ────────────────────────────────────────────────────────────────
  
@@ -230,6 +280,15 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
   const [selectHovered, setSelectHovered] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
   const [headerHovered, setHeaderHovered] = useState(false);
+  const [hoveredSettingLabel, setHoveredSettingLabel] = useState<string | null>(null);
+  const [focusedSettingLabel, setFocusedSettingLabel] = useState<string | null>(null);
+  const [additionalSettings, setAdditionalSettings] = useState<Record<string, string>>(() => {
+    const defaults: Record<string, string> = {};
+    ADDITIONAL_SETTINGS.forEach((setting) => {
+      defaults[setting.label] = setting.defaultSetting ?? setting.options[0] ?? "";
+    });
+    return defaults;
+  });
 
   const handleStatChange = (key: keyof StatWeights, raw: string) => {
     const value = parseInt(raw, 10);
@@ -238,6 +297,10 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
 
   const handleRun = () => {
     onRunProfile?.();
+  };
+
+  const handleAdditionalSettingChange = (label: string, value: string) => {
+    setAdditionalSettings((prev) => ({ ...prev, [label]: value }));
   };
  
   return (
@@ -255,7 +318,7 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
               onChange={(e) => onProfileChange(profiles[Number(e.target.value)])}
               style={{
                 ...styles.select,
-                borderColor: selectHovered ? "#DAA520" : "#3a3a3a",
+                borderColor: selectHovered ? PRIMARY : COLORS.border,
               }}
               onMouseEnter={() => setSelectHovered(true)}
               onMouseLeave={() => setSelectHovered(false)}
@@ -300,18 +363,18 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
             variant="contained"
             onClick={handleRun}
             sx={{
-              background: "#DAA520",
-              fontFamily: "'Cinzel', Georgia, serif",
+              background: PRIMARY,
+              fontFamily: FONT_DISPLAY,
               fontWeight: 600,
               fontSize: "12px",
-              letterSpacing: "0.12em",
-              color: "#fff",
-              borderRadius: "4px",
+              letterSpacing: "0.08em",
+              color: COLORS.bg,
+              borderRadius: "5px",
               padding: "8px 24px",
               boxShadow: "none",
               whiteSpace: "nowrap",
               "&:hover": {
-                background: "#c4941c",
+                background: "#c99a2e",
                 boxShadow: "none",
               },
             }}
@@ -326,11 +389,12 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
               alignItems: "center",
               justifyContent: "center",
               cursor: "pointer",
+              borderRadius: "4px",
               padding: "4px 8px",
               transition: "background-color 0.15s",
             }}
             onClick={() => setIsExpanded(!isExpanded)}
-            onMouseEnter={(e) => (e.currentTarget.style.background = "#252525")}
+            onMouseEnter={(e) => (e.currentTarget.style.background = COLORS.rowB)}
             onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
             title="Toggle additional settings"
           >
@@ -360,9 +424,40 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
               Additional settings coming soon...
             </div>
           ) : (
-            ADDITIONAL_SETTINGS.map((setting, idx) => (
-              <div key={idx}>{setting}</div>
-            ))
+            <div style={styles.settingsGrid}>
+              {ADDITIONAL_SETTINGS.map((setting) => (
+                <div key={setting.label} style={styles.settingCol}>
+                  <label style={styles.statLabel}>{setting.label}</label>
+                  <div style={styles.selectWrapper}>
+                    <select
+                      value={additionalSettings[setting.label] ?? ""}
+                      onChange={(e) => handleAdditionalSettingChange(setting.label, e.target.value)}
+                      style={{
+                        ...styles.select,
+                        background: COLORS.rowB,
+                        padding: "7px 28px 7px 10px",
+                        fontSize: "12px",
+                        borderColor:
+                          focusedSettingLabel === setting.label || hoveredSettingLabel === setting.label
+                            ? PRIMARY
+                            : COLORS.border,
+                      }}
+                      onFocus={() => setFocusedSettingLabel(setting.label)}
+                      onBlur={() => setFocusedSettingLabel(null)}
+                      onMouseEnter={() => setHoveredSettingLabel(setting.label)}
+                      onMouseLeave={() => setHoveredSettingLabel(null)}
+                    >
+                      {setting.options.map((option) => (
+                        <option key={option} value={option}>
+                          {option}
+                        </option>
+                      ))}
+                    </select>
+                    <span style={styles.selectChevron}>▾</span>
+                  </div>
+                </div>
+              ))}
+            </div>
           )}
         </div>
       </div>
@@ -394,8 +489,8 @@ const StatInputRow: React.FC<{
         onBlur={() => setFocused(false)}
         style={{
           ...styles.statInput,
-          borderColor: focused ? "#DAA520" : "#3a3a3a",
-          boxShadow: focused ? "0 0 0 2px rgba(218,165,32,0.15)" : "none",
+          borderColor: focused ? PRIMARY : COLORS.border,
+          boxShadow: focused ? `0 0 0 2px ${PRIMARY_DIM}` : "none",
         }}
       />
     </div>

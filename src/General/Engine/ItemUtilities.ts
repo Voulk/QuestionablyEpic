@@ -925,7 +925,7 @@ export function buildStatString(stats: Stats, effect: ItemEffect, lang: string =
 
   // Add an "effect" tag. We exclude Dom gems and Legendaries here because it's already clear they are giving you an effect.
   //if (effect.name === "Onyx Annulet Trigger") statString += getAnnuletGemTag({automatic: true}, false);
-  if (effect) statString += "Effect" + " / "; // t("itemTags.effect")
+  //if (effect) statString += "Effect" + " / "; // t("itemTags.effect")
   
 
   return statString.slice(0, -3); // We slice here to remove excess slashes and white space from the end.
@@ -960,7 +960,7 @@ export function buildStatStringSlim(stats: Stats, effect: ItemEffect, lang: stri
 
   // Add an "effect" tag. We exclude Dom gems and Legendaries here because it's already clear they are giving you an effect.
   //if (effect.name === "Onyx Annulet Trigger") statString += getAnnuletGemTag({automatic: true}, false);
-  if (effect) statString += "Effect" + " / "; // t("itemTags.effect")
+  //if (effect) statString += "Effect" + " / "; // t("itemTags.effect")
   
   return statString.slice(0, -3); // We slice here to remove excess slashes and white space from the end.
 }
@@ -1098,8 +1098,15 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
         // Catalyze item
         newItem.convertToTier(player.spec);
       }
-      if (player.activeItems.filter((i) => i.id === item.id && i.level === newItem.level && (i.catalyzedID === newItem.catalyzedID || !newItem.catalyzedID)).length === 0) player.activeItems.push(newItem);
-      //player.activeItems.push(newItem);
+      const isDuplicate = player.activeItems.some(
+        (i) => i.id === newItem.id && 
+              i.level === newItem.level && 
+              (i.catalyzedID ?? null) === (newItem.catalyzedID ?? null)
+      );
+
+      if (!isDuplicate) {
+        player.activeItems.push(newItem);
+      }      //player.activeItems.push(newItem);
     }
 
   })

@@ -11,6 +11,22 @@ interface ModelInformationTabsProps {
     selectedTalents: {talentName: string, talentRanks: number}[];
 }
 
+// ─── Design tokens ────────────────────────────────────────────────────────────
+// Shared with SpellBreakdown / ControlPanel: cool slate base, Space Grotesk
+// labels, gold as the neutral chrome accent (kept off healing-green /
+// damage-coral since those are reserved for the meters themselves).
+
+const FONT_DISPLAY = "'Space Grotesk', 'Segoe UI', system-ui, sans-serif";
+
+const COLORS = {
+    bg: "#15171c",
+    border: "rgba(255,255,255,0.06)",
+    divider: "rgba(0,0,0,0.4)",
+    textMuted: "#7d8394",
+};
+
+const PRIMARY = "#e3b341";
+
 export default function ModelInformationTabs({ activeResult, selectedTalents }: ModelInformationTabsProps) {
     const [activeTab, setActiveTab] = useState<Tab>('Healing Breakdown');
 
@@ -18,11 +34,11 @@ export default function ModelInformationTabs({ activeResult, selectedTalents }: 
         <div>
 <div style={{
     display: 'flex',
-    borderBottom: '1px solid #2e2e2e',
-    backgroundColor: '#1e1e1e',
-    borderRadius: '6px 6px 0 0',
-    border: '1px solid #3a3a3a',
-    borderBottomColor: '#2e2e2e',
+    borderBottom: `1px solid ${COLORS.border}`,
+    backgroundColor: COLORS.bg,
+    borderRadius: '8px 8px 0 0',
+    border: `1px solid ${COLORS.border}`,
+    borderBottomColor: COLORS.border,
 }}>
     {tabs.map(tab => (
         <button
@@ -32,14 +48,15 @@ export default function ModelInformationTabs({ activeResult, selectedTalents }: 
                 padding: '12px 20px',
                 background: 'transparent',
                 border: 'none',
-                borderBottom: activeTab === tab ? '2px solid #DAA520' : '2px solid transparent',
-                color: activeTab === tab ? '#DAA520' : '#888',
-                fontFamily: "'Cinzel', Georgia, serif",
+                borderBottom: activeTab === tab ? `2px solid ${PRIMARY}` : '2px solid transparent',
+                color: activeTab === tab ? PRIMARY : COLORS.textMuted,
+                fontFamily: FONT_DISPLAY,
                 fontWeight: 600,
-                letterSpacing: '0.16em',
+                letterSpacing: '0.08em',
                 textTransform: 'uppercase',
                 fontSize: '11px',
                 cursor: 'pointer',
+                transition: 'color 0.15s, border-color 0.15s',
             }}
         >
             {tab}

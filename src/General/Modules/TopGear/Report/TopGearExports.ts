@@ -296,7 +296,7 @@ const icyVeinsSlotNames = {
   "Shield": "Offhand",
 }
 
-const cleanupText = (str: string) => str.replaceAll(" ", "").replaceAll("'", "").replaceAll(":", "").replaceAll("&", "and").replaceAll("-", "");
+const cleanupText = (str: string) => str.replaceAll(" ", "").replaceAll("'", "").replaceAll(":", "").replaceAll("&", "and").replaceAll("-", "").replaceAll(",");
 
 // SlotName, Rarity, Name, Source, Enchant, Gem, Gem, Gem, Embellishment
 export function exportIcyVeinsGearPlanner(itemSet, spec, enchants, gameType = "Retail") {
@@ -332,13 +332,21 @@ export function exportIcyVeinsGearPlanner(itemSet, spec, enchants, gameType = "R
         if (["Chest", "Shoulders", "Legs", "Hands", "Helm"].includes(item.slot)) source = "@@@LinkInspirationCatalyst@@@ or " + source;    
         if (item.source.encounterId === 999) source = "@@@LinkInspirationCatalyst@@@";    
         
+
+        if (item.level === 344) bonusTag = "#AddBonus=13848"
+        else if (item.level === 334) bonusTag = "#AddBonus=12854"
+        else if (item.level === 331) bonusTag = "#AddBonus=13836,13751,12497"
         //else if (item.source.instanceId !== -1) source += " - @@@Link" + getInstanceName(item.source.instanceId) + "@@@"
-        bonusTag = "#AddBonus=12806"
-        if (item.slot.includes("Weapon") || ["Shield", "Offhand", "Trinket"].includes(item.slot)) {
+        //bonusTag = "#AddBonus=12806"
+        /*if (item.slot.includes("Weapon") || ["Shield", "Offhand", "Trinket"].includes(item.slot)) {
           if (item.source.instanceId === -4) bonusTag = "#AddBonus=13655"
           else bonusTag = "#AddBonus=13654"
-        }
-        else bonusTag = "#AddBonus=12806"
+        }*/
+        /*else*/ 
+      }
+
+      if (item.catalyzedID) {
+        bonusTag += "#Original=" + item.catalyzedID;
       }
 
     if (itemEmbellishment && itemGemNames) {

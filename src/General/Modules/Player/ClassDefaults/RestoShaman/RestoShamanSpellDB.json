@@ -354,7 +354,7 @@
         {
             "displayInfo": {
                 "id": 114052,
-                "icon": "ascendance_8026698",
+                "icon": "8026698",
                 "spellName": "Ascendance",
                 "cat": "heal"
             },
@@ -471,17 +471,6 @@
                 "canPartialTick": true,
                 "tickOnCast": false
             }
-        }
-    ],
-    "Lava Burst": [
-        {
-            "coeff": 1.81,
-            "aura": 4.978,
-            "secondaries": [
-                "crit",
-                "versatility"
-            ],
-            "spellType": "damage"
         }
     ],
     "Spirit Link Totem": [

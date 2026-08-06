@@ -2,8 +2,10 @@ import React, { MouseEvent, useState } from "react";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import IconButton from "@mui/material/IconButton";
+import Tooltip from "@mui/material/Tooltip";
 import { useTranslation } from "react-i18next";
 import SettingsIcon from "@mui/icons-material/Settings";
+import UnarchiveIcon from "@mui/icons-material/Unarchive";
 import { CONSTANTS } from "General/Engine/CONSTANTS";
 import { getItemEffectOptions, getItemProp } from "General/Engine/ItemUtilities";
 
@@ -36,13 +38,13 @@ const getMenuItems = (item: any): MenuItemType[] => {
   const fullItemLevels = [...CONSTANTS.fullItemLevels];
   const itemLevelCap = {...CONSTANTS.itemLevelCaps};
   
-  if (item.slot.includes("Weapon") || item.slot === "Offhand" || item.slot === "Shield" || item.slot === "Trinket") {
+  /*if (item.slot.includes("Weapon") || item.slot === "Offhand" || item.slot === "Shield" || item.slot === "Trinket") {
     // Voidcores 
     if (item.upgradeTrack === "Myth") itemLevelCap["Myth"] = 298;
     else if (item.upgradeTrack === "Gilded Crafted") itemLevelCap["Gilded Crafted"] = 295;
     else if (item.upgradeTrack === "Hero") itemLevelCap["Hero"] = 285;
     else if (item.upgradeTrack === "Runed Crafted") itemLevelCap["Runed Crafted"] = 282;
-  }
+  }*/
 
   const itemLevelCaps: { [key: string]: number } = itemLevelCap;
   if (item.upgradeTrack !== "" && item.upgradeTrack in itemLevelCaps) {
@@ -103,6 +105,7 @@ const getExtraMenuItems = (item: any, gameType: gameTypes): MenuItemType[] => {
 const ItemCardButtonWithMenu: React.FC<ItemCardButtonWithMenuProps> = ({ key, deleteActive, deleteItem, canBeCatalyzed, catalyseItemCard, itemLevel, upgradeItem, setCustomItemOptions, embellishItem, item, gameType }) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const { t } = useTranslation();
+  const hasCatalyzedID = item?.catalyzedID !== undefined && item?.catalyzedID !== null && item?.catalyzedID !== "";
 
   const menuItems = getMenuItems(item);
   const extraMenuItems = getExtraMenuItems(item, gameType);
@@ -140,7 +143,42 @@ const ItemCardButtonWithMenu: React.FC<ItemCardButtonWithMenuProps> = ({ key, de
   };
 
   return (
-    <div>
+    <div style={{ display: "inline-flex", alignItems: "center", gap: 4 }}>
+      {hasCatalyzedID ? (
+        <Tooltip
+          title={
+            <div style={{ display: "flex", flexDirection: "column", gap: 1 }}>
+              <div style={{ fontSize: 10, color: "#b0b0b0" }}>Catalyzed From</div>
+              <div style={{ fontSize: 12 }}>{getItemProp(item.catalyzedID, "name", "Retail")}</div>
+              <div style={{ fontSize: 11, color: "goldenrod" }}>ID: {item.catalyzedID}</div>
+            </div>
+          }
+          arrow
+          componentsProps={{
+            tooltip: {
+              sx: {
+                bgcolor: "#2b2b2b",
+                color: "#f1f1f1",
+                border: "1px solid #DAA520",
+                borderRadius: "4px",
+                boxShadow: "0 2px 8px rgba(0, 0, 0, 0.35)",
+                px: 1,
+                py: 0.75,
+              },
+            },
+            arrow: {
+              sx: {
+                color: "#2b2b2b",
+                "&:before": {
+                  border: "1px solid #DAA520",
+                },
+              },
+            },
+          }}
+        >
+          <UnarchiveIcon sx={{ fontSize: "18px", color: "goldenrod", cursor: "help" }} />
+        </Tooltip>
+      ) : null}
       <IconButton sx={{ padding: 0 }} color="primary" onClick={handleClick} aria-label={"buttonMenu" + key} size="small">
         <SettingsIcon style={{ fontSize: "18px" }} fontSize="small" />
       </IconButton>
@@ -148,35 +186,84 @@ const ItemCardButtonWithMenu: React.FC<ItemCardButtonWithMenuProps> = ({ key, de
         anchorEl={anchorEl}
         open={Boolean(anchorEl)}
         onClose={handleClose}
+        slotProps={{
+          paper: {
+            sx: {
+              mt: 0.5,
+              backgroundColor: "#2b2b2b",
+              border: "1px solid #DAA520",
+              borderRadius: "4px",
+              boxShadow: "0 2px 8px rgba(0, 0, 0, 0.35)",
+              color: "#f1f1f1",
+            },
+          },
+        }}
         MenuListProps={{
           sx: {
             padding: 0,
-            border: "1px solid #DAA520",
-            borderRadius: "4px",
+            "& .MuiMenuItem-divider": {
+              borderBottomColor: "rgba(218, 165, 32, 0.3)",
+            },
           },
         }}
       >
         {canBeCatalyzed ? (
-          <MenuItem style={{ fontSize: "12px", color: "plum" }} onClick={handlecatalyseItemCard} divider>
+          <MenuItem
+            sx={{
+              fontSize: "12px",
+              color: "plum",
+              minHeight: 28,
+              "&:hover": { backgroundColor: "rgba(218, 165, 32, 0.14)" },
+            }}
+            onClick={handlecatalyseItemCard}
+            divider
+          >
             {t("Catalyst")}
           </MenuItem>
         ) : null}
         {menuItems
           .filter((filter) => filter.ilvlMinimum > itemLevel)
           .map((item) => (
-            <MenuItem style={{ color: "plum", fontSize: "12px" }} key={item.id} onClick={() => handleMenuItemClick(item)} divider>
+            <MenuItem
+              sx={{
+                color: "plum",
+                fontSize: "12px",
+                minHeight: 28,
+                "&:hover": { backgroundColor: "rgba(218, 165, 32, 0.14)" },
+              }}
+              key={item.id}
+              onClick={() => handleMenuItemClick(item)}
+              divider
+            >
               {item.label}
             </MenuItem>
         ))}
         {extraMenuItems
           .map((item) => (
-            <MenuItem style={{  fontSize: "12px" }} key={item.id} onClick={() => handleExtraMenuItemClick(item)} divider>
+            <MenuItem
+              sx={{
+                fontSize: "12px",
+                minHeight: 28,
+                "&:hover": { backgroundColor: "rgba(218, 165, 32, 0.14)" },
+              }}
+              key={item.id}
+              onClick={() => handleExtraMenuItemClick(item)}
+              divider
+            >
               {item.label}
             </MenuItem>
           ))}
 
         {deleteActive ? (
-          <MenuItem style={{  fontSize: "12px", color: "#ff1744" }} onClick={handledeleteItem}>
+          <MenuItem
+            sx={{
+              fontSize: "12px",
+              color: "#ff1744",
+              minHeight: 28,
+              "&:hover": { backgroundColor: "rgba(255, 23, 68, 0.12)" },
+            }}
+            onClick={handledeleteItem}
+          >
             {t("Delete")}
           </MenuItem>
         ) : null}

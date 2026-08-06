@@ -70,7 +70,6 @@ export default function TheorycraftingGUI(props) {
 
     const runProfile = () => {
         const result = selectedProfile.runCastModel(stats, playerData, {}, true);
-        console.log(result);
         const statResults = buildTCStatChart(selectedProfile.runCastModel, playerData)
         setActiveResult(result);
         setStatChart(statResults);

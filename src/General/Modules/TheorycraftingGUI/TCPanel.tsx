@@ -10,6 +10,19 @@ export interface PanelProps {
   /** Optional action element rendered on the right side of the title bar (e.g. a dropdown or icon button) */
   action?: React.ReactNode;
 }
+
+// ─── Design tokens ────────────────────────────────────────────────────────────
+// Shared with SpellBreakdown / ControlPanel / ModelInformationTabs / StatScalingChart:
+// cool slate base, Space Grotesk for the title, gold as the neutral chrome accent.
+
+const FONT_DISPLAY = "'Space Grotesk', 'Segoe UI', system-ui, sans-serif";
+
+const COLORS = {
+  bg: "#15171c",
+  border: "rgba(255,255,255,0.06)",
+};
+
+const PRIMARY = "#e3b341";
  
 // ─── Component ────────────────────────────────────────────────────────────────
  
@@ -17,39 +30,41 @@ const TCPanel: React.FC<PanelProps> = ({ title, children, action }) => {
   return (
     <Box
       sx={{
-        background: "#1e1e1e",
-        border: "1px solid #3a3a3a",
-        borderRadius: "6px",
+        background: COLORS.bg,
+        border: `1px solid ${COLORS.border}`,
+        borderRadius: "8px",
         overflow: "hidden",
         display: "flex",
         flexDirection: "column",
       }}
     >
       {/* Title bar */}
-      <Box
-        sx={{
-          px: "16px",
-          py: "12px",
-          borderBottom: "1px solid #2e2e2e",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
-      >
-        <Typography
+      {title && (
+        <Box
           sx={{
-            fontSize: "11px",
-            fontFamily: "'Cinzel', Georgia, serif",
-            fontWeight: 600,
-            letterSpacing: "0.16em",
-            textTransform: "uppercase",
-            color: "#DAA520",
+            px: "16px",
+            py: "12px",
+            borderBottom: `1px solid ${COLORS.border}`,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
           }}
         >
-          {title}
-        </Typography>
-        {action && <Box>{action}</Box>}
-      </Box>
+          <Typography
+            sx={{
+              fontSize: "11px",
+              fontFamily: FONT_DISPLAY,
+              fontWeight: 600,
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
+              color: PRIMARY,
+            }}
+          >
+            {title}
+          </Typography>
+          {action && <Box>{action}</Box>}
+        </Box>
+      )}
  
       {/* Content */}
       <Box sx={{ flex: 1 }}>
