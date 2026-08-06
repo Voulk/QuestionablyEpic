@@ -16,35 +16,71 @@ export const raidTrinketData = [
     description: "",
     addonDescription: "",
     effects: [
-    { // Crit Proc (S1) that increases every second + self-DoT (S5) - Seriously Sharp Seashell
+    { // Crit Proc (S1) that increases every second + self-DoT (S5) - Seriously Sharp Seashell. Peaks at 652
         stat: "crit",
         duration: 12,
         ppm: 3,
     },
-    { // Vers proc (S2) that removes S8 every time you cast - Brittle Torga Totem
+    { // Vers proc (S2) that removes S8 every time you cast - Brittle Torga Totem e.g 709
         stat: "versatility",
         ppm: 3,
     },
     { // Mastery Proc (S3) that diminishes over its duration - Tattered Tortollan Scroll
         stat: "mastery",
         ppm: 3,
+        duration: 12,
     },
-    { // Haste Proc (S4) that also gives speed - Slick and Slimy Gralstone
+    { // Haste Proc (S4) that also gives speed - Slick and Slimy Gralstone. E.g 355
         stat: "haste",
         ppm: 3,
+        duration: 12,
     },
-    { // All secondaries (S6) - 50lb Midnight Salmon
+    { // All secondaries (S6) - 50lb Midnight Salmon - 222 x 4
         stat: "all",
         ppm: 3,
+        duration: 12,
     },
     { // All secondaries reduced (S7) - Rotting Voidfin
         stat: "all",
         ppm: 3,
+        duration: 12,
     },
     ],
     runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
         let bonus_stats: Stats = {};
 
+        const buffShare = 1/6 * data[0].ppm! * 1.13;;
+
+        // Vers portion
+        const versBuff = processedValue({...data[1], ...trinketRawData["Gebbo's Bottomless Bag"][1]}, itemLevel);
+        const versLossPerCast = processedValue({...data[1], ...trinketRawData["Gebbo's Bottomless Bag"][7]}, itemLevel);
+        bonus_stats.versatility = versBuff / versLossPerCast * 1.2 / 60 * (versBuff / 2) * buffShare;
+
+        // Crit portion
+        const critBuff = processedValue({...data[0], ...trinketRawData["Gebbo's Bottomless Bag"][0]}, itemLevel);
+        const averageCritStacks = data[0].duration! / 2;
+        bonus_stats.crit = averageCritStacks * critBuff * data[0].duration! / 60 * buffShare;
+
+        // Haste portion
+        const hasteBuff = processedValue({...data[3], ...trinketRawData["Gebbo's Bottomless Bag"][3]}, itemLevel);
+        bonus_stats.haste = hasteBuff * data[3].duration! / 60 * buffShare;
+
+        // Mastery portion
+        const masteryBuff = processedValue({...data[2], ...trinketRawData["Gebbo's Bottomless Bag"][2]}, itemLevel);
+        bonus_stats.mastery = masteryBuff * data[2].duration! / 60 * buffShare / 2;
+       
+        // All stats portion
+        const allBuff = processedValue({...data[4], ...trinketRawData["Gebbo's Bottomless Bag"][5]}, itemLevel);
+        const allBuffAverage = allBuff * data[4].duration! / 60 * buffShare;
+
+        const rottingFin = processedValue({...data[5], ...trinketRawData["Gebbo's Bottomless Bag"][5]}, itemLevel);
+        const rottingAverage = rottingFin * data[5].duration! / 60 * buffShare;
+
+        console.log(allBuffAverage, rottingAverage);
+        bonus_stats.crit += allBuffAverage - rottingAverage;
+        bonus_stats.haste += allBuffAverage - rottingAverage;
+        bonus_stats.mastery += allBuffAverage - rottingAverage;
+        bonus_stats.versatility += allBuffAverage - rottingAverage;
 
         return bonus_stats;
     }

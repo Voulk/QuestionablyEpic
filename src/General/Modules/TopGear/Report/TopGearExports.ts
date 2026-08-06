@@ -97,7 +97,7 @@ const wowheadCodes = {
   2882: "[icon name=inv_121_raid_achievement_alchemist][/icon][url guide=34248]Vashnik the Malignant[/url] [i](Raid)[/i]", 
   2871: "[icon name=inv_121_raid_achievement_brute][/icon][url guide=34249]Sszorak[/url] [i](Raid)[/i]",
   2887: "[icon name=inv_121_raid_achievement_twins][/icon][url guide=34250]The Twin Fangs[/url] [i](Raid)[/i]",
-  2883: "[icon name=inv_121_raid_achievement_zuljinmalacrass][/icon][url guide=34251]The Coiled Alter[/url] [i](Raid)[/i]",
+  2883: "[icon name=inv_121_raid_achievement_zuljinmalacrass][/icon][url guide=34251]The Coiled Altar[/url] [i](Raid)[/i]",
   2895: "[icon name=inv_121_raid_achievement_ulatek][/icon][url guide=34252]Ula'tek[/url] [i](Raid)[/i]",
 
   2849: "[icon name=achievement_boss_elitenagamale][/icon][url guide=34240]Nymrissa Wavebinder[/url] [i](Raid)[/i]",
@@ -134,7 +134,7 @@ const wowheadCodes = {
   476: "[icon name=achievement_dungeon_arakkoaspires][/icon][url guide=33199]Skyreach[/url]", // Skyreach
   945: "[icon name=achievement_dungeon_argusdungeon][/icon][url guide=33200]Seat of the Triumvirate[/url]", // Seat of the Triumvirate
 
-  1322: "[icon name=inv_achievement_dungeon_altaroffangs][/icon][url guide=33272]Alter of Fangs[/url]",
+  1322: "[icon name=inv_achievement_dungeon_altaroffangs][/icon][url guide=33272]Altar of Fangs[/url]",
   1041: "[icon name=achievement_dungeon_kingsrest][/icon][url guide=33272]Kings Rest[/url]",
   1202: "[icon name=achievement_dungeon_lifepools][/icon][url guide=33272]Ruby Life Pools[/url]",
   1030: "[icon name=achievement_dungeon_templeofsethraliss][/icon][url guide=33272]Temple of Sethraliss[/url]",
@@ -329,8 +329,9 @@ export function exportIcyVeinsGearPlanner(itemSet, spec, enchants, gameType = "R
         /*else*/ 
         source = "@@@Link" + cleanupText(getSourceName(item.source.instanceId, item.source.encounterId)) + "@@@";
         if (item.source.instanceId === -4) source = "@@@LinkCrafted@@@ by @@@Link" + craftedDB[item.source.encounterId] + "@@@";
-        if (["Chest", "Shoulders", "Legs", "Hands", "Helm"].includes(item.slot)) source = "@@@LinkInspirationCatalyst@@@ or " + source;    
-        if (item.source.encounterId === 999) source = "@@@LinkInspirationCatalyst@@@";    
+        if (item.catalzedID) source = source + " + @@@LinkInspirationCatalyst@@@";
+        //if (["Chest", "Shoulders", "Legs", "Hands", "Helm"].includes(item.slot)) source = "@@@LinkInspirationCatalyst@@@ or " + source;    
+        //if (item.source.encounterId === 999) source = "@@@LinkInspirationCatalyst@@@";    
         
 
         if (item.level === 344) bonusTag = "#AddBonus=13848"
