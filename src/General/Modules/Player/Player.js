@@ -300,16 +300,11 @@ export class Player {
 
     const newItem = item.clone();
     newItem.active = true;
+
     if (newLevel !== 0) newItem.updateLevel(newLevel, item.missiveStats);
     if (socketFlag) {
-      if ((newItem.slot === "Finger" || newItem.slot === "Neck")) {
-        newItem.socket = 2;
-        newItem.bonusIDS += ":10879"
-      }
-      else {
         newItem.socket = 1;
         newItem.bonusIDS += ":523"
-      }
 
     }
     if (vaultFlag) {
@@ -368,6 +363,7 @@ export class Player {
     const newItem = new Item(item.id, "", item.slot, item.socket, item.tertiary, 0, item.level, "");
     newItem.active = true;
     newItem.socket = 1;
+    if (item.catalyzedID) newItem.catalyzedID = item.catalyzedID;
     if (item.uniqueEquip === "vault") {
       newItem.uniqueEquip = "vault";
       newItem.vaultItem = true;

@@ -24,14 +24,14 @@ export const dungeonTrinketData =
         runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
           let bonus_stats: Stats = {};
     
-          const deduction = {...data[1], ...trinketRawData["Vile Vial of Volatile Venom"][1]}
+          const deduction = {...data[1], ...trinketRawData["Vile Vial of Volatile Venom"][5]}
           const processedDeduction = processedValue(deduction, itemLevel) * deduction.duration! / deduction.cooldown!;
 
           //bonus_stats.intellect = processedValue(data[0], itemLevel) * data[0].duration / data[0].cooldown; // These stacks can overlap so there should be no proc munching.
           bonus_stats = runGenericRandomOnUseTrinket({...data[0], ...trinketRawData["Vile Vial of Volatile Venom"][0]}, itemLevel, additionalData.castModel, additionalData.setStats);
           
           ["versatility", "crit", "mastery", "haste"].forEach((statName : string) => {
-            bonus_stats[statName] -= processedDeduction;
+            bonus_stats[statName] += processedDeduction / 4;
           });
 
           return bonus_stats;
