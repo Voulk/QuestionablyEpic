@@ -89,7 +89,7 @@ const getRealCrit = (spellName: string, state, spellDB) => {
 export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSettings = {}, reporting = false) {
     if (playerData.heroTree === "Default"){ playerData.heroTree = "Totemic" }
     const spellDB = JSON.parse(JSON.stringify(specSpellDB));
-    const fightLength = 2
+    const fightLength = 5
     // This will be sent to applyTalents and then we'll turn it into a proper state variable afterwards.
     let initialState = {statBonuses: applyRaidBuffs(settings), talents: deepCopyFunction(shamanTalents), heroTree: playerData.heroTree};
     const reportingData: any = {};
