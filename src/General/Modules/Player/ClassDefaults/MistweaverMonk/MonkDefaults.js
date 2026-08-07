@@ -1,3 +1,18 @@
+export const MONK_HERO_TREES = {
+  CONDUIT: "Conduit of the Celestials",
+  MOH: "Master of Harmony",
+};
+
+const baseTalents = 
+"C4QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAghx2MwmFzYmllZshZmhZW22mZswMaGzAGMYMLzMzMMbDGsYCAAAAgAsYZmlZbmBAAGwAMDYMMWkxMA";
+
+// per-model talent imports. these will diverge, and might not want to live here, but for now they are defaulted.
+export const monkTalentStrings = {
+  "Yu'lon": baseTalents,
+  "Chi-Ji": "C4QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAghxyMLjZx2MmZ2WMAMbPwMbbbzMWYGNjZADGMmlZmZGmtBDWMBAAAAQAWsNz2sNzAAADYAmBMGGLyYGA",
+  "Dungeon Default": "C4QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMWmZZML2mxMjNjtllZMzmZ2WWmZswQzYGwgBjZZmZmhZDzwsMTAAAAAEgFbzsMbzMAAwAAMDYMwiMmBA",
+}
+
 // Yu'lon build. Chi-Ji has its own profile.
 export const monkDefaultSpellData = (contentType) => {
   let spellList = {};

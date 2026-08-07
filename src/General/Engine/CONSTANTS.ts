@@ -62,6 +62,14 @@ export const CONSTANTS = {
 
 }
 
+// TopGear reads from castModel.modelType[contentType]
+// to decide which evaluation path to run for a model.
+export const MODEL_TYPES = {
+  CAST_MODEL: "CastModel",
+  DEFAULT: "Default",
+  SEQUENCES: "Sequences",
+}
+
 // Currently unused. Might use later.
 export const SEASONALCONSTS = {
 

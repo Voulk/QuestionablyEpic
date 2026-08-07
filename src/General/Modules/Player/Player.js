@@ -719,8 +719,8 @@ export class Player {
         }
     } else if (spec === SPEC.MISTWEAVERMONK) {
       const models = [
-        { identifier: "Chi-Ji", content: "Raid" },
         { identifier: "Yu'lon", content: "Raid" },
+        { identifier: "Chi-Ji", content: "Raid" },
         { identifier: "Dungeon Default", content: "Dungeon" },
         
       ];
