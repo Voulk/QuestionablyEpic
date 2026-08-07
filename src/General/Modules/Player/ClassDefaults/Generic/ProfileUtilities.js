@@ -278,14 +278,13 @@ export const applyTalentsFromString = (state, spellDB, talentInfo) => {
     });
 
     Object.keys(state.talents).forEach(talentName => {
-        if (selectedTalents[talentName]) {
-            state.talents[talentName].points = selectedTalents[talentName].points;
+        const talent = state.talents[talentName];
+        const selectedPoints = selectedTalents[talentName]?.points || 0;
+        talent.points = selectedPoints;
 
-            const talent = state.talents[talentName];
-            if (talent.points > 0 && (!talent.heroTree || state.heroTree === talent.heroTree)) {
-                talent.runFunc(state, spellDB, talent.values, talent.points);
-            }
-        } 
+        if (talent.points > 0 && (!talent.heroTree || state.heroTree === talent.heroTree)) {
+            talent.runFunc(state, spellDB, talent.values, talent.points);
+        }
     });
 };
 

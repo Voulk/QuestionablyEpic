@@ -488,7 +488,8 @@
                 "hasted": false,
                 "charges": 1,
                 "maxCharges": 1
-            }
+            },
+            "secondaries": []
         }
     ],
     "Hydrobubble": [

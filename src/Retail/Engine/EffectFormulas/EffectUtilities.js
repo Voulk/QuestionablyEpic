@@ -120,7 +120,7 @@ export function runGenericRandomOnUseTrinket(effect, itemLevel, castModel, setSt
   const bonus_stats = {};
 
   ["versatility", "crit", "mastery", "haste"].forEach((statName) => {
-    bonus_stats[statName] = runGenericOnUseTrinket({...effect, stat: statName}, itemLevel, castModel, setStats) // 4
+    bonus_stats[statName] = runGenericOnUseTrinket({...effect, stat: statName}, itemLevel, castModel, setStats) * 0.25;
   });
 
   return bonus_stats;

@@ -82,7 +82,7 @@ export default function TheorycraftingGUI(props) {
     return (
     <Box
       sx={{
-        width: "60%",
+        width: { xs: "90%", sm: "85%", md: "80%", lg: "60%" },
         margin: "0 auto",
         display: "flex",
         flexDirection: "column",
