@@ -441,15 +441,6 @@ const initMonkCastState = (castProfile: CastProfile, playerData: any, settings: 
         spellDB[spellName][0].damageToHeal = 0.25;
     });
 
-    // damage spells' aura is missing the 1%/level scaling baked into the tooltip, so apply it here
-    const LEVEL_SCALING_MULT = 1.9;
-    Object.values(spellDB).forEach((slices: any) => {
-        slices.forEach((slice: any) => {
-            if (slice.spellType === "damage") slice.aura *= LEVEL_SCALING_MULT;
-        });
-    });
-
-
     const talents = initialState.talents;
     const talentImport = getSelectedTalentsFromString(monkTalentStrings[profileKey], SPECS.MISTWEAVERMONK);
 
