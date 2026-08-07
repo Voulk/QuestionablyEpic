@@ -1,5 +1,5 @@
 import { hasTalent } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
-import { getSpellEntry } from "../Generic/ProfileUtilities";
+import { getSpellEntry, getCPM } from "../Generic/ProfileUtilities";
 import { runSpell, addOutput, getSelectedKick, getGustHeal, getCastTime, getGCD, getGroupSize, getRapidDiffusionRemDuration } from "./MistweaverUtilities";
 
 const YULON_ENVELOPING_CAST_SPEED_PERC = 30;
@@ -32,63 +32,87 @@ type SequencingFn = (
     castProfile: CastProfile,
 ) => void;
 
-const chijiSequence: SequencingFn = (state, spellDB, localSettings, reportingData, healingBreakdown, onUseData, talents) => {
-    if (false) {
-        // Sequence Chi-ji
-        // Store 4x TotM stacks before pressing Chi-ji
-        const tempStats: any = { ...state.statPercentages };
-        const chijiDuration = 25; // todo
+const applyCelestialHarmonyJadeBond = (celestial: Record<string, any>, spellDB: Record<string, any[]>, state: any, localSettings: any, healingBreakdown: Record<string, number>, talents: any, castProfile: CastProfile): void => {
+    if (!hasTalent(talents, "Celestial Harmony")) return;
 
-        // We'll always combine trinkets with Chi-ji. One weakness of the model here is it doesn't consider that Chi-Ji is front loaded.
-        // This could be added later.
-        if (onUseData.name === "Freightrunner's Flask") tempStats.haste += (onUseData.value * onUseData.duration / chijiDuration);
+    const cocoon = spellDB["Chi Cocoon"][0];
+    addOutput(healingBreakdown, celestialLabel(celestial.profileKey, "Chi Cocoon"), runSpell(state, cocoon) * celestial.cpm);
+    castProfile.push({
+        spell: "Chi Cocoon",
+        cpm: 0,
+        label: celestialLabel(celestial.profileKey, "Chi Cocoon"),
+    });
 
-        let hastePercentage = tempStats.haste;
-        //if (hasTalent(talents, "Secret Infusion")) hastePercentage *= (1 + 0.15 * 0.4);
-        reportingData.chijiHaste = hastePercentage;
-
-        const chijiCasts = (chijiDuration / (1.5 / hastePercentage) - 1) * (1 - localSettings.downtime);; // Casting Chiji itself takes away from the # of casts in the window
-        const chijiCooldown = 120;
-
-        // Chi Cocoons & Jade Bond
-        //const chiCocoon = runHeal(state, spellDB["Chi Cocoon"][0], "Chi Cocoon");
-
-        //healingBreakdown["Chi Cocoon"] = chiCocoon * (60 / chijiCooldown);
-
-        // Enveloping Breath
-        const envelopingCasts = 4; // TODO: make dynamic
-        //const envelopingHeal = runHeal(state, spellDB["Enveloping Breath"][0], "Enveloping Breath") * envelopingCasts * spellDB["Enveloping Breath"][0].buffDuration * averageHaste;
-        //healingBreakdown["Enveloping Breath"] = envelopingHeal * (60 / chijiCooldown);
-
-        // Chi-ji Gusts
-        // Each damage spell procs 6 total Gusts
-        const chijiKicks = chijiCasts - envelopingCasts;
-        const castBreakdown: Record<string, number> = {
-            "Tiger Palm": 0.25 * chijiKicks,
-            "Rising Sun Kick": 0.25 * chijiKicks,
-            "Blackout Kick": 0.5 * chijiKicks,
-            "Enveloping Mist": envelopingCasts,
-        }
-
-        const chijiProcs = 6 * (4 + castBreakdown["Tiger Palm"] * (hasTalent(talents, "awakenedJadefire") ? 2 : 1) + castBreakdown["Rising Sun Kick"] + castBreakdown["Blackout Kick"]);
-        let chijiMult = 1
-        reportingData.chijiGusts = chijiProcs;
-        if (hasTalent(talents, "jadeBond")) chijiMult *= 1.2;
-
-        healingBreakdown["Gust of Mists (Chi-ji)"] = chijiProcs * getGustHeal(spellDB, state, localSettings.chijiGustsOverhealing, tempStats) * chijiMult * (60 / chijiCooldown);
-
+    const jadeBondEnvSec = getJadeBondEnvelopingSec(talents);
+    if (jadeBondEnvSec) {
+        const envHot = {
+            ...spellDB["Enveloping Mist"][0],
+            buffDuration: jadeBondEnvSec * (1 + localSettings.risingMist.envStandard),
+            targets: cocoon.targets,
+            label: "Enveloping Mist (Jade Bond)",
+        };
+        addOutput(healingBreakdown, "Enveloping Mist (Jade Bond)", runSpell(state, envHot) * celestial.cpm);
+        castProfile.push({
+            spell: "Enveloping Mist",
+            cpm: 0,
+            label: "Enveloping Mist (Jade Bond)",
+        });
     }
+}
+
+const CHIJI_GUSTS_PER_CAST = 6;
+const JADE_BOND_GUST_MULT = 1.2;
+
+const chijiSequence: SequencingFn = (state, spellDB, localSettings, reportingData, healingBreakdown, onUseData, talents, castProfile) => {
+    const celestial = reportingData.chiji;
+
+    applyCelestialHarmonyJadeBond(celestial, spellDB, state, localSettings, healingBreakdown, talents, castProfile);
+
+    const gustSources = ["Blackout Kick", "Rising Sun Kick", "Spinning Crane Kick"];
+    const windowGCDs = celestial.duration / getGCD(state.statPercentages.haste);
+    const totalGcdCpm = castProfile.reduce((sum, entry) => sum + (spellDB[entry.spell] && !spellDB[entry.spell][0].offGCD ? (entry.cpm ?? 0) : 0), 0);
+    const gustCastsInWindow = totalGcdCpm > 0
+        ? gustSources.reduce((sum, spellName) => sum + windowGCDs * (getCPM(castProfile, spellName) / totalGcdCpm), 0)
+        : 0;
+    reportingData.chijiGusts = gustCastsInWindow * CHIJI_GUSTS_PER_CAST * celestial.cpm;
+
+    const jadeBondMult = hasTalent(talents, "Jade Bond") ? 1 + talents["Jade Bond"].values[0] / 100 : 1;
+    const gustHeal = getGustHeal(spellDB, state, localSettings.chijiGustsOverhealing);
+    addOutput(healingBreakdown, celestialLabel(celestial.profileKey, "Gust of Mists"), gustHeal * reportingData.chijiGusts * jadeBondMult);
+    castProfile.push({
+        spell: "Gust of Mists",
+        cpm: 0,
+        label: celestialLabel(celestial.profileKey, "Gust of Mists"),
+    });
+}
+
+const getCelestialWindowBase = (profileKey: string, spellDB: Record<string, any[]>, state: any) => {
+    const celestialSpell = spellDB[CELESTIAL_SPELLS[profileKey]][0];
+    const cooldown = celestialSpell.cooldownData.cooldown;
+    const duration = celestialSpell.buffDuration;
+    const cpm = 60 / cooldown;
+    const haste = state.statPercentages.haste;
+
+    return { cooldown, duration, cpm, haste };
+}
+
+export const applyChijiWindow = (profileKey: string, spellDB: Record<string, any[]>, state: any, reportingData: Record<string, any>): void => {
+    if (profileKey !== "Chi-Ji") return;
+
+    const { cooldown, duration, cpm } = getCelestialWindowBase(profileKey, spellDB, state);
+
+    reportingData.chiji = {
+        profileKey,
+        duration,
+        cooldown,
+        cpm,
+    };
 }
 
 export const applyYulonWindow = (profileKey: string, talents: any, spellDB: Record<string, any[]>, state: any, castProfile: CastProfile, localSettings: any, reportingData: Record<string, any>): void => {
     if (profileKey !== "Yu'lon") return;
 
-    const celestialSpell = spellDB[CELESTIAL_SPELLS[profileKey]][0];
-    const cooldown = celestialSpell.cooldownData.cooldown;
-    const duration = celestialSpell.buffDuration;
-    const cpm = 60 / cooldown;
-
-    const haste = state.statPercentages.haste;
+    const { cooldown, duration, cpm, haste } = getCelestialWindowBase(profileKey, spellDB, state);
 
     const envEntry = getSpellEntry(castProfile, "Enveloping Mist");
     const vivifyEntry = getSpellEntry(castProfile, "Vivify");
@@ -99,7 +123,6 @@ export const applyYulonWindow = (profileKey: string, talents: any, spellDB: Reco
     const envCastTime = getCelestialEnvelopingCastTime(talents, spellDB, haste);
     const vivifyCastTime = Math.max(spellDB["Vivify"][0].castTime / haste, getGCD(haste));
 
-    // the press pays for its own global below, so it stays out of this
     const skipped = [envEntry, vivifyEntry, kickEntry];
     const cooldownSec = castProfile.reduce((sum, entry) => {
         if (skipped.includes(entry) || entry.spell === CELESTIAL_SPELLS[profileKey] || !spellDB[entry.spell]) return sum;
@@ -159,7 +182,6 @@ export const applyYulonWindow = (profileKey: string, talents: any, spellDB: Reco
     };
 }
 
-
 const yulonSequence: SequencingFn = (state, spellDB, localSettings, reportingData, healingBreakdown, onUseData, talents, castProfile) => {
     const celestial = reportingData.yulon;
 
@@ -176,20 +198,7 @@ const yulonSequence: SequencingFn = (state, spellDB, localSettings, reportingDat
     const soobOutput = runSpell(state, soothingBreath) * breathChannels * celestial.cpm;
     addOutput(healingBreakdown, "Soothing Breath", soobOutput);
 
-    if (hasTalent(talents, "Celestial Harmony")) {
-        const cocoon = spellDB["Chi Cocoon"][0];
-        addOutput(healingBreakdown, celestialLabel(celestial.profileKey, "Chi Cocoon"), runSpell(state, cocoon) * celestial.cpm);
-
-        const jadeBondEnvSec = getJadeBondEnvelopingSec(talents);
-        if (jadeBondEnvSec) {
-            const envHot = {
-                ...spellDB["Enveloping Mist"][0],
-                buffDuration: jadeBondEnvSec * (1 + localSettings.risingMist.envStandard),
-                targets: cocoon.targets,
-            };
-            addOutput(healingBreakdown, "Enveloping Mist (Jade Bond)", runSpell(state, envHot) * celestial.cpm);
-        }
-    }
+    applyCelestialHarmonyJadeBond(celestial, spellDB, state, localSettings, healingBreakdown, talents, castProfile);
 
     celestial.breathChannels = breathChannels;
 }

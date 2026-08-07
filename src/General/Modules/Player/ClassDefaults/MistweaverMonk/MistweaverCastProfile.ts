@@ -3,7 +3,7 @@ import { applyRaidBuffs, applyTalentsFromString, compileProfileReportingData, co
 import { monkTalents } from "./MistweaverMonkTalents";
 import { getManaTeaStackValues, getNaturalStacks, getRefreshmentStacks, getLifecyclesStacks } from "./MistweaverManaTea";
 import { runSpell, addOutput, getSelectedKick, getSelectedPrimaryHeal, getGustHeal, getGCD, getGroupSize, getRapidDiffusionRemDuration, applyHealthAbsorbs, getAveragePpmFromLogs, getEntryCastTime, getEntryCost, getTimeUsed } from "./MistweaverUtilities";
-import { applyYulonWindow, getCelestialSequence } from "./MistweaverCelestials";
+import { applyYulonWindow, applyChijiWindow, getCelestialSequence } from "./MistweaverCelestials";
 import { MONK_HERO_TREES, monkTalentStrings } from "./MonkDefaults";
 
 import specSpellDB from "./MistweaverMonkSpellDB.json";
@@ -91,24 +91,33 @@ const applyDowntimeFill = (talents: any, castProfile: CastProfile, spellDB: Reco
         manaLeftOver: manaLeft - fillerCPM * fillerCost
     };
 
-    // todo: is this necessary? can we just do this for chi-ji anyways?
-    if (getSpellEntry(castProfile, "Tiger Palm")) return;
-
-    // severe downtime is bok > tp
-    const idleGlobals = Math.max(timeLeft - fillerCPM * fillerCastTime, 0) / getGCD(haste);
-    const resetsPerKick = TOTM_RESET_CHANCE * EFFICIENCY;
-
-    const blackoutKickCPM = Math.min(idleGlobals / (1 + resetsPerKick), 60 / spellDB["Blackout Kick"][0].cooldownData.cooldown);
-    const kickResets = blackoutKickCPM * resetsPerKick;
-    const tigerPalmCPM = Math.max(idleGlobals - blackoutKickCPM - kickResets, 0);
-
-    castProfile.push({ spell: "Blackout Kick", cpm: blackoutKickCPM });
-    castProfile.push({ spell: "Tiger Palm", cpm: tigerPalmCPM });
-
+    // gating this for rsk only for now since yu'lon attempts to fill with vivify instead of tp/bok/rsk
     const kickEntry = getSelectedKick(castProfile);
-    if (kickEntry) kickEntry.cpm += kickResets;
+    if (kickEntry.spell !== "Rising Sun Kick") return;
 
-    reportingData.downtimeFill = { idleGlobals, blackoutKickCPM, tigerPalmCPM, kickResets };
+    const blackoutKickCPM = getCPM(castProfile, "Blackout Kick");
+    if (blackoutKickCPM === 0) return;
+
+    // reset chance is 1 - (reset %)^boks since each bok is individual chance
+    const averageTeachingsStacks = getAverageTeachingsStacks(talents, castProfile);
+    const hitsPerBoK = 1 + averageTeachingsStacks;
+    const resetChancePerBoK = 1 - (1 - TOTM_RESET_CHANCE) ** hitsPerBoK;
+    const resetsPerMinute = blackoutKickCPM * resetChancePerBoK;
+
+    const gcd = getGCD(haste);
+    const idleGlobals = Math.max(timeLeft - fillerCPM * fillerCastTime, 0) / gcd;
+    const cooldownLimitedCpm = kickEntry.cpm;
+
+    kickEntry.cpm = Math.min(cooldownLimitedCpm + resetsPerMinute, cooldownLimitedCpm + idleGlobals);
+
+    reportingData.downtimeFill = {
+        averageTeachingsStacks,
+        resetChancePerBoK,
+        resetsPerMinute,
+        idleGlobals,
+        cooldownLimitedCpm,
+        rskCpm: kickEntry.cpm
+    };
 }
 
 const applyEmperorsElixir = (talents: any, spellDB: Record<string, any[]>, castProfile: CastProfile): void => {
@@ -218,7 +227,8 @@ const HOTJS_CDR_PERC = 75;
 const KICK_KEY = "Selected Kick";
 const HOTJS_EFFECTIVENESS: Record<string, number> = {
     "Renewing Mist": 0.6,
-    [KICK_KEY]: 0.4,
+    "Rushing Wind Kick": 0.4,
+    "Rising Sun Kick": 0.9, // with rsk, we're probably not fighting for gcds unlike rwk (yu'lon)
     "Thunder Focus Tea": 0.8,
     "Life Cocoon": 0.8,
 };
@@ -412,11 +422,14 @@ const initMonkCastState = (castProfile: CastProfile, playerData: any, settings: 
         },
         gustsOverhealing: 0.4,
         chijiGustsOverhealing: 0.4,
-        ancientTeachingsOverhealing: 0.14,
+        ancientTeachingsOverhealing: 0.06,
         yulonEnvShare: 0.6 // % of time spent on env inside yu'lon
     };
 
     const spellDB = JSON.parse(JSON.stringify(specSpellDB));
+
+    // create one off entries for visual display
+    spellDB["Ancient Teachings"] = [{"displayInfo": { "icon": "inv_misc_book_07" }}];
 
     // gust of mists
     ["Renewing Mist", "Enveloping Mist"].forEach(spellName => {
@@ -427,6 +440,15 @@ const initMonkCastState = (castProfile: CastProfile, playerData: any, settings: 
     [getSelectedKick(castProfile).spell, "Blackout Kick", "Tiger Palm", "Crackling Jade Lightning"].forEach(spellName => {
         spellDB[spellName][0].damageToHeal = 0.25;
     });
+
+    // damage spells' aura is missing the 1%/level scaling baked into the tooltip, so apply it here
+    const LEVEL_SCALING_MULT = 1.9;
+    Object.values(spellDB).forEach((slices: any) => {
+        slices.forEach((slice: any) => {
+            if (slice.spellType === "damage") slice.aura *= LEVEL_SCALING_MULT;
+        });
+    });
+
 
     const talents = initialState.talents;
     const talentImport = getSelectedTalentsFromString(monkTalentStrings[profileKey], SPECS.MISTWEAVERMONK);
@@ -766,8 +788,8 @@ function runMonkCastProfile(
     localSettings.sheilunsClouds = 0; //Math.min(10, (60 / 8 / getSpellEntry(castProfile, "Sheilun's Gift").cpm))
     reportingData.sheilunsClouds = localSettings.sheilunsClouds;
 
-    // todo: chi-ji
     applyYulonWindow(profileKey, talents, spellDB, state, castProfile, localSettings, reportingData);
+    applyChijiWindow(profileKey, spellDB, state, reportingData);
 
     // Expected Downtime
     reportingData.averageHaste = state.statPercentages.haste; // TODO
@@ -844,13 +866,21 @@ export function scoreMonkYulonSet(stats: Stats, playerData: any, settings: Playe
 
 export function scoreMonkChijiSet(stats: Stats, playerData: any, settings: PlayerSettings = {}, reporting: boolean = false) {
     const castProfile: CastProfile = [
-        { spell: "Renewing Mist", efficiency: 0.7 },
+        { spell: "Renewing Mist", efficiency: 0.1 },
         { spell: "Enveloping Mist", cpm: 0.1 }, // we could do a model that never casts ever
         //{ spell: "Vivify", cpm: 0, hastedCPM: true },
-        { spell: "Tiger Palm", cpm: 7.5, hastedCPM: true },
-        { spell: "Blackout Kick", cpm: 6.7, hastedCPM: true },
-        { spell: "Rising Sun Kick", cpm: 6.4, hastedCPM: true },
-        { spell: "Life Cocoon", efficiency: 0.9, },
+        { spell: "Tiger Palm", cpm: 16 },
+        { spell: "Blackout Kick", cpm: 15 },
+        { spell: "Rising Sun Kick", efficiency: 0.9, hastedCPM: true },
+
+        // cooldowns
+        { spell: "Invoke Chi-Ji, the Red Crane", efficiency: 1 },
+        { spell: "Revival", efficiency: EFFICIENCY, },
+        { spell: "Life Cocoon", efficiency: EFFICIENCY, },
+
+        // spells
+        { spell: "Spiritfont", cpm: 1, },
+
         ...getHeroTreeCastProfile(playerData)
     ];
     return runMonkCastProfile(stats, playerData, settings, reporting, castProfile, "Chi-Ji");
