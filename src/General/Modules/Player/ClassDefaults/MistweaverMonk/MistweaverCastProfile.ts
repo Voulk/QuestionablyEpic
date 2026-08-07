@@ -2,7 +2,7 @@ import { deepCopyFunction, hasTalent, getTalentPoints } from "General/Modules/Pl
 import { applyRaidBuffs, applyTalentsFromString, compileProfileReportingData, completeCastProfile, convertStatPercentages, getTrinketData, getSpellEntry, getCPM, buildCPM } from "../Generic/ProfileUtilities";
 import { monkTalents } from "./MistweaverMonkTalents";
 import { getManaTeaStackValues, getNaturalStacks, getRefreshmentStacks, getLifecyclesStacks } from "./MistweaverManaTea";
-import { runSpell, addOutput, getSelectedKick, getSelectedPrimaryHeal, getGustHeal, getGCD, getGroupSize, getRapidDiffusionRemDuration, applyHealthAbsorbs, getAveragePpmFromLogs, getEntryCastTime, getEntryCost, getTimeUsed } from "./MistweaverUtilities";
+import { runSpell, addOutput, getSelectedKick, getSelectedPrimaryHeal, getGustHeal, getGCD, getGroupSize, getRapidDiffusionRemDuration, applyHealthAbsorbs, getAveragePpmFromLogs, getEntryCastTime, getEntryCost, getTimeUsed, ASSUMED_MAX_HEALTH } from "./MistweaverUtilities";
 import { applyYulonWindow, applyChijiWindow, getCelestialSequence } from "./MistweaverCelestials";
 import { MONK_HERO_TREES, monkTalentStrings } from "./MonkDefaults";
 
@@ -452,6 +452,7 @@ const initMonkCastState = (castProfile: CastProfile, playerData: any, settings: 
 
     const talents = initialState.talents;
     const talentImport = getSelectedTalentsFromString(monkTalentStrings[profileKey], SPECS.MISTWEAVERMONK);
+
     applyTalentsFromString(initialState, spellDB, talentImport);
 
     if (hasTalent(talents, "Celestial Harmony")) {
@@ -496,6 +497,47 @@ const buildMonkState = (initialState: any, playerData: any, stats: Stats, settin
     state.tierSets = playerData.tierSets.filter(effect => effect.type === "set bonus").map(effect => effect.name);
 
     return state;
+}
+
+// 1 elixir every 30 sec from base talent
+const HEALING_ELIXIR_TALENT_CPM = 2;
+const HEALING_ELIXIR_HEAL_PERC = 15;
+
+// refreshment is at 80% hp, healing elixir is at 40% hp
+// in reality, their overheal is quite low anyways
+const applyHealingElixirTalents = (spellDB: Record<string, any[]>, castProfile: CastProfile, talents: any, intellect: number): void => {
+    const coeff = ASSUMED_MAX_HEALTH * (HEALING_ELIXIR_HEAL_PERC / 100) / intellect;
+    const hasBaseTalent = hasTalent(talents, "Healing Elixir");
+    const hasRefreshment = hasTalent(talents, "Refreshment");
+    if (!hasBaseTalent && !hasRefreshment) return;
+
+    spellDB["Healing Elixir"] = [{
+        ...spellDB["Life Cocoon"][0],
+        coeff,
+        cost: 0,
+        offGCD: true,
+        specialFields: {},
+        displayInfo: { icon: "ability_monk_jasmineforcetea" },
+    }];
+
+    if (hasBaseTalent) {
+        castProfile.push({
+            spell: "Healing Elixir",
+            cpm: HEALING_ELIXIR_TALENT_CPM,
+            flags: { overrideOverhealing: 0.1 },
+        });
+    }
+
+    if (hasRefreshment) {
+        const stacks = talents["Refreshment"].values[1];
+        const lifeCocoonCpm = getCPM(castProfile, "Life Cocoon");
+        castProfile.push({
+            spell: "Healing Elixir",
+            cpm: stacks * lifeCocoonCpm,
+            label: "Healing Elixir (Refreshment)",
+            flags: { overrideOverhealing: 0.02 },
+        });
+    }
 }
 
 const applyChiProficiency = (talents: any, state: any): void => {
@@ -797,6 +839,8 @@ function runMonkCastProfile(
 
     applyPoolOfMists(talents, castProfile, spellDB);
     applyHeartOfJadeSerpent(talents, castProfile, reportingData.tftCpm);
+
+    applyHealingElixirTalents(spellDB, castProfile, talents, state.statPercentages.intellect);
 
     // Sheilun's Gift
     localSettings.sheilunsClouds = 0; //Math.min(10, (60 / 8 / getSpellEntry(castProfile, "Sheilun's Gift").cpm))

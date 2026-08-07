@@ -1,4 +1,4 @@
-import { buffSpellPerc, adjBuffDurationFlat, adjTargetCount, modCastTimeFlat, cooldownAdjFlat, buffDamageSpellsByPerc } from "../Generic/TalentBase"
+import { buffSpellPerc, adjBuffDurationFlat, adjTargetCount, modCastTimeFlat, cooldownAdjFlat, buffDamageSpellsByPerc, attachSpellEffect } from "../Generic/TalentBase"
 
 /**
  * A list of talents to turn on
@@ -229,7 +229,8 @@ number) {
 
 /* Life Cocoon applies Renewing Mist and Enveloping Mist to the target.  */
 "Mists of Life": {id: 388548, values: [1.0],  points: 0, maxPoints: 1, icon: "inv_shoulder__inv_leather_raidmonkmythic_s_01", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: any, points: number) {
-
+    spellDB["Life Cocoon"] = attachSpellEffect(spellDB["Life Cocoon"], spellDB["Renewing Mist"]);
+    spellDB["Life Cocoon"] = attachSpellEffect(spellDB["Life Cocoon"], spellDB["Enveloping Mist"]);
 }},
 
 /* Your Enveloping Mists heal the target for ${$388514s1*X} each time they take direct damage. */
