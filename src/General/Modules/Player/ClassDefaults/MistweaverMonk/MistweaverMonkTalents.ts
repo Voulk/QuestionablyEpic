@@ -1,4 +1,4 @@
-import { buffSpellPerc, adjBuffDurationFlat, adjTargetCount, modCastTimeFlat, cooldownAdjFlat } from "../Generic/TalentBase"
+import { buffSpellPerc, adjBuffDurationFlat, adjTargetCount, modCastTimeFlat, cooldownAdjFlat, buffDamageSpellsByPerc } from "../Generic/TalentBase"
 
 /**
  * A list of talents to turn on
@@ -67,7 +67,7 @@ or $132463s1 healing. Bounces up to $115098s1 times to targets within $132466a2 
 
 /* Increases all damage dealt by X%. */
 "Ferocity of Xuen": {id: 388674, values: [2.0, 2.0, 2.0],  points: 0, maxPoints: 2, icon: "ability_mount_pinktiger", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentValues: any, points: number) {
-
+    buffDamageSpellsByPerc(spellDB, talentValues[0] * points);
 }},
 
 
@@ -131,6 +131,7 @@ number) {
 "Chi Proficiency": {id: 450426, values: [5.0, 5.0, 5.0],  points: 0, maxPoints: 2, icon: "ability_monk_chiswirl", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentValues: any, points: number) {
     // uses traits for r1/r2 to mod to 2 and 4 points each
     // values should be [4.0, 4.0, 4.0] at maxPoints == 2
+    buffDamageSpellsByPerc(spellDB, talentValues[0] * points, "nature");
 }},
 
 
@@ -141,7 +142,7 @@ number) {
 
 /* Increases your Physical damage done by X% and Avoidance increased by Y%. */
 "Martial Instincts": {id: 450427, values: [5.0, -2.0, 5.0, 2.0],  points: 0, maxPoints: 2, icon: "ability_monk_palmstrike", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentValues: any, points: number) {
-
+    buffDamageSpellsByPerc(spellDB, talentValues[3] * points, "physical");
 }},
 
 /* Touch of Death's cooldown is reduced by ${X/-1000} sec. */
