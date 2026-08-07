@@ -504,6 +504,20 @@ const applyChiProficiency = (talents: any, state: any): void => {
     state.statPercentages.genericHealingMult *= 1 + getTalentPoints(talents, "Chi Proficiency") * 2 / 100;
 }
 
+// harder to apply to -just- the celestial windows, so avg here works okay
+const applyRestoreBalance = (talents: any, state: any, reportingData: Record<string, any>): void => {
+    if (!hasTalent(talents, "Restore Balance")) return;
+
+    const celestial = reportingData.yulon ?? reportingData.chiji;
+    if (!celestial) return;
+
+    // the increase is set to +5% on both chi-ji and yu'lon's spells, 0 on the talent (is this bugged and always active?)
+    const increase = 0.05; // talents["Restore Balance"].values[0] / 100;
+
+    const windowShare = celestial.duration / 60 * celestial.cpm;
+    state.statPercentages.genericHealingMult *= 1 + increase * windowShare;
+}
+
 const applyHeroTreeBonuses = (talents: any, castProfile: CastProfile, spellDB: Record<string, any[]>, state: any, reportingData: Record<string, any>, playerData: any): void => {
     let tftCpm = 60 / spellDB["Thunder Focus Tea"][0].cooldownData.cooldown;
     if (playerData.heroTree === MONK_HERO_TREES.CONDUIT) {
@@ -790,6 +804,7 @@ function runMonkCastProfile(
 
     applyYulonWindow(profileKey, talents, spellDB, state, castProfile, localSettings, reportingData);
     applyChijiWindow(profileKey, spellDB, state, reportingData);
+    applyRestoreBalance(talents, state, reportingData);
 
     // Expected Downtime
     reportingData.averageHaste = state.statPercentages.haste; // TODO
