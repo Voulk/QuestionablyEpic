@@ -240,9 +240,8 @@ export const getSpellThroughput = (spell, statPercentages, spec, settings, flags
     }
     else if (spell.spellType === "damage" || spell.buffType === "damage") {
         spellOutput *= statPercentages.genericDamageMult;
-        if (spell.damageType === "physical") spellOutput *= 0.7 //getEnemyArmor(statPercentages.armorReduction);
+        if (spell.school === "physical") spellOutput *= 0.7 //getEnemyArmor(statPercentages.armorReduction);
         targetCount = settings.enemyTargets ? Math.min(settings.enemyTargets, (spell.maxTargets || 1)) : (spell.targets ? spell.targets : 1);
-
     }
 
     // Handle HoT

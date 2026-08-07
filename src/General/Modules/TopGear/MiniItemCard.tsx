@@ -294,7 +294,7 @@ export default function ItemCard(props: ItemCardProps) {
                   }}
                 >
                   <div className="container-MiniItemCards">
-                    <WowheadTooltip type={"item"} id={item.id} level={itemLevel} bonusIDS={item.bonusIDS} craftedStats={item.craftedStats} domain={gameType === "Retail" ? currentLanguage : "mop-classic"}>
+                    <WowheadTooltip type={"item"} id={item.id} level={itemLevel} bonusIDS={item.bonusIDS} catalyzedID={item.catalyzedID} craftedStats={item.craftedStats} domain={gameType === "Retail" ? currentLanguage : "mop-classic"}>
                       <img
                         alt="img"
                         width={44}
