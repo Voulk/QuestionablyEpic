@@ -148,7 +148,7 @@ const classTalents: TalentTree = {
 const specTalents: TalentTree = {
     /* Power Word: Shield, Flash Heal, Plea, Penance, and Power Word: Radiance apply Atonement to your target for $194384d.    Your spell damage heals all targets affected by Atonement for X% of the damage 
     done. Healing is reduced when healing more than Y targets. */
-    "Atonement": {id: 81749, values: [35.0, 5.0],  points: 0, maxPoints: 1, icon: "ability_priest_atonement", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
+    "Atonement": {id: 81749, values: [32.0, 5.0],  points: 0, maxPoints: 1, icon: "ability_priest_atonement", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
 
     }},
 
@@ -297,7 +297,7 @@ const specTalents: TalentTree = {
     }},
 
     /* Casting Smite increases the damage of Smite by X%, stacking $1253725u times. Lasts $1253725d. */
-    "Greater Smite": {id: 1253724, values: [15.0, 0.0, 0.0],  points: 0, maxPoints: 2, icon: "spell_paladin_inquisition", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: 
+    "Greater Smite": {id: 1253724, values: [25.0, 0.0, 0.0],  points: 0, maxPoints: 2, icon: "spell_paladin_inquisition", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: 
     any, points: number) {
 
     }},
@@ -349,17 +349,17 @@ const specTalents: TalentTree = {
     }},
 
     /* Penance has a high chance to upgrade Power Word: Shield into $@spellname1253593.    $@spellicon1253593 $@spellname1253593:  $@spelldesc1253593     */
-    "Master the Darkness1": {id: 1253590, values: [],  points: 0, maxPoints: 4, icon: "inv12_apextalent_priest_voidshield", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
+    "Master the Darkness1": {id: 1253590, values: [25.0],  points: 0, maxPoints: 4, icon: "inv12_apextalent_priest_voidshield", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
 
     }},
 
     /* Shadow damage and Atonement healing increased by X%. */
-    "Master the Darkness2": {id: 1253845, values: [],  points: 0, maxPoints: 4, icon: "inv12_apextalent_priest_voidshield", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
+    "Master the Darkness2": {id: 1253845, values: [3.0, 3.0],  points: 0, maxPoints: 4, icon: "inv12_apextalent_priest_voidshield", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
 
     }},
 
     /* Void Shield reflects X% of damage taken to enemies, causing Atonement healing. */
-    "Master the Darkness3": {id: 1253827, values: [],  points: 0, maxPoints: 4, icon: "inv12_apextalent_priest_voidshield", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
+    "Master the Darkness3": {id: 1253827, values: [15.0],  points: 0, maxPoints: 4, icon: "inv12_apextalent_priest_voidshield", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
 
     }},
 
@@ -379,7 +379,7 @@ const heroTalents: TalentTree = {
 }},
 
 /* $?a137032[Increases the duration of Atonement by ${X/1000} sec.][Increases the duration of your Renew by Y%.]   */
-"Preemptive Care": {id: 440671, values: [4000.0, 40.0, 25.0, 25.0, 25.0], heroTree: "Oracle", points: 0, maxPoints: 1, icon: "spell_holy_renew", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
+"Preemptive Care": {id: 440671, values: [4000.0, 40.0, 25.0, 40.0, 40.0], heroTree: "Oracle", points: 0, maxPoints: 1, icon: "spell_holy_renew", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
 
 }},
 
@@ -440,7 +440,7 @@ SpellDB, talentData: any, points: number) {
 }},
 
 /* $?c2[When Prayer of Mending expires without healing, it jumps to a nearby injured ally and loses X $Lstack:stacks; instead.][  When Power Word: Shield or Void Shield expires with absorption remaining, it jumps to a nearby injured ally and loses Y% of its maximum absorb instead.]   */
-"Unfolding Vision": {id: 1272363, values: [2.0, 40.0], heroTree: "Oracle", points: 0, maxPoints: 1, icon: "spell_holy_mindvision", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
+"Unfolding Vision": {id: 1272363, values: [2.0], heroTree: "Oracle", points: 0, maxPoints: 1, icon: "spell_holy_mindvision", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
 
 }},
 
@@ -507,7 +507,7 @@ SpellDB, talentData: any, points: number) {
 }},
 
 /* $?c1[While Entropic Rift is active, Atonement healing with Void Blast and Penance is Y% more effective.][Void Blast generates ${X/100} additional Insanity.] */
-"Void Infusion": {id: 450612, values: [200.0, 50.0], heroTree: "Voidweaver", points: 0, maxPoints: 1, icon: "inv_misc_volatileshadow", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
+"Void Infusion": {id: 450612, values: [200.0, 75.0], heroTree: "Voidweaver", points: 0, maxPoints: 1, icon: "inv_misc_volatileshadow", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
 
 }},
 
@@ -527,7 +527,7 @@ SpellDB, talentData: any, points: number) {
 }},
 
 /* Each time $?c3[you cast Shadow Word: Madness][Penance damages or heals], Entropic Rift is empowered, increasing its damage and size by $?c1[$s4][Z]%.    After Entropic Rift ends it collapses, dealing $448405s1 Shadow damage split amongst enemy targets within $448405a1 yds. */
-"Collapsing Void": {id: 448403, values: [1.0, 8.0, 20.0, 10.0], heroTree: "Voidweaver", points: 0, maxPoints: 1, icon: "inv_cosmicvoid_groundsate", select: true, tier: 2, runFunc: function (state: any, 
+"Collapsing Void": {id: 448403, values: [1.0, 8.0, 20.0, 10.0, 15.0], heroTree: "Voidweaver", points: 0, maxPoints: 1, icon: "inv_cosmicvoid_groundsate", select: true, tier: 2, runFunc: function (state: any, 
 spellDB: SpellDB, talentData: any, points: number) {
 
 }},

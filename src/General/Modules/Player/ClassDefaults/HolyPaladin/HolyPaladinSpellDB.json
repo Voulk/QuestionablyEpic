@@ -17,7 +17,7 @@
                 "maxCharges": 1
             },
             "coeff": 11.17,
-            "aura": 1.0,
+            "aura": 1.13,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -270,7 +270,7 @@
         {
             "displayInfo": {
                 "id": 1245369,
-                "icon": false,
+                "icon": "inv12_apextalent_paladin_beaconofthesavior",
                 "spellName": "Beacon of the Savior"
             },
             "castTime": 0.0,
