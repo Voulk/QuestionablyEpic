@@ -16,8 +16,6 @@ import { getCircletEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffe
 import { generateReportCode } from "General/Modules/TopGear/Engine/TopGearEngineShared"
 import Item from "General/Items/Item";
 import { gemDB } from "Databases/GemDB";
-import { processedValue } from "Retail/Engine/EffectFormulas/EffectUtilities";
-import { getTitanBeltEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/TitanDiscBeltData";
 import { getFolioEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/OmniumFolioData";
 
 /**
@@ -29,7 +27,7 @@ import { getFolioEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffect
  */
 
 const softSlice = 3000;
-const DR_CONST = 0.00293669230769231; // 0.00497669230769231;
+const DR_CONST = 0.00263669230769231; // 0.00497669230769231;
 const DR_CONSTLEECH = 0.05122569230769231;
 
 // This is just a timer function. We might eventually just move it to a timeUtility file for better re-use.
@@ -921,6 +919,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
       masteryEffectiveness: 0.9};
  
     if (player.spec === "Restoration Shaman") {
+      playerData.hasShield = builtSet.itemList.filter(item => item.slot === "Shield").length > 0;
       playerData.masteryEffectiveness = getSetting(userSettings, "masteryEffectivenessShaman") / 100;
       playerData.params = {asc: {ch: 1, hw: 0}, filler: {ch: 1, hw: 0}}
     }
