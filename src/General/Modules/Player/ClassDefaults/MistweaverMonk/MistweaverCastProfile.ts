@@ -645,7 +645,6 @@ const applyCoverageMultipliers = (
     }
 
     const rwkHealSlice = spellDB["Rushing Wind Kick"][1];
-    rwkHealSlice.aura = 0.8; // todo: remove when fixed
     rwkHealSlice.targets = Math.min(reportingData.averageRemCount + reportingData.averageEnvCount, 5);
 }
 
