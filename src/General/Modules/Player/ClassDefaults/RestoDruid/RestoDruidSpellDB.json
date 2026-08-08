@@ -430,7 +430,8 @@
                 "versatility",
                 "mastery"
             ],
-            "spellType": "heal"
+            "spellType": "heal",
+            "specialLabel": "Verdancy"
         }
     ],
     "Dream Bloom": [
@@ -454,6 +455,22 @@
                 "mastery"
             ],
             "spellType": "heal"
+        }
+    ],
+    "Innervate": [
+        {
+            "displayInfo": {
+                "id": 29166,
+                "icon": "spell_nature_lightning",
+                "spellName": "Innervate"
+            },
+            "castTime": 0.0,
+            "school": "nature",
+            "cost": 0.0,
+            "cooldownData": {
+                "cooldown": 180.0,
+                "hasted": false
+            }
         }
     ]
 }

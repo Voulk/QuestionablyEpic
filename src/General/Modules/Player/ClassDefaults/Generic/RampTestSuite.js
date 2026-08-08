@@ -409,17 +409,17 @@ export const buildStatWeights = (playerData, scoringFunction, testSettings ) => 
 export const buildTCStatChart = (scoreSet, playerData) => {
     const statResults = []
     const baseStats = {
-        intellect: 2400,
+        intellect: 2800,
         haste: 0,
         crit: 0,
         mastery: 0,
         versatility: 0,
     }
 
-    const stepSize = 100;
+    const stepSize = 120;
     const steps = 10;
 
-    for (let i = 0; i < steps; i++) {
+    for (let i = 0; i <= steps; i++) {
         const res = {}
         Object.keys(baseStats).forEach(stat => {
             res.amount = i * stepSize;

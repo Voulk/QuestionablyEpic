@@ -1,4 +1,5 @@
 
+import { hasTalent } from "../Generic/RampBase";
 import { runSpellScript } from "../Generic/SpellScripts";
 import specSpellDB from "./RestoDruidSpellDB.json";
 import { defaultTalents, druidTalents } from "./RestoDruidTalents";
@@ -33,6 +34,15 @@ export const restoDruidProfile = {
     specialQueries: {
         // Any special information we need to pull.
     },
+}
+
+
+const convokeCastTable = {
+    "Wild Growth": 1.5,
+    "Swiftmend": 1.5,
+    "Rejuvenation": 2.2,
+    "Regrowth": 2.1,
+    "Wrath": 4.4, // Split with Moonfire
 }
 
 // Mixed Profile
@@ -74,7 +84,8 @@ export function scoreDruidSet(stats: Stats, playerData: any, settings: PlayerSet
     console.log("Scoring Druid Set");
     const fightLength = 6;
     const spellDB = JSON.parse(JSON.stringify(specSpellDB));
-    let initialState = {statBonuses: {}, talents: druidTalents, heroTree: playerData.heroTree};
+    spellDB["Lifebloom (Bloom)"][0].expectedOverheal = 0.4; // Careful here because the cleaves don't overheal much.
+    let initialState = {statBonuses: {}, talents: druidTalents, heroTree: playerData.heroTree, specSettings: {"Renewing Surge Health": 0.85}};
     const reportingData: any = {};
 
     const damageBreakdown: Record<string, number> = {};
@@ -97,9 +108,9 @@ export function scoreDruidSet(stats: Stats, playerData: any, settings: PlayerSet
     let castProfile: CastProfile = [
       //{spell: "Tranquility", cpm: 0.3},
       
-      {spell: "Swiftmend", efficiency: 0.9 },
+      {spell: "Swiftmend", efficiency: 0.95 },
       {spell: "Wild Growth", efficiency: 0.5 },
-      {spell: "Efflorescence", cpm: 2 }, // If Lifetreading, remove mana & cast time cost. Maybe via flag?
+      {spell: "Efflorescence", cpm: 2, autoSpell: true }, // If Lifetreading, remove mana & cast time cost. Maybe via flag?
       {spell: "Lifebloom", cpm: 4 }, // Does not include blooms.
       {spell: "Lifebloom (Bloom)", cpm: 4 }, // Consider possible Overgrowth usage.
 
@@ -107,6 +118,7 @@ export function scoreDruidSet(stats: Stats, playerData: any, settings: PlayerSet
       {spell: "Dream Bloom", cpm: 0, autoSpell: true },
       {spell: "Rejuvenation", cpm: 0 },
       {spell: "Regrowth", cpm: 0 },
+      {spell: "Innervate", efficiency: 0.95, autoSpell: true },
     ]
 
     completeCastProfile(castProfile, spellDB);
@@ -115,25 +127,26 @@ export function scoreDruidSet(stats: Stats, playerData: any, settings: PlayerSet
     const manaPool = 250000;
     const regen = manaPool * 0.04 * 12;
 
-    const manaAvailable = manaPool / fightLength + regen;
+    const manaAvailable = manaPool / fightLength + regen + getSpellEntry(castProfile, "Innervate").cpm * (manaPool * 0.25);
     reportingData.manaAvailable = manaAvailable;
 
     console.log(castProfile);
-    const spellCosts = Object.fromEntries(Object.keys(spellDB).map((s: string) => [s, (spellDB[s][0].cost || 0) * 250000 / 100]));
-    const baselineCostPerMinute = castProfile.reduce((acc, spell) => acc + (spell.autoSpell ? 0 : ((spellCosts[spell.spell] || 0) * spell.cpm! * (spell.manaOverride ?? 1))), 0);
-    reportingData.spellCosts = spellCosts;
-    reportingData.baselineManaPerMinute = baselineCostPerMinute;
-
-    const fillerMana = manaAvailable - baselineCostPerMinute;
-    reportingData.fillerManaPerMinute = fillerMana;
 
     // Handle Apex & HoTs on the target
 
+    // Everbloom 4 blooms
+    const selfMasteryCount = 4;
+    castProfile.push({spell: "Lifebloom (Bloom)", label: "Everbloom4", cpm: getSpellEntry(castProfile, "Swiftmend").cpm * 3, autoSpell: true, flags: {masteryMult: selfMasteryCount}});
+
+    if (hasTalent(state.talents, "Photosynthesis")) {
+        const photosynthesisCPM = 0.08 * state.statPercentages.haste * (60 / spellDB["Lifebloom"][0]['tickData']['tickRate'] + (60 / spellDB["Rejuvenation"][0]['tickData']['tickRate'] * 2) + (60 / spellDB["Regrowth"][1]['tickData']['tickRate']));
+        castProfile.push({spell: "Lifebloom (Bloom)", label: "Everbloom - Photosynthesis", cpm: photosynthesisCPM, autoSpell: true, flags: {masteryMult: selfMasteryCount}});
+
+        reportingData.photosynthesisCPM = photosynthesisCPM;
+    }
+
     // Calculate Rejuvs needed to maintain 5.
     getSpellEntry(castProfile, "Rejuvenation").cpm = 10;
-
-
-    // Fill with Regrowths
 
 
     // Insert Grove Guardians
@@ -143,12 +156,41 @@ export function scoreDruidSet(stats: Stats, playerData: any, settings: PlayerSet
 
 
     // Calculate initial filler via mana costs
-    getSpellEntry(castProfile, "Regrowth").cpm = fillerMana / spellCosts["Regrowth"];
-    console.log("REGROWTH CPM: " + fillerMana / spellCosts["Regrowth"]);
+    const spellCosts = Object.fromEntries(Object.keys(spellDB).map((s: string) => [s, (spellDB[s][0].cost || 0) * 250000 / 100]));
+    const baselineCostPerMinute = castProfile.reduce((acc, spell) => acc + (spell.autoSpell ? 0 : ((spellCosts[spell.spell] || 0) * spell.cpm! * (spell.manaOverride ?? 1))), 0);
+
+    reportingData.baselineManaPerMinute = baselineCostPerMinute;
+    reportingData.spellCosts = spellCosts;
+
+    const fillerMana = manaAvailable - baselineCostPerMinute;
+    const manaFillerCasts = fillerMana / (spellCosts["Regrowth"]);
+
+    reportingData.fillerManaPerMinute = fillerMana;
+    reportingData.manaFiller = manaFillerCasts;
 
     // Calculate *time* left, fill it with packages.
     let timeAvailable = 60 - getTimeUsed(castProfile, spellDB, state.statPercentages.haste);
-    reportingData.timeAvailable = timeAvailable;
+    reportingData.totalTimeAvailable = timeAvailable;
+    const timeFiller = timeAvailable / (spellDB["Regrowth"][0].castTime / state.statPercentages.haste);
+    reportingData.timeFiller = timeFiller;
+
+    const netFiller = Math.min(manaFillerCasts, timeFiller);
+    
+    getSpellEntry(castProfile, "Regrowth").cpm = netFiller;
+
+    if (timeFiller > manaFillerCasts) {
+        // We had more time left than mana, spend the mana.
+    }
+
+    const masterySeconds = 0; // The average number of mastery seconds we've added through the raid.
+
+    if (hasTalent(state.talents, "Nature's Bounty")) {
+        // Natures Bounty cleaves Regrowth.
+        // We will use an average here, though in most cases we will exceed this average by bunching regrowths.
+        const averageRegrowths = getSpellEntry(castProfile, "Regrowth").cpm * 12 / 60;
+        castProfile.push({spell: "Regrowth", label: "Nature's Bounty", cpm: getSpellEntry(castProfile, "Regrowth").cpm * averageRegrowths, autoSpell: true, mult: 0.2, customIndex: 0, flags: {overrideOverhealing: 0.45}});
+    }
+
 
     // Cast triggers
 
@@ -158,24 +200,29 @@ export function scoreDruidSet(stats: Stats, playerData: any, settings: PlayerSet
         const spellName = spellProfile.spell;
         const spellFlags = spellProfile.flags || {};
 
-        fullSpell.forEach((slice: SpellData) => {
+        fullSpell.forEach((slice: SpellData, index: number) => {
             let spellOutput = 0;
 
             if (slice.customScript) {
                 spellOutput = runSpellScript(slice.customScript, state, slice);
             }
             else {
-                spellOutput = getSpellThroughput(slice, state.statPercentages, state.spec, state.settings, spellFlags)
+                
+                if ((spellProfile.customIndex === index) || spellProfile.customIndex === undefined) {
+                    spellOutput = getSpellThroughput(slice, state.statPercentages, state.spec, state.settings, spellFlags);
+                }
             }
 
 
             const effectiveCPM = spellProfile.fillerSpell ? 0 : spellProfile.cpm!;
 
-            const totalOutput = (spellOutput * effectiveCPM);
+            const totalOutput = (spellOutput * effectiveCPM) * (spellProfile.mult ?? 1);
 
             if (totalOutput > 0) {
-                castBreakdown[spellName] = (castBreakdown[spellName] ?? 0) + (effectiveCPM);
-                healingBreakdown[spellName] = (healingBreakdown[spellName] ?? 0) + (totalOutput);
+                const label = slice.specialLabel ? slice.specialLabel : (spellProfile.label || spellName);
+
+                castBreakdown[label] = (castBreakdown[label] ?? 0) + (effectiveCPM);
+                healingBreakdown[label] = (healingBreakdown[label] ?? 0) + (totalOutput);
             }
 
         })
