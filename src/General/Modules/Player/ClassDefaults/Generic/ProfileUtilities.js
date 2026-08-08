@@ -215,7 +215,7 @@ export const getSpellThroughput = (spell, statPercentages, spec, settings, flags
         const masterySize = spec === "Mistweaver Monk" ? (1 + (statPercentages.mastery) * (spell.statMods && spell.statMods.masteryMult ? (spell.statMods.masteryMult + 0) : 0)) : 
                         (1 + (statPercentages.mastery) * (spell.statMods && spell.statMods.masteryMult ? (spell.statMods.masteryMult + 1) : 1));
         
-        const masteryMult = (spell.secondaries && spell.secondaries.includes("mastery") && !spec.includes("Holy Priest")) ? masterySize : 1; // We'll handle Holy mastery differently.
+        const masteryMult = (spell.secondaries && spell.secondaries.includes("mastery") && !spec.includes("Holy Priest") && !spec.includes("Restoration Druid")) ? masterySize : 1; // We'll handle Holy mastery differently.
         spellOutput = (spell.aura * spell.coeff * statPercentages.intellect) * 
                             critMult * // Multiply by secondary stats & any generic multipliers. 
                             masteryMult *

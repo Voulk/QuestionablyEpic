@@ -3,7 +3,7 @@ import { hasTalent } from "../Generic/RampBase";
 import { runSpellScript } from "../Generic/SpellScripts";
 import specSpellDB from "./RestoDruidSpellDB.json";
 import { defaultTalents, druidTalents } from "./RestoDruidTalents";
-import { printHealingBreakdownWithCPM, convertStatPercentages, getSpellEntry, updateSpellCPM, buildCPM, getSpellThroughput, applyTalents, completeCastProfile, getTimeUsed, compileProfileReportingData } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities";
+import { printHealingBreakdownWithCPM, convertStatPercentages, getSpellEntry, updateSpellCPM, buildCPM, getSpellThroughput, applyTalents, completeCastProfile, getTimeUsed, compileProfileReportingData, getCPM } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities";
 
 
 export const restoDruidProfile = {
@@ -35,6 +35,25 @@ export const restoDruidProfile = {
         // Any special information we need to pull.
     },
 }
+
+const getMasteryMult = (count: number): number => {
+  const masteryDR = [1, 1.7, 2.3, 2.8, 3.2];
+
+  // Clamp values outside the defined stack range [1, masteryDR.length]
+  if (count <= 1) return count;
+  if (count >= masteryDR.length) return masteryDR[masteryDR.length - 1];
+
+  // Convert 1-based count to 0-based array index space
+  const index = count - 1;
+  const lowerIndex = Math.floor(index);
+  const fraction = index - lowerIndex;
+
+  const lowerVal = masteryDR[lowerIndex];
+  const upperVal = masteryDR[lowerIndex + 1];
+
+  // Interpolate between the lower and upper bounds
+  return lowerVal + fraction * (upperVal - lowerVal);
+};
 
 
 const convokeCastTable = {
@@ -182,7 +201,7 @@ export function scoreDruidSet(stats: Stats, playerData: any, settings: PlayerSet
         // We had more time left than mana, spend the mana.
     }
 
-    const masterySeconds = 0; // The average number of mastery seconds we've added through the raid.
+    let masterySeconds = 0; // The average number of mastery seconds we've added through the raid.
 
     if (hasTalent(state.talents, "Nature's Bounty")) {
         // Natures Bounty cleaves Regrowth.
@@ -190,6 +209,16 @@ export function scoreDruidSet(stats: Stats, playerData: any, settings: PlayerSet
         const averageRegrowths = getSpellEntry(castProfile, "Regrowth").cpm * 12 / 60;
         castProfile.push({spell: "Regrowth", label: "Nature's Bounty", cpm: getSpellEntry(castProfile, "Regrowth").cpm * averageRegrowths, autoSpell: true, mult: 0.2, customIndex: 0, flags: {overrideOverhealing: 0.45}});
     }
+
+    // Calculate average mastery stacks globally.
+    ["Regrowth", "Rejuvenation", "Wild Growth"].forEach((s: string) => {
+        const hotLength = s === "Regrowth" ? spellDB[s][1].buffDuration! : spellDB[s][0].buffDuration!;
+        const count = getCPM(castProfile, s);
+        const targets = s === "Wild Growth" ? spellDB[s][0].targets : 1;
+        
+        masterySeconds += (count * hotLength * targets) / 60 / 20;
+        reportingData.masterySeconds = masterySeconds;
+    })
 
 
     // Cast triggers
@@ -215,6 +244,25 @@ export function scoreDruidSet(stats: Stats, playerData: any, settings: PlayerSet
 
 
             const effectiveCPM = spellProfile.fillerSpell ? 0 : spellProfile.cpm!;
+
+            // Handle mastery
+            let hotCount = 0;
+            if (spellName.includes("Lifebloom") && slice.specialLabel !== "Verdancy") {
+                hotCount = 4; // Our hot stack on ourselves.
+            }
+            else {
+                if (slice.spellType === "buff" && slice.secondaries.includes("mastery")) {
+                    // The spell is a hot, it at least scales with its own mastery.
+                    // The downside here is that we end up double counting HoTs. This mostly only matters for WG since the 
+                    // others are small enough.
+                    hotCount = 1;
+                }
+                hotCount += masterySeconds; // Add the average mastery seconds we've calculated from other spells.
+            }
+
+            spellOutput *= 1 + (getMasteryMult(hotCount) * (state.statPercentages.mastery || 0));
+            console.log((1 + (getMasteryMult(hotCount) * (state.statPercentages.mastery || 0))), getMasteryMult(hotCount));
+            //
 
             const totalOutput = (spellOutput * effectiveCPM) * (spellProfile.mult ?? 1);
 
