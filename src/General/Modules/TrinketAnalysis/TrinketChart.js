@@ -172,7 +172,7 @@ export default function TrinketChart({ player }) {
 
   const allItemLevels =
     gameType === "Retail"
-      ? [263, 272, 276, 285, 289, 298, 302, 308, 315, 321, 328, 331, 334, 344]
+      ? [272, 276, 285, 289, 295, 298, 302, 308, 315, 321, 328, 331, 334, 344]
       : [458, 463, 476, 483, 484, 489, 496, 502, 509, 510, 517, 522, 528, 535, 541];
 
   const itemLevels = allItemLevels.filter((level) => level <= levelCap || gameType === "Classic");

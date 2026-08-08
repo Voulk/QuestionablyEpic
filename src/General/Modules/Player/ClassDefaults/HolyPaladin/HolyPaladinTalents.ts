@@ -40,7 +40,7 @@ const classTalents: TalentTree = {
     }},
 
     /* Judgment deems the target unworthy, preventing the next $<shield> damage dealt by the target.   */
-    "Greater Judgment": {id: 231644, values: [138.0],  points: 0, maxPoints: 1, icon: "spell_holy_righteousfury", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Greater Judgment": {id: 231644, values: [483.0],  points: 0, maxPoints: 1, icon: "spell_holy_righteousfury", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
         spellDB["Judgment"] = attachSpellEffect(spellDB["Judgment"], spellDB["Greater Judgment"]);
     }},
 
@@ -165,7 +165,7 @@ const specTalents: TalentTree = {
     }},
 
     /* Activating Aura Mastery also casts a Divine Toll at X% effectiveness. */
-    "Ringing of the Heavens": {id: 1241542, values: [100.0],  points: 0, maxPoints: 1, icon: "paladin_protection", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Ringing of the Heavens": {id: 1241542, values: [200.0],  points: 0, maxPoints: 1, icon: "paladin_protection", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
 
     }},
 
@@ -240,7 +240,7 @@ const specTalents: TalentTree = {
     }},
 
     /* X% of Holy Shock's overhealing is converted into an absorb shield. The shield amount cannot exceed Y% of your max health. */
-    "Overflowing Light": {id: 461244, values: [30.0, 10.0],  points: 0, maxPoints: 1, icon: "spell_holy_holyguidance", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Overflowing Light": {id: 461244, values: [50.0, 10.0],  points: 0, maxPoints: 1, icon: "spell_holy_holyguidance", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
         // I'd like to add a proper field for overhealing protection at some point.
         spellDB["Holy Shock"][0].expectedOverheal *= 0.7;
     }},
@@ -262,7 +262,7 @@ const specTalents: TalentTree = {
     }},
 
     /* Lay on Hands' cooldown is reduced by X% and restores $415299s1% of your Mana. */
-    "Tirion's Devotion": {id: 414720, values: [-30.0],  points: 0, maxPoints: 1, icon: "spell_holy_revivechampion", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Tirion's Devotion": {id: 414720, values: [-40.0],  points: 0, maxPoints: 1, icon: "spell_holy_revivechampion", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
 
     }},
 
@@ -272,7 +272,7 @@ const specTalents: TalentTree = {
     }},
 
     /* While at maximum health, targets with Beacon of Light generate an absorb shield equal to X% of their health every $53563t6 sec, up to a maximum of Y%. */
-    "Glistening Radiance": {id: 1241805, values: [1.0, 5.0],  points: 0, maxPoints: 1, icon: "spell_paladin_divinecircle", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Glistening Radiance": {id: 1241805, values: [2.0, 6.0],  points: 0, maxPoints: 1, icon: "spell_paladin_divinecircle", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
 
     }},
 
@@ -301,7 +301,7 @@ const specTalents: TalentTree = {
     }},
 
     /* Judgment critical strikes empower your next Word of Glory to automatically activate Light of Dawn at Y% effectiveness. */
-    "Empyrean Legacy": {id: 1241358, values: [0.0, 125.0],  points: 0, maxPoints: 1, icon: "item_holyspark", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Empyrean Legacy": {id: 1241358, values: [0.0, 30.0],  points: 0, maxPoints: 1, icon: "item_holyspark", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
         // Profile talent
     }},
 
@@ -335,7 +335,7 @@ const specTalents: TalentTree = {
     }},
 
     /* While in combat, your Holy Power spenders have a X% chance to cause your next Judgment to deal $414193s1% increased damage and critically strike.    Activating Avenging Wrath activates Awakening. */
-    "Awakening": {id: 414195, values: [10.0, 12.0, 1.0, 4.0],  points: 0, maxPoints: 1, icon: "inv_helm_plate_raidpaladin_n_01", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Awakening": {id: 414195, values: [15.0, 12.0, 1.0, 4.0],  points: 0, maxPoints: 1, icon: "inv_helm_plate_raidpaladin_n_01", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
 
     }},
 
@@ -431,7 +431,7 @@ const heroTalents: TalentTree = {
     }},
 
     /* $?c1[Dawnlight's duration is increased by ${X/1000}.1 sec when it heals an ally with full health.][Dawnlight's duration is increased by ${Y/1000}.1 sec whenever struck by Divine Storm or Templar's Verdict.    When 2 Dawnlights are struck by Divine Storm, their durations are extended by an additional ${Z/1000}.1 sec.] */
-    "Endless Gleam": {id: 1263787, values: [500.0, 300.0, 300.0], heroTree: "Herald of the Sun", points: 0, maxPoints: 1, icon: "spell_paladin_inquisition", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Endless Gleam": {id: 1263787, values: [500.0, 300.0, 500.0], heroTree: "Herald of the Sun", points: 0, maxPoints: 1, icon: "spell_paladin_inquisition", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
 
     }},
 
@@ -489,7 +489,7 @@ const heroTalents: TalentTree = {
     }},
 
     /* For each Holy Power ability cast, your next Consecration deals $?a137029[$<holy>][$<prot>] damage or healing immediately, split across all enemies and allies. */
-    "Divine Guidance": {id: 433106, values: [30.0, 50.0], heroTree: "Lightsmith", points: 0, maxPoints: 1, icon: "spell_holy_lightsgrace", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Divine Guidance": {id: 433106, values: [20.0, 50.0, 3.0, 30.0, 100.0], heroTree: "Lightsmith", points: 0, maxPoints: 1, icon: "spell_holy_lightsgrace", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
 
     }},
 

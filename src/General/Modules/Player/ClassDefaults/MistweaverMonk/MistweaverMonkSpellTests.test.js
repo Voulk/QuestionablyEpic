@@ -15,7 +15,7 @@ describe("Test Mistweaver Monk Spell Values", () => {
     // 
     each`
         spellName                        | expectedResult                  | index
-        ${"Tiger Palm"}                  | ${(962*0.7)}                   | ${0}
+        ${"Tiger Palm"}                  | ${(962*0.7)}                    | ${0}
         ${"Blackout Kick"}               | ${(1702*0.7)}                   | ${0}
         ${"Rising Sun Kick"}             | ${(2612*0.7)}                   | ${0} 
         ${"Rushing Wind Kick"}           | ${(3264)}                       | ${0} 
@@ -23,10 +23,10 @@ describe("Test Mistweaver Monk Spell Values", () => {
         ${"Renewing Mist"}               | ${(1025)}                       | ${0} 
         
         ${"Invigorating Mists"}          | ${(1685)}                       | ${0} 
-        ${"Enveloping Mist"}            | ${(3905)}                       | ${0} 
-         ${"Revival"}                   | ${(31234)}                       | ${0} 
-         ${"Courage of the White Tiger"}           | ${(4347)}                       | ${0} 
-          ${"Vivify"}                      | ${(5038)}                       | ${0} 
+        ${"Enveloping Mist"}             | ${(3905)}                       | ${0} 
+        ${"Revival"}                     | ${(31234)}                      | ${0} 
+        ${"Courage of the White Tiger"}  | ${(4347)}                       | ${0} 
+        ${"Vivify"}                      | ${(5038)}                       | ${0} 
 
 
     `.test("Base Value Check - " + spec + " Reg Spells: $spellName $index", ({ spellName, expectedResult, index }) => {

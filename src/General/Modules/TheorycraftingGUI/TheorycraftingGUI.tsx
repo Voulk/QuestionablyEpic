@@ -46,8 +46,6 @@ export default function TheorycraftingGUI(props) {
     const [selectedProfile, setSelectedProfile] = useState(profiles[0]);
     const [talentString, setTalentString] = useState(profiles[0].talents);
     const talentsSelected = getSelectedTalentsFromString(selectedProfile.talents, selectedSpec);
-    console.log(profiles[0])
-    console.log(talentsSelected);
     const params = {
         filler: {
             hw: 0, ch: 1
@@ -110,7 +108,7 @@ export default function TheorycraftingGUI(props) {
  
       {/* Future panels go here */}
 
-      {<SequenceDataTable data={""} spec={selectedSpec} stats={stats} talents={[]} />}
+      {/*<SequenceDataTable data={""} spec={selectedSpec} stats={stats} talents={[]} />*/}
 
       <div style={{ height: 100 }} />
     </Box>

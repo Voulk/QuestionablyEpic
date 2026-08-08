@@ -241,7 +241,7 @@ const specTalents: TalentTree = {
         //Implemented in profile
     }},
 
-    "Swelling Tides": {id: 1252882, values: [],  points: 0, maxPoints: 1, icon: "ability_shaman_manatidetotem", select: true, tier: 3, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Swelling Tides": {id: 1252882, values: [1.0],  points: 0, maxPoints: 1, icon: "ability_shaman_manatidetotem", select: true, tier: 3, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
         //Implemented in profile
     }},
 
