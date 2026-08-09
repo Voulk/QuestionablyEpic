@@ -1,9 +1,10 @@
 import { deepCopyFunction, hasTalent, getTalentPoints } from "General/Modules/Player/ClassDefaults/Generic/RampBase"
-import { applyRaidBuffs, applyTalentsFromString, compileProfileReportingData, completeCastProfile, convertStatPercentages, getTrinketData, getSpellEntry, getCPM, buildCPM } from "../Generic/ProfileUtilities";
+import { applyRaidBuffs, applyTalentsFromString, compileProfileReportingData, completeCastProfile, convertStatPercentages, getTrinketData, getSpellEntry, getCPM, buildCPM, getSpellCooldown } from "../Generic/ProfileUtilities";
 import { monkTalents } from "./MistweaverMonkTalents";
 import { getManaTeaStackValues, getNaturalStacks, getRefreshmentStacks, getLifecyclesStacks } from "./MistweaverManaTea";
-import { runSpell, addOutput, getSelectedKick, getSelectedPrimaryHeal, getGustHeal, getGCD, getGroupSize, getRapidDiffusionRemDuration, applyHealthAbsorbs, getAveragePpmFromLogs, getEntryCastTime, getEntryCost, getTimeUsed, ASSUMED_MAX_HEALTH } from "./MistweaverUtilities";
+import { runSpell, addOutput, applyTalentOverrides, getSelectedKick, getSelectedPrimaryHeal, getGustHeal, getGCD, getGroupSize, getRapidDiffusionRemDuration, applyHealthAbsorbs, getAveragePpmFromLogs, getEntryCastTime, getEntryCost, getTimeUsed, ASSUMED_MAX_HEALTH, MonkProfileKey } from "./MistweaverUtilities";
 import { applyYulonWindow, applyChijiWindow, getCelestialSequence } from "./MistweaverCelestials";
+import { applySecretInfusion, applyTftEmpowers, getTftEmpowers, getTftRenewingMistSec, splitTftEnvelopingMist } from "./MistweaverThunderFocusTea";
 import { MONK_HERO_TREES, monkTalentStrings } from "./MonkDefaults";
 
 import specSpellDB from "./MistweaverMonkSpellDB.json";
@@ -125,9 +126,7 @@ const applyEmperorsElixir = (talents: any, spellDB: Record<string, any[]>, castP
     if (hasTalent(talents, "Emperor's Elixir")) {
         const effectiveness = talents["Emperor's Elixir"].values[1] / 100;
         spellDB["Jadefire Stomp"][0].damageToHeal = spellDB[getSelectedKick(castProfile).spell][0].damageToHeal * effectiveness;
-
-        // TODO: jfs casts from thunder focus tea empowering RSK/RWK
-        // needs tft's own cpm + charges (like from focused thunder) in order to get a true depiction of how many are used with rsk/rwk
+        spellDB["Jadefire Stomp"][0].offGCD = true; // released by the empowered kick, it isn't a cast of its own
     }
 }
 
@@ -135,7 +134,7 @@ const applyEmperorsElixir = (talents: any, spellDB: Record<string, any[]>, castP
 const POOL_KICK_EFFECTIVENESS = 0.5;
 const POOL_REM_EFFECTIVENESS = 0.90;
 
-const applyPoolOfMists = (talents: any, castProfile: CastProfile, spellDB: Record<string, any[]>): void => {
+const applyPoolOfMists = (talents: any, castProfile: CastProfile, spellDB: Record<string, any[]>, haste: number): void => {
     if (!hasTalent(talents, "Pool of Mists")) return;
 
     const remCdReducedSec = talents["Pool of Mists"].values[3] / 1000;
@@ -145,8 +144,8 @@ const applyPoolOfMists = (talents: any, castProfile: CastProfile, spellDB: Recor
     const kickEntry = getSelectedKick(castProfile);
     if (!remEntry || !kickEntry) return;
 
-    const remCooldown = spellDB["Renewing Mist"][0].cooldownData.cooldown;
-    const kickCooldown = spellDB[kickEntry.spell][0].cooldownData.cooldown;
+    const remCooldown = getSpellCooldown(spellDB, "Renewing Mist", haste);
+    const kickCooldown = getSpellCooldown(spellDB, kickEntry.spell, haste);
 
     // env takes a sec off rsk too with rapid diffusion, but not rsk onto rsk because of the icd on pool
     const envEntry = hasTalent(talents, "Rapid Diffusion") ? getSpellEntry(castProfile, "Enveloping Mist") : null;
@@ -186,29 +185,15 @@ const applyFreightrunnersFlask = (playerData: any, state: any): any => {
     return onUseData;
 }
 
-// applying rem for yu'lon, rsk for chi-ji
-const applySecretInfusion = (talents: any, state: any, profileKey: MonkProfileKey): void => {
-    if (!hasTalent(talents, "Secret Infusion")) return;
+const AVATAR_BASE_PPM = 1.5;
 
-    const statPerPoint = talents["Secret Infusion"].values[0] / 100;
-    const statBonus = statPerPoint * getTalentPoints(talents, "Secret Infusion");
-    const stat = profileKey === "Chi-Ji" ? "versatility" : "haste";
-
-    if (stat === "haste") {
-        state.statPercentages.haste *= 1 + statBonus;
-    }
-    else {
-        state.statPercentages.versatility += statBonus;
-    }
-}
-
-const getHeartOfJadeSerpentUptimes = (talents: any, castProfile: CastProfile, tftCpm: number): { uptimeStandard: number, uptimeConduit: number } => {
+const getHeartOfJadeSerpentUptimes = (talents: any, castProfile: CastProfile, spellDB: Record<string, any[]>, haste: number, tftCpm: number): { uptimeStandard: number, uptimeConduit: number } => {
     const procDurationSec = talents["Heart of the Jade Serpent"].values[0] / 1000;
 
     let uptimeSecPerMinStandard = tftCpm * procDurationSec;
     if (hasTalent(talents, "Yu'lon's Avatar")) {
         // any profile that casts viv/sg at all clears YA 1.5ppm pretty comfortably
-        const avatarPpm = getSelectedPrimaryHeal(castProfile) ? 1.5 : 0;
+        const avatarPpm = getSelectedPrimaryHeal(castProfile) ? AVATAR_BASE_PPM * haste : 0;
         const avatarDurationSec = talents["Yu'lon's Avatar"].values[0] / 1000;
         uptimeSecPerMinStandard += avatarPpm * avatarDurationSec;
     }
@@ -216,7 +201,8 @@ const getHeartOfJadeSerpentUptimes = (talents: any, castProfile: CastProfile, tf
 
     let uptimeConduit = 0;
     if (hasTalent(talents, "Unity Within")) {
-        const conduitCpm = getSpellEntry(castProfile, "Celestial Conduit")?.cpm ?? 0;
+        const conduitEntry = getSpellEntry(castProfile, "Celestial Conduit");
+        const conduitCpm = conduitEntry ? (conduitEntry.cpm ?? buildCPM(spellDB, conduitEntry.spell, conduitEntry.efficiency)) : 0;
         uptimeConduit = Math.min((conduitCpm * procDurationSec) / 60, 1);
     }
 
@@ -224,50 +210,63 @@ const getHeartOfJadeSerpentUptimes = (talents: any, castProfile: CastProfile, tf
 }
 
 const HOTJS_CDR_PERC = 75;
-const KICK_KEY = "Selected Kick";
+
 const HOTJS_EFFECTIVENESS: Record<string, number> = {
-    "Renewing Mist": 0.6,
-    "Rushing Wind Kick": 0.4,
-    "Rising Sun Kick": 0.9, // with rsk, we're probably not fighting for gcds unlike rwk (yu'lon)
-    "Thunder Focus Tea": 0.8,
-    "Life Cocoon": 0.8,
+    "Renewing Mist": 0.58,
+    "Thunder Focus Tea": 0.77,
+    "Life Cocoon": 0.77,
 };
 
-const getHotjsTftCpm = (talents: any, castProfile: CastProfile, baseTftCpm: number): number => {
+const HOTJS_KICK_EFFECTIVENESS: Record<string, number> = {
+    "Rushing Wind Kick": 0.36,
+    "Rising Sun Kick": 0.9, // with rsk, we're probably not fighting for gcds unlike rwk (yu'lon)
+};
+
+const getHotjsCdrMult = (talents: any, uptimes: { uptimeStandard: number, uptimeConduit: number }, effectiveness: number): number => {
+    const standardCdr = HOTJS_CDR_PERC / 100;
+    const unityWithinMult = hasTalent(talents, "Unity Within") ? talents["Unity Within"].values[0] / 100 : 1;
+
+    return 1 + (standardCdr * uptimes.uptimeStandard + standardCdr * unityWithinMult * uptimes.uptimeConduit) * effectiveness;
+}
+
+const getHotjsTftCpm = (talents: any, castProfile: CastProfile, spellDB: Record<string, any[]>, haste: number, baseTftCpm: number): number => {
     if (!hasTalent(talents, "Heart of the Jade Serpent")) return baseTftCpm;
 
-    const { uptimeStandard, uptimeConduit } = getHeartOfJadeSerpentUptimes(talents, castProfile, baseTftCpm);
-    const standardCdr = HOTJS_CDR_PERC / 100;
-    const unityWithinMult = hasTalent(talents, "Unity Within") ? talents["Unity Within"].values[0] / 100 : 1;
-    const conduitCdr = standardCdr * unityWithinMult;
+    // really gotta cycle bc tft procs hotjs, hotjs gives tft cdr. lots of cyclical stuff here,,,
+    let tftCpm = baseTftCpm;
+    for (let _ = 0; _ < 10; _++) {
+        const uptimes = getHeartOfJadeSerpentUptimes(talents, castProfile, spellDB, haste, tftCpm);
+        tftCpm = baseTftCpm * getHotjsCdrMult(talents, uptimes, HOTJS_EFFECTIVENESS["Thunder Focus Tea"]);
+    }
 
-    return baseTftCpm * (1 + standardCdr * uptimeStandard) * (1 + conduitCdr * uptimeConduit);
+    return tftCpm;
 }
 
-const applyFlowingWisdom = (talents: any, state: any, castProfile: CastProfile, tftCpm: number): void => {
+const applyFlowingWisdom = (talents: any, state: any, castProfile: CastProfile, spellDB: Record<string, any[]>, tftCpm: number): void => {
     if (!hasTalent(talents, "Flowing Wisdom")) return;
 
-    const { uptimeStandard, uptimeConduit } = getHeartOfJadeSerpentUptimes(talents, castProfile, tftCpm);
+    const { uptimeStandard, uptimeConduit } = getHeartOfJadeSerpentUptimes(talents, castProfile, spellDB, state.statPercentages.haste, tftCpm);
     const hasteBonus = talents["Flowing Wisdom"].values[0] / 100;
 
-    state.statPercentages.haste *= (1 + hasteBonus * uptimeStandard) * (1 + hasteBonus * uptimeConduit);
+    // one buff at a time, so the two sources share a single uptime
+    state.statPercentages.haste *= 1 + hasteBonus * Math.min(uptimeStandard + uptimeConduit, 1);
 }
 
-const applyHeartOfJadeSerpent = (talents: any, castProfile: CastProfile, tftCpm: number): void => {
+const applyHeartOfJadeSerpent = (talents: any, castProfile: CastProfile, spellDB: Record<string, any[]>, haste: number, tftCpm: number): void => {
     if (!hasTalent(talents, "Heart of the Jade Serpent")) return;
 
-    const { uptimeStandard, uptimeConduit } = getHeartOfJadeSerpentUptimes(talents, castProfile, tftCpm);
-    const standardCdr = HOTJS_CDR_PERC / 100;
-    const unityWithinMult = hasTalent(talents, "Unity Within") ? talents["Unity Within"].values[0] / 100 : 1;
-    const conduitCdr = standardCdr * unityWithinMult;
+    const uptimes = getHeartOfJadeSerpentUptimes(talents, castProfile, spellDB, haste, tftCpm);
+    const applyCdr = (entry: any, effectiveness: number): void => {
+        entry.cpm *= getHotjsCdrMult(talents, uptimes, effectiveness);
+    }
 
-    const selectedKick = getSelectedKick(castProfile).spell;
     Object.entries(HOTJS_EFFECTIVENESS).forEach(([spellName, effectiveness]) => {
-        const entry = getSpellEntry(castProfile, spellName === KICK_KEY ? selectedKick : spellName);
-        if (!entry) return;
-
-        entry.cpm *= (1 + standardCdr * uptimeStandard * effectiveness) * (1 + conduitCdr * uptimeConduit * effectiveness);
+        const entry = getSpellEntry(castProfile, spellName);
+        if (entry) applyCdr(entry, effectiveness);
     });
+
+    const kickEntry = getSelectedKick(castProfile);
+    if (kickEntry) applyCdr(kickEntry, HOTJS_KICK_EFFECTIVENESS[kickEntry.spell]);
 }
 
 const applyHarmonicSurgeCpm = (talents: any, castProfile: CastProfile, spellDB: Record<string, any[]>, tftCpm: number): void => {
@@ -341,16 +340,14 @@ const DANCING_MISTS_BOUNCE_PPM = getAveragePpmFromLogs([
 ]);
 
 // TODO: confirm validity
-const getDancingMistsRemSec = (talents: any, castProfile: CastProfile, spellDB: Record<string, any[]>, rapidDiffusionRemSec: number): number => {
+const getDancingMistsRemSec = (talents: any, castProfile: CastProfile, spellDB: Record<string, any[]>, freeRemSec: number): number => {
     if (!hasTalent(talents, "Dancing Mists")) return 0;
 
     const procChance = talents["Dancing Mists"].values[0] / 100;
     const remCPM = getSpellEntry(castProfile, "Renewing Mist").cpm;
     const remDuration = spellDB["Renewing Mist"][0].buffDuration;
 
-    const rapidDiffusionCpm = rapidDiffusionRemSec / remDuration;
-    const castDrivenRemSec = (remCPM + rapidDiffusionCpm) * procChance * remDuration;
-
+    const castDrivenRemSec = (remCPM * remDuration + freeRemSec) * procChance;
     const bounceDrivenRemSec = DANCING_MISTS_BOUNCE_PPM * remDuration;
 
     return castDrivenRemSec + bounceDrivenRemSec;
@@ -405,8 +402,6 @@ const getMistyCoalescenceMult = (talents: any, averageRemCount: number, profileK
     return 1 + (maxMultPerc / 100) * Math.min(averageRemCount / maxCoverage, 1);
 }
 
-type MonkProfileKey = keyof typeof monkTalentStrings;
-
 const initMonkCastState = (castProfile: CastProfile, playerData: any, settings: PlayerSettings, profileKey: MonkProfileKey) => {
     const initialState = {
         statBonuses: applyRaidBuffs(settings),
@@ -444,7 +439,7 @@ const initMonkCastState = (castProfile: CastProfile, playerData: any, settings: 
     const talents = initialState.talents;
     const talentImport = getSelectedTalentsFromString(monkTalentStrings[profileKey], SPECS.MISTWEAVERMONK);
 
-    applyTalentsFromString(initialState, spellDB, talentImport);
+    applyTalentsFromString(initialState, spellDB, applyTalentOverrides(talentImport, playerData.talentOverrides));
 
     if (hasTalent(talents, "Celestial Harmony")) {
         const celestialHarmony = talents["Celestial Harmony"];
@@ -466,6 +461,8 @@ const initMonkCastState = (castProfile: CastProfile, playerData: any, settings: 
 
     // must be done after applyTalents to get jft/mf additive transfer rates
     applyEmperorsElixir(talents, spellDB, castProfile);
+
+    splitTftEnvelopingMist(spellDB);
 
     return { initialState, localSettings, spellDB, talents };
 }
@@ -554,9 +551,9 @@ const applyRestoreBalance = (talents: any, state: any, reportingData: Record<str
 const applyHeroTreeBonuses = (talents: any, castProfile: CastProfile, spellDB: Record<string, any[]>, state: any, reportingData: Record<string, any>, playerData: any): void => {
     let tftCpm = 60 / spellDB["Thunder Focus Tea"][0].cooldownData.cooldown;
     if (playerData.heroTree === MONK_HERO_TREES.CONDUIT) {
-        tftCpm = getHotjsTftCpm(talents, castProfile, tftCpm);
+        tftCpm = getHotjsTftCpm(talents, castProfile, spellDB, state.statPercentages.haste, tftCpm);
         applyInnerCompass(talents, state);
-        applyFlowingWisdom(talents, state, castProfile, tftCpm);
+        applyFlowingWisdom(talents, state, castProfile, spellDB, tftCpm);
     }
     else if (playerData.heroTree === MONK_HERO_TREES.MOH) {
         applyHarmonicSurgeCpm(talents, castProfile, spellDB, tftCpm);
@@ -592,8 +589,8 @@ const applyZenPulse = (talents: any, spellDB: Record<string, any[]>, reportingDa
         [[7, 51], 10], // zrLTxtRZ4nahvd9b
     ]); // 1.37 cpm base
 
-    // todo: tft cpm = additional zen pulse buffs
-    reportingData.zenPulsePPM = calcedBasePpm * EFFICIENCY + (hasTalent(talents, "Deep Clarity") ? 2 : 0);
+    const deepClarityPPM = hasTalent(talents, "Deep Clarity") ? reportingData.tftCpm : 0;
+    reportingData.zenPulsePPM = calcedBasePpm * EFFICIENCY + deepClarityPPM;
 
     const zenPulseEntry = spellDB["Zen Pulse"][0];
     zenPulseEntry.mult = (zenPulseEntry.mult ?? 1) * (1 + Math.min(talents["Zen Pulse"].values[0] / 100 * reportingData.averageRemCount, talents["Zen Pulse"].values[1] / 100));
@@ -817,8 +814,10 @@ function runMonkCastProfile(
     // Prio: House of Cards > Signet. Only matters if someone is wearing double on-use. Poor thing.
     const onUseData: any = applyFreightrunnersFlask(playerData, state);
 
+    const tftEmpowers = getTftEmpowers(talents, profileKey, playerData.tftEmpowers);
+
     applyChiProficiency(talents, state);
-    applySecretInfusion(talents, state, profileKey);
+    applySecretInfusion(talents, state, tftEmpowers);
     applyHeroTreeBonuses(talents, castProfile, spellDB, state, reportingData, playerData);
 
     // Convert efficiencies to effect CPMs. Handle any special overrides.
@@ -827,8 +826,9 @@ function runMonkCastProfile(
     applyApexBonuses(castProfile, reportingData);
     applyTierSet(playerData, castProfile, spellDB);
 
-    applyPoolOfMists(talents, castProfile, spellDB);
-    applyHeartOfJadeSerpent(talents, castProfile, reportingData.tftCpm);
+    applyPoolOfMists(talents, castProfile, spellDB, state.statPercentages.haste);
+    applyHeartOfJadeSerpent(talents, castProfile, spellDB, state.statPercentages.haste, reportingData.tftCpm);
+    applyTftEmpowers(talents, castProfile, spellDB, state, tftEmpowers, reportingData.tftCpm, reportingData);
 
     applyHealingElixirTalents(spellDB, castProfile, talents, state.statPercentages.intellect);
 
@@ -856,6 +856,9 @@ function runMonkCastProfile(
 
     // Rapid Diffusion
     reportingData.freeRenewingMistSec = getRapidDiffusionRemSec(talents, castProfile, localSettings.risingMist.remStandard);
+    
+    reportingData.freeRenewingMistSec += getTftRenewingMistSec(tftEmpowers, reportingData.tftCpm, localSettings.risingMist.remStandard);
+
     reportingData.freeRenewingMistSec += getDancingMistsRemSec(talents, castProfile, spellDB, reportingData.freeRenewingMistSec);
 
     applyCoverageMultipliers(talents, castProfile, spellDB, state, localSettings, reportingData, risingMistRates, profileKey);

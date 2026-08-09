@@ -1,5 +1,5 @@
 import { hasTalent } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
-import { getSpellEntry, getCPM } from "../Generic/ProfileUtilities";
+import { getSpellEntry, getCPM, getSpellCooldown } from "../Generic/ProfileUtilities";
 import { runSpell, addOutput, getSelectedKick, getGustHeal, getCastTime, getGCD, getGroupSize, getRapidDiffusionRemDuration } from "./MistweaverUtilities";
 
 const YULON_ENVELOPING_CAST_SPEED_PERC = 30;
@@ -131,7 +131,7 @@ export const applyYulonWindow = (profileKey: string, talents: any, spellDB: Reco
     }, 0);
 
     const kickCdrSec = hasTalent(talents, "Pool of Mists") && hasTalent(talents, "Rapid Diffusion") ? talents["Pool of Mists"].values[2] / 1000 : 0;
-    const kickCooldown = spellDB[kickEntry.spell][0].cooldownData.cooldown / haste;
+    const kickCooldown = getSpellCooldown(spellDB, kickEntry.spell, haste);
 
     const openSec = duration - gcd - cooldownSec;
     let envCasts = 0;

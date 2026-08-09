@@ -1,15 +1,27 @@
 import { getSpellThroughput, getSpellEntry } from "../Generic/ProfileUtilities";
 import { BASEMANA } from "General/Engine/STAT";
 import { hasTalent, getTalentPoints } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
+import { monkTalentStrings } from "./MonkDefaults";
 
-// small shared helpers. they live here rather than in the cast profile so the celestial module can use them
-// without the two importing each other
+export type MonkProfileKey = keyof typeof monkTalentStrings;
 
 export const runSpell = (state: any, slice: SpellData, flags: any = {}): number =>
     getSpellThroughput(slice, state.statPercentages, state.spec, state.settings, flags);
 
 export const addOutput = (breakdown: Record<string, number>, label: string, output: number): void => {
     breakdown[label] = (breakdown[label] ?? 0) + output;
+}
+
+// swaps talents on a decoded talent import so tests can compare builds w minor diffs
+export const applyTalentOverrides = (talentImport: any[], overrides?: Record<string, number>): any[] => {
+    if (!overrides) return talentImport;
+
+    const kept = talentImport.filter(entry => !(entry.talentName in overrides));
+    const swapped = Object.entries(overrides)
+        .filter(([, talentRanks]) => talentRanks > 0)
+        .map(([talentName, talentRanks]) => ({ talentName, talentRanks }));
+
+    return [...kept, ...swapped];
 }
 
 export const getSelectedKick = (castProfile: CastProfile): any =>
@@ -65,9 +77,9 @@ export const getGCD = (averageHaste: number, speedMult: number = 1): number =>
 
 export const getCastTime = (spell: any, averageHaste: number): number => {
     const castTime = (spell.castTime / averageHaste) || 0;
-    if (castTime === 0 && !spell.offGCD) return getGCD(averageHaste);
+    if (spell.offGCD) return castTime;
 
-    return castTime;
+    return Math.max(castTime, getGCD(averageHaste));
 }
 
 // assuming max group size of 5 for dungeon, 20 for mythic raid.
@@ -87,10 +99,9 @@ export const getAveragePpmFromLogs = (examples: [[number, number], number][]): n
 }
 
 export const getEntryCastTime = (entry: ProfileEntry, spellDB: Record<string, any[]>, averageHaste: number): number => {
-    const slice = spellDB[entry.spell][0];
-    const overridden = entry.castTimeOverride !== undefined ? { ...slice, castTime: entry.castTimeOverride } : slice;
+    if (entry.castTimeOverride !== undefined) return entry.castTimeOverride / averageHaste;
 
-    return getCastTime(overridden, averageHaste);
+    return getCastTime(spellDB[entry.spell][0], averageHaste);
 }
 
 export const getEntryCost = (entry: ProfileEntry, spellDB: Record<string, any[]>): number =>
