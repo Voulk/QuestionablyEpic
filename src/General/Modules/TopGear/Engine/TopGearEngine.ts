@@ -27,8 +27,8 @@ import { getFolioEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffect
  */
 
 const softSlice = 3000;
-const DR_CONST = 0.00263669230769231; // 0.00497669230769231;
-const DR_CONSTLEECH = 0.05122569230769231;
+const adjustWeights = true;
+
 
 // This is just a timer function. We might eventually just move it to a timeUtility file for better re-use.
 export function expensive(time: number) {
@@ -964,6 +964,9 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     // Extra raid buffs
     setStats.versatility = (setStats.versatility || 0) + STATCONVERSION.VERSATILITY * 3;
     setStats.intellect = (setStats.intellect || 0) * 1.03; // Arcane Intellect
+
+    const DR_CONST = adjustWeights ? 0.00263669230769231 : 0;
+    const DR_CONSTLEECH = 0.05122569230769231;
 
     // Apply soft DR formula to stats, as the more we get of any stat the weaker it becomes relative to our other stats.
     adjusted_weights.haste = (adjusted_weights.haste + adjusted_weights.haste * (1 - (DR_CONST * setStats.haste!) / STATCONVERSION.HASTE)) / 2;

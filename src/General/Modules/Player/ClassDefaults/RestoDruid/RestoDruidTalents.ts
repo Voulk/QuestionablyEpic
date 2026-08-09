@@ -224,7 +224,7 @@ const specTalents: TalentTree = {
     /* When Lifebloom blooms, up to X targets within your Efflorescence are healed for $392329s1. */
     "Verdancy": {id: 392325, values: [3.0],  points: 0, maxPoints: 1, icon: "inv_10_herb_seed_magiccolor5", select: true, tier: 3, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], 
     points: number) {
-        spellDB["Lifebloom (Bloom)"] = attachSpellEffect(spellDB["Lifebloom (Bloom)"], spellDB["Verdancy"])
+        //spellDB["Lifebloom (Bloom)"] = attachSpellEffect(spellDB["Lifebloom (Bloom)"], spellDB["Verdancy"])
 
     }},
 
@@ -441,7 +441,10 @@ const heroTalents: TalentTree = {
 
     /* Rip and Ferocious Bite damage increased by X%.    Rejuvenation$?a137012[, Efflorescence, and Lifebloom][] healing increased by Z%. */
     "Wildstalker's Power": {id: 439926, values: [5.0, 5.0, 10.0, 10.0, 10.0], heroTree: "Wildstalker", points: 0, maxPoints: 1, icon: "ability_druid_skinteeth", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        buffSpellPerc(spellDB["Rejuvenation"], talentValues[1]);
+        buffSpellPerc(spellDB["Efflorescence"], talentValues[1]);
+        buffSpellPerc(spellDB["Lifebloom"], talentValues[1]);
+        buffSpellPerc(spellDB["Lifebloom (Bloom)"], talentValues[1]);
     }},
 
     /* The rate at which $?c2[Bloodseeker Vines][Symbiotic Blooms] grow is increased by $?c2[X][Y]%. */
@@ -452,7 +455,7 @@ const heroTalents: TalentTree = {
     /* When you remove an effect with Soothe or $?s88423[Nature's Cure][Remove Corruption], gain a combo point and heal for X% of your maximum health. If you are at full health an injured party or 
     raid member will be healed instead. */
     "Lethal Preservation": {id: 455461, values: [4.0], heroTree: "Wildstalker", points: 0, maxPoints: 1, icon: "spell_nature_healingtouch", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        // lol
     }},
 
     /* Enemies pulled into Ursol's Vortex are rooted in place for ${X/1000} sec. Damage may cancel the effect. */
@@ -477,14 +480,14 @@ const heroTalents: TalentTree = {
 
     }},
 
-    /* When Bloodseeker Vines expire or you use Ferocious Bite on their target they explode in thorns, dealing $440122s1 physical damage to nearby enemies. Damage reduced above 5 targets.    When Symbiotic Blooms expire or you cast Rejuvenation on their target flowers grow around their target, healing them and up to $440121s2 nearby allies for $440121s1. */
+    /* When Symbiotic Blooms expire or you cast Rejuvenation on their target flowers grow around their target, healing them and up to $440121s2 nearby allies for $440121s1. */
     "Bursting Growth": {id: 440120, values: [0.0], heroTree: "Wildstalker", points: 0, maxPoints: 1, icon: "inv_collections_armor_flowerbracelet_b_01", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        
     }},
 
     /* Bloodseeker Vines and Symbiotic Blooms last ${X/1000} additional sec.    When a target afflicted by Bloodseeker Vines dies, the vines jump to a valid nearby target for their remaining duration. */
     "Resilient Flourishing": {id: 439880, values: [2000.0, 2000.0, 2000.0, 2000.0], heroTree: "Wildstalker", points: 0, maxPoints: 1, icon: "inv_misc_herb_16", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        adjBuffDurationFlat(spellDB['Symbiotic Blooms'], 2000, 1);
     }},
 
     /* Each active Bloodseeker Vine increases the damage your abilities deal by 2%.    Each active Symbiotic Bloom increases the healing of your spells by 2%. */
@@ -496,7 +499,11 @@ const heroTalents: TalentTree = {
     /* Your $?c2[Bleeds and other damage over time][heal over time] effects are $?c2[X][Z]% more effective. */
     "Patient Custodian": {id: 1270592, values: [8.0, 8.0, 6.0, 6.0], heroTree: "Wildstalker", points: 0, maxPoints: 1, icon: "inv_helm_misc_rose_a_01_red", select: true, tier: 2, runFunc: function 
     (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        buffSpellPerc(spellDB['Rejuvenation'], talentValues[2]);
+        buffSpellPerc(spellDB['Wild Growth'], talentValues[2]);
+        buffSpellPerc(spellDB['Regrowth'], talentValues[2], 1);
+        buffSpellPerc(spellDB['Symbiotic Blooms'], talentValues[2]);
+        buffSpellPerc(spellDB['Lifebloom'], talentValues[2]);
     }},
 
     /* When Bloodseeker Vines or Symbiotic Blooms grow, they have a X% chance to cause another growth of the same type to immediately grow on a valid nearby target. */
@@ -504,7 +511,7 @@ const heroTalents: TalentTree = {
 
     }},
 
-    /* $?a137011[When you gain or lose Tiger's Fury, your next single-target melee ability causes a Bloodseeker Vine to grow on the target for ${X/1000} sec.][Casting Swiftmend or Wild Growth causes a Symbiotic Bloom to grow on a target for ${Y/1000} sec.] */
+    /* Casting Swiftmend or Wild Growth causes a Symbiotic Bloom to grow on a target for ${Y/1000} sec. */
     "Implant": {id: 440118, values: [4000.0, 6000.0], heroTree: "Wildstalker", points: 0, maxPoints: 1, icon: "ability_creature_poison_03", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
 
     }},
@@ -515,7 +522,7 @@ const heroTalents: TalentTree = {
 
     }},
 
-    /* Bloodseeker Vines increase the damage your abilities deal to affected enemies by X%.    Symbiotic Blooms increase the healing your spells do to affected targets by Y%. */
+    /* Symbiotic Blooms increase the healing your spells do to affected targets by Y%. */
     "Vigorous Creepers": {id: 440119, values: [4.0, 20.0], heroTree: "Wildstalker", points: 0, maxPoints: 1, icon: "spell_druid_massentanglement", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
 
     }},

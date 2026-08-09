@@ -23748,7 +23748,6 @@
             }
         ],
         "levelRange": [
-            263,
             272,
             276
         ]
@@ -23777,7 +23776,6 @@
             }
         ],
         "levelRange": [
-            263,
             272,
             276
         ]
@@ -83644,12 +83642,11 @@
             "name": "Kyrakka's Searing Embers"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
-            298,
+            295,
             302,
             308,
             315,
@@ -83793,12 +83790,11 @@
             "name": "Ruby Whelp Shell"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
-            298,
+            295,
             302,
             308,
             315,
@@ -218365,11 +218361,10 @@
             "name": "Magister's Alchemist Stone"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
-            298
+            295
         ]
     },
     {
@@ -226698,12 +226693,11 @@
             "name": "Drum of Renewed Bonds"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
-            298,
+            295,
             302,
             308,
             315,
@@ -227760,11 +227754,11 @@
             "name": "Volatile Void Suffuser"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
+            295,
             298
         ]
     },
@@ -227813,11 +227807,11 @@
             "name": "Gaze of the Alnseer"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
+            295,
             298
         ]
     },
@@ -227885,11 +227879,11 @@
             "name": "Vaelgor's Final Stare"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
+            295,
             298
         ]
     },
@@ -229298,11 +229292,11 @@
             "name": "Litany of Lightblind Wrath"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
+            295,
             298
         ]
     },
@@ -229331,11 +229325,11 @@
             "name": "Locus-Walker's Ribbon"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
+            295,
             298
         ]
     },
@@ -229388,11 +229382,11 @@
             "name": "Light of the Cosmic Crescendo"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
+            295,
             298
         ]
     },
@@ -232636,11 +232630,11 @@
             "name": "Emberwing Feather"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
+            295,
             298
         ]
     },
@@ -232668,12 +232662,11 @@
             "name": "Lightspire Core"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
-            298,
+            295,
             302,
             308,
             315,
@@ -232707,12 +232700,11 @@
             "name": "Freightrunner's Flask"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
-            298,
+            295,
             302,
             308,
             315,
@@ -233035,11 +233027,11 @@
             "name": "Refueling Orb"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
+            295,
             298
         ]
     },
@@ -233090,12 +233082,11 @@
             "name": "Mycolic Medicine"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
-            298,
+            295,
             302,
             308,
             315,
@@ -233133,11 +233124,11 @@
             "name": "Whisper of the Duskwraith"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
+            295,
             298
         ]
     },
@@ -233165,12 +233156,11 @@
             "name": "Seed of Radiant Hope"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
-            298,
+            295,
             302,
             308,
             315,
@@ -233204,12 +233194,11 @@
             "name": "Unstable Felheart Crystal"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
-            298,
+            295,
             302,
             308,
             315,
@@ -233247,11 +233236,11 @@
             "name": "Heart of Wind"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
+            295,
             298
         ]
     },
@@ -233313,11 +233302,11 @@
             "name": "Vessel of Tortured Souls"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
+            295,
             298
         ]
     },
@@ -237475,12 +237464,11 @@
             "name": "Gift of Light"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
-            298,
+            295,
             302,
             308,
             315,
@@ -237512,12 +237500,11 @@
         },
         "crafted": true,
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
-            298,
+            295,
             302,
             308,
             315,
@@ -237588,12 +237575,11 @@
             "name": "Glorious Crusader's Keepsake"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
-            298,
+            295,
             302,
             308,
             315,
@@ -238173,12 +238159,11 @@
             "name": "Tangle of Vibrant Vines"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
-            298,
+            295,
             302,
             308,
             315,
@@ -246521,9 +246506,7 @@
             "type": "trinket",
             "name": "Galactic Gladiator's Insignia of Alacrity"
         },
-        "levelRange": [
-            263
-        ]
+        "levelRange": []
     },
     {
         "id": 255615,
@@ -259342,7 +259325,11 @@
             "name": "Crucible of Erratic Energies"
         },
         "levelRange": [
-            263
+            272,
+            276,
+            285,
+            289,
+            295
         ]
     },
     {
@@ -261224,12 +261211,11 @@
             "name": "Ultradon Cuirass"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
-            298,
+            295,
             302,
             308,
             315,
@@ -261262,12 +261248,11 @@
             "name": "Cosmic Bell"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
-            298,
+            295,
             302,
             308,
             315,
@@ -263823,11 +263808,11 @@
             "name": "Sporelord's Mycelial Insignia"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
+            295,
             298
         ]
     },
@@ -264175,12 +264160,11 @@
             "name": "Soulcoiler Ritual Vessel"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
-            298,
+            295,
             302,
             308,
             315,
@@ -264236,12 +264220,11 @@
             "name": "Gebbo's Bottomless Bag"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
-            298,
+            295,
             302,
             308,
             315,
@@ -264319,12 +264302,11 @@
             "name": "Wavecaller's Seastone"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
-            298,
+            295,
             302,
             308,
             315,
@@ -264387,12 +264369,11 @@
             "name": "Hex Lord's Dooming Idol"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
-            298,
+            295,
             302,
             308,
             315,
@@ -264455,12 +264436,11 @@
             "name": "Preternatural Antivenom"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
-            298,
+            295,
             302,
             308,
             315,
@@ -280191,12 +280171,11 @@
             "name": "Stormbound Emblem of Dazar"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
-            298,
+            295,
             302,
             308,
             315,
@@ -280262,7 +280241,7 @@
             "intellect": 5259,
             "stamina": 7889,
             "mastery": 3800,
-            "crit": 3200
+            "versatility": 3200
         },
         "sources": [
             {
@@ -280630,12 +280609,11 @@
             "name": "Vile Vial of Volatile Venom"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
-            298,
+            295,
             302,
             308,
             315,
