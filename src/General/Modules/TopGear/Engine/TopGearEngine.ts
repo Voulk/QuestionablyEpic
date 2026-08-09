@@ -840,9 +840,27 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
 
   // Omnium Folio
   // Handle user entry / unlocks later.
-  const folioGems = [1279599]
-  const folioStats = getFolioEffect(folioGems, {player: player, contentType: contentType, settings: userSettings, setStats: setStats, castModel: castModel, setVariables: setVariables});
+  const folioGems = [1279599, 1279603, 1287555]
+  const bestStat = getHighestWeight(castModel);
+  switch (bestStat) {
+    case "haste":
+      folioGems.push(1287774);
+      break;
+    case "crit":
+      folioGems.push(1279609);
+      break;
+    case "mastery":
+      folioGems.push(1287771);
+      break;
+    case "versatility":
+      folioGems.push(1279613);
+      break;
+  }
+  folioGems.push(1279614)
 
+
+  const folioStats = getFolioEffect(folioGems, {player: player, contentType: contentType, settings: userSettings, setStats: setStats, castModel: castModel, setVariables: setVariables});
+  builtSet.folioGems = folioGems;
   effectStats.push(folioStats);
 
   // Special 10.0.7 Ring

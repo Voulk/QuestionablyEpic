@@ -274774,7 +274774,7 @@
                 "cost": 50
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Cover of the Shattered Vale",
@@ -274824,7 +274824,7 @@
                 "cost": 60
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Leggings of the Shattered Vale",
@@ -274874,7 +274874,7 @@
                 "cost": 55
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Vestment of the Shattered Vale",
@@ -274925,7 +274925,7 @@
                 "cost": 55
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Shoulderwraps of the Shattered Vale",
@@ -274975,7 +274975,7 @@
                 "cost": 50
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Breastplate of Winged Triumph",
@@ -275078,7 +275078,7 @@
                 "cost": 55
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Shoulderguards of the Ternion Glory",
@@ -275128,7 +275128,7 @@
                 "cost": 50
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Tunic of Celestial Harmony",
@@ -275589,7 +275589,7 @@
                 "cost": 50
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Hood of the Ternion Glory",
@@ -275639,7 +275639,7 @@
                 "cost": 60
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Leggings of the Ternion Glory",
@@ -275689,7 +275689,7 @@
                 "cost": 55
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Handwraps of the Ternion Glory",
@@ -275885,7 +275885,7 @@
             "haste": 851,
             "crit": 540
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Gloves of the Horned Nightmare",
@@ -275928,7 +275928,7 @@
             "haste": 744,
             "mastery": 712
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Hood of the Horned Nightmare",
@@ -275971,7 +275971,7 @@
             "haste": 1118,
             "mastery": 740
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Leggings of the Horned Nightmare",
@@ -276014,7 +276014,7 @@
             "mastery": 911,
             "crit": 1083
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Robes of the Horned Nightmare",
@@ -276058,7 +276058,7 @@
             "mastery": 1027,
             "crit": 897
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Vest of Seven Sacred Seals",
@@ -276408,7 +276408,7 @@
             "mastery": 911,
             "crit": 1083
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Chronomancer Robes",
@@ -276452,7 +276452,7 @@
             "mastery": 1027,
             "crit": 897
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Chronomancer Mantle",
@@ -276495,7 +276495,7 @@
             "haste": 851,
             "crit": 540
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Chronomancer Gloves",
@@ -276538,7 +276538,7 @@
             "crit": 744,
             "haste": 712
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Chronomancer Hood",
@@ -276581,7 +276581,7 @@
             "haste": 1104,
             "crit": 766
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Hauberk of Celestial Harmony",
@@ -276632,7 +276632,7 @@
                 "cost": 55
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Gloves of Celestial Harmony",
@@ -276682,7 +276682,7 @@
                 "cost": 50
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Headpiece of Celestial Harmony",
@@ -276732,7 +276732,7 @@
                 "cost": 60
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Leggings of Celestial Harmony",
@@ -276782,7 +276782,7 @@
                 "cost": 55
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Shoulderwraps of Celestial Harmony",
@@ -276832,7 +276832,7 @@
                 "cost": 50
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Gloves of Celestial Harmony",
@@ -276883,7 +276883,7 @@
             "haste": 965,
             "mastery": 915
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Headpiece of Celestial Harmony",
@@ -276934,7 +276934,7 @@
                 "difficulty": 0
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Leggings of Celestial Harmony",
@@ -276985,7 +276985,7 @@
             "spirit": 1408,
             "mastery": 1137
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Shoulderwraps of Celestial Harmony",
@@ -277036,7 +277036,7 @@
                 "difficulty": 0
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Gloves of the Horned Nightmare",
@@ -277086,7 +277086,7 @@
             "haste": 965,
             "mastery": 915
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Hood of the Horned Nightmare",
@@ -277129,7 +277129,7 @@
             "haste": 1443,
             "mastery": 966
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Leggings of the Horned Nightmare",
@@ -277179,7 +277179,7 @@
             "mastery": 1170,
             "crit": 1388
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Legwraps of Celestial Harmony",
@@ -277335,7 +277335,7 @@
                 "difficulty": 0
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Tunic of Celestial Harmony",
@@ -277544,7 +277544,7 @@
                 "difficulty": 0
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Shoulderguards of the Ternion Glory",
@@ -277595,7 +277595,7 @@
                 "difficulty": 0
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Cowl of the Ternion Glory",
@@ -277855,7 +277855,7 @@
             "haste": 965,
             "mastery": 915
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Hood of the Ternion Glory",
@@ -277906,7 +277906,7 @@
                 "difficulty": 0
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Leggings of the Ternion Glory",
@@ -277957,7 +277957,7 @@
             "mastery": 1170,
             "crit": 1388
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Greaves of Winged Triumph",
@@ -278575,7 +278575,7 @@
             "mastery": 1328,
             "crit": 1164
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Chronomancer Mantle",
@@ -278618,7 +278618,7 @@
             "haste": 1095,
             "crit": 703
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Chronomancer Gloves",
@@ -278668,7 +278668,7 @@
             "crit": 965,
             "haste": 915
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Chronomancer Hood",
@@ -278711,7 +278711,7 @@
             "haste": 1425,
             "crit": 998
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Chronomancer Leggings",
@@ -278761,7 +278761,7 @@
             "mastery": 1170,
             "crit": 1388
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Shoulderwraps of the Shattered Vale",
@@ -278812,7 +278812,7 @@
                 "difficulty": 0
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Legwraps of the Shattered Vale",
@@ -279020,7 +279020,7 @@
             "crit": 965,
             "haste": 915
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Cover of the Shattered Vale",
@@ -279071,7 +279071,7 @@
                 "difficulty": 0
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Leggings of the Shattered Vale",
@@ -279122,7 +279122,7 @@
             "mastery": 1170,
             "crit": 1388
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Vestment of the Shattered Vale",
@@ -279174,7 +279174,7 @@
                 "difficulty": 0
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Helm of the Shattered Vale",
@@ -279322,7 +279322,7 @@
             "mastery": 1328,
             "crit": 1164
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Mantle of the Horned Nightmare",
@@ -279365,7 +279365,7 @@
             "haste": 1095,
             "crit": 703
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Headpiece of Celestial Harmony",
@@ -279416,7 +279416,7 @@
                 "difficulty": 1
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Leggings of Celestial Harmony",
@@ -279467,7 +279467,7 @@
                 "difficulty": 1
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Shoulderwraps of Celestial Harmony",
@@ -279518,7 +279518,7 @@
                 "difficulty": 1
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Hauberk of Celestial Harmony",
@@ -279570,7 +279570,7 @@
                 "difficulty": 1
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Gloves of Celestial Harmony",
@@ -279621,7 +279621,7 @@
                 "difficulty": 1
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Mantle of Celestial Harmony",
@@ -280038,7 +280038,7 @@
                 "difficulty": 1
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Hood of the Ternion Glory",
@@ -280089,7 +280089,7 @@
                 "difficulty": 1
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Leggings of the Ternion Glory",
@@ -280140,7 +280140,7 @@
                 "difficulty": 1
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Raiment of the Ternion Glory",
@@ -280192,7 +280192,7 @@
                 "difficulty": 1
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Shoulderguards of the Ternion Glory",
@@ -280243,7 +280243,7 @@
                 "difficulty": 1
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Handwraps of the Ternion Glory",
@@ -280964,7 +280964,7 @@
             "crit": 1101,
             "haste": 1041
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Chronomancer Hood",
@@ -281007,7 +281007,7 @@
             "haste": 1624,
             "crit": 1142
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Chronomancer Leggings",
@@ -281050,7 +281050,7 @@
             "mastery": 1331,
             "crit": 1577
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Chronomancer Robes",
@@ -281094,7 +281094,7 @@
             "mastery": 1515,
             "crit": 1329
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Chronomancer Mantle",
@@ -281137,7 +281137,7 @@
             "haste": 1246,
             "crit": 804
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Robes of the Horned Nightmare",
@@ -281181,7 +281181,7 @@
             "mastery": 1515,
             "crit": 1329
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Mantle of the Horned Nightmare",
@@ -281224,7 +281224,7 @@
             "haste": 1246,
             "crit": 804
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Gloves of the Horned Nightmare",
@@ -281267,7 +281267,7 @@
             "haste": 1101,
             "mastery": 1041
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Hood of the Horned Nightmare",
@@ -281310,7 +281310,7 @@
             "haste": 1644,
             "mastery": 1106
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Leggings of the Horned Nightmare",
@@ -281353,7 +281353,7 @@
             "mastery": 1331,
             "crit": 1577
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Vestment of the Shattered Vale",
@@ -281405,7 +281405,7 @@
                 "difficulty": 1
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Shoulderwraps of the Shattered Vale",
@@ -281456,7 +281456,7 @@
                 "difficulty": 1
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Legwraps of the Shattered Vale",
@@ -281664,7 +281664,7 @@
                 "difficulty": 1
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Cover of the Shattered Vale",
@@ -281715,7 +281715,7 @@
                 "difficulty": 1
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Leggings of the Shattered Vale",
@@ -281766,7 +281766,7 @@
                 "difficulty": 1
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Handwraps of the Shattered Vale",
@@ -282066,7 +282066,7 @@
             "haste": 844,
             "mastery": 803
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Hood of the Horned Nightmare",
@@ -282109,7 +282109,7 @@
             "haste": 1265,
             "mastery": 842
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Leggings of the Horned Nightmare",
@@ -282152,7 +282152,7 @@
             "mastery": 1028,
             "crit": 1221
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Robes of the Horned Nightmare",
@@ -282196,7 +282196,7 @@
             "mastery": 1163,
             "crit": 1018
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Chronomancer Gloves",
@@ -282239,7 +282239,7 @@
             "crit": 844,
             "haste": 803
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Chronomancer Hood",
@@ -282282,7 +282282,7 @@
             "haste": 1249,
             "crit": 871
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Hauberk of Celestial Harmony",
@@ -282333,7 +282333,7 @@
                 "encounterId": 867
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Gloves of Celestial Harmony",
@@ -282383,7 +282383,7 @@
                 "encounterId": 850
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Legwraps of the Shattered Vale",
@@ -282690,7 +282690,7 @@
                 "encounterId": 850
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Hood of the Ternion Glory",
@@ -282740,7 +282740,7 @@
                 "encounterId": 851
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Leggings of the Ternion Glory",
@@ -282790,7 +282790,7 @@
                 "encounterId": 853
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Handwraps of the Ternion Glory",
@@ -282986,7 +282986,7 @@
             "haste": 960,
             "crit": 613
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Handwraps of Celestial Harmony",
@@ -283240,7 +283240,7 @@
                 "encounterId": 850
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Cover of the Shattered Vale",
@@ -283290,7 +283290,7 @@
                 "encounterId": 851
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Leggings of the Shattered Vale",
@@ -283340,7 +283340,7 @@
                 "encounterId": 853
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Vestment of the Shattered Vale",
@@ -283391,7 +283391,7 @@
                 "encounterId": 867
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Shoulderwraps of the Shattered Vale",
@@ -283441,7 +283441,7 @@
                 "encounterId": 865
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Breastplate of Winged Triumph",
@@ -283544,7 +283544,7 @@
                 "encounterId": 867
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Shoulderguards of the Ternion Glory",
@@ -283594,7 +283594,7 @@
                 "encounterId": 865
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Tunic of Celestial Harmony",
@@ -283901,7 +283901,7 @@
                 "encounterId": 851
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Leggings of Celestial Harmony",
@@ -283951,7 +283951,7 @@
                 "encounterId": 853
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Shoulderwraps of Celestial Harmony",
@@ -284001,7 +284001,7 @@
                 "encounterId": 865
             }
         ],
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Gloves of Winged Triumph",
@@ -284146,7 +284146,7 @@
             "mastery": 1028,
             "crit": 1221
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Chronomancer Robes",
@@ -284190,7 +284190,7 @@
             "mastery": 1163,
             "crit": 1018
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Chronomancer Mantle",
@@ -284233,7 +284233,7 @@
             "haste": 960,
             "crit": 613
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Headguard of Winged Triumph",
@@ -310602,7 +310602,7 @@
             "stamina": 0,
             "crit": 1467
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Gladiator's Emblem",
@@ -310636,7 +310636,7 @@
             "stamina": 0,
             "crit": 1467
         },
-        "maxUpgrades": 14
+        "maxUpgrades": 8
     },
     {
         "name": "Crafted Malevolent Gladiator's Medallion of Tenacity",
