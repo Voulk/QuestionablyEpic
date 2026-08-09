@@ -3,7 +3,7 @@ import { hasTalent } from "../Generic/RampBase";
 import { runSpellScript } from "../Generic/SpellScripts";
 import specSpellDB from "./RestoDruidSpellDB.json";
 import { defaultTalents, druidTalents } from "./RestoDruidTalents";
-import { printHealingBreakdownWithCPM, convertStatPercentages, getSpellEntry, updateSpellCPM, buildCPM, getSpellThroughput, applyTalents, completeCastProfile, getTimeUsed, compileProfileReportingData, getCPM } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities";
+import { printHealingBreakdownWithCPM, convertStatPercentages, getSpellEntry, updateSpellCPM, buildCPM, getSpellThroughput, applyTalents, completeCastProfile, getTimeUsed, compileProfileReportingData, getCPM, applyRaidBuffs } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities";
 
 
 export const restoDruidProfile = {
@@ -104,7 +104,7 @@ export function scoreDruidSet(stats: Stats, playerData: any, settings: PlayerSet
     const fightLength = 6;
     const spellDB = JSON.parse(JSON.stringify(specSpellDB));
     spellDB["Lifebloom (Bloom)"][0].expectedOverheal = 0.4; // Careful here because the cleaves don't overheal much.
-    let initialState = {statBonuses: {}, talents: druidTalents, heroTree: playerData.heroTree, specSettings: {"Renewing Surge Health": 0.85}};
+    let initialState = {statBonuses: applyRaidBuffs(settings), talents: druidTalents, heroTree: playerData.heroTree, specSettings: {"Renewing Surge Health": 0.85}};
     const reportingData: any = {};
 
     const damageBreakdown: Record<string, number> = {};
@@ -127,7 +127,7 @@ export function scoreDruidSet(stats: Stats, playerData: any, settings: PlayerSet
     let castProfile: CastProfile = [
       //{spell: "Tranquility", cpm: 0.3},
       
-      {spell: "Swiftmend", efficiency: 0.95 },
+      {spell: "Swiftmend", efficiency: 0.98 }, // We have two charges
       {spell: "Wild Growth", efficiency: 0.5 },
       {spell: "Efflorescence", cpm: 2, autoSpell: true }, // If Lifetreading, remove mana & cast time cost. Maybe via flag?
       {spell: "Lifebloom", cpm: 4 }, // Does not include blooms.
@@ -165,7 +165,14 @@ export function scoreDruidSet(stats: Stats, playerData: any, settings: PlayerSet
     }
 
     // Calculate Rejuvs needed to maintain 5.
-    getSpellEntry(castProfile, "Rejuvenation").cpm = 10;
+    // Soul of the Forest Rejuvs
+    const procs = getCPM(castProfile, "Swiftmend");
+    castProfile.push({spell: "Rejuvenation", cpm: procs, mult: 1.6});
+    castProfile.push({spell: "Rejuvenation", cpm: procs * 2, autoSpell: true, mult: 1.6});
+
+    // Check how many more rejuvs we need
+    const currentRejuvAverage = getCPM(castProfile, "Rejuvenation") * (spellDB["Rejuvenation"][0].buffDuration! / 60)
+    getSpellEntry(castProfile, "Rejuvenation").cpm = (5 - currentRejuvAverage) * (60 / spellDB["Rejuvenation"][0].buffDuration!);
 
 
     // Insert Grove Guardians
@@ -210,18 +217,87 @@ export function scoreDruidSet(stats: Stats, playerData: any, settings: PlayerSet
         castProfile.push({spell: "Regrowth", label: "Nature's Bounty", cpm: getSpellEntry(castProfile, "Regrowth").cpm * averageRegrowths, autoSpell: true, mult: 0.2, customIndex: 0, flags: {overrideOverhealing: 0.45}});
     }
 
+    let averageRegrowthActive = 0;
     // Calculate average mastery stacks globally.
     ["Regrowth", "Rejuvenation", "Wild Growth"].forEach((s: string) => {
+
         const hotLength = s === "Regrowth" ? spellDB[s][1].buffDuration! : spellDB[s][0].buffDuration!;
-        const count = getCPM(castProfile, s);
+        const count = getSpellEntry(castProfile, s).cpm;
         const targets = s === "Wild Growth" ? spellDB[s][0].targets : 1;
         
         masterySeconds += (count * hotLength * targets) / 60 / 20;
-        reportingData.masterySeconds = masterySeconds;
+        if (s === "Regrowth") averageRegrowthActive = (count * hotLength / 60);
+        
+        reportingData[`mastery_${s}`] = (count * hotLength * targets) / 60 / 20;
     })
+    reportingData.masterySeconds = masterySeconds;
+
+    // Symbiotic Blooms
+    if (playerData.heroTree === "Wildstalker") {
+        let growths = 0;
+        const inverseGrowthCoefficient = 75 / 100;
+        const accumulatorReq = 1000;
+        const bloomCoefficients = {
+            // TODO: We can pull these from spell data. We always have Green thumb so we won't talent check.
+            "Wild Growth": 85 * 1.2,
+            "Regrowth": 85 * 1.2,
+            "Efflorescence": 155 * 1.2, // Divided by number of targets healed
+        }
+        // Aura Accumulator Initial Value / (Number of Active Auras) ^ (Inverse Coefficient)
+
+        // Wild Growth
+        const wildGrowthTickCount = getCPM(castProfile, "Wild Growth") * (spellDB["Wild Growth"][0].buffDuration! / spellDB["Wild Growth"][0].tickData.tickRate) * spellDB["Wild Growth"][0].targets  * state.statPercentages.haste;
+        const wildGrowthAcc = wildGrowthTickCount * (bloomCoefficients["Wild Growth"] / (spellDB["Wild Growth"][0].targets ^  inverseGrowthCoefficient));
+        reportingData.symbiotic = {}
+        reportingData.symbiotic.wildGrowthAcc = wildGrowthAcc;
+
+        // Efflorescence
+        const efflorescenceTickCount = 60 / spellDB["Efflorescence"][0].tickData.tickRate * spellDB["Efflorescence"][0].targets * state.statPercentages.haste;
+        const efflorescenceAcc = efflorescenceTickCount * (bloomCoefficients["Efflorescence"] / (spellDB["Efflorescence"][0].targets));
+        reportingData.symbiotic.efflorescenceAcc = efflorescenceAcc;
+        reportingData.efflorescenceTickCount = efflorescenceTickCount;
+
+        // Regrowth 
+        const regrowthTickCount = getSpellEntry(castProfile, "Regrowth").cpm * (spellDB["Regrowth"][1].buffDuration! / spellDB["Regrowth"][1].tickData.tickRate)  * state.statPercentages.haste;
+        const regrowthAcc = regrowthTickCount * (bloomCoefficients["Regrowth"] / (averageRegrowthActive ^ inverseGrowthCoefficient));
+        reportingData.symbiotic.regrowthAcc = regrowthAcc;
+        reportingData.regrowthTickCount = regrowthTickCount;
+        reportingData.averageRegrowthActive = averageRegrowthActive;
+
+        let symbioticCPM = (regrowthAcc + wildGrowthAcc + efflorescenceAcc) / accumulatorReq;
+
+        // Implant
+        if (hasTalent(state.talents, "Implant")) {
+            // Implant logic here
+            const implantCPM = getCPM(castProfile, "Wild Growth") + getCPM(castProfile, "Swiftmend");
+            symbioticCPM += implantCPM;
+        }
+
+        castProfile.push({spell: "Symbiotic Blooms", cpm: symbioticCPM, autoSpell: true});
+        // Add mastery
+
+        // Add Bursting Growths
+        // We get one bursting growth every time a Symbiotic bloom expires, and then a 20% chance of one every 2s one is active.
+        const burstingGrowthCPM = symbioticCPM + (symbioticCPM * 0.2 * (spellDB["Symbiotic Blooms"][0].buffDuration! / 2));
+        castProfile.push({spell: "Bursting Growth", cpm: burstingGrowthCPM, autoSpell: true});
+
+        // Root Network
+        const symbioticAvgStacks = symbioticCPM * spellDB["Symbiotic Blooms"][0].buffDuration! / 60;
+        reportingData.rootNetworkAvgStacks = symbioticAvgStacks;
+
+        if (hasTalent(state.talents, "Root Network")) {
+            state.statPercentages.genericHealingMult *= (1 + symbioticAvgStacks * 0.02);
+        }
+
+        // Vig Creepers
+        state.statPercentages.genericHealingMult *= (1 + symbioticAvgStacks * 0.2 / 20);
+        
+
+    }
 
 
     // Cast triggers
+    castProfile.push({spell: "Verdancy", cpm: getCPM(castProfile, "Lifebloom (Bloom)"), autoSpell: true});
 
 
     castProfile.forEach(spellProfile => {
@@ -247,7 +323,7 @@ export function scoreDruidSet(stats: Stats, playerData: any, settings: PlayerSet
 
             // Handle mastery
             let hotCount = 0;
-            if (spellName.includes("Lifebloom") && slice.specialLabel !== "Verdancy") {
+            if (spellName.includes("Lifebloom")) {
                 hotCount = 4; // Our hot stack on ourselves.
             }
             else {
@@ -261,7 +337,6 @@ export function scoreDruidSet(stats: Stats, playerData: any, settings: PlayerSet
             }
 
             spellOutput *= 1 + (getMasteryMult(hotCount) * (state.statPercentages.mastery || 0));
-            console.log((1 + (getMasteryMult(hotCount) * (state.statPercentages.mastery || 0))), getMasteryMult(hotCount));
             //
 
             const totalOutput = (spellOutput * effectiveCPM) * (spellProfile.mult ?? 1);

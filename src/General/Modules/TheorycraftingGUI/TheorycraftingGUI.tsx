@@ -37,11 +37,11 @@ export default function TheorycraftingGUI(props) {
     const [currentWeights, setCurrentWeights] = useState({ haste: 0.2, crit: 0.2, mastery: 0.2, versatility: 0.2, intellect: 1 });
 
     const [stats, setStats] = useState<Stats>({
-        intellect: 2800,
-        haste: 1000,
-        crit: 500,
-        mastery: 500,
-        versatility: 500,
+        intellect: 3400,
+        haste: 1200,
+        crit: 200,
+        mastery: 1000,
+        versatility: 800,
     });
     const [selectedProfile, setSelectedProfile] = useState(profiles[0]);
     const [talentString, setTalentString] = useState(profiles[0].talents);
