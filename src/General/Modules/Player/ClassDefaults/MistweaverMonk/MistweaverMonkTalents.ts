@@ -340,8 +340,12 @@ points: number) {
 }},
 
 /* Gust of Mists has a Y% chance to do X% more healing. */
-"Resplendent Mist": {id: 388020, values: [100.0, 30.0],  points: 0, maxPoints: 2, icon: "spell_nature_abolishmagic", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: any, points: number) {
-
+"Resplendent Mist": {id: 388020, values: [60.0, 30.0],  points: 0, maxPoints: 2, icon: "spell_nature_abolishmagic", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: any, points: number) {
+    const healingBonus = (talentValues[0] / 100) * points;
+    const procChance = talentValues[1] / 100;
+    
+    const gust = spellDB["Gust of Mists"][0];
+    gust.mult = (gust.mult ?? 1) * (1 + procChance * healingBonus);
 }},
 
 /* After using Thunder Focus Tea, your next spell gives X% of a stat. Only one stat increase may be active at once:  $@spellname124682: Critical strike  $@spellname115151: Haste  $@spellname107428: Versatility */

@@ -34,7 +34,8 @@ export const getGustHeal = (spellDB: Record<string, any[]>, state: any, overheal
     const gust = spellDB["Gust of Mists"][0];
     const gustWithMastery = { ...gust, coeff: statPercentages.mastery };
 
-    return getSpellThroughput(gustWithMastery, statPercentages, state.spec, state.settings, { overrideOverhealing: overhealing });
+    // mult carries resplendent mist, since coeff gets replaced by mastery here
+    return getSpellThroughput(gustWithMastery, statPercentages, state.spec, state.settings, { overrideOverhealing: overhealing }) * (gust.mult ?? 1);
 }
 
 export const ASSUMED_MAX_HEALTH = 750000;
