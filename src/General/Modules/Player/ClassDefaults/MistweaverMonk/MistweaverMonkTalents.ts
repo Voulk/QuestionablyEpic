@@ -346,6 +346,7 @@ points: number) {
     
     const gust = spellDB["Gust of Mists"][0];
     gust.mult = (gust.mult ?? 1) * (1 + procChance * healingBonus);
+    gust.mult *= 0.5; // large overheal protection
 }},
 
 /* After using Thunder Focus Tea, your next spell gives X% of a stat. Only one stat increase may be active at once:  $@spellname124682: Critical strike  $@spellname115151: Haste  $@spellname107428: Versatility */

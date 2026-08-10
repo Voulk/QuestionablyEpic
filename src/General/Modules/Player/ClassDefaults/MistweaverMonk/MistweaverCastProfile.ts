@@ -416,7 +416,7 @@ const initMonkCastState = (castProfile: CastProfile, playerData: any, settings: 
             envStandard: 0.9
         },
         gustsOverhealing: 0.4,
-        chijiGustsOverhealing: 0.4,
+        chijiGustsOverhealing: 0.49,
         ancientTeachingsOverhealing: 0.06,
         yulonEnvShare: 0.6 // % of time spent on env inside yu'lon
     };
