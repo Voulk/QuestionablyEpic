@@ -9,7 +9,7 @@ const baseTalents =
 // per-model talent imports. these will diverge, and might not want to live here, but for now they are defaulted.
 export const monkTalentStrings = {
   "Yu'lon": baseTalents,
-  "Chi-Ji": "C4QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAghxyMLjZx2MmZ2WMAMbPwMbbbzMWYGNjZADGMmlZmZGmtBDWMBAAAAQAWsNz2sNzAAADYAmBMGGLyYGA",
+  "Chi-Ji": "C4QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgxMWmZZMLzmxMz2iBgZbMb2mZswMaGzAGMYMLzMzMMbDGsYCAAAAgAsYZmlZbmBAAGwAMDYMMWkxMA",
   "Dungeon Default": "C4QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMWmZZML2mxMjNjtllZMzmZ2WWmZswQzYGwgBjZZmZmhZDzwsMTAAAAAEgFbzsMbzMAAwAAMDYMwiMmBA",
 }
 
@@ -44,7 +44,7 @@ export const monkDefaultSpecialQueries = (contentType) => {
       cooldownMult: {
         c60: 1,
         c90: 1,
-        c120: 1,
+        c120: 1.5,
         c180: 1,
       },
       HoldYourGroundUptime: 0.6
@@ -79,10 +79,10 @@ export const monkDefaultStatWeights = (contentType) => {
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 0.57,
-    crit: 0.489,
-    mastery: 0.32,
-    versatility: 0.428,
+    haste: 0.76,
+    crit: 0.46,
+    mastery: 0.24,
+    versatility: 0.53,
     leech: 0.25,
   };
   statWeights.Dungeon = {
