@@ -73,10 +73,9 @@ export const raidTrinketData = [
         const allBuff = processedValue({...data[4], ...trinketRawData["Gebbo's Bottomless Bag"][5]}, itemLevel);
         const allBuffAverage = allBuff * data[4].duration! / 60 * buffShare;
 
-        const rottingFin = processedValue({...data[5], ...trinketRawData["Gebbo's Bottomless Bag"][5]}, itemLevel);
+        const rottingFin = processedValue({...data[5], ...trinketRawData["Gebbo's Bottomless Bag"][6]}, itemLevel);
         const rottingAverage = rottingFin * data[5].duration! / 60 * buffShare;
 
-        console.log(allBuffAverage, rottingAverage);
         bonus_stats.crit += allBuffAverage - rottingAverage;
         bonus_stats.haste += allBuffAverage - rottingAverage;
         bonus_stats.mastery += allBuffAverage - rottingAverage;

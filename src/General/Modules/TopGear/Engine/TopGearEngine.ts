@@ -27,7 +27,7 @@ import { getFolioEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffect
  */
 
 const softSlice = 3000;
-const adjustWeights = true;
+const adjustWeights = false;
 
 
 // This is just a timer function. We might eventually just move it to a timeUtility file for better re-use.
