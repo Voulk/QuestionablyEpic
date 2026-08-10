@@ -72,10 +72,10 @@ export const chijiStatWeights = (contentType) => {
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 0.27,
+    haste: 0.49,
     crit: 0.46,
-    mastery: 0.58,
-    versatility: 0.56,
+    mastery: 0.93,
+    versatility: 0.53,
     leech: 0.4,
   };
   statWeights.Dungeon = { // Unused
