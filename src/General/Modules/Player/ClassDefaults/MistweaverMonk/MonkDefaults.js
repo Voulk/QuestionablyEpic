@@ -9,7 +9,7 @@ const baseTalents =
 // per-model talent imports. these will diverge, and might not want to live here, but for now they are defaulted.
 export const monkTalentStrings = {
   "Yu'lon": baseTalents,
-  "Chi-Ji": "C4QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgxMWmZZMLzmxMz2iBgZbMb2mZswMaGzAGMYMLzMzMMbDGsYCAAAAgAsYZmlZbmBAAGwAMDYMMWkxMA",
+  "Chi-Ji": "C4QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMWmZZML2MmZ22MzGGmNzsZbmxCDNjZADGMmlZmZGmNMDzyMBAAAAQAWsNz2sNzAAADYAmBMGYRGzA",
   "Dungeon Default": "C4QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMWmZZML2mxMjNjtllZMzmZ2WWmZswQzYGwgBjZZmZmhZDzwsMTAAAAAEgFbzsMbzMAAwAAMDYMwiMmBA",
 }
 
