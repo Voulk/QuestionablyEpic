@@ -55,7 +55,7 @@ export const applyHealthAbsorbs = (spellDB: Record<string, any[]>, stats: Stats,
     });
 
     const sf3Entry = talents["Spiritfont3"];
-    if (sf3Entry) {
+    if (hasTalent(talents, "Spiritfont3")) {
         let targets = 1;
         const sf1Entry = talents["Spiritfont1"];
         if (sf1Entry) targets = sf1Entry.values[1];

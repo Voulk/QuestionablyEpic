@@ -96,28 +96,46 @@ const applyDowntimeFill = (talents: any, castProfile: CastProfile, spellDB: Reco
     const kickEntry = getSelectedKick(castProfile);
     if (kickEntry.spell !== "Rising Sun Kick") return;
 
-    const blackoutKickCPM = getCPM(castProfile, "Blackout Kick");
-    if (blackoutKickCPM === 0) return;
+    const tigerPalmEntry = getSpellEntry(castProfile, "Tiger Palm");
+    const blackoutKickEntry = getSpellEntry(castProfile, "Blackout Kick");
+    if (!tigerPalmEntry || !blackoutKickEntry) return;
 
-    // reset chance is 1 - (reset %)^boks since each bok is individual chance
-    const averageTeachingsStacks = getAverageTeachingsStacks(talents, castProfile);
-    const hitsPerBoK = 1 + averageTeachingsStacks;
-    const resetChancePerBoK = 1 - (1 - TOTM_RESET_CHANCE) ** hitsPerBoK;
-    const resetsPerMinute = blackoutKickCPM * resetChancePerBoK;
-
+    // relax tp/bok same as mana tea for chi-ji
     const gcd = getGCD(haste);
-    const idleGlobals = Math.max(timeLeft - fillerCPM * fillerCastTime, 0) / gcd;
-    const cooldownLimitedCpm = kickEntry.cpm;
+    const tpBokRatio = tigerPalmEntry.cpm! / blackoutKickEntry.cpm!;
+    const rskBaseCpm = kickEntry.cpm;
+    const otherEntries = castProfile.filter(entry => entry !== tigerPalmEntry && entry !== blackoutKickEntry && entry !== kickEntry);
 
-    kickEntry.cpm = Math.min(cooldownLimitedCpm + resetsPerMinute, cooldownLimitedCpm + idleGlobals);
+    let averageTeachingsStacks = 0, resetChancePerBoK = 0, resetsPerMinute = 0, idleGlobals = 0;
+    for (let _ = 0; _ < 10; _++) {
+        // reset chance is 1 - (reset %)^boks since each bok is individual chance
+        averageTeachingsStacks = getAverageTeachingsStacks(talents, castProfile);
+        const hitsPerBoK = 1 + averageTeachingsStacks;
+        resetChancePerBoK = 1 - (1 - TOTM_RESET_CHANCE) ** hitsPerBoK;
+        resetsPerMinute = blackoutKickEntry.cpm! * resetChancePerBoK;
+
+        kickEntry.cpm = Math.min(rskBaseCpm + resetsPerMinute, rskBaseCpm + idleGlobals);
+
+        // leftover fill with tp/bok
+        const rskTime = getEntryCastTime(kickEntry, spellDB, haste) * kickEntry.cpm;
+        const otherTime = otherEntries.reduce((acc, entry) => acc + getEntryCastTime(entry, spellDB, haste) * entry.cpm!, 0);
+        const timeUsed = rskTime + otherTime + channelTimePerMin + fillerCPM * fillerCastTime;
+
+        idleGlobals = Math.max(60 * (1 - localSettings.downtime) - timeUsed, 0) / gcd;
+
+        blackoutKickEntry.cpm = idleGlobals / (tpBokRatio + 1);
+        tigerPalmEntry.cpm = blackoutKickEntry.cpm * tpBokRatio;
+    }
 
     reportingData.downtimeFill = {
         averageTeachingsStacks,
         resetChancePerBoK,
         resetsPerMinute,
         idleGlobals,
-        cooldownLimitedCpm,
-        rskCpm: kickEntry.cpm
+        rskBaseCpm,
+        rskCpm: kickEntry.cpm,
+        tigerPalmCpm: tigerPalmEntry.cpm,
+        blackoutKickCpm: blackoutKickEntry.cpm
     };
 }
 
@@ -364,6 +382,8 @@ const getAverageRemCount = (castProfile: CastProfile, spellDB: Record<string, an
     return result;
 }
 
+const MISTY_PEAKS_ENV = "Enveloping Mist (Misty Peaks)";
+
 const getMistyPeaksEnvSec = (talents: any, spellDB: Record<string, any[]>, averageRemCount: number, haste: number): number => {
     if (!hasTalent(talents, "Misty Peaks")) return 0;
 
@@ -437,7 +457,20 @@ const initMonkCastState = (castProfile: CastProfile, playerData: any, settings: 
     });
 
     const talents = initialState.talents;
-    const talentImport = getSelectedTalentsFromString(monkTalentStrings[profileKey], SPECS.MISTWEAVERMONK);
+    let talentImport = getSelectedTalentsFromString(monkTalentStrings[profileKey], SPECS.MISTWEAVERMONK);
+
+    // spiritfont is one 4 rank node whose 3 sub-entries share a display name, so the decoder can only
+    // report a single "Spiritfont" entry holding the overall rank. spiritfont1 is the 1st point,
+    // spiritfont2 accrues every point (its runFunc reads the overall rank), spiritfont3 is the 4th
+    const spiritfontRank = talentImport.find(entry => entry.talentName === "Spiritfont")?.talentRanks ?? 0;
+    if (spiritfontRank > 0) {
+        talentImport = [
+            ...talentImport,
+            { talentName: "Spiritfont1", talentRanks: 1 },
+            { talentName: "Spiritfont2", talentRanks: spiritfontRank },
+            { talentName: "Spiritfont3", talentRanks: spiritfontRank >= 4 ? 1 : 0 },
+        ];
+    }
 
     applyTalentsFromString(initialState, spellDB, applyTalentOverrides(talentImport, playerData.talentOverrides));
 
@@ -448,7 +481,7 @@ const initMonkCastState = (castProfile: CastProfile, playerData: any, settings: 
     }
 
     const sfEntry = talents["Spiritfont1"];
-    if (sfEntry) {
+    if (hasTalent(talents, "Spiritfont1")) {
         const effectiveness = sfEntry.values[0] / 100;
         const targets = sfEntry.values[1];
         spellDB["Spiritfont"] = [{
@@ -457,6 +490,10 @@ const initMonkCastState = (castProfile: CastProfile, playerData: any, settings: 
             targets: targets,
             offGCD: true
         }];
+    } else {
+        // not talented, so the placeholder cast-profile entry has no matching spellDB data
+        const spiritfontIndex = castProfile.findIndex(entry => entry.spell === "Spiritfont");
+        if (spiritfontIndex >= 0) castProfile.splice(spiritfontIndex, 1);
     }
 
     // must be done after applyTalents to get jft/mf additive transfer rates
@@ -562,16 +599,14 @@ const applyHeroTreeBonuses = (talents: any, castProfile: CastProfile, spellDB: R
     reportingData.tftCpm = tftCpm;
 }
 
-const applyApexBonuses = (castProfile: CastProfile, reportingData: Record<string, any>) => {
-    // hasTalent(talents, "Spiritfont3") do not work :(
-    // can just assume we have all 4 points for now
+const applyApexBonuses = (talents: any, castProfile: CastProfile, reportingData: Record<string, any>) => {
     const spiritfontEntry = getSpellEntry(castProfile, "Spiritfont");
-    if (spiritfontEntry) {
-        spiritfontEntry.cpm += reportingData.tftCpm;
+    if (!spiritfontEntry) return;
 
-        const envEntry = getSpellEntry(castProfile, "Enveloping Mist");
-        if (envEntry) envEntry.cpm += reportingData.tftCpm;
-    }
+    if (hasTalent(talents, "Spiritfont3")) spiritfontEntry.cpm += reportingData.tftCpm;
+
+    const envEntry = getSpellEntry(castProfile, "Enveloping Mist");
+    if (envEntry) envEntry.cpm = Math.max(envEntry.cpm!, spiritfontEntry.cpm!);
 }
 
 const applyZenPulse = (talents: any, spellDB: Record<string, any[]>, reportingData: Record<string, any>): void => {
@@ -632,7 +667,20 @@ const applyCoverageMultipliers = (
     spellDB["Enveloping Mist"][0].buffDuration *= 1 + risingMistRates.envStandard;
 
     spellDB["Renewing Mist"][0].buffDuration += reportingData.freeRenewingMistSec / getCPM(castProfile, "Renewing Mist");
-    spellDB["Enveloping Mist"][0].buffDuration += freeEnvelopingMistSec / getCPM(castProfile, "Enveloping Mist");
+
+    // misty peaks needs its own entry cus of no gusts + its not "free duration" on base env basically
+    if (freeEnvelopingMistSec > 0) {
+        const envSlice = spellDB["Enveloping Mist"][0];
+        spellDB[MISTY_PEAKS_ENV] = [{
+            ...envSlice,
+            gustsValue: undefined,
+            displayInfo: { ...envSlice.displayInfo, spellName: MISTY_PEAKS_ENV },
+        }];
+        castProfile.push({ spell: MISTY_PEAKS_ENV, cpm: freeEnvelopingMistSec / envSlice.buffDuration });
+    }
+
+    // mists of life doesn't proc gust either ^_^
+    spellDB["Life Cocoon"] = spellDB["Life Cocoon"].map(slice => slice.gustsValue ? { ...slice, gustsValue: undefined } : slice);
 
     if (hasTalent(talents, "Save Them All")) {
         // averageRaidHealth 85% default mirrors the Redux settings registry
@@ -735,7 +783,7 @@ const runCastLoop = (
                 Object.entries(reportingData.unityWithin.damage).forEach(([label, output]) => addOutput(damageBreakdown, label, (output as number) * effectiveCPM));
             }
 
-            if (spellName === "Spiritfont") {
+            if (spellName === "Spiritfont" && spellDB["Chi Cocoon (Spiritfont)"]) {
                 addOutput(healingBreakdown, "Chi Cocoon (Spiritfont)", runSpell(state, spellDB["Chi Cocoon (Spiritfont)"][0]));
             }
 
@@ -823,7 +871,7 @@ function runMonkCastProfile(
     // Convert efficiencies to effect CPMs. Handle any special overrides.
     completeCastProfile(castProfile, spellDB, state.statPercentages);
 
-    applyApexBonuses(castProfile, reportingData);
+    applyApexBonuses(talents, castProfile, reportingData);
     applyTierSet(playerData, castProfile, spellDB);
 
     applyPoolOfMists(talents, castProfile, spellDB, state.statPercentages.haste);
