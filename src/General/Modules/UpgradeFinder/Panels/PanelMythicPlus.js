@@ -1,5 +1,5 @@
 import React from "react";
-import { dungeonStyles } from "./PanelStyles";
+import { dungeonStyles, sharedAccordionStyles, sharedAccordionSummaryStyles, sharedAccordionDetailsStyles } from "./PanelStyles";
 import { Typography, Grid, Divider, AppBar, Tabs, Tab } from "@mui/material";
 import ItemUpgradeCard from "./ItemUpgradeCard";
 import DungeonHeaderIcons from "General/Modules/IconFunctions/DungeonHeaderIcons";
@@ -78,17 +78,13 @@ export default function MythicPlusGearContainer(props) {
                           key={encounterDB["-1"][gameType][key] + "-accordian" + i}
                           elevation={0}
                           defaultExpanded={true}
-                          style={{
-                            backgroundColor: "rgba(255, 255, 255, 0.12)",
-                          }}
+                            style={sharedAccordionStyles}
                         >
                           <UFAccordionSummary
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="panel1a-content"
                             id="panel1a-header"
-                            style={{
-                              verticalAlign: "middle",
-                            }}
+                              style={sharedAccordionSummaryStyles}
                           >
                             <Typography
                               variant="h6"
@@ -109,7 +105,7 @@ export default function MythicPlusGearContainer(props) {
                               Upgrades
                             </Typography>
                           </UFAccordionSummary>
-                          <AccordionDetails style={{ backgroundColor: "#191c23" }}>
+                          <AccordionDetails style={sharedAccordionDetailsStyles}>
                             <Grid xs={12} container spacing={1}>
                               {[...filterItemListByDropLoc(itemDifferentials, -1, key, "Dungeon", difficulty)].map((item, index) => (
                                 <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />

@@ -119,20 +119,38 @@ export default class VerticalChart extends PureComponent {
     //let iLvlsVisible = {359: true, 372: true, 379: true, 382: true, 385: true, 389: true, 395: true, 405: true, 408: true, 411: true, 415: true, 418: true, 421: true, 424: true};
 
     const barColours = this.props.theme;
+    const breakdown = this.props.breakdown ?? false;
+
     let arr = [];
     let cleanedArray = [];
-    Object.entries(data)
-      .map((key) => key[1])
-      .map((map2) => {
-        /* -------------------------- Map Ilvls & Scores Then create an object -------------------------- */
-        let x = Object.fromEntries(itemLevels.map((ilvl) => [ilvl, getLevelDiff(map2.id, db, ilvl, map2)]));
-        /* ------------------------- Push Trinket ID & Spread Scores into array ------------------------- */
-        arr.push({
-          name: map2.id, // Name is being set here.
-          info: {name: map2.name, id: map2.id},
-          ...x,
+
+    if (breakdown) {
+      Object.entries(data)
+        .map((key) => key[1])
+        .map((map2) => {
+          const effectiveIlvl = Math.min(map2.highestLevel, itemLevels.at(-1));
+          const total = map2["i" + effectiveIlvl] ?? 0;
+          const passive = map2["p" + effectiveIlvl] ?? 0;
+          arr.push({
+            name: map2.id,
+            info: { name: map2.name, id: map2.id },
+            passive: Math.max(0, passive),
+            effect: Math.max(0, total - passive),
+          });
         });
-      });
+    } else {
+      Object.entries(data)
+        .map((key) => key[1])
+        .map((map2) => {
+          let x = Object.fromEntries(itemLevels.map((ilvl) => [ilvl, getLevelDiff(map2.id, db, ilvl, map2)]));
+          arr.push({
+            name: map2.id,
+            info: {name: map2.name, id: map2.id},
+            ...x,
+          });
+        });
+    }
+
     /* ------------ Map new Array of Cleaned Objects (No Zero Values) ----------- */
     arr.map((key) => cleanedArray.push(cleanZerosFromArray(key)));
     /* ----------------------- Y-Axis Label Customization ----------------------- */
@@ -215,32 +233,53 @@ export default class VerticalChart extends PureComponent {
             isAnimationActive={false}
             labelFormatter={(timeStr) => getTranslatedItemName(timeStr, currentLanguage)}
             formatter={(value, name, props) => {
-              {
-                if (value > 0) {
-                  return [
-                    data
-                      .filter((filter) => filter.id === props["payload"].name)
-                      .map((key) => key["i" + name])
-                      .toString(),
-                    name,
-                  ];
-                } else {
-                  return ["Unobtainable", name];
-                }
+              if (value <= 0) return ["Unobtainable", name];
+              if (breakdown) {
+                const isPassive = name === "passive";
+                return [Math.round(value), isPassive ? "Passive Stats" : "Effect"];
               }
+              return [
+                data
+                  .filter((filter) => filter.id === props["payload"].name)
+                  .map((key) => key["i" + name])
+                  .toString(),
+                name,
+              ];
             }}
           />
-          <Legend verticalAlign="top" />
+          {breakdown ? null : <Legend verticalAlign="top" />}
+          {breakdown ? (
+            <Legend
+              verticalAlign="top"
+              content={() => (
+                <div style={{ textAlign: "center", color: "#fff", fontSize: 12, paddingBottom: 4 }}>
+                  <span style={{ marginRight: 16 }}>
+                    <span style={{ display: "inline-block", width: 12, height: 12, background: barColours[0], marginRight: 4, verticalAlign: "middle" }} />
+                    Passive Stats
+                  </span>
+                  <span>
+                    <span style={{ display: "inline-block", width: 12, height: 12, background: barColours[Math.floor(barColours.length / 2)], marginRight: 4, verticalAlign: "middle" }} />
+                    Effect
+                  </span>
+                </div>
+              )}
+            />
+          ) : null}
           <CartesianGrid vertical={true} horizontal={false} />
-          <YAxis type="category" className="CustomizedYAxis" width={this.state.width < mobileWidthThreshold ? 110 : 300} dataKey="name" stroke="#f5f5f5" interval={0} 
+          <YAxis type="category" className="CustomizedYAxis" width={this.state.width < mobileWidthThreshold ? 110 : 300} dataKey="name" stroke="#f5f5f5" interval={0}
               tick={<CustomizedYAxisTick
                   data={data}
                   gameType={gameType}
                   isMobile={this.state.width < mobileWidthThreshold}
                 />} />
-          {itemLevels.map((key, i) => (
-            <Bar key={"bar" + i} dataKey={key} fill={barColours[i]} stackId="a" />
-          ))}
+          {breakdown
+            ? [
+                <Bar key="passive" dataKey="passive" fill={barColours[0]} stackId="a" />,
+                <Bar key="effect" dataKey="effect" fill={barColours[Math.floor(barColours.length / 2)]} stackId="a" />,
+              ]
+            : itemLevels.map((key, i) => (
+                <Bar key={"bar" + i} dataKey={key} fill={barColours[i]} stackId="a" />
+              ))}
         </BarChart>
       </ResponsiveContainer>
     );

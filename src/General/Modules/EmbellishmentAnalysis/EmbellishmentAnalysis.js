@@ -92,7 +92,7 @@ function getEstimatedHPS(bonus_stats, player, contentType, playerSettings) {
   let estHPS = 0;
   for (const [key, value] of Object.entries(bonus_stats)) {
     if (["haste", "mastery", "crit", "versatility", "leech"].includes(key)) {
-      estHPS += ((value * player.getStatWeight(contentType, key)) / 2400) * player.getHPS(contentType);
+      estHPS += ((value * player.getStatWeight(contentType, key)) / 3200) * player.getHPS(contentType);
     } else if (key === "intellect") {
       estHPS += (value / player.activeStats.intellect) * player.getHPS(contentType);
     } 
@@ -106,12 +106,15 @@ function getEstimatedHPS(bonus_stats, player, contentType, playerSettings) {
       // This is ultimately a slightly underestimation of giving stats to allies, but given we get a fuzzy bundle that's likely to hit half DPS and half HPS 
       // it's a fair approximation. 
       // These embellishments are good, but it's very spread out.
-      estHPS += getAllyStatsValue(contentType, value, player, playerSettings) * 0.25 / 2400 * player.getHPS(contentType);
+      estHPS += getAllyStatsValue(contentType, value, player, playerSettings) * 1 / 3200 * player.getHPS(contentType);
     }
   }
   return Math.round(100 * estHPS) / 100;
 }
 
+/*
+  @@@deprecated
+*/
 function getEstimatedDPS(bonus_stats, player, contentType, playerSettings) {
   let estDPS = 0;
   for (const [key, value] of Object.entries(bonus_stats)) {
@@ -160,7 +163,7 @@ const getEmbellishAtLevel = (effectName, itemLevel, player, contentType, metric,
 
 // If a gem is a set bonus, we only need to show the one rank. Otherwise we'll sort gems by the highest rank.
 const getHighestDomScore = (gem) => {
-  return gem.r285 //gem.r5;
+  return gem.r331 //gem.r5;
 };
 
 const getHighestTrinketScore = (db, trinket, gameType) => {
@@ -199,7 +202,7 @@ export default function EmbellishmentAnalysis(props) {
 
 
   let history = useHistory();
-  const itemLevels = [259, 272, 285];
+  const itemLevels = [285, 305, 318, 331];
 
   const playerSpec = props.player !== null ? props.player.getSpec() : "Unknown";
   const db = embellishmentDB.filter((embel) => {
@@ -229,7 +232,7 @@ export default function EmbellishmentAnalysis(props) {
       if (props.player !== null) gemAtLevels["r" + itemLevels[x]] = getEmbellishAtLevel(domGem.effect.name, itemLevels[x], props.player, contentType, metric, playerSettings);
       
     }
-    gemAtLevels.tooltip = buildRetailEffectTooltip(domGem.effect.name, props.player, 285, playerSettings)
+    gemAtLevels.tooltip = buildRetailEffectTooltip(domGem.effect.name, props.player, 331, playerSettings)
     activeGems.push(gemAtLevels);
   }
 

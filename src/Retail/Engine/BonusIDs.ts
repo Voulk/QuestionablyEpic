@@ -55508,6 +55508,18 @@ export const bonus_IDs: {[key: string]: any} = {
     ],
     "stats": "100% Indestructible [0.3000]"
   },
+  "8976": {
+    "id": 8976,
+    "pvp_level": 380
+  },
+  "8977": {
+    "id": 8977,
+    "pvp_level": 421
+  },
+  "8978": {
+    "id": 8978,
+    "pvp_level": 408
+  },
   "8979": {
     "id": 8979,
     "applyBonusId": 6682
@@ -58258,7 +58270,8 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ]
-    }
+    },
+    "pvp_level": 408
   },
   "9275": {
     "id": 9275,
@@ -58343,6 +58356,7 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
+    "pvp_level": 421,
     "tag": "Primal Infused"
   },
   "9276": {
@@ -58432,7 +58446,8 @@ export const bonus_IDs: {[key: string]: any} = {
         }
       ]
     },
-    "tag": "Primal Infused"
+    "tag": "Primal Infused",
+    "pvp_level": 421
   },
   "9278": {
     "id": 9278,
@@ -60194,6 +60209,14 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 9477,
     "serverside": true
   },
+  "9478": {
+    "id": 9478,
+    "pvp_level": 411
+  },
+  "9479": {
+    "id": 9479,
+    "pvp_level": 447
+  },
   "9480": {
     "id": 9480,
     "upgrade": {
@@ -60276,7 +60299,8 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ]
-    }
+    },
+    "pvp_level": 434
   },
   "9481": {
     "id": 9481,
@@ -60360,7 +60384,8 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ]
-    }
+    },
+    "pvp_level": 447
   },
   "9484": {
     "id": 9484,
@@ -60444,7 +60469,8 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ]
-    }
+    },
+    "pvp_level": 434
   },
   "9485": {
     "id": 9485,
@@ -60528,7 +60554,8 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ]
-    }
+    },
+    "pvp_level": 434
   },
   "9486": {
     "id": 9486,
@@ -60612,7 +60639,8 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ]
-    }
+    },
+    "pvp_level": 434
   },
   "9487": {
     "id": 9487,
@@ -60696,7 +60724,8 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ]
-    }
+    },
+    "pvp_level": 434
   },
   "9488": {
     "id": 9488,
@@ -60780,7 +60809,8 @@ export const bonus_IDs: {[key: string]: any} = {
           ]
         }
       ]
-    }
+    },
+    "pvp_level": 434
   },
   "9489": {
     "id": 9489,
@@ -67558,6 +67588,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "10840": {
     "id": 10840,
+    "pvp_level": 613,
     "quality": 2,
     "itemLevel": {
       "amount": 545,
@@ -67567,6 +67598,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "10841": {
     "id": 10841,
+    "pvp_level": 626,
     "quality": 3,
     "itemLevel": {
       "amount": 558,
@@ -67576,6 +67608,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "10842": {
     "id": 10842,
+    "pvp_level": 639,
     "quality": 4,
     "itemLevel": {
       "amount": 597,
@@ -68764,10 +68797,18 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 11083,
     "applyBonusId": 4790
   },
+  "11084": {
+    "id": 11084,
+    "pvp_level": 626
+  },
   "11085": {
     "id": 11085,
     "ilevel": "10 @plvl 1 - 371 @plvl 371",
     "curveId": 6242
+  },
+  "11086": {
+    "id": 11086,
+    "pvp_level": 639
   },
   "11096": {
     "id": 11096,
@@ -69143,6 +69184,14 @@ export const bonus_IDs: {[key: string]: any} = {
     "craftedStats": [
       40
     ]
+  },
+  "11140": {
+    "id": 11140,
+    "pvp_level": 623
+  },
+  "11141": {
+    "id": 11141,
+    "pvp_level": 636
   },
   "11142": {
     "id": 11142,
@@ -70769,7 +70818,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "amount": 545,
       "priority": 3000,
       "squishEra": 1
-    }
+    },
+    "pvp_level": 613
   },
   "11319": {
     "id": 11319,
@@ -73978,6 +74028,18 @@ export const bonus_IDs: {[key: string]: any} = {
       "squishEra": 1
     }
   },
+  "12018": {
+    "id": 12018,
+    "pvp_level": 668
+  },
+  "12019": {
+    "id": 12019,
+    "pvp_level": 681
+  },
+  "12023": {
+    "id": 12023,
+    "pvp_level": 658
+  },
   "12024": {
     "id": 12024,
     "quality": 3,
@@ -74006,6 +74068,34 @@ export const bonus_IDs: {[key: string]: any} = {
   "12028": {
     "id": 12028,
     "quality": 4
+  },
+  "12029": {
+    "id": 12029,
+    "pvp_level": 671
+  },
+  "12030": {
+    "id": 12030,
+    "pvp_level": 684
+  },
+  "12031": {
+    "id": 12031,
+    "pvp_level": 714
+  },
+  "12032": {
+    "id": 12032,
+    "pvp_level": 727
+  },
+  "12033": {
+    "id": 12033,
+    "pvp_level": 730
+  },
+  "12035": {
+    "id": 12035,
+    "pvp_level": 717
+  },
+  "12036": {
+    "id": 12036,
+    "pvp_level": 704
   },
   "12037": {
     "id": 12037,
@@ -75550,7 +75640,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "amount": 175,
       "priority": 3000,
       "squishEra": 2
-    }
+    },
+    "pvp_level": 263
   },
   "12246": {
     "id": 12246,
@@ -95928,6 +96019,22 @@ export const bonus_IDs: {[key: string]: any} = {
       "curveId": 87537
     }
   },
+  "13447": {
+    "id": 13447,
+    "pvp_level": 285
+  },
+  "13448": {
+    "id": 13448,
+    "pvp_level": 298
+  },
+  "13449": {
+    "id": 13449,
+    "pvp_level": 285
+  },
+  "13451": {
+    "id": 13451,
+    "pvp_level": 272
+  },
   "13453": {
     "id": 13453,
     "effect": {
@@ -97342,6 +97449,10 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     }
   },
+  "13641": {
+    "id": 13641,
+    "pvp_level": 263
+  },
   "13642": {
     "id": 13642,
     "applyBonusId": 13617
@@ -97448,6 +97559,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "13656": {
     "id": 13656,
+    "pvp_level": 298,
     "tag": "Galactic Void-Charged"
   },
   "13667": {

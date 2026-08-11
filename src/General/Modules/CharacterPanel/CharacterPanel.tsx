@@ -5,8 +5,9 @@ import { Grid, Paper, Typography, Divider, Tooltip, useMediaQuery, MenuItem, Tex
 import { useTranslation } from "react-i18next";
 import { getItemIcon } from "../../Engine/ItemUtilities";
 import SimCraftInput from "../SetupAndMenus/SimCraftDialog";
-import { useSelector } from "react-redux";
-import classIcons from "General/Modules/IconFunctions/ClassIcons";
+import { useSelector, useDispatch } from "react-redux";
+import { toggleContent } from "Redux/Actions";
+import ClassIcon from "General/Modules/IconFunctions/ClassIcons";
 import { classColours } from "General/Engine/ClassData";
 import Settings from "../Settings/Settings";
 // import ErrorTooltip from "./ErrorTooltip";
@@ -104,6 +105,7 @@ export default function CharacterPanel(props: Props) {
   const xsBreakpoint = useMediaQuery(theme.breakpoints.down("sm"));
   const smBreakpoint = useMediaQuery(theme.breakpoints.down("md"));
   const { t, i18n } = useTranslation();
+  const dispatch = useDispatch();
   const gameType = useSelector((state: any) => state.gameType);
   const contentType = useSelector((state: any) => state.contentType) || "";
   const classes = useStyles();
@@ -191,17 +193,18 @@ export default function CharacterPanel(props: Props) {
                   />
                 <div style={{ position: "absolute", bottom: 1, left: 1 }}>
                   <Tooltip title={getTranslatedClassName(currentCharacter.spec, currentLanguage)} placement="left" arrow>
-                    {classIcons(
-                      currentCharacter.spec,
-                      {height: 22,
-                      width: 22,
-                      margin: "0px 2px 0px 0px",
-                      verticalAlign: "middle",
-                      borderRadius: "0px 0px 0px 4px",
-                      borderRight: "1px solid " + classColours(currentCharacter.spec),
-                      borderTop: "1px solid" + classColours(currentCharacter.spec),
-                      }
-                    ) || <></>}
+                    <ClassIcon
+                      name={currentCharacter.spec}
+                      style={{
+                        height: 22,
+                        width: 22,
+                        margin: "0px 2px 0px 0px",
+                        verticalAlign: "middle",
+                        borderRadius: "0px 0px 0px 4px",
+                        borderRight: "1px solid " + classColours(currentCharacter.spec),
+                        borderTop: "1px solid" + classColours(currentCharacter.spec),
+                      }}
+                    />
                   </Tooltip>
                 </div>
               </div>
@@ -423,6 +426,27 @@ export default function CharacterPanel(props: Props) {
 
           <Grid item xs={12}>
                 <Grid container spacing={1} direction="row" style={{ paddingBottom: "10px", paddingTop: "5px"}}>
+                  {/* --------------------------------- Dungeon / Raid Selection --------------------------------  */}
+                  {gameType === "Retail" ? (
+                    <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
+                      <TextField
+                        className={classes.select}
+                        InputProps={{ variant: "outlined" }}
+                        select
+                        variant="outlined"
+                        size="small"
+                        fullWidth
+                        value={contentType}
+                        onChange={(e) => dispatch(toggleContent(e.target.value as any))}
+                        label={t("Content")}
+                        style={{ textAlign: "center", minWidth: 120 }}
+                      >
+                        <MenuItem value="Dungeon">{t("Dungeon")}</MenuItem>
+                        <MenuItem value="Raid">{t("Raid")}</MenuItem>
+                      </TextField>
+                    </Grid>
+                  ) : null}
+
                   {/* --------------------------------- Playstyle / Build Selection --------------------------------  */}
                   <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
                     <Tooltip

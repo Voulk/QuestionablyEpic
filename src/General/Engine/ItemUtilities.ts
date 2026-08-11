@@ -368,16 +368,16 @@ export function getValidWeaponTypesBySpec(spec: string) {
 
 export function getItemLevelBoost(bossID: number, difficulty: number) {
   // Handle max difficulties
-  if (difficulty === CONSTANTS.difficulties.mythicMax) {
+  /*if (difficulty === CONSTANTS.difficulties.mythicMax) {
     if (bossID === 2523 || bossID === 2520) return 0;
     else return 0;
   } // The Mythic Max base level is 447, which means these 450 drops are a small upgrade.
-  else if (isMaxxed(difficulty)) return 0;
+  else if (isMaxxed(difficulty)) return 0;*/
 
   // Handle non-max difficulties.
-  if (bossID === 2734 || bossID === 2736 || bossID === 2795) return 4; // Cauldron, Rik
-  else if (bossID === 2735 || bossID === 2737) return 7; // Stix, Sprocket, OAB
-  else if (bossID === 2738 || bossID === 2739 || bossID === 2740) return 10; // Mug'zee, Gallywix
+  if (bossID === 2874 || bossID === 2894) return 3; // Cauldron, Rik
+  else if (bossID === 2882 || bossID === 2871 || bossID === 2887) return 6; // Stix, Sprocket, OAB
+  else if (bossID === 2895 || bossID === 2883) return 10; // Mug'zee, Gallywix
 
   return 0;
 }
@@ -394,13 +394,15 @@ export const getItemEffectOptions = (itemID: number, gameType: gameTypes = "Reta
       // Sigil embellishments are limited to weapon and offhand slots. Does NOT include Shields.
       options.push({type: "embellishment", label: "Darkmoon Sigil: Hunt", effectName: "Darkmoon Sigil: Hunt"})
       options.push({type: "embellishment", label: "Darkmoon Sigil: Void", effectName: "Darkmoon Sigil: Void"})
+      options.push({type: "embellishment", label: "Hunter's Ritual Stone", effectName: "Hunter's Ritual Stone"})
       //options.push({type: "embellishment", label: "Darkmoon Sigil: Symbiosis", effectName: "Darkmoon Sigil: Symbiosis"})
     }
     if (item.slot !== "Finger" && item.slot !== "Neck" && !item.slot.includes("Weapon") && !isEngineering) {
       // Linings & Armor Banding are limited to non-weapon, non-jewelry slots.
       options.push({type: "embellishment", label: "Arcanoweave Lining", effectName: "Arcanoweave Lining"})
-      options.push({type: "embellishment", label: "Primal Spore Binding", effectName: "Primal Spore Lining"})
+      options.push({type: "embellishment", label: "Primal Spore Binding", effectName: "Primal Spore Binding"})
       options.push({type: "embellishment", label: "Blessed Pango Charm", effectName: "Blessed Pango Charm"})
+      options.push({type: "embellishment", label: "Adorned Fang", effectName: "Adorned Fang"})
     }
     
   }
@@ -428,13 +430,13 @@ export function getVeryRareItemLevelBoost(itemID: number, bossID: number, diffic
   else return 0;
 }
 
-export function filterItemListByDropLoc(itemList: any[], sourceInstance: number, sourceBoss: number, loc: any, difficulty: number) {
+export function filterItemListByDropLoc(itemList: any[], sourceInstance: number, sourceBoss: number, loc: any, difficulty: number, dropType: string = "drop") {
 
   let temp = itemList.filter(function (item) {
     //else if (sourceInstance === -17 && pvpRank === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(item.slot)) expectedItemLevel += 7;
     //console.log("loc: " + loc + " vs " + item.dropLoc + " diff: " + difficulty + " vs " + item.dropDifficulty + " source: " + sourceInstance + " vs " + item.source.instanceId + " boss: " + sourceBoss + " vs " + item.source.encounterId)
-    
-    return loc === item.dropLoc && difficulty === item.dropDifficulty && ((item.source.instanceId == sourceInstance && item.source.encounterId == sourceBoss) || (item.source.instanceId == sourceInstance && sourceBoss == 0));
+    console.log("Drop type: " + dropType + " vs " + item.dropType)
+    return loc === item.dropLoc && difficulty === item.dropDifficulty && dropType === item.dropType && ((item.source.instanceId == sourceInstance && item.source.encounterId == sourceBoss) || (item.source.instanceId == sourceInstance && sourceBoss == 0));
   });
   return temp;
 
@@ -604,6 +606,7 @@ export function getItemIcon(id: number, gameType = "Retail") {
   if (item !== "" && "icon" in item) return process.env.PUBLIC_URL + "/Images/Icons/" + item.icon + ".jpg";
   else if (item !== "") {
     reportError("", "ItemUtilities", "Icon not found for ID", id.toString());
+    console.error("Icon missing");
     return process.env.PUBLIC_URL + "/Images/Icons/missing.jpg";
   }
 }
@@ -924,7 +927,7 @@ export function buildStatString(stats: Stats, effect: ItemEffect, lang: string =
 
   // Add an "effect" tag. We exclude Dom gems and Legendaries here because it's already clear they are giving you an effect.
   //if (effect.name === "Onyx Annulet Trigger") statString += getAnnuletGemTag({automatic: true}, false);
-  if (effect) statString += "Effect" + " / "; // t("itemTags.effect")
+  //if (effect) statString += "Effect" + " / "; // t("itemTags.effect")
   
 
   return statString.slice(0, -3); // We slice here to remove excess slashes and white space from the end.
@@ -959,7 +962,7 @@ export function buildStatStringSlim(stats: Stats, effect: ItemEffect, lang: stri
 
   // Add an "effect" tag. We exclude Dom gems and Legendaries here because it's already clear they are giving you an effect.
   //if (effect.name === "Onyx Annulet Trigger") statString += getAnnuletGemTag({automatic: true}, false);
-  if (effect) statString += "Effect" + " / "; // t("itemTags.effect")
+  //if (effect) statString += "Effect" + " / "; // t("itemTags.effect")
   
   return statString.slice(0, -3); // We slice here to remove excess slashes and white space from the end.
 }
@@ -1033,13 +1036,14 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
   //player.clearActiveItems();
   const acceptableArmorTypes = getValidArmorTypes(player.spec);
   const acceptableWeaponTypes = getValidWeaponTypesBySpec(player.spec);
+  const itemExclusionList: number[] = [71393, 71398, 71578, 62458, 59514, 68711, 62472, 56465, 65008, 56466, 56354, 56327, 71576, 71395, 71581, 69198, 71390, 242398, 242399, 242401, 242404, 242403, 242396,
+          185836, 185846, 190652, 219309, 232545, 219317, 178826, 232543]
 
   itemDB = itemDB.filter(
     (key: any) =>
       (!("classReq" in key) || key.classReq.includes(player.spec)) &&
       (!("classRestriction" in key) || (key.classRestriction.includes(player.spec) || player.spec.includes(key.classRestriction))) &&
       (gameType === "Classic" || itemLevel > 70) &&
-      (key.itemLevel === itemLevel || gameType === "Retail" || itemLevel === -1 || checkAutoAddLevelOk(key, itemLevel)) && 
       (key.slot === "Back" ||
         (key.itemClass === 4 && acceptableArmorTypes.includes(key.itemSubClass)) ||
         key.slot === "Holdable" ||
@@ -1050,18 +1054,14 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
         );
 
   itemDB.forEach((item: any) => {
+    const sources = getItemProp(item.id, "sources", gameType)[0];
     let sourceCheck = true;
     if (source !== "") {
-      const sources = getItemProp(item.id, "sources", gameType)[0];
+      
       // Check the item drops from the expected location
       //else if (item.itemSetId && item.classRestriction && item.classRestriction.includes(player.spec) && item.itemLevel >= 650 && source !== "S3 Dinar") sourceCheck = true;
-      if (source === "Undermine" && sources) sourceCheck = (sources.instanceId === 1296);
-      else if (source === "Retail Raid" && sources) sourceCheck = ([1314, 1308, 1307].includes(sources.instanceId));
-      else if (source === "Sporefall" && sources) sourceCheck = ([1305].includes(sources.instanceId));
+      if (source === "Retail Raid" && sources) sourceCheck = (CONSTANTS.currentRaidIDs.includes(sources.instanceId));
       else if (source === "Mythic+" && sources) sourceCheck = sources.instanceId === -1 && getSeasonalDungeons().includes(sources.encounterId); // TODO
-      else if (source === "S3 Dinar" && sources) {
-        sourceCheck = ((getSeasonalDungeons().includes(sources.encounterId) || sources.instanceId === 1302) && item.effect && ['Feet', 'Finger', 'Trinket', '1H Weapon', '2H Weapon'].includes(item.slot));
-      }
       else if (gameType === "Classic" && (item.id === 102247 || item.id === 102246)) sourceCheck = true; // Legendary capes
       else if (source === "T15" && sources) sourceCheck = (sources.instanceId === 362 && sources.difficulty === 1 && item.itemSetId && item.classRestriction && player.spec.includes((player.spec)));
       else if (source === "T16" && sources) sourceCheck = (sources.instanceId === 369 && sources.difficulty === 0);
@@ -1078,28 +1078,33 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
      
     const slot = getItemProp(item.id, "slot", gameType);
     if (
-        ((slot === 'Trinket' && item.levelRange && !item.offspecItem) || 
+        ((slot === 'Trinket' && item.levelRange && item.levelRange.length > 0 && !item.offspecItem) || 
         (slot !== 'Trinket' && item.stats.intellect && !item.stats.hit) ||
         (gameType === "Retail" && ["Finger", "Neck"].includes(slot))) && 
-        (!([71393, 71398, 71578, 62458, 59514, 68711, 62472, 56465, 65008, 56466, 56354, 56327, 71576, 71395, 71581, 69198, 71390, 242398, 242399, 242401, 242404, 242403, 242396,
-          185836, 185846, 190652, 219309, 232545, 219317, 178826, 232543
-        ].includes(item.id)))
-        && sourceCheck) { 
+        (!(itemExclusionList.includes(item.id))) && sourceCheck) { 
           let ilvlBoost = (maxChecked && gameType === "Classic" && ["T16", "T16+"].includes(source) && item.maxUpgrades) ? item.maxUpgrades : 0;
           if (gameType === "Retail") {
-            if (["1H Weapon", "2H Weapon", "Shield", "Offhand", "Trinket"].includes(item.slot) && item.id !== 268292) ilvlBoost = 9;
+            if ([2883, 2895].includes(sources.encounterId) && itemLevel === 334) ilvlBoost = 10;
             else ilvlBoost = 0;
           }
-          const tert = [249912, 249913, 249914, 249915].includes(item.id) ? "Leech" : "";
           
-          const newItem = new Item(item.id, item.name, slot, 0, tert, 0, gameType === "Classic" ? (item.itemLevel + ilvlBoost) : (itemLevel + ilvlBoost), "", gameType);
+          const newItem = new Item(item.id, item.name, slot, 0, "", 0, gameType === "Classic" ? (item.itemLevel + ilvlBoost) : (itemLevel + ilvlBoost), "", gameType);
          
-          if (source === "S3 Dinar") newItem.exclusiveItem = true;
           if (gameType === "Retail") newItem.quality = 4;
           
+      if (["Chest", "Shoulder", "Legs", "Head", "Hands"].includes(newItem.slot) && !newItem.setID) {
+        // Catalyze item
+        newItem.convertToTier(player.spec);
+      }
+      const isDuplicate = player.activeItems.some(
+        (i) => i.id === newItem.id && 
+              i.level === newItem.level && 
+              (i.catalyzedID ?? null) === (newItem.catalyzedID ?? null)
+      );
 
-      if (player.activeItems.filter((i) => i.id === item.id && i.level === newItem.level).length === 0) player.activeItems.push(newItem);
-      //player.activeItems.push(newItem);
+      if (!isDuplicate) {
+        player.activeItems.push(newItem);
+      }      //player.activeItems.push(newItem);
     }
 
   })
@@ -1121,11 +1126,12 @@ export function scoreItem(item: Item, player: Player, contentType: contentTypes,
   let item_stats = { ...item.stats };
 
   if (gameType === "Classic" && item.slot === "trinket") {
-    // Try and reforge 
-    const playerStatPriorityList = player.getActiveProfile("Raid").autoReforgeOrder;
+    // Try and reforge
+    const activeProfile = player.getActiveProfile("Raid");
+    const playerStatPriorityList = activeProfile?.autoReforgeOrder;
     const trinketSecondary = Object.keys(item.stats)[0];
 
-    if (trinketSecondary && trinketSecondary !== "intellect" && trinketSecondary !== "stamina") {
+    if (playerStatPriorityList && trinketSecondary && trinketSecondary !== "intellect" && trinketSecondary !== "stamina") {
           const trinketSecondaryPos = playerStatPriorityList.indexOf(trinketSecondary);
 
           if (trinketSecondaryPos !== 0) {
@@ -1251,8 +1257,9 @@ export function scoreTrinket(item: Item, player: Player, contentType: contentTyp
     if (stat !== "bonus_stats") {
       let statSum = sumStats[stat];
       // The default weights are built around ~12500 int. Ideally we replace this with a more dynamic function like in top gear.
-      const weight = player.getStatWeight(contentType, stat);
-      score += statSum * weight / 2000 * player.getHPS(contentType);
+      let weight = player.getStatWeight(contentType, stat);
+      //if (weight !== "intellect" && weight !== "hps") weight *= 1.3;
+      score += statSum * weight / 3100 * player.getHPS(contentType);
     }
   }
 

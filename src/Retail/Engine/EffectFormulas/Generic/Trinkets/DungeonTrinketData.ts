@@ -1,10 +1,193 @@
 import Player from "General/Modules/Player/Player";
-import { convertPPMToUptime, getHighestStat, runGenericFlatProc, getSetting, forceGenericOnUseTrinket, processedValue, runGenericPPMTrinket, runGenericRandomPPMTrinket, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket, runGenericPPMTrinketHasted, runGenericPPMOverlapTrinket } from "../../EffectUtilities";
+import { convertPPMToUptime, getHighestStat, runGenericFlatProc, getSetting, forceGenericOnUseTrinket, processedValue, runGenericPPMTrinket, runGenericRandomPPMTrinket, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket, runGenericPPMTrinketHasted, runGenericPPMOverlapTrinket, runGenericRandomOnUseTrinket } from "../../EffectUtilities";
 import trinketRawData from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketData.json"
+import { itemLevels } from "Databases/ItemLevelsDB";
 
 export const dungeonTrinketData = 
 [
+  { // 
+        name: "Vile Vial of Volatile Venom",
+        description: "Just not particularly appealing",
+        addonDescription: "",
+        effects: [
+          { // Random stat gain
+            duration: 15,
+            cooldown: 120, //
+            stat: "random",
+          },
+          { // Random stat loss
+            duration: 15,
+            cooldown: 120, //
+            stat: "random",
+          },
+        ],
+        runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+          let bonus_stats: Stats = {};
+    
+          const deduction = {...data[1], ...trinketRawData["Vile Vial of Volatile Venom"][5]}
+          const processedDeduction = processedValue(deduction, itemLevel) * deduction.duration! / deduction.cooldown!;
 
+          //bonus_stats.intellect = processedValue(data[0], itemLevel) * data[0].duration / data[0].cooldown; // These stacks can overlap so there should be no proc munching.
+          bonus_stats = runGenericRandomOnUseTrinket({...data[0], ...trinketRawData["Vile Vial of Volatile Venom"][0]}, itemLevel, additionalData.castModel, additionalData.setStats);
+          
+          ["versatility", "crit", "mastery", "haste"].forEach((statName : string) => {
+            bonus_stats[statName] += processedDeduction / 4;
+          });
+
+          return bonus_stats;
+        }
+      },
+    {
+      name: "Preternatural Antivenom",
+      description: "Will be good if it gets a nice 200% buff",
+      addonDescription: "",
+      effects: [
+        {  // HoT effect
+          secondaries: ['haste', 'crit', 'versatility'],
+          ppm: 2.5,
+          efficiency: 0.95 //
+        },
+        
+      ],
+      runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+        let bonus_stats: Stats = {};
+  
+        bonus_stats.hps = runGenericFlatProc({...data[0], ...trinketRawData["Preternatural Antivenom"][0]}, itemLevel, player, additionalData.contentType)
+
+        return bonus_stats;
+      }
+    },
+    {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                  Kyrakka's Searing Embers                                      */
+    /* ---------------------------------------------------------------------------------------------- */
+
+    name: "Kyrakka's Searing Embers",
+    description: "Disastrous",
+    effects: [
+      { // Healing Portion
+        secondaries: ['haste', 'crit', 'versatility'],
+        ppm: 4,
+        efficiency: 0.7, // Our expected overhealing.
+      },
+      { // Damage portion
+        // Damage is split, so we don't need any kind of target multiplier in here.
+        secondaries: ['haste', 'crit', 'versatility'],
+        ppm: 4,
+      },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      let bonus_stats: Stats = {};
+
+      bonus_stats.hps = runGenericFlatProc({...data[0], ...trinketRawData["Kyrakka's Searing Embers"][0]}, itemLevel, player, additionalData.contentType)
+      bonus_stats.dps = runGenericFlatProc({...data[1], ...trinketRawData["Kyrakka's Searing Embers"][1]}, itemLevel, player, additionalData.contentType)
+
+      return bonus_stats;
+    }
+  },
+  {
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                        Ruby Whelp Shell                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+
+    name: "Ruby Whelp Shell",
+    description: "Can be trained over 6 days in order to proc one of its 6 effects more frequently. There's a setting in QE Live for this and it will impact its value.",
+    setting: true,
+    effects: [
+      { // ST Damage Portion
+        secondaries: ['crit', 'versatility'],
+        ppm: 1.01,
+      },
+      { // AoE Damage Portion
+        secondaries: ['crit', 'versatility'],
+        ppm: 1.01,
+      },
+      { // Healing Portion - Single Target Heal
+        //coefficient: 198.7088,
+        //table: -9,
+        secondaries: ['crit', 'versatility'],
+        ppm: 1.01,
+        efficiency: 0.6, // Our expected overhealing.
+      },
+      { // Healing Portion - Mending Breath (AoE)
+        //coefficient: 165.5901,
+        //table: -9,
+        secondaries: ['crit', 'versatility'],
+        ppm: 1.01,
+        targets: 3.2,
+        efficiency: 0.45, // Our expected overhealing. It's extremely high for this and it can also just whiff and hit pets. 
+      },
+      { // Crit Stat Buff (Sleepy Ruby Warmth)
+        //coefficient: 2.661627,
+        //table: -7,
+        ppm: 1.01,
+        stat: "crit",
+        duration: 12,
+      },
+      { // Haste Stat Buff (Under Ruby Wings)
+        // Like other mega haste buffs, some specs are unable to take advantage of it in a useful way. 
+        //coefficient: 2.903762,
+        //table: -7,
+        stat: "haste",
+        ppm: 1.01,
+        duration: 12,
+        //specMult: {"Preservation Evoker": 0.5, "Restoration Druid": 0.8, "Holy Paladin": 0.67, "Mistweaver Monk": 0.8, "Restoration Shaman": 0.65, "Holy Priest": 0.7, "Discipline Priest": 0.7},
+      },
+
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+      
+      let bonus_stats: Stats = {};
+      const setStats = additionalData.setStats;
+      const updatedData = data.map((effect, index) => {
+        return {...effect, ...trinketRawData["Ruby Whelp Shell"][index]};
+      });
+      
+      const bigProc = 0.75; // This is likely to be an underestimation but it's better to be cautious until we have more data.
+      const smallProc = (1 - bigProc) / 5;
+
+       let procRates = {
+        "ST Heal": smallProc,
+        "AoE Heal": smallProc,
+        "ST Damage": smallProc,
+        "AoE Damage": smallProc,
+        "Crit": smallProc,
+        "Haste":  smallProc,
+      }
+
+      // We still require more data using fully trained dragons to lock down specific ratios of abilities
+      const whelpSetting = getSetting(additionalData.settings, "rubyWhelpShell");
+
+      if (whelpSetting && whelpSetting !== "Untrained") {
+        procRates[whelpSetting] = bigProc;
+      }
+      else {
+          procRates["AoE Heal"] = 0.1667; 
+          procRates["ST Heal"] = 0.1667; 
+          procRates["ST Damage"] = 0.1667; 
+          procRates["AoE Damage"] = 0.1667; 
+          procRates["Crit"] = 0.1667; 
+          procRates["Haste"] = 0.1667;
+      }
+
+      // ST Heal
+      bonus_stats.hps = runGenericFlatProc(updatedData[2], itemLevel, player, additionalData.contentType) * procRates["ST Heal"];
+
+      // AoE Heal
+      bonus_stats.hps += runGenericFlatProc(updatedData[3], itemLevel, player, additionalData.contentType) * procRates["AoE Heal"]; // Might need sqrt data. TODO.
+      // processedValue(data[1], itemLevel, data[1].efficiency * procRates["AoE Heal"]) * player.getStatMults(data[1].secondaries) * (Math.sqrt(1 / data[1].targets) * data[1].targets) * data[0].ppm / 60;
+      
+      // Crit Proc
+      bonus_stats.crit = runGenericPPMTrinket(updatedData[4], itemLevel, setStats) * procRates["Crit"];
+      // Haste Proc
+      bonus_stats.haste = runGenericPPMTrinket(updatedData[5], itemLevel, setStats) * procRates["Haste"]// * data[3].specMult[player.spec];
+
+      // ST DPS and AoE DPS TODO
+      //bonus_stats.dps = processedValue(data[1], itemLevel) * player.getStatMults(data[1].secondaries) * data[1].ppm / 60;
+
+      return bonus_stats;
+    }
+  },
     { //
         id: 193718,
         name: "Emerald Coach's Whistle",
@@ -98,8 +281,8 @@ export const dungeonTrinketData =
     },
     {
       name: "Seed of Radiant Hope",
-      description: "Currently undertuned.",
-      addonDescription: "Currently undertuned.",
+      description: "Extremely undertuned. Quite bad even if you proc the extra heal every time.",
+      addonDescription: "",
       effects: [
         {  // HoT effect
           secondaries: ['crit', 'versatility'],
@@ -144,8 +327,8 @@ export const dungeonTrinketData =
     },
         {
       name: "Unstable Felheart Crystal",
-      description: "A strong niche, but poor tuning prevents Unstable Felheart Crystal from being useful - even in Mythic+.",
-      addonDescription: "A strong niche, but poor tuning prevents Unstable Felheart Crystal from being useful - even in Mythic+.",
+      description: "Might find niche use in Mythic+ as a single target shield. The tuning is not really great for its 2-minute cooldown.",
+      addonDescription: "",
       effects: [
         { 
           secondaries: ['versatility'],
@@ -162,7 +345,7 @@ export const dungeonTrinketData =
     },
     {
       name: "Mycolic Medicine",
-      description: "Dreadful Trinket",
+      description: "The flat intellect is the only thing keeping it from the bottom of the chart.",
       addonDescription: "Dreadful Trinket",
       effects: [
         {  // Instant Heal
@@ -271,8 +454,8 @@ export const dungeonTrinketData =
     },
       { // 
         name: "Freightrunner's Flask",
-        description: "A fine on-use trinket that has better alternatives elsewhere in the game. C-tier.",
-        addonDescription: "A fine on-use trinket that has better alternatives elsewhere in the game. C-tier.",
+        description: "A reasonable crit on-use trinket that just isn't tuned high enough to find a permanent home.",
+        addonDescription: "",
         effects: [
           { // Int Proc
             duration: 15,
@@ -285,6 +468,26 @@ export const dungeonTrinketData =
     
           //bonus_stats.intellect = processedValue(data[0], itemLevel) * data[0].duration / data[0].cooldown; // These stacks can overlap so there should be no proc munching.
           bonus_stats[data[0].stat!] = runGenericOnUseTrinket({...data[0], ...trinketRawData["Freightrunner's Flask"][0]}, itemLevel, additionalData.castModel)
+          return bonus_stats;
+        }
+      },
+      { // 
+        name: "Stormbound Emblem of Dazar",
+        description: "An on-use haste trinket is hypothetically fine, but the 2s channel time absolutely buries it - even for specs that really enjoy Haste.",
+        addonDescription: "",
+        effects: [
+          { // Haste on-use, does have a ramp up period.
+            duration: 20,
+            cooldown: 120, //
+            stat: "haste",
+          },
+        ],
+        runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+          let bonus_stats: Stats = {};
+    
+          bonus_stats[data[0].stat!] = runGenericOnUseTrinket({...data[0], ...trinketRawData["Stormbound Emblem of Dazar"][0]}, itemLevel, additionalData.castModel)
+          bonus_stats.hps = (-2 * player.getHPS(additionalData.contentType) / 60);
+
           return bonus_stats;
         }
       },

@@ -63,7 +63,7 @@ export const buildRetailEffectTooltip = (trinketName, player, itemLevel, playerS
     if (trinketData === undefined) return [];
     const trinketEffects = trinketData.effects;
 
-    const additionalData = {contentType: "Raid", settings: playerSettings, setStats: {}, castModel: player.getActiveModel("Raid"), player: player, setVariables: {}, includeTooltip: true, tooltipData: []};
+    const additionalData = {contentType: "Raid", settings: playerSettings, setStats: player.activeStats, castModel: player.getActiveModel("Raid"), player: player, setVariables: {}, includeTooltip: true, tooltipData: []};
     const trinketStats = trinketData.runFunc(trinketData.effects, player, itemLevel, additionalData)
     if (trinketData.description) trinketDescription.push(trinketData.description);
     trinketDescription.push("")

@@ -209,6 +209,7 @@ export default function ItemBar(props) {
             else if (itemEffect.effectName === "Blessed Pango Charm") item.bonusIDS = (item.bonusIDS || "") + ":12686";
             else if (itemEffect.effectName === "Arcanoweave Lining") item.bonusIDS = (item.bonusIDS || "") + ":12384";
             else if (itemEffect.effectName === "Primal Spore Binding") item.bonusIDS = (item.bonusIDS || "") + ":12687";
+            //else if (itemEffect.effectName === "Hunter's Ritual Stone") item.bonusIDS = (item.bonusIDS || "") + ":12687";
           }
         }
 
@@ -345,11 +346,9 @@ export default function ItemBar(props) {
     { label: "Siege Heroic", value: -1, gameType: "Classic", source: "T16+", icon: "totHeroic" },
     //{ label: "Professions", value: -1, gameType: "Classic", source: "Professions" },
 
-    { label: "Heroic Raids", value: 276, gameType: "Retail", source: "Retail Raid", icon: "midnightRaidIcon" },
-    { label: "Mythic Raids", value: 289, gameType: "Retail", source: "Retail Raid", icon: "midnightRaidIcon" },
-    { label: "Heroic Sporefall", value: 285, gameType: "Retail", source: "Sporefall", icon: "inv_12_jewelry_rutaani_ring_blue" },
-    { label: "Mythic Sporefall", value: 298, gameType: "Retail", source: "Sporefall", icon: "inv_12_jewelry_rutaani_ring_blue" },
-    { label: "Mythic+", value: 289, gameType: "Retail", source: "Mythic+", icon: "retailDungeonIcon" },
+    { label: "Heroic Raids", value: 321, gameType: "Retail", source: "Retail Raid", icon: "midnightRaidIcon" },
+    { label: "Mythic Raids", value: 334, gameType: "Retail", source: "Retail Raid", icon: "midnightRaidIcon" },
+    { label: "Mythic+", value: 334, gameType: "Retail", source: "Mythic+", icon: "retailDungeonIcon" },
   ]
 
   return (

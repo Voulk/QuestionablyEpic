@@ -11,7 +11,26 @@ type embellishmentData = {
 }
 
 export const embellishmentDB: embellishmentData[] = [
-
+      {
+    id: 273059,
+    icon: "inv_12_profession_blacksmithing_weightstone_green",
+    armorType: 0, // Works on Weapons
+    name: "Hunter's Ritual Stone",
+    effect: {
+      type: "embellishment",
+      name: "Hunter's Ritual Stone",
+    },
+  },
+    {
+    id: 273068,
+    icon: "inv_knife_1h_ulatek_d_01",
+    armorType: 0, // Works on Armor, leatherworking craft.
+    name: "Adorned Fang",
+    effect: {
+      type: "embellishment",
+      name: "Adorned Fang",
+    },
+  },
   {
     id: 241140,
     icon: "inv_12_profession_jewelcrafting_ring1_gold",

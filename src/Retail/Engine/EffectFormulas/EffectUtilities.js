@@ -28,6 +28,7 @@ export function getDiminishedValue(statID, procValue, baseStat) {
   let currentStat = baseStat + procValue;
   let procSize = procValue
 
+
   for (var j = 0; j < DRBreakpoints.length; j++) {
     if (totalStat > DRBreakpoints[j])  {
       // Calculate proportion that's above DR.
@@ -113,6 +114,17 @@ export function forceGenericOnUseTrinket(effect, itemLevel, castModel, forcedCD,
   const value = diminishedUseValue * effect.duration / forcedCD
                 * (castModel ? (castModel.getSpecialQuery("c" + forcedCD, "cooldownMult") || 1) : 1);
   return value;
+}
+
+// This is specifically for effects that can roll any secondary.
+export function runGenericRandomOnUseTrinket(effect, itemLevel, castModel, setStats = {}) {
+  const bonus_stats = {};
+
+  ["versatility", "crit", "mastery", "haste"].forEach((statName) => {
+    bonus_stats[statName] = runGenericOnUseTrinket({...effect, stat: statName}, itemLevel, castModel, setStats) * 0.25;
+  });
+
+  return bonus_stats;
 }
 
 // This function helps out with generic flat damage or healing procs. It makes implementing them much faster and more difficult

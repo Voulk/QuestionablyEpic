@@ -20,7 +20,6 @@ import SimCraftInput from "../SimCraftDialog";
 import QELogImport from "./QELogImport";
 import makeStyles from "@mui/styles/makeStyles";
 import CharacterHeaderButton from "./CharacterHeader";
-import ContentSwitch from "./ContentToggle";
 import { useSelector } from "react-redux";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
@@ -142,14 +141,7 @@ export default function QEHeader(props) {
                 ) : (
                   ""
                 )*/}
-      {gameType === "Retail" ? (
-        <Grid item xs={6} sm="auto">
-          <ContentSwitch />
-        </Grid>
-      ) : (
-        ""
-      )}
-      {gameType === "Retail" ? (
+{gameType === "Retail" ? (
         <Grid item>
           <QELogImport
             logImportSnack={props.logImportSnack}
@@ -185,6 +177,17 @@ export default function QEHeader(props) {
       {/*<Grid item>
                   <ProfileSelector name={playerName} component={Link} to={linkTarget} logFunc={props.logFunc} setRegion={props.setRegion} />
                 </Grid> */}
+      <Grid item>
+        <StyledButton
+          color={"secondary"}
+          variant="contained"
+          style={{ whiteSpace: "nowrap" }}
+          component={Link}
+          to="/profile"
+        >
+          Support QE Live
+        </StyledButton>
+      </Grid>
       <Grid item>
         <LanguageSelector />
       </Grid>

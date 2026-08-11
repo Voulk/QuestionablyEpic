@@ -1,10 +1,11 @@
 
 import { getSpellRaw, runCastSequence } from "./RestoDruidRamps";
-import { druidTalents } from "./RestoDruidTalents";
+import { druidTalents, defaultTalents } from "./RestoDruidTalents";
 import  restoDruidSpellDB from "./RestoDruidSpellDB.json";
 //import { blossomProfile, reversionProfile } from "./PresEvokerDefaultAPL";
 import { runAPLSuites } from "General/Modules/Player/ClassDefaults/Generic/RampTestSuite";
 import { buildChartEntry, buildFormulatedChartEntry } from "General/Modules/Player/ClassDefaults/Generic/ChartUtilities";
+import { applyTalents } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities";
 /**
 
  */
@@ -29,27 +30,40 @@ export const buildDruidChartData = (activeStats) => {
         critMult: 2,
     }*/
 
+    const spellDB = JSON.parse(JSON.stringify(restoDruidSpellDB));   
+
     const testSettings = {masteryEfficiency: 1, includeOverheal: "Yes", reporting: false, advancedReporting: false, t31_2: false};
     let talents = {...druidTalents};
+    const state = {statBonuses: {}, heroTree: "Keeper of the Grove", talents: talents};
     Object.keys(talents).forEach(talentName => {
         if (talents[talentName].heroTree === "Keeper of the Grove") talents[talentName].points = 1;
     })
 
-    let sequences = Object.keys(restoDruidSpellDB).map(spellKey => {
-        const spell = restoDruidSpellDB[spellKey][0];
-        let catSuffix = ""
-        console.log(spellKey);
+    defaultTalents(talents, "default", "Keeper of the Grove");
+    applyTalents(state, spellDB); // missing Stat bonuses
 
-        if (spell.displayInfo.cat === "damage") {
+
+    let sequences = Object.keys(spellDB).map(spellKey => {
+        const spell = spellDB[spellKey][0];
+        let catSuffix = ""
+        //console.log(spellKey);
+
+        if (spell.displayInfo && spell.displayInfo.cat === "damage") {
             catSuffix = "Damage";
         }
         else {
             catSuffix = "Healing";
         }
+
         return {cat: "Base Spells - " + catSuffix, tag: spell.displayInfo.spellName, seq: [spell.displayInfo.spellName], preBuffs: []};
     });
 
     sequences = sequences.concat([
+        {cat: "Tree of Life", type: "formulated", tag: "Wild Growth", seq: ["Wild Growth"], mods: {additionalTargets: 2}, },
+        {cat: "Tree of Life", type: "formulated", tag: "Rejuvenation", seq: ["Rejuvenation"], mods: {manaReduction: 0.7, healingIncrease: 1.3 * 1.1}},
+        {cat: "Tree of Life", type: "formulated", tag: "Regrowth (Abundance)", seq: ["Regrowth"], mods: {manaReduction: 0.6, healingIncrease: 1.55 * 1.1}},
+
+        {cat: "Special", type: "formulated", tag: "Regrowth (Abundance)", seq: ["Regrowth"], mods: {manaReduction: 0.6, healingIncrease: 1.55}, preBuffs: []},
         /*
         {cat: "Base Spells", tag: "Wild Growth", seq: ["Wild Growth"], preBuffs: []},
         
@@ -66,9 +80,7 @@ export const buildDruidChartData = (activeStats) => {
         {cat: "Soul of the Forest", tag: "Rejuvenation", seq: ["Rejuvenation"], preBuffs: ["Soul of the Forest"]},
         {cat: "Soul of the Forest", tag: "Regrowth", seq: ["Regrowth"], preBuffs: ["Soul of the Forest"]},
         
-        {cat: "Tree of Life", tag: "Wild Growth", seq: ["Wild Growth"], preBuffs: ["Incarnation: Tree of Life"]},
-        {cat: "Tree of Life", tag: "Rejuvenation", seq: ["Rejuvenation"], preBuffs: ["Incarnation: Tree of Life"]},
-        {cat: "Tree of Life", tag: "Regrowth", seq: ["Regrowth"], preBuffs: ["Incarnation: Tree of Life"]},
+
         */
         //{cat: "Ramps", iterations: 100, includeStats: true, tag: "Tree 12x Rej -> SM -> WG -> Flourish -> 10x Reg", seq: ["Incarnation: Tree of Life", "Efflorescence", "Rejuvenation x 12", "Grove Guardians x 3", "Swiftmend", "Wild Growth", "Flourish", "Regrowth x 10"], preBuffs: []},
         //{cat: "Ramps", tag: "6x Rej -> SM -> WG -> 6x Reg", seq: ["Rejuvenation", "Rejuvenation x 5", "Swiftmend", "Wild Growth", "Regrowth x 6"], preBuffs: []},
@@ -80,7 +92,7 @@ export const buildDruidChartData = (activeStats) => {
     sequences.forEach(sequence => {
         let newSeq = sequence.seq;
         const tag = sequence.tag ? sequence.tag : sequence.seq.join(", ");
-        const displayInfo = {id: 0, icon: restoDruidSpellDB[newSeq[0]][0].displayInfo.icon || ""};
+        const displayInfo = {id: 0, icon: spellDB[newSeq[0]][0].displayInfo.icon || ""};
         const cat = sequence.cat;
 
         if (cat === "APLs") {
@@ -102,8 +114,8 @@ export const buildDruidChartData = (activeStats) => {
             results.push({cat: sequence.cat, tag: tag, hps: result.avgHPS, hpm: Math.round(100*result.avgHPM)/100, dps: Math.round(0) || "-", spell: displayInfo, advancedReport: result.advancedReport})
         */
             }
-        else if (cat.includes("Base Spells")) {
-            const fullSpell = restoDruidSpellDB[sequence.seq[0]];
+        else if (cat.includes("Base Spells") || sequence.type === "formulated") {
+            const fullSpell = spellDB[sequence.seq[0]];
             results.push(buildFormulatedChartEntry(sequence, displayInfo, fullSpell, activeStats, testSettings, {spec: "Restoration Druid"}, null));
         }
         else {

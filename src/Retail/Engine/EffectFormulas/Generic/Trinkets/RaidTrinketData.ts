@@ -1,10 +1,179 @@
 import { Player } from "General/Modules/Player/Player";
-import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket, runGenericFlatProc, convertPPMToUptimeExtended, runGenericOnUseTrinket, forceGenericOnUseTrinket, runGenericPPMOverlapTrinket, runGenericRandomPPMTrinket } from "../../EffectUtilities";
+import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket, runGenericFlatProc, convertPPMToUptimeExtended, runGenericOnUseTrinket, forceGenericOnUseTrinket, runGenericPPMOverlapTrinket, runGenericRandomPPMTrinket, getDiminishedValue, getStagedDiminishedValue } from "../../EffectUtilities";
 import { setBounds } from "General/Engine/CONSTRAINTS"
 import trinketRawData from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketData.json"
 
 // Note that raid trinket data is stored here. For other trinket data, see the dungeon, timewalking and other trinket data files.
 export const raidTrinketData = [
+  { //
+    /*
+      Effects
+      - 
+
+    */
+    id: 270164,
+    name: "Gebbo's Bottomless Bag",
+    description: "",
+    addonDescription: "",
+    effects: [
+    { // Crit Proc (S1) that increases every second + self-DoT (S5) - Seriously Sharp Seashell. Peaks at 652
+        stat: "crit",
+        duration: 12,
+        ppm: 3,
+    },
+    { // Vers proc (S2) that removes S8 every time you cast - Brittle Torga Totem e.g 709
+        stat: "versatility",
+        ppm: 3,
+    },
+    { // Mastery Proc (S3) that diminishes over its duration - Tattered Tortollan Scroll
+        stat: "mastery",
+        ppm: 3,
+        duration: 12,
+    },
+    { // Haste Proc (S4) that also gives speed - Slick and Slimy Gralstone. E.g 355
+        stat: "haste",
+        ppm: 3,
+        duration: 12,
+    },
+    { // All secondaries (S6) - 50lb Midnight Salmon - 222 x 4
+        stat: "all",
+        ppm: 3,
+        duration: 12,
+    },
+    { // All secondaries reduced (S7) - Rotting Voidfin
+        stat: "all",
+        ppm: 3,
+        duration: 12,
+    },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+        let bonus_stats: Stats = {};
+
+        const buffShare = 1/6 * data[0].ppm! * 1.13;
+//getDiminishedValue(statID, procValue, baseStat)
+        // Vers portion
+        const versBuff = processedValue({...data[1], ...trinketRawData["Gebbo's Bottomless Bag"][1]}, itemLevel);
+        const versLossPerCast = processedValue({...data[1], ...trinketRawData["Gebbo's Bottomless Bag"][7]}, itemLevel);
+        bonus_stats.versatility = versBuff / versLossPerCast * (1.5 / player.getStatMults(["haste"])) / 60 * (versBuff / 2) * buffShare;
+
+        // Crit portion
+        const critBuff = processedValue({...data[0], ...trinketRawData["Gebbo's Bottomless Bag"][0]}, itemLevel);
+        const averageCritStacks = data[0].duration! / 2;
+        bonus_stats.crit = averageCritStacks * critBuff * data[0].duration! / 60 * buffShare;
+
+        // Haste portion
+        const hasteBuff = getDiminishedValue("haste", processedValue({...data[3], ...trinketRawData["Gebbo's Bottomless Bag"][3]}, itemLevel), additionalData.setStats.haste);
+        bonus_stats.haste = hasteBuff * data[3].duration! / 60 * buffShare;
+
+        // Mastery portion
+        const masteryBuff = processedValue({...data[2], ...trinketRawData["Gebbo's Bottomless Bag"][2]}, itemLevel);
+        bonus_stats.mastery = masteryBuff * data[2].duration! / 60 * buffShare / 2;
+       
+        // All stats portion
+        const allBuff = processedValue({...data[4], ...trinketRawData["Gebbo's Bottomless Bag"][5]}, itemLevel);
+        const allBuffAverage = allBuff * data[4].duration! / 60 * buffShare;
+
+        const rottingFin = processedValue({...data[5], ...trinketRawData["Gebbo's Bottomless Bag"][6]}, itemLevel);
+        const rottingAverage = rottingFin * data[5].duration! / 60 * buffShare;
+
+        bonus_stats.crit += allBuffAverage - rottingAverage;
+        bonus_stats.haste += allBuffAverage - rottingAverage;
+        bonus_stats.mastery += allBuffAverage - rottingAverage;
+        bonus_stats.versatility += allBuffAverage - rottingAverage;
+
+        return bonus_stats;
+    }
+  },
+  { // -- Can gain stacks while the active is going.
+        name: "Hex Lord's Dooming Idol",
+        description: "",
+        effects: [
+          {  // Passive Int loss
+          },
+          {  // On-use Int
+            duration: 30,
+            cooldown: 30, // Technically 20
+          },
+
+        ],
+        runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+          let bonus_stats: Stats = {};
+
+          bonus_stats.intellect = processedValue({...data[1], ...trinketRawData["Hex Lord's Dooming Idol"][1]}, itemLevel) * 5; // You can keep 5 stacks at all times.
+
+          const intellectDeduction = processedValue({...data[0], ...trinketRawData["Hex Lord's Dooming Idol"][0]}, itemLevel)
+          bonus_stats.intellect -= intellectDeduction * 2.5;
+    
+          return bonus_stats;
+        }
+  },
+  { //
+    id: 270167,
+    name: "Wavecaller's Seastone",
+    description: "",
+    addonDescription: "",
+    effects: [
+    { // Stat Proc Portion
+        stat: "intellect",
+        duration: 12,
+        ppm: 2,
+    },
+    ],
+    runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+        let bonus_stats: Stats = {};
+
+        const averageStacks = 3;
+
+        bonus_stats.intellect = processedValue({...data[0], ...trinketRawData["Wavecaller's Seastone"][0]}, itemLevel) * averageStacks;
+
+        return bonus_stats;
+    }
+    },
+    {
+      name: "Preternatural Antivenom",
+      description: "",
+      setting: true,
+      addonDescription: "",
+      effects: [
+        { 
+          secondaries: ['haste', 'versatility'],
+          ppm: 2.5,
+          targets: 1, // Heals for more per healed ally, up to 5.
+          //efficiency: {Raid: 0.9, Dungeon: 0.55}, //
+        },
+      ],
+      runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+        let bonus_stats: Stats = {};
+
+        bonus_stats.hps = runGenericFlatProc({...data[0], ...trinketRawData["Preternatural Antivenom"][0]}, itemLevel, player, additionalData.contentType);
+        
+        return bonus_stats;
+      }
+    },
+    {
+          name: "Soulcoiler Ritual Vessel",
+          description: "",
+          setting: true,
+          addonDescription: "",
+          
+          effects: [
+            { 
+              secondaries: ['versatility'],
+              cooldown: 120,
+              targets: 5, // Heals for more per healed ally, up to 5.
+              //efficiency: {Raid: 0.9, Dungeon: 0.55}, //
+            },
+          ],
+          runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+            let bonus_stats: Stats = {};
+
+      
+            bonus_stats.hps = runGenericFlatProc({...data[0], ...trinketRawData["Soulcoiler Ritual Vessel"][0]}, itemLevel, player, additionalData.contentType);
+            
+
+            return bonus_stats;
+          }
+        },
       { //
         id: 249809,
         name: "Sporelord's Mycelial Insignia",
@@ -75,8 +244,8 @@ export const raidTrinketData = [
       { //
         id: 249343,
         name: "Gaze of the Alnseer",
-        description: "Gaze is a dominant trinket option that has been changed many times over the current patch. It's assumed there won't be further changes.",
-        addonDescription: "Gaze continues to get bugfixes and in-game tuning.",
+        description: "In Season 2, Gaze remains a top trinket that you'll need a higher item level alternative to beat.",
+        addonDescription: "",
         effects: [
         { // Stat Proc Portion
             stat: "intellect",

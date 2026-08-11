@@ -35,7 +35,6 @@ export const buildShamanChartData = (activeStats) => {
     let sequences = Object.keys(restoShamanSpellDB).map(spellKey => {
         const spell = restoShamanSpellDB[spellKey][0];
         let catSuffix = ""
-        console.log(spellKey);
 
         if (spell.displayInfo.cat === "damage") {
             catSuffix = "Damage";

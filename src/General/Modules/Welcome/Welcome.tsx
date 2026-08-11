@@ -23,7 +23,6 @@ import {
 import { useTranslation } from "react-i18next";
 import LanguageSelector from "../SetupAndMenus/Header/LanguageButton";
 import { classColours } from "General/Engine/ClassData";
-import classIcons from "General/Modules/IconFunctions/ClassIcons";
 import GameTypeSwitch from "../SetupAndMenus/GameTypeToggle";
 import WelcomeGameTypeSwitch from "./WelcomeGameTypeToggle";
 
