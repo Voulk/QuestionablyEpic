@@ -361,11 +361,11 @@ export const buildStatWeights = (playerData, scoringFunction, testSettings ) => 
         const stats = ['intellect', 'crit', 'haste', 'mastery', 'versatility', 'leech'];
 
     const activeStats = {
-        intellect: 3400,
-        haste: 200,
-        crit: 200,
+        intellect: 3200,
+        haste: 800,
+        crit: 800,
         mastery: 200,
-        versatility: 200,
+        versatility: 800,
         stamina: 19000,
         leech: 0,
         critMult: 2,
@@ -457,7 +457,7 @@ export async function buildBestDistChart(scoreSet, playerData) {
 export const buildTCStatChart = (scoreSet, playerData) => {
     const statResults = []
     const baseStats = {
-        intellect: 3400,
+        intellect: 3200,
         haste: 0,
         crit: 0,
         mastery: 0,

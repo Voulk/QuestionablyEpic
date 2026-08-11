@@ -7,7 +7,7 @@ export const dungeonTrinketData =
 [
   { // 
         name: "Vile Vial of Volatile Venom",
-        description: "",
+        description: "Just not particularly appealing",
         addonDescription: "",
         effects: [
           { // Random stat gain
@@ -39,7 +39,7 @@ export const dungeonTrinketData =
       },
     {
       name: "Preternatural Antivenom",
-      description: "",
+      description: "Will be good if it gets a nice 200% buff",
       addonDescription: "",
       effects: [
         {  // HoT effect
@@ -143,7 +143,6 @@ export const dungeonTrinketData =
         return {...effect, ...trinketRawData["Ruby Whelp Shell"][index]};
       });
       
-
       const bigProc = 0.75; // This is likely to be an underestimation but it's better to be cautious until we have more data.
       const smallProc = (1 - bigProc) / 5;
 

@@ -30,7 +30,7 @@ export const embellishmentData = [
           { // 
         id: 0,
         name: "Adorned Fang",
-        description: "",
+        description: "Not Correctly modelled yet. Could not be tested on PTR.",
         effects: [
         { // This might also be able to stack. It also "procs more on low health targets". Untested.
             scalingClass: -790,
@@ -179,7 +179,7 @@ export const embellishmentData = [
         { // 10s HoT
         id: 0,
         name: "Thalassian Phoenix Torque",
-        description: "",
+        description: "Requires a 1000% buff or something. Unplayable.",
         effects: [
         { // 
             scalingClass: -8,
@@ -201,7 +201,7 @@ export const embellishmentData = [
     { //
         id: 0,
         name: "Voidstone Shielding Array",
-        description: "",
+        description: "An extremely long cooldown for a very small shield.",
         effects: [
         { // 
             scalingClass: -8,

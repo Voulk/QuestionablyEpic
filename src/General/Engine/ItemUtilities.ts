@@ -1075,7 +1075,7 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
      
     const slot = getItemProp(item.id, "slot", gameType);
     if (
-        ((slot === 'Trinket' && item.levelRange && !item.offspecItem) || 
+        ((slot === 'Trinket' && item.levelRange && item.levelRange.length > 0 && !item.offspecItem) || 
         (slot !== 'Trinket' && item.stats.intellect && !item.stats.hit) ||
         (gameType === "Retail" && ["Finger", "Neck"].includes(slot))) && 
         (!([71393, 71398, 71578, 62458, 59514, 68711, 62472, 56465, 65008, 56466, 56354, 56327, 71576, 71395, 71581, 69198, 71390, 242398, 242399, 242401, 242404, 242403, 242396,
