@@ -6,6 +6,7 @@ import Player from "General/Modules/Player/Player";
 import { CONSTANTS } from "General/Engine/CONSTANTS";
 import { getTitanDiscName } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/TitanDiscBeltData"
 import ItemSquishEras from "Retail/Engine/ItemSquishEras.json"
+import { bonusLootCaches } from "Databases/InstanceDB";
 
 /**
  * This entire page is a bit of a disaster, owing mostly to how bizarrely some things are implemented in game. 
@@ -59,6 +60,46 @@ function getPlayerRace(lines: string[]) {
   return playerRace;
 }
 
+export function loadBonusRolls(bonusRollsUsed: string[]) {
+    // {boss: {difficulty: [itemIDs]}}
+    const bonusRolledItems: { [source: number]: { [context: number]: number[] } } = {};
+
+     //roll.currency .. ':' .. roll.source .. ':' .. roll.context .. ':' .. roll.keyLevel .. ':' .. roll.itemId .. ':' .. roll.spec
+
+    bonusRollsUsed.forEach((bonusRoll) => {
+      const [currency, source, context, keyLevel, itemId, spec] = bonusRoll.split(":");
+
+      const parsedCurrency = parseInt(currency, 10);
+      const parsedSourceId = parseInt(source, 10);
+      const parsedContext = parseInt(context, 10);
+      const parsedKeyLevel = parseInt(keyLevel, 10);
+      const parsedItemId = parseInt(itemId, 10);
+      const parsedSpec = parseInt(spec, 10);
+
+      if ([parsedCurrency, parsedSourceId, parsedContext, parsedKeyLevel, parsedItemId, parsedSpec].some(Number.isNaN)) {
+        return;
+      }
+
+      const parsedSourceKey = parsedSourceId as keyof typeof bonusLootCaches;
+
+      if (!(parsedSourceKey in bonusLootCaches)) {
+        return;
+      }
+
+      const parsedSource = bonusLootCaches[parsedSourceKey];
+
+      if (!bonusRolledItems[parsedSource]) {
+        bonusRolledItems[parsedSource] = {};
+      }
+      if (!bonusRolledItems[parsedSource][parsedContext]) {
+        bonusRolledItems[parsedSource][parsedContext] = [];
+      }
+
+      bonusRolledItems[parsedSource][parsedContext].push(parsedItemId);
+    });
+
+    return bonusRolledItems;
+}
 
 // Item levels are way too complicated to not have a specific function for now.
 export function getItemLevel(itemID: number, bonusIDs: number[], dropLevel: number = -1) : number {
@@ -174,9 +215,9 @@ export function getItemLevel(itemID: number, bonusIDs: number[], dropLevel: numb
 
 }
 
-export function runSimC(simCInput: string, player: Player, contentType: contentTypes, setErrorMessage: any, snackHandler: any, 
-                            closeDialog: () => void, clearSimCInput: (simcMessage: string) => void, playerSettings: PlayerSettings, 
-                            allPlayers: PlayerChars, autoUpgradeVault: boolean, autoUpgradeAll: boolean) {
+export function runSimC(simCInput: string, player: Player, contentType: contentTypes, setErrorMessage: any, snackHandler: any,
+                            closeDialog: () => void, clearSimCInput: (simcMessage: string) => void, playerSettings: PlayerSettings,
+                            allPlayers: PlayerChars, autoUpgradeVault: boolean, autoUpgradeAll: boolean, autoCatalyze: boolean = false) {
   let lines = simCInput.split("\n");
 
   // Check that the SimC string is valid.
@@ -208,8 +249,31 @@ export function runSimC(simCInput: string, player: Player, contentType: contentT
     }
     
     processAllLines(player, contentType, lines, linkedItems, vaultItems, playerSettings, autoUpgradeVault, autoUpgradeAll);
+
+    if (autoCatalyze) {
+      // The catalyst inherits slot/socket/tertiary/level from the source, so two sources
+      // that differ in socket or tertiary produce genuinely different tier pieces and
+      // both should be kept. Group by (slot, socket, tertiary) and pick the highest-level
+      // source per group.
+      const bestPerVariant = new Map<string, Item>();
+      player.activeItems.forEach((item: Item) => {
+        if (!item.canBeCatalyzed()) return;
+        const key = `${item.slot}|${item.socket}|${item.tertiary}`;
+        const current = bestPerVariant.get(key);
+        if (!current || item.level > current.level) bestPerVariant.set(key, item);
+      });
+      bestPerVariant.forEach((item: Item) => player.catalyzeItem(item));
+    }
+
     player.savedPTRString = simCInput;
 
+    // Character Bonus Rolls
+    // Example: bonus_roll_items=3418:268459:4:1:249306:103/3418:268969:108:11:249625:103
+    if (lines.indexOf("bonus_roll_items") !== -1) {
+      const bonusRollLines = lines[lines.indexOf("bonus_roll_items")];
+      const bonusRolls = loadBonusRolls(bonusRollLines.split("=")[1].split("/"));
+      player.bonusRolledItems = bonusRolls;
+    }
 
 
 

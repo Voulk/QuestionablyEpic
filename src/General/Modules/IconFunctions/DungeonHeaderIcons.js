@@ -307,6 +307,20 @@ export default function DungeonHeaderIcons(props) {
   if (props === 1316) source = NexusPoint;
   if (props === 1315) source = MaisaraCaverns;
 
+  if (props === 1322) source = require("Images/Bosses/MidnightS2/ui-ej-boss-golems.png");
+
+    /*
+          1322: "Alter of Fangs",
+      1311: "Den of Nalorakk",
+      1304: "Murder Row",
+      1309: "The Blinding Vale",
+
+      1313: "Voidscar Arena", 
+      1041: "Kings Rest", 
+      1202: "Ruby Life Pools", 
+      1030: "Temple of Sethraliss", 
+      */
+
 
 
   /* ---------------------------------------------------------------------------------------------- */

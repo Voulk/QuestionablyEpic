@@ -1,4 +1,4 @@
-import { runMistweaverMonkCastProfile } from "./MistweaverCastProfile";
+import { scoreMonkSet } from "./MistweaverCastProfile";
 
 export const chijiSpellData = (contentType) => {
   let spellList = {};
@@ -20,8 +20,10 @@ export const chijiSpellData = (contentType) => {
 // Run an on-use trinket through our model to get the amount of HPS it adds. Top Gear can just do this directly,
 // but trinket charts need a stronger way to approximate value.
 export const modelChijiOnUseTrinket = (setStats, trinketName, trinketLevel ) => {
-  const baseline = runChijiCastModel(null, {...setStats, critMult: 2}, null, []).hps;
-  const withTrinket = runChijiCastModel(null, {...setStats, critMult: 2}, null, [{name: trinketName, level: trinketLevel}]).hps;
+  const playerData = { spec: "Mistweaver Monk", settings: settings, stats: setStats, tier: [], effects: effectList }
+  const baseline = scoreMonkSet(setStats, playerData, settings, false).hps;
+
+  const withTrinket = scoreMonkSet(setStats, playerData, settings, false).hps;
   return withTrinket - baseline
 }
 
@@ -29,7 +31,7 @@ export const modelChijiOnUseTrinket = (setStats, trinketName, trinketLevel ) => 
 export const runChijiCastModel = (itemSet, setStats, castModel, effectList) => {
   const settings = {masteryEfficiency: 1, includeOverheal: true, reporting: false};
   const playerData = { spec: "Mistweaver Monk", settings: settings, stats: setStats, tier: [], effects: effectList }
-  const result = runMistweaverMonkCastProfile(playerData);
+  const result = scoreMonkSet(setStats, playerData, settings, false);
 
   return result;
 }

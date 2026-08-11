@@ -129,26 +129,40 @@ export function runUpgradeFinder(player, contentType, currentLanguage, playerSet
   return result;
 }
 
-export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemSlot = "") {
+export function getSetItemLevel(itemSource, playerSettings, difficultyType = "drop", itemSlot = "") {
   let itemLevel = 0;
   const instanceID = itemSource[0].instanceId;
   const bossID = itemSource[0].encounterId;
 
   if (CONSTANTS.currentRaidIDs.includes(instanceID)) {
-    const difficulty = playerSettings.raid[raidIndex];
+    const difficulty = playerSettings.raid[0];
     itemLevel = itemLevels.raid[difficulty]; // Get the base level of the item.
+
+    // If difficultyType == "drop" then we return whatever item level the item drops at. That's base + any boss bonuses.
+    // If difficultyType == "max" then we return the highest item level on the track that it drops at.
+    // If difficultyType == "bonus" then we return the highest item level on the bonus track it drops at. For Mythic this will match Max.
+
+    if (difficultyType === "max") {
+      itemLevel = itemLevels.raid[difficulty + 4]
+    }
+    if (difficultyType === "bonus") {
+      if (difficulty === 3) itemLevel = itemLevels.raid[difficulty + 4] // Mythic is the same as Mythic Max.
+      else itemLevel = itemLevels.raid[difficulty + 5]; // Go up one difficulty and then Max.
+    }
+
+    if (difficulty === 3 && [2895, 2883].includes(bossID)) {
+      itemLevel = 344 // 9/6 Mythic
+    }
+    else if (difficultyType === "drop") {
+      itemLevel += getItemLevelBoost(bossID, difficulty)// + getVeryRareItemLevelBoost(itemID, bossID, difficulty);
+    }
 
     // If we're looking at Max difficulties then only grab the very rare boost.
     //if (difficulty === CONSTANTS.difficulties.heroicMax || difficulty === CONSTANTS.difficulties.heroicMax || difficulty === CONSTANTS.difficulties.mythicMax) itemLevel += getVeryRareItemLevelBoost(itemID, bossID, difficulty);
 
     // Otherwise grab both the very rare and any boss-specific item level increase.
-    itemLevel += getItemLevelBoost(bossID, difficulty)// + getVeryRareItemLevelBoost(itemID, bossID, difficulty);
+    //
 
-  }
-
-  // World Bosses
-  else if (instanceID === 1312) {
-    itemLevel = 250;
   }
 
   else if (instanceID === -1) {
@@ -168,7 +182,6 @@ export function getSetItemLevel(itemSource, playerSettings, raidIndex = 0, itemS
   else if (instanceID === -31) {
     // Conquest
     itemLevel = itemLevels.pvp[playerSettings.pvp];
-    //if (playerSettings.pvp === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(slot)) itemLevel += 7;
   }
 
   if (instanceID === 1305 || itemSlot.includes("Weapon") || itemSlot === "Offhand" || itemSlot === "Shield" || itemSlot === "Trinket") {
@@ -236,16 +249,20 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
       const isRaid = CONSTANTS.currentRaidIDs.includes(primarySource);
 
       if (isRaid && encounter > 0) {
-        //
-        for (var x = 0; x < playerSettings.raid.length; x++) {
-          const itemLevel = getSetItemLevel(itemSources, playerSettings, x, rawItem.slot);
+        // For raid items - We need to create three versions. Regular, max version (crests spent) and bonus roll (that also spends crests).
+        const raidStates = ["drop", "max", "bonus"];
+        raidStates.forEach(raidState => {
+          const itemLevel = getSetItemLevel(itemSources, playerSettings, raidState, rawItem.slot);
           const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings, playerSettings);
           item.quality = 4;
           item.dropLoc = "Raid";
-          item.dropDifficulty = playerSettings.raid[x]; //
-          item.dropDifficultyTxt = convertRaidDifficultyToString(playerSettings.raid[x]);
+          item.dropDifficulty = playerSettings.raid[0]; //
+          item.dropType = raidState;
+          item.dropDifficultyTxt = convertRaidDifficultyToString(playerSettings.raid[0]);
           itemPoss.push(item);
-        }
+        }) 
+
+
       } else if (primarySource === -1) {
         // M+ Dungeons
         // Edit which dungeons are in-season in the CONSTANTS file.
@@ -342,7 +359,7 @@ function processItem(item, baseItemList, baseScore, player, contentType, baseHPS
   if (getSetting(userSettings, "upgradeFinderMetric") === "Show HPS") differential = rawDiff;
   else differential = percDiff;
   //console.log(item);
-  return { item: item.id, dropLoc: item.dropLoc, dropDifficulty: item.dropDifficulty, level: item.level, score: differential, rawDiff: Math.round(rawDiff), percDiff: Math.round(percDiff * 100000)/1000 };
+  return { item: item.id, dropLoc: item.dropLoc, dropType: item.dropType, dropDifficulty: item.dropDifficulty, level: item.level, score: differential, rawDiff: Math.round(rawDiff), percDiff: Math.round(percDiff * 100000)/1000 };
 }
 
 function checkItemViable(rawItem, player) {

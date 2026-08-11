@@ -21,22 +21,22 @@ export const chronoDefaultSpellData = (contentType) => {
   
   export const chronoDefaultStatWeights = (contentType) => {
     let statWeights = {};
-  
+    // Generated 11/8
     statWeights.Raid = {
       intellect: 1,
-      haste: 0.534, 
-      crit: 0.54, 
-      mastery: 0.66, 
-      versatility: 0.429, 
-      leech: 0.25,
+      haste: 0.65, 
+      crit: 0.78, 
+      mastery: 0.8, 
+      versatility: 0.53, 
+      leech: 0.2,
       defaults: true,
     };
     statWeights.Dungeon = {
       intellect: 1,
-      haste: 0.582,
-      crit: 0.474,
-      mastery: 0.576,
-      versatility: 0.441,
+      haste: 0.75,
+      crit: 0.74,
+      mastery: 0.7,
+      versatility: 0.55,
       leech: 0.25,
       defaults: true,
     };

@@ -36,6 +36,7 @@ export default function SimCraftInput(props) {
   const [autoUpgradeVault, setAutoUpgradeVault] = useState(true); // State for checkbox
   const [autoUpgradeAll, setAutoUpgradeAll] = useState(false); // State for checkbox
   const [autoUpgradeClassic, setAutoUpgradeClassic] = useState(false); // State for checkbox
+  const [autoCatalyze, setAutoCatalyze] = useState(false); // State for checkbox
   const contentType = useSelector((state) => state.contentType);
   const playerSettings = useSelector((state) => state.playerSettings);
   const characterCount = props.allChars.getAllChar().length || 0;
@@ -56,7 +57,7 @@ export default function SimCraftInput(props) {
   };
 
   const handleSubmit = () => {
-      if (gameType === "Retail") runSimC(simC, props.player, contentType, setErrorMessage, props.simcSnack, handleClose, setSimC, playerSettings, props.allChars, autoUpgradeVault, autoUpgradeAll); // Add autoUpgradeVault here.
+      if (gameType === "Retail") runSimC(simC, props.player, contentType, setErrorMessage, props.simcSnack, handleClose, setSimC, playerSettings, props.allChars, autoUpgradeVault, autoUpgradeAll, autoCatalyze); // Add autoUpgradeVault here.
       else runClassicGearImport(simC, props.player, contentType, setErrorMessage, props.simcSnack, handleClose, setSimC, props.allChars, autoUpgradeAll);
   };
 
@@ -125,6 +126,10 @@ export default function SimCraftInput(props) {
         {gameType === "Retail" ? <FormControlLabel
             control={<Checkbox checked={autoUpgradeVault} onChange={() => setAutoUpgradeVault(!autoUpgradeVault)} />}
             label="Upgrade Vault to Max Level"
+          /> : ""}
+        {gameType === "Retail" ? <FormControlLabel
+            control={<Checkbox checked={autoCatalyze} onChange={() => setAutoCatalyze(!autoCatalyze)} />}
+            label="Auto Catalyze"
           /> : ""}
 
 

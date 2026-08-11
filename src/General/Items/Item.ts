@@ -1,4 +1,4 @@
-import { calcStatsAtLevel, calcStatsAtLevelClassic, getItemAllocations, getItemProp } from "../Engine/ItemUtilities";
+import { calcStatsAtLevel, calcStatsAtLevelClassic, getItemAllocations, getItemDB, getItemProp } from "../Engine/ItemUtilities";
 import { CONSTRAINTS, setBounds } from "../Engine/CONSTRAINTS";
 import { CONSTANTS } from "General/Engine/CONSTANTS";
 
@@ -25,6 +25,10 @@ export class Item {
     gems: number[],
     enchants: number[],
   }
+
+  // If an item gets converted into catalyst, it keeps the stats and effects of the old item but is renamed to match the tier.
+  // This holds the old ID.
+  catalyzedID?: number; 
 
   // Used for items where we might have multiple variations at the same item level. 
   // Single option items like Unbound Changeling would end up as a 1 length array but
@@ -60,7 +64,7 @@ export class Item {
   gemString?: string;
   flags: string[] = []; // Flags: reforged, offspecWeapon. 
 
-  constructor(id: number, name: string, slot: string, socket: number, tertiary: string, softScore: number = 0, level: number, bonusIDS: string, gameType: gameTypes = "Retail") {
+  constructor(id: number, name: string, slot: string, socket: number, tertiary: string, softScore: number = 0, level: number, bonusIDS: string, gameType: gameTypes = "Retail", catalyzedID = 0) {
     this.id = id;
     this.name = name;
     this.level = setBounds(level, CONSTRAINTS.Retail.minItemLevel, CONSTRAINTS.Retail.maxItemLevel); //Math.max(1, Math.min(300, level));
@@ -71,14 +75,14 @@ export class Item {
     this.softScore = softScore;
     this.uniqueHash = this.getUnique(id);
 
-   
+
     this.effect = getItemProp(id, "effect", gameType);
     this.setID = getItemProp(id, "itemSetId", gameType);
-    this.uniqueEquip = getItemProp(id, "uniqueEquip", gameType).toLowerCase();
+    this.uniqueEquip = getItemProp(catalyzedID ? catalyzedID : id, "uniqueEquip", gameType).toLowerCase();
     this.onUse = (slot === "Trinket" && getItemProp(id, "onUseTrinket", gameType) === true);
     if (this.onUse && this.effect) this.effect['onUse'] = true;
     if ((slot === "Neck" || slot === "Finger") && this.gameType === "Retail" && this.id !== 228411) this.socket = 1; // We'll just auto apply sockets to rings / necks now.
-    if (id === 249920 || id === 250247) this.socket = 2;
+    if (id === 249920 || id === 250247 || id === 268265) this.socket = 2;
     if (getItemProp(id, "offspecWeapon", gameType)) this.flags.push("offspecWeapon");
     this.bonusIDS = bonusIDS || "";
     this.quality = getItemProp(id, "quality", gameType);
@@ -109,7 +113,7 @@ export class Item {
       if ([249914, 249913, 249912, 249915].includes(this.id)) {
         if (tertiary !== "Leech") tertiary = "Leech"; // These special helms always have leech but apply it via bonus ID for some reason.
       }
-      this.stats = calcStatsAtLevel(this.level, getItemProp(id, "slot", gameType), getItemAllocations(id, [], gameType), tertiary);
+      this.stats = calcStatsAtLevel(this.level, getItemProp(catalyzedID ? catalyzedID : id, "slot", gameType), getItemAllocations(catalyzedID ? catalyzedID : id, [], gameType), tertiary);
 
 
 
@@ -157,7 +161,9 @@ export class Item {
       this.tertiary,
       this.softScore,
       this.level,
-      this.bonusIDS
+      this.bonusIDS,
+      "Retail",
+      this.catalyzedID,
     );
 
     // 
@@ -184,7 +190,8 @@ export class Item {
     clonedItem.specialAllocations = { ...this.specialAllocations };
     clonedItem.flags = [...this.flags]; // Create a new array to avoid modifying the original array
 
-    if (clonedItem.missiveStats) clonedItem.stats = calcStatsAtLevel(this.level, this.slot, getItemAllocations(this.id, this.missiveStats, "Retail"), this.tertiary);
+    if (this.catalyzedID) clonedItem.catalyzedID = this.catalyzedID;
+    if (clonedItem.missiveStats) clonedItem.stats = calcStatsAtLevel(this.level, this.slot, getItemAllocations(this.catalyzedID ? this.catalyzedID : this.id, this.missiveStats, "Retail"), this.tertiary);
     if (this.customOptions) clonedItem.customOptions = [...this.customOptions];
     // ... (copy other properties as needed)
 
@@ -194,7 +201,7 @@ export class Item {
   updateLevel(level: number, missiveStats: string[] = []) {
     this.level = level;
     if (Object.keys(this.specialAllocations).length > 0) this.stats = (calcStatsAtLevel(level, getItemProp(this.id, "slot", this.gameType), this.specialAllocations, this.tertiary));
-    else this.stats = calcStatsAtLevel(level, getItemProp(this.id, "slot", this.gameType), getItemAllocations(this.id, missiveStats), this.tertiary);
+    else this.stats = calcStatsAtLevel(level, getItemProp(this.id, "slot", this.gameType), getItemAllocations(this.catalyzedID ? this.catalyzedID : this.id, missiveStats), this.tertiary);
   }
 
   // To be replaced with a proper method of assigning ID's but this will do for now since duplicates will be very rare and
@@ -244,6 +251,26 @@ export class Item {
     return this.setID !== 0 && this.setID !== "" && this.slot !== "Trinket" && this.slot !== "Finger";
   }
 
+  // Converts an item in-place to the tier set equivalent.
+  convertToTier(spec: string) {
+    const classTag = CONSTANTS.tierSetIDs[spec];
+
+    const temp = getItemDB("Retail").filter((item) => {
+      return item.slot === this.slot && item.itemSetId === classTag;
+    });
+
+    if (temp.length > 0) {
+      // Change item ID, name, add setID, set catalyzedID to old ID. Stats can be kept.
+      const tierItem = temp[temp.length - 1]
+
+      this.catalyzedID = this.id;
+      this.id = tierItem.id;
+      this.name = tierItem.name;
+      this.setID = tierItem.itemSetId;
+
+    };
+  }
+
   // This compiles an additional stat array into an item.
   // Useful if an items stats are coming from two different sources.
   addStats(bonus_stats: Stats) {
@@ -252,6 +279,11 @@ export class Item {
         this.stats[stat as keyof Stats] = (this.stats[stat as keyof Stats] || 0) + (bonus_stats[stat as keyof Stats] || 0)
       }
     }
+  }
+
+  hasEmbellishment() {
+    if (this.effect && this.effect.type === "embellishment") return true;
+    return false;
   }
 
 }

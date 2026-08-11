@@ -75,22 +75,35 @@ const useStyles = makeStyles({
 
 // This can probably be cleaned up a lot.
 // It adds colored tags to the item card, separated by a / where applicable.
-const getItemTags: React.FC<{ showTags: any; isVault: boolean, isExclusive: boolean, t: any }> = ({ showTags, isVault, isExclusive, t }) => {
+const getItemTags: React.FC<{ showTags: any; isVault: boolean; isExclusive: boolean; t: any }> = ({
+  showTags,
+  isVault,
+  isExclusive,
+  t,
+}) => {
+  const tags = [
+    { key: "leech",     show: showTags.tertiary,  color: "lime",   label: t("Leech")                  },
+    { key: "vault",     show: isVault,             color: "aqua",   label: t("itemTags.greatvault")    },
+    { key: "exclusive", show: isExclusive,         color: "orange", label: t("itemTags.exclusive")     },
+    { key: "tier",      show: showTags.tier,       color: "yellow", label: t("Tier")                   },
+    { key: "catalyst",  show: showTags.catalyst,   color: "plum",   label: t("Catalyst")               },
+    { key: "embellishment", show: showTags.embellishment, color: "lightblue", label: "Embellishment"   },
+    { key: "effect", show: showTags.effect, color: "goldenrod", label: "Effect"   },
+  ].filter((tag) => tag.show);
+
   return (
     <div style={{ display: "flex", gap: 4 }}>
-      {showTags.tertiary ? <div style={{ fontSize: 10, lineHeight: 1, color: "lime" }}>{t("Leech")}</div> : null}
-      {showTags.tertiary && isVault ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
-      {isVault ? <div style={{ fontSize: 10, lineHeight: 1, color: "aqua" }}>{t("itemTags.greatvault")}</div> : ""}
-      {isExclusive ? <div style={{ fontSize: 10, lineHeight: 1, color: "orange" }}>{t("itemTags.exclusive")}</div> : ""}
-      {(showTags.tertiary && showTags.tier) || (isVault && showTags.tier) ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
-      {showTags.tier ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null}
-      {(showTags.tertiary && showTags.catalyst) || (isVault && showTags.catalyst) || (showTags.tier && showTags.catalyst) ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
-      {showTags.catalyst ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Catalyst")}</div> : null}
-    
-
-  </div>
-  )
-}
+      {tags.map((tag, index) => (
+        <React.Fragment key={tag.key}>
+          {index > 0 && (
+            <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>/</div>
+          )}
+          <div style={{ fontSize: 10, lineHeight: 1, color: tag.color }}>{tag.label}</div>
+        </React.Fragment>
+      ))}
+    </div>
+  );
+};
 
 /*const GetSockets: React.FC<{ item: Item }> = ({ item}) => {
   if (!item.socket) {
@@ -184,17 +197,19 @@ export default function ItemCard(props: ItemCardProps) {
   const itemLevel: number = item.level;
   let statString: string = buildStatStringSlim(item.stats, item.effect, currentLanguage);
   if (item.flags.includes("DelveBelt")) {
-    statString = getTitanDiscName(item.selectedOptions[0]);
+    //statString = getTitanDiscName(item.selectedOptions[0]);
   }
   const gameType: gameTypes = useSelector((state: any) => state.gameType);
   const itemQuality = item.getQualityColor();
   const deleteActive = item.offhandID === 0;
   
-  const showTags: {tier: boolean, tertiary: boolean, catalyst: boolean, reforge: boolean} = 
+  const showTags: {tier: boolean, tertiary: boolean, catalyst: boolean, reforge: boolean, embellishment: boolean, effect: boolean} = 
                   {tier: item.isTierPiece(),
                     tertiary: ("leech" in item.stats && item.stats.leech !== 0),
                     catalyst: item.isCatalystItem,
-                    reforge: item.checkHasFlag("Reforged")};
+                    reforge: item.checkHasFlag("Reforged"),
+                    embellishment: item.hasEmbellishment(),
+                    effect: item.effect !== ""};
 
 
   // Special tags.
@@ -245,7 +260,7 @@ export default function ItemCard(props: ItemCardProps) {
   return (
     <Grid item xs={12} sm={6} md={4} lg={4} xl={3}>
       <div style={{ position: "relative" }}>
-        <div style={{ position: "absolute", right: 4, bottom: 2, zIndex: 1, padding: 0 }}>
+        <div style={{ position: "absolute", right: 4, bottom: 0, zIndex: 1, padding: 0 }}>
           <Grid container display="inline-flex" wrap="nowrap" spacing={0} sx={{ verticalAlign: "middle" }}>
             <Grid item>
               <ItemCardButtonWithMenu
@@ -279,7 +294,7 @@ export default function ItemCard(props: ItemCardProps) {
                   }}
                 >
                   <div className="container-MiniItemCards">
-                    <WowheadTooltip type={"item"} id={item.id} level={itemLevel} bonusIDS={item.bonusIDS} craftedStats={item.craftedStats} domain={gameType === "Retail" ? currentLanguage : "mop-classic"}>
+                    <WowheadTooltip type={"item"} id={item.id} level={itemLevel} bonusIDS={item.bonusIDS} catalyzedID={item.catalyzedID} craftedStats={item.craftedStats} domain={gameType === "Retail" ? currentLanguage : "mop-classic"}>
                       <img
                         alt="img"
                         width={44}
@@ -309,7 +324,7 @@ export default function ItemCard(props: ItemCardProps) {
                           style={{
                             color: itemQuality,
                             lineHeight: showTags.tertiary || isVault || showTags.tier || showTags.catalyst ? "normal" : 1.57,
-                            fontSize: itemName.length > 28 ? "11px" : "14px",
+                            fontSize: itemName.length > 29 ? "11px" : "14px",
                             
                           }}
                         >

@@ -3,13 +3,15 @@ import { Player } from "General/Modules/Player/Player";
 import trinketRawData from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketData.json"
 import { STATCONVERSION } from "General/Engine/STAT"
 
+// Pulse Seeker's Oculus, Effigy of Ula'tek's Faithful, 
+
 export const otherTrinketData = [
     {
       name: "Drum of Renewed Bonds",
       description: "Not available on Myth track but quite good as an early trinket. You are able to pick which secondary stat it gives.",
       addonDescription: "Not available on Myth track but quite good as an early trinket. You are able to pick which secondary stat it gives.",
       effects: [
-        {
+        { 
           duration: 12,
           ppm: 1.5,
           stat: "highest",
@@ -66,14 +68,14 @@ export const otherTrinketData = [
       if (getSetting(additionalData.settings, "crucibleUpgrades") === "Fully Upgraded") {
         trinketData.coefficient *= 1.2; 
         trinketData.duration = 20;
-        trinketData.ppm = 5;
+        trinketData.ppm = 4; // This is 5 in the spell data, but that doesn't line up with real uptime values.
       }
 
       bonus_stats.crit = runGenericPPMTrinket(trinketData, itemLevel);
       bonus_stats.leech = convertPPMToUptime(trinketData.ppm, trinketData.duration) * 1 * STATCONVERSION.LEECH;
 
       if (additionalData.includeTooltip) {
-        additionalData.tooltipData.push({name: "Expected Uptime: ", value: convertPPMToUptime(trinketData.ppm, trinketData.duration) * 100 + "%"})
+        additionalData.tooltipData.push({name: "Expected Upgraded Uptime: ", value: Math.round(convertPPMToUptime(trinketData.ppm, trinketData.duration) * 100) + "%"})
       }
 
       return bonus_stats;

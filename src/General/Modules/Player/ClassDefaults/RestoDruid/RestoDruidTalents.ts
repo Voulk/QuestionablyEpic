@@ -1,16 +1,18 @@
-import { addStatPerc, adjBuffDurationFlat, buffSpellCritMult, buffSpellPerc } from "../Generic/TalentBase";
+import { addStatPerc, adjBuffDurationFlat, attachSpellEffect, buffSpellCritChance, buffSpellCritMult, buffSpellPerc, cooldownAdjPerc, manaCostAdj } from "../Generic/TalentBase";
 
 /**
  * A list of talents to turn on
  */
-export const defaultTalents = (talents: TalentTree, loadoutName: string, heroTree: string = "Keeper of the Grove") => {
+export const defaultTalents = (talents: TalentTree, loadoutName: string, heroTree: string = "Wildstalker") => {
     let talentsEnabled: string[] = []
     let halfTalents: string[] = []
 
     if (loadoutName === "default") talentsEnabled = [
         "Nurturing Instinct", "Gift of the Wild", "Lingering Healing", "Lycara's Teachings", "Soul of the Forest", "Verdancy", "Lifetreading", "Grove Guardians", 
         "Flourish", "Improved Wild Growth", "Renewing Surge", "Rampant Growth", "Wild Synthesis", "Power of the Archdruid", "Improved Swiftmend", "Master Shapeshifter",
-        "Convoke the Spirits", "Intensity", "Cenarius' Guidance", "Nature's Bounty", "Thriving Vegetation", "Abundance", "Germination", "Photosynthesis"
+        "Convoke the Spirits", "Intensity", "Cenarius' Guidance", "Nature's Bounty", "Thriving Vegetation", "Abundance", "Germination", "Photosynthesis",
+
+        "Everbloom1", "Everbloom2", "Everbloom3",
     ]
 
     // Apply talents
@@ -53,7 +55,7 @@ const classTalents: TalentTree = {
 
     /* Magical damage and healing increased by X%. */
     "Nurturing Instinct": {id: 33873, values: [6.0, 6.0],  points: 0, maxPoints: 2, icon: "ability_druid_healinginstincts", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        addStatPerc(state.statBonuses, "genericHealingMult", talentValues[0]);
     }},
 
     /* While in Cat Form, when you critically strike with an attack that generates a combo point, you gain an additional combo point. Damage over time cannot trigger this effect.    Mangle critical strike damage increased by Y%. */
@@ -97,7 +99,7 @@ const classTalents: TalentTree = {
     }},
 
     /* When you use Barkskin or Survival Instincts, absorb $<shield> damage for $280165d. */
-    "Matted Fur": {id: 385786, values: [1200.0],  points: 0, maxPoints: 2, icon: "inv_misc_pelt_15", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: 
+    "Matted Fur": {id: 385786, values: [1875.0],  points: 0, maxPoints: 2, icon: "inv_misc_pelt_15", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: 
     number) {
 
     }},
@@ -127,7 +129,7 @@ const classTalents: TalentTree = {
 
     /* You gain X% of a stat while in each form:    No Form: Haste  Cat Form: Critical Strike  Bear Form: Versatility  Moonkin Form: Mastery */
     "Lycara's Teachings": {id: 378988, values: [3.0],  points: 0, maxPoints: 2, icon: "inv_trinket_ardenweald_02_green", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        addStatPerc(state.statBonuses, "haste", talentValues[0] * points);
     }},
 
     /* Moonfire and Sunfire damage increased by X%. */
@@ -200,7 +202,7 @@ const specTalents: TalentTree = {
     }},
 
     /* Nature's Swiftness's cooldown is reduced by ${X/-1000} sec. */
-    "Passing Seasons": {id: 382550, values: [-12000.0],  points: 0, maxPoints: 1, icon: "spell_nature_ravenform", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Passing Seasons": {id: 382550, values: [-15000.0],  points: 0, maxPoints: 1, icon: "spell_nature_ravenform", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
 
     }},
 
@@ -220,8 +222,9 @@ const specTalents: TalentTree = {
     }},
 
     /* When Lifebloom blooms, up to X targets within your Efflorescence are healed for $392329s1. */
-    "Verdancy": {id: 392325, values: [3.0],  points: 0, maxPoints: 1, icon: "inv_10_herb_seed_magiccolor5", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], 
+    "Verdancy": {id: 392325, values: [3.0],  points: 0, maxPoints: 1, icon: "inv_10_herb_seed_magiccolor5", select: true, tier: 3, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], 
     points: number) {
+        //spellDB["Lifebloom (Bloom)"] = attachSpellEffect(spellDB["Lifebloom (Bloom)"], spellDB["Verdancy"])
 
     }},
 
@@ -267,7 +270,7 @@ const specTalents: TalentTree = {
 
     /* Swiftmend cooldown is reduced by X%, increasing up to Y% on lower health targets. */
     "Renewing Surge": {id: 470562, values: [15.0, 30.0],  points: 0, maxPoints: 1, icon: "inv_relics_idolofhealth", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        cooldownAdjPerc(spellDB["Swiftmend"], (talentValues[0] + talentValues[1] * (1 - state.specSettings["Renewing Surge Health"])));
     }},
 
     /* Regrowth's healing over time is increased by X%, and it also applies to the target of your Lifebloom. */
@@ -369,13 +372,16 @@ const specTalents: TalentTree = {
     }},
 
     /* For each Rejuvenation you have active, Regrowth's cost is reduced by $207640s1% and critical effect chance is increased by $207640s2%, up to a maximum of ${$207640s2*$207640u}%. */
-    "Abundance": {id: 207383, values: [0.0],  points: 0, maxPoints: 1, icon: "ability_druid_empoweredrejuvination", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+    "Abundance": {id: 207383, values: [60],  points: 0, maxPoints: 1, icon: "ability_druid_empoweredrejuvination", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+        manaCostAdj(spellDB['Regrowth'], -1 * talentValues[0]);
+        buffSpellCritChance(spellDB['Regrowth'], talentValues[0]);
     }},
 
     /* When your Rejuvenation heals a full health target, its duration is increased by X sec, up to a maximum total increase of Y sec per cast. */
     "Nurturing Dormancy": {id: 392099, values: [2.0, 6.0],  points: 0, maxPoints: 1, icon: "ability_druid_replenish", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        const originalDuration = spellDB['Rejuvenation'][0].buffDuration!;
+        adjBuffDurationFlat(spellDB['Rejuvenation'], talentValues[1] * points, 1);
+        spellDB["Rejuvenation"][0].expectedOverheal += (talentValues[1] / originalDuration * 0.5);
     }},
 
     /* Your periodic heals on targets with Lifebloom have a Y% chance to cause it to bloom. */
@@ -393,26 +399,25 @@ const specTalents: TalentTree = {
 
     }},
 
-    /* You can apply Rejuvenation twice to the same target. Rejuvenation's duration is increased by ${X/1000} sec. */
-    "Germination": {id: 155675, values: [2000.0],  points: 0, maxPoints: 1, icon: "spell_druid_germination", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-        adjBuffDurationFlat(spellDB['Rejuvenation'], talentValues[0], 0);
+    /* You can apply Rejuvenation twice to the same target.  */
+    "Germination": {id: 155675, values: [0.0],  points: 0, maxPoints: 1, icon: "spell_druid_germination", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+
     }},
 
     /* Lifebloom stacks every X sec, stacking up to ${Y+1} times. */
     "Everbloom1": {id: 392167, values: [5.0, 2.0], points: 0, maxPoints: 1, icon: "inv12_apextalent_druid_everbloom", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
         buffSpellPerc(spellDB['Lifebloom'], talentValues[1] * 100); 
+        buffSpellPerc(spellDB['Lifebloom (Bloom)'], talentValues[1] * 100); 
     }},
 
     /* Y% of Lifebloom's healing splashes to X allies within $1244341a1 yds. */
-    "Everbloom2": {id: 1244331, values: [2.0, 15.0], points: 0, maxPoints: 2, icon: "inv12_apextalent_druid_everbloom", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-        spellDB["Lifebloom"].forEach(slice => {
-            slice.targets =  (slice.targets ? slice.targets : 1) +  (talentValues[0] * talentValues[1] / 100 * points)
-        })
+    "Everbloom2": {id: 1244331, values: [2.0, 20.0, 6.0], points: 0, maxPoints: 2, icon: "inv12_apextalent_druid_everbloom", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+        spellDB["Lifebloom (Bloom)"][0].targets = (talentValues[2] * talentValues[1] / 100 * points)
     }},
 
-    /* Lifebloom bursts into a Blooming Frenzy when you consume Soul of the Forest, causing it to bloom X times in rapid succession. */
-    "Everbloom3": {id: 1244470, values: [5.0], points: 0, maxPoints: 1, icon: "inv12_apextalent_druid_everbloom", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+    /* Lifebloom bursts into a Blooming Frenzy when you cast Swiftmend, causing it to bloom X times in rapid succession. */
+    "Everbloom3": {id: 1244470, values: [3.0], points: 0, maxPoints: 1, icon: "inv12_apextalent_druid_everbloom", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+        //spellDB["Swiftmend"][0].triggerSpell = {spellName: "Lifebloom (Bloom)", times: talentValues[0]};
     }},
 }
 
@@ -435,7 +440,10 @@ const heroTalents: TalentTree = {
 
     /* Rip and Ferocious Bite damage increased by X%.    Rejuvenation$?a137012[, Efflorescence, and Lifebloom][] healing increased by Z%. */
     "Wildstalker's Power": {id: 439926, values: [5.0, 5.0, 10.0, 10.0, 10.0], heroTree: "Wildstalker", points: 0, maxPoints: 1, icon: "ability_druid_skinteeth", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        buffSpellPerc(spellDB["Rejuvenation"], talentValues[1]);
+        buffSpellPerc(spellDB["Efflorescence"], talentValues[1]);
+        buffSpellPerc(spellDB["Lifebloom"], talentValues[1]);
+        buffSpellPerc(spellDB["Lifebloom (Bloom)"], talentValues[1]);
     }},
 
     /* The rate at which $?c2[Bloodseeker Vines][Symbiotic Blooms] grow is increased by $?c2[X][Y]%. */
@@ -446,7 +454,7 @@ const heroTalents: TalentTree = {
     /* When you remove an effect with Soothe or $?s88423[Nature's Cure][Remove Corruption], gain a combo point and heal for X% of your maximum health. If you are at full health an injured party or 
     raid member will be healed instead. */
     "Lethal Preservation": {id: 455461, values: [4.0], heroTree: "Wildstalker", points: 0, maxPoints: 1, icon: "spell_nature_healingtouch", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        // lol
     }},
 
     /* Enemies pulled into Ursol's Vortex are rooted in place for ${X/1000} sec. Damage may cancel the effect. */
@@ -471,14 +479,14 @@ const heroTalents: TalentTree = {
 
     }},
 
-    /* When Bloodseeker Vines expire or you use Ferocious Bite on their target they explode in thorns, dealing $440122s1 physical damage to nearby enemies. Damage reduced above 5 targets.    When Symbiotic Blooms expire or you cast Rejuvenation on their target flowers grow around their target, healing them and up to $440121s2 nearby allies for $440121s1. */
+    /* When Symbiotic Blooms expire or you cast Rejuvenation on their target flowers grow around their target, healing them and up to $440121s2 nearby allies for $440121s1. */
     "Bursting Growth": {id: 440120, values: [0.0], heroTree: "Wildstalker", points: 0, maxPoints: 1, icon: "inv_collections_armor_flowerbracelet_b_01", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        
     }},
 
     /* Bloodseeker Vines and Symbiotic Blooms last ${X/1000} additional sec.    When a target afflicted by Bloodseeker Vines dies, the vines jump to a valid nearby target for their remaining duration. */
     "Resilient Flourishing": {id: 439880, values: [2000.0, 2000.0, 2000.0, 2000.0], heroTree: "Wildstalker", points: 0, maxPoints: 1, icon: "inv_misc_herb_16", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        adjBuffDurationFlat(spellDB['Symbiotic Blooms'], 2000, 1);
     }},
 
     /* Each active Bloodseeker Vine increases the damage your abilities deal by 2%.    Each active Symbiotic Bloom increases the healing of your spells by 2%. */
@@ -490,7 +498,11 @@ const heroTalents: TalentTree = {
     /* Your $?c2[Bleeds and other damage over time][heal over time] effects are $?c2[X][Z]% more effective. */
     "Patient Custodian": {id: 1270592, values: [8.0, 8.0, 6.0, 6.0], heroTree: "Wildstalker", points: 0, maxPoints: 1, icon: "inv_helm_misc_rose_a_01_red", select: true, tier: 2, runFunc: function 
     (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
-
+        buffSpellPerc(spellDB['Rejuvenation'], talentValues[2]);
+        buffSpellPerc(spellDB['Wild Growth'], talentValues[2]);
+        buffSpellPerc(spellDB['Regrowth'], talentValues[2], 1);
+        buffSpellPerc(spellDB['Symbiotic Blooms'], talentValues[2]);
+        buffSpellPerc(spellDB['Lifebloom'], talentValues[2]);
     }},
 
     /* When Bloodseeker Vines or Symbiotic Blooms grow, they have a X% chance to cause another growth of the same type to immediately grow on a valid nearby target. */
@@ -498,7 +510,7 @@ const heroTalents: TalentTree = {
 
     }},
 
-    /* $?a137011[When you gain or lose Tiger's Fury, your next single-target melee ability causes a Bloodseeker Vine to grow on the target for ${X/1000} sec.][Casting Swiftmend or Wild Growth causes a Symbiotic Bloom to grow on a target for ${Y/1000} sec.] */
+    /* Casting Swiftmend or Wild Growth causes a Symbiotic Bloom to grow on a target for ${Y/1000} sec. */
     "Implant": {id: 440118, values: [4000.0, 6000.0], heroTree: "Wildstalker", points: 0, maxPoints: 1, icon: "ability_creature_poison_03", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
 
     }},
@@ -509,7 +521,7 @@ const heroTalents: TalentTree = {
 
     }},
 
-    /* Bloodseeker Vines increase the damage your abilities deal to affected enemies by X%.    Symbiotic Blooms increase the healing your spells do to affected targets by Y%. */
+    /* Symbiotic Blooms increase the healing your spells do to affected targets by Y%. */
     "Vigorous Creepers": {id: 440119, values: [4.0, 20.0], heroTree: "Wildstalker", points: 0, maxPoints: 1, icon: "spell_druid_massentanglement", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
 
     }},
@@ -536,7 +548,7 @@ const heroTalents: TalentTree = {
 
     /* $?c1[Entering an Eclipse summons a Dryad to assist you for $1264618d, casting Starsurge dealing $1264677s1 astral damage and Starfall at Y% effectiveness.][Your periodic heals have a chance 
     to empower your next Swiftmend to summon a Dryad to assist you, casting Tranquility at X% effectiveness and Regrowth to heal $1264664s1 damage onto your lowest health ally.] */
-    "Sylvan Beckoning": {id: 1264614, values: [10.0, 200.0], heroTree: "Keeper of the Grove", points: 0, maxPoints: 1, icon: "ui_darkshore_warfront_alliance_dryad", select: true, tier: 2, runFunc: 
+    "Sylvan Beckoning": {id: 1264614, values: [10.0, 250.0], heroTree: "Keeper of the Grove", points: 0, maxPoints: 1, icon: "ui_darkshore_warfront_alliance_dryad", select: true, tier: 2, runFunc: 
     function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
 
     }},
@@ -562,7 +574,7 @@ const heroTalents: TalentTree = {
     }},
 
     /* $?c1[Orbital Strike damage increased by Z%, and damage of Stellar Flares it applies increased by Y%.    Whirling Stars increases the haste you gain during ][]$?c1&s394013[Incarnation: Chosen of Elune]?c1[Celestial Alignment][]$?c1[ by an additional $s4%.][Reforestation grants Tree of Life for $s5 additional sec.] */
-    "Potent Enchantments": {id: 429420, values: [30.0, 30.0, 30.0, 10.0, 6.0], heroTree: "Keeper of the Grove", points: 0, maxPoints: 1, icon: "ability_druid_serenefocus", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Potent Enchantments": {id: 429420, values: [30.0, 30.0, 30.0, 6.0, 6.0], heroTree: "Keeper of the Grove", points: 0, maxPoints: 1, icon: "ability_druid_serenefocus", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
 
     }},
 
@@ -572,7 +584,7 @@ const heroTalents: TalentTree = {
     }},
 
     /* $?a137013[Force of Nature summons 4 Treants.][Your Grove Guardians' healing is increased by X%.] */
-    "Bounteous Bloom": {id: 429215, values: [30.0, 1.0], heroTree: "Keeper of the Grove", points: 0, maxPoints: 1, icon: "inv_herbalism_70_dreamleaf", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Bounteous Bloom": {id: 429215, values: [30.0, 4000.0, 4000.0], heroTree: "Keeper of the Grove", points: 0, maxPoints: 1, icon: "inv_herbalism_70_dreamleaf", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
 
     }},
 
@@ -599,7 +611,7 @@ const heroTalents: TalentTree = {
     }},
 
     /* $?c4[Ironbark summons a Dryad to channel a beam of pure nature onto your target, healing them for $1264905o1 over $1264905d.][Your Starfall damage is increased by X% and your Starsurge damage is increased by Y%.] */
-    "Spirit of the Thicket": {id: 1264899, values: [12.0, 8.0, 0.0], heroTree: "Keeper of the Grove", points: 0, maxPoints: 1, icon: "ability_druid_naturalperfection", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Spirit of the Thicket": {id: 1264899, values: [18.0, 8.0, 0.0], heroTree: "Keeper of the Grove", points: 0, maxPoints: 1, icon: "ability_druid_naturalperfection", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
 
     }},
 

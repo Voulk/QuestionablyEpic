@@ -16,7 +16,7 @@ import { Link, useHistory, useLocation } from "react-router-dom";
 import { classColours } from "General/Engine/ClassData";
 import CompetitiveAlternatives from "./CompetitiveAlternatives";
 import { useSelector } from "react-redux";
-import classIcons from "General/Modules/IconFunctions/ClassIcons";
+import ClassIcon from "General/Modules/IconFunctions/ClassIcons";
 //import { formatReport, exportGearSet } from "General/Modules/TopGear/Engine/TopGearEngineShared";
 import { exportWowheadGearList, exportReforgeLite, exportIcyVeinsGearList, exportIcyVeinsGearPlanner } from "./TopGearExports";
 import MenuDropdown from "General/Modules/TopGear/Report/MenuDropdown";
@@ -25,18 +25,15 @@ import { getItemProp } from "General/Engine/ItemUtilities";
 import ListedInformationBox from "General/Modules/GeneralComponents/ListedInformationBox";
 import InformationBox from "General/Modules/GeneralComponents/InformationBox";
 import { getDynamicAdvice } from "./DynamicAdvice";
-import ManaSourcesComponent from "./ManaComponent";
 import { getTranslatedClassName } from "locale/ClassNames";
 import {
   getManaRegen,
   getManaPool,
   getAdditionalManaEffects,
 } from "General/Modules/Player/ClassDefaults/Generic/ClassicBase";
-import SpellDataAccordion from "./SpellDataAccordion";
 import { getWHData } from "./WowheadGearPlannerExport";
 import { trackPageView } from "Analytics";
-import TopGearGemList from "./Panels/TopGearGemPanel";
-import ErrorBoundary from "./Panels/PanelErrorBoundary";
+import TopGearReportTabs from "./TopGearReportTabs";
 import TopGearFolioEntry from "./TopGearFolioEntry";
 
 async function fetchReport(reportCode, setResult, setBackgroundImage) {
@@ -77,7 +74,7 @@ async function fetchReport(reportCode, setResult, setBackgroundImage) {
   //.catch(err => { throw err });
 }
 
-const classIcon = (spec) => {
+const smallClassIcon = (spec) => {
   switch (spec) {
     case "Holy Paladin":
     case "Holy Paladin Classic":
@@ -259,7 +256,7 @@ function displayReport(
   fullItemList.forEach((item) => {
     item.slot = getItemProp(item.id, "slot", gameType);
     item.setID = getItemProp(item.id, "itemSetId", gameType);
-    item.sources = getItemProp(item.id, "sources", gameType);
+    item.sources = item.catalyzedID ? getItemProp(item.catalyzedID, "sources", gameType) : getItemProp(item.id, "sources", gameType);
     if (item.sources) item.source = item.sources[0];
     item.socketedGems =
       topSet.socketedGems && item.id in topSet.socketedGems
@@ -281,6 +278,7 @@ function displayReport(
   if (itemList.length === 0) itemList = fullItemList; // Fallback for older reports that don't have non-chosen items on them. Can be removed on a patch launch.
 
   console.log(fullItemList);
+  console.log(topSet);
 
   // setup export button menu options
   let exportOptions = [];
@@ -291,7 +289,7 @@ function displayReport(
   if (window.location.href.includes("localhost") || window.location.href.includes("ptr")) {
     exportOptions.push("Wowhead BIS List");
     exportOptions.push("Icy Veins Gear Planner");
-    exportOptions.push("Icy Veins BIS List");
+    //exportOptions.push("Icy Veins BIS List");
     
   }
 
@@ -598,6 +596,7 @@ function displayReport(
                         <Grid container justifyContent="flex-start" width="100%">
                           <TopSetStatsPanel
                             statList={statList}
+                            statBreakdown={topSet.statBreakdown}
                             spec={player.spec}
                             currentLanguage={currentLanguage}
                             gameType={gameType}
@@ -627,7 +626,7 @@ function displayReport(
                               <Grid item xs="auto" width={80} height={80} margin="auto">
                                 <Grid container direction="row">
                                   <img
-                                    src={classIcon(player.spec)}
+                                    src={smallClassIcon(player.spec)}
                                     height={80}
                                     width={80}
                                     style={{ padding: 4 }
@@ -670,16 +669,19 @@ function displayReport(
                                         placement="top"
                                         arrow
                                       >
-                                        {classIcons(player.spec, {
-                                          height: 22,
-                                          width: 22,
-                                          marginLeft: 4,
-                                          verticalAlign: "middle",
-                                          borderRadius: 4,
-                                          border:
-                                            "1px solid " +
-                                            classColours(player.spec),
-                                        })}
+                                        <ClassIcon
+                                          name={player.spec}
+                                          style={{
+                                            height: 22,
+                                            width: 22,
+                                            marginLeft: 4,
+                                            verticalAlign: "middle",
+                                            borderRadius: 4,
+                                            border:
+                                              "1px solid " +
+                                              classColours(player.spec),
+                                          }}
+                                        />
                                       </Tooltip>
                                     </div>
 
@@ -773,39 +775,16 @@ function displayReport(
               gameType={gameType}
             />
           </Grid>
-          {gameType === "Classic" ? (
-            <Grid item xs={12} style={{ marginTop: 8 }}>
-              <ErrorBoundary>
-                <TopGearGemList gemData={topSet.socketedGems} />
-              </ErrorBoundary>
-            </Grid>) : null}
           <Grid item xs={12} style={{ marginTop: 8 }}>
-            {advice && advice.length > 0 ? (
-              <ListedInformationBox
-                introText="Here are some notes on your set:"
-                bulletPoints={advice}
-                color="green"
-                backgroundCol="#304434"
-                title="Insights - Set Notes"
-              />
-            ) : (
-              ""
-            )}
+            <TopGearReportTabs
+              advice={advice}
+              gameType={gameType}
+              topSet={topSet}
+              statList={statList}
+              manaSources={manaSources}
+              spec={player.spec}
+            />
           </Grid>
-          {gameType === "Classic" ? (
-            <Grid item xs={12} style={{ marginTop: 8 }}>
-              <ManaSourcesComponent manaSources={manaSources} />
-            </Grid>
-          ) : null}
-          {gameType === "Classic" ? (
-            <Grid item xs={12} style={{ marginTop: 8 }}>
-              <SpellDataAccordion
-                spec={player.spec}
-                statList={statList}
-                talents={null}
-              />
-            </Grid>
-          ) : null}
           <Grid item style={{ height: 60 }} xs={12} />{" "}
           {/* This adds space to the bottom of the page to improve scrolling. */}
         </Grid>

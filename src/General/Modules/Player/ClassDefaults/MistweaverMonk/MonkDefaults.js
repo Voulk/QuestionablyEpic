@@ -19,12 +19,6 @@ export const monkDefaultSpecialQueries = (contentType) => {
   let specialQueries = {};
   if (contentType === "Raid") {
     specialQueries = {
-      HPSChijiGusts: 674,
-      percentVivifyOnRemTargets: 0.15,
-      HPSDuringCelestial: 9800,
-      HPSHotHealingDuringLC: 98,
-      HPSHotHealingAfterLC: 0,
-      HPSExpelHarmOnSelf: 0,
       OneManaHealing: 5.6,
       cooldownMult: {
         c60: 1,
@@ -36,12 +30,6 @@ export const monkDefaultSpecialQueries = (contentType) => {
     };
   } else if (contentType === "Dungeon") {
     specialQueries = {
-      HPSChijiGusts: 674,
-      percentVivifyOnRemTargets: 0.75,
-      HPSDuringCelestial: 9400,
-      HPSHotHealingDuringLC: 98,
-      HPSHotHealingAfterLC: 0,
-      HPSExpelHarmOnSelf: 0,
       OneManaHealing: 1.4,
       cooldownMult: {
         c60: 1,
@@ -64,18 +52,18 @@ export const monkDefaultStatWeights = (contentType) => {
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 0.57,
-    crit: 0.489,
-    mastery: 0.32,
-    versatility: 0.428,
-    leech: 0.25,
+    haste: 0.74,
+    crit: 0.58,
+    mastery: 0.3,
+    versatility: 0.54,
+    leech: 0.2,
   };
   statWeights.Dungeon = {
     intellect: 1,
-    haste: 0.55,
-    crit: 0.49,
-    mastery: 0.35,
-    versatility: 0.431,
+    haste: 0.7,
+    crit: 0.548,
+    mastery: 0.59,
+    versatility: 0.54,
     leech: 0.2,
   };
 

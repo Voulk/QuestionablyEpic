@@ -3,7 +3,7 @@ import { STATCONVERSION, BASEMANA } from "General/Engine/STAT";
 import { getTargetScript } from "General/Modules/Player/ClassDefaults/Generic/TargetScripts"
 
 export const printHealingBreakdownWithCPM = (healingBreakdown, totalHealing, castProfile) => {
-        const sortedEntries = Object.entries(healingBreakdown)
+    const sortedEntries = Object.entries(healingBreakdown)
                             .sort((a, b) => b[1] - a[1])
                             .map(([key, value]) => `${key}: ${Math.round(value / 60).toLocaleString()} (${((value / totalHealing * 10000) / 100).toFixed(2)}%) - CPM: ${Math.round(100*castProfile.reduce((acc, spell) => acc + ((spell.cpm && (spell.label ? spell.label === key : spell.spell === key)) ? spell.cpm : 0), 0))/100}`);
     console.log(sortedEntries);
@@ -41,7 +41,7 @@ export const applyRaidBuffs = (settings) => {
     statBonuses.mastery = 0.02
 
     // Versatility
-    //statBonuses.versatility = 0.03
+    statBonuses.versatility = 0.03
 
     // Vantus?
 
@@ -109,11 +109,55 @@ export const convertStatPercentages = (statProfile, statBonuses, spec, masteryEf
         critMult: Math.max(statProfile.critMult || 2, 2) + (statBonuses.critMult || 0),
         genericHealingMult: (statBonuses.genericHealingMult) ? 1 + statBonuses.genericHealingMult : 1,
         genericDamageMult: (statBonuses.genericDamageMult) ? 1 + statBonuses.genericDamageMult : 1,
-        leech: (statProfile.leech / STATCONVERSION.LEECH / 100) + (statBonuses.leech || 0),
+        leech: ((statProfile.leech || 0) / STATCONVERSION.LEECH / 100) + (statBonuses.leech || 0),
     }
 
     //getClassicRaceBonuses(stats, race);
     return stats;
+}
+
+export const compileProfileReportingData = (healingEntries, damageEntries, castProfile, spellDB, totalHealing, totalDamage) => {
+
+    const spellBreakdowns = {healingBreakdown: [], damageBreakdown: []};
+
+    const sortedEntries = Object.entries(healingEntries)
+                        .sort((a, b) => b[1] - a[1])
+                        // .map(([key, value]) => `${key}: ${Math.round(value / 60).toLocaleString()} (${((value / totalHealing * 10000) / 100).toFixed(2)}%) - CPM: ${Math.round(100*castProfile.reduce((acc, spell) => acc + ((spell.cpm && (spell.label ? spell.label === key : spell.spell === key)) ? spell.cpm : 0), 0))/100}`);
+    const healingBreakdown = []
+    sortedEntries.forEach(entry => {
+        const realSpellName = castProfile.find(spell => spell.label === entry[0] || spell.spell === entry[0])?.spell || entry[0]
+
+        healingBreakdown.push({
+            spellName: entry[0], 
+            hps: Math.round(entry[1] / 60), 
+            percentHealing: ((entry[1] / totalHealing * 10000) / 100).toFixed(2), 
+            overhealing: 0.25,
+            cpm: Math.round(100 * castProfile.reduce((acc, spell) => acc + (!spell.autoSpell && spell.cpm && (spell.label ? spell.label === entry[0] : spell.spell === entry[0]) ? spell.cpm : 0), 0)) / 100,            icon: spellDB[realSpellName] ? spellDB[realSpellName][0].displayInfo.icon : null
+
+
+        });
+    })
+
+    // DPS
+    const sortedDamageEntries = Object.entries(damageEntries)
+                        .sort((a, b) => b[1] - a[1])
+    const damageBreakdown = []
+    sortedDamageEntries.forEach(entry => {
+        const realSpellName = castProfile.find(spell => spell.label === entry[0] || spell.spell === entry[0])?.spell || entry[0]
+        damageBreakdown.push({
+            spellName: entry[0], 
+            dps: Math.round(entry[1] / 60), 
+            percentDamage: ((entry[1] / totalDamage * 10000) / 100).toFixed(2), 
+            cpm: Math.round(100*castProfile.reduce((acc, spell) => acc + ((spell.cpm && (spell.label ? spell.label === entry[0] : spell.spell === entry[0])) ? spell.cpm : 0), 0))/100,
+            icon: spellDB[realSpellName] ? spellDB[realSpellName][0].displayInfo.icon : null
+        });
+    });
+    
+    //console.log(spellBreakdown);
+    spellBreakdowns.healingBreakdown = healingBreakdown;
+    spellBreakdowns.damageBreakdown = damageBreakdown;
+
+    return spellBreakdowns;
 }
 
 export const runProfileSpell = (fullSpell, statPercentages, spec, settings, flags = {}) => {
@@ -123,18 +167,21 @@ export const runProfileSpell = (fullSpell, statPercentages, spec, settings, flag
         if (spell.spellType === "heal" || spell.buffType === "heal") {
             throughput.healing += getSpellThroughput(spell, statPercentages, spec, settings, flags = {});
         }
-        else if (spell.type === "damage" || spell.buffType === "damage") {
+        else if (spell.spellType === "damage" || spell.buffType === "damage") {
+
             throughput.damage += getSpellThroughput(spell, statPercentages, spec, settings, flags = {});
+
         }
     })
-    console.log(throughput);
+    //console.log(throughput);
     return throughput;
 }
+
 
 export const runProfileSlice = (fullSpell, statPercentages, spec, settings, flags = {}) => {
     const throughput = {damage: 0, healing: 0};
 
-    console.log(fullSpell);
+    //console.log(fullSpell);
 
 
     if (spell.spellType === "heal" || spell.buffType === "heal") {
@@ -164,12 +211,14 @@ export const getSpellThroughput = (spell, statPercentages, spec, settings, flags
     }
     else {
         // Most other spells follow a uniform formula.
-        const masterySize = 1 + (statPercentages.mastery) * (spell.statMods && spell.statMods.masteryMult ? spell.statMods.masteryMult + 1 : 1);
-        const masteryMult = (spell.secondaries.includes("mastery") && !spec.includes("Holy Priest")) ? masterySize : 1; // We'll handle Holy mastery differently.
+        const masterySize = spec === "Mistweaver Monk" ? (1 + (statPercentages.mastery) * (spell.statMods && spell.statMods.masteryMult ? (spell.statMods.masteryMult + 0) : 0)) : 
+                        (1 + (statPercentages.mastery) * (spell.statMods && spell.statMods.masteryMult ? (spell.statMods.masteryMult + 1) : 1));
+        
+        const masteryMult = (spell.secondaries && spell.secondaries.includes("mastery") && !spec.includes("Holy Priest") && !spec.includes("Restoration Druid")) ? masterySize : 1; // We'll handle Holy mastery differently.
         spellOutput = (spell.aura * spell.coeff * statPercentages.intellect) * 
                             critMult * // Multiply by secondary stats & any generic multipliers. 
                             masteryMult *
-                            (spell.secondaries.includes("versatility") ? statPercentages.versatility : 1)
+                            (spell.secondaries && spell.secondaries.includes("versatility") ? statPercentages.versatility : 1)
         //if (spell.displayInfo && spell.displayInfo.spellName) console.log(`${spell.displayInfo.spellName} Base Output: ${spellOutput.toFixed(2)}, Crit Mult: ${critMult.toFixed(2)}, Vers Mult: ${spell.secondaries.includes("versatility") ? statPercentages.versatility.toFixed(2) : 1}, Mastery Mult: ${masteryMult.toFixed(2)}`);
     }
     
@@ -190,7 +239,7 @@ export const getSpellThroughput = (spell, statPercentages, spec, settings, flags
     }
     else if (spell.spellType === "damage" || spell.buffType === "damage") {
         spellOutput *= statPercentages.genericDamageMult;
-        if (spell.damageType === "physical") spellOutput *= 0.7 //getEnemyArmor(statPercentages.armorReduction);
+        if (spell.school === "physical") spellOutput *= 0.7 //getEnemyArmor(statPercentages.armorReduction);
         targetCount = settings.enemyTargets ? Math.min(settings.enemyTargets, (spell.maxTargets || 1)) : (spell.targets ? spell.targets : 1);
     }
 
@@ -210,9 +259,27 @@ export const getSpellThroughput = (spell, statPercentages, spec, settings, flags
 };
 
 // (state: any, spellDB: SpellDB, talentValues: number[], points: number)
-export const applyTalents = (state, spellDB, stats) => {
+export const applyTalents = (state, spellDB) => {
     Object.keys(state.talents).forEach(talentName => {
         const talent = state.talents[talentName];
+        if (talent.points > 0 && (!talent.heroTree || state.heroTree === talent.heroTree)) {
+            talent.runFunc(state, spellDB, talent.values, talent.points);
+        }
+    });
+};
+
+// The input to this is slightly different than above, but will be the standard moving forward. 
+export const applyTalentsFromString = (state, spellDB, talentInfo) => {
+    let selectedTalents = {};
+    talentInfo.forEach(talentEntry => {
+        selectedTalents[talentEntry.talentName] = {points: talentEntry.talentRanks};
+    });
+
+    Object.keys(state.talents).forEach(talentName => {
+        const talent = state.talents[talentName];
+        const selectedPoints = selectedTalents[talentName]?.points || 0;
+        talent.points = selectedPoints;
+
         if (talent.points > 0 && (!talent.heroTree || state.heroTree === talent.heroTree)) {
             talent.runFunc(state, spellDB, talent.values, talent.points);
         }

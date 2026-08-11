@@ -1,5 +1,5 @@
 import React from "react";
-import { raidStyles } from "./PanelStyles";
+import { raidStyles, sharedAccordionStyles, sharedAccordionSummaryStyles, sharedAccordionDetailsStyles } from "./PanelStyles";
 import { Typography, Grid, Divider, AppBar, Tabs, Tab } from "@mui/material";
 import ItemUpgradeCard from "./ItemUpgradeCard";
 import "./Panels.css";
@@ -22,19 +22,11 @@ const getDifficultyName = (difficulty, gameType = "Retail") => {
       case 0:
         return "LFR";
       case 1:
-        return "LFR (Max)";
-      case 2:
         return "Normal";
-      case 3:
-        return "Normal (Max)";
-      case 4:
+      case 2:
         return "Heroic";
-      case 5:
-        return "Heroic (Max)";
-      case 6:
+      case 3:
         return "Mythic";
-      case 7:
-        return "Mythic (Max)";
     }
   }
   else {
@@ -90,6 +82,10 @@ export default function RaidGearContainer(props) {
         return classes.voidspireHeader;
       case 1305:
         return classes.sporefallHeader;
+      case 1320:
+        return classes.venomousAbyssHeader;
+      case 1317:
+        return classes.tideboundGrottoHeader;
       default:
         return classes.defaultHeader;
     }
@@ -116,18 +112,18 @@ export default function RaidGearContainer(props) {
               <AppBar
                 position="static"
                 style={{
-                  backgroundColor: "#000",
-                  borderRadius: "4px 4px 4px 4px",
+                  background: "linear-gradient(180deg, rgba(12, 14, 18, 0.96) 0%, rgba(22, 25, 32, 0.92) 100%)",
+                  borderRadius: 12,
                 }}
-                elevation={1}
+                elevation={0}
               >
                 <Tabs
                   value={tabvalue}
                   onChange={handleTabChange}
                   aria-label="simple tabs example"
                   variant="fullWidth"
-                  style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.22)" }}
-                  TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
+                  style={{ borderRadius: 12, border: "1px solid rgba(255, 255, 255, 0.12)" }}
+                  TabIndicatorProps={{ style: { backgroundColor: "#F2BF59", height: 3, borderRadius: 999 } }}
                 >
                   {raidList.map((raidID, index) => (
                     <Tab key={raidID} className={getRaidHeaderClass(raidID)} label={getTranslatedRaidName(raidID)} {...a11yProps(index)} />
@@ -145,30 +141,90 @@ export default function RaidGearContainer(props) {
                         {encounterDB[raidID].bossOrder
                           //.filter((key) => key === raidID)
                           .map((key, i) => (
-                            <UFAccordion key={encounterDB[raidID].bosses[key] + "-accordian" + i} defaultExpanded={true} elevation={0} style={{ backgroundColor: "rgba(255, 255, 255, 0.12)" }}>
-                              <UFAccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header" style={{ verticalAlign: "middle" }}>
-                                <Typography
-                                  variant="h6"
-                                  color="primary"
-                                  align="left"
+                            <UFAccordion
+                              key={encounterDB[raidID].bosses[key] + "-accordian" + i}
+                              defaultExpanded={false}
+                              elevation={0}
+                              style={sharedAccordionStyles}
+                            >
+                              <UFAccordionSummary
+                                expandIcon={<ExpandMoreIcon />}
+                                aria-controls="panel1a-content"
+                                id="panel1a-header"
+                                style={sharedAccordionSummaryStyles}
+                              >
+                                <div
                                   style={{
-                                    // backgroundColor: "#35383e",
-                                    borderRadius: "4px 4px 0px 0px",
                                     display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "space-between",
+                                    width: "100%",
+                                    gap: 12,
                                   }}
                                 >
-                                  {bossHeaders(key, { height: 36, verticalAlign: "middle" }, "UpgradeFinder")}
-                                  <Divider flexItem orientation="vertical" style={{ margin: "0px 5px 0px 0px" }} />
-                                  {encounterDB[raidID].bosses[key]} -{" "}
-                                  {getNumUpgrades(itemDifferentials, raidID, key, firstDifficulty) +
-                                    (secondDifficulty !== -1
-                                      ? getNumUpgrades(itemDifferentials, raidID, key, secondDifficulty)
-                                      : 0)}{" "}
-                                  Upgrades
-                                </Typography>
+                                  <Typography
+                                    variant="h6"
+                                    color="primary"
+                                    align="left"
+                                    style={{
+                                      display: "flex",
+                                      alignItems: "center",
+                                      gap: 8,
+                                    }}
+                                  >
+                                    {bossHeaders({ id: key, style: { height: 36, verticalAlign: "middle" } })}
+                                    <Divider flexItem orientation="vertical" style={{ margin: "0px 5px 0px 0px" }} />
+                                    {encounterDB[raidID].bosses[key]} -{" "}
+                                    {getNumUpgrades(itemDifferentials, raidID, key, firstDifficulty) +
+                                      (secondDifficulty !== -1
+                                        ? getNumUpgrades(itemDifferentials, raidID, key, secondDifficulty)
+                                        : 0)}{" "}
+                                    Upgrades
+                                  </Typography>
+
+                                  <div
+                                    style={{
+                                      display: "inline-flex",
+                                      alignItems: "center",
+                                      gap: 12,
+                                      color: "rgba(255, 255, 255, 0.82)",
+                                      fontSize: "0.84rem",
+                                      whiteSpace: "nowrap",
+                                    }}
+                                  >
+                                    <span>Bonus roll chance: --%</span>
+                                    <span>Avg bonus upgrade: --%</span>
+                                  </div>
+                                </div>
                               </UFAccordionSummary>
-                              <AccordionDetails style={{ backgroundColor: "#191c23" }}>
+                              <AccordionDetails style={sharedAccordionDetailsStyles}>
                                 <Grid item xs={12} sm container direction="row" spacing={1}>
+                                  <Grid item xs={12} container spacing={1}>
+                                    <Grid item xs={12}>
+                                      <div
+                                        style={{
+                                          background: "linear-gradient(180deg, rgba(242, 191, 89, 0.16) 0%, rgba(242, 191, 89, 0.08) 100%)",
+                                          borderRadius: 8,
+                                          padding: "7px 12px",
+                                          border: "1px solid rgba(242, 191, 89, 0.34)",
+                                          boxShadow: "inset 0 0 0 1px rgba(242, 191, 89, 0.14)",
+                                          display: "flex",
+                                          alignItems: "center",
+                                          justifyContent: "space-between",
+                                          gap: 12,
+                                        }}
+                                      >
+                                        <Typography variant="h6" color="primary" align="left">
+                                          {getDifficultyName(firstDifficulty)} - Upgraded Bonus Rolls
+                                        </Typography>
+                                      </div>
+                                    </Grid>
+
+                                    {[...filterItemListByDropLoc(itemDifferentials, raidID, key, "Raid", firstDifficulty, "bonus")].map((item, index) => (
+                                      <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
+                                    ))}
+                                  </Grid>
+
                                   <Grid item xs={12} container spacing={1}>
                                     <Grid item xs={12}>
                                       <Typography
@@ -176,26 +232,22 @@ export default function RaidGearContainer(props) {
                                         color="primary"
                                         align="left"
                                         style={{
-                                          backgroundColor: "#35383e",
-                                          borderRadius: 4,
+                                          background: "rgba(255, 255, 255, 0.06)",
+                                          borderRadius: 8,
+                                          padding: "6px 10px",
                                         }}
                                       >
-                                        <div style={{ marginLeft: 8 }}>
-                                          {getDifficultyName(firstDifficulty)} -{" "}
-                                          {
-                                            getNumUpgrades(itemDifferentials, raidID, key, firstDifficulty)
-                                          }{" "}
-                                          Upgrades
-                                        </div>
+                                        {getDifficultyName(firstDifficulty) + " - Upgraded "} -{" "}
+                                        {getNumUpgrades(itemDifferentials, raidID, key, firstDifficulty)} Upgrades
                                       </Typography>
                                     </Grid>
 
-                                    {[...filterItemListByDropLoc(itemDifferentials, raidID, key, "Raid", firstDifficulty)].map((item, index) => (
+                                    {[...filterItemListByDropLoc(itemDifferentials, raidID, key, "Raid", firstDifficulty, "max")].map((item, index) => (
                                       <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
                                     ))}
                                   </Grid>
 
-                                  {secondDifficulty !== -1 ? (
+                                  {firstDifficulty !== -1 ? (
                                     <Grid item xs={12} container spacing={1}>
                                       <Grid item xs={12}>
                                         <Typography
@@ -203,21 +255,17 @@ export default function RaidGearContainer(props) {
                                           color="primary"
                                           align="left"
                                           style={{
-                                            backgroundColor: "#35383e",
-                                            borderRadius: 4,
+                                            background: "rgba(255, 255, 255, 0.06)",
+                                            borderRadius: 8,
+                                            padding: "6px 10px",
                                           }}
                                         >
-                                          <div style={{ marginLeft: 8 }}>
-                                            {getDifficultyName(secondDifficulty)} -{" "}
-                                            {
-                                              getNumUpgrades(itemDifferentials, raidID, key, secondDifficulty)
-                                            }{" "}
-                                            Upgrades
-                                          </div>
+                                          {getDifficultyName(firstDifficulty)} -{" "}
+                                          {getNumUpgrades(itemDifferentials, raidID, key, firstDifficulty)} Upgrades
                                         </Typography>
                                       </Grid>
 
-                                      {[...filterItemListByDropLoc(itemDifferentials, raidID, key, "Raid", secondDifficulty)].map((item, index) => (
+                                      {[...filterItemListByDropLoc(itemDifferentials, raidID, key, "Raid", firstDifficulty, "drop")].map((item, index) => (
                                         <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
                                       ))}
                                     </Grid>

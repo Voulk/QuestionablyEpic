@@ -149,7 +149,7 @@
     "Filter": "Filter",
     "GameTypeToggle": {
       "Classic": "Change to Classic (Mists of Pandaria)",
-      "Retail": "Change to Retail (The War Within)"
+      "Retail": "Change to Retail (Midnight)"
     },
     "HPS": "HPS",
     "HallOfFame": {
@@ -199,12 +199,14 @@
         "UpgradeFinder": "Find your next upgrade",
         "SequenceSandbox": "Details coming soon",
         "OneShot": "Mythic+ Damage Calculator",
-        "CircletAnalysis": "Check out 11.0.7s new Circlet effect ring!"
+        "CircletAnalysis": "Check out 11.0.7s new Circlet effect ring!",
+        "SpecTrinkets": "Share trinket rankings by spec"
       },
       "TopGear": "Top Gear",
       "TrinketAnalysis": "Trinkets",
       "UpgradeFinder": "Upgrade Finder",
-      "SequenceSandbox": "Spell Information (Alpha)",
+      "SpecTrinkets": "BiS Trinkets",
+      "SequenceSandbox": "Modelling",
       "OneShot": "One Shot (Beta)",
       "CyrcesCirclet": "Cyrce's Circlet"
     },
@@ -608,7 +610,7 @@
       "MythicPlusHeader": "Mythic Plus Key Level",
       "PvPBody": "Select  your Rating",
       "PvPHeader": "PvP Rating",
-      "RaidDifficultyBody": "Select up to two difficulties to find upgrades from",
+      "RaidDifficultyBody": "Select a difficulty to check for upgrades.",
       "RaidDifficultyHeader": "Raid Difficulty",
       "SimCBody1Good": "Import - All Set!",
       "SimCBody1Invalid": "Import - Empty Item Slot",
