@@ -1,7 +1,9 @@
 import { itemLevels } from "Databases/ItemLevelsDB";
+import { CONSTANTS } from "General/Engine/CONSTANTS";
 import Player from "General/Modules/Player/Player";
 import { convertPPMToUptime, processedValue, runGenericPPMTrinket, runGenericPPMTrinketHasted,
-  getHighestStat, getLowestStat, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket, getSetting, runGenericFlatProc } from "Retail/Engine/EffectFormulas/EffectUtilities";
+  getHighestStat, getLowestStat, runGenericOnUseTrinket, getDiminishedValue, runDiscOnUseTrinket, getSetting, runGenericFlatProc, 
+  runGenericRandomPPMTrinket} from "Retail/Engine/EffectFormulas/EffectUtilities";
 import trinketRawData from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketData.json"
 
 export const getEmbellishmentEffect = (effectName, itemLevel, additionalData) => {
@@ -26,6 +28,29 @@ export const getEmbellishmentEffect = (effectName, itemLevel, additionalData) =>
 }
 
 export const embellishmentData = [
+      { // Proc for all secondary stats. +1% power for each unique gem colour in gear.
+        id: 273059,
+        name: "Hunter's Ritual Stone",
+        description: "Extremely overbudget, but only procs off DPS spells. Worth using if you play Discipline, or if you're in an environment where you will DPS a lot.",
+        effects: [
+        { // 
+            scalingClass: -790,
+            coefficient: 0.830768,
+            stat: "all",
+            duration: 15,
+            ppm: 3,
+        },
+        ],
+        runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+            let bonus_stats: Stats = {};
+
+            if (player.spec === "Discipline Priest") {
+              bonus_stats = runGenericRandomPPMTrinket(data[0], itemLevel, additionalData.setStats);
+            }
+            
+            return bonus_stats;
+        }
+    },
   // 
           { // 
         id: 0,
@@ -34,10 +59,10 @@ export const embellishmentData = [
         effects: [
         { // This might also be able to stack. It also "procs more on low health targets". Untested.
             scalingClass: -790,
-            coefficient: 0.512372,
+            coefficient: 0.135657,
             stat: "haste",
             duration: 15,
-            ppm: 2,
+            ppm: 4,
         },
         ],
         runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
@@ -256,7 +281,10 @@ export const embellishmentData = [
 
             const totalIntellect = runGenericPPMTrinket(data[0], itemLevel);
             bonus_stats.intellect = totalIntellect * 0.8;
-            bonus_stats.allyStats = totalIntellect * 0.2; // Could be rewritten to avoid overlaps on allies which aren't likely.
+
+            // Since this is intellect instead of a secondary (which our ally weight is tuned around), we will push it a similar amount higher.
+            // Could later be split into allyInt and allyStats maybe.
+            bonus_stats.allyStats = (totalIntellect * 0.2)// * (0.9 / CONSTANTS.allyStatWeight); // Could be rewritten to avoid overlaps on allies which aren't likely.
 
             return bonus_stats;
         }

@@ -394,13 +394,15 @@ export const getItemEffectOptions = (itemID: number, gameType: gameTypes = "Reta
       // Sigil embellishments are limited to weapon and offhand slots. Does NOT include Shields.
       options.push({type: "embellishment", label: "Darkmoon Sigil: Hunt", effectName: "Darkmoon Sigil: Hunt"})
       options.push({type: "embellishment", label: "Darkmoon Sigil: Void", effectName: "Darkmoon Sigil: Void"})
+      options.push({type: "embellishment", label: "Hunter's Ritual Stone", effectName: "Hunter's Ritual Stone"})
       //options.push({type: "embellishment", label: "Darkmoon Sigil: Symbiosis", effectName: "Darkmoon Sigil: Symbiosis"})
     }
     if (item.slot !== "Finger" && item.slot !== "Neck" && !item.slot.includes("Weapon") && !isEngineering) {
       // Linings & Armor Banding are limited to non-weapon, non-jewelry slots.
       options.push({type: "embellishment", label: "Arcanoweave Lining", effectName: "Arcanoweave Lining"})
-      options.push({type: "embellishment", label: "Primal Spore Binding", effectName: "Primal Spore Lining"})
+      options.push({type: "embellishment", label: "Primal Spore Binding", effectName: "Primal Spore Binding"})
       options.push({type: "embellishment", label: "Blessed Pango Charm", effectName: "Blessed Pango Charm"})
+      options.push({type: "embellishment", label: "Adorned Fang", effectName: "Adorned Fang"})
     }
     
   }
@@ -1034,13 +1036,14 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
   //player.clearActiveItems();
   const acceptableArmorTypes = getValidArmorTypes(player.spec);
   const acceptableWeaponTypes = getValidWeaponTypesBySpec(player.spec);
+  const itemExclusionList: number[] = [71393, 71398, 71578, 62458, 59514, 68711, 62472, 56465, 65008, 56466, 56354, 56327, 71576, 71395, 71581, 69198, 71390, 242398, 242399, 242401, 242404, 242403, 242396,
+          185836, 185846, 190652, 219309, 232545, 219317, 178826, 232543]
 
   itemDB = itemDB.filter(
     (key: any) =>
       (!("classReq" in key) || key.classReq.includes(player.spec)) &&
       (!("classRestriction" in key) || (key.classRestriction.includes(player.spec) || player.spec.includes(key.classRestriction))) &&
       (gameType === "Classic" || itemLevel > 70) &&
-      (key.itemLevel === itemLevel || gameType === "Retail" || itemLevel === -1 || checkAutoAddLevelOk(key, itemLevel)) && 
       (key.slot === "Back" ||
         (key.itemClass === 4 && acceptableArmorTypes.includes(key.itemSubClass)) ||
         key.slot === "Holdable" ||
@@ -1078,20 +1081,15 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
         ((slot === 'Trinket' && item.levelRange && item.levelRange.length > 0 && !item.offspecItem) || 
         (slot !== 'Trinket' && item.stats.intellect && !item.stats.hit) ||
         (gameType === "Retail" && ["Finger", "Neck"].includes(slot))) && 
-        (!([71393, 71398, 71578, 62458, 59514, 68711, 62472, 56465, 65008, 56466, 56354, 56327, 71576, 71395, 71581, 69198, 71390, 242398, 242399, 242401, 242404, 242403, 242396,
-          185836, 185846, 190652, 219309, 232545, 219317, 178826, 232543
-        ].includes(item.id)))
-        && sourceCheck) { 
+        (!(itemExclusionList.includes(item.id))) && sourceCheck) { 
           let ilvlBoost = (maxChecked && gameType === "Classic" && ["T16", "T16+"].includes(source) && item.maxUpgrades) ? item.maxUpgrades : 0;
           if (gameType === "Retail") {
             if ([2883, 2895].includes(sources.encounterId) && itemLevel === 334) ilvlBoost = 10;
             else ilvlBoost = 0;
           }
-          const tert = [249912, 249913, 249914, 249915].includes(item.id) ? "Leech" : "";
           
-          const newItem = new Item(item.id, item.name, slot, 0, tert, 0, gameType === "Classic" ? (item.itemLevel + ilvlBoost) : (itemLevel + ilvlBoost), "", gameType);
+          const newItem = new Item(item.id, item.name, slot, 0, "", 0, gameType === "Classic" ? (item.itemLevel + ilvlBoost) : (itemLevel + ilvlBoost), "", gameType);
          
-          if (source === "S3 Dinar") newItem.exclusiveItem = true;
           if (gameType === "Retail") newItem.quality = 4;
           
       if (["Chest", "Shoulder", "Legs", "Head", "Hands"].includes(newItem.slot) && !newItem.setID) {

@@ -4,7 +4,7 @@ export default function MessageOfTheDay({ gameType = "Retail" }) {
   //prettier-ignore
   const messageOfTheDay: string[] = gameType === "Retail" ?
    [
-    "Have a great day!"
+    "QE is updated for 12.1. Top Gear and Upgrade Finder will return shortly, after the patch is stable. Trinkets HAVE NOT BEEN TUNED YET. Expect changes."
   ] : 
   [
     "The Siege of Orgrimmar update is now live. Please report any bugs you find to the QE Live Discord.",

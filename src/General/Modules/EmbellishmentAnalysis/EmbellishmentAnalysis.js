@@ -92,7 +92,7 @@ function getEstimatedHPS(bonus_stats, player, contentType, playerSettings) {
   let estHPS = 0;
   for (const [key, value] of Object.entries(bonus_stats)) {
     if (["haste", "mastery", "crit", "versatility", "leech"].includes(key)) {
-      estHPS += ((value * player.getStatWeight(contentType, key)) / 2400) * player.getHPS(contentType);
+      estHPS += ((value * player.getStatWeight(contentType, key)) / 3200) * player.getHPS(contentType);
     } else if (key === "intellect") {
       estHPS += (value / player.activeStats.intellect) * player.getHPS(contentType);
     } 

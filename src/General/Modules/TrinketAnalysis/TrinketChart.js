@@ -308,7 +308,7 @@ export default function TrinketChart({ player }) {
 
       <Grid item xs={12}>
       <Grid container spacing={1} justifyContent="center" sx={{ marginTop: "16px" }}>
-        <InformationBox information={trinketText} variant="yellow" />
+        <InformationBox information={trinketText} variant="brick" />
 
         <Grid item xs={12}>
           <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={0} variant="outlined">
