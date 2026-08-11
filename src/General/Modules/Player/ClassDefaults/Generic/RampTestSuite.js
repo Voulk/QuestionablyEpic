@@ -361,7 +361,7 @@ export const buildStatWeights = (playerData, scoringFunction, testSettings ) => 
         const stats = ['intellect', 'crit', 'haste', 'mastery', 'versatility', 'leech'];
 
     const activeStats = {
-        intellect: 2400,
+        intellect: 3400,
         haste: 200,
         crit: 200,
         mastery: 200,
