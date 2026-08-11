@@ -132,8 +132,7 @@ export const compileProfileReportingData = (healingEntries, damageEntries, castP
             hps: Math.round(entry[1] / 60), 
             percentHealing: ((entry[1] / totalHealing * 10000) / 100).toFixed(2), 
             overhealing: 0.25,
-            cpm: Math.round(100*castProfile.reduce((acc, spell) => acc + ((spell.cpm && (spell.label ? spell.label === entry[0] : spell.spell === entry[0])) ? spell.cpm : 0), 0))/100,
-            icon: spellDB[realSpellName] ? spellDB[realSpellName][0].displayInfo.icon : null
+            cpm: Math.round(100 * castProfile.reduce((acc, spell) => acc + (!spell.autoSpell && spell.cpm && (spell.label ? spell.label === entry[0] : spell.spell === entry[0]) ? spell.cpm : 0), 0)) / 100,            icon: spellDB[realSpellName] ? spellDB[realSpellName][0].displayInfo.icon : null
 
 
         });

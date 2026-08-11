@@ -60,7 +60,7 @@ export default function TheorycraftingGUI(props) {
             }
 
     const playerData = { spec: player.spec, heroTree: selectedProfile.heroTree || "Missing Hero Tree", profileName: selectedProfile.modelName, stats: stats,
-                                    masteryEffectiveness: 0.3, tierSets: /*["Preservation Evoker S2-2", "Preservation Evoker S2-4"]*/["Restoration Shaman S2-2", "Restoration Shaman S2-4"], params: params,  }
+                                    masteryEffectiveness: 0.3, tierSets: ["Preservation Evoker S2-2", "Preservation Evoker S2-4", "Restoration Shaman S2-2", "Restoration Shaman S2-4"], params: params,  }
 
     const runProfile = () => {
         const result = selectedProfile.runCastModel(stats, playerData, {}, true);
@@ -97,7 +97,9 @@ export default function TheorycraftingGUI(props) {
       <StatScalingChart data={statChart} currentWeights={currentWeights} />
  
       {/* Future panels go here */}
-      <BestInSlotPanel stats={bestStatCombo} onRun={() => setbestStatCombo(buildBestDistChart(selectedProfile.runCastModel, playerData))} />
+      <BestInSlotPanel stats={bestStatCombo} onRun={() => buildBestDistChart(selectedProfile.runCastModel, playerData).then(result => {
+        setbestStatCombo(result);
+      })} />
 
       {/*<SequenceDataTable data={""} spec={selectedSpec} stats={stats} talents={[]} />*/}
 
