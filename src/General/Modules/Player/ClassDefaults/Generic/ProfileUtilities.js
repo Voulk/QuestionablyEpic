@@ -41,7 +41,7 @@ export const applyRaidBuffs = (settings) => {
     statBonuses.mastery = 0.02
 
     // Versatility
-    //statBonuses.versatility = 0.03
+    statBonuses.versatility = 0.03
 
     // Vantus?
 
@@ -109,7 +109,7 @@ export const convertStatPercentages = (statProfile, statBonuses, spec, masteryEf
         critMult: Math.max(statProfile.critMult || 2, 2) + (statBonuses.critMult || 0),
         genericHealingMult: (statBonuses.genericHealingMult) ? 1 + statBonuses.genericHealingMult : 1,
         genericDamageMult: (statBonuses.genericDamageMult) ? 1 + statBonuses.genericDamageMult : 1,
-        leech: (statProfile.leech / STATCONVERSION.LEECH / 100) + (statBonuses.leech || 0),
+        leech: ((statProfile.leech || 0) / STATCONVERSION.LEECH / 100) + (statBonuses.leech || 0),
     }
 
     //getClassicRaceBonuses(stats, race);

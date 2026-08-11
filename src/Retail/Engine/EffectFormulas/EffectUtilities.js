@@ -28,6 +28,7 @@ export function getDiminishedValue(statID, procValue, baseStat) {
   let currentStat = baseStat + procValue;
   let procSize = procValue
 
+
   for (var j = 0; j < DRBreakpoints.length; j++) {
     if (totalStat > DRBreakpoints[j])  {
       // Calculate proportion that's above DR.

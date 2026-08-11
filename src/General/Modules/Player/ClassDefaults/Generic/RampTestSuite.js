@@ -1,5 +1,5 @@
 import { getManaPool, getManaRegen, getAdditionalManaEffects, applyRaidBuffs } from './ClassicBase';
-
+import { applyDiminishingReturns } from 'General/Engine/ItemUtilities';
 
 // Run Spell Combos
 // playerData = { spec, baseSpells, baseSettings, baseTalents, stats }
@@ -403,6 +403,47 @@ export const buildStatWeights = (playerData, scoringFunction, testSettings ) => 
         console.log(weights); 
 
     return weights;
+
+}
+
+export const buildBestDistChart = (scoreSet, playerData) => {
+    const totalPoints = 3000;
+    const step = 40;
+    const units = totalPoints / step;
+    let maxScore = 0;
+    let evaluated = 0;
+    let bestCombo = null;
+
+    outer: for (let hasteUnits = 0; hasteUnits <= units; hasteUnits++) {
+    for (let critUnits = 0; critUnits <= units - hasteUnits; critUnits++) {
+      for (let masteryUnits = 0; masteryUnits <= units - hasteUnits - critUnits; masteryUnits++) {
+        const versatilityUnits = units - hasteUnits - critUnits - masteryUnits;
+ 
+        const combo = {
+          haste: hasteUnits * step,
+          crit: critUnits * step,
+          mastery: masteryUnits * step,
+          versatility: versatilityUnits * step,
+        };
+ 
+                    
+        let playerStats = {...combo, intellect: 3200};
+        playerStats = applyDiminishingReturns(playerStats)
+        const result = scoreSet(playerStats, playerData);
+        const score = result.healing;
+        evaluated++;
+ 
+        if (score > maxScore) {
+          maxScore = score;
+          bestCombo = combo;
+        }
+      }
+    }
+  }
+
+  console.log("Evaluated " + evaluated + " combinations. Best combo: ", bestCombo, " with score: ", maxScore);
+
+  return bestCombo;
 
 }
 

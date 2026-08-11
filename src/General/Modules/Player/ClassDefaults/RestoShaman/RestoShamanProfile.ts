@@ -101,6 +101,11 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
     // Apply Talents
     const talents = initialState.talents;
     const talentImport = getSelectedTalentsFromString(restoShamanProfile.defaultTalents, "Restoration Shaman")
+
+    if (!playerData.hasShield && playerData.heroTree === "Totemic") {
+        talentImport.filter(talent => talent.talentName === "Supportive Imbuements")[0].talentRanks = 0;
+        talentImport.push({talentName: "Pulse Capacitor", talentRanks: 1, tree: "hero", talentIcon: "spell_nature_elementalprecision_1"})
+    }
     applyTalentsFromString(initialState, spellDB, talentImport);
     addAscendanceSpells(spellDB)
     addTiersetRains(spellDB)
@@ -644,9 +649,10 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
     const result = { damage: totalDamage / 60, healing: totalHealing / 60 }
 
     if (reporting) {
+        console.log(reportingData);
         result.spellBreakdowns = compileProfileReportingData(healingBreakdown, damageBreakdown, castProfile, spellDB, totalHealing, totalDamage)
     }
-    console.log(reportingData);
+    
 
     return result;
 }

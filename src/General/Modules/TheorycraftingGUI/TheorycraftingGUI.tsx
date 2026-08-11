@@ -7,12 +7,13 @@ import TCPanel from "./TCPanel";
 import StatScalingChart from "./StatScalingPanel";
 import { useSelector } from "react-redux";
 import { RootState } from "Redux/Reducers/RootReducer";
-import { buildStatWeights, buildTCStatChart } from "General/Modules/Player/ClassDefaults/Generic/RampTestSuite"
+import { buildBestDistChart, buildStatWeights, buildTCStatChart } from "General/Modules/Player/ClassDefaults/Generic/RampTestSuite"
 import SequenceDataTable from "../SequenceGenerator/SequenceDataTable";
 import ModelInformationTabs from "./ModelInformationTabs";
 
 import { getSelectedTalentsFromString } from "General/Modules/Player/ClassDefaults/Generic/TalentStrings/TalentDecoder"
 import { CONSTANTS } from "General/Engine/CONSTANTS";
+import BestInSlotPanel from "./BestDistributionPanel";
 
 
 export default function TheorycraftingGUI(props) {
@@ -38,11 +39,12 @@ export default function TheorycraftingGUI(props) {
 
     const [stats, setStats] = useState<Stats>({
         intellect: 3400,
-        haste: 1200,
-        crit: 200,
-        mastery: 1000,
-        versatility: 800,
+        haste: 500,
+        crit: 1200,
+        mastery: 1200,
+        versatility: 100,
     });
+    const [bestStatCombo, setbestStatCombo] = useState({haste: 1, crit: 1, mastery: 1, versatility: 1});
     const [selectedProfile, setSelectedProfile] = useState(profiles[0]);
     const [talentString, setTalentString] = useState(profiles[0].talents);
     const [talentsSelected, setTalentsSelected] = useState(getSelectedTalentsFromString(profiles[0].talents, selectedSpec));
@@ -58,7 +60,7 @@ export default function TheorycraftingGUI(props) {
             }
 
     const playerData = { spec: player.spec, heroTree: selectedProfile.heroTree || "Missing Hero Tree", profileName: selectedProfile.modelName, stats: stats,
-                                    masteryEffectiveness: 0.3, tierSets: ["Restoration Shaman S1-2", "Restoration Shaman S1-4"], params: params,  }
+                                    masteryEffectiveness: 0.3, tierSets: /*["Preservation Evoker S2-2", "Preservation Evoker S2-4"]*/["Restoration Shaman S2-2", "Restoration Shaman S2-4"], params: params,  }
 
     const runProfile = () => {
         const result = selectedProfile.runCastModel(stats, playerData, {}, true);
@@ -95,6 +97,7 @@ export default function TheorycraftingGUI(props) {
       <StatScalingChart data={statChart} currentWeights={currentWeights} />
  
       {/* Future panels go here */}
+      <BestInSlotPanel stats={bestStatCombo} onRun={() => setbestStatCombo(buildBestDistChart(selectedProfile.runCastModel, playerData))} />
 
       {/*<SequenceDataTable data={""} spec={selectedSpec} stats={stats} talents={[]} />*/}
 
