@@ -9,9 +9,9 @@ export const defaultTalents = (talents: TalentTree, loadoutName: string, heroTre
     let halfTalents: string[] = []
 
     if (loadoutName === "default") talentsEnabled = [
-        "Natural Convergence", "Attuned to the Dream", "Bountiful Bloom", "Panacea", "Lush Growth", "Leaping Flames",
+        "Natural Convergence", "Attuned to the Dream", "Bountiful Bloom", "Panacea", "Lush Growth", "Leaping Flames", "Regenerative Magic",
 
-        "Unshakable", "Golden Hour", "Time Lord", "Spiritual Clarity", "Call of Ysera", "Grace Period", "Ouroboros", "Temporal Artificer", "Energy Loop",
+        "Unshakable", "Golden Hour", "Time Lord", "Nozdormu's Teachings","Fluttering Seedlings", "Field of Dreams", "Call of Ysera", "Grace Period", "Ouroboros", "Temporal Artificer", "Energy Loop",
         "Renewing Breath", "Timeless Magic", "Twin Echoes", "Tempo Charged", "Merithra's Blessing1", "Merithra's Blessing2", "Merithra's Blessing3", "Dream Simulacrum"
     ]
 
@@ -52,6 +52,8 @@ const specTalents: TalentTree = {
 
     /* Emerald Blossom sends out flying seedlings when it bursts, healing X $Lally:allies; up to Y yds away for $361361s1. */
     "Fluttering Seedlings": {id: 359793, values: [1.0, 40.0, 2.0],  points: 0, maxPoints: 2, icon: "inv_herbalism_70_yserallineseed", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
+        const seedlings = [{...spellDB["Fluttering Seedlings"][0], targets: points, specialLabel: "Fluttering Seedlings"}];
+        spellDB['Emerald Blossom'] = attachSpellEffect(spellDB['Emerald Blossom'], seedlings);
 
     }},
 
@@ -290,7 +292,7 @@ const classTalents: TalentTree = {
 
     /* Your Leech is increased by X%. */
     "Regenerative Magic": {id: 387787, values: [2.0],  points: 0, maxPoints: 1, icon: "spell_frost_manarecharge", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
-
+        addStatPerc(state.statBonuses, "leech", talentData[0]);
     }},
 
     /* Fire Breath's damage over time lasts X sec longer. */
@@ -396,7 +398,8 @@ const heroTalents: TalentTree = {
 
     /* Fire Breath's damage over time lasts X sec longer.$?c2[    Dream Breath's heal over time lasts ${Y/1000} sec longer.][] */
     "Deep Exhalation": {id: 1264321, values: [4.0, 6000.0], heroTree: "Flameshaper", points: 0, maxPoints: 1, icon: "ability_evoker_firebreath", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
-
+        spellDB["Fire Breath"][1].buffDuration! += talentData[0];
+        spellDB["Dream Breath"][0].buffDuration! += talentData[1] / 1000;
     }},
 
     /* Obsidian Scales also applies to your target or X nearby injured $Lally:allies; at Y% value. */

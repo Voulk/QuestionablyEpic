@@ -7,7 +7,7 @@
                 "spellName": "Fire Breath",
                 "cat": "damage"
             },
-            "castTime": 0.0,
+            "castTime": 2.5,
             "school": "fire",
             "cost": 1.8,
             "cooldownData": {
@@ -377,6 +377,28 @@
             "cost": 1.54,
             "targets": 5,
             "coeff": 2.25,
+            "aura": 0.8,
+            "expectedOverheal": 0.2,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        }
+    ],
+    "Fluttering Seedlings": [
+        {
+            "displayInfo": {
+                "id": 361361,
+                "icon": "inv_herbalism_70_yserallineseed",
+                "spellName": "Fluttering Seedlings",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "school": "nature",
+            "cost": 0.0,
+            "coeff": 2.6,
             "aura": 0.8,
             "expectedOverheal": 0.2,
             "secondaries": [

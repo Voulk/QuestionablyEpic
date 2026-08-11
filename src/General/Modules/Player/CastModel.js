@@ -195,18 +195,20 @@ class CastModel {
       this.baseStatWeights = holyPriestDefaultStatWeights(contentType);
     } 
     else if (spec === SPEC.PRESEVOKER) {
-      if (modelID === "Chronowarden" || modelID === "Default") {
+      if (modelID === "Flameshaper" || modelID === "Default") {
         // TODO
-        this.modelName = "Chronowarden";
+        this.modelName = "Flameshaper";
         this.modelType["Raid"] = "CastModel";
         this.modelType["Dungeon"] = "Default";
         this.runCastModel = scoreEvokerSet;
-        this.heroTree = "Chronowarden";
+        this.heroTree = "Flameshaper";
+
+        // Dont worry about the naming convention here
         spellList = chronoDefaultSpellData(contentType);
         specialQueries = chronoDefaultSpecialQueries(contentType);
         this.baseStatWeights = chronoDefaultStatWeights(contentType);
       }
-      else if (modelID === "Flameshaper") {
+      /*else if (modelID === "Flameshaper") {
         // TODO
         this.modelName = "Flameshaper";
         this.modelType["Raid"] = "CastModel";
@@ -216,7 +218,7 @@ class CastModel {
         spellList = evokerDefaultSpellData(contentType);
         specialQueries = evokerDefaultSpecialQueries(contentType);
         this.baseStatWeights = evokerDefaultStatWeights(contentType);
-      }
+      }*/
 
     } 
     

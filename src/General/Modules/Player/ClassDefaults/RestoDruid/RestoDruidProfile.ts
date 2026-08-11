@@ -100,7 +100,6 @@ const convokeCastTable = {
 // Wrath regen = 1687 effective mana per cast.
 
 export function scoreDruidSet(stats: Stats, playerData: any, settings: PlayerSettings = {}, reporting = false) {
-    console.log("Scoring Druid Set");
     const fightLength = 6;
     const spellDB = JSON.parse(JSON.stringify(specSpellDB));
     spellDB["Lifebloom (Bloom)"][0].expectedOverheal = 0.4; // Careful here because the cleaves don't overheal much.
@@ -149,7 +148,6 @@ export function scoreDruidSet(stats: Stats, playerData: any, settings: PlayerSet
     const manaAvailable = manaPool / fightLength + regen + getSpellEntry(castProfile, "Innervate").cpm * (manaPool * 0.25);
     reportingData.manaAvailable = manaAvailable;
 
-    console.log(castProfile);
 
     // Handle Apex & HoTs on the target
 
@@ -358,13 +356,10 @@ export function scoreDruidSet(stats: Stats, playerData: any, settings: PlayerSet
     const result = { damage: totalDamage / 60, healing: totalHealing / 60 }
 
     if (reporting) {
+        console.log(reportingData);
         result.spellBreakdowns = compileProfileReportingData(healingBreakdown, damageBreakdown, castProfile, spellDB, totalHealing, totalDamage)
     }
 
-
-
-    console.log(reportingData);
-    printHealingBreakdownWithCPM(healingBreakdown, totalHealing, castProfile);
 
     return result //{ damage: 0 / 60, healing: totalHealing / 60 }
 }

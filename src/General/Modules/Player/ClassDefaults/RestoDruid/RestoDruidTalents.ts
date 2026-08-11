@@ -271,7 +271,6 @@ const specTalents: TalentTree = {
     /* Swiftmend cooldown is reduced by X%, increasing up to Y% on lower health targets. */
     "Renewing Surge": {id: 470562, values: [15.0, 30.0],  points: 0, maxPoints: 1, icon: "inv_relics_idolofhealth", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
         cooldownAdjPerc(spellDB["Swiftmend"], (talentValues[0] + talentValues[1] * (1 - state.specSettings["Renewing Surge Health"])));
-        console.log(spellDB["Swiftmend"])
     }},
 
     /* Regrowth's healing over time is increased by X%, and it also applies to the target of your Lifebloom. */

@@ -1,5 +1,5 @@
 import { Player } from "General/Modules/Player/Player";
-import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket, runGenericFlatProc, convertPPMToUptimeExtended, runGenericOnUseTrinket, forceGenericOnUseTrinket, runGenericPPMOverlapTrinket, runGenericRandomPPMTrinket } from "../../EffectUtilities";
+import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket, runGenericFlatProc, convertPPMToUptimeExtended, runGenericOnUseTrinket, forceGenericOnUseTrinket, runGenericPPMOverlapTrinket, runGenericRandomPPMTrinket, getDiminishedValue, getStagedDiminishedValue } from "../../EffectUtilities";
 import { setBounds } from "General/Engine/CONSTRAINTS"
 import trinketRawData from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketData.json"
 
@@ -49,12 +49,12 @@ export const raidTrinketData = [
     runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
         let bonus_stats: Stats = {};
 
-        const buffShare = 1/6 * data[0].ppm! * 1.13;;
-
+        const buffShare = 1/6 * data[0].ppm! * 1.13;
+//getDiminishedValue(statID, procValue, baseStat)
         // Vers portion
         const versBuff = processedValue({...data[1], ...trinketRawData["Gebbo's Bottomless Bag"][1]}, itemLevel);
         const versLossPerCast = processedValue({...data[1], ...trinketRawData["Gebbo's Bottomless Bag"][7]}, itemLevel);
-        bonus_stats.versatility = versBuff / versLossPerCast * 1.2 / 60 * (versBuff / 2) * buffShare;
+        bonus_stats.versatility = versBuff / versLossPerCast * (1.5 / player.getStatMults(["haste"])) / 60 * (versBuff / 2) * buffShare;
 
         // Crit portion
         const critBuff = processedValue({...data[0], ...trinketRawData["Gebbo's Bottomless Bag"][0]}, itemLevel);
@@ -62,7 +62,7 @@ export const raidTrinketData = [
         bonus_stats.crit = averageCritStacks * critBuff * data[0].duration! / 60 * buffShare;
 
         // Haste portion
-        const hasteBuff = processedValue({...data[3], ...trinketRawData["Gebbo's Bottomless Bag"][3]}, itemLevel);
+        const hasteBuff = getDiminishedValue("haste", processedValue({...data[3], ...trinketRawData["Gebbo's Bottomless Bag"][3]}, itemLevel), additionalData.setStats.haste);
         bonus_stats.haste = hasteBuff * data[3].duration! / 60 * buffShare;
 
         // Mastery portion
@@ -73,10 +73,9 @@ export const raidTrinketData = [
         const allBuff = processedValue({...data[4], ...trinketRawData["Gebbo's Bottomless Bag"][5]}, itemLevel);
         const allBuffAverage = allBuff * data[4].duration! / 60 * buffShare;
 
-        const rottingFin = processedValue({...data[5], ...trinketRawData["Gebbo's Bottomless Bag"][5]}, itemLevel);
+        const rottingFin = processedValue({...data[5], ...trinketRawData["Gebbo's Bottomless Bag"][6]}, itemLevel);
         const rottingAverage = rottingFin * data[5].duration! / 60 * buffShare;
 
-        console.log(allBuffAverage, rottingAverage);
         bonus_stats.crit += allBuffAverage - rottingAverage;
         bonus_stats.haste += allBuffAverage - rottingAverage;
         bonus_stats.mastery += allBuffAverage - rottingAverage;
@@ -245,8 +244,8 @@ export const raidTrinketData = [
       { //
         id: 249343,
         name: "Gaze of the Alnseer",
-        description: "Gaze is a dominant trinket option that has been changed many times over the current patch. It's assumed there won't be further changes.",
-        addonDescription: "Gaze continues to get bugfixes and in-game tuning.",
+        description: "In Season 2, Gaze remains a top trinket that you'll need a higher item level alternative to beat.",
+        addonDescription: "",
         effects: [
         { // Stat Proc Portion
             stat: "intellect",
