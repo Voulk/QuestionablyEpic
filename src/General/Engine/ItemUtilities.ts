@@ -1092,7 +1092,7 @@ export function autoAddItems(player: Player, gameType: gameTypes, itemLevel: num
          
           if (gameType === "Retail") newItem.quality = 4;
           
-      if (["Chest", "Shoulder", "Legs", "Head", "Hands"].includes(newItem.slot) && !newItem.setID) {
+      if (["Chest", "Shoulder", "Legs", "Head", "Hands"].includes(newItem.slot) && !newItem.setID && gameType === "Retail") {
         // Catalyze item
         newItem.convertToTier(player.spec);
       }

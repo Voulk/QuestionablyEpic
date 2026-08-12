@@ -6,6 +6,28 @@ import { STATCONVERSION } from "General/Engine/STAT"
 // Pulse Seeker's Oculus, Effigy of Ula'tek's Faithful, 
 
 export const otherTrinketData = [
+    { //
+          id: 274493,
+          name: "Effigy of Ula'tek's Faithful",
+          description: "",
+          addonDescription: "",
+          effects: [
+          { // Stat Proc Portion
+              stat: "random",
+              duration: 12,
+              ppm: 2,
+          },
+          ],
+          runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+              let bonus_stats: Stats = {};
+  
+              bonus_stats = runGenericRandomPPMTrinket({...data[0], ...trinketRawData["Effigy of Ula'tek's Faithful"][0]}, itemLevel, additionalData.setStats);
+              bonus_stats.leech = runGenericPPMTrinket({...data[0], ...trinketRawData["Effigy of Ula'tek's Faithful"][1], stat: "leech"}, itemLevel, additionalData.setStats) / 3
+  
+  
+              return bonus_stats;
+              }
+      },
     {
       name: "Drum of Renewed Bonds",
       description: "Not available on Myth track but quite good as an early trinket. You are able to pick which secondary stat it gives.",
