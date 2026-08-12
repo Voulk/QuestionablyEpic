@@ -146,6 +146,22 @@ class CastModel {
         specialQueries = shamanDefaultSpecialQueries(contentType);
         this.baseStatWeights = shamanDefaultStatWeights(contentType);
 
+      } else if (modelID === "Totemic") {
+        this.modelName = "Totemic"
+        this.heroTree = "Totemic";
+        this.talents = restoShamanProfile.defaultTalents;
+        this.runCastModel = scoreShamanSet;
+        spellList = shamanDefaultSpellData(contentType);
+        specialQueries = shamanDefaultSpecialQueries(contentType);
+        this.baseStatWeights = shamanDefaultStatWeights(contentType);
+      } else if (modelID === "Farseer") {
+        this.modelName = "Farseer"
+        this.heroTree = "Farseer";
+        this.talents = restoShamanProfile.farseerTalents;
+        this.runCastModel = scoreShamanSet;
+        spellList = shamanDefaultSpellData(contentType);
+        specialQueries = shamanDefaultSpecialQueries(contentType);
+        this.baseStatWeights = shamanDefaultStatWeights(contentType);
       }
       else {
         this.modelName = "Default";
