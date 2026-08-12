@@ -209,6 +209,7 @@ export default function ItemBar(props) {
             else if (itemEffect.effectName === "Blessed Pango Charm") item.bonusIDS = (item.bonusIDS || "") + ":12686";
             else if (itemEffect.effectName === "Arcanoweave Lining") item.bonusIDS = (item.bonusIDS || "") + ":12384";
             else if (itemEffect.effectName === "Primal Spore Binding") item.bonusIDS = (item.bonusIDS || "") + ":12687";
+            //else if (itemEffect.effectName === "Hunter's Ritual Stone") item.bonusIDS = (item.bonusIDS || "") + ":12687";
           }
         }
 

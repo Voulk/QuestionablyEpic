@@ -10,7 +10,7 @@ import { shamanDefaultSpecialQueries, shamanDefaultSpellData, shamanDefaultStatW
 import { holyPriestDefaultSpecialQueries, holyPriestDefaultSpellData, holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriest/HolyPriestDefaults";
 import { chronoDefaultSpecialQueries, chronoDefaultSpellData, chronoDefaultStatWeights } from "./ClassDefaults/PreservationEvoker/ChronowardenEvokerDefaults";
 import { evokerDefaultSpecialQueries, evokerDefaultSpellData, evokerDefaultStatWeights, runFlameshaperCastModel } from "./ClassDefaults/PreservationEvoker/FlameshaperEvokerDefaults";
-import { discPriestDefaultSpecialQueries, discPriestDefaultSpellData, discPriestDefaultStatWeights } from "./ClassDefaults/DisciplinePriest/DiscPriestDefaults";
+import { discPriestDefaultSpecialQueries, discPriestDefaultSpellData, discPriestDefaultStatWeights } from "./ClassDefaults/DisciplinePriest/DiscPriestVoidweaver";
 import { discPriestOracleSpecialQueries, discPriestOracleStatWeights, runOracleCastModel, modelOracleOnUseTrinket } from "./ClassDefaults/DisciplinePriest/DiscPriestOracle";
 import { restoShamanProfile, scoreShamanSet } from "./ClassDefaults/RestoShaman/RestoShamanProfile";
 import { scoreEvokerSet } from "./ClassDefaults/PreservationEvoker/PreservationEvokerProfile";
@@ -170,14 +170,14 @@ class CastModel {
 
     } else if (spec === SPEC.DISCPRIEST) {
         if (modelID === "Oracle") {
-          this.modelName = "Oracle";
+          this.modelName = "Default";
           this.modelType["Raid"] = "Default";
           this.modelType["Dungeon"] = "Default";
           this.runCastModel = runOracleCastModel;
           this.modelOnUseTrinket = modelOracleOnUseTrinket;
           spellList = {};
-          specialQueries = discPriestOracleSpecialQueries(contentType);
-          this.baseStatWeights = discPriestOracleStatWeights(contentType);
+          specialQueries = discPriestDefaultSpecialQueries(contentType);
+          this.baseStatWeights = discPriestDefaultStatWeights(contentType);
         }
         /*
         else {

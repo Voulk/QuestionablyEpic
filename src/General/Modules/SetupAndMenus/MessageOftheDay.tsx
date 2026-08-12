@@ -4,7 +4,7 @@ export default function MessageOfTheDay({ gameType = "Retail" }) {
   //prettier-ignore
   const messageOfTheDay: string[] = gameType === "Retail" ?
    [
-    "Have a great day!"
+    "QE is updated for 12.1. Top Gear and Upgrade Finder will return shortly, after the patch is stable. Trinkets have NOT been tuned in-game yet. Expect changes."
   ] : 
   [
     "The Siege of Orgrimmar update is now live. Please report any bugs you find to the QE Live Discord.",
@@ -43,7 +43,7 @@ export default function MessageOfTheDay({ gameType = "Retail" }) {
       <Grid container spacing={1}>
         {messageOfTheDay.map((key, i) => (
           <Grid item xs={12} key={i}>
-            <Typography style={{ lineHeight: "16px" }} align="left" variant="body1">
+            <Typography style={{ lineHeight: 1.5 }} align="left" variant="body1">
               {key}
             </Typography>
           </Grid>

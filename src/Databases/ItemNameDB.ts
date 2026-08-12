@@ -148713,9 +148713,23 @@ export const nameDB =
         "de": "Unflatterbarer Flatterumhang"
     },
     "282425": {
-        "en": "Band of the Beast Reaper"
+        "cn": "",
+        "en": "Band of the Beast Reaper",
+        "ru": "Кольцо жнеца зверей",
+        "es": "Sortija del segador de bestias",
+        "br": "Elo da Fera Retalhadora",
+        "kr": "",
+        "fr": "Bague de l’arrache-bête",
+        "de": "Band des Bestienschnitters"
     },
     "282426": {
-        "en": "Draenic Drive Chain"
+        "cn": "",
+        "en": "Draenic Drive Chain",
+        "ru": "Цепь дренейского рвения",
+        "es": "Cadena de motor draénico",
+        "br": "Corrente de Acionamento Draenoriana",
+        "kr": "",
+        "fr": "Chaîne de transmission draenique",
+        "de": "Draenische Antriebskette"
     }
 };

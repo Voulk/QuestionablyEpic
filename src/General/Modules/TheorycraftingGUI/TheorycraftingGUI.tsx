@@ -109,7 +109,9 @@ export default function TheorycraftingGUI(props) {
       <StatScalingChart data={statChart} currentWeights={currentWeights} />
  
       {/* Future panels go here */}
-      <BestInSlotPanel stats={bestStatCombo} onRun={() => setbestStatCombo(buildBestDistChart(selectedProfile.runCastModel, playerData))} />
+      <BestInSlotPanel stats={bestStatCombo} onRun={() => buildBestDistChart(selectedProfile.runCastModel, playerData).then(result => {
+        setbestStatCombo(result);
+      })} />
 
       {/*<SequenceDataTable data={""} spec={selectedSpec} stats={stats} talents={[]} />*/}
 

@@ -200,7 +200,6 @@ export function getHighestStat(stats) {
 }
 
 export function getSetting(playerSettings, setting) {
-
   if (setting in playerSettings) return playerSettings[setting].value;
   else {
     console.error("Missing Setting" + setting);

@@ -100,7 +100,7 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
         {spell: "Fire Breath", efficiency: 0.9 },     
         {spell: "Temporal Anomaly", efficiency: 0.9, hastedCPM: true },
         {spell: "Reversion", efficiency: 0.66, },
-        {spell: "Merithra's Blessing", cpm: 3, autoSpell: true, hastedCPM: true },
+        {spell: "Merithra's Blessing", cpm: 3, autoSpell: true },
         {spell: "Verdant Embrace", hastedCPM: true, efficiency: 0.2 },
         {spell: "Dream Flight", efficiency: 0.9  }
     ]
@@ -117,9 +117,6 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
         buffSpellPerc(spellDB["Verdant Embrace"], 20);
         cooldownAdjFlat(spellDB["Verdant Embrace"], -2000);
     }
-
-
-    
 
     completeCastProfile(castProfile, spellDB, state.statPercentages);
 
@@ -171,13 +168,12 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
     // Handle reversions own burst chance
     const effectiveEchoReversionCasts = totalEchoEvents * (echoUsage["Merithra's Blessing"] + echoUsage["Reversion"]);
 
-   
     const reversionBursts = effectiveEchoReversionCasts * 0.15;
     essenceBurstCount += reversionBursts;
     reportingData.essenceBurst_reversion = reversionBursts;
     //castProfile.push({spell: "Echo", cpm: reversionBursts, autoSpell: true});
     totalEchoEvents += reversionBursts;
-    totalEchoPower += reversionBursts * 0.7 * echoMult;
+    //totalEchoPower += reversionBursts * 0.7 * echoMult;
 
     // Season Two 2pc
     if (playerData.tierSets.includes("Preservation Evoker S2-4")) {
@@ -185,7 +181,7 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
         const verdantEmbraceCPM = getCPM(castProfile, "Verdant Embrace");
         essenceBurstCount += verdantEmbraceCPM;
         totalEchoEvents += verdantEmbraceCPM;
-        totalEchoPower += verdantEmbraceCPM * 0.7 * echoMult;
+        //totalEchoPower += verdantEmbraceCPM * 0.7 * echoMult;
         reportingData.essenceBurst_tier4pc = verdantEmbraceCPM;
 
         ["Emerald Blossom", "Dream Breath", "Verdant Embrace", "Merithra's Blessing", "Dream Flight", "Fluttering Seedlings"].forEach(spellName => {
@@ -196,12 +192,12 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
     if (playerData.tierSets.includes("Preservation Evoker S2-2")) {
         // Every Essence Burst consumption fires a Living Flame at 100% value.
         // This heals for a lot and also generates even more essence bursts.
-        const tierBurstCount = (essenceBurstCount * (0.2 + livingFlameBonusChance));
+        const tierBurstCount = (essenceBurstCount) * (0.2 + livingFlameBonusChance);
         essenceBurstCount += tierBurstCount
         reportingData.essenceBurst_tier2pc = tierBurstCount;
 
         totalEchoEvents += tierBurstCount;
-        totalEchoPower += tierBurstCount * 0.7 * echoMult;
+        //totalEchoPower += tierBurstCount * 0.7 * echoMult;
 
         castProfile.push({spell: "Living Flame", cpm: essenceBurstCount, autoSpell: true});
     }
@@ -236,8 +232,8 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
     // you need to convert into Disintegrate casts.
     const disintCasts = 0 //Math.max(0,(-fillerMana / 9000));
     reportingData.fillerManaPerMinute += disintCasts * 9000;
-    const blossomCasts = (essenceBurstCount - disintCasts) * 0.8;
-    let bonusEchoCasts = (essenceBurstCount - disintCasts) * 0.2;
+    const blossomCasts = (essenceBurstCount - disintCasts) * 0.6;
+    let bonusEchoCasts = (essenceBurstCount - disintCasts) * 0.4;
     reportingData.disintBlossomRatio = disintCasts / essenceBurstCount;
     if (hasTalent(talents, "Twin Flame")) {
         castProfile.push({spell: "Twin Flame", cpm: essenceBurstCount, autoSpell: true });
@@ -266,6 +262,7 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
     // Use remaining time on Living Flame
     const fillerPackage = spellDB["Living Flame O"][0].castTime * 5 + spellDB["Emerald Blossom"][0].castTime; // 5 Living Flames & an Emerald Blossom
     const fillerCPM = timeAvailable / (fillerPackage / state.statPercentages.haste);
+    reportingData.fillerCPM = fillerCPM;
     castProfile.push({spell: "Living Flame O", cpm: fillerCPM * 5});
     castProfile.push({spell: "Emerald Blossom", cpm: fillerCPM});
     //castProfile.push({spell: "Disintegrate", cpm: fillerCPM / 2});
@@ -342,7 +339,10 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
             if (totalOutput > 0) {
                 const label = spellProfile.label || slice.specialLabel || spellName;
 
-                castBreakdown[label] = (castBreakdown[label] ?? 0) + (effectiveCPM);
+
+                if (spellProfile?.autoSpell !== true) {
+                    castBreakdown[label] = (castBreakdown[label] ?? 0) + effectiveCPM;
+                }
                 healingBreakdown[label] = (healingBreakdown[label] ?? 0) + (totalOutput);
 
             }

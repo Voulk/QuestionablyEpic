@@ -140,7 +140,7 @@
     ],
     "Freightrunner's Flask": [
         {
-            "coefficient": 2.4014,
+            "coefficient": 2.401,
             "scalingClass": -7
         }
     ],
@@ -438,6 +438,42 @@
         {
             "coefficient": -0.48,
             "scalingClass": -7
+        }
+    ],
+    "Effigy of Ula'tek's Faithful": [
+        {
+            "coefficient": 1.409,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": 0.705,
+            "scalingClass": -7
+        }
+    ],
+    "Chiral Marrowgrafter": [
+        {
+            "coefficient": 996.342,
+            "scalingClass": -8
+        }
+    ],
+    "Pulse Seeker's Oculus": [
+        {
+            "coefficient": 0.061,
+            "scalingClass": -9
+        },
+        {
+            "coefficient": 0.36,
+            "scalingClass": -7
+        }
+    ],
+    "Latent Purifier": [
+        {
+            "coefficient": 59.165,
+            "scalingClass": -9
+        },
+        {
+            "coefficient": 59.165,
+            "scalingClass": -9
         }
     ]
 }

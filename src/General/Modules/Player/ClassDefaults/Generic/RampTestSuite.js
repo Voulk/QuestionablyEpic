@@ -361,11 +361,11 @@ export const buildStatWeights = (playerData, scoringFunction, testSettings ) => 
         const stats = ['intellect', 'crit', 'haste', 'mastery', 'versatility', 'leech'];
 
     const activeStats = {
-        intellect: 2400,
-        haste: 200,
-        crit: 200,
+        intellect: 3200,
+        haste: 800,
+        crit: 800,
         mastery: 200,
-        versatility: 200,
+        versatility: 800,
         stamina: 19000,
         leech: 0,
         critMult: 2,
@@ -406,13 +406,14 @@ export const buildStatWeights = (playerData, scoringFunction, testSettings ) => 
 
 }
 
-export const buildBestDistChart = (scoreSet, playerData) => {
+export async function buildBestDistChart(scoreSet, playerData) {
     const totalPoints = 3000;
     const step = 40;
-    const units = totalPoints / step;
+    const units = totalPoints / step;   
     let maxScore = 0;
     let evaluated = 0;
     let bestCombo = null;
+    const yieldEvery = 500;
 
     outer: for (let hasteUnits = 0; hasteUnits <= units; hasteUnits++) {
     for (let critUnits = 0; critUnits <= units - hasteUnits; critUnits++) {
@@ -437,6 +438,12 @@ export const buildBestDistChart = (scoreSet, playerData) => {
           maxScore = score;
           bestCombo = combo;
         }
+
+        // Yield periodically so a long search doesn't block the UI thread
+        if (evaluated % yieldEvery === 0) {
+          //onProgress?.(evaluated, totalCombinations, { stats: best!, score: bestScore });
+          await new Promise((resolve) => setTimeout(resolve, 0));
+        }
       }
     }
   }
@@ -450,7 +457,7 @@ export const buildBestDistChart = (scoreSet, playerData) => {
 export const buildTCStatChart = (scoreSet, playerData) => {
     const statResults = []
     const baseStats = {
-        intellect: 2800,
+        intellect: 3200,
         haste: 0,
         crit: 0,
         mastery: 0,

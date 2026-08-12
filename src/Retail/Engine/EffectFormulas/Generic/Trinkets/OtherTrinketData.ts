@@ -6,6 +6,83 @@ import { STATCONVERSION } from "General/Engine/STAT"
 // Pulse Seeker's Oculus, Effigy of Ula'tek's Faithful, 
 
 export const otherTrinketData = [
+          { // Passive mastery at all times,
+          name: "Pulse Seeker's Oculus",
+          description: "",
+          addonDescription: "",
+          effects: [
+          { // Stat Proc Portion
+              stat: "mastery",
+          },
+          ],
+          runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+              let bonus_stats: Stats = {};
+  
+              // Passive Mastery Portion
+              bonus_stats.mastery = processedValue(trinketRawData["Pulse Seeker's Oculus"][0], itemLevel);
+  
+              return bonus_stats;
+              }
+      },
+          {
+        name: "Chiral Marrowgrafter",
+        description: "",
+        addonDescription: "",
+        effects: [
+          { 
+            secondaries: ['versatility', 'crit'],
+            cooldown: 90,
+            efficiency: {Raid: 0.95, Dungeon: 0.95}, //
+          },
+        ],
+        runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+          let bonus_stats: Stats = {};
+    
+          bonus_stats.hps = runGenericFlatProc({...data[0], ...trinketRawData["Chiral Marrowgrafter"][0]}, itemLevel, player, additionalData.contentType)
+          return bonus_stats;
+        }
+      },
+        {
+        name: "Latent Purifier",
+        description: "",
+        addonDescription: "",
+        effects: [
+          { 
+            secondaries: ['versatility', 'crit'],
+            cooldown: 120,
+            efficiency: {Raid: 0.7, Dungeon: 0.7}, //
+            ticks: 3,
+          },
+        ],
+        runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+          let bonus_stats: Stats = {};
+    
+          bonus_stats.hps = runGenericFlatProc({...data[0], ...trinketRawData["Latent Purifier"][0]}, itemLevel, player, additionalData.contentType)
+          return bonus_stats;
+        }
+      },
+    { //
+          id: 274493,
+          name: "Effigy of Ula'tek's Faithful",
+          description: "",
+          addonDescription: "",
+          effects: [
+          { // Stat Proc Portion
+              stat: "random",
+              duration: 12,
+              ppm: 2,
+          },
+          ],
+          runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+              let bonus_stats: Stats = {};
+  
+              bonus_stats = runGenericRandomPPMTrinket({...data[0], ...trinketRawData["Effigy of Ula'tek's Faithful"][0]}, itemLevel, additionalData.setStats);
+              bonus_stats.leech = runGenericPPMTrinket({...data[0], ...trinketRawData["Effigy of Ula'tek's Faithful"][1], stat: "leech"}, itemLevel, additionalData.setStats) / 3
+  
+  
+              return bonus_stats;
+              }
+      },
     {
       name: "Drum of Renewed Bonds",
       description: "Not available on Myth track but quite good as an early trinket. You are able to pick which secondary stat it gives.",
@@ -68,14 +145,14 @@ export const otherTrinketData = [
       if (getSetting(additionalData.settings, "crucibleUpgrades") === "Fully Upgraded") {
         trinketData.coefficient *= 1.2; 
         trinketData.duration = 20;
-        trinketData.ppm = 5;
+        trinketData.ppm = 4; // This is 5 in the spell data, but that doesn't line up with real uptime values.
       }
 
       bonus_stats.crit = runGenericPPMTrinket(trinketData, itemLevel);
       bonus_stats.leech = convertPPMToUptime(trinketData.ppm, trinketData.duration) * 1 * STATCONVERSION.LEECH;
 
       if (additionalData.includeTooltip) {
-        additionalData.tooltipData.push({name: "Expected Uptime: ", value: convertPPMToUptime(trinketData.ppm, trinketData.duration) * 100 + "%"})
+        additionalData.tooltipData.push({name: "Expected Upgraded Uptime: ", value: Math.round(convertPPMToUptime(trinketData.ppm, trinketData.duration) * 100) + "%"})
       }
 
       return bonus_stats;

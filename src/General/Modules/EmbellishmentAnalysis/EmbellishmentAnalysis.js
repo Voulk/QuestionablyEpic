@@ -92,7 +92,7 @@ function getEstimatedHPS(bonus_stats, player, contentType, playerSettings) {
   let estHPS = 0;
   for (const [key, value] of Object.entries(bonus_stats)) {
     if (["haste", "mastery", "crit", "versatility", "leech"].includes(key)) {
-      estHPS += ((value * player.getStatWeight(contentType, key)) / 2400) * player.getHPS(contentType);
+      estHPS += ((value * player.getStatWeight(contentType, key)) / 3200) * player.getHPS(contentType);
     } else if (key === "intellect") {
       estHPS += (value / player.activeStats.intellect) * player.getHPS(contentType);
     } 
@@ -106,12 +106,15 @@ function getEstimatedHPS(bonus_stats, player, contentType, playerSettings) {
       // This is ultimately a slightly underestimation of giving stats to allies, but given we get a fuzzy bundle that's likely to hit half DPS and half HPS 
       // it's a fair approximation. 
       // These embellishments are good, but it's very spread out.
-      estHPS += getAllyStatsValue(contentType, value, player, playerSettings) * 0.25 / 2400 * player.getHPS(contentType);
+      estHPS += getAllyStatsValue(contentType, value, player, playerSettings) * 1 / 3200 * player.getHPS(contentType);
     }
   }
   return Math.round(100 * estHPS) / 100;
 }
 
+/*
+  @@@deprecated
+*/
 function getEstimatedDPS(bonus_stats, player, contentType, playerSettings) {
   let estDPS = 0;
   for (const [key, value] of Object.entries(bonus_stats)) {

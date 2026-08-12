@@ -19,16 +19,25 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+    {
+    version: "12.1 / 5.5.4",
+    update: 2,
+    date: "August 12",
+    changes: [ 
+      "Added more S2 Delve trinkets",
+      "Fixed MoP tooltips."
+    ]
+  },
   {
     version: "12.1 / 5.5.4",
     update: 1,
-    date: "August",
+    date: "August 11",
     changes: [ 
       "All Season 2 items and effects.",
       "Upgrade Finder Revamped. New UI & bonus roll functionality.",
       "Top Gear Stat panel Revamped. New UI, better accuracy, includes breakdown of where stats come from.",
       "Many UI upgrades around the rest of the app including a new way to view trinkets, new item tags and more.",
-      "New Embellishment: Adorned Fang.",
+      "New Embellishments: Adorned Fang, Hunter's Ritual Stone.",
       "New auto-catalyze button on import.",
     ]
   },
