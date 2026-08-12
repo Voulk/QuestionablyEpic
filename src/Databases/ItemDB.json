@@ -280658,8 +280658,8 @@
         },
         "sources": [
             {
-                "instanceId": -98,
-                "encounterId": -98
+                "instanceId": -69,
+                "encounterId": -69
             }
         ],
         "squishEra": 2,
@@ -280668,7 +280668,17 @@
             "type": "trinket",
             "name": "Effigy of Ula'tek's Faithful"
         },
-        "levelRange": []
+        "levelRange": [
+            272,
+            276,
+            285,
+            289,
+            295,
+            302,
+            308,
+            315,
+            321
+        ]
     },
     {
         "id": 274494,

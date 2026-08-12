@@ -140,7 +140,7 @@
     ],
     "Freightrunner's Flask": [
         {
-            "coefficient": 2.4014,
+            "coefficient": 2.401,
             "scalingClass": -7
         }
     ],
@@ -437,6 +437,16 @@
         },
         {
             "coefficient": -0.48,
+            "scalingClass": -7
+        }
+    ],
+    "Effigy of Ula'tek's Faithful": [
+        {
+            "coefficient": 1.409,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": 0.705,
             "scalingClass": -7
         }
     ]
