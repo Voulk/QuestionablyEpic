@@ -4,10 +4,9 @@ import Button from "@mui/material/Button";
 // ─── Types ────────────────────────────────────────────────────────────────────
  
 export interface Profile {
-  id: string;
-  label: string;
+  modelName: string;
 }
- 
+
 export interface StatWeights {
   intellect: number;
   haste: number;
@@ -15,12 +14,14 @@ export interface StatWeights {
   mastery: number;
   versatility: number;
 }
- 
+
 export interface ControlPanelProps {
   profiles: Profile[];
+  selectedProfile: Profile;
+  onProfileChange: (profile: Profile) => void;
   stats: Stats;
   setStats: (stats: Stats) => void;
-  onRunProfile?: (profileId: string, stats: StatWeights) => void;
+  onRunProfile?: () => void;
 }
 
 interface AdditionalSetting {
@@ -270,16 +271,15 @@ const ADDITIONAL_SETTINGS: AdditionalSetting[] = [
  
 const ControlPanel: React.FC<ControlPanelProps> = ({
   profiles = [],
+  selectedProfile,
+  onProfileChange,
   stats = { intellect: 0, haste: 0, crit: 0, mastery: 0, versatility: 0 },
   setStats,
   onRunProfile,
 }) => {
-  const [selectedProfileId, setSelectedProfileId] = useState<string>(
-    profiles[0]?.id ?? ""
-  );
-
   const [selectHovered, setSelectHovered] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
+  const [headerHovered, setHeaderHovered] = useState(false);
   const [hoveredSettingLabel, setHoveredSettingLabel] = useState<string | null>(null);
   const [focusedSettingLabel, setFocusedSettingLabel] = useState<string | null>(null);
   const [additionalSettings, setAdditionalSettings] = useState<Record<string, string>>(() => {
@@ -289,14 +289,14 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
     });
     return defaults;
   });
- 
+
   const handleStatChange = (key: keyof StatWeights, raw: string) => {
     const value = parseInt(raw, 10);
     setStats((prev) => ({ ...prev, [key]: isNaN(value) ? 0 : value }));
   };
- 
+
   const handleRun = () => {
-    onRunProfile?.(selectedProfileId, stats);
+    onRunProfile?.();
   };
 
   const handleAdditionalSettingChange = (label: string, value: string) => {
@@ -314,8 +314,8 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
           <div style={styles.sectionTitle}>Profile</div>
           <div style={styles.selectWrapper}>
             <select
-              value={selectedProfileId}
-              onChange={(e) => setSelectedProfileId(e.target.value)}
+              value={profiles.indexOf(selectedProfile)}
+              onChange={(e) => onProfileChange(profiles[Number(e.target.value)])}
               style={{
                 ...styles.select,
                 borderColor: selectHovered ? PRIMARY : COLORS.border,
@@ -323,13 +323,13 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
               onMouseEnter={() => setSelectHovered(true)}
               onMouseLeave={() => setSelectHovered(false)}
             >
-              {profiles.map((p) => (
-                <option key={p.id} value={p.id}>
+              {profiles.map((p, index) => (
+                <option key={index} value={index}>
                   {p.modelName}
                 </option>
               ))}
               {profiles.length === 0 && (
-                <option value="">— No profiles —</option>
+                <option value={-1}>— No profiles —</option>
               )}
             </select>
             <span style={styles.selectChevron}>▾</span>

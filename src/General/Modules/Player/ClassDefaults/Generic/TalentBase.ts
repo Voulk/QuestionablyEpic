@@ -146,7 +146,16 @@ export const adjTargetCount = (spell: SpellData[], value: number, index: number 
 
 export const attachSpellEffect = (recSpell: SpellData[], effect: SpellData[], index: number = -1) => {
     const target = (index >= 0) ? effect.slice(index, index + 1) : effect;
-    
+
     return recSpell.concat(target);
-    
+
+}
+
+// buffs every damage-type spell in spellDB by value%, optionally restricted to a school (eg. "physical", "nature")
+export const buffDamageSpellsByPerc = (spellDB: SpellDB, value: number, school?: string) => {
+    Object.values(spellDB).forEach(slices => {
+        slices.forEach(slice => {
+            if (slice.spellType === "damage" && (!school || slice.school === school)) slice.coeff *= 1 + value / 100;
+        })
+    })
 }
