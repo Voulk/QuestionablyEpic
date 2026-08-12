@@ -48,6 +48,7 @@ export const raidTrinketData = [
     ],
     runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
         let bonus_stats: Stats = {};
+        const buffs = {};
 
         const buffShare = 1/6 * data[0].ppm! * 1.13;
 //getDiminishedValue(statID, procValue, baseStat)
@@ -55,26 +56,35 @@ export const raidTrinketData = [
         const versBuff = processedValue({...data[1], ...trinketRawData["Gebbo's Bottomless Bag"][1]}, itemLevel);
         const versLossPerCast = processedValue({...data[1], ...trinketRawData["Gebbo's Bottomless Bag"][7]}, itemLevel);
         bonus_stats.versatility = versBuff / versLossPerCast * (1.5 / player.getStatMults(["haste"])) / 60 * (versBuff / 2) * buffShare;
+        buffs.versatility = versBuff / versLossPerCast * (1.5 / player.getStatMults(["haste"])) / 60 * (versBuff / 2) * buffShare
 
         // Crit portion
         const critBuff = processedValue({...data[0], ...trinketRawData["Gebbo's Bottomless Bag"][0]}, itemLevel);
         const averageCritStacks = data[0].duration! / 2;
         bonus_stats.crit = averageCritStacks * critBuff * data[0].duration! / 60 * buffShare;
+        buffs.crit = averageCritStacks * critBuff * data[0].duration! / 60 * buffShare;
 
         // Haste portion
-        const hasteBuff = getDiminishedValue("haste", processedValue({...data[3], ...trinketRawData["Gebbo's Bottomless Bag"][3]}, itemLevel), additionalData.setStats.haste);
+        const hasteBuff = getDiminishedValue("haste", processedValue({...data[3], ...trinketRawData["Gebbo's Bottomless Bag"][3]}, itemLevel, 1, "round"), additionalData.setStats.haste);
         bonus_stats.haste = hasteBuff * data[3].duration! / 60 * buffShare;
-
+        buffs.haste = hasteBuff * data[3].duration! / 60 * buffShare;
+        
         // Mastery portion
         const masteryBuff = processedValue({...data[2], ...trinketRawData["Gebbo's Bottomless Bag"][2]}, itemLevel);
         bonus_stats.mastery = masteryBuff * data[2].duration! / 60 * buffShare / 2;
+        buffs.mastery = masteryBuff * data[2].duration! / 60 * buffShare / 2;
        
         // All stats portion
         const allBuff = processedValue({...data[4], ...trinketRawData["Gebbo's Bottomless Bag"][5]}, itemLevel);
         const allBuffAverage = allBuff * data[4].duration! / 60 * buffShare;
+        buffs.all = allBuff * data[4].duration! / 60 * buffShare;
 
         const rottingFin = processedValue({...data[5], ...trinketRawData["Gebbo's Bottomless Bag"][6]}, itemLevel);
         const rottingAverage = rottingFin * data[5].duration! / 60 * buffShare;
+        buffs.rotting = rottingFin * data[5].duration! / 60 * buffShare;
+
+        //console.log(buffs);
+
 
         bonus_stats.crit += allBuffAverage - rottingAverage;
         bonus_stats.haste += allBuffAverage - rottingAverage;

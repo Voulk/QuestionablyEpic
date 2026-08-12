@@ -449,5 +449,31 @@
             "coefficient": 0.705,
             "scalingClass": -7
         }
+    ],
+    "Chiral Marrowgrafter": [
+        {
+            "coefficient": 996.342,
+            "scalingClass": -8
+        }
+    ],
+    "Pulse Seeker's Oculus": [
+        {
+            "coefficient": 0.061,
+            "scalingClass": -9
+        },
+        {
+            "coefficient": 0.36,
+            "scalingClass": -7
+        }
+    ],
+    "Latent Purifier": [
+        {
+            "coefficient": 59.165,
+            "scalingClass": -9
+        },
+        {
+            "coefficient": 59.165,
+            "scalingClass": -9
+        }
     ]
 }
