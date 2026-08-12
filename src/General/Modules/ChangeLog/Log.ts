@@ -19,6 +19,15 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+    {
+    version: "12.1 / 5.5.4",
+    update: 2,
+    date: "August 12",
+    changes: [ 
+      "Added more S2 Delve trinkets",
+      "Fixed MoP tooltips."
+    ]
+  },
   {
     version: "12.1 / 5.5.4",
     update: 1,

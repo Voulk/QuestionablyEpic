@@ -207,7 +207,7 @@ export default class VerticalChart extends PureComponent {
     };
 
     return (
-      <ResponsiveContainer className="ResponsiveContainer2" width="100%" height={gameType === "Retail" ? 600 : 700}>
+      <ResponsiveContainer className="ResponsiveContainer2" width="100%" height={gameType === "Retail" ? 650 : 700}>
         <BarChart
           barCategoryGap="15%"
           data={cleanedArray}

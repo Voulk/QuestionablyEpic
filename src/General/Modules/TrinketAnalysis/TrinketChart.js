@@ -44,9 +44,9 @@ const getTrinketPassiveScore = (id, itemLevel, player, contentType, playerSettin
   return item.softScore;
 };
 
-const getClassicTrinketScore = (id, player, itemLevel) => {
+const getClassicTrinketScore = (id, player, itemLevel, playerSettings) => {
   let item = new Item(id, "", "trinket", false, "", 0, itemLevel, "", "Classic");
-  item.softScore = scoreItem(item, player, "Raid", "Classic");
+  item.softScore = scoreItem(item, player, "Raid", "Classic", playerSettings);
   return item.softScore;
 };
 
@@ -173,7 +173,7 @@ export default function TrinketChart({ player }) {
   const allItemLevels =
     gameType === "Retail"
       ? [272, 276, 285, 289, 295, 298, 302, 308, 315, 321, 328, 331, 334, 344]
-      : [458, 463, 476, 483, 484, 489, 496, 502, 509, 510, 517, 522, 528, 535, 541];
+      : [476, 502, 509, 510, 517, 522, 528, 535, 541, 553, 559, 566, 572];
 
   const itemLevels = allItemLevels.filter((level) => level <= levelCap || gameType === "Classic");
 
@@ -233,14 +233,14 @@ export default function TrinketChart({ player }) {
           trinketAtLevels["p" + itemLevels[x]] = getTrinketPassiveScore(trinket.id, itemLevels[x], player, contentType, playerSettings);
         } else {
           if (activeTrinkets.filter((key) => key.name === trinketName).length === 0) {
-            trinketAtLevels["i" + itemLevels[x]] = getClassicTrinketScore(trinket.id, player, itemLevels[x]);
+            trinketAtLevels["i" + itemLevels[x]] = getClassicTrinketScore(trinket.id, player, itemLevels[x], playerSettings);
           }
         }
       }
       if (gameType === "Retail") {
         trinketAtLevels["tooltip"] = buildRetailEffectTooltip(trinketName, player, trinket.levelRange[trinket.levelRange.length - 1], playerSettings, trinket.id);
       } else {
-        trinketAtLevels["tooltip"] = buildClassicEffectTooltip(trinketName, player, trinket.levelRange[trinket.levelRange.length - 1], trinket.id);
+        trinketAtLevels["tooltip"] = buildClassicEffectTooltip(trinketName, player, trinket.levelRange[trinket.levelRange.length - 1], trinket.id, playerSettings);
       }
       if (Object.keys(trinketAtLevels).length > 4) activeTrinkets.push(trinketAtLevels);
     }
