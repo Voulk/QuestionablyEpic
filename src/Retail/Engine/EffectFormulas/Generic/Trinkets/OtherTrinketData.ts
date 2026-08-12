@@ -6,6 +6,61 @@ import { STATCONVERSION } from "General/Engine/STAT"
 // Pulse Seeker's Oculus, Effigy of Ula'tek's Faithful, 
 
 export const otherTrinketData = [
+          { // Passive mastery at all times,
+          name: "Pulse Seeker's Oculus",
+          description: "",
+          addonDescription: "",
+          effects: [
+          { // Stat Proc Portion
+              stat: "mastery",
+          },
+          ],
+          runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+              let bonus_stats: Stats = {};
+  
+              // Passive Mastery Portion
+              bonus_stats.mastery = processedValue(trinketRawData["Pulse Seeker's Oculus"][0], itemLevel);
+  
+              return bonus_stats;
+              }
+      },
+          {
+        name: "Chiral Marrowgrafter",
+        description: "",
+        addonDescription: "",
+        effects: [
+          { 
+            secondaries: ['versatility', 'crit'],
+            cooldown: 90,
+            efficiency: {Raid: 0.95, Dungeon: 0.95}, //
+          },
+        ],
+        runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+          let bonus_stats: Stats = {};
+    
+          bonus_stats.hps = runGenericFlatProc({...data[0], ...trinketRawData["Chiral Marrowgrafter"][0]}, itemLevel, player, additionalData.contentType)
+          return bonus_stats;
+        }
+      },
+        {
+        name: "Latent Purifier",
+        description: "",
+        addonDescription: "",
+        effects: [
+          { 
+            secondaries: ['versatility', 'crit'],
+            cooldown: 120,
+            efficiency: {Raid: 0.7, Dungeon: 0.7}, //
+            ticks: 3,
+          },
+        ],
+        runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+          let bonus_stats: Stats = {};
+    
+          bonus_stats.hps = runGenericFlatProc({...data[0], ...trinketRawData["Latent Purifier"][0]}, itemLevel, player, additionalData.contentType)
+          return bonus_stats;
+        }
+      },
     { //
           id: 274493,
           name: "Effigy of Ula'tek's Faithful",
