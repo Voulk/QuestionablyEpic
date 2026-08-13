@@ -28,6 +28,7 @@ type SpellData = {
     cost: number;
     coeff: number;
     aura: number;
+    school?: string;
     expectedOverheal: number;
     secondaries: string[]; 
     spellType: "damage" | "buff" | "heal";

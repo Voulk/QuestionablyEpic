@@ -1,6 +1,7 @@
 import { processDruidRawHealing } from "./Archive/DruidMiscFormulas";
 
 
+// On the edge of being deprecated, move to model instead.
 export const getDruidSpecEffect = (effectName, player, contentType) => {
   // These are going to be moved to a proper file soon.
   const IDREJUV = 774;
@@ -10,30 +11,19 @@ export const getDruidSpecEffect = (effectName, player, contentType) => {
 
   let bonus_stats = {};
   const healingMult = 1.06 * 1.04 // Class talents
-  const insuranceRPPM = 4 * player.getStatPerc('haste');
 
   if (effectName === "Druid S3-2") {
-    bonus_stats.bonusHPS = 0.1;
+    bonus_stats.bonusHPS = 0;
   }
   else if (effectName === "Druid S3-4") {
-    bonus_stats.bonusHPS = 0.08;
+    bonus_stats.bonusHPS = 0;
   }
   else if (effectName === "Druid S2-2") {
     
-    const insuranceHealing = 1.6 * 5 * player.getStatMults(['haste', 'crit', 'versatility', 'intellect', 'mastery'])
-    bonus_stats.hps = insuranceHealing * insuranceRPPM / 60;
+    bonus_stats.bonusHPS = 0.03;
   }
   else if (effectName === "Druid S2-4") {
-    const healingOneRejuv = 0.2465 * 2.1 * 5 * player.getStatMults(["intellect", "crit", "versatility"]) * ((player.getStatPerc("mastery") - 1) + 1) * healingMult * 1.3; // Flourish etc
-    let lifebloomInsurancePPM = 60 / 4 * 0.3;
-    if (contentType === "Dungeon") {
-      // Add Photosynthesis
-      // We'll just be modelling lifebloom + rejuv + spring blossoms. It's common to have more but there's also a ton of wastage on procs.
-      const hotTicksPerMinute = (60 + 20 + 30) * player.getStatPerc('haste');
-      lifebloomInsurancePPM = hotTicksPerMinute * 0.04 * 0.3;
-    }
-
-    bonus_stats.hps = (insuranceRPPM + lifebloomInsurancePPM) * healingOneRejuv / 60;
+    bonus_stats.bonusHPS = 0.05;
 
   }
   else if (effectName === "Restoration Druid S1-2") {
@@ -41,7 +31,7 @@ export const getDruidSpecEffect = (effectName, player, contentType) => {
     bonus_stats.bonusHPS = 0.0204;
   }
   else if (effectName === "Restoration Druid S1-4") {
-    bonus_stats.bonusHPS = 0.0289;
+    bonus_stats.bonusHPS = 0.007;
   }
   else if (effectName === "Druid T31-4") {
     // 

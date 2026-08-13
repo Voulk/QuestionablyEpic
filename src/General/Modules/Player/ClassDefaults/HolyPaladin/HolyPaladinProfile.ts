@@ -316,10 +316,10 @@ export function scorePaladinSet(stats: Stats, playerData: any, settings: PlayerS
 
     })
     const totalHealing = Object.values(healingBreakdown).reduce((sum: number, val: number) => sum + val, 0);
-    printHealingBreakdown(healingBreakdown, totalHealing);
+    //printHealingBreakdown(healingBreakdown, totalHealing);
 
-    console.log(reportingData)
-    printHealingBreakdownWithCPM(healingBreakdown, totalHealing, castProfile);
+    //console.log(reportingData)
+    //printHealingBreakdownWithCPM(healingBreakdown, totalHealing, castProfile);
 
     return { damage: 0 / 60, healing: totalHealing / 60 }
 }

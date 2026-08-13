@@ -19,11 +19,9 @@ export const getEvokerSpecEffect = (effectName, player, contentType, setStats) =
   const healingBonus = 1.04;
   const empowersCPM = 2 + 2 + 2.5; 
   const essenceBurst = valueEssenceBurst(player, contentType);
-  const insuranceRPPM = 4 * player.getStatPerc('haste');
-  const insuranceHealing = 0.80664 * 5 * player.getStatMults(['haste', 'crit', 'versatility', 'intellect', 'mastery'])
   let bonus_stats = {};
   const stats = convertStatPercentages(setStats, {}, "Preservation Evoker",  0.85, "Dracythyr")
-  const verdantEmbraceCPM = 4;
+  const verdantEmbraceCPM = 2;
 
   if (effectName === "Preservation Evoker S1-2") {
     // Handled in Ramps

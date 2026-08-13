@@ -665,9 +665,9 @@ export class Player {
       };
     } else if (spec === SPEC.RESTOSHAMAN) {
       // all of this needs a proper input once
-      this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
+      this.castModels.push(new CastModel(spec, "Raid", "Totemic", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
-      //this.castModels.push(new CastModel(spec, "Raid", "Default", 2));
+      this.castModels.push(new CastModel(spec, "Raid", "Farseer", 2));
       this.activeStats = {
         intellect: 3200,
         haste: 240,
@@ -719,8 +719,8 @@ export class Player {
         }
     } else if (spec === SPEC.MISTWEAVERMONK) {
       const models = [
-        { identifier: "Chi-Ji", content: "Raid" },
         { identifier: "Yu'lon", content: "Raid" },
+        // { identifier: "Chi-Ji", content: "Raid" }, // disabled for now
         { identifier: "Dungeon Default", content: "Dungeon" },
         
       ];

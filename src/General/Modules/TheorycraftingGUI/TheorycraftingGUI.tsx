@@ -47,20 +47,26 @@ export default function TheorycraftingGUI(props) {
     const [bestStatCombo, setbestStatCombo] = useState({haste: 1, crit: 1, mastery: 1, versatility: 1});
     const [selectedProfile, setSelectedProfile] = useState(profiles[0]);
     const [talentString, setTalentString] = useState(profiles[0].talents);
-    const [talentsSelected, setTalentsSelected] = useState(getSelectedTalentsFromString(profiles[0].talents, selectedSpec));
-
+    const talentsSelected = getSelectedTalentsFromString(selectedProfile.talents, selectedSpec);
     const params = {
-                filler: {
-                    hw: 0, ch: 1
-                },
-                asc: {
-                    hw: 0, ch: 1
-                },
-                downtime: 0
-            }
+        filler: {
+            hw: 0, ch: 1
+        },
+        asc: {
+            hw: 0, ch: 1
+        },
+        downtime: 0
+    }
 
-    const playerData = { spec: player.spec, heroTree: selectedProfile.heroTree || "Missing Hero Tree", profileName: selectedProfile.modelName, stats: stats,
-                                    masteryEffectiveness: 0.3, tierSets: ["Preservation Evoker S2-2", "Preservation Evoker S2-4", "Restoration Shaman S2-2", "Restoration Shaman S2-4"], params: params,  }
+    const playerData = {
+        spec: player.spec,
+        heroTree: selectedProfile.heroTree || "Missing Hero Tree",
+        profileName: selectedProfile.modelName,
+        stats: stats,
+        masteryEffectiveness: 0.3,
+        tierSets: /*["Preservation Evoker S2-2", "Preservation Evoker S2-4"]*/["Restoration Shaman S2-2", "Restoration Shaman S2-4"],
+        params: params,
+    }
 
     const runProfile = () => {
         const result = selectedProfile.runCastModel(stats, playerData, {}, true);
@@ -68,7 +74,6 @@ export default function TheorycraftingGUI(props) {
         setActiveResult(result);
         setStatChart(statResults);
         setCurrentWeights(buildStatWeights(playerData, selectedProfile.runCastModel, {}))
-        
     }
 
     const rows: SpellRow[] = [];
@@ -86,7 +91,14 @@ export default function TheorycraftingGUI(props) {
     >
         <div style={{ height: 5 }} />
       {/* Control panel spans full width as a header bar */}
-      <ControlPanel stats={stats} setStats={setStats} profiles={profiles} onRunProfile={runProfile} />
+      <ControlPanel
+            stats={stats}
+            setStats={setStats}
+            profiles={profiles}
+            selectedProfile={selectedProfile}
+            onProfileChange={setSelectedProfile}
+            onRunProfile={runProfile}
+        />
  
       {/* Charts flow vertically below */}
       <ModelInformationTabs
