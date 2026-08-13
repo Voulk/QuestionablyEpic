@@ -31,18 +31,9 @@ export const getTargetScript = (scriptName: string, targets: number, specialFiel
 }
 
 // The formula for sqrt abilties is a bit of a pain.
-// They often do full healing up to the first X targets hit, and then are reduced via a square root formula after that.
-// The formula after you reach your sqrt cap is 1/TargetNumber. So the first target hit after the minimum gets sqrt(1/1), the second gets sqrt(1/2) and so on.
-export const getSqrt = (targets: number, sqrtMin: number) => {
-
-    if (targets <= sqrtMin) return targets;
-
-    const effectiveSqrtTargets = targets - sqrtMin;
-    let totalMult = sqrtMin;
-    for (let i = 1; i <= effectiveSqrtTargets; i++) { totalMult += Math.sqrt(1 / i) }
-
-    return totalMult;
-    //return Math.min(Math.sqrt(effectiveSqrtTargets), 1) * effectiveSqrtTargets + sqrtMin;
+// Spells heal for full value up to sqrtMin targets, then fall off as (targets - sqrtMin + 1)^-scalar beyond that.
+export const getSqrt = (targets: number, sqrtMin: number, scalar: number = 3/4) => {
+    return sqrtMin + (1 / Math.pow(targets - sqrtMin + 1, scalar)) * (20 - sqrtMin);
 }
 
 export const getSqrtHalo = (targets: number, sqrtMin: number) => {
