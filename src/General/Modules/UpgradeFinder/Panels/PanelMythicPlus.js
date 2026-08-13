@@ -1,6 +1,6 @@
 import React from "react";
 import { dungeonStyles, sharedAccordionStyles, sharedAccordionSummaryStyles, sharedAccordionDetailsStyles } from "./PanelStyles";
-import { Typography, Grid, Divider, AppBar } from "@mui/material";
+import { Typography, Grid, Divider } from "@mui/material";
 import ItemUpgradeCard from "./ItemUpgradeCard";
 import DungeonHeaderIcons from "General/Modules/IconFunctions/DungeonHeaderIcons";
 import "./Panels.css";
@@ -14,7 +14,6 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import UFAccordion from "./ufComponents/ufAccordian";
 import UFAccordionSummary from "./ufComponents/ufAccordianSummary";
-import UFTabPanel from "./ufComponents/ufTabPanel";
 
 function sectionHeaderStyle(highlighted) {
   if (highlighted) {
@@ -43,29 +42,15 @@ export default function MythicPlusGearContainer(props) {
   const keyReward = getMPlusKeyReward(difficulty);
   const sameTrack = mplusEndAndVaultSameTrack(difficulty);
 
-  const [tabvalue] = React.useState(0);
-
   const contentGenerator = (gameType) => {
     return (
       <Grid item xs={12}>
         <div className={classes.header}>
           <Grid item container spacing={1}>
             <Grid item xs={12}>
-              <AppBar
-                position="static"
-                style={{
-                  backgroundColor: "#000",
-                  borderRadius: "4px 4px 4px 4px",
-                }}
-                elevation={1}
-              >
-              </AppBar>
-            </Grid>
-            <Grid item xs={12}>
-              <UFTabPanel key={"panel2"} value={tabvalue} index={0}>
-                <div className={classes.panel}>
-                  <Grid container spacing={1}>
-                    <Grid item xs={12}>
+              <div className={classes.panel}>
+                <Grid container spacing={1}>
+                  <Grid item xs={12}>
                       {encounterDB["-1"][gameType].bossOrderMythicPlus.map((key, i) => (
                         <UFAccordion
                           key={encounterDB["-1"][gameType][key] + "-accordian" + i}
@@ -136,10 +121,9 @@ export default function MythicPlusGearContainer(props) {
                           </AccordionDetails>
                         </UFAccordion>
                       ))}
-                    </Grid>
                   </Grid>
-                </div>
-              </UFTabPanel>
+                </Grid>
+              </div>
             </Grid>
           </Grid>
         </div>
