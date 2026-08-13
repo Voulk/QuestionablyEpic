@@ -91,6 +91,11 @@ export const buildCPM = (spells, spell, efficiency = 0.9) => {
     return 60 / getSpellAttribute(spells[spell], "cooldown") * efficiency;
 }
 
+export const getSpellCooldown = (spells, spell, haste) => {
+    const cooldownData = spells[spell][0].cooldownData;
+    return cooldownData.hasted ? cooldownData.cooldown / haste : cooldownData.cooldown;
+}
+
 export const getSpellCritChance = (spell, statPercentages) => {
     return statPercentages.crit + (spell.statMods?.crit || 0) - 1
 }

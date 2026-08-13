@@ -215,7 +215,7 @@ export class Item {
   }
 
   canBeCatalyzed() {
-    return !this.isCatalystItem && this.itemConversion === CONSTANTS.seasonalItemConversion && ['Head', 'Chest', 'Shoulder', 'Back', 'Wrist', 'Hands', 'Waist', 'Legs', 'Feet'].includes(this.slot);
+    return !this.setID && this.itemConversion === CONSTANTS.seasonalItemConversion && ['Head', 'Chest', 'Shoulder', 'Legs', 'Hands', /*'Back', 'Wrist',  'Waist',  'Feet'*/].includes(this.slot);
   }
 
 

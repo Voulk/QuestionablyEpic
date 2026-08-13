@@ -90,7 +90,7 @@ export default function QEMainMenu(props: Props) {
     gameType === "Retail"
       ? [
           // Gearing
-          { route: "/topgear", disabled: true, tooltip: "TopGear", type: "Gearing", localization: "MainMenu.TopGear", glow: true },
+          { route: "/topgear", disabled: false, tooltip: "TopGear", type: "Gearing", localization: "MainMenu.TopGear", glow: true },
           { route: "/upgradefinder", disabled: true, tooltip: "UpgradeFinder", type: "Gearing", localization: "MainMenu.UpgradeFinder", glow: false },
           { route: "/trinkets", disabled: false, tooltip: "TrinketAnalysis", type: "Gearing", localization: "MainMenu.TrinketAnalysis", glow: false },
           { route: "/embellishments", disabled: false, tooltip: "EmbellishmentAnalysis", type: "Gearing", localization: "MainMenu.EmbellishmentAnalysis", glow: false },

@@ -12,6 +12,7 @@ describe("Test Mistweaver Monk Spell Values", () => {
 
     /* TEST SPELLS */
     // ${"Chi Cocoon"}           | ${(11928)}                       | ${0} 
+    // ${"Revival"}                     | ${(31234)}                      | ${0} 
     // 
     each`
         spellName                        | expectedResult                  | index
@@ -24,7 +25,7 @@ describe("Test Mistweaver Monk Spell Values", () => {
         
         ${"Invigorating Mists"}          | ${(1685)}                       | ${0} 
         ${"Enveloping Mist"}             | ${(3905)}                       | ${0} 
-        ${"Revival"}                     | ${(31234)}                      | ${0} 
+        
         ${"Courage of the White Tiger"}  | ${(4347)}                       | ${0} 
         ${"Vivify"}                      | ${(5038)}                       | ${0} 
 

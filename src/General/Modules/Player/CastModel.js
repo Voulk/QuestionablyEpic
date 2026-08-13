@@ -7,8 +7,6 @@ import { paladinACSpecialQueries, paladinACSpellData, paladinACStatWeights } fro
 import { paladinDefaultSpecialQueries, paladinDefaultSpellData, paladinDefaultStatWeights } from "./ClassDefaults/HolyPaladin/HolyPaladinDefaults";
 
 import { shamanDefaultSpecialQueries, shamanDefaultSpellData, shamanDefaultStatWeights } from "./ClassDefaults/RestoShaman/RestoShamanDefaults";
-import { monkDefaultSpecialQueries, monkDefaultSpellData, monkDefaultStatWeights } from "./ClassDefaults/MistweaverMonk/MonkDefaults";
-import { runChijiCastModel, modelChijiOnUseTrinket, chijiSpecialQueries, chijiSpellData, chijiStatWeights } from "./ClassDefaults/MistweaverMonk/MonkChiji";
 import { holyPriestDefaultSpecialQueries, holyPriestDefaultSpellData, holyPriestDefaultStatWeights } from "./ClassDefaults/HolyPriest/HolyPriestDefaults";
 import { chronoDefaultSpecialQueries, chronoDefaultSpellData, chronoDefaultStatWeights } from "./ClassDefaults/PreservationEvoker/ChronowardenEvokerDefaults";
 import { evokerDefaultSpecialQueries, evokerDefaultSpellData, evokerDefaultStatWeights, runFlameshaperCastModel } from "./ClassDefaults/PreservationEvoker/FlameshaperEvokerDefaults";
@@ -17,7 +15,7 @@ import { discPriestOracleSpecialQueries, discPriestOracleStatWeights, runOracleC
 import { restoShamanProfile, scoreShamanSet } from "./ClassDefaults/RestoShaman/RestoShamanProfile";
 import { scoreEvokerSet } from "./ClassDefaults/PreservationEvoker/PreservationEvokerProfile";
 import { scoreDruidSet } from "./ClassDefaults/RestoDruid/RestoDruidProfile";
-import { scoreMonkSet } from "./ClassDefaults/MistweaverMonk/MistweaverCastProfile";
+import { monkModels } from "./ClassDefaults/MistweaverMonk/MonkModels";
 
 import { holyPriestDefaults } from "General/Modules/Player/ClassDefaults/Classic/Priest/HolyPriestClassic"
 import { discPriestDefaults } from "General/Modules/Player/ClassDefaults/Classic/Priest/DisciplinePriestClassic"
@@ -173,33 +171,17 @@ class CastModel {
       // --- Mistweaver Monk
     } else if (spec === SPEC.MISTWEAVERMONK) {
 
-      if (modelID === "Yu'lon") {
-        this.modelName = "Yu'lon"
-        spellList = monkDefaultSpellData("Raid");
-        specialQueries = monkDefaultSpecialQueries("Raid");
-        this.baseStatWeights = monkDefaultStatWeights("Raid");
-        this.fightInfo.dps = 14000;
-      }
-      else if (modelID === "Dungeon Default") {
-        this.modelName = "Dungeon Default"
-        spellList = monkDefaultSpellData("Dungeon");
-        specialQueries = monkDefaultSpecialQueries(contentType);
-        this.baseStatWeights = monkDefaultStatWeights("Dungeon");
-        this.fightInfo.dps = 16000;
-      }
-      
-      else if (modelID === "Chi-Ji") {
-        this.modelName = "Chi-Ji"
-        this.modelType["Raid"] = "CastModel";
-        this.modelType["Dungeon"] = "Default";
-        this.runCastModel = scoreMonkSet;
-        this.heroTree = "Conduit of the Celestials";
-        this.talents = restoShamanProfile.defaultTalents;
-        this.modelOnUseTrinket = modelChijiOnUseTrinket;
-        spellList = chijiSpellData(contentType);
-        specialQueries = chijiSpecialQueries(contentType);
-        this.baseStatWeights = chijiStatWeights("Raid");
-        //this.fightInfo.dps = 600000;
+      const monkModel = monkModels[modelID];
+      if (monkModel) {
+        this.modelName = monkModel.modelName || modelID;
+        this.heroTree = monkModel.heroTree;
+        this.modelType[contentType] = monkModel.modelType;
+        this.talents = monkModel.talents;
+        this.runCastModel = monkModel.runCastModel;
+        spellList = monkModel.spellData(contentType);
+        specialQueries = monkModel.specialQueries(contentType);
+        this.baseStatWeights = monkModel.statWeights(contentType);
+        if (monkModel.onUseTrinket) this.modelOnUseTrinket = monkModel.onUseTrinket;
       }
 
     } else if (spec === SPEC.DISCPRIEST) {
