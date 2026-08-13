@@ -257,7 +257,7 @@ export default function TrinketChart({ player }) {
 
   const trinketText =
     gameType === "Retail"
-      ? "Trinkets have not yet been tuned in-game. Changes are extremely likely!"
+      ? "Trinket tuning from 13/8 is included in the chart."
       : "Rankings use a sample stat profile, use Top Gear to fine tune results for your specific loadout.";
 
   let exportOptions = ["Download JSON"];

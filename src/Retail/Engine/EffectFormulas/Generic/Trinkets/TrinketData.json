@@ -32,11 +32,11 @@
     ],
     "Kyrakka's Searing Embers": [
         {
-            "coefficient": 89.46,
+            "coefficient": 160.850784,
             "scalingClass": -8
         },
         {
-            "coefficient": 28.374,
+            "coefficient": 42.597218,
             "scalingClass": -8
         }
     ],
@@ -86,7 +86,7 @@
     ],
     "Gaze of the Alnseer": [
         {
-            "coefficient": 0.144,
+            "coefficient": 0.115517,
             "scalingClass": -1
         }
     ],
@@ -156,11 +156,11 @@
     ],
     "Mycolic Medicine": [
         {
-            "coefficient": 76.97,
+            "coefficient": 100.0616,
             "scalingClass": -9
         },
         {
-            "coefficient": 43.984,
+            "coefficient": 57.178978,
             "scalingClass": -9
         }
     ],
@@ -186,7 +186,7 @@
     ],
     "Unstable Felheart Crystal": [
         {
-            "coefficient": 588.763,
+            "coefficient": 765.391968,
             "scalingClass": -9
         },
         {
@@ -280,7 +280,7 @@
     ],
     "Crucible of Erratic Energies": [
         {
-            "coefficient": 0.659,
+            "coefficient": 0.562111,
             "scalingClass": -7
         }
     ],
@@ -304,25 +304,25 @@
     ],
     "Soulcoiler Ritual Vessel": [
         {
-            "coefficient": 504.405,
+            "coefficient": 428.74292,
             "scalingClass": -9
         }
     ],
     "Gebbo's Bottomless Bag": [
         {
-            "coefficient": 0.207,
+            "coefficient": 0.145901,
             "scalingClass": -7
         },
         {
-            "coefficient": 2.472,
+            "coefficient": 1.750399,
             "scalingClass": -7
         },
         {
-            "coefficient": 2.472,
+            "coefficient": 1.750399,
             "scalingClass": -7
         },
         {
-            "coefficient": 1.236,
+            "coefficient": 0.875406,
             "scalingClass": -7
         },
         {
@@ -330,15 +330,15 @@
             "scalingClass": -9
         },
         {
-            "coefficient": 0.773,
+            "coefficient": 0.546819,
             "scalingClass": -7
         },
         {
-            "coefficient": 0.153,
+            "coefficient": 0.109529,
             "scalingClass": -7
         },
         {
-            "coefficient": 0.178,
+            "coefficient": 0.125235,
             "scalingClass": -7
         }
     ],
@@ -350,11 +350,11 @@
     ],
     "Hex Lord's Dooming Idol": [
         {
-            "coefficient": 0.012,
+            "coefficient": 0.008022,
             "scalingClass": -1
         },
         {
-            "coefficient": 0.086,
+            "coefficient": 0.098711,
             "scalingClass": -1
         },
         {
@@ -364,7 +364,7 @@
     ],
     "Preternatural Antivenom": [
         {
-            "coefficient": 370.6,
+            "coefficient": 481.779968,
             "scalingClass": -8
         }
     ],

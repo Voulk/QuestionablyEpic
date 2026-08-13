@@ -4,7 +4,7 @@ export default function MessageOfTheDay({ gameType = "Retail" }) {
   //prettier-ignore
   const messageOfTheDay: string[] = gameType === "Retail" ?
    [
-    "QE is updated for 12.1. Upgrade Finder will return shortly, after the patch is stable. Trinkets have NOT been tuned in-game yet. Expect changes."
+    "QE is updated for 12.1. Upgrade Finder will return shortly, after the patch is stable. Trinkets HAVE been tuned in-game now. Expect changes."
   ] : 
   [
     "The Siege of Orgrimmar update is now live. Please report any bugs you find to the QE Live Discord.",
