@@ -36,18 +36,17 @@ export const restoShamanProfile = {
     defaultStatWeights: {
         // Used in the trinket chart and for Quick Compare. Not used in Top Gear.
         intellect: 1,
-        crit: 0.52,
-        mastery: 0.39,
-        versatility: 0.43,
-        haste: 0.55,
+        crit: 0.71,
+        mastery: 0.55,
+        versatility: 0.59,
+        haste: 0.70,
         hps: 0.304, // 
     },
     specialQueries: {
         // Any special information we need to pull.
     },
-    defaultTalents: 
-        "CgQAAAAAAAAAAAAAAAAAAAAAAAAAAgBAAAAzMzsssNjZGjZGzMDjFYDmxiGbDIzAbmhZw2YMTz2yMDzYWYxMzMmhZZAAAgZmBzMAwgZA" // Totemic
-        //"CgQALMl7AwW51MWzGneuHE3tPCAAAgBAAAAzMzsssNjZGjZGzMMWMzCMgJYWYCMWMDzwsNGz0stMzwMmNWMzMzDMYWGAAAYmZAwMDMYG" // Farseer
+    defaultTalents: "CgQAAAAAAAAAAAAAAAAAAAAAAAAAAgBAAAAzMzsssNjZGjZGzMDjFYDmxiGbDIzAbmhZw2YMTz2yMDzYWYxMzMmhZZAAAgZmBzMAwgZA", // Totemic
+    farseerTalents: "CgQALMl7AwW51MWzGneuHE3tPCAAAgBAAAAzMzsssNjZGjZGzMMWMzCMgJYWYCMWMDzwsNGz0stMzwMmNWMzMzDMYWGAAAYmZAwMDMYG" // Farseer
 }
 
 // Ascendance spells are modified copies of the base ones so we add their own entries
@@ -100,7 +99,7 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
 
     // Apply Talents
     const talents = initialState.talents;
-    const talentImport = getSelectedTalentsFromString(restoShamanProfile.defaultTalents, "Restoration Shaman")
+    const talentImport = getSelectedTalentsFromString(playerData.heroTree === "Totemic" ? restoShamanProfile.defaultTalents : restoShamanProfile.farseerTalents, "Restoration Shaman")
 
     if (!playerData.hasShield && playerData.heroTree === "Totemic") {
         talentImport.filter(talent => talent.talentName === "Supportive Imbuements")[0].talentRanks = 0;
@@ -127,12 +126,12 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
 
     // Ratio of how to spend extra time on filler spells
     const fillerSpellsPriority: Record<string, number> = {
-        "Chain Heal": 1,
-        "Healing Wave": 0
+        "Chain Heal": 0.6,
+        "Healing Wave": 0.0
     }
     const ascendanceFillerSpellsPriority: Record<string, number> = {
-        "Chain Heal": 1,
-        "Healing Wave": 0
+        "Chain Heal": 0.75,
+        "Healing Wave": 0.25
     }
 
     // Season 1 2-piece
