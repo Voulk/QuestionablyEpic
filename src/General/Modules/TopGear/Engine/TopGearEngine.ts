@@ -1115,6 +1115,7 @@ function getHighestWeight(castModel : any, exclusion?: string): "crit" | "haste"
 function compileStats(stats: Stats, bonus_stats: Stats) {
   for (var stat in stats) {
     stats[stat] += stat in bonus_stats ? bonus_stats[stat] : 0;
+    stats[stat] = Math.max(stats[stat], 0); // Make sure we don't have negative stats. Some effects can bring us below 0, but gear can make up for it.
   }
 
   return stats;

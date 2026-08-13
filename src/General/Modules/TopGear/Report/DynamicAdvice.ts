@@ -39,15 +39,14 @@ export const getDynamicAdvice = (report : any, strippedPlayer: any, contentType:
     if (contentType === "Dungeon") {
         if (strippedPlayer.model === "Healing Focused") {
             advice.push("This is a healing focused set and values mastery quite heavily. You might notice some players choose to drop mastery in order to maximize DPS. \
-                This is a reasonable choice but it can be smarter to focus more on healing to begin with. You can change playstyle in QE Live to a more damage \
-                focused one once you're comfortable.")
+                It can be smarter to focus more on healing to begin with.")
         }
         else if (strippedPlayer.model === "Balanced" || strippedPlayer.model === "Damage Focused") {
             advice.push("This is a damage focused set and plays little mastery as a result. There's also a healing focused profile which I'd recommend to newer players.")
         }
     }
 
-    if (differentials.length > 0 && Math.abs(differentials[0].rawDifference) < 600) {
+    if (differentials.length > 0 && Math.abs(differentials[0].rawDifference) < 800) {
         advice.push("Your top alternative is very close in value. You could safely wear either here without a noticeable impact on performance.")
     }
 
@@ -62,7 +61,7 @@ export const getDynamicAdvice = (report : any, strippedPlayer: any, contentType:
     
     }
     if (gameType === "Retail") {
-        advice.push("Your choice of Weapon Enchant isn't too important and any secondary enchant is fine. Similarly it's acceptable to swap to Avoidance enchants for high Mythic+ dungeons.")
+        advice.push("It's acceptable to swap to Avoidance enchants for high Mythic+ dungeons.")
     }
     
 
