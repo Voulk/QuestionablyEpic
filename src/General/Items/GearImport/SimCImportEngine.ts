@@ -258,11 +258,8 @@ export function runSimC(simCInput: string, player: Player, contentType: contentT
       const bestPerVariant = new Map<string, Item>();
       player.activeItems.forEach((item: Item) => {
         if (!item.canBeCatalyzed()) return;
-        const key = `${item.slot}|${item.socket}|${item.tertiary}`;
-        const current = bestPerVariant.get(key);
-        if (!current || item.level > current.level) bestPerVariant.set(key, item);
+        player.catalyzeItemInPlace(item)
       });
-      bestPerVariant.forEach((item: Item) => player.catalyzeItem(item));
     }
 
     player.savedPTRString = simCInput;

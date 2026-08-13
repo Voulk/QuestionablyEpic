@@ -42,9 +42,9 @@ export const chijiSpecialQueries = (contentType) => {
     specialQueries = {
       OneManaHealing: 6.8,
       cooldownMult: {
-        c60: 1.16,
+        c60: 1,
         c90: 1,
-        c120: 1.75, // This is to match the results from our cast profile.
+        c120: 1, // This is to match the results from our cast profile.
         c180: 1,
       },
       HoldYourGroundUptime: 0.6
