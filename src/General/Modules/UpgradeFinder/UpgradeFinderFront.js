@@ -14,6 +14,7 @@ import CharacterPanel from "../CharacterPanel/CharacterPanel";
 import { generateReportCode } from "General/Modules/TopGear/Engine/TopGearEngineShared";
 import ReactGA from "react-ga";
 import { itemLevels } from "Databases/ItemLevelsDB";
+import { MPLUS_KEY_REWARDS, getMPlusKeyReward, loadUfDungeonDifficulty } from "Databases/MPlusKeyRewards";
 import { trackPageView } from "Analytics";
 import IconHeader from "./IconHeader";
 
@@ -176,23 +177,6 @@ const sendReport = (shortReport) => {
 
 
 
-const mythicPlusLevels = [
-  { value: 292, label: "M0" },
-  { value: 295, label: "+2/3" },
-  { value: 298, label: "+4" },
-  { value: 302, label: "+5" },
-  { value: 305, label: "+6/7" },
-  { value: 308, label: "+8/9" },
-  { value: 311, label: "+10" },
-  { value: 315, label: "Vault" },
-  { value: 318, label: "" },
-  { value: 321, label: "" },
-  { value: 328, label: "" },
-  { value: 334, label: "" },
-  // { value: 285, label: "" },
-  // { value: 289, label: "" },
-]
-
 const getSessionStorageOrDefault = (key, defaultValue) => {
   const stored = sessionStorage.getItem(key);
   if (!stored) {
@@ -224,7 +208,10 @@ export default function UpgradeFinderFront(props) {
     // Keep only one value in case older session data contains two selections.
     return [stored[stored.length - 1]];
   });
-  const [ufDungeonDifficulty, setUfDungeonDifficulty] = useState(() => getSessionStorageOrDefault("ufDungeonDifficulty", gameType === "Retail" ? 6 : 1));
+  const [ufDungeonDifficulty, setUfDungeonDifficulty] = useState(() => {
+    if (gameType !== "Retail") return getSessionStorageOrDefault("ufDungeonDifficulty", 1);
+    return loadUfDungeonDifficulty();
+  });
   const [ufPvPRank, setUfPvPRank] = useState(() => getSessionStorageOrDefault("ufPvPRank", 0));
   const [ufCraftedLevel, setUfCraftedLevel] = useState(() => Math.min(getSessionStorageOrDefault("ufCraftedLevel", 2), 2));
   const [ufCraftedStats, setUfCraftedStats] = useState(() => getSessionStorageOrDefault("ufCraftedStats", "Crit / Haste"));
@@ -273,8 +260,8 @@ export default function UpgradeFinderFront(props) {
     setUfCraftedLevel(newLevel);
   }
 
-  const setDungeonDifficulty = (event, difficulty) => {
-    if (difficulty <= (mythicPlusLevels.length - 1) && difficulty >= 0) setUfDungeonDifficulty(difficulty);
+  const setDungeonDifficulty = (difficulty) => {
+    if (difficulty <= MPLUS_KEY_REWARDS.length - 1 && difficulty >= 0) setUfDungeonDifficulty(difficulty);
   };
 
   const setBCDungeonDifficulty = (event, difficulty) => {
@@ -348,15 +335,7 @@ export default function UpgradeFinderFront(props) {
           "Hit Go at the bottom of the page.",
         ];
 
-  const marks = mythicPlusLevels.map((level, index) => {
-    return { value: index,
-      label: (
-        <div className={classes.labels}>
-          <div>{level.value}</div>
-          <div>{level.label}</div>
-        </div>
-  )};
-  });
+  const selectedMPlusKey = getMPlusKeyReward(ufDungeonDifficulty);
 
   const [dungeonBC, setDungeonBC] = React.useState("Heroic");
 
@@ -397,7 +376,7 @@ export default function UpgradeFinderFront(props) {
 
   const getSimCStatus = (player) => {
     if (player.activeItems.length === 0) return "Missing";
-    else if (checkCharacterValid(player) === false) return "Invalid";
+    else if (checkCharacterValid(player, gameType) === false) return "Invalid";
     else return "Good";
   };
 
@@ -496,30 +475,43 @@ export default function UpgradeFinderFront(props) {
           <Grid item xs={12}>
             <Paper elevation={3} sx={{ textAlign: "center", width: { xs: "100%", sm: "80%" }, margin: "auto" }}>
               <div style={{ padding: 8 }}>
-              <Grid container justifyContent="center" spacing={1}>
-                <Grid item xs={12}>
-                <IconHeader
+                <Grid container justifyContent="center" spacing={1}>
+                  <Grid item xs={12}>
+                    <IconHeader
                       icon={require("Images/inv_relics_hourglass.jpg")}
                       alt="M+ Logo"
                       text={"Mythic+ Key Level"}
-                      />
-                  <Grid item xs={12}>
-                    <Typography align="center">
-                      {t("UpgradeFinderFront.MythicPlusBody")}
-                    </Typography>
+                    />
+                    <Grid item xs={12}>
+                      <Typography align="center">{t("UpgradeFinderFront.MythicPlusBody")}</Typography>
+                    </Grid>
                   </Grid>
                 </Grid>
-              </Grid>
-                <UpgradeFinderSlider
-                  className={classes.slider}
-                  style={{ color: "#52af77" }}
-                  value={ufDungeonDifficulty}
-                  step={null}
-                  valueLabelDisplay="off"
-                  marks={marks}
-                  max={mythicPlusLevels.length - 1}
-                  change={setDungeonDifficulty}
-                />
+
+                <Grid container justifyContent="center" spacing={1} columns={8} className={classes.difficultyGrid}>
+                  {MPLUS_KEY_REWARDS.map((key) => (
+                    <Grid item xs={2} key={key.index}>
+                      <ToggleButton
+                        classes={{
+                          root: classes.difficultyToggle,
+                          selected: classes.difficultyToggleSelected,
+                        }}
+                        value="check"
+                        fullWidth
+                        selected={ufDungeonDifficulty === key.index}
+                        onChange={() => {
+                          setDungeonDifficulty(key.index);
+                        }}
+                      >
+                        {key.label}
+                      </ToggleButton>
+                    </Grid>
+                  ))}
+                </Grid>
+
+                <Typography align="center" style={{ marginTop: 12, color: "rgba(255, 255, 255, 0.78)", fontSize: "0.9rem" }}>
+                  {`End of run: ${selectedMPlusKey.endIlvl} ${selectedMPlusKey.endTrack} · Vault / Bonus: ${selectedMPlusKey.vaultIlvl} ${selectedMPlusKey.vaultTrack}`}
+                </Typography>
               </div>
             </Paper>
           </Grid>

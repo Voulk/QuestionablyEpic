@@ -1,14 +1,14 @@
 import React from "react";
 import { dungeonStyles, sharedAccordionStyles, sharedAccordionSummaryStyles, sharedAccordionDetailsStyles } from "./PanelStyles";
-import { Typography, Grid, Divider, AppBar, Tabs, Tab } from "@mui/material";
+import { Typography, Grid, Divider, AppBar } from "@mui/material";
 import ItemUpgradeCard from "./ItemUpgradeCard";
 import DungeonHeaderIcons from "General/Modules/IconFunctions/DungeonHeaderIcons";
 import "./Panels.css";
 import { useTranslation } from "react-i18next";
-import { filterItemListBySource, getDifferentialByID, getNumUpgrades, filterItemListByDropLoc } from "../../../Engine/ItemUtilities";
+import { filterItemListByDropLoc, getDifferentialByID, getNumUpgrades } from "../../../Engine/ItemUtilities";
 import { filterClassicItemListBySource } from "../../../Engine/ItemUtilitiesClassic";
 import { encounterDB } from "../../../../Databases/InstanceDB";
-import { itemLevels } from "../../../../Databases/ItemLevelsDB";
+import { getMPlusKeyReward, mplusEndAndVaultSameTrack, TRACK_CAPS } from "../../../../Databases/MPlusKeyRewards";
 import { useSelector } from "react-redux";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -16,28 +16,34 @@ import UFAccordion from "./ufComponents/ufAccordian";
 import UFAccordionSummary from "./ufComponents/ufAccordianSummary";
 import UFTabPanel from "./ufComponents/ufTabPanel";
 
+function sectionHeaderStyle(highlighted) {
+  if (highlighted) {
+    return {
+      background: "linear-gradient(180deg, rgba(242, 191, 89, 0.16) 0%, rgba(242, 191, 89, 0.08) 100%)",
+      borderRadius: 8,
+      padding: "7px 12px",
+      border: "1px solid rgba(242, 191, 89, 0.34)",
+      boxShadow: "inset 0 0 0 1px rgba(242, 191, 89, 0.14)",
+    };
+  }
+  return {
+    background: "rgba(255, 255, 255, 0.06)",
+    borderRadius: 8,
+    padding: "6px 10px",
+  };
+}
+
 export default function MythicPlusGearContainer(props) {
   const classes = dungeonStyles();
   const { t, i18n } = useTranslation();
   const currentLanguage = i18n.language;
-  const itemList = props.itemList;
-
   const itemDifferentials = props.itemDifferentials;
   const difficulty = props.playerSettings.dungeon;
   const gameType = useSelector((state) => state.gameType);
+  const keyReward = getMPlusKeyReward(difficulty);
+  const sameTrack = mplusEndAndVaultSameTrack(difficulty);
 
-  function a11yProps(index) {
-    return {
-      id: `simple-tab-${index}`,
-      "aria-controls": `simple-tabpanel-${index}`,
-    };
-  }
-
-  const [tabvalue, setTabValue] = React.useState(0);
-  const handleTabChange = (event, newValue) => {
-    setTabValue(newValue);
-  };
-
+  const [tabvalue] = React.useState(0);
 
   const contentGenerator = (gameType) => {
     return (
@@ -53,19 +59,6 @@ export default function MythicPlusGearContainer(props) {
                 }}
                 elevation={1}
               >
-                {/*<Tabs
-                  value={tabvalue}
-                  onChange={handleTabChange} 
-                  aria-label="simple tabs example"
-                  variant="fullWidth"
-                  style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.22)" }}
-                  TabIndicatorProps={{ style: { backgroundColor: "#F2BF59" } }}
-              > */}
-                  {/* ------------------------------------------ Mythic + ------------------------------------------*/}
-                  {/*<Tab className={classes.mythicPlusHeader} label={"Mythic +"} {...a11yProps(0)} /> */}
-                  {/* ------------------------------------------ Mythic 0 ------------------------------------------ */}
-                  {/*<Tab className={classes.mythicHeader} label={"Dawn of the Infinite"} {...a11yProps(1)} /> */}
-                {/*</Tabs> */}
               </AppBar>
             </Grid>
             <Grid item xs={12}>
@@ -77,21 +70,20 @@ export default function MythicPlusGearContainer(props) {
                         <UFAccordion
                           key={encounterDB["-1"][gameType][key] + "-accordian" + i}
                           elevation={0}
-                          defaultExpanded={true}
-                            style={sharedAccordionStyles}
+                          defaultExpanded={false}
+                          style={sharedAccordionStyles}
                         >
                           <UFAccordionSummary
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="panel1a-content"
                             id="panel1a-header"
-                              style={sharedAccordionSummaryStyles}
+                            style={sharedAccordionSummaryStyles}
                           >
                             <Typography
                               variant="h6"
                               color="primary"
                               align="left"
                               style={{
-                                // backgroundColor: "#35383e",
                                 borderRadius: "4px 4px 0px 0px",
                                 display: "flex",
                               }}
@@ -99,17 +91,47 @@ export default function MythicPlusGearContainer(props) {
                               <img style={{ height: 36, width: 56, verticalAlign: "middle" }} src={DungeonHeaderIcons(key)} alt={encounterDB["-1"][gameType][key]} />
                               <Divider flexItem orientation="vertical" style={{ margin: "0px 5px 0px 0px" }} />
                               {encounterDB["-1"][gameType][key]} -{" "}
-                              {
-                                getNumUpgrades(itemDifferentials, -1, key, difficulty)
-                              }{" "}
-                              Upgrades
+                              {getNumUpgrades(itemDifferentials, -1, key, difficulty, true)} Upgrades
                             </Typography>
                           </UFAccordionSummary>
                           <AccordionDetails style={sharedAccordionDetailsStyles}>
-                            <Grid xs={12} container spacing={1}>
-                              {[...filterItemListByDropLoc(itemDifferentials, -1, key, "Dungeon", difficulty)].map((item, index) => (
-                                <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
-                              ))}
+                            <Grid item xs={12} sm container direction="row" spacing={1}>
+                              <Grid item xs={12} container spacing={1}>
+                                <Grid item xs={12}>
+                                  <div style={sectionHeaderStyle(true)}>
+                                    <Typography variant="h6" color="primary" align="left">
+                                      {keyReward.label} - Upgraded Vault / Bonus Rolls ({TRACK_CAPS[keyReward.vaultTrack]} {keyReward.vaultTrack})
+                                    </Typography>
+                                  </div>
+                                </Grid>
+                                {[...filterItemListByDropLoc(itemDifferentials, -1, key, "Dungeon", difficulty, "bonus")].map((item, index) => (
+                                  <ItemUpgradeCard key={"bonus-" + index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.item, item.level)} slotPanel={false} />
+                                ))}
+                              </Grid>
+
+                              {!sameTrack ? (
+                                <Grid item xs={12} container spacing={1}>
+                                  <Grid item xs={12}>
+                                    <Typography variant="h6" color="primary" align="left" style={sectionHeaderStyle(false)}>
+                                      {keyReward.label} - Upgraded End of Run ({TRACK_CAPS[keyReward.endTrack]} {keyReward.endTrack})
+                                    </Typography>
+                                  </Grid>
+                                  {[...filterItemListByDropLoc(itemDifferentials, -1, key, "Dungeon", difficulty, "max")].map((item, index) => (
+                                    <ItemUpgradeCard key={"max-" + index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.item, item.level)} slotPanel={false} />
+                                  ))}
+                                </Grid>
+                              ) : null}
+
+                              <Grid item xs={12} container spacing={1}>
+                                <Grid item xs={12}>
+                                  <Typography variant="h6" color="primary" align="left" style={sectionHeaderStyle(false)}>
+                                    {keyReward.label} - End of Run ({keyReward.endIlvl} {keyReward.endTrack})
+                                  </Typography>
+                                </Grid>
+                                {[...filterItemListByDropLoc(itemDifferentials, -1, key, "Dungeon", difficulty, "drop")].map((item, index) => (
+                                  <ItemUpgradeCard key={"drop-" + index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.item, item.level)} slotPanel={false} />
+                                ))}
+                              </Grid>
                             </Grid>
                           </AccordionDetails>
                         </UFAccordion>
@@ -118,57 +140,6 @@ export default function MythicPlusGearContainer(props) {
                   </Grid>
                 </div>
               </UFTabPanel>
-
-              {/*<UFTabPanel key={"panel1"} value={tabvalue} index={1}>
-                <div className={classes.panel}>
-                  <Grid container spacing={1}>
-                    <Grid item xs={12}>
-                      {encounterDB[1209].bossOrder.map((key, i) => (
-                        <UFAccordion
-                          key={encounterDB[1209][key].name[currentLanguage] + "-accordian" + i}
-                          elevation={0}
-                          style={{
-                            backgroundColor: "rgba(255, 255, 255, 0.12)",
-                          }}
-                        >
-                          <UFAccordionSummary
-                            expandIcon={<ExpandMoreIcon />}
-                            aria-controls="panel1a-content"
-                            id="panel1a-header"
-                            style={{
-                              verticalAlign: "middle",
-                            }}
-                          >
-                            <Typography
-                              variant="h6"
-                              color="primary"
-                              align="left"
-                              style={{
-                                // backgroundColor: "#35383e",
-                                borderRadius: "4px 4px 0px 0px",
-                                display: "flex",
-                              }}
-                            >
-                              {bossHeaders(key, { height: 36, verticalAlign: "middle" }, "UpgradeFinder")}
-                              <Divider flexItem orientation="vertical" style={{ margin: "0px 5px 0px 0px" }} />
-                              {encounterDB[1209][key].name[currentLanguage]} -{" "}
-                              {[...filterItemListBySource(itemDifferentials, 1209, key, 441)].map((item) => getDifferentialByID(itemDifferentials, item.id, item.level)).filter((item) => item !== 0).length}{" "}
-                              Upgrades
-                            </Typography>
-                          </UFAccordionSummary>
-                          <AccordionDetails style={{ backgroundColor: "#191c23" }}>
-                            <Grid xs={12} container spacing={1}>
-                              {[...filterItemListBySource(itemDifferentials, 1209, key, 441)].map((item, index) => (
-                                <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
-                              ))}
-                            </Grid>
-                          </AccordionDetails>
-                        </UFAccordion>
-                      ))}
-                    </Grid>
-                  </Grid>
-                </div>
-                    </UFTabPanel> */}
             </Grid>
           </Grid>
         </div>
@@ -198,7 +169,6 @@ export default function MythicPlusGearContainer(props) {
             color="primary"
             align="left"
             style={{
-              // backgroundColor: "#35383e",
               borderRadius: "4px 4px 0px 0px",
               display: "flex",
             }}

@@ -435,7 +435,6 @@ export function filterItemListByDropLoc(itemList: any[], sourceInstance: number,
   let temp = itemList.filter(function (item) {
     //else if (sourceInstance === -17 && pvpRank === 5 && ["1H Weapon", "2H Weapon", "Offhand", "Shield"].includes(item.slot)) expectedItemLevel += 7;
     //console.log("loc: " + loc + " vs " + item.dropLoc + " diff: " + difficulty + " vs " + item.dropDifficulty + " source: " + sourceInstance + " vs " + item.source.instanceId + " boss: " + sourceBoss + " vs " + item.source.encounterId)
-    console.log("Drop type: " + dropType + " vs " + item.dropType)
     return loc === item.dropLoc && difficulty === item.dropDifficulty && dropType === item.dropType && ((item.source.instanceId == sourceInstance && item.source.encounterId == sourceBoss) || (item.source.instanceId == sourceInstance && sourceBoss == 0));
   });
   return temp;
@@ -501,12 +500,15 @@ export function getDifferentialByID(diffList: any, id: number, level: number) {
 }
 
 // Returns the number of upgrades (score > 0) for a given section.
-export const getNumUpgrades = (items: any[], raidID : number, bossID : number, difficultyID? : number) => {
-  if (difficultyID) return items.filter((item: any) => item.source.instanceId === raidID && item.source.encounterId === bossID && item.dropDifficulty === difficultyID && item.score > 0).length;
-  else {
-    return items.filter((item: any) => item.source.instanceId === raidID && item.source.encounterId === bossID && item.score > 0).length;
-
-  }
+// uniqueByItem: count each item id once across drop/max/bonus variants (for accordion headers).
+export const getNumUpgrades = (items: any[], raidID : number, bossID : number, difficultyID? : number, uniqueByItem: boolean = false) => {
+  const filtered = items.filter((item: any) => {
+    if (item.source.instanceId !== raidID || item.source.encounterId !== bossID || !(item.score > 0)) return false;
+    if (difficultyID !== undefined && item.dropDifficulty !== difficultyID) return false;
+    return true;
+  });
+  if (uniqueByItem) return new Set(filtered.map((item: any) => item.item)).size;
+  return filtered.length;
 }
 
 // Returns true or false based on whether an ID exists in our item database.

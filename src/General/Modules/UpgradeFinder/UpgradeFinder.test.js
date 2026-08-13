@@ -29,5 +29,3 @@ describe("LFR Item Level tests", () => {
         expect(getSetItemLevel(kazzara, lfrSettings, 0, 202612)).toEqual(408);
     }) */
 })
-
-
