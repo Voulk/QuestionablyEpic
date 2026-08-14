@@ -19,7 +19,7 @@ export const otherTrinketData = [
               let bonus_stats: Stats = {};
   
               // Passive Mastery Portion
-              bonus_stats.mastery = processedValue(trinketRawData["Pulse Seeker's Oculus"][0], itemLevel);
+              bonus_stats.mastery = processedValue(trinketRawData["Pulse Seeker's Oculus"][1], itemLevel);
   
               return bonus_stats;
               }
