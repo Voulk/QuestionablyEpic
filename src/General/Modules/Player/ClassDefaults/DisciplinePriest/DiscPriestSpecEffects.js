@@ -7,18 +7,18 @@ import { DISCSPELLS } from "General/Modules/Player/ClassDefaults/DisciplinePries
 export const getDiscPriestSpecEffect = (effectName, player, contentType) => {
   let bonus_stats = {};
 
-  if (effectName === "DPriest S3-2") {
+  if (effectName === "Discipline Priest S3-2") {
 
   }
-  else if (effectName === "DPriest S3-4") {
+  else if (effectName === "Discipline Priest S3-4") {
 
 
   }
-  else if (effectName === "DPriest S2-2") {
+  else if (effectName === "Discipline Priest S2-2") {
     bonus_stats.bonusHPS = 0.21;
 
   }
-  else if (effectName === "DPriest S2-4") {
+  else if (effectName === "Discipline Priest S2-4") {
     bonus_stats.bonusHPS = 0.018;
   }
   else if (effectName === "Discipline Priest S1-2") {
