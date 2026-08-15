@@ -19,6 +19,17 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+      {
+    version: "12.1 / 5.5.4",
+    update: 3,
+    date: "August 14",
+    changes: [ 
+      "Pulse Seeker's Oculus now has the correct amount of mastery.",
+      "Top Gear reports will now include Catalyzed stats.",
+      "Fixed a bug with item tracks.",
+      "Resto Shaman haste valuation on the trinket chart is no longer incorrectly low."
+    ]
+  },
     {
     version: "12.1 / 5.5.4",
     update: 2,
