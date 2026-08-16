@@ -199,7 +199,7 @@
             "school": "holy",
             "cost": 3.6,
             "coeff": 6.82,
-            "aura": 2.2,
+            "aura": 2.42,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -220,7 +220,7 @@
             "school": "holy",
             "cost": 2.6,
             "coeff": 4.638,
-            "aura": 2.49,
+            "aura": 2.7390000000000003,
             "expectedOverheal": 0.03,
             "secondaries": [
                 "mastery",
@@ -236,7 +236,7 @@
         {
             "displayInfo": {
                 "id": 1253593,
-                "icon": false,
+                "icon": "inv12_apextalent_priest_voidshield",
                 "spellName": "Void Shield"
             },
             "castTime": 0.0,
@@ -246,8 +246,8 @@
                 "cooldown": 7.5,
                 "hasted": false
             },
-            "coeff": 7.0,
-            "aura": 2.49,
+            "coeff": 4.638,
+            "aura": 2.7390000000000003,
             "expectedOverheal": 0.03,
             "secondaries": [
                 "mastery",
@@ -277,7 +277,7 @@
                 "maxCharges": 1
             },
             "coeff": 5.75,
-            "aura": 1.0,
+            "aura": 1.1,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -320,8 +320,8 @@
                 "charges": 1,
                 "maxCharges": 1
             },
-            "coeff": 3.4884,
-            "aura": 1.0,
+            "coeff": 4.011,
+            "aura": 1.1,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -348,8 +348,8 @@
                 "charges": 1,
                 "maxCharges": 1
             },
-            "coeff": 3.4884,
-            "aura": 1.0,
+            "coeff": 4.011,
+            "aura": 1.1,
             "secondaries": [
                 "crit",
                 "versatility",

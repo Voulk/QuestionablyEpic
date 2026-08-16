@@ -7,7 +7,7 @@ export const dungeonTrinketData =
 [
   { // 
         name: "Vile Vial of Volatile Venom",
-        description: "",
+        description: "Just not particularly appealing",
         addonDescription: "",
         effects: [
           { // Random stat gain
@@ -39,7 +39,7 @@ export const dungeonTrinketData =
       },
     {
       name: "Preternatural Antivenom",
-      description: "",
+      description: "Will be good if it gets a nice 200% buff",
       addonDescription: "",
       effects: [
         {  // HoT effect
@@ -63,6 +63,7 @@ export const dungeonTrinketData =
     /* ---------------------------------------------------------------------------------------------- */
 
     name: "Kyrakka's Searing Embers",
+    description: "Disastrous",
     effects: [
       { // Healing Portion
         secondaries: ['haste', 'crit', 'versatility'],
@@ -90,6 +91,8 @@ export const dungeonTrinketData =
     /* ---------------------------------------------------------------------------------------------- */
 
     name: "Ruby Whelp Shell",
+    description: "Can be trained over 6 days in order to proc one of its 6 effects more frequently. There's a setting in QE Live for this and it will impact its value.",
+    setting: true,
     effects: [
       { // ST Damage Portion
         secondaries: ['crit', 'versatility'],
@@ -140,7 +143,6 @@ export const dungeonTrinketData =
         return {...effect, ...trinketRawData["Ruby Whelp Shell"][index]};
       });
       
-
       const bigProc = 0.75; // This is likely to be an underestimation but it's better to be cautious until we have more data.
       const smallProc = (1 - bigProc) / 5;
 
@@ -279,8 +281,8 @@ export const dungeonTrinketData =
     },
     {
       name: "Seed of Radiant Hope",
-      description: "Currently undertuned.",
-      addonDescription: "Currently undertuned.",
+      description: "Extremely undertuned. Quite bad even if you proc the extra heal every time.",
+      addonDescription: "",
       effects: [
         {  // HoT effect
           secondaries: ['crit', 'versatility'],
@@ -325,8 +327,8 @@ export const dungeonTrinketData =
     },
         {
       name: "Unstable Felheart Crystal",
-      description: "A strong niche, but poor tuning prevents Unstable Felheart Crystal from being useful - even in Mythic+.",
-      addonDescription: "A strong niche, but poor tuning prevents Unstable Felheart Crystal from being useful - even in Mythic+.",
+      description: "Might find niche use in Mythic+ as a single target shield. The tuning is not really great for its 2-minute cooldown.",
+      addonDescription: "",
       effects: [
         { 
           secondaries: ['versatility'],
@@ -343,7 +345,7 @@ export const dungeonTrinketData =
     },
     {
       name: "Mycolic Medicine",
-      description: "Dreadful Trinket",
+      description: "The flat intellect is the only thing keeping it from the bottom of the chart.",
       addonDescription: "Dreadful Trinket",
       effects: [
         {  // Instant Heal
@@ -452,8 +454,8 @@ export const dungeonTrinketData =
     },
       { // 
         name: "Freightrunner's Flask",
-        description: "A fine on-use trinket that has better alternatives elsewhere in the game. C-tier.",
-        addonDescription: "A fine on-use trinket that has better alternatives elsewhere in the game. C-tier.",
+        description: "A reasonable crit on-use trinket that just isn't tuned high enough to find a permanent home.",
+        addonDescription: "",
         effects: [
           { // Int Proc
             duration: 15,
@@ -471,7 +473,7 @@ export const dungeonTrinketData =
       },
       { // 
         name: "Stormbound Emblem of Dazar",
-        description: "",
+        description: "An on-use haste trinket is hypothetically fine, but the 2s channel time absolutely buries it - even for specs that really enjoy Haste.",
         addonDescription: "",
         effects: [
           { // Haste on-use, does have a ramp up period.
@@ -484,7 +486,7 @@ export const dungeonTrinketData =
           let bonus_stats: Stats = {};
     
           bonus_stats[data[0].stat!] = runGenericOnUseTrinket({...data[0], ...trinketRawData["Stormbound Emblem of Dazar"][0]}, itemLevel, additionalData.castModel)
-          bonus_stats.hps = (-1 * player.getHPS(additionalData.contentType) / 60);
+          bonus_stats.hps = (-2 * player.getHPS(additionalData.contentType) / 60);
 
           return bonus_stats;
         }

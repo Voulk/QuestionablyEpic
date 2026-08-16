@@ -1,3 +1,18 @@
+export const MONK_HERO_TREES = {
+  CONDUIT: "Conduit of the Celestials",
+  MOH: "Master of Harmony",
+};
+
+const baseTalents = 
+"C4QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAghx2MwmFzYmllZshZmhZW22mZswMaGzAGMYMLzMzMMbDGsYCAAAAgAsYZmlZbmBAAGwAMDYMMWkxMA";
+
+// per-model talent imports. these will diverge, and might not want to live here, but for now they are defaulted.
+export const monkTalentStrings = {
+  "Yu'lon": baseTalents,
+  "Chi-Ji": "C4QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMWmZZML2MmZ22MzGGmNzsZbmxCDNjZADGMmlZmZGmNMDzyMBAAAAQAWsNz2sNzAAADYAmBMGYRGzA",
+  "Dungeon Default": "C4QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMWmZZML2mxMjNjtllZMzmZ2WWmZswQzYGwgBjZZmZmhZDzwsMTAAAAAEgFbzsMbzMAAwAAMDYMwiMmBA",
+}
+
 // Yu'lon build. Chi-Ji has its own profile.
 export const monkDefaultSpellData = (contentType) => {
   let spellList = {};
@@ -19,29 +34,17 @@ export const monkDefaultSpecialQueries = (contentType) => {
   let specialQueries = {};
   if (contentType === "Raid") {
     specialQueries = {
-      HPSChijiGusts: 674,
-      percentVivifyOnRemTargets: 0.15,
-      HPSDuringCelestial: 9800,
-      HPSHotHealingDuringLC: 98,
-      HPSHotHealingAfterLC: 0,
-      HPSExpelHarmOnSelf: 0,
       OneManaHealing: 5.6,
       cooldownMult: {
         c60: 1,
         c90: 1,
-        c120: 1,
+        c120: 1.5,
         c180: 1,
       },
       HoldYourGroundUptime: 0.6
     };
   } else if (contentType === "Dungeon") {
     specialQueries = {
-      HPSChijiGusts: 674,
-      percentVivifyOnRemTargets: 0.75,
-      HPSDuringCelestial: 9400,
-      HPSHotHealingDuringLC: 98,
-      HPSHotHealingAfterLC: 0,
-      HPSExpelHarmOnSelf: 0,
       OneManaHealing: 1.4,
       cooldownMult: {
         c60: 1,
@@ -64,18 +67,18 @@ export const monkDefaultStatWeights = (contentType) => {
 
   statWeights.Raid = {
     intellect: 1,
-    haste: 0.57,
-    crit: 0.489,
-    mastery: 0.32,
-    versatility: 0.428,
+    haste: 0.76,
+    crit: 0.46,
+    mastery: 0.24,
+    versatility: 0.53,
     leech: 0.25,
   };
   statWeights.Dungeon = {
     intellect: 1,
-    haste: 0.55,
-    crit: 0.49,
-    mastery: 0.35,
-    versatility: 0.431,
+    haste: 0.7,
+    crit: 0.548,
+    mastery: 0.59,
+    versatility: 0.54,
     leech: 0.2,
   };
 

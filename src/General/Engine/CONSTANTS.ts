@@ -2,8 +2,8 @@
 
 export const CONSTANTS = {
     dpsValue: 1, // In dungeon settings 
-    allyStatWeight: 0.43, // 
-    allyDPSPerPoint: 0.43 / 2000 * 30000, // Unused
+    allyStatWeight: 0.56, // 
+    allyDPSPerPoint: 0.56 / 2000 * 30000, // Unused
     difficulties: {
         "LFR": 0,
         "LFRMax": 1,
@@ -25,13 +25,13 @@ export const CONSTANTS = {
     classicSpecs: ["Restoration Druid Classic", "Holy Paladin Classic",  "Discipline Priest Classic", "Holy Priest Classic", "Restoration Shaman Classic", "Mistweaver Monk Classic"],
 
     // SEASONAL CONSTANTS
-    seasonalItemConversion: 12, // 6 = S2, 7 = S3, 8 = ??, 9 = S4. This value is used to determine if an item can be catalyzed.
+    seasonalItemConversion: 13, // 6 = S2, 7 = S3, 8 = ??, 9 = S4. This value is used to determine if an item can be catalyzed.
     currentRaidIDs: [1320, 1317], // This should be an array even with one raid. This value is used in various array specific functions. 1317 = new world boss
     currentDungeonIDs: [1322, 1311, 1304, 1309, 1313, 1041, 1202, 1030],
-    fullItemLevels: [200, 203, 206, 210, 214, 217, 220, 224, 227, 230, 233, 237, 240, 243, 246, 250, 253, 256, 259, 263, 266, 269, 272, 276, 279, 282, 285, 289],
-    itemLevelCaps: { Explorer: 224, Adventurer: 237, Veteran: 250, Champion: 263, Hero: 276, Myth: 289, "Runed Crafted": 272, "Gilded Crafted": 285 },
-    seasonID: 34,
-    tierNames: {
+    fullItemLevels: [250, 253, 256, 259, 263, 266, 269, 272, 276, 279, 282, 285, 289, 292, 295, 298, 302, 305, 308, 311, 315, 318, 321, 324, 328, 331, 334, 337, 341, 344],
+    itemLevelCaps: { Adventurer: 282, Veteran: 295, Champion: 308, Hero: 321, Myth: 334, "Runed Crafted": 318, "Gilded Crafted": 331 },
+    seasonID: 37,
+    tierNames: { // @deprecated.
       "Preservation Evoker": "of the Black Talon", 
       "Holy Paladin": "Luminant Verdict's", 
       "Holy Priest": "Blind Oath's", 
@@ -60,6 +60,14 @@ export const CONSTANTS = {
         "Restoration Druid": 105,
     }
 
+}
+
+// TopGear reads from castModel.modelType[contentType]
+// to decide which evaluation path to run for a model.
+export const MODEL_TYPES = {
+  CAST_MODEL: "CastModel",
+  DEFAULT: "Default",
+  SEQUENCES: "Sequences",
 }
 
 // Currently unused. Might use later.

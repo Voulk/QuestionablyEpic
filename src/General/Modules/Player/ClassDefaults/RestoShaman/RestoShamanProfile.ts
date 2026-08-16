@@ -3,49 +3,50 @@ import { runSpellScript } from "../Generic/SpellScripts";
 import { hasTalent, deepCopyFunction } from "General/Modules/Player/ClassDefaults/Generic/RampBase"
 import specSpellDB from "./RestoShamanSpellDB.json";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
-import { defaultTalents, shamanTalents } from "./RestoShamanTalents";
+import { shamanTalents } from "./RestoShamanTalents";
 import { buffSpellPerc, cooldownAdjFlat } from "../Generic/TalentBase";
 import {
     getCPM,
     applyRaidBuffs,
-    printHealingBreakdownWithCPM,
     convertStatPercentages,
     getSpellThroughput,
-    applyTalents,
     completeCastProfile,
     getTimeUsed,
-    compileProfileReportingData
+    compileProfileReportingData,
+    applyTalentsFromString
 } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities";
+import { getSelectedTalentsFromString } from "../Generic/TalentStrings/TalentDecoder";
 
 export const restoShamanProfile = {
     spec: "Restoration Shaman",
-    name: "Restoration Shaman Classic",
+    name: "Restoration Shaman",
     scoreSet: scoreShamanSet,
     defaultStatProfile: { 
         // Our stats we want to run through the profile. 
         // You can change and play with these as much as you want.
         // All user-facing operations will set their own anyway like in Top Gear.
-        intellect: 2500,
-        haste: 1050,
-        crit: 1200,
-        mastery: 150,
-        versatility: 100,
-        stamina: 19000,
+        intellect: 3300,
+        haste: 745,
+        crit: 1665,
+        mastery: 278,
+        versatility: 396,
+        stamina: 50521,
         critMult: 2,
     },
     defaultStatWeights: {
         // Used in the trinket chart and for Quick Compare. Not used in Top Gear.
         intellect: 1,
-        crit: 0.573,
-        mastery: 0.438,
-        versatility: 0.429,
-        haste: 0.257,
+        crit: 0.71,
+        mastery: 0.55,
+        versatility: 0.59,
+        haste: 0.70,
         hps: 0.304, // 
     },
     specialQueries: {
         // Any special information we need to pull.
     },
-    defaultTalents: "CgQAAAAAAAAAAAAAAAAAAAAAAAAAAgBAAAAzMzMLLbDzwYmZmZGzYB2gZsox2AyMwGjhZsNGz0stMzwMmFWMzMjZYWGAAYAzMDmZAgBD",
+    defaultTalents: "CgQAAAAAAAAAAAAAAAAAAAAAAAAAAgBAAAAzMzsssNjZGjZGzMDjFYDmxiGbDIzAbmhZw2YMTz2yMDzYWYxMzMmhZZAAAgZmBzMAwgZA", // Totemic
+    farseerTalents: "CgQALMl7AwW51MWzGneuHE3tPCAAAgBAAAAzMzsssNjZGjZGzMMWMzCMgJYWYCMWMDzwsNGz0stMzwMmNWMzMzDMYWGAAAYmZAwMDMYG" // Farseer
 }
 
 // Ascendance spells are modified copies of the base ones so we add their own entries
@@ -65,6 +66,16 @@ export const addAscendanceSpells = (spellDB: SpellDB) => {
     spellDB["Chain Heal (Ascendance)"] = ascendanceChainHeal
 }
 
+export const addTiersetRains = (spellDB: SpellDB) => {
+    let tiersetHealingRain = deepCopyFunction(spellDB["Healing Rain"])
+    tiersetHealingRain[0].buffDuration = 8
+    spellDB["Healing Rain (Tierset Proc)"] = tiersetHealingRain
+
+    let tiersetSurgingTotem = deepCopyFunction(spellDB["Surging Totem"])
+    tiersetSurgingTotem[0].buffDuration = 8
+    spellDB["Surging Totem (Tierset Proc)"] = tiersetSurgingTotem
+}
+
 // Get the real crit% of a spell counting stats and modifiers
 const getRealCrit = (spellName: string, state, spellDB) => {
     if (!spellDB[spellName][0].statMods) spellDB[spellName][0].statMods = {}
@@ -75,6 +86,7 @@ const getRealCrit = (spellName: string, state, spellDB) => {
 
 // PlayerData needs some work to be a fully formed idea still. I'll fix its typing later.
 export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSettings = {}, reporting = false) {
+    if (playerData.heroTree === "Default"){ playerData.heroTree = "Totemic" }
     const spellDB = JSON.parse(JSON.stringify(specSpellDB));
     const fightLength = 5
     // This will be sent to applyTalents and then we'll turn it into a proper state variable afterwards.
@@ -87,36 +99,48 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
 
     // Apply Talents
     const talents = initialState.talents;
-    defaultTalents(initialState.talents, playerData.profileName ?? "default");
-    applyTalents(initialState, spellDB, initialState.statBonuses);
+    const talentImport = getSelectedTalentsFromString(playerData.heroTree === "Totemic" ? restoShamanProfile.defaultTalents : restoShamanProfile.farseerTalents, "Restoration Shaman")
+
+    if (!playerData.hasShield && playerData.heroTree === "Totemic") {
+        talentImport.filter(talent => talent.talentName === "Supportive Imbuements")[0].talentRanks = 0;
+        talentImport.push({talentName: "Pulse Capacitor", talentRanks: 1, tree: "hero", talentIcon: "spell_nature_elementalprecision_1"})
+    }
+    if (playerData.tierSets.includes("Restoration Shaman S1-2") && playerData.heroTree === "Totemic"){
+        talentImport.filter(talent => talent.talentName === "Overflowing Shores")[0].talentRanks = 0;
+        talentImport.push({talentName: "Unleash Life", talentRanks: 1, tree: "spec", talentIcon: "spell_shaman_unleashweapon_life"})
+    }
+    applyTalentsFromString(initialState, spellDB, talentImport);
     addAscendanceSpells(spellDB)
+    addTiersetRains(spellDB)
     
     // The state variable that will be passed into each spell calculation.
     const state = { fightLength: fightLength, spec: "Restoration Shaman", statPercentages: convertStatPercentages(stats, initialState.statBonuses, "Restoration Shaman",
         playerData.masteryEffectiveness), settings: settings, talents: shamanTalents};
 
-
     let castProfile: CastProfile = [
         // Add Spells here
         {spell: "Riptide", efficiency: 1},
         {spell: "Healing Stream Totem", efficiency: 1},
-        {spell: "Spirit Link Totem", efficiency: 1},
-        {spell: "Unleash Life", efficiency: 1},
+        {spell: "Spirit Link Totem", efficiency: 1}
     ]
 
-    // Ratio of how to spend extra time on filler spells
-    const fillerSpellsPriority = {
-        "Chain Heal": playerData.params.filler.ch ?? 1,
-        "Healing Wave": playerData.params.filler.hw ?? 0
-    }
-    const ascendanceFillerSpellsPriority = {
-        "Chain Heal": playerData.params.asc.ch ?? 1,
-        "Healing Wave": playerData.params.asc.hw ?? 0
+    if (hasTalent(talents, "Unleash Life")){
+        castProfile.push({spell: "Unleash Life", efficiency: 1})
     }
 
-    // Add our 2 piece
+    // Ratio of how to spend extra time on filler spells
+    const fillerSpellsPriority: Record<string, number> = {
+        "Chain Heal": 0.6,
+        "Healing Wave": 0.0
+    }
+    const ascendanceFillerSpellsPriority: Record<string, number> = {
+        "Chain Heal": 0.75,
+        "Healing Wave": 0.25
+    }
+
+    // Season 1 2-piece
     if (playerData.tierSets.includes("Restoration Shaman S1-2")){
-        buffSpellPerc(spellDB["Unleash Life"], 100);
+        buffSpellPerc(spellDB["Unleash Life"], 50);
         cooldownAdjFlat(spellDB["Unleash Life"], -3000);
     }
 
@@ -127,13 +151,12 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
         castProfile.push({spell: "Surging Totem", efficiency: 1})
         swiftnessCPM = 1
     } else {
-        if (hasTalent(talents, "Healing Rain")){castProfile.push({spell: "Healing Rain", efficiency: 1})}
+        if (hasTalent(talents, "Healing Rain")){ castProfile.push({spell: "Healing Rain", cpm: 60 / spellDB["Healing Rain"][0].buffDuration}) }
         swiftnessCPM = 2
-        // If im inside the `else` from heroTree === "Totemic" i am safe to just add always-active hero talents from Farseer right?
 
         // Farseer has a couple of talents that give us more Riptides, im adding them up here because other stuff like SST, DRE and filler spells will vary from this
         // Offering from beyond from Farseer gives us 2 seconds of Riptide cdr when we summon an ancestor, average that one out over a minute
-        const riptideCdr = getCPM(castProfile, "Unleash Life") + swiftnessCPM * 2
+        const riptideCdr = (getCPM(castProfile, "Unleash Life") + swiftnessCPM) * 2
         castProfile.push({spell: "Riptide", cpm: riptideCdr / spellDB["Riptide"][0].cooldownData.cooldown })
         // Mystic Knowledge makes Riptide cooldown 10% faster for 8 seconds after pressing swiftness
         // We have 2 swiftness a minute so 16 seconds every minute of Riptide recharging 10% faster
@@ -159,8 +182,28 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
     // Convert efficiencies to effect CPMs. Handle any special overrides.
     completeCastProfile(castProfile, spellDB);
 
+    // Season 2 2-piece
+    if (playerData.tierSets.includes("Restoration Shaman S2-2")){
+        const spell = playerData.heroTree == "Totemic" ? "Surging Totem (Tierset Proc)" : "Healing Rain (Tierset Proc)";
+        castProfile.push({spell: spell, cpm: 3 * state.statPercentages.haste, autoSpell: true }) // 3 hasted cpm of extra rains
+    }
+
+    // Season 2 4-piece
+    if (playerData.tierSets.includes("Restoration Shaman S2-4")){
+        const castedRainDuration = (getCPM(castProfile, "Surging Totem") * 25) + (getCPM(castProfile, "Healing Rain") * 18)
+        const tiersetRainDuration = (getCPM(castProfile, "Surging Totem (Tierset Proc)") + (getCPM(castProfile, "Healing Rain (Tierset Proc)"))) * 8
+        const rainTickTime = 2 / state.statPercentages.haste
+        const totalRainTicksPerMin = (castedRainDuration + tiersetRainDuration) / rainTickTime
+        castProfile.push({spell: "Condensation", cpm: totalRainTicksPerMin, autoSpell: true}) 
+    }
+
+    // Compute the total amount of rains casted (natty + tierset procs) for related talents.
+    const castedRainsCPM = getCPM(castProfile, "Surging Totem") + getCPM(castProfile, "Healing Rain")
+    const tiersetRainsCPM = getCPM(castProfile, "Surging Totem (Tierset Proc)") + getCPM(castProfile, "Healing Rain (Tierset Proc)")
+    const totalRainCPM = castedRainsCPM + tiersetRainsCPM
+
     if (hasTalent(talents, "Overflowing Shores")){
-        castProfile.push({spell: "Overflowing Shores", cpm: (getCPM(castProfile, "Surging Totem") + getCPM(castProfile, "Healing Rain")), autoSpell: true})
+        castProfile.push({spell: "Overflowing Shores", cpm: totalRainCPM, autoSpell: true})
     }
 
     // Totemic procs motes every time you cast Surging Totem
@@ -175,12 +218,14 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
 
     // If Downpour is talented we add it based on the cpm of surging or rain
     // Double dip doubles the cpm
+    // Currently assuming that you get extra downpours from half the tierset rains. Pulled the assumption out of my ass tbh
     if (hasTalent(talents, "Downpour")){
+        let stacks = 1
         if (hasTalent(talents, "Double Dip")){
-            castProfile.push({spell: "Downpour", cpm: (getCPM(castProfile, "Surging Totem") + getCPM(castProfile, "Healing Rain")) * 2})
-        } else {
-            castProfile.push({spell: "Downpour", cpm: (getCPM(castProfile, "Surging Totem") + getCPM(castProfile, "Healing Rain"))})
+            stacks = 2
         }
+        castProfile.push({spell: "Downpour", cpm: castedRainsCPM * stacks})
+        castProfile.push({spell: "Downpour", cpm: (tiersetRainsCPM / 2) * stacks, autoSpell: true})
     }
 
     // Stormstream procs from casts of Riptide but only casted ones, not PTC
@@ -191,7 +236,6 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
     if (hasTalent(talents, "Tidal Waves")){
         tidalWavesStacks = getCPM(castProfile, "Riptide")
     }
-
 
     // PTC procs a free Riptide every 4th we cast. So just add 1/4 more Riptides as autos
     if (hasTalent(talents, "Primal Tide Core")){
@@ -209,16 +253,11 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
     }
 
     // We save unleash life buffs here as some of them will be used during Ascendance
-    // No talent check cause our tierset forces us into unleash life
     let unleashLifeStacks = getCPM(castProfile, "Unleash Life")
-    // 4 piece makes unleash give two stacks
+    // Season 1 four-piece
     if (playerData.tierSets.includes("Restoration Shaman S1-4")) unleashLifeStacks *= 2
 
     // If we have any Ascendance in the profile at all we need to add the filler spells
-    // I am fairly sure that i am messing up this because i am not removing other things spells, but also i am not totally sure what the ideal asc cast sequence is
-    // Maybe weaving Healing Wave and Riptide due to talent interactions?
-    // If Riptide during Ascendance is worth it then we don't really need to remove anything i suppose, HST has 17s cd and two charges so you don't need to cast it during Asc to not waste
-    // And Unleash Life is still good to press, it would only be Riptide but surely you want to keep using it to maximize SST procs + all the other things
     if (getCPM(castProfile, "Ascendance")) {
         // Base Ascendance duration times casts per minute, plus DRE ppm times DRE duration to get per min duration of asc
         // Should maybe be grabbing the duration from spell data instead once the DB is fixed to make this a buff?
@@ -246,7 +285,7 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
         const ascendanceSpellCount = ascendanceDurationPerMin / fillerCastTime
 
         // We find out how much these unleashes are increasing the healing on average
-        const ascendanceUnleashLifeMod = 1 + ( ascendanceUnleashLife * ( hasTalent(talents, "Earthen Accord") ? 0.25 : 0.3 )) / ascendanceSpellCount
+        const ascendanceUnleashLifeMod = 1 + ( ascendanceUnleashLife * ( hasTalent(talents, "Earthen Accord") ? 0.45 : 0.25 )) / ascendanceSpellCount
 
         // We use the priorities we defined earlier to split the time between Chain Heals and Healing Waves
         castProfile.push({spell: "Chain Heal (Ascendance)", cpm: ascendanceSpellCount * ascendanceFillerSpellsPriority["Chain Heal"], mult: ascendanceUnleashLifeMod})
@@ -267,15 +306,14 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
     }
 
     // Max mana
-    let manaPool = 283920;
+    let manaPool = 250000;
 
     if (hasTalent(talents, "Primordial Capacity")){
         manaPool *= 1.1
     }
 
     // We are assuming you never actually get melee hit so no water shield procs, just the passive
-    const waterShieldBug = getSetting(settings, "waterShieldBugShaman") == 'Yes' ? true : false
-    const waterShieldRegen = waterShieldBug ? 6426 : hasTalent(talents, "Therazane's Resilience") ? 714 : 621
+    const waterShieldRegen = hasTalent(talents, "Therazane's Resilience") ? 714 : 621
     const regen = (manaPool * 0.04 + waterShieldRegen) * 12;
     let manaAvailable = manaPool / fightLength + regen;
     reportingData.manaAvailable = manaAvailable;
@@ -285,7 +323,7 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
 
         // Ascendance Healing Wave hits two targets and procs resurgence on both. Because we already added the cleaves as autoSpells they won't take the mana reduction
         // But because the casts always happen together we can just cut it from the main cast right?
-        let resurgenceManaReturns = {
+        let resurgenceManaReturns: Record<string, number> = {
             "Healing Wave (Ascendance)": 1.6,
             "Healing Wave": 0.8,
             "Riptide": 0.48,
@@ -305,15 +343,12 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
                 spellDB[spellName][0].cost -= manaRestored
 
                 // Lively Totems Chain Heals won't have discounts but they also should return mana
-                // Currently just handling it by hand, as we haven't added any other chain heal that isn't the free ones we can just assume all of them are from Lively Totems right now
-                // FUCK SOMEONE TOLD ME LIVELY TOTEMS DOESN'T RESURGENCE MY LIFE IS A LIE IM COMMENTING THIS OUT
-                /*
+                // Currently just handling it by hand. Some of these casts are actually from swiftness but they are also free so this includes them correctly.
                 if (spellName === "Chain Heal"){
                     const livelyTotemsChainHeals = getCPM(castProfile, "Chain Heal")
                     const livelyTotemsManaReturn = manaPool * (manaRestored / 100) * livelyTotemsChainHeals
                     manaAvailable += livelyTotemsManaReturn
                 }
-                */
             }
         })
 
@@ -355,12 +390,12 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
     reportingData.fillerCPMTime = fillerCPMTime
 
     // And unleash life increase
-    const unleashLifeMod = 1 + ( unleashLifeStacks * ( hasTalent(talents, "Earthen Accord") ? 0.25 : 0.3 )) / fillerCPM
+    const unleashLifeMod = 1 + ( unleashLifeStacks * ( hasTalent(talents, "Earthen Accord") ? 0.45 : 0.25 )) / fillerCPM
 
     Object.keys(fillerSpellsPriority).forEach(spellName => {
         castProfile.push({spell: spellName, cpm: fillerCPM * fillerSpellsPriority[spellName], mult: unleashLifeMod})
     })
-    //I am actually not completely sure but i am assuming that below here i am only allowed to add autoSpells, otherwise i am cheating by adding more stuff after i already spend my remaining resources
+    //I am actually not completely sure but i am assuming that below here i am only allowed to add autoSpells, otherwise i am cheating by adding more stuff after i already spent my remaining mana
 
     if (playerData.heroTree == "Totemic"){
         castProfile.push({spell: "Chain Heal (Totemic Rebound)", cpm: (getCPM(castProfile, "Chain Heal") + getCPM(castProfile, "Chain Heal (Ascendance)")), autoSpell: true})
@@ -369,13 +404,13 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
     // Farseer Ancestor casts
     // Should be fairly simple? we find our average ancestor count, and then add a cpm of the ancestor spell that matches each of the real spells multiplied by that
     if (playerData.heroTree === "Farseer"){
-        const ancestorSpellMap = {
-            // Notably, the ancestors do not chain heal on stormstream, probably a bug
+        const ancestorSpellMap: Record<string, string[]> = {
             "Chain Heal (Ancestor)": [
                 "Chain Heal",
                 "Chain Heal (Ascendance)",
                 "Healing Stream Totem",
-                "Healing Tide Totem"
+                "Healing Tide Totem",
+                "Stormstream Totem"
             ],
             "Healing Wave (Ancestor)": [
                 "Healing Wave",
@@ -388,18 +423,33 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
         }
 
         const longAncestors = hasTalent(talents, "Heed My Call")
-        const unleashLifeAncestors = getCPM(castProfile, "Unleash Life") * (longAncestors ? 16 : 12) / 60
-        const swiftnessAncestors = swiftnessCPM * (longAncestors ? 12 : 8) / 60
+        const unleashLifeAncestors: Record<string, number> = { "Count": getCPM(castProfile, "Unleash Life") } 
+        unleashLifeAncestors["Time"] = unleashLifeAncestors["Count"] * (longAncestors ? 16 : 12) / 60
+        const swiftnessAncestors: Record<string, number> = { "Count": swiftnessCPM }
+        swiftnessAncestors["Time"] = swiftnessAncestors["Count"] * (longAncestors ? 12 : 8) / 60
         // Routing Communication is Riptide having a 20% chance to summon an ancestor so we do Riptide cpm * 0.2 * how long they last to find out many seconds of ancestor Riptide gives
         // In theory this is the one effect that could give more than one ancestor at the same time but also can give none so it balances itself out right?
-        const riptideAncestors = hasTalent(talents, "Routine Communication") ? (getCPM(castProfile, "Riptide") * 0.2) * (longAncestors ? 12 : 8) / 60 : 0
-        let averageAncestorCount = unleashLifeAncestors + swiftnessAncestors + riptideAncestors
+        const riptideAncestors: Record<string, number> = { "Count": hasTalent(talents, "Routine Communication") ? (getCPM(castProfile, "Riptide") * 0.2) : 0 }
+        riptideAncestors["Time"] = riptideAncestors["Count"] * (longAncestors ? 12 : 8) / 60
 
-        // Ancient Fellowship makes every ancestor have a 20% chance to summon another
-        averageAncestorCount += hasTalent(talents, "Ancient Fellowship") ? averageAncestorCount * 0.2 : 0
+        let averageAncestorCount = (unleashLifeAncestors["Time"] + swiftnessAncestors["Time"] + riptideAncestors["Time"])
 
-        Object.keys(ancestorSpellMap).forEach(ancestorSpell => {
-            const ancestorSpellCPM = ancestorSpellMap[ancestorSpell].reduce((totalCPM: number, spellName: string) =>
+        // Ancient Fellowship makes every ancestor have a 20% chance to summon another when it departs.
+        // We model this from the average number of active ancestors and the ancestor duration, then convert back to active time.
+        const ancestorDuration = longAncestors ? 12 : 8
+        const ancientFellowshipAncestors: Record<string, number> = {
+            "Count": hasTalent(talents, "Ancient Fellowship") ? averageAncestorCount * 0.2 : 0
+        }
+        ancientFellowshipAncestors["Time"] = ancientFellowshipAncestors["Count"] * ancestorDuration / 60
+        averageAncestorCount += ancientFellowshipAncestors["Time"]
+
+        // Routing Communication and Ancient Fellowship can add a certain number of ancestors, these also give riptide cdr
+        // TODO: Check how this affects riptide averages
+        const riptideCdr = riptideAncestors["Count"] + ancientFellowshipAncestors["Count"] * 2
+        castProfile.push({spell: "Riptide", cpm: riptideCdr / spellDB["Riptide"][0].cooldownData.cooldown })
+
+        Object.entries(ancestorSpellMap).forEach(([ancestorSpell, spellNames]) => {
+            const ancestorSpellCPM = spellNames.reduce((totalCPM: number, spellName: string) =>
                 totalCPM + (getCPM(castProfile, spellName) / (spellName === "Healing Wave (Ascendance)" ? 2 : 1)), 0
             )
             // For each sum of the spells that cause ancestor spells, we multiply that by our average ancestor count
@@ -411,17 +461,33 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
 
         // Final Calling makes ancestors cast one hydrobubble when they go away
         // I assume there is no practical purpose to "when they depart" and we just care about one ancestor = one hydrobubble
-        const ancestorSpawns = getCPM(castProfile, "Unleash Life") + swiftnessCPM
-        castProfile.push({spell: "Hydrobubble", cpm: ancestorSpawns, autoSpell: true})
+        castProfile.push({spell: "Hydrobubble", cpm: averageAncestorCount, autoSpell: true})
     }
 
     // We are gonna need our average Riptide count for several talents that are based on your active Riptides
-    const averageRiptideCount = getCPM(castProfile, "Riptide") * spellDB["Riptide"][1].buffDuration / 60
+    const RiptideCPM = getCPM(castProfile, "Riptide")
+    let averageRiptideCount = RiptideCPM * spellDB["Riptide"][1].buffDuration / 60
+    if (hasTalent(talents, "Swelling Tides")){
+        const swellingTidesTotemCPM = getCPM(castProfile, "Healing Stream Totem") + getCPM(castProfile, "Stormstream Totem")
+        averageRiptideCount *= 1 + (swellingTidesTotemCPM * 3) / 60
+
+        // This adds the extra HoT healing from the extensions
+        // We force the slice to get the hot portion
+        castProfile.push({
+            spell: "Riptide",
+            cpm: averageRiptideCount * swellingTidesTotemCPM,
+            mult: 3 / spellDB["Riptide"][1].buffDuration,
+            autoSpell: true,
+            forceSlice: 1,
+            label: "Riptide - Swelling Tides Extensions"
+        })
+    }
+    reportingData.averageRiptideCount = averageRiptideCount
 
     // Tidewaters heals everyone with Riptide every time we cast Surging or Rain
     if (hasTalent(talents, "Tidewaters")){
         spellDB["Tidewaters"][0].targets = averageRiptideCount
-        castProfile.push({spell: "Tidewaters", cpm: (getCPM(castProfile, "Surging Totem") + getCPM(castProfile, "Healing Rain")), autoSpell: true})
+        castProfile.push({spell: "Tidewaters", cpm: totalRainCPM, autoSpell: true})
     }
 
     // Flat 0.5% increase to all healing per point in the talent for every active Riptide
@@ -432,7 +498,7 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
     // 15% healing increase to Riptide targets, so we get an average across the raid
     if (hasTalent(talents, "Deluge")){
         // Adding 2.5 deluge targets if we have rain, assuming we don't have 5 because some of them have Riptide anyway so they don't double
-        const averageDelugeTargetCount = averageRiptideCount + (playerData.heroTalent === "Totemic" ? 2.5 : hasTalent(talents, "Healing Rain") ? 2.5 : 0)
+        const averageDelugeTargetCount = averageRiptideCount + (playerData.heroTree === "Totemic" ? 2.5 : hasTalent(talents, "Healing Rain") ? 2.5 : 0)
         const averageDelugeIncrease = averageDelugeTargetCount * 15 / 20
         state.statPercentages.genericHealingMult *= 1 + (averageDelugeIncrease / 100)
     }
@@ -442,7 +508,7 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
         // Totemic gets ELW from totem heals
         if (hasTalent(talents, "Primal Catalyst")){
             // Every heal event can apply it so totems can on every tick
-            const elwTotemsApplications = {
+            const elwTotemsApplications: Record<string, number> = {
                 "Healing Stream Totem": 0.08,
                 "Healing Tide Totem": 0.08,
                 "Stormstream Totem": 0.08
@@ -456,13 +522,13 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
                         totemTicks = slice.buffDuration / (slice.tickData.tickRate / state.statPercentages.haste)
                     }
                 })
-                const applications = (getCPM(castProfile, spellName) * (spellDB[spellName][0].targets ?? 1) * totemTicks) * elwTotemsApplications[spellName]
+                const applications = (getCPM(castProfile, spellName) * (spellDB[spellName][0].targets ?? 1) * (totemTicks ?? 0)) * elwTotemsApplications[spellName]
                 elwTotemCPM += applications
             })
             castProfile.push({spell: "Earthliving Weapon", cpm: elwTotemCPM, autoSpell: true, label: "Earthliving Weapon - Totems"})
         }
 
-        const elwCastsApplications = {
+        const elwCastsApplications: Record<string, number> = {
             "Healing Wave (Ascendance)": hasTalent(talents, "Improved Earthliving Weapon") ? 1 : 0.2,
             "Healing Wave": hasTalent(talents, "Improved Earthliving Weapon") ? 1 : 0.2,
             "Chain Heal (Ascendance)": 0.2,
@@ -513,6 +579,8 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
                 const realAscHealingWaveCPM = getCPM(castProfile, spellName) / 2
                 // Half the casts to get the real number of hard casts, then 0.375 instead of 0.25 so it accounts for both the main cast and the 50% cleave (i can do this right?)
                 castProfile.push({spell: spellName, cpm: realAscHealingWaveCPM * aaProcRate, autoSpell: true, mult: (0.375 * talents["Ancestral Awakening"].points), label: "Ancestral Awakening - " + spellName})
+            } else if (spellName == "Riptide") {
+                castProfile.push({spell: spellName, cpm: RiptideCPM * aaProcRate, autoSpell: true, forceSlice: 0, mult: (0.25 * talents["Ancestral Awakening"].points), label: "Ancestral Awakening - " + spellName})
             } else {
                 castProfile.push({spell: spellName, cpm: getCPM(castProfile, spellName) * aaProcRate, autoSpell: true, mult: (0.25 * talents["Ancestral Awakening"].points), label: "Ancestral Awakening - " + spellName})
             }
@@ -584,10 +652,10 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
     const result = { damage: totalDamage / 60, healing: totalHealing / 60 }
 
     if (reporting) {
+        console.log(reportingData);
         result.spellBreakdowns = compileProfileReportingData(healingBreakdown, damageBreakdown, castProfile, spellDB, totalHealing, totalDamage)
     }
-    //console.log(reportingData);
-    //printHealingBreakdownWithCPM(healingBreakdown, totalHealing, castProfile);
+    
 
     return result;
 }

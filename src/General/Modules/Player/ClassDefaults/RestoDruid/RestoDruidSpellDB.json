@@ -293,6 +293,73 @@
             "spellType": "damage"
         }
     ],
+    "Moonfire": [
+        {
+            "displayInfo": {
+                "id": 164812,
+                "icon": "spell_nature_starfall",
+                "spellName": "Moonfire",
+                "cat": "damage"
+            },
+            "castTime": 0.0,
+            "school": "arcane",
+            "cost": 0.0,
+            "coeff": 0.212,
+            "aura": 3.078,
+            "secondaries": [
+                "crit",
+                "versatility"
+            ],
+            "spellType": "damage"
+        },
+        {
+            "coeff": 0.184,
+            "aura": 3.078,
+            "expectedOverheal": 0.2,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "buff",
+            "buffType": "damage",
+            "buffDuration": 18.0,
+            "tickData": {
+                "tickRate": 2.0,
+                "canPartialTick": true,
+                "tickOnCast": false
+            }
+        }
+    ],
+    "Symbiotic Blooms": [
+        {
+            "displayInfo": {
+                "id": 439530,
+                "icon": "inv_misc_lifeblood",
+                "spellName": "Symbiotic Blooms",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "school": "nature",
+            "cost": 0.0,
+            "coeff": 0.732,
+            "aura": 0.96,
+            "expectedOverheal": 0.2,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 6.0,
+            "tickData": {
+                "tickRate": 2.0,
+                "canPartialTick": true,
+                "tickOnCast": false
+            }
+        }
+    ],
     "Grove Guardians": [
         {
             "displayInfo": {
@@ -312,11 +379,12 @@
                 "versatility",
                 "mastery"
             ],
-            "spellType": "heal"
+            "spellType": "heal",
+            "buffDuration": 8
         },
         {
             "coeff": 0.61,
-            "aura": 1.0,
+            "aura": 0.96,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -325,10 +393,9 @@
             ],
             "spellType": "buff",
             "buffType": "heal",
-            "buffDuration": 8,
             "tickData": {
                 "tickRate": 2.0,
-                "canPartialTick": false,
+                "canPartialTick": true,
                 "tickOnCast": false
             }
         }
@@ -345,7 +412,7 @@
             "school": "physical",
             "cost": 0.0,
             "coeff": 0.9272,
-            "aura": 1.0,
+            "aura": 0.96,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -362,7 +429,7 @@
         },
         {
             "coeff": 6.5851,
-            "aura": 1.0,
+            "aura": 0.96,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -408,6 +475,45 @@
             "cost": 0.0,
             "targets": 3,
             "coeff": 1.464,
+            "aura": 0.96,
+            "expectedOverheal": 0.2,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        }
+    ],
+    "Innervate": [
+        {
+            "displayInfo": {
+                "id": 29166,
+                "icon": "spell_nature_lightning",
+                "spellName": "Innervate"
+            },
+            "castTime": 0.0,
+            "school": "nature",
+            "cost": 0.0,
+            "cooldownData": {
+                "cooldown": 180.0,
+                "hasted": false
+            }
+        }
+    ],
+    "Bursting Growth": [
+        {
+            "displayInfo": {
+                "id": 440121,
+                "icon": "inv_collections_armor_flowerbracelet_b_01",
+                "spellName": "Bursting Growth",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "school": "nature",
+            "cost": 0.0,
+            "targets": 4,
+            "coeff": 0.4209,
             "aura": 0.96,
             "expectedOverheal": 0.2,
             "secondaries": [

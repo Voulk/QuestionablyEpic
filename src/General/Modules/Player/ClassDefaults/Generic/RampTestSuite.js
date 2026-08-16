@@ -1,5 +1,5 @@
 import { getManaPool, getManaRegen, getAdditionalManaEffects, applyRaidBuffs } from './ClassicBase';
-
+import { applyDiminishingReturns } from 'General/Engine/ItemUtilities';
 
 // Run Spell Combos
 // playerData = { spec, baseSpells, baseSettings, baseTalents, stats }
@@ -361,11 +361,11 @@ export const buildStatWeights = (playerData, scoringFunction, testSettings ) => 
         const stats = ['intellect', 'crit', 'haste', 'mastery', 'versatility', 'leech'];
 
     const activeStats = {
-        intellect: 2400,
-        haste: 200,
-        crit: 200,
+        intellect: 3200,
+        haste: 800,
+        crit: 800,
         mastery: 200,
-        versatility: 200,
+        versatility: 800,
         stamina: 19000,
         leech: 0,
         critMult: 2,
@@ -406,20 +406,68 @@ export const buildStatWeights = (playerData, scoringFunction, testSettings ) => 
 
 }
 
+export async function buildBestDistChart(scoreSet, playerData) {
+    const totalPoints = 3000;
+    const step = 40;
+    const units = totalPoints / step;   
+    let maxScore = 0;
+    let evaluated = 0;
+    let bestCombo = null;
+    const yieldEvery = 500;
+
+    outer: for (let hasteUnits = 0; hasteUnits <= units; hasteUnits++) {
+    for (let critUnits = 0; critUnits <= units - hasteUnits; critUnits++) {
+      for (let masteryUnits = 0; masteryUnits <= units - hasteUnits - critUnits; masteryUnits++) {
+        const versatilityUnits = units - hasteUnits - critUnits - masteryUnits;
+ 
+        const combo = {
+          haste: hasteUnits * step,
+          crit: critUnits * step,
+          mastery: masteryUnits * step,
+          versatility: versatilityUnits * step,
+        };
+ 
+                    
+        let playerStats = {...combo, intellect: 3200};
+        playerStats = applyDiminishingReturns(playerStats)
+        const result = scoreSet(playerStats, playerData);
+        const score = result.healing;
+        evaluated++;
+ 
+        if (score > maxScore) {
+          maxScore = score;
+          bestCombo = combo;
+        }
+
+        // Yield periodically so a long search doesn't block the UI thread
+        if (evaluated % yieldEvery === 0) {
+          //onProgress?.(evaluated, totalCombinations, { stats: best!, score: bestScore });
+          await new Promise((resolve) => setTimeout(resolve, 0));
+        }
+      }
+    }
+  }
+
+  console.log("Evaluated " + evaluated + " combinations. Best combo: ", bestCombo, " with score: ", maxScore);
+
+  return bestCombo;
+
+}
+
 export const buildTCStatChart = (scoreSet, playerData) => {
     const statResults = []
     const baseStats = {
-        intellect: 2400,
+        intellect: 3200,
         haste: 0,
         crit: 0,
         mastery: 0,
         versatility: 0,
     }
 
-    const stepSize = 100;
+    const stepSize = 120;
     const steps = 10;
 
-    for (let i = 0; i < steps; i++) {
+    for (let i = 0; i <= steps; i++) {
         const res = {}
         Object.keys(baseStats).forEach(stat => {
             res.amount = i * stepSize;

@@ -5,6 +5,7 @@ import { getItemDB, calcStatsAtLevel, getItemLevelBoost, getVeryRareItemLevelBoo
 import UpgradeFinderResult from "./UpgradeFinderResult";
 import { apiSendUpgradeFinder } from "../SetupAndMenus/ConnectionUtilities";
 import { itemLevels } from "../../../Databases/ItemLevelsDB";
+import { getMPlusItemLevel, getMPlusKeyReward, mplusEndAndVaultSameTrack } from "../../../Databases/MPlusKeyRewards";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities"
 import { CONSTANTS } from "General/Engine/CONSTANTS";
 /*
@@ -146,12 +147,13 @@ export function getSetItemLevel(itemSource, playerSettings, difficultyType = "dr
       itemLevel = itemLevels.raid[difficulty + 4]
     }
     if (difficultyType === "bonus") {
-      if (difficulty === 3) itemLevel = itemLevels.raid[difficulty + 4] // Mythic is the same as Mythic Max.
-      else itemLevel = itemLevels.raid[difficulty + 5]; // Go up one difficulty and then Max.
+      // Bonus roll / vault track at cap. LFR→Champion, Normal→Hero, Heroic→Myth (318 base), Mythic stays Myth.
+      if (difficulty === 3) itemLevel = itemLevels.raid[difficulty + 4];
+      else itemLevel = itemLevels.raid[difficulty + 5];
     }
 
     if (difficulty === 3 && [2895, 2883].includes(bossID)) {
-      itemLevel = 344 // 9/6 Mythic
+      itemLevel = 344 // Last 2 Mythic bosses
     }
     else if (difficultyType === "drop") {
       itemLevel += getItemLevelBoost(bossID, difficulty)// + getVeryRareItemLevelBoost(itemID, bossID, difficulty);
@@ -166,8 +168,8 @@ export function getSetItemLevel(itemSource, playerSettings, difficultyType = "dr
   }
 
   else if (instanceID === -1) {
-    //if ([1201, 1202, 1203, 1198].includes(bossID)) itemLevel = 372; // M0 only dungeons.
-    itemLevel = itemLevels.dungeon[playerSettings.dungeon];
+    // Mythic+: drop = end-of-run, max = end track cap, bonus = vault/bonus-roll track cap
+    itemLevel = getMPlusItemLevel(playerSettings.dungeon, difficultyType);
   }
   else if (instanceID === -4) {
     // Crafted
@@ -264,16 +266,24 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
 
 
       } else if (primarySource === -1) {
-        // M+ Dungeons
+        // M+ Dungeons — same contract as raid: drop / max / bonus (vault + voidcore share bonus track)
         // Edit which dungeons are in-season in the CONSTANTS file.
         if (CONSTANTS.currentDungeonIDs.includes(encounter)) {
-          const itemLevel = getSetItemLevel(itemSources, playerSettings, 0, rawItem.slot);
-          const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings, playerSettings);
-          item.dropLoc = "Dungeon";
-          item.dropDifficulty = playerSettings.dungeon;
-          item.dropDifficultyTxt = "";
-          item.quality = 4;
-          itemPoss.push(item);
+          const keyReward = getMPlusKeyReward(playerSettings.dungeon);
+          const dungeonStates = mplusEndAndVaultSameTrack(playerSettings.dungeon)
+            ? ["drop", "bonus"]
+            : ["drop", "max", "bonus"];
+
+          dungeonStates.forEach((dungeonState) => {
+            const itemLevel = getSetItemLevel(itemSources, playerSettings, dungeonState, rawItem.slot);
+            const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings, playerSettings);
+            item.quality = 4;
+            item.dropLoc = "Dungeon";
+            item.dropDifficulty = playerSettings.dungeon;
+            item.dropType = dungeonState;
+            item.dropDifficultyTxt = keyReward.label;
+            itemPoss.push(item);
+          });
         }
         else if ([1267, 1272, 1210, 1268].includes(encounter)) {
           // M0

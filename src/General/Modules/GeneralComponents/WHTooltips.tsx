@@ -13,9 +13,10 @@ interface WowheadTooltipProps {
   keyProp?: string;
   rank?: number;
   craftedStats?: number[];
+  catalyzedID?: number;
 }
 
-const WowheadTooltip: FC<WowheadTooltipProps> = ({ id, level, bonusIDS, domain, type, children, difficulty, gems, forg, keyProp = "defaultKey", rank, craftedStats }) => {
+const WowheadTooltip: FC<WowheadTooltipProps> = ({ id, level, bonusIDS, domain, type, children, difficulty, gems, forg, keyProp = "defaultKey", rank, craftedStats, catalyzedID = 0 }) => {
   if (type === "none" || id === 203460) {
     return <>{children}</>;
   }
@@ -24,10 +25,10 @@ const WowheadTooltip: FC<WowheadTooltipProps> = ({ id, level, bonusIDS, domain, 
     return <>{children}</>;
   }
 
-  const baseWowheadLink = domain === "mop-classic" ? `https://www.wowhead.com/mop-classic/${type}=${id}` : `https://www.wowhead.com/ptr/${type}=${id}`;
-  const dataWowhead = `${type}=${id}&domain=${"ptr"}`;
+  const baseWowheadLink = domain === "mop-classic" ? `https://www.wowhead.com/mop-classic/${type}=${id}` : `https://www.wowhead.com/${type}=${id}`;
+  const dataWowhead = `${type}=${id}`;
 
-  const itemDataWowhead = `${dataWowhead}${level ? "&ilvl=" + level : ""}${bonusIDS ? "&bonus=" + bonusIDS : ""}${gems ? gems : ""}${forg ? "&forg=" + forg : ""}${craftedStats ? "&crafted-stats=" + craftedStats.join(":") : ""}`;
+  const itemDataWowhead = `${dataWowhead}${level ? "&ilvl=" + level : ""}${bonusIDS ? "&bonus=" + bonusIDS : ""}${gems ? gems : ""}${forg ? "&forg=" + forg : ""}${craftedStats ? "&crafted-stats=" + craftedStats.join(":") : ""}${catalyzedID ? "&original-item=" + catalyzedID : ""}${rank ? "&rank=" + rank : ""}`;
   const spellDataWowhead = `${dataWowhead}${difficulty ? "&dd=" + difficulty : ""}${rank ? "&rank=" + rank : ""}`;
   //console.log(level);
   return (

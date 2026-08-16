@@ -643,11 +643,11 @@ export class Player {
       //this.castModels.push(new CastModel(spec, "Dungeon", "Balanced", 2));
       // 1200 stats post-squish
       this.activeStats = {
-        intellect: 2400,
-        haste: 550,
-        crit: 100,
-        mastery: 450,
-        versatility: 200,
+        intellect: 3200,
+        haste: 1200,
+        crit: 150,
+        mastery: 1150,
+        versatility: 400,
         stamina: 1900,
       };
     } else if (spec === SPEC.HOLYPALADIN) {
@@ -656,20 +656,20 @@ export class Player {
       //this.castModels.push(new CastModel(spec, "Raid", "Lightsmith", 2));
       
       this.activeStats = {
-        intellect: 2400,
-        haste: 310,
-        crit: 350,
-        mastery: 440,
-        versatility: 210,
+        intellect: 3200,
+        haste: 800,
+        crit: 500,
+        mastery: 1100,
+        versatility: 410,
         stamina: 1900,
       };
     } else if (spec === SPEC.RESTOSHAMAN) {
       // all of this needs a proper input once
-      this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
+      this.castModels.push(new CastModel(spec, "Raid", "Totemic", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
-      //this.castModels.push(new CastModel(spec, "Raid", "Default", 2));
+      this.castModels.push(new CastModel(spec, "Raid", "Farseer", 2));
       this.activeStats = {
-        intellect: 2400,
+        intellect: 3200,
         haste: 240,
         crit: 700,
         mastery: 120,
@@ -683,11 +683,11 @@ export class Player {
       this.castModels.push(new CastModel(spec, "Dungeon", "Oracle", 1));
 
       this.activeStats = {
-        intellect: 2400, 
+        intellect: 3200, 
         haste: 1100,
-        crit: 600,
-        mastery: 400,
-        versatility: 200,
+        crit: 900,
+        mastery: 800,
+        versatility: 100,
         stamina: 1900,
         critMult: 2,
       };
@@ -697,41 +697,41 @@ export class Player {
       this.castModels.push(new CastModel(spec, "Raid", "Default", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Default", 1));
       this.activeStats = {
-        intellect: 2400,
-        haste: 240,
-        crit: 500,
-        mastery: 440,
-        versatility: 210,
+        intellect: 3200,
+        haste: 340,
+        crit: 1200,
+        mastery: 900,
+        versatility: 510,
         stamina: 1900,
       }
     }
       else if (spec === SPEC.PRESEVOKER) {
         //this.castModels.push(new CastModel(spec, "Raid", "Flameshaper", 0));
-        this.castModels.push(new CastModel(spec, "Raid", "Chronowarden", 0));
-        this.castModels.push(new CastModel(spec, "Dungeon", "Chronowarden", 1));
+        this.castModels.push(new CastModel(spec, "Raid", "Flameshaper", 0));
+        this.castModels.push(new CastModel(spec, "Dungeon", "Flameshaper", 1));
         this.activeStats = {
-          intellect: 2000,
-          haste: 390,
-          crit: 120,
-          mastery: 550,
-          versatility: 390,
+          intellect: 3200,
+          haste: 500,
+          crit: 1200,
+          mastery: 1250,
+          versatility: 90,
           stamina: 3000,
         }
     } else if (spec === SPEC.MISTWEAVERMONK) {
       const models = [
-        { identifier: "Chi-Ji", content: "Raid" },
         { identifier: "Yu'lon", content: "Raid" },
+        // { identifier: "Chi-Ji", content: "Raid" }, // disabled for now
         { identifier: "Dungeon Default", content: "Dungeon" },
         
       ];
       models.forEach((model, i) => this.castModels.push(new CastModel(spec, model.content, model.identifier, i)));
 
       this.activeStats = {
-        intellect: 2400,
-        haste: 500,
-        crit: 480,
+        intellect: 3200,
+        haste: 1200,
+        crit: 1100,
         mastery: 120,
-        versatility: 200,
+        versatility: 400,
         stamina: 1900,
       };
     } 

@@ -28,6 +28,7 @@ export function getDiminishedValue(statID, procValue, baseStat) {
   let currentStat = baseStat + procValue;
   let procSize = procValue
 
+
   for (var j = 0; j < DRBreakpoints.length; j++) {
     if (totalStat > DRBreakpoints[j])  {
       // Calculate proportion that's above DR.
@@ -199,7 +200,6 @@ export function getHighestStat(stats) {
 }
 
 export function getSetting(playerSettings, setting) {
-
   if (setting in playerSettings) return playerSettings[setting].value;
   else {
     console.error("Missing Setting" + setting);

@@ -1,5 +1,5 @@
 import React from "react";
-import { Paper, Typography, Grid, Tooltip, Button } from "@mui/material";
+import { Paper, Typography, Grid, Tooltip } from "@mui/material";
 import Item from "../../Items/Item";
 import { getItemAllocations, calcStatsAtLevel, getItemProp, scoreTrinket, scoreItem, getItemDB } from "../../Engine/ItemUtilities";
 import VerticalChart from "./Charts/VerticalChart";
@@ -15,10 +15,12 @@ import { themeSelection } from "./Charts/ChartColourThemes";
 import { buildRetailEffectTooltip, getTrinketData } from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketDescriptions";
 import { buildClassicEffectTooltip } from "General/Modules/TrinketAnalysis/ClassicDeepDive";
 import UpgradeFinderSlider from "General/Modules/UpgradeFinder/Slider";
-import { reforgeIDs } from "General/Modules/TopGear/Report/TopGearExports";
+import { reforgeIDs, exportWowheadTierList, exportWowheadTrinketCheatSheet } from "General/Modules/TopGear/Report/TopGearExports";
 import InformationBox from "General/Modules/GeneralComponents/InformationBox.tsx";
 import { downloadJson } from "./TrinketJSONDownload";
 import { getAllTrinketData } from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketEffectFormulas.js";
+import MenuDropdown from "General/Modules/TopGear/Report/MenuDropdown";
+import GenericDialog from "General/Modules/TopGear/Report/GenericDialog";
 
 const getTrinketAtItemLevel = (id, itemLevel, player, contentType, playerSettings) => {
   let item = new Item(id, "", "Trinket", false, "", 0, itemLevel, "");
@@ -42,9 +44,9 @@ const getTrinketPassiveScore = (id, itemLevel, player, contentType, playerSettin
   return item.softScore;
 };
 
-const getClassicTrinketScore = (id, player, itemLevel) => {
+const getClassicTrinketScore = (id, player, itemLevel, playerSettings) => {
   let item = new Item(id, "", "trinket", false, "", 0, itemLevel, "", "Classic");
-  item.softScore = scoreItem(item, player, "Raid", "Classic");
+  item.softScore = scoreItem(item, player, "Raid", "Classic", playerSettings);
   return item.softScore;
 };
 
@@ -68,7 +70,7 @@ const handleDownload = () => {
 };
 
 export const sourceHandler = (array, sources, playerSpec) => {
-  const raidSources = [1314, 1308, 1307, 1320, 1317];
+  const raidSources = [1314, 1308, 1307, 1320, 1317, 1305];
   const dungeonSources = [-1];
   const delveSources = [-69];
   const otherSources = [1192, 1205, -18, -17, -85, -4];
@@ -127,6 +129,8 @@ export default function TrinketChart({ player }) {
   const [sources, setSources] = React.useState(() => ["The Rest", "Raids", "Dungeons", "Delves"]);
   const [theme, setTheme] = React.useState(false);
   const [copied, setCopied] = React.useState(false);
+  const [dialogOpen, setDialogOpen] = React.useState(false);
+  const [dialogText, setDialogText] = React.useState("");
 
   const handleShare = () => {
     const slug = player.getSpec().toLowerCase().replace(/ /g, "");
@@ -168,8 +172,8 @@ export default function TrinketChart({ player }) {
 
   const allItemLevels =
     gameType === "Retail"
-      ? [263, 272, 276, 285, 289, 298, 302, 308, 315, 321, 328, 331, 334, 344]
-      : [458, 463, 476, 483, 484, 489, 496, 502, 509, 510, 517, 522, 528, 535, 541];
+      ? [272, 276, 285, 289, 295, 298, 302, 308, 315, 321, 328, 331, 334, 344]
+      : [476, 502, 509, 510, 517, 522, 528, 535, 541, 553, 559, 566, 572];
 
   const itemLevels = allItemLevels.filter((level) => level <= levelCap || gameType === "Classic");
 
@@ -229,14 +233,14 @@ export default function TrinketChart({ player }) {
           trinketAtLevels["p" + itemLevels[x]] = getTrinketPassiveScore(trinket.id, itemLevels[x], player, contentType, playerSettings);
         } else {
           if (activeTrinkets.filter((key) => key.name === trinketName).length === 0) {
-            trinketAtLevels["i" + itemLevels[x]] = getClassicTrinketScore(trinket.id, player, itemLevels[x]);
+            trinketAtLevels["i" + itemLevels[x]] = getClassicTrinketScore(trinket.id, player, itemLevels[x], playerSettings);
           }
         }
       }
       if (gameType === "Retail") {
         trinketAtLevels["tooltip"] = buildRetailEffectTooltip(trinketName, player, trinket.levelRange[trinket.levelRange.length - 1], playerSettings, trinket.id);
       } else {
-        trinketAtLevels["tooltip"] = buildClassicEffectTooltip(trinketName, player, trinket.levelRange[trinket.levelRange.length - 1], trinket.id);
+        trinketAtLevels["tooltip"] = buildClassicEffectTooltip(trinketName, player, trinket.levelRange[trinket.levelRange.length - 1], trinket.id, playerSettings);
       }
       if (Object.keys(trinketAtLevels).length > 4) activeTrinkets.push(trinketAtLevels);
     }
@@ -253,8 +257,26 @@ export default function TrinketChart({ player }) {
 
   const trinketText =
     gameType === "Retail"
-      ? "31/3 Trinket changes are in."
+      ? "Trinket tuning from 13/8 is included in the chart."
       : "Rankings use a sample stat profile, use Top Gear to fine tune results for your specific loadout.";
+
+  let exportOptions = ["Download JSON"];
+  if (window.location.href.includes("localhost") || window.location.href.includes("ptr")) {
+    exportOptions.push("Wowhead Tier List");
+    exportOptions.push("Wowhead Cheat Sheet");
+  }
+
+  const handleExportMenuClick = (buttonClicked) => {
+    if (buttonClicked === "Wowhead Tier List") {
+      setDialogOpen(true);
+      setDialogText(exportWowheadTierList(activeTrinkets));
+    } else if (buttonClicked === "Wowhead Cheat Sheet") {
+      setDialogOpen(true);
+      setDialogText(exportWowheadTrinketCheatSheet(activeTrinkets));
+    } else if (buttonClicked === "Download JSON") {
+      handleDownload();
+    }
+  };
 
   return (
     <Grid container spacing={1}>
@@ -286,7 +308,7 @@ export default function TrinketChart({ player }) {
 
       <Grid item xs={12}>
       <Grid container spacing={1} justifyContent="center" sx={{ marginTop: "16px" }}>
-        <InformationBox information={trinketText} variant="yellow" />
+        <InformationBox information={trinketText} variant="brick" />
 
         <Grid item xs={12}>
           <Paper style={{ backgroundColor: "rgb(28, 28, 28, 0.5)" }} elevation={0} variant="outlined">
@@ -350,15 +372,14 @@ export default function TrinketChart({ player }) {
           <Grid item xs={12}>
             <Grid container spacing={0} direction="row" justifyContent="flex-end">
               <Grid item>
-                <Button variant="contained" onClick={handleDownload}>
-                  Download JSON
-                </Button>
+                <MenuDropdown handleClicked={handleExportMenuClick} exportOptions={exportOptions} />
               </Grid>
             </Grid>
           </Grid>
         ) : null}
       </Grid>
       </Grid>
+      <GenericDialog dialogText={dialogText} isDialogOpen={dialogOpen} setDialogOpen={setDialogOpen} />
     </Grid>
   );
 }

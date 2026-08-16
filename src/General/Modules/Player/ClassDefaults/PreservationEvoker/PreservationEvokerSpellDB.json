@@ -18,7 +18,7 @@
             },
             "targets": 5,
             "coeff": 1.6341,
-            "aura": 1.0,
+            "aura": 2.375,
             "secondaries": [
                 "crit",
                 "versatility"
@@ -257,7 +257,7 @@
             "targets": 20,
             "targetScript": "Sqrt",
             "coeff": 2.0,
-            "aura": 1.0,
+            "aura": 0.8,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -377,6 +377,28 @@
             "cost": 1.54,
             "targets": 5,
             "coeff": 2.25,
+            "aura": 0.8,
+            "expectedOverheal": 0.2,
+            "secondaries": [
+                "crit",
+                "versatility",
+                "mastery"
+            ],
+            "spellType": "heal"
+        }
+    ],
+    "Fluttering Seedlings": [
+        {
+            "displayInfo": {
+                "id": 361361,
+                "icon": "inv_herbalism_70_yserallineseed",
+                "spellName": "Fluttering Seedlings",
+                "cat": "heal"
+            },
+            "castTime": 0.0,
+            "school": "nature",
+            "cost": 0.0,
+            "coeff": 2.6,
             "aura": 0.8,
             "expectedOverheal": 0.2,
             "secondaries": [

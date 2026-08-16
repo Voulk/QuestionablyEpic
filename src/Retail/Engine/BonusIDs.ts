@@ -86534,7 +86534,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "max": 8,
       "name": "Test",
       "fullName": "Test 4/8",
-      "bonusId": 12537
+      "bonusId": 12537,
+      "itemLevel": 170
     },
     "quality": 3,
     "requiredLevelCurve": {
@@ -87830,158 +87831,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "squishEra": 2,
       "curveId": 88583
     },
-    "upgrade": {
-      "group": 607,
-      "level": 1,
-      "max": 8,
-      "name": "Explorer",
-      "fullName": "Explorer 1/8",
-      "bonusId": 12704,
-      "itemLevel": 245,
-      "seasonId": 34,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 50,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 40,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 25,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 25,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 50,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3341,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3343,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3345,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3347,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3383,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
     "requiredLevelCurve": {
       "curve": 82419,
       "val": 3313
@@ -88158,158 +88007,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "squishEra": 2,
       "curveId": 88583
     },
-    "upgrade": {
-      "group": 607,
-      "level": 2,
-      "max": 8,
-      "name": "Explorer",
-      "fullName": "Explorer 2/8",
-      "bonusId": 12762,
-      "itemLevel": 248,
-      "seasonId": 34,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 50,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 40,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 25,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 25,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 50,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3341,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3343,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3345,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3347,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3383,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
     "requiredLevelCurve": {
       "curve": 82419,
       "val": 3313
@@ -88323,158 +88020,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "priority": 9999,
       "squishEra": 2,
       "curveId": 88583
-    },
-    "upgrade": {
-      "group": 607,
-      "level": 3,
-      "max": 8,
-      "name": "Explorer",
-      "fullName": "Explorer 3/8",
-      "bonusId": 12763,
-      "itemLevel": 252,
-      "seasonId": 34,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 50,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 40,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 25,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 25,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 50,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3341,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3343,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3345,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3347,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3383,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
     },
     "requiredLevelCurve": {
       "curve": 82419,
@@ -88490,158 +88035,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "squishEra": 2,
       "curveId": 88583
     },
-    "upgrade": {
-      "group": 607,
-      "level": 4,
-      "max": 8,
-      "name": "Explorer",
-      "fullName": "Explorer 4/8",
-      "bonusId": 12764,
-      "itemLevel": 255,
-      "seasonId": 34,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 50,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 40,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 25,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 25,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 50,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 100,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3341,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3343,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3345,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3347,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3383,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
     "requiredLevelCurve": {
       "curve": 82419,
       "val": 3313
@@ -88655,158 +88048,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "priority": 9999,
       "squishEra": 2,
       "curveId": 88583
-    },
-    "upgrade": {
-      "group": 607,
-      "level": 5,
-      "max": 8,
-      "name": "Explorer",
-      "fullName": "Explorer 5/8",
-      "bonusId": 12765,
-      "itemLevel": 258,
-      "seasonId": 34,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 40,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 40,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 80,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3341,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3343,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3345,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3347,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3383,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
     },
     "requiredLevelCurve": {
       "curve": 82419,
@@ -88822,158 +88063,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "squishEra": 2,
       "curveId": 88583
     },
-    "upgrade": {
-      "group": 607,
-      "level": 6,
-      "max": 8,
-      "name": "Explorer",
-      "fullName": "Explorer 6/8",
-      "bonusId": 12766,
-      "itemLevel": 261,
-      "seasonId": 34,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 40,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 40,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 80,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3341,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3343,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3345,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3347,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3383,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
     "requiredLevelCurve": {
       "curve": 82419,
       "val": 3313
@@ -88987,158 +88076,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "priority": 9999,
       "squishEra": 2,
       "curveId": 88583
-    },
-    "upgrade": {
-      "group": 607,
-      "level": 7,
-      "max": 8,
-      "name": "Explorer",
-      "fullName": "Explorer 7/8",
-      "bonusId": 12767,
-      "itemLevel": 265,
-      "seasonId": 34,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 40,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 40,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 80,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3341,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3343,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3345,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3347,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3383,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
     },
     "requiredLevelCurve": {
       "curve": 82419,
@@ -89154,158 +88091,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "squishEra": 2,
       "curveId": 88583
     },
-    "upgrade": {
-      "group": 607,
-      "level": 8,
-      "max": 8,
-      "name": "Explorer",
-      "fullName": "Explorer 8/8",
-      "bonusId": 12768,
-      "itemLevel": 268,
-      "seasonId": 34,
-      "costs": [
-        {
-          "mask_inv_type": 1048738,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 75,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 5448,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 65,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 68100,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 40,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8404992,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 40,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 8192,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 80,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67272704,
-          "flags": 2,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 67117056,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 120,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        },
-        {
-          "mask_inv_type": 131072,
-          "flags": 1,
-          "amounts": [
-            {
-              "currencyId": 3008,
-              "amount": 160,
-              "name": "Valorstones",
-              "icon": "inv_valorstone_base"
-            }
-          ]
-        }
-      ],
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3341,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3343,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3345,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3347,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3383,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
     "requiredLevelCurve": {
       "curve": 82419,
       "val": 3313
@@ -89319,60 +88104,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "priority": 0,
       "squishEra": 2
     },
-    "upgrade": {
-      "group": 608,
-      "level": 1,
-      "max": 6,
-      "name": "Adventurer",
-      "fullName": "Adventurer 1/6",
-      "bonusId": 12769,
-      "itemLevel": 220,
-      "seasonId": 34,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3341,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3343,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3345,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3347,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3383,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
     "quality": 3
   },
   "12770": {
@@ -89381,80 +88112,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "amount": 224,
       "priority": 0,
       "squishEra": 2
-    },
-    "upgrade": {
-      "group": 608,
-      "level": 2,
-      "max": 6,
-      "name": "Adventurer",
-      "fullName": "Adventurer 2/6",
-      "bonusId": 12770,
-      "itemLevel": 224,
-      "seasonId": 34,
-      "costs": [
-        {
-          "mask_inv_type": 0,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3383,
-              "amount": 20,
-              "name": "Adventurer Dawncrest",
-              "icon": "inv_120_crest_adventurer"
-            }
-          ]
-        }
-      ],
-      "currency": {
-        "amount": 20,
-        "name": "Adventurer Dawncrest",
-        "id": 3383,
-        "icon": "inv_120_crest_adventurer"
-      },
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3341,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3343,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3345,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3347,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3383,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
     },
     "quality": 3
   },
@@ -89465,80 +88122,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "priority": 0,
       "squishEra": 2
     },
-    "upgrade": {
-      "group": 608,
-      "level": 3,
-      "max": 6,
-      "name": "Adventurer",
-      "fullName": "Adventurer 3/6",
-      "bonusId": 12771,
-      "itemLevel": 227,
-      "seasonId": 34,
-      "costs": [
-        {
-          "mask_inv_type": 0,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3383,
-              "amount": 20,
-              "name": "Adventurer Dawncrest",
-              "icon": "inv_120_crest_adventurer"
-            }
-          ]
-        }
-      ],
-      "currency": {
-        "amount": 20,
-        "name": "Adventurer Dawncrest",
-        "id": 3383,
-        "icon": "inv_120_crest_adventurer"
-      },
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3341,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3343,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3345,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3347,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3383,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
     "quality": 3
   },
   "12772": {
@@ -89547,80 +88130,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "amount": 230,
       "priority": 0,
       "squishEra": 2
-    },
-    "upgrade": {
-      "group": 608,
-      "level": 4,
-      "max": 6,
-      "name": "Adventurer",
-      "fullName": "Adventurer 4/6",
-      "bonusId": 12772,
-      "itemLevel": 230,
-      "seasonId": 34,
-      "costs": [
-        {
-          "mask_inv_type": 0,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3383,
-              "amount": 20,
-              "name": "Adventurer Dawncrest",
-              "icon": "inv_120_crest_adventurer"
-            }
-          ]
-        }
-      ],
-      "currency": {
-        "amount": 20,
-        "name": "Adventurer Dawncrest",
-        "id": 3383,
-        "icon": "inv_120_crest_adventurer"
-      },
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3341,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3343,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3345,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3347,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3383,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
     },
     "quality": 3
   },
@@ -89631,80 +88140,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "priority": 0,
       "squishEra": 2
     },
-    "upgrade": {
-      "group": 608,
-      "level": 5,
-      "max": 6,
-      "name": "Adventurer",
-      "fullName": "Adventurer 5/6",
-      "bonusId": 12773,
-      "itemLevel": 233,
-      "seasonId": 34,
-      "costs": [
-        {
-          "mask_inv_type": 0,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3383,
-              "amount": 20,
-              "name": "Adventurer Dawncrest",
-              "icon": "inv_120_crest_adventurer"
-            }
-          ]
-        }
-      ],
-      "currency": {
-        "amount": 20,
-        "name": "Adventurer Dawncrest",
-        "id": 3383,
-        "icon": "inv_120_crest_adventurer"
-      },
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3341,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3343,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3345,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3347,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3383,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
     "quality": 3
   },
   "12774": {
@@ -89713,80 +88148,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "amount": 237,
       "priority": 0,
       "squishEra": 2
-    },
-    "upgrade": {
-      "group": 608,
-      "level": 6,
-      "max": 6,
-      "name": "Adventurer",
-      "fullName": "Adventurer 6/6",
-      "bonusId": 12774,
-      "itemLevel": 237,
-      "seasonId": 34,
-      "costs": [
-        {
-          "mask_inv_type": 0,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3383,
-              "amount": 20,
-              "name": "Adventurer Dawncrest",
-              "icon": "inv_120_crest_adventurer"
-            }
-          ]
-        }
-      ],
-      "currency": {
-        "amount": 20,
-        "name": "Adventurer Dawncrest",
-        "id": 3383,
-        "icon": "inv_120_crest_adventurer"
-      },
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3341,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3343,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3345,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3347,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3383,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
     },
     "quality": 3
   },
@@ -89815,60 +88176,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "amount": 233,
       "priority": 0,
       "squishEra": 2
-    },
-    "upgrade": {
-      "group": 609,
-      "level": 1,
-      "max": 6,
-      "name": "Veteran",
-      "fullName": "Veteran 1/6",
-      "bonusId": 12777,
-      "itemLevel": 233,
-      "seasonId": 34,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3341,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3343,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3345,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3347,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3383,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
     }
   },
   "12778": {
@@ -89877,80 +88184,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "amount": 237,
       "priority": 0,
       "squishEra": 2
-    },
-    "upgrade": {
-      "group": 609,
-      "level": 2,
-      "max": 6,
-      "name": "Veteran",
-      "fullName": "Veteran 2/6",
-      "bonusId": 12778,
-      "itemLevel": 237,
-      "seasonId": 34,
-      "costs": [
-        {
-          "mask_inv_type": 0,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3341,
-              "amount": 20,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        }
-      ],
-      "currency": {
-        "amount": 20,
-        "name": "Veteran Dawncrest",
-        "id": 3341,
-        "icon": "inv_120_crest_veteran"
-      },
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3341,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3343,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3345,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3347,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3383,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
     },
     "quality": 4
   },
@@ -89961,80 +88194,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "priority": 0,
       "squishEra": 2
     },
-    "upgrade": {
-      "group": 609,
-      "level": 3,
-      "max": 6,
-      "name": "Veteran",
-      "fullName": "Veteran 3/6",
-      "bonusId": 12779,
-      "itemLevel": 240,
-      "seasonId": 34,
-      "costs": [
-        {
-          "mask_inv_type": 0,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3341,
-              "amount": 20,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        }
-      ],
-      "currency": {
-        "amount": 20,
-        "name": "Veteran Dawncrest",
-        "id": 3341,
-        "icon": "inv_120_crest_veteran"
-      },
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3341,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3343,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3345,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3347,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3383,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
     "quality": 4
   },
   "12780": {
@@ -90043,80 +88202,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "amount": 243,
       "priority": 0,
       "squishEra": 2
-    },
-    "upgrade": {
-      "group": 609,
-      "level": 4,
-      "max": 6,
-      "name": "Veteran",
-      "fullName": "Veteran 4/6",
-      "bonusId": 12780,
-      "itemLevel": 243,
-      "seasonId": 34,
-      "costs": [
-        {
-          "mask_inv_type": 0,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3341,
-              "amount": 20,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        }
-      ],
-      "currency": {
-        "amount": 20,
-        "name": "Veteran Dawncrest",
-        "id": 3341,
-        "icon": "inv_120_crest_veteran"
-      },
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3341,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3343,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3345,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3347,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3383,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
     },
     "quality": 4
   },
@@ -90127,80 +88212,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "priority": 0,
       "squishEra": 2
     },
-    "upgrade": {
-      "group": 609,
-      "level": 5,
-      "max": 6,
-      "name": "Veteran",
-      "fullName": "Veteran 5/6",
-      "bonusId": 12781,
-      "itemLevel": 246,
-      "seasonId": 34,
-      "costs": [
-        {
-          "mask_inv_type": 0,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3341,
-              "amount": 20,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        }
-      ],
-      "currency": {
-        "amount": 20,
-        "name": "Veteran Dawncrest",
-        "id": 3341,
-        "icon": "inv_120_crest_veteran"
-      },
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3341,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3343,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3345,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3347,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3383,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
     "quality": 4
   },
   "12782": {
@@ -90209,80 +88220,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "amount": 250,
       "priority": 0,
       "squishEra": 2
-    },
-    "upgrade": {
-      "group": 609,
-      "level": 6,
-      "max": 6,
-      "name": "Veteran",
-      "fullName": "Veteran 6/6",
-      "bonusId": 12782,
-      "itemLevel": 250,
-      "seasonId": 34,
-      "costs": [
-        {
-          "mask_inv_type": 0,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3341,
-              "amount": 20,
-              "name": "Veteran Dawncrest",
-              "icon": "inv_120_crest_veteran"
-            }
-          ]
-        }
-      ],
-      "currency": {
-        "amount": 20,
-        "name": "Veteran Dawncrest",
-        "id": 3341,
-        "icon": "inv_120_crest_veteran"
-      },
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3341,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3343,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3345,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3347,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3383,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
     },
     "quality": 4
   },
@@ -90311,60 +88248,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "priority": 0,
       "squishEra": 2
     },
-    "upgrade": {
-      "group": 610,
-      "level": 1,
-      "max": 6,
-      "name": "Champion",
-      "fullName": "Champion 1/6",
-      "bonusId": 12785,
-      "itemLevel": 246,
-      "seasonId": 34,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3341,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3343,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3345,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3347,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3383,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
     "quality": 4
   },
   "12786": {
@@ -90373,80 +88256,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "amount": 250,
       "priority": 0,
       "squishEra": 2
-    },
-    "upgrade": {
-      "group": 610,
-      "level": 2,
-      "max": 6,
-      "name": "Champion",
-      "fullName": "Champion 2/6",
-      "bonusId": 12786,
-      "itemLevel": 250,
-      "seasonId": 34,
-      "costs": [
-        {
-          "mask_inv_type": 0,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3343,
-              "amount": 20,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        }
-      ],
-      "currency": {
-        "amount": 20,
-        "name": "Champion Dawncrest",
-        "id": 3343,
-        "icon": "inv_120_crest_champion"
-      },
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3341,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3343,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3345,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3347,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3383,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
     },
     "quality": 4
   },
@@ -90457,80 +88266,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "priority": 0,
       "squishEra": 2
     },
-    "upgrade": {
-      "group": 610,
-      "level": 3,
-      "max": 6,
-      "name": "Champion",
-      "fullName": "Champion 3/6",
-      "bonusId": 12787,
-      "itemLevel": 253,
-      "seasonId": 34,
-      "costs": [
-        {
-          "mask_inv_type": 0,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3343,
-              "amount": 20,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        }
-      ],
-      "currency": {
-        "amount": 20,
-        "name": "Champion Dawncrest",
-        "id": 3343,
-        "icon": "inv_120_crest_champion"
-      },
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3341,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3343,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3345,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3347,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3383,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
     "quality": 4
   },
   "12788": {
@@ -90539,80 +88274,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "amount": 256,
       "priority": 0,
       "squishEra": 2
-    },
-    "upgrade": {
-      "group": 610,
-      "level": 4,
-      "max": 6,
-      "name": "Champion",
-      "fullName": "Champion 4/6",
-      "bonusId": 12788,
-      "itemLevel": 256,
-      "seasonId": 34,
-      "costs": [
-        {
-          "mask_inv_type": 0,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3343,
-              "amount": 20,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        }
-      ],
-      "currency": {
-        "amount": 20,
-        "name": "Champion Dawncrest",
-        "id": 3343,
-        "icon": "inv_120_crest_champion"
-      },
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3341,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3343,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3345,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3347,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3383,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
     },
     "quality": 4
   },
@@ -90623,80 +88284,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "priority": 0,
       "squishEra": 2
     },
-    "upgrade": {
-      "group": 610,
-      "level": 5,
-      "max": 6,
-      "name": "Champion",
-      "fullName": "Champion 5/6",
-      "bonusId": 12789,
-      "itemLevel": 259,
-      "seasonId": 34,
-      "costs": [
-        {
-          "mask_inv_type": 0,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3343,
-              "amount": 20,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        }
-      ],
-      "currency": {
-        "amount": 20,
-        "name": "Champion Dawncrest",
-        "id": 3343,
-        "icon": "inv_120_crest_champion"
-      },
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3341,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3343,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3345,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3347,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3383,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
     "quality": 4
   },
   "12790": {
@@ -90705,80 +88292,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "amount": 263,
       "priority": 0,
       "squishEra": 2
-    },
-    "upgrade": {
-      "group": 610,
-      "level": 6,
-      "max": 6,
-      "name": "Champion",
-      "fullName": "Champion 6/6",
-      "bonusId": 12790,
-      "itemLevel": 263,
-      "seasonId": 34,
-      "costs": [
-        {
-          "mask_inv_type": 0,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3343,
-              "amount": 20,
-              "name": "Champion Dawncrest",
-              "icon": "inv_120_crest_champion"
-            }
-          ]
-        }
-      ],
-      "currency": {
-        "amount": 20,
-        "name": "Champion Dawncrest",
-        "id": 3343,
-        "icon": "inv_120_crest_champion"
-      },
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3341,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3343,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3345,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3347,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3383,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
     },
     "quality": 4
   },
@@ -90807,60 +88320,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "priority": 0,
       "squishEra": 2
     },
-    "upgrade": {
-      "group": 611,
-      "level": 1,
-      "max": 6,
-      "name": "Hero",
-      "fullName": "Hero 1/6",
-      "bonusId": 12793,
-      "itemLevel": 259,
-      "seasonId": 34,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3341,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3343,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3345,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3347,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3383,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
     "quality": 4
   },
   "12794": {
@@ -90869,80 +88328,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "amount": 263,
       "priority": 0,
       "squishEra": 2
-    },
-    "upgrade": {
-      "group": 611,
-      "level": 2,
-      "max": 6,
-      "name": "Hero",
-      "fullName": "Hero 2/6",
-      "bonusId": 12794,
-      "itemLevel": 263,
-      "seasonId": 34,
-      "costs": [
-        {
-          "mask_inv_type": 0,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3345,
-              "amount": 20,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        }
-      ],
-      "currency": {
-        "amount": 20,
-        "name": "Hero Dawncrest",
-        "id": 3345,
-        "icon": "inv_120_crest_hero"
-      },
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3341,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3343,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3345,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3347,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3383,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
     },
     "quality": 4
   },
@@ -90953,80 +88338,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "priority": 0,
       "squishEra": 2
     },
-    "upgrade": {
-      "group": 611,
-      "level": 3,
-      "max": 6,
-      "name": "Hero",
-      "fullName": "Hero 3/6",
-      "bonusId": 12795,
-      "itemLevel": 266,
-      "seasonId": 34,
-      "costs": [
-        {
-          "mask_inv_type": 0,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3345,
-              "amount": 20,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        }
-      ],
-      "currency": {
-        "amount": 20,
-        "name": "Hero Dawncrest",
-        "id": 3345,
-        "icon": "inv_120_crest_hero"
-      },
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3341,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3343,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3345,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3347,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3383,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
     "quality": 4
   },
   "12796": {
@@ -91035,80 +88346,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "amount": 269,
       "priority": 0,
       "squishEra": 2
-    },
-    "upgrade": {
-      "group": 611,
-      "level": 4,
-      "max": 6,
-      "name": "Hero",
-      "fullName": "Hero 4/6",
-      "bonusId": 12796,
-      "itemLevel": 269,
-      "seasonId": 34,
-      "costs": [
-        {
-          "mask_inv_type": 0,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3345,
-              "amount": 20,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        }
-      ],
-      "currency": {
-        "amount": 20,
-        "name": "Hero Dawncrest",
-        "id": 3345,
-        "icon": "inv_120_crest_hero"
-      },
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3341,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3343,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3345,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3347,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3383,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
     },
     "quality": 4
   },
@@ -91119,80 +88356,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "priority": 0,
       "squishEra": 2
     },
-    "upgrade": {
-      "group": 611,
-      "level": 5,
-      "max": 6,
-      "name": "Hero",
-      "fullName": "Hero 5/6",
-      "bonusId": 12797,
-      "itemLevel": 272,
-      "seasonId": 34,
-      "costs": [
-        {
-          "mask_inv_type": 0,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3345,
-              "amount": 20,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        }
-      ],
-      "currency": {
-        "amount": 20,
-        "name": "Hero Dawncrest",
-        "id": 3345,
-        "icon": "inv_120_crest_hero"
-      },
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3341,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3343,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3345,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3347,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3383,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
     "quality": 4
   },
   "12798": {
@@ -91201,80 +88364,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "amount": 276,
       "priority": 0,
       "squishEra": 2
-    },
-    "upgrade": {
-      "group": 611,
-      "level": 6,
-      "max": 6,
-      "name": "Hero",
-      "fullName": "Hero 6/6",
-      "bonusId": 12798,
-      "itemLevel": 276,
-      "seasonId": 34,
-      "costs": [
-        {
-          "mask_inv_type": 0,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3345,
-              "amount": 20,
-              "name": "Hero Dawncrest",
-              "icon": "inv_120_crest_hero"
-            }
-          ]
-        }
-      ],
-      "currency": {
-        "amount": 20,
-        "name": "Hero Dawncrest",
-        "id": 3345,
-        "icon": "inv_120_crest_hero"
-      },
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3341,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3343,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3345,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3347,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3383,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
     },
     "quality": 4
   },
@@ -91303,60 +88392,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "priority": 0,
       "squishEra": 2
     },
-    "upgrade": {
-      "group": 612,
-      "level": 1,
-      "max": 6,
-      "name": "Myth",
-      "fullName": "Myth 1/6",
-      "bonusId": 12801,
-      "itemLevel": 272,
-      "seasonId": 34,
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3341,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3343,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3345,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3347,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3383,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
     "quality": 4
   },
   "12802": {
@@ -91365,80 +88400,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "amount": 276,
       "priority": 0,
       "squishEra": 2
-    },
-    "upgrade": {
-      "group": 612,
-      "level": 2,
-      "max": 6,
-      "name": "Myth",
-      "fullName": "Myth 2/6",
-      "bonusId": 12802,
-      "itemLevel": 276,
-      "seasonId": 34,
-      "costs": [
-        {
-          "mask_inv_type": 0,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3347,
-              "amount": 20,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        }
-      ],
-      "currency": {
-        "amount": 20,
-        "name": "Myth Dawncrest",
-        "id": 3347,
-        "icon": "inv_120_crest_myth"
-      },
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3341,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3343,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3345,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3347,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3383,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
     },
     "quality": 4
   },
@@ -91449,80 +88410,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "priority": 0,
       "squishEra": 2
     },
-    "upgrade": {
-      "group": 612,
-      "level": 3,
-      "max": 6,
-      "name": "Myth",
-      "fullName": "Myth 3/6",
-      "bonusId": 12803,
-      "itemLevel": 279,
-      "seasonId": 34,
-      "costs": [
-        {
-          "mask_inv_type": 0,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3347,
-              "amount": 20,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        }
-      ],
-      "currency": {
-        "amount": 20,
-        "name": "Myth Dawncrest",
-        "id": 3347,
-        "icon": "inv_120_crest_myth"
-      },
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3341,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3343,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3345,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3347,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3383,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
     "quality": 4
   },
   "12804": {
@@ -91531,80 +88418,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "amount": 282,
       "priority": 0,
       "squishEra": 2
-    },
-    "upgrade": {
-      "group": 612,
-      "level": 4,
-      "max": 6,
-      "name": "Myth",
-      "fullName": "Myth 4/6",
-      "bonusId": 12804,
-      "itemLevel": 282,
-      "seasonId": 34,
-      "costs": [
-        {
-          "mask_inv_type": 0,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3347,
-              "amount": 20,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        }
-      ],
-      "currency": {
-        "amount": 20,
-        "name": "Myth Dawncrest",
-        "id": 3347,
-        "icon": "inv_120_crest_myth"
-      },
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3341,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3343,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3345,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3347,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3383,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
     },
     "quality": 4
   },
@@ -91615,80 +88428,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "priority": 0,
       "squishEra": 2
     },
-    "upgrade": {
-      "group": 612,
-      "level": 5,
-      "max": 6,
-      "name": "Myth",
-      "fullName": "Myth 5/6",
-      "bonusId": 12805,
-      "itemLevel": 285,
-      "seasonId": 34,
-      "costs": [
-        {
-          "mask_inv_type": 0,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3347,
-              "amount": 20,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        }
-      ],
-      "currency": {
-        "amount": 20,
-        "name": "Myth Dawncrest",
-        "id": 3347,
-        "icon": "inv_120_crest_myth"
-      },
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3341,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3343,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3345,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3347,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3383,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
-    },
     "quality": 4
   },
   "12806": {
@@ -91697,80 +88436,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "amount": 289,
       "priority": 0,
       "squishEra": 2
-    },
-    "upgrade": {
-      "group": 612,
-      "level": 6,
-      "max": 6,
-      "name": "Myth",
-      "fullName": "Myth 6/6",
-      "bonusId": 12806,
-      "itemLevel": 289,
-      "seasonId": 34,
-      "costs": [
-        {
-          "mask_inv_type": 0,
-          "flags": 0,
-          "amounts": [
-            {
-              "currencyId": 3347,
-              "amount": 20,
-              "name": "Myth Dawncrest",
-              "icon": "inv_120_crest_myth"
-            }
-          ]
-        }
-      ],
-      "currency": {
-        "amount": 20,
-        "name": "Myth Dawncrest",
-        "id": 3347,
-        "icon": "inv_120_crest_myth"
-      },
-      "highWatermarkDiscounts": [
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3341,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3343,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3345,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3347,
-          "scaling": 0,
-          "accountWide": false
-        },
-        {
-          "type": "currency",
-          "id": 3008,
-          "scaling": 0.5,
-          "accountWide": true
-        },
-        {
-          "type": "currency",
-          "id": 3383,
-          "scaling": 0,
-          "accountWide": false
-        }
-      ]
     },
     "quality": 4
   },
@@ -91792,1109 +88457,2125 @@ export const bonus_IDs: {[key: string]: any} = {
     },
     "quality": 4
   },
-  "12809": {
-    "id": 12809,
-    "itemLevel": {
-      "amount": 284,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
-    },
-    "upgrade": {
-      "group": 613,
-      "level": 1,
-      "max": 8,
-      "name": "Explorer",
-      "fullName": "Explorer 1/8",
-      "bonusId": 12809,
-      "itemLevel": 284
-    },
-    "quality": 2,
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
-    }
-  },
-  "12810": {
-    "id": 12810,
-    "itemLevel": {
-      "amount": 287,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
-    },
-    "upgrade": {
-      "group": 613,
-      "level": 2,
-      "max": 8,
-      "name": "Explorer",
-      "fullName": "Explorer 2/8",
-      "bonusId": 12810,
-      "itemLevel": 287
-    },
-    "quality": 2,
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
-    }
-  },
-  "12811": {
-    "id": 12811,
-    "itemLevel": {
-      "amount": 291,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
-    },
-    "upgrade": {
-      "group": 613,
-      "level": 3,
-      "max": 8,
-      "name": "Explorer",
-      "fullName": "Explorer 3/8",
-      "bonusId": 12811,
-      "itemLevel": 291
-    },
-    "quality": 2,
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
-    }
-  },
-  "12812": {
-    "id": 12812,
-    "itemLevel": {
-      "amount": 294,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
-    },
-    "upgrade": {
-      "group": 613,
-      "level": 4,
-      "max": 8,
-      "name": "Explorer",
-      "fullName": "Explorer 4/8",
-      "bonusId": 12812,
-      "itemLevel": 294
-    },
-    "quality": 2,
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
-    }
-  },
-  "12813": {
-    "id": 12813,
-    "itemLevel": {
-      "amount": 297,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
-    },
-    "upgrade": {
-      "group": 613,
-      "level": 5,
-      "max": 8,
-      "name": "Explorer",
-      "fullName": "Explorer 5/8",
-      "bonusId": 12813,
-      "itemLevel": 297
-    },
-    "quality": 2,
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
-    }
-  },
-  "12814": {
-    "id": 12814,
-    "itemLevel": {
-      "amount": 300,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
-    },
-    "upgrade": {
-      "group": 613,
-      "level": 6,
-      "max": 8,
-      "name": "Explorer",
-      "fullName": "Explorer 6/8",
-      "bonusId": 12814,
-      "itemLevel": 300
-    },
-    "quality": 2,
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
-    }
-  },
-  "12815": {
-    "id": 12815,
-    "itemLevel": {
-      "amount": 304,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
-    },
-    "upgrade": {
-      "group": 613,
-      "level": 7,
-      "max": 8,
-      "name": "Explorer",
-      "fullName": "Explorer 7/8",
-      "bonusId": 12815,
-      "itemLevel": 304
-    },
-    "quality": 2,
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
-    }
-  },
-  "12816": {
-    "id": 12816,
-    "itemLevel": {
-      "amount": 307,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
-    },
-    "upgrade": {
-      "group": 613,
-      "level": 8,
-      "max": 8,
-      "name": "Explorer",
-      "fullName": "Explorer 8/8",
-      "bonusId": 12816,
-      "itemLevel": 307
-    },
-    "quality": 2,
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
-    }
-  },
   "12817": {
     "id": 12817,
     "itemLevel": {
-      "amount": 97,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
+      "amount": 266,
+      "priority": 0,
+      "squishEra": 2
     },
     "upgrade": {
       "group": 614,
       "level": 1,
-      "max": 8,
+      "max": 6,
       "name": "Adventurer",
-      "fullName": "Adventurer 1/8",
+      "fullName": "Adventurer 1/6",
       "bonusId": 12817,
-      "itemLevel": 97
-    },
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
+      "itemLevel": 266,
+      "seasonId": 37,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3442,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3443,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3444,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3445,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3446,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
     },
     "quality": 3
   },
   "12818": {
     "id": 12818,
     "itemLevel": {
-      "amount": 300,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
+      "amount": 269,
+      "priority": 0,
+      "squishEra": 2
     },
     "upgrade": {
       "group": 614,
       "level": 2,
-      "max": 8,
+      "max": 6,
       "name": "Adventurer",
-      "fullName": "Adventurer 2/8",
+      "fullName": "Adventurer 2/6",
       "bonusId": 12818,
-      "itemLevel": 300
-    },
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
+      "itemLevel": 269,
+      "seasonId": 37,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3442,
+              "amount": 20,
+              "name": "Adventurer Mistcrest",
+              "icon": "inv_121_crest_adventurer"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 20,
+        "name": "Adventurer Mistcrest",
+        "id": 3442,
+        "icon": "inv_121_crest_adventurer"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3442,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3443,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3444,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3445,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3446,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
     },
     "quality": 3
   },
   "12819": {
     "id": 12819,
     "itemLevel": {
-      "amount": 304,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
+      "amount": 272,
+      "priority": 0,
+      "squishEra": 2
     },
     "upgrade": {
       "group": 614,
       "level": 3,
-      "max": 8,
+      "max": 6,
       "name": "Adventurer",
-      "fullName": "Adventurer 3/8",
+      "fullName": "Adventurer 3/6",
       "bonusId": 12819,
-      "itemLevel": 304
-    },
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
+      "itemLevel": 272,
+      "seasonId": 37,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3442,
+              "amount": 20,
+              "name": "Adventurer Mistcrest",
+              "icon": "inv_121_crest_adventurer"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 20,
+        "name": "Adventurer Mistcrest",
+        "id": 3442,
+        "icon": "inv_121_crest_adventurer"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3442,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3443,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3444,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3445,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3446,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
     },
     "quality": 3
   },
   "12820": {
     "id": 12820,
     "itemLevel": {
-      "amount": 307,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
+      "amount": 276,
+      "priority": 0,
+      "squishEra": 2
     },
     "upgrade": {
       "group": 614,
       "level": 4,
-      "max": 8,
+      "max": 6,
       "name": "Adventurer",
-      "fullName": "Adventurer 4/8",
+      "fullName": "Adventurer 4/6",
       "bonusId": 12820,
-      "itemLevel": 307
-    },
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
+      "itemLevel": 276,
+      "seasonId": 37,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3442,
+              "amount": 20,
+              "name": "Adventurer Mistcrest",
+              "icon": "inv_121_crest_adventurer"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 20,
+        "name": "Adventurer Mistcrest",
+        "id": 3442,
+        "icon": "inv_121_crest_adventurer"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3442,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3443,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3444,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3445,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3446,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
     },
     "quality": 3
   },
   "12821": {
     "id": 12821,
     "itemLevel": {
-      "amount": 310,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
+      "amount": 279,
+      "priority": 0,
+      "squishEra": 2
     },
     "upgrade": {
       "group": 614,
       "level": 5,
-      "max": 8,
+      "max": 6,
       "name": "Adventurer",
-      "fullName": "Adventurer 5/8",
+      "fullName": "Adventurer 5/6",
       "bonusId": 12821,
-      "itemLevel": 310
-    },
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
+      "itemLevel": 279,
+      "seasonId": 37,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3442,
+              "amount": 20,
+              "name": "Adventurer Mistcrest",
+              "icon": "inv_121_crest_adventurer"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 20,
+        "name": "Adventurer Mistcrest",
+        "id": 3442,
+        "icon": "inv_121_crest_adventurer"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3442,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3443,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3444,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3445,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3446,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
     },
     "quality": 3
   },
   "12822": {
     "id": 12822,
     "itemLevel": {
-      "amount": 313,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
+      "amount": 282,
+      "priority": 0,
+      "squishEra": 2
     },
     "upgrade": {
       "group": 614,
       "level": 6,
-      "max": 8,
+      "max": 6,
       "name": "Adventurer",
-      "fullName": "Adventurer 6/8",
+      "fullName": "Adventurer 6/6",
       "bonusId": 12822,
-      "itemLevel": 313
-    },
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
+      "itemLevel": 282,
+      "seasonId": 37,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3442,
+              "amount": 20,
+              "name": "Adventurer Mistcrest",
+              "icon": "inv_121_crest_adventurer"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 20,
+        "name": "Adventurer Mistcrest",
+        "id": 3442,
+        "icon": "inv_121_crest_adventurer"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3442,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3443,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3444,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3445,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3446,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ]
     },
     "quality": 3
   },
   "12823": {
     "id": 12823,
     "itemLevel": {
-      "amount": 317,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
-    },
-    "upgrade": {
-      "group": 614,
-      "level": 7,
-      "max": 8,
-      "name": "Adventurer",
-      "fullName": "Adventurer 7/8",
-      "bonusId": 12823,
-      "itemLevel": 317
-    },
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
+      "amount": 285,
+      "priority": 0,
+      "squishEra": 2
     },
     "quality": 3
   },
   "12824": {
     "id": 12824,
     "itemLevel": {
-      "amount": 320,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
-    },
-    "upgrade": {
-      "group": 614,
-      "level": 8,
-      "max": 8,
-      "name": "Adventurer",
-      "fullName": "Adventurer 8/8",
-      "bonusId": 12824,
-      "itemLevel": 320
-    },
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
+      "amount": 289,
+      "priority": 0,
+      "squishEra": 2
     },
     "quality": 3
   },
   "12825": {
     "id": 12825,
-    "itemLevel": {
-      "amount": 310,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
-    },
     "upgrade": {
       "group": 615,
       "level": 1,
-      "max": 8,
+      "max": 6,
       "name": "Veteran",
-      "fullName": "Veteran 1/8",
+      "fullName": "Veteran 1/6",
       "bonusId": 12825,
-      "itemLevel": 310
+      "seasonId": 37,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3442,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3443,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3444,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3445,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3446,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "itemLevel": 279
     },
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
-    },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 279,
+      "priority": 0,
+      "squishEra": 2
+    }
   },
   "12826": {
     "id": 12826,
-    "itemLevel": {
-      "amount": 313,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
-    },
     "upgrade": {
       "group": 615,
       "level": 2,
-      "max": 8,
+      "max": 6,
       "name": "Veteran",
-      "fullName": "Veteran 2/8",
+      "fullName": "Veteran 2/6",
       "bonusId": 12826,
-      "itemLevel": 313
+      "seasonId": 37,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3443,
+              "amount": 20,
+              "name": "Veteran Mistcrest",
+              "icon": "inv_121_crest_veteran"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 20,
+        "name": "Veteran Mistcrest",
+        "id": 3443,
+        "icon": "inv_121_crest_veteran"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3442,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3443,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3444,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3445,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3446,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "itemLevel": 282
     },
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
-    },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 282,
+      "priority": 0,
+      "squishEra": 2
+    }
   },
   "12827": {
     "id": 12827,
-    "itemLevel": {
-      "amount": 317,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
-    },
     "upgrade": {
       "group": 615,
       "level": 3,
-      "max": 8,
+      "max": 6,
       "name": "Veteran",
-      "fullName": "Veteran 3/8",
+      "fullName": "Veteran 3/6",
       "bonusId": 12827,
-      "itemLevel": 317
+      "seasonId": 37,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3443,
+              "amount": 20,
+              "name": "Veteran Mistcrest",
+              "icon": "inv_121_crest_veteran"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 20,
+        "name": "Veteran Mistcrest",
+        "id": 3443,
+        "icon": "inv_121_crest_veteran"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3442,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3443,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3444,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3445,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3446,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "itemLevel": 285
     },
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
-    },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 285,
+      "priority": 0,
+      "squishEra": 2
+    }
   },
   "12828": {
     "id": 12828,
-    "itemLevel": {
-      "amount": 320,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
-    },
     "upgrade": {
       "group": 615,
       "level": 4,
-      "max": 8,
+      "max": 6,
       "name": "Veteran",
-      "fullName": "Veteran 4/8",
+      "fullName": "Veteran 4/6",
       "bonusId": 12828,
-      "itemLevel": 320
+      "seasonId": 37,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3443,
+              "amount": 20,
+              "name": "Veteran Mistcrest",
+              "icon": "inv_121_crest_veteran"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 20,
+        "name": "Veteran Mistcrest",
+        "id": 3443,
+        "icon": "inv_121_crest_veteran"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3442,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3443,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3444,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3445,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3446,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "itemLevel": 289
     },
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
-    },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 289,
+      "priority": 0,
+      "squishEra": 2
+    }
   },
   "12829": {
     "id": 12829,
-    "itemLevel": {
-      "amount": 323,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
-    },
     "upgrade": {
       "group": 615,
       "level": 5,
-      "max": 8,
+      "max": 6,
       "name": "Veteran",
-      "fullName": "Veteran 5/8",
+      "fullName": "Veteran 5/6",
       "bonusId": 12829,
-      "itemLevel": 323
+      "seasonId": 37,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3443,
+              "amount": 20,
+              "name": "Veteran Mistcrest",
+              "icon": "inv_121_crest_veteran"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 20,
+        "name": "Veteran Mistcrest",
+        "id": 3443,
+        "icon": "inv_121_crest_veteran"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3442,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3443,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3444,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3445,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3446,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "itemLevel": 292
     },
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
-    },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 292,
+      "priority": 0,
+      "squishEra": 2
+    }
   },
   "12830": {
     "id": 12830,
-    "itemLevel": {
-      "amount": 326,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
-    },
     "upgrade": {
       "group": 615,
       "level": 6,
-      "max": 8,
+      "max": 6,
       "name": "Veteran",
-      "fullName": "Veteran 6/8",
+      "fullName": "Veteran 6/6",
       "bonusId": 12830,
-      "itemLevel": 326
+      "seasonId": 37,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3443,
+              "amount": 20,
+              "name": "Veteran Mistcrest",
+              "icon": "inv_121_crest_veteran"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 20,
+        "name": "Veteran Mistcrest",
+        "id": 3443,
+        "icon": "inv_121_crest_veteran"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3442,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3443,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3444,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3445,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3446,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "itemLevel": 295
     },
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
-    },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 295,
+      "priority": 0,
+      "squishEra": 2
+    }
   },
   "12831": {
     "id": 12831,
+    "quality": 4,
     "itemLevel": {
-      "amount": 330,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
-    },
-    "upgrade": {
-      "group": 615,
-      "level": 7,
-      "max": 8,
-      "name": "Veteran",
-      "fullName": "Veteran 7/8",
-      "bonusId": 12831,
-      "itemLevel": 330
-    },
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
-    },
-    "quality": 4
+      "amount": 298,
+      "priority": 0,
+      "squishEra": 2
+    }
   },
   "12832": {
     "id": 12832,
+    "quality": 4,
     "itemLevel": {
-      "amount": 333,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
-    },
-    "upgrade": {
-      "group": 615,
-      "level": 8,
-      "max": 8,
-      "name": "Veteran",
-      "fullName": "Veteran 8/8",
-      "bonusId": 12832,
-      "itemLevel": 333
-    },
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
-    },
-    "quality": 4
+      "amount": 302,
+      "priority": 0,
+      "squishEra": 2
+    }
   },
   "12833": {
     "id": 12833,
-    "itemLevel": {
-      "amount": 323,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
-    },
     "upgrade": {
       "group": 616,
       "level": 1,
-      "max": 8,
+      "max": 6,
       "name": "Champion",
-      "fullName": "Champion 1/8",
+      "fullName": "Champion 1/6",
       "bonusId": 12833,
-      "itemLevel": 323
+      "seasonId": 37,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3442,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3443,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3444,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3445,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3446,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "itemLevel": 292
     },
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
-    },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 292,
+      "priority": 0,
+      "squishEra": 2
+    }
   },
   "12834": {
     "id": 12834,
-    "itemLevel": {
-      "amount": 326,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
-    },
     "upgrade": {
       "group": 616,
       "level": 2,
-      "max": 8,
+      "max": 6,
       "name": "Champion",
-      "fullName": "Champion 2/8",
+      "fullName": "Champion 2/6",
       "bonusId": 12834,
-      "itemLevel": 326
+      "seasonId": 37,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3444,
+              "amount": 20,
+              "name": "Champion Mistcrest",
+              "icon": "inv_121_crest_champion"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 20,
+        "name": "Champion Mistcrest",
+        "id": 3444,
+        "icon": "inv_121_crest_champion"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3442,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3443,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3444,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3445,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3446,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "itemLevel": 295
     },
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
-    },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 295,
+      "priority": 0,
+      "squishEra": 2
+    }
   },
   "12835": {
     "id": 12835,
-    "itemLevel": {
-      "amount": 330,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
-    },
     "upgrade": {
       "group": 616,
       "level": 3,
-      "max": 8,
+      "max": 6,
       "name": "Champion",
-      "fullName": "Champion 3/8",
+      "fullName": "Champion 3/6",
       "bonusId": 12835,
-      "itemLevel": 330
+      "seasonId": 37,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3444,
+              "amount": 20,
+              "name": "Champion Mistcrest",
+              "icon": "inv_121_crest_champion"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 20,
+        "name": "Champion Mistcrest",
+        "id": 3444,
+        "icon": "inv_121_crest_champion"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3442,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3443,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3444,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3445,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3446,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "itemLevel": 298
     },
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
-    },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 298,
+      "priority": 0,
+      "squishEra": 2
+    }
   },
   "12836": {
     "id": 12836,
-    "itemLevel": {
-      "amount": 333,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
-    },
     "upgrade": {
       "group": 616,
       "level": 4,
-      "max": 8,
+      "max": 6,
       "name": "Champion",
-      "fullName": "Champion 4/8",
+      "fullName": "Champion 4/6",
       "bonusId": 12836,
-      "itemLevel": 333
+      "seasonId": 37,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3444,
+              "amount": 20,
+              "name": "Champion Mistcrest",
+              "icon": "inv_121_crest_champion"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 20,
+        "name": "Champion Mistcrest",
+        "id": 3444,
+        "icon": "inv_121_crest_champion"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3442,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3443,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3444,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3445,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3446,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "itemLevel": 302
     },
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
-    },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 302,
+      "priority": 0,
+      "squishEra": 2
+    }
   },
   "12837": {
     "id": 12837,
-    "itemLevel": {
-      "amount": 336,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
-    },
     "upgrade": {
       "group": 616,
       "level": 5,
-      "max": 8,
+      "max": 6,
       "name": "Champion",
-      "fullName": "Champion 5/8",
+      "fullName": "Champion 5/6",
       "bonusId": 12837,
-      "itemLevel": 336
+      "seasonId": 37,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3444,
+              "amount": 20,
+              "name": "Champion Mistcrest",
+              "icon": "inv_121_crest_champion"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 20,
+        "name": "Champion Mistcrest",
+        "id": 3444,
+        "icon": "inv_121_crest_champion"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3442,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3443,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3444,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3445,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3446,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "itemLevel": 305
     },
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
-    },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 305,
+      "priority": 0,
+      "squishEra": 2
+    }
   },
   "12838": {
     "id": 12838,
-    "itemLevel": {
-      "amount": 339,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
-    },
     "upgrade": {
       "group": 616,
       "level": 6,
-      "max": 8,
+      "max": 6,
       "name": "Champion",
-      "fullName": "Champion 6/8",
+      "fullName": "Champion 6/6",
       "bonusId": 12838,
-      "itemLevel": 339
+      "seasonId": 37,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3444,
+              "amount": 20,
+              "name": "Champion Mistcrest",
+              "icon": "inv_121_crest_champion"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 20,
+        "name": "Champion Mistcrest",
+        "id": 3444,
+        "icon": "inv_121_crest_champion"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3442,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3443,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3444,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3445,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3446,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "itemLevel": 308
     },
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
-    },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 308,
+      "priority": 0,
+      "squishEra": 2
+    }
   },
   "12839": {
     "id": 12839,
+    "quality": 4,
     "itemLevel": {
-      "amount": 343,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
-    },
-    "upgrade": {
-      "group": 616,
-      "level": 7,
-      "max": 8,
-      "name": "Champion",
-      "fullName": "Champion 7/8",
-      "bonusId": 12839,
-      "itemLevel": 343
-    },
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
-    },
-    "quality": 4
+      "amount": 311,
+      "priority": 0,
+      "squishEra": 2
+    }
   },
   "12840": {
     "id": 12840,
+    "quality": 4,
     "itemLevel": {
-      "amount": 346,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
-    },
-    "upgrade": {
-      "group": 616,
-      "level": 8,
-      "max": 8,
-      "name": "Champion",
-      "fullName": "Champion 8/8",
-      "bonusId": 12840,
-      "itemLevel": 346
-    },
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
-    },
-    "quality": 4
+      "amount": 315,
+      "priority": 0,
+      "squishEra": 2
+    }
   },
   "12841": {
     "id": 12841,
-    "itemLevel": {
-      "amount": 336,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
-    },
     "upgrade": {
       "group": 617,
       "level": 1,
-      "max": 8,
+      "max": 6,
       "name": "Hero",
-      "fullName": "Hero 1/8",
+      "fullName": "Hero 1/6",
       "bonusId": 12841,
-      "itemLevel": 336
+      "seasonId": 37,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3442,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3443,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3444,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3445,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3446,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "itemLevel": 305
     },
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
-    },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 305,
+      "priority": 0,
+      "squishEra": 2
+    }
   },
   "12842": {
     "id": 12842,
-    "itemLevel": {
-      "amount": 339,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
-    },
     "upgrade": {
       "group": 617,
       "level": 2,
-      "max": 8,
+      "max": 6,
       "name": "Hero",
-      "fullName": "Hero 2/8",
+      "fullName": "Hero 2/6",
       "bonusId": 12842,
-      "itemLevel": 339
+      "seasonId": 37,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3445,
+              "amount": 20,
+              "name": "Hero Mistcrest",
+              "icon": "inv_121_crest_hero"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 20,
+        "name": "Hero Mistcrest",
+        "id": 3445,
+        "icon": "inv_121_crest_hero"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3442,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3443,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3444,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3445,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3446,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "itemLevel": 308
     },
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
-    },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 308,
+      "priority": 0,
+      "squishEra": 2
+    }
   },
   "12843": {
     "id": 12843,
-    "itemLevel": {
-      "amount": 343,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
-    },
     "upgrade": {
       "group": 617,
       "level": 3,
-      "max": 8,
+      "max": 6,
       "name": "Hero",
-      "fullName": "Hero 3/8",
+      "fullName": "Hero 3/6",
       "bonusId": 12843,
-      "itemLevel": 343
+      "seasonId": 37,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3445,
+              "amount": 20,
+              "name": "Hero Mistcrest",
+              "icon": "inv_121_crest_hero"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 20,
+        "name": "Hero Mistcrest",
+        "id": 3445,
+        "icon": "inv_121_crest_hero"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3442,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3443,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3444,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3445,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3446,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "itemLevel": 311
     },
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
-    },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 311,
+      "priority": 0,
+      "squishEra": 2
+    }
   },
   "12844": {
     "id": 12844,
-    "itemLevel": {
-      "amount": 346,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
-    },
     "upgrade": {
       "group": 617,
       "level": 4,
-      "max": 8,
+      "max": 6,
       "name": "Hero",
-      "fullName": "Hero 4/8",
+      "fullName": "Hero 4/6",
       "bonusId": 12844,
-      "itemLevel": 346
+      "seasonId": 37,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3445,
+              "amount": 20,
+              "name": "Hero Mistcrest",
+              "icon": "inv_121_crest_hero"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 20,
+        "name": "Hero Mistcrest",
+        "id": 3445,
+        "icon": "inv_121_crest_hero"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3442,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3443,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3444,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3445,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3446,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "itemLevel": 315
     },
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
-    },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 315,
+      "priority": 0,
+      "squishEra": 2
+    }
   },
   "12845": {
     "id": 12845,
-    "itemLevel": {
-      "amount": 349,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
-    },
     "upgrade": {
       "group": 617,
       "level": 5,
-      "max": 8,
+      "max": 6,
       "name": "Hero",
-      "fullName": "Hero 5/8",
+      "fullName": "Hero 5/6",
       "bonusId": 12845,
-      "itemLevel": 349
+      "seasonId": 37,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3445,
+              "amount": 20,
+              "name": "Hero Mistcrest",
+              "icon": "inv_121_crest_hero"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 20,
+        "name": "Hero Mistcrest",
+        "id": 3445,
+        "icon": "inv_121_crest_hero"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3442,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3443,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3444,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3445,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3446,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "itemLevel": 318
     },
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
-    },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 318,
+      "priority": 0,
+      "squishEra": 2
+    }
   },
   "12846": {
     "id": 12846,
-    "itemLevel": {
-      "amount": 352,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
-    },
     "upgrade": {
       "group": 617,
       "level": 6,
-      "max": 8,
+      "max": 6,
       "name": "Hero",
-      "fullName": "Hero 6/8",
+      "fullName": "Hero 6/6",
       "bonusId": 12846,
-      "itemLevel": 352
+      "seasonId": 37,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3445,
+              "amount": 20,
+              "name": "Hero Mistcrest",
+              "icon": "inv_121_crest_hero"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 20,
+        "name": "Hero Mistcrest",
+        "id": 3445,
+        "icon": "inv_121_crest_hero"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3442,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3443,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3444,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3445,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3446,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "itemLevel": 321
     },
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
-    },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 321,
+      "priority": 0,
+      "squishEra": 2
+    }
   },
   "12847": {
     "id": 12847,
+    "quality": 4,
     "itemLevel": {
-      "amount": 356,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
-    },
-    "upgrade": {
-      "group": 617,
-      "level": 7,
-      "max": 8,
-      "name": "Hero",
-      "fullName": "Hero 7/8",
-      "bonusId": 12847,
-      "itemLevel": 356
-    },
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
-    },
-    "quality": 4
+      "amount": 324,
+      "priority": 0,
+      "squishEra": 2
+    }
   },
   "12848": {
     "id": 12848,
+    "quality": 4,
     "itemLevel": {
-      "amount": 359,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
-    },
-    "upgrade": {
-      "group": 617,
-      "level": 8,
-      "max": 8,
-      "name": "Hero",
-      "fullName": "Hero 8/8",
-      "bonusId": 12848,
-      "itemLevel": 359
-    },
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
-    },
-    "quality": 4
+      "amount": 328,
+      "priority": 0,
+      "squishEra": 2
+    }
   },
   "12849": {
     "id": 12849,
-    "itemLevel": {
-      "amount": 349,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
-    },
     "upgrade": {
       "group": 618,
       "level": 1,
-      "max": 8,
+      "max": 6,
       "name": "Myth",
-      "fullName": "Myth 1/8",
+      "fullName": "Myth 1/6",
       "bonusId": 12849,
-      "itemLevel": 349
+      "seasonId": 37,
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3442,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3443,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3444,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3445,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3446,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "itemLevel": 318
     },
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
-    },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 318,
+      "priority": 0,
+      "squishEra": 2
+    }
   },
   "12850": {
     "id": 12850,
-    "itemLevel": {
-      "amount": 352,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
-    },
     "upgrade": {
       "group": 618,
       "level": 2,
-      "max": 8,
+      "max": 6,
       "name": "Myth",
-      "fullName": "Myth 2/8",
+      "fullName": "Myth 2/6",
       "bonusId": 12850,
-      "itemLevel": 352
+      "seasonId": 37,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3446,
+              "amount": 20,
+              "name": "Myth Mistcrest",
+              "icon": "inv_121_crest_myth"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 20,
+        "name": "Myth Mistcrest",
+        "id": 3446,
+        "icon": "inv_121_crest_myth"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3442,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3443,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3444,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3445,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3446,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "itemLevel": 321
     },
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
-    },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 321,
+      "priority": 0,
+      "squishEra": 2
+    }
   },
   "12851": {
     "id": 12851,
-    "itemLevel": {
-      "amount": 356,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
-    },
     "upgrade": {
       "group": 618,
       "level": 3,
-      "max": 8,
+      "max": 6,
       "name": "Myth",
-      "fullName": "Myth 3/8",
+      "fullName": "Myth 3/6",
       "bonusId": 12851,
-      "itemLevel": 356
+      "seasonId": 37,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3446,
+              "amount": 20,
+              "name": "Myth Mistcrest",
+              "icon": "inv_121_crest_myth"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 20,
+        "name": "Myth Mistcrest",
+        "id": 3446,
+        "icon": "inv_121_crest_myth"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3442,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3443,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3444,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3445,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3446,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "itemLevel": 324
     },
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
-    },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 324,
+      "priority": 0,
+      "squishEra": 2
+    }
   },
   "12852": {
     "id": 12852,
-    "itemLevel": {
-      "amount": 359,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
-    },
     "upgrade": {
       "group": 618,
       "level": 4,
-      "max": 8,
+      "max": 6,
       "name": "Myth",
-      "fullName": "Myth 4/8",
+      "fullName": "Myth 4/6",
       "bonusId": 12852,
-      "itemLevel": 359
+      "seasonId": 37,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3446,
+              "amount": 20,
+              "name": "Myth Mistcrest",
+              "icon": "inv_121_crest_myth"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 20,
+        "name": "Myth Mistcrest",
+        "id": 3446,
+        "icon": "inv_121_crest_myth"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3442,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3443,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3444,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3445,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3446,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "itemLevel": 328
     },
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
-    },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 328,
+      "priority": 0,
+      "squishEra": 2
+    }
   },
   "12853": {
     "id": 12853,
-    "itemLevel": {
-      "amount": 362,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
-    },
     "upgrade": {
       "group": 618,
       "level": 5,
-      "max": 8,
+      "max": 6,
       "name": "Myth",
-      "fullName": "Myth 5/8",
+      "fullName": "Myth 5/6",
       "bonusId": 12853,
-      "itemLevel": 362
+      "seasonId": 37,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3446,
+              "amount": 20,
+              "name": "Myth Mistcrest",
+              "icon": "inv_121_crest_myth"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 20,
+        "name": "Myth Mistcrest",
+        "id": 3446,
+        "icon": "inv_121_crest_myth"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3442,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3443,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3444,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3445,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3446,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "itemLevel": 331
     },
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
-    },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 331,
+      "priority": 0,
+      "squishEra": 2
+    }
   },
   "12854": {
     "id": 12854,
-    "itemLevel": {
-      "amount": 365,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
-    },
     "upgrade": {
       "group": 618,
       "level": 6,
-      "max": 8,
+      "max": 6,
       "name": "Myth",
-      "fullName": "Myth 6/8",
+      "fullName": "Myth 6/6",
       "bonusId": 12854,
-      "itemLevel": 365
+      "seasonId": 37,
+      "costs": [
+        {
+          "mask_inv_type": 0,
+          "flags": 0,
+          "amounts": [
+            {
+              "currencyId": 3446,
+              "amount": 20,
+              "name": "Myth Mistcrest",
+              "icon": "inv_121_crest_myth"
+            }
+          ]
+        }
+      ],
+      "currency": {
+        "amount": 20,
+        "name": "Myth Mistcrest",
+        "id": 3446,
+        "icon": "inv_121_crest_myth"
+      },
+      "highWatermarkDiscounts": [
+        {
+          "type": "currency",
+          "id": 3442,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3443,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3444,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3445,
+          "scaling": 0,
+          "accountWide": false
+        },
+        {
+          "type": "currency",
+          "id": 3446,
+          "scaling": 0,
+          "accountWide": false
+        }
+      ],
+      "itemLevel": 334
     },
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
-    },
-    "quality": 4
+    "quality": 4,
+    "itemLevel": {
+      "amount": 334,
+      "priority": 0,
+      "squishEra": 2
+    }
   },
   "12855": {
     "id": 12855,
+    "quality": 4,
     "itemLevel": {
-      "amount": 369,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
-    },
-    "upgrade": {
-      "group": 618,
-      "level": 7,
-      "max": 8,
-      "name": "Myth",
-      "fullName": "Myth 7/8",
-      "bonusId": 12855,
-      "itemLevel": 369
-    },
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
-    },
-    "quality": 4
+      "amount": 337,
+      "priority": 0,
+      "squishEra": 2
+    }
   },
   "12856": {
     "id": 12856,
+    "quality": 4,
     "itemLevel": {
-      "amount": 372,
-      "priority": 9999,
-      "squishEra": 2,
-      "curveId": 88583
-    },
-    "upgrade": {
-      "group": 618,
-      "level": 8,
-      "max": 8,
-      "name": "Myth",
-      "fullName": "Myth 8/8",
-      "bonusId": 12856,
-      "itemLevel": 372
-    },
-    "requiredLevelCurve": {
-      "curve": 82419,
-      "val": 3313
-    },
-    "quality": 4
+      "amount": 340,
+      "priority": 0,
+      "squishEra": 2
+    }
   },
   "12857": {
     "id": 12857,
@@ -92903,15 +90584,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "priority": 9999,
       "squishEra": 2,
       "curveId": 88583
-    },
-    "upgrade": {
-      "group": 619,
-      "level": 1,
-      "max": 8,
-      "name": "Explorer",
-      "fullName": "Explorer 1/8",
-      "bonusId": 12857,
-      "itemLevel": 323
     },
     "quality": 2,
     "requiredLevelCurve": {
@@ -92927,15 +90599,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "squishEra": 2,
       "curveId": 88583
     },
-    "upgrade": {
-      "group": 619,
-      "level": 2,
-      "max": 8,
-      "name": "Explorer",
-      "fullName": "Explorer 2/8",
-      "bonusId": 12858,
-      "itemLevel": 326
-    },
     "quality": 2,
     "requiredLevelCurve": {
       "curve": 82419,
@@ -92949,15 +90612,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "priority": 9999,
       "squishEra": 2,
       "curveId": 88583
-    },
-    "upgrade": {
-      "group": 619,
-      "level": 3,
-      "max": 8,
-      "name": "Explorer",
-      "fullName": "Explorer 3/8",
-      "bonusId": 12859,
-      "itemLevel": 330
     },
     "quality": 2,
     "requiredLevelCurve": {
@@ -92973,15 +90627,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "squishEra": 2,
       "curveId": 88583
     },
-    "upgrade": {
-      "group": 619,
-      "level": 4,
-      "max": 8,
-      "name": "Explorer",
-      "fullName": "Explorer 4/8",
-      "bonusId": 12860,
-      "itemLevel": 333
-    },
     "quality": 2,
     "requiredLevelCurve": {
       "curve": 82419,
@@ -92995,15 +90640,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "priority": 9999,
       "squishEra": 2,
       "curveId": 88583
-    },
-    "upgrade": {
-      "group": 619,
-      "level": 5,
-      "max": 8,
-      "name": "Explorer",
-      "fullName": "Explorer 5/8",
-      "bonusId": 12861,
-      "itemLevel": 336
     },
     "quality": 2,
     "requiredLevelCurve": {
@@ -93019,15 +90655,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "squishEra": 2,
       "curveId": 88583
     },
-    "upgrade": {
-      "group": 619,
-      "level": 6,
-      "max": 8,
-      "name": "Explorer",
-      "fullName": "Explorer 6/8",
-      "bonusId": 12862,
-      "itemLevel": 339
-    },
     "quality": 2,
     "requiredLevelCurve": {
       "curve": 82419,
@@ -93042,15 +90669,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "squishEra": 2,
       "curveId": 88583
     },
-    "upgrade": {
-      "group": 619,
-      "level": 7,
-      "max": 8,
-      "name": "Explorer",
-      "fullName": "Explorer 7/8",
-      "bonusId": 12863,
-      "itemLevel": 343
-    },
     "quality": 2,
     "requiredLevelCurve": {
       "curve": 82419,
@@ -93064,15 +90682,6 @@ export const bonus_IDs: {[key: string]: any} = {
       "priority": 9999,
       "squishEra": 2,
       "curveId": 88583
-    },
-    "upgrade": {
-      "group": 619,
-      "level": 8,
-      "max": 8,
-      "name": "Explorer",
-      "fullName": "Explorer 8/8",
-      "bonusId": 12864,
-      "itemLevel": 346
     },
     "quality": 2,
     "requiredLevelCurve": {
@@ -94039,8 +91648,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "index": 2,
       "spell": {
         "id": 1247568,
-        "name": "Drum of Renewed Bonds",
-        "icon": "trade_engineering"
+        "name": "Renewed Critical Strike",
+        "icon": "inv_archaeology_70_tauren_drum"
       }
     }
   },
@@ -94051,8 +91660,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "index": 2,
       "spell": {
         "id": 1247569,
-        "name": "Drum of Renewed Bonds",
-        "icon": "trade_engineering"
+        "name": "Renewed Haste",
+        "icon": "inv_archaeology_70_tauren_drum"
       }
     }
   },
@@ -94063,8 +91672,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "index": 2,
       "spell": {
         "id": 1247570,
-        "name": "Drum of Renewed Bonds",
-        "icon": "trade_engineering"
+        "name": "Renewed Mastery",
+        "icon": "inv_archaeology_70_tauren_drum"
       }
     }
   },
@@ -94075,8 +91684,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "index": 2,
       "spell": {
         "id": 1247571,
-        "name": "Drum of Renewed Bonds",
-        "icon": "trade_engineering"
+        "name": "Renewed Versatility",
+        "icon": "inv_archaeology_70_tauren_drum"
       }
     }
   },
@@ -96893,6 +94502,10 @@ export const bonus_IDs: {[key: string]: any} = {
       "offset": 0,
       "priority": 300,
       "squishEra": 2
+    },
+    "requiredLevelCurve": {
+      "curve": 101224,
+      "val": 0
     }
   },
   "13574": {
@@ -97514,6 +95127,14 @@ export const bonus_IDs: {[key: string]: any} = {
     },
     "quality": 3
   },
+  "13650": {
+    "id": 13650,
+    "itemLevel": {
+      "amount": 263,
+      "priority": 0,
+      "squishEra": 2
+    }
+  },
   "13651": {
     "id": 13651,
     "itemLevel": {
@@ -97562,6 +95183,44 @@ export const bonus_IDs: {[key: string]: any} = {
     "pvp_level": 298,
     "tag": "Galactic Void-Charged"
   },
+  "13657": {
+    "id": 13657,
+    "pvp_level": 331
+  },
+  "13658": {
+    "id": 13658,
+    "pvp_level": 344
+  },
+  "13659": {
+    "id": 13659,
+    "pvp_level": 331
+  },
+  "13660": {
+    "id": 13660,
+    "dropLevelCurve": {
+      "curveId": 109508,
+      "offset": 6,
+      "priority": 0,
+      "squishEra": 2
+    }
+  },
+  "13661": {
+    "id": 13661,
+    "quality": 3,
+    "itemLevel": {
+      "amount": 259,
+      "priority": 0,
+      "squishEra": 2
+    }
+  },
+  "13662": {
+    "id": 13662,
+    "item_conversion": 13
+  },
+  "13663": {
+    "id": 13663,
+    "serverside": true
+  },
   "13667": {
     "id": 13667,
     "serverside": true
@@ -97591,6 +95250,226 @@ export const bonus_IDs: {[key: string]: any} = {
     },
     "quality": 4
   },
+  "13673": {
+    "id": 13673,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 231663,
+      "index": 0,
+      "spell": {
+        "id": 1288603,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13674": {
+    "id": 13674,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 231664,
+      "index": 0,
+      "spell": {
+        "id": 1288604,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13675": {
+    "id": 13675,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 231665,
+      "index": 0,
+      "spell": {
+        "id": 1288605,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13676": {
+    "id": 13676,
+    "tag": "Rank 4/4",
+    "quality": 4,
+    "effect": {
+      "id": 231666,
+      "index": 0,
+      "spell": {
+        "id": 1288606,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13677": {
+    "id": 13677,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 231667,
+      "index": 0,
+      "spell": {
+        "id": 1288609,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13678": {
+    "id": 13678,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 231668,
+      "index": 0,
+      "spell": {
+        "id": 1288610,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13679": {
+    "id": 13679,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 231669,
+      "index": 0,
+      "spell": {
+        "id": 1288611,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13680": {
+    "id": 13680,
+    "tag": "Rank 4/4",
+    "quality": 4,
+    "effect": {
+      "id": 231670,
+      "index": 0,
+      "spell": {
+        "id": 1288612,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13681": {
+    "id": 13681,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 231671,
+      "index": 0,
+      "spell": {
+        "id": 1288613,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13682": {
+    "id": 13682,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 231672,
+      "index": 0,
+      "spell": {
+        "id": 1288614,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13683": {
+    "id": 13683,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 231673,
+      "index": 0,
+      "spell": {
+        "id": 1288615,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13684": {
+    "id": 13684,
+    "tag": "Rank 4/4",
+    "quality": 4,
+    "effect": {
+      "id": 231674,
+      "index": 0,
+      "spell": {
+        "id": 1288616,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13685": {
+    "id": 13685,
+    "tag": "Rank 1/4",
+    "effect": {
+      "id": 231675,
+      "index": 0,
+      "spell": {
+        "id": 1288620,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13686": {
+    "id": 13686,
+    "tag": "Rank 2/4",
+    "quality": 2,
+    "effect": {
+      "id": 231676,
+      "index": 0,
+      "spell": {
+        "id": 1288617,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13687": {
+    "id": 13687,
+    "tag": "Rank 3/4",
+    "quality": 3,
+    "effect": {
+      "id": 231677,
+      "index": 0,
+      "spell": {
+        "id": 1288619,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13688": {
+    "id": 13688,
+    "tag": "Rank 4/4",
+    "quality": 4,
+    "effect": {
+      "id": 231678,
+      "index": 0,
+      "spell": {
+        "id": 1288618,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
   "13689": {
     "id": 13689,
     "quality": 3,
@@ -97598,6 +95477,107 @@ export const bonus_IDs: {[key: string]: any} = {
       "amount": 49,
       "priority": 0,
       "squishEra": 0
+    }
+  },
+  "13695": {
+    "id": 13695,
+    "socket": 1
+  },
+  "13696": {
+    "id": 13696,
+    "serverside": true
+  },
+  "13697": {
+    "id": 13697,
+    "serverside": true
+  },
+  "13698": {
+    "id": 13698,
+    "serverside": true
+  },
+  "13699": {
+    "id": 13699,
+    "itemLevel": {
+      "amount": 279,
+      "priority": 0,
+      "squishEra": 2
+    }
+  },
+  "13700": {
+    "id": 13700,
+    "itemLevel": {
+      "amount": 282,
+      "priority": 0,
+      "squishEra": 2
+    }
+  },
+  "13701": {
+    "id": 13701,
+    "itemLevel": {
+      "amount": 285,
+      "priority": 0,
+      "squishEra": 2
+    }
+  },
+  "13702": {
+    "id": 13702,
+    "itemLevel": {
+      "amount": 295,
+      "priority": 0,
+      "squishEra": 2
+    }
+  },
+  "13703": {
+    "id": 13703,
+    "itemLevel": {
+      "amount": 298,
+      "priority": 0,
+      "squishEra": 2
+    }
+  },
+  "13704": {
+    "id": 13704,
+    "itemLevel": {
+      "amount": 308,
+      "priority": 0,
+      "squishEra": 2
+    }
+  },
+  "13705": {
+    "id": 13705,
+    "itemLevel": {
+      "amount": 311,
+      "priority": 0,
+      "squishEra": 2
+    }
+  },
+  "13706": {
+    "id": 13706,
+    "itemLevel": {
+      "amount": 321,
+      "priority": 0,
+      "squishEra": 2
+    }
+  },
+  "13707": {
+    "id": 13707,
+    "itemLevel": {
+      "amount": 324,
+      "priority": 0,
+      "squishEra": 2
+    }
+  },
+  "13708": {
+    "id": 13708,
+    "tag": "Venomcursed",
+    "effect": {
+      "id": 236281,
+      "index": 0,
+      "spell": {
+        "id": 1307906,
+        "name": "Venomcursed Critical Strike",
+        "icon": "inv_ability_poison_debuff"
+      }
     }
   },
   "13729": {
@@ -97627,9 +95607,376 @@ export const bonus_IDs: {[key: string]: any} = {
     },
     "quality": 3
   },
+  "13731": {
+    "id": 13731,
+    "tag": "Corrosive",
+    "effect": {
+      "id": 232767,
+      "index": 0,
+      "spell": {
+        "id": 1291581,
+        "name": "Ula'tek's Gift",
+        "icon": "ability_boss_lordanthricystgreen"
+      }
+    }
+  },
+  "13732": {
+    "id": 13732,
+    "tag": "Corrosive",
+    "effect": {
+      "id": 232768,
+      "index": 0,
+      "spell": {
+        "id": 1291701,
+        "name": "Corrosive Eye",
+        "icon": "inv_121_trinket_raid_ulatek_golemhearts_green"
+      }
+    }
+  },
+  "13733": {
+    "id": 13733,
+    "serverside": true
+  },
+  "13734": {
+    "id": 13734,
+    "tag": "Corrosive",
+    "effect": {
+      "id": 232795,
+      "index": 0,
+      "spell": {
+        "id": 1291702,
+        "name": "Corrosive Scale",
+        "icon": "inv_shoulder_armor_ulatek_c_01"
+      }
+    }
+  },
+  "13735": {
+    "id": 13735,
+    "tag": "Corrosive",
+    "effect": {
+      "id": 232796,
+      "index": 0,
+      "spell": {
+        "id": 1291705,
+        "name": "Corrosive Wing",
+        "icon": "inv_cape_special_ulatek_d_01_green"
+      }
+    }
+  },
+  "13736": {
+    "id": 13736,
+    "tag": "Corrosive",
+    "effect": {
+      "id": 232797,
+      "index": 0,
+      "spell": {
+        "id": 1291580,
+        "name": "Ophidian Maw",
+        "icon": "inv_121_raid_achievement_ulatek"
+      }
+    }
+  },
+  "13737": {
+    "id": 13737,
+    "tag": "Corrosive",
+    "effect": {
+      "id": 232801,
+      "index": 0,
+      "spell": {
+        "id": 1291723,
+        "name": "Viperine Grasp",
+        "icon": "inv_121_trinket_dungeon_ulatek_writhe"
+      }
+    }
+  },
+  "13738": {
+    "id": 13738,
+    "tag": "Corrosive",
+    "effect": {
+      "id": 232802,
+      "index": 0,
+      "spell": {
+        "id": 1291724,
+        "name": "Mephitic Cloud",
+        "icon": "inv_ability_poison_groundstate"
+      }
+    }
+  },
+  "13739": {
+    "id": 13739,
+    "tag": "Corrosive",
+    "effect": {
+      "id": 232803,
+      "index": 0,
+      "spell": {
+        "id": 1291725,
+        "name": "Gorgoneion Gaze",
+        "icon": "inv_121_trinket_dungeon_ulatek_fangstone"
+      }
+    }
+  },
+  "13741": {
+    "id": 13741,
+    "tag": "Corrosive",
+    "effect": {
+      "id": 232954,
+      "index": 0,
+      "spell": {
+        "id": 1292056,
+        "name": "Corrosive Heart",
+        "icon": "inv_121_trinket_raid_ulatek_heart"
+      }
+    }
+  },
+  "13742": {
+    "id": 13742,
+    "tag": "Corrosive",
+    "effect": {
+      "id": 233190,
+      "index": 0,
+      "spell": {
+        "id": 1292114,
+        "name": "Corrosive Tail",
+        "icon": "ability_poisonsting"
+      }
+    }
+  },
+  "13743": {
+    "id": 13743,
+    "tag": "Corrosive",
+    "effect": {
+      "id": 233196,
+      "index": 0,
+      "spell": {
+        "id": 1292185,
+        "name": "Corrosive Bile",
+        "icon": "inv_ability_poison_orb"
+      }
+    }
+  },
+  "13744": {
+    "id": 13744,
+    "tag": "Corrosive",
+    "effect": {
+      "id": 233197,
+      "index": 0,
+      "spell": {
+        "id": 1292159,
+        "name": "Lithic Plumage",
+        "icon": "inv_icon_feather01e"
+      }
+    }
+  },
+  "13745": {
+    "id": 13745,
+    "tag": "Corrosive",
+    "effect": {
+      "id": 233200,
+      "index": 0,
+      "spell": {
+        "id": 1292230,
+        "name": "Corrosive Pustule",
+        "icon": "inv_ability_poison_orb"
+      }
+    }
+  },
+  "13746": {
+    "id": 13746,
+    "tag": "Corrosive",
+    "effect": {
+      "id": 233203,
+      "index": 0,
+      "spell": {
+        "id": 1292247,
+        "name": "Ouroboric Cycle",
+        "icon": "inv_inscription_deck_jadeserpent"
+      }
+    }
+  },
+  "13750": {
+    "id": 13750,
+    "socket": 1
+  },
+  "13751": {
+    "id": 13751,
+    "itemLevel": {
+      "amount": 292,
+      "priority": 70,
+      "squishEra": 2
+    },
+    "tag": "Tidal Crafted"
+  },
+  "13752": {
+    "id": 13752,
+    "dropLevelCurve": {
+      "curveId": 92772,
+      "offset": 0,
+      "priority": 300,
+      "squishEra": 2
+    }
+  },
+  "13753": {
+    "id": 13753,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 3950,
+        "name": "Crit"
+      },
+      {
+        "stat": 36,
+        "amount": 3050,
+        "name": "Haste"
+      }
+    ],
+    "stats": "56% Crit [0.3950], 44% Haste [0.3050]"
+  },
+  "13754": {
+    "id": 13754,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 3800,
+        "name": "Crit"
+      },
+      {
+        "stat": 36,
+        "amount": 3200,
+        "name": "Haste"
+      }
+    ],
+    "stats": "54% Crit [0.3800], 46% Haste [0.3200]"
+  },
+  "13755": {
+    "id": 13755,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 3650,
+        "name": "Crit"
+      },
+      {
+        "stat": 36,
+        "amount": 3350,
+        "name": "Haste"
+      }
+    ],
+    "stats": "52% Crit [0.3650], 48% Haste [0.3350]"
+  },
+  "13756": {
+    "id": 13756,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 3350,
+        "name": "Crit"
+      },
+      {
+        "stat": 36,
+        "amount": 3650,
+        "name": "Haste"
+      }
+    ],
+    "stats": "48% Crit [0.3350], 52% Haste [0.3650]"
+  },
   "13760": {
     "id": 13760,
     "serverside": true
+  },
+  "13762": {
+    "id": 13762,
+    "pvp_level": 318
+  },
+  "13763": {
+    "id": 13763,
+    "quality": 2,
+    "itemLevel": {
+      "amount": 230,
+      "priority": 1000,
+      "squishEra": 2
+    }
+  },
+  "13764": {
+    "id": 13764,
+    "effect": {
+      "id": 234348,
+      "index": 0,
+      "spell": {
+        "id": 1296550,
+        "name": "Snakeskin Lining",
+        "icon": "inv_121_professions_fishing_curseworm_red"
+      }
+    }
+  },
+  "13765": {
+    "id": 13765,
+    "quality": 3,
+    "itemLevel": {
+      "amount": 250,
+      "priority": 1000,
+      "squishEra": 2
+    }
+  },
+  "13766": {
+    "id": 13766,
+    "quality": 4,
+    "itemLevel": {
+      "amount": 279,
+      "priority": 1000,
+      "squishEra": 2
+    }
+  },
+  "13767": {
+    "id": 13767,
+    "effect": {
+      "id": 234413,
+      "index": 0,
+      "spell": {
+        "id": 1296870,
+        "name": "Adorned Fang",
+        "icon": "jewelcrafting_cut_epic_gem_color2"
+      }
+    }
+  },
+  "13768": {
+    "id": 13768,
+    "effect": {
+      "id": 234416,
+      "index": 0,
+      "spell": {
+        "id": 1296982,
+        "name": "Polished Ammolite",
+        "icon": "inv_10_dungeonjewelry_dragon_trinket_1arcanemagical_green"
+      }
+    }
+  },
+  "13769": {
+    "id": 13769,
+    "effect": {
+      "id": 234558,
+      "index": 0,
+      "spell": {
+        "id": 1297384,
+        "name": "Coiled Snake-Eye",
+        "icon": "inv_elemental_primal_mana"
+      }
+    }
+  },
+  "13770": {
+    "id": 13770,
+    "name": "[DNT] of Zul'jarra's Advance"
+  },
+  "13771": {
+    "id": 13771,
+    "effect": {
+      "id": 234561,
+      "index": 0,
+      "spell": {
+        "id": 1297382,
+        "name": "Hunter's Ritual Stone",
+        "icon": "inv_elemental_primal_mana"
+      }
+    }
   },
   "13786": {
     "id": 13786,
@@ -97670,5 +96017,844 @@ export const bonus_IDs: {[key: string]: any} = {
     },
     "quality": 4,
     "tag": "Sporefused: Veteran"
+  },
+  "13790": {
+    "id": 13790,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 3200,
+        "name": "Crit"
+      },
+      {
+        "stat": 36,
+        "amount": 3800,
+        "name": "Haste"
+      }
+    ],
+    "stats": "46% Crit [0.3200], 54% Haste [0.3800]"
+  },
+  "13791": {
+    "id": 13791,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 3050,
+        "name": "Crit"
+      },
+      {
+        "stat": 36,
+        "amount": 3950,
+        "name": "Haste"
+      }
+    ],
+    "stats": "44% Crit [0.3050], 56% Haste [0.3950]"
+  },
+  "13792": {
+    "id": 13792,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 3950,
+        "name": "Crit"
+      },
+      {
+        "stat": 49,
+        "amount": 3050,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "56% Crit [0.3950], 44% Mastery [0.3050]"
+  },
+  "13793": {
+    "id": 13793,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 3800,
+        "name": "Crit"
+      },
+      {
+        "stat": 49,
+        "amount": 3200,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "54% Crit [0.3800], 46% Mastery [0.3200]"
+  },
+  "13794": {
+    "id": 13794,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 3650,
+        "name": "Crit"
+      },
+      {
+        "stat": 49,
+        "amount": 3350,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "52% Crit [0.3650], 48% Mastery [0.3350]"
+  },
+  "13795": {
+    "id": 13795,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 3350,
+        "name": "Crit"
+      },
+      {
+        "stat": 49,
+        "amount": 3650,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "48% Crit [0.3350], 52% Mastery [0.3650]"
+  },
+  "13796": {
+    "id": 13796,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 3200,
+        "name": "Crit"
+      },
+      {
+        "stat": 49,
+        "amount": 3800,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "46% Crit [0.3200], 54% Mastery [0.3800]"
+  },
+  "13797": {
+    "id": 13797,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 3050,
+        "name": "Crit"
+      },
+      {
+        "stat": 49,
+        "amount": 3950,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "44% Crit [0.3050], 56% Mastery [0.3950]"
+  },
+  "13798": {
+    "id": 13798,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 3950,
+        "name": "Crit"
+      },
+      {
+        "stat": 40,
+        "amount": 3050,
+        "name": "Vers"
+      }
+    ],
+    "stats": "56% Crit [0.3950], 44% Vers [0.3050]"
+  },
+  "13799": {
+    "id": 13799,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 3800,
+        "name": "Crit"
+      },
+      {
+        "stat": 40,
+        "amount": 3200,
+        "name": "Vers"
+      }
+    ],
+    "stats": "54% Crit [0.3800], 46% Vers [0.3200]"
+  },
+  "13800": {
+    "id": 13800,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 3650,
+        "name": "Crit"
+      },
+      {
+        "stat": 40,
+        "amount": 3350,
+        "name": "Vers"
+      }
+    ],
+    "stats": "52% Crit [0.3650], 48% Vers [0.3350]"
+  },
+  "13801": {
+    "id": 13801,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 3350,
+        "name": "Crit"
+      },
+      {
+        "stat": 40,
+        "amount": 3650,
+        "name": "Vers"
+      }
+    ],
+    "stats": "48% Crit [0.3350], 52% Vers [0.3650]"
+  },
+  "13802": {
+    "id": 13802,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 3200,
+        "name": "Crit"
+      },
+      {
+        "stat": 40,
+        "amount": 3800,
+        "name": "Vers"
+      }
+    ],
+    "stats": "46% Crit [0.3200], 54% Vers [0.3800]"
+  },
+  "13803": {
+    "id": 13803,
+    "rawStats": [
+      {
+        "stat": 32,
+        "amount": 3050,
+        "name": "Crit"
+      },
+      {
+        "stat": 40,
+        "amount": 3950,
+        "name": "Vers"
+      }
+    ],
+    "stats": "44% Crit [0.3050], 56% Vers [0.3950]"
+  },
+  "13804": {
+    "id": 13804,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 3950,
+        "name": "Haste"
+      },
+      {
+        "stat": 49,
+        "amount": 3050,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "56% Haste [0.3950], 44% Mastery [0.3050]"
+  },
+  "13805": {
+    "id": 13805,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 3800,
+        "name": "Haste"
+      },
+      {
+        "stat": 49,
+        "amount": 3200,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "54% Haste [0.3800], 46% Mastery [0.3200]"
+  },
+  "13806": {
+    "id": 13806,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 3650,
+        "name": "Haste"
+      },
+      {
+        "stat": 49,
+        "amount": 3350,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "52% Haste [0.3650], 48% Mastery [0.3350]"
+  },
+  "13807": {
+    "id": 13807,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 3350,
+        "name": "Haste"
+      },
+      {
+        "stat": 49,
+        "amount": 3650,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "48% Haste [0.3350], 52% Mastery [0.3650]"
+  },
+  "13808": {
+    "id": 13808,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 3200,
+        "name": "Haste"
+      },
+      {
+        "stat": 49,
+        "amount": 3800,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "46% Haste [0.3200], 54% Mastery [0.3800]"
+  },
+  "13809": {
+    "id": 13809,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 3050,
+        "name": "Haste"
+      },
+      {
+        "stat": 49,
+        "amount": 3950,
+        "name": "Mastery"
+      }
+    ],
+    "stats": "44% Haste [0.3050], 56% Mastery [0.3950]"
+  },
+  "13810": {
+    "id": 13810,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 3950,
+        "name": "Haste"
+      },
+      {
+        "stat": 40,
+        "amount": 3050,
+        "name": "Vers"
+      }
+    ],
+    "stats": "56% Haste [0.3950], 44% Vers [0.3050]"
+  },
+  "13811": {
+    "id": 13811,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 3800,
+        "name": "Haste"
+      },
+      {
+        "stat": 40,
+        "amount": 3200,
+        "name": "Vers"
+      }
+    ],
+    "stats": "54% Haste [0.3800], 46% Vers [0.3200]"
+  },
+  "13812": {
+    "id": 13812,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 3650,
+        "name": "Haste"
+      },
+      {
+        "stat": 40,
+        "amount": 3350,
+        "name": "Vers"
+      }
+    ],
+    "stats": "52% Haste [0.3650], 48% Vers [0.3350]"
+  },
+  "13813": {
+    "id": 13813,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 3350,
+        "name": "Haste"
+      },
+      {
+        "stat": 40,
+        "amount": 3650,
+        "name": "Vers"
+      }
+    ],
+    "stats": "48% Haste [0.3350], 52% Vers [0.3650]"
+  },
+  "13814": {
+    "id": 13814,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 3200,
+        "name": "Haste"
+      },
+      {
+        "stat": 40,
+        "amount": 3800,
+        "name": "Vers"
+      }
+    ],
+    "stats": "46% Haste [0.3200], 54% Vers [0.3800]"
+  },
+  "13815": {
+    "id": 13815,
+    "rawStats": [
+      {
+        "stat": 36,
+        "amount": 3050,
+        "name": "Haste"
+      },
+      {
+        "stat": 40,
+        "amount": 3950,
+        "name": "Vers"
+      }
+    ],
+    "stats": "44% Haste [0.3050], 56% Vers [0.3950]"
+  },
+  "13816": {
+    "id": 13816,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 3950,
+        "name": "Mastery"
+      },
+      {
+        "stat": 40,
+        "amount": 3050,
+        "name": "Vers"
+      }
+    ],
+    "stats": "56% Mastery [0.3950], 44% Vers [0.3050]"
+  },
+  "13817": {
+    "id": 13817,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 3800,
+        "name": "Mastery"
+      },
+      {
+        "stat": 40,
+        "amount": 3200,
+        "name": "Vers"
+      }
+    ],
+    "stats": "54% Mastery [0.3800], 46% Vers [0.3200]"
+  },
+  "13818": {
+    "id": 13818,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 3650,
+        "name": "Mastery"
+      },
+      {
+        "stat": 40,
+        "amount": 3350,
+        "name": "Vers"
+      }
+    ],
+    "stats": "52% Mastery [0.3650], 48% Vers [0.3350]"
+  },
+  "13819": {
+    "id": 13819,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 3350,
+        "name": "Mastery"
+      },
+      {
+        "stat": 40,
+        "amount": 3650,
+        "name": "Vers"
+      }
+    ],
+    "stats": "48% Mastery [0.3350], 52% Vers [0.3650]"
+  },
+  "13820": {
+    "id": 13820,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 3200,
+        "name": "Mastery"
+      },
+      {
+        "stat": 40,
+        "amount": 3800,
+        "name": "Vers"
+      }
+    ],
+    "stats": "46% Mastery [0.3200], 54% Vers [0.3800]"
+  },
+  "13821": {
+    "id": 13821,
+    "rawStats": [
+      {
+        "stat": 49,
+        "amount": 3050,
+        "name": "Mastery"
+      },
+      {
+        "stat": 40,
+        "amount": 3950,
+        "name": "Vers"
+      }
+    ],
+    "stats": "44% Mastery [0.3050], 56% Vers [0.3950]"
+  },
+  "13822": {
+    "id": 13822,
+    "itemLevel": {
+      "amount": 240,
+      "priority": 0,
+      "squishEra": 2
+    }
+  },
+  "13825": {
+    "id": 13825,
+    "dropLevelCurve": {
+      "curveId": 105141,
+      "offset": 0,
+      "priority": 1,
+      "squishEra": 2
+    },
+    "tag": "Timewarped"
+  },
+  "13826": {
+    "id": 13826,
+    "dropLevelCurve": {
+      "curveId": 105142,
+      "offset": 0,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "requiredLevelCurve": {
+      "curve": 96502,
+      "val": 0
+    }
+  },
+  "13827": {
+    "id": 13827,
+    "dropLevelCurve": {
+      "curveId": 105141,
+      "offset": 0,
+      "priority": 290,
+      "squishEra": 2
+    },
+    "quality": 3
+  },
+  "13828": {
+    "id": 13828,
+    "dropLevelCurve": {
+      "curveId": 105141,
+      "offset": 0,
+      "priority": 290,
+      "squishEra": 2
+    },
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 96502,
+      "val": 0
+    }
+  },
+  "13829": {
+    "id": 13829,
+    "tag": "Corrosive",
+    "effect": {
+      "id": 235549,
+      "index": 0,
+      "spell": {
+        "id": 1302568,
+        "name": "Insidious Venom",
+        "icon": "inv_ability_poison_buff"
+      }
+    }
+  },
+  "13830": {
+    "id": 13830,
+    "tag": "Corrosive",
+    "effect": {
+      "id": 235550,
+      "index": 0,
+      "spell": {
+        "id": 1302577,
+        "name": "Virulent Mucus",
+        "icon": "inv_121_trinket_raid_ulatek_golemhearts_green"
+      }
+    }
+  },
+  "13831": {
+    "id": 13831,
+    "tag": "Corrosive",
+    "effect": {
+      "id": 235551,
+      "index": 0,
+      "spell": {
+        "id": 1302580,
+        "name": "Accursed Poison",
+        "icon": "boss_odunrunes_green"
+      }
+    }
+  },
+  "13832": {
+    "id": 13832,
+    "tag": "Corrosive",
+    "effect": {
+      "id": 235552,
+      "index": 0,
+      "spell": {
+        "id": 1302602,
+        "name": "Plague of Corrosion",
+        "icon": "achievement_zone_cataclysmgreen"
+      }
+    }
+  },
+  "13833": {
+    "id": 13833,
+    "tag": "Corrosive",
+    "effect": {
+      "id": 235553,
+      "index": 0,
+      "spell": {
+        "id": 1302600,
+        "name": "Miasma Geyser",
+        "icon": "ability_deathwing_sealarmorbreachgreen"
+      }
+    }
+  },
+  "13834": {
+    "id": 13834,
+    "tag": "Corrosive",
+    "effect": {
+      "id": 235554,
+      "index": 0,
+      "spell": {
+        "id": 1291581,
+        "name": "Ula'tek's Gift",
+        "icon": "ability_boss_lordanthricystgreen"
+      }
+    }
+  },
+  "13835": {
+    "id": 13835,
+    "itemLevel": {
+      "amount": 305,
+      "priority": 65,
+      "squishEra": 2
+    }
+  },
+  "13836": {
+    "id": 13836,
+    "itemLevel": {
+      "amount": 318,
+      "priority": 65,
+      "squishEra": 2
+    }
+  },
+  "13843": {
+    "id": 13843,
+    "itemLevel": {
+      "amount": 258,
+      "priority": 100,
+      "squishEra": 2
+    }
+  },
+  "13844": {
+    "id": 13844,
+    "itemLevel": {
+      "amount": 256,
+      "priority": 1,
+      "squishEra": 2
+    }
+  },
+  "13845": {
+    "id": 13845,
+    "itemLevel": {
+      "amount": 263,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "quality": 3
+  },
+  "13846": {
+    "id": 13846,
+    "tag": "Venomcursed",
+    "effect": {
+      "id": 236288,
+      "index": 0,
+      "spell": {
+        "id": 1307923,
+        "name": "Venomcursed Mastery",
+        "icon": "inv_ability_poison_debuff"
+      }
+    }
+  },
+  "13847": {
+    "id": 13847,
+    "tag": "Venomcursed",
+    "effect": {
+      "id": 236289,
+      "index": 0,
+      "spell": {
+        "id": 1307928,
+        "name": "Venomcursed Haste",
+        "icon": "inv_ability_poison_debuff"
+      }
+    }
+  },
+  "13848": {
+    "id": 13848,
+    "quality": 4,
+    "itemLevel": {
+      "amount": 344,
+      "priority": 0,
+      "squishEra": 2
+    }
+  },
+  "13849": {
+    "id": 13849,
+    "itemLevel": {
+      "amount": 266,
+      "priority": 1,
+      "squishEra": 2
+    },
+    "requiredLevelCurve": {
+      "curve": 70596,
+      "val": 0
+    }
+  },
+  "13850": {
+    "id": 13850,
+    "itemLevel": {
+      "amount": 279,
+      "priority": 1,
+      "squishEra": 2
+    },
+    "requiredLevelCurve": {
+      "curve": 71257,
+      "val": 0
+    },
+    "quality": 4
+  },
+  "13853": {
+    "id": 13853,
+    "itemLevel": {
+      "amount": 217,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "pvp_level": 285
+  },
+  "13854": {
+    "id": 13854,
+    "itemLevel": {
+      "amount": 263,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "pvp_level": 315
+  },
+  "13855": {
+    "id": 13855,
+    "itemLevel": {
+      "amount": 201,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "pvp_level": 272
+  },
+  "13856": {
+    "id": 13856,
+    "itemLevel": {
+      "amount": 240,
+      "priority": 0,
+      "squishEra": 2
+    },
+    "pvp_level": 302
+  },
+  "13900": {
+    "id": 13900,
+    "requiredLevelCurve": {
+      "curve": 115477,
+      "val": 0
+    },
+    "dropLevelCurve": {
+      "curveId": 109495,
+      "offset": 0,
+      "priority": 1,
+      "squishEra": 2
+    }
+  },
+  "13901": {
+    "id": 13901,
+    "requiredLevelCurve": {
+      "curve": 101224,
+      "val": 0
+    },
+    "dropLevelCurve": {
+      "curveId": 109495,
+      "offset": 7,
+      "priority": 1,
+      "squishEra": 2
+    },
+    "quality": 3
+  },
+  "13902": {
+    "id": 13902,
+    "dropLevelCurve": {
+      "curveId": 109508,
+      "offset": 6,
+      "priority": 200,
+      "squishEra": 2
+    },
+    "quality": 3
+  },
+  "13935": {
+    "id": 13935,
+    "dropLevelCurve": {
+      "curveId": 109508,
+      "offset": 0,
+      "priority": 300,
+      "squishEra": 2
+    },
+    "quality": 2
+  },
+  "13936": {
+    "id": 13936,
+    "dropLevelCurve": {
+      "curveId": 109508,
+      "offset": 6,
+      "priority": 200,
+      "squishEra": 2
+    },
+    "quality": 3
   }
 }

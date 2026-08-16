@@ -1,7 +1,7 @@
 
 //import { getSpellRaw, runCastSequence } from "./RestoDruidRamps";
 import { monkTalents as specTalents, defaultTalents } from "./MistweaverMonkTalents";
-import  spellDB from "./MistweaverMonkSpellDB.json";
+import  specSpellDB from "./MistweaverMonkSpellDB.json";
 //import { blossomProfile, reversionProfile } from "./PresEvokerDefaultAPL";
 import { runAPLSuites } from "General/Modules/Player/ClassDefaults/Generic/RampTestSuite";
 import { buildChartEntry, buildFormulatedChartEntry, getSpellIcon } from "General/Modules/Player/ClassDefaults/Generic/ChartUtilities";
@@ -34,6 +34,8 @@ export const buildMonkChartData = (activeStats: Stats) => {
     })
 
     defaultTalents(talents, "default", "Conduit of the Celestials");
+
+    const spellDB = JSON.parse(JSON.stringify(specSpellDB));
     applyTalents(state, spellDB); // missing Stat bonuses
 
     let sequences = Object.keys(spellDB).map((spellKey : string) => {

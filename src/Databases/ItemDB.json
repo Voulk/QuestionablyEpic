@@ -20823,6 +20823,425 @@
         ]
     },
     {
+        "id": 49801,
+        "name": "Unspeakable Secret",
+        "icon": "inv_staff_82",
+        "quality": 4,
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 23380,
+            "stamina": 7889,
+            "crit": 5644,
+            "haste": 4604
+        },
+        "slot": "2H Weapon",
+        "sources": [
+            {
+                "encounterId": 278,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 49804,
+        "name": "Polished Mirror Helm",
+        "icon": "inv_helmet_157",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "versatility": 3762,
+            "haste": 3076
+        },
+        "slot": "Head",
+        "sources": [
+            {
+                "encounterId": 278,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 49805,
+        "name": "Ice-Steeped Sandals",
+        "icon": "inv_boots_cloth_26",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 3800,
+            "haste": 3200
+        },
+        "slot": "Feet",
+        "sources": [
+            {
+                "encounterId": 278,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 49806,
+        "name": "Flayer's Black Belt",
+        "icon": "inv_belt_65",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 3350
+        },
+        "slot": "Waist",
+        "sources": [
+            {
+                "encounterId": 278,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 49808,
+        "name": "Bent Gold Belt",
+        "icon": "inv_belt_70",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3800,
+            "crit": 3200
+        },
+        "slot": "Waist",
+        "sources": [
+            {
+                "encounterId": 278,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 49809,
+        "name": "Wristguards of Subterranean Moss",
+        "icon": "inv_bracer_32a",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "versatility": 3650,
+            "haste": 3350
+        },
+        "slot": "Wrist",
+        "sources": [
+            {
+                "encounterId": 278,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 49810,
+        "name": "Scabrous Zombie Belt",
+        "icon": "inv_belt_69",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 3650,
+            "haste": 3350
+        },
+        "slot": "Waist",
+        "sources": [
+            {
+                "encounterId": 278,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 49811,
+        "name": "Black Dragonskin Breeches",
+        "icon": "inv_pants_mail_33",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 4100,
+            "versatility": 2900
+        },
+        "slot": "Legs",
+        "sources": [
+            {
+                "encounterId": 278,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 49812,
+        "name": "Purloined Wedding Ring",
+        "icon": "inv_jewelry_ring_42",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "crit": 10000,
+            "haste": 7500
+        },
+        "slot": "Finger",
+        "sources": [
+            {
+                "encounterId": 278,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 49816,
+        "name": "Scourgelord's Frigid Chestplate",
+        "icon": "inv_chest_plate23",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 2664
+        },
+        "slot": "Chest",
+        "socketType": "Prismatic",
+        "sources": [
+            {
+                "encounterId": 278,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 49817,
+        "name": "Shaggy Wyrmleather Leggings",
+        "icon": "inv_pants_leather_30a",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "mastery": 3650,
+            "haste": 3350
+        },
+        "slot": "Legs",
+        "sources": [
+            {
+                "encounterId": 278,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 49819,
+        "name": "Skeleton Lord's Cranium",
+        "icon": "inv_helmet_130",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3800,
+            "crit": 3200
+        },
+        "slot": "Head",
+        "sources": [
+            {
+                "encounterId": 278,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 49820,
+        "name": "Gondria's Spectral Bracer",
+        "icon": "inv_bracer_31",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 5194,
+            "crit": 2766
+        },
+        "slot": "Wrist",
+        "sources": [
+            {
+                "encounterId": 278,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 49821,
+        "name": "Protector of Frigid Souls",
+        "icon": "inv_shield_55",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "versatility": 3760,
+            "crit": 3076
+        },
+        "slot": "Shield",
+        "sources": [
+            {
+                "encounterId": 278,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 49822,
+        "name": "Rimewoven Silks",
+        "icon": "inv_pants_cloth_01",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3506,
+            "crit": 3506
+        },
+        "slot": "Legs",
+        "socketType": "Prismatic",
+        "sources": [
+            {
+                "encounterId": 278,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 49823,
+        "name": "Cloak of the Fallen Cardinal",
+        "icon": "inv_misc_cape_18",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "versatility": 3800,
+            "crit": 3200
+        },
+        "slot": "Back",
+        "sources": [
+            {
+                "encounterId": 278,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 49824,
+        "name": "Horns of the Spurned Val'kyr",
+        "icon": "inv_helmet_157",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3800,
+            "crit": 3200
+        },
+        "slot": "Head",
+        "sources": [
+            {
+                "encounterId": 278,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 49825,
+        "name": "Palebone Robes",
+        "icon": "inv_chest_cloth_79",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3650,
+            "crit": 3350
+        },
+        "slot": "Chest",
+        "sources": [
+            {
+                "encounterId": 278,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 49826,
+        "name": "Shroud of Rime",
+        "icon": "inv_chest_mail_12",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3762,
+            "versatility": 3076
+        },
+        "slot": "Chest",
+        "sources": [
+            {
+                "encounterId": 278,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
         "id": 50193,
         "name": "Very Fashionable Shoulders",
         "icon": "inv_shoulder_118",
@@ -21151,6 +21570,459 @@
             {
                 "encounterId": 616,
                 "instanceId": -67
+            }
+        ]
+    },
+    {
+        "id": 50227,
+        "name": "Surgeon's Needle",
+        "icon": "inv_weapon_shortblade_100",
+        "quality": 4,
+        "itemClass": 2,
+        "itemSubClass": 15,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "versatility": 2900,
+            "crit": 4100
+        },
+        "slot": "1H Weapon",
+        "sources": [
+            {
+                "encounterId": 278,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 50228,
+        "name": "Barbed Ymirheim Choker",
+        "icon": "inv_jewelry_necklace_22",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "crit": 11250,
+            "haste": 6250
+        },
+        "slot": "Neck",
+        "sources": [
+            {
+                "encounterId": 278,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 50229,
+        "name": "Legguards of the Frosty Depths",
+        "icon": "inv_pants_plate_34",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3506,
+            "versatility": 3506
+        },
+        "slot": "Legs",
+        "socketType": "Prismatic",
+        "sources": [
+            {
+                "encounterId": 278,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 50230,
+        "name": "Malykriss Vambraces",
+        "icon": "inv_bracer_49",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 3506,
+            "haste": 3506
+        },
+        "slot": "Wrist",
+        "sources": [
+            {
+                "encounterId": 278,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 50233,
+        "name": "Spurned Val'kyr Shoulderguards",
+        "icon": "inv_shoulder_120",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 4550,
+            "haste": 2450
+        },
+        "slot": "Shoulder",
+        "sources": [
+            {
+                "encounterId": 278,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 50234,
+        "name": "Shoulderplates of Frozen Blood",
+        "icon": "inv_shoulder_121",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "mastery": 4550,
+            "crit": 2450
+        },
+        "slot": "Shoulder",
+        "sources": [
+            {
+                "encounterId": 278,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 50235,
+        "name": "Ick's Rotting Thumb",
+        "icon": "inv_misc_bone_10",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 0,
+            "stamina": 0
+        },
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Ick's Rotting Thumb"
+        },
+        "sources": [
+            {
+                "encounterId": 278,
+                "instanceId": -96
+            }
+        ],
+        "levelRange": []
+    },
+    {
+        "id": 50259,
+        "name": "Nevermelting Ice Crystal",
+        "icon": "inv_datacrystal09",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0
+        },
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Nevermelting Ice Crystal"
+        },
+        "sources": [
+            {
+                "encounterId": 278,
+                "instanceId": -96
+            }
+        ],
+        "levelRange": [
+            272,
+            276,
+            285,
+            289,
+            295,
+            298
+        ]
+    },
+    {
+        "id": 50263,
+        "name": "Braid of Salt and Fire",
+        "icon": "inv_belt_67",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "versatility": 3650,
+            "haste": 3350
+        },
+        "slot": "Waist",
+        "sources": [
+            {
+                "encounterId": 278,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 50264,
+        "name": "Chewed Leather Wristguards",
+        "icon": "inv_bracer_23a",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 4100,
+            "haste": 2900
+        },
+        "slot": "Wrist",
+        "sources": [
+            {
+                "encounterId": 278,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 50265,
+        "name": "Blackened Ghoul Skin Leggings",
+        "icon": "inv_pants_mail_33",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3661,
+            "versatility": 3246
+        },
+        "slot": "Legs",
+        "sources": [
+            {
+                "encounterId": 278,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 50266,
+        "name": "Ancient Polar Bear Hide",
+        "icon": "inv_chest_cloth_79",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 3997,
+            "haste": 2664
+        },
+        "slot": "Chest",
+        "sources": [
+            {
+                "encounterId": 278,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 50269,
+        "name": "Fleshwerk Leggings",
+        "icon": "inv_pants_leather_30a",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 3506,
+            "haste": 3506
+        },
+        "slot": "Legs",
+        "sources": [
+            {
+                "encounterId": 278,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 50270,
+        "name": "Belt of Rotted Fingernails",
+        "icon": "inv_belt_69",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3761,
+            "crit": 3076
+        },
+        "slot": "Waist",
+        "sources": [
+            {
+                "encounterId": 278,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 50272,
+        "name": "Frost Wyrm Ribcage",
+        "icon": "inv_chest_plate23",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 3650,
+            "haste": 3350
+        },
+        "slot": "Chest",
+        "sources": [
+            {
+                "encounterId": 278,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 50273,
+        "name": "Engraved Gargoyle Femur",
+        "icon": "inv_staff_81",
+        "quality": 4,
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 23380,
+            "stamina": 7889,
+            "haste": 3755,
+            "crit": 4934
+        },
+        "slot": "2H Weapon",
+        "sources": [
+            {
+                "encounterId": 278,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 50283,
+        "name": "Mudslide Boots",
+        "icon": "inv_boots_chain_11",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3610,
+            "crit": 3332
+        },
+        "slot": "Feet",
+        "sources": [
+            {
+                "encounterId": 278,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 50284,
+        "name": "Rusty Frozen Fingerguards",
+        "icon": "inv_gauntlets_94",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 3506,
+            "versatility": 3506
+        },
+        "slot": "Hands",
+        "sources": [
+            {
+                "encounterId": 278,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 50285,
+        "name": "Icebound Bronze Cuirass",
+        "icon": "inv_chest_plate23",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 5128
+        },
+        "slot": "Chest",
+        "sources": [
+            {
+                "encounterId": 278,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 50286,
+        "name": "Prelate's Snowshoes",
+        "icon": "inv_boots_cloth_26",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "versatility": 3610,
+            "haste": 3332
+        },
+        "slot": "Feet",
+        "sources": [
+            {
+                "encounterId": 278,
+                "instanceId": -96
             }
         ]
     },
@@ -23748,7 +24620,6 @@
             }
         ],
         "levelRange": [
-            263,
             272,
             276
         ]
@@ -23777,7 +24648,6 @@
             }
         ],
         "levelRange": [
-            263,
             272,
             276
         ]
@@ -28425,8 +29295,8 @@
         "slot": "Finger",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -28447,8 +29317,8 @@
         "slot": "Finger",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -28469,8 +29339,8 @@
         "slot": "Finger",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -28491,8 +29361,8 @@
         "slot": "Finger",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -28513,8 +29383,8 @@
         "slot": "Finger",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -28535,8 +29405,8 @@
         "slot": "Finger",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -28557,8 +29427,8 @@
         "slot": "Finger",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -28579,8 +29449,8 @@
         "slot": "Finger",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -28601,8 +29471,8 @@
         "slot": "Finger",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -28623,8 +29493,8 @@
         "slot": "Finger",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -28644,8 +29514,8 @@
         "slot": "Finger",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -28666,8 +29536,8 @@
         "slot": "Finger",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -28688,8 +29558,8 @@
         "slot": "Finger",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -28710,8 +29580,8 @@
         "slot": "Finger",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -28732,8 +29602,8 @@
         "slot": "Finger",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -28754,8 +29624,8 @@
         "slot": "Finger",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -28776,8 +29646,8 @@
         "slot": "Finger",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -28798,8 +29668,8 @@
         "slot": "Finger",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -28820,8 +29690,8 @@
         "slot": "Finger",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -28842,8 +29712,8 @@
         "slot": "Finger",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -28864,8 +29734,8 @@
         "slot": "Finger",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -28886,8 +29756,8 @@
         "slot": "Finger",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -28908,8 +29778,8 @@
         "slot": "Finger",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -28930,8 +29800,8 @@
         "slot": "Finger",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -28952,8 +29822,8 @@
         "slot": "Finger",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -28974,8 +29844,8 @@
         "slot": "Feet",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -28996,8 +29866,8 @@
         "slot": "Feet",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -29018,8 +29888,8 @@
         "slot": "Feet",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -29040,8 +29910,8 @@
         "slot": "Feet",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -29062,8 +29932,8 @@
         "slot": "Feet",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -29084,8 +29954,8 @@
         "slot": "Feet",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -29106,8 +29976,8 @@
         "slot": "Feet",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -29128,8 +29998,8 @@
         "slot": "Feet",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -29150,8 +30020,8 @@
         "slot": "Feet",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -29172,8 +30042,8 @@
         "slot": "Feet",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -29194,8 +30064,8 @@
         "slot": "Feet",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -29216,8 +30086,8 @@
         "slot": "Feet",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -29238,8 +30108,8 @@
         "slot": "Feet",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -29260,8 +30130,8 @@
         "slot": "Feet",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -29282,8 +30152,8 @@
         "slot": "Feet",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -29304,8 +30174,8 @@
         "slot": "Feet",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -29326,8 +30196,8 @@
         "slot": "Feet",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -29348,8 +30218,8 @@
         "slot": "Feet",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -29370,8 +30240,8 @@
         "slot": "Feet",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -29392,8 +30262,8 @@
         "slot": "Feet",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -29414,8 +30284,8 @@
         "slot": "Legs",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -29436,8 +30306,8 @@
         "slot": "Legs",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -29458,8 +30328,8 @@
         "slot": "Legs",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -29480,8 +30350,8 @@
         "slot": "Legs",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -29502,8 +30372,8 @@
         "slot": "Legs",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -29524,8 +30394,8 @@
         "slot": "Legs",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -29546,8 +30416,8 @@
         "slot": "Legs",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -29568,8 +30438,8 @@
         "slot": "Legs",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -29590,8 +30460,8 @@
         "slot": "Legs",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -29612,8 +30482,8 @@
         "slot": "Legs",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -29634,8 +30504,8 @@
         "slot": "Legs",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -29656,8 +30526,8 @@
         "slot": "Legs",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -29678,8 +30548,8 @@
         "slot": "Legs",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -29700,8 +30570,8 @@
         "slot": "Legs",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -29722,8 +30592,8 @@
         "slot": "Legs",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -29744,8 +30614,8 @@
         "slot": "Legs",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -29766,8 +30636,8 @@
         "slot": "Legs",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -29788,8 +30658,8 @@
         "slot": "Legs",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -29810,8 +30680,8 @@
         "slot": "Legs",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -29832,8 +30702,8 @@
         "slot": "Legs",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -29854,8 +30724,8 @@
         "slot": "Waist",
         "sources": [
             {
-                "encounterId": 965,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -29876,8 +30746,8 @@
         "slot": "Waist",
         "sources": [
             {
-                "encounterId": 965,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -29898,8 +30768,8 @@
         "slot": "Waist",
         "sources": [
             {
-                "encounterId": 965,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -29920,8 +30790,8 @@
         "slot": "Waist",
         "sources": [
             {
-                "encounterId": 965,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -29942,8 +30812,8 @@
         "slot": "Waist",
         "sources": [
             {
-                "encounterId": 965,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -29964,8 +30834,8 @@
         "slot": "Waist",
         "sources": [
             {
-                "encounterId": 965,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -29986,8 +30856,8 @@
         "slot": "Waist",
         "sources": [
             {
-                "encounterId": 965,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30008,8 +30878,8 @@
         "slot": "Waist",
         "sources": [
             {
-                "encounterId": 965,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30030,8 +30900,8 @@
         "slot": "Waist",
         "sources": [
             {
-                "encounterId": 965,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30052,8 +30922,8 @@
         "slot": "Waist",
         "sources": [
             {
-                "encounterId": 965,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30074,8 +30944,8 @@
         "slot": "Waist",
         "sources": [
             {
-                "encounterId": 965,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30096,8 +30966,8 @@
         "slot": "Waist",
         "sources": [
             {
-                "encounterId": 965,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30118,8 +30988,8 @@
         "slot": "Waist",
         "sources": [
             {
-                "encounterId": 965,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30140,8 +31010,8 @@
         "slot": "Waist",
         "sources": [
             {
-                "encounterId": 965,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30162,8 +31032,8 @@
         "slot": "Waist",
         "sources": [
             {
-                "encounterId": 965,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30184,8 +31054,8 @@
         "slot": "Waist",
         "sources": [
             {
-                "encounterId": 965,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30206,8 +31076,8 @@
         "slot": "Waist",
         "sources": [
             {
-                "encounterId": 965,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30228,8 +31098,8 @@
         "slot": "Waist",
         "sources": [
             {
-                "encounterId": 965,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30250,8 +31120,8 @@
         "slot": "Waist",
         "sources": [
             {
-                "encounterId": 965,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30272,8 +31142,8 @@
         "slot": "Waist",
         "sources": [
             {
-                "encounterId": 965,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30294,8 +31164,8 @@
         "slot": "Hands",
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30316,8 +31186,8 @@
         "slot": "Hands",
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30338,8 +31208,8 @@
         "slot": "Hands",
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30360,8 +31230,8 @@
         "slot": "Hands",
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30382,8 +31252,8 @@
         "slot": "Hands",
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30404,8 +31274,8 @@
         "slot": "Hands",
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30426,8 +31296,8 @@
         "slot": "Hands",
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30448,8 +31318,8 @@
         "slot": "Hands",
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30470,8 +31340,8 @@
         "slot": "Hands",
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30492,8 +31362,8 @@
         "slot": "Hands",
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30514,8 +31384,8 @@
         "slot": "Hands",
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30536,8 +31406,8 @@
         "slot": "Hands",
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30558,8 +31428,8 @@
         "slot": "Hands",
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30580,8 +31450,8 @@
         "slot": "Hands",
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30602,8 +31472,8 @@
         "slot": "Hands",
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30624,8 +31494,8 @@
         "slot": "Hands",
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30646,8 +31516,8 @@
         "slot": "Hands",
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30668,8 +31538,8 @@
         "slot": "Hands",
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30690,8 +31560,8 @@
         "slot": "Hands",
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30712,8 +31582,8 @@
         "slot": "Hands",
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30734,8 +31604,8 @@
         "slot": "Wrist",
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30756,8 +31626,8 @@
         "slot": "Wrist",
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30778,8 +31648,8 @@
         "slot": "Wrist",
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30800,8 +31670,8 @@
         "slot": "Wrist",
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30822,8 +31692,8 @@
         "slot": "Wrist",
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30844,8 +31714,8 @@
         "slot": "Wrist",
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30866,8 +31736,8 @@
         "slot": "Wrist",
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30888,8 +31758,8 @@
         "slot": "Wrist",
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30910,8 +31780,8 @@
         "slot": "Wrist",
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30932,8 +31802,8 @@
         "slot": "Wrist",
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30954,8 +31824,8 @@
         "slot": "Wrist",
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30976,8 +31846,8 @@
         "slot": "Wrist",
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -30998,8 +31868,8 @@
         "slot": "Wrist",
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -31020,8 +31890,8 @@
         "slot": "Wrist",
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -31042,8 +31912,8 @@
         "slot": "Wrist",
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -31064,8 +31934,8 @@
         "slot": "Wrist",
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -31086,8 +31956,8 @@
         "slot": "Wrist",
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -31108,8 +31978,8 @@
         "slot": "Wrist",
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -31130,8 +32000,8 @@
         "slot": "Wrist",
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -31152,8 +32022,8 @@
         "slot": "Wrist",
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -31790,8 +32660,8 @@
         "slot": "Shoulder",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -31812,8 +32682,8 @@
         "slot": "Shoulder",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -31834,8 +32704,8 @@
         "slot": "Shoulder",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -31856,8 +32726,8 @@
         "slot": "Shoulder",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -31878,8 +32748,8 @@
         "slot": "Shoulder",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -31900,8 +32770,8 @@
         "slot": "Shoulder",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -31922,8 +32792,8 @@
         "slot": "Shoulder",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -31944,8 +32814,8 @@
         "slot": "Shoulder",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -31966,8 +32836,8 @@
         "slot": "Shoulder",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -31988,8 +32858,8 @@
         "slot": "Shoulder",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -32010,8 +32880,8 @@
         "slot": "Shoulder",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -32032,8 +32902,8 @@
         "slot": "Shoulder",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -32054,8 +32924,8 @@
         "slot": "Shoulder",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -32076,8 +32946,8 @@
         "slot": "Shoulder",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -32098,8 +32968,8 @@
         "slot": "Shoulder",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -32120,8 +32990,8 @@
         "slot": "Shoulder",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -32142,8 +33012,8 @@
         "slot": "Shoulder",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -32164,8 +33034,8 @@
         "slot": "Shoulder",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -32186,8 +33056,8 @@
         "slot": "Shoulder",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -32208,8 +33078,8 @@
         "slot": "Shoulder",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -32230,8 +33100,8 @@
         "slot": "Neck",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -32252,8 +33122,8 @@
         "slot": "Neck",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -32274,8 +33144,8 @@
         "slot": "Neck",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -32296,8 +33166,8 @@
         "slot": "Neck",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -32318,8 +33188,8 @@
         "slot": "Neck",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -32340,8 +33210,8 @@
         "slot": "Neck",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -32362,8 +33232,8 @@
         "slot": "Neck",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -32384,8 +33254,8 @@
         "slot": "Neck",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -32406,8 +33276,8 @@
         "slot": "Neck",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -32428,8 +33298,8 @@
         "slot": "Neck",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -32450,8 +33320,8 @@
         "slot": "Neck",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -32472,8 +33342,8 @@
         "slot": "Neck",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -32494,8 +33364,8 @@
         "slot": "Neck",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -32516,8 +33386,8 @@
         "slot": "Neck",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -32538,8 +33408,8 @@
         "slot": "Neck",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -32560,8 +33430,8 @@
         "slot": "Neck",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -32582,8 +33452,8 @@
         "slot": "Neck",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -32604,8 +33474,8 @@
         "slot": "Neck",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -32626,8 +33496,8 @@
         "slot": "Neck",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -32648,8 +33518,8 @@
         "slot": "Neck",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -32670,8 +33540,8 @@
         "slot": "Head",
         "sources": [
             {
-                "encounterId": 965,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -32692,8 +33562,8 @@
         "slot": "Head",
         "sources": [
             {
-                "encounterId": 965,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -32714,8 +33584,8 @@
         "slot": "Head",
         "sources": [
             {
-                "encounterId": 965,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -32736,8 +33606,8 @@
         "slot": "Head",
         "sources": [
             {
-                "encounterId": 965,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -32758,8 +33628,8 @@
         "slot": "Head",
         "sources": [
             {
-                "encounterId": 965,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -32780,8 +33650,8 @@
         "slot": "Head",
         "sources": [
             {
-                "encounterId": 965,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -32802,8 +33672,8 @@
         "slot": "Head",
         "sources": [
             {
-                "encounterId": 965,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -32824,8 +33694,8 @@
         "slot": "Head",
         "sources": [
             {
-                "encounterId": 965,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -32846,8 +33716,8 @@
         "slot": "Head",
         "sources": [
             {
-                "encounterId": 965,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -32868,8 +33738,8 @@
         "slot": "Head",
         "sources": [
             {
-                "encounterId": 965,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -32890,8 +33760,8 @@
         "slot": "Head",
         "sources": [
             {
-                "encounterId": 965,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -32912,8 +33782,8 @@
         "slot": "Head",
         "sources": [
             {
-                "encounterId": 965,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -32934,8 +33804,8 @@
         "slot": "Head",
         "sources": [
             {
-                "encounterId": 965,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -32956,8 +33826,8 @@
         "slot": "Head",
         "sources": [
             {
-                "encounterId": 965,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -32978,8 +33848,8 @@
         "slot": "Head",
         "sources": [
             {
-                "encounterId": 965,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -33000,8 +33870,8 @@
         "slot": "Head",
         "sources": [
             {
-                "encounterId": 965,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -33022,8 +33892,8 @@
         "slot": "Head",
         "sources": [
             {
-                "encounterId": 965,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -33044,8 +33914,8 @@
         "slot": "Head",
         "sources": [
             {
-                "encounterId": 965,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -33066,8 +33936,8 @@
         "slot": "Head",
         "sources": [
             {
-                "encounterId": 965,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -33088,8 +33958,8 @@
         "slot": "Head",
         "sources": [
             {
-                "encounterId": 965,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -33280,8 +34150,8 @@
         },
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ],
         "levelRange": []
@@ -33467,8 +34337,8 @@
         },
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ],
         "levelRange": []
@@ -33515,8 +34385,8 @@
         "slot": "2H Weapon",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -33537,8 +34407,8 @@
         "slot": "1H Weapon",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -33559,8 +34429,8 @@
         "slot": "Shield",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -33801,8 +34671,8 @@
         "slot": "Neck",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -33823,8 +34693,8 @@
         "slot": "Neck",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -33845,8 +34715,8 @@
         "slot": "Neck",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -33867,8 +34737,8 @@
         "slot": "Neck",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -33889,8 +34759,8 @@
         "slot": "Finger",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -33911,8 +34781,8 @@
         "slot": "Finger",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -33933,8 +34803,8 @@
         "slot": "Finger",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -33955,8 +34825,8 @@
         "slot": "Finger",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -33977,8 +34847,8 @@
         "slot": "Finger",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -52227,6 +53097,878 @@
                 "encounterId": 2622,
                 "instanceId": -67
             }
+        ]
+    },
+    {
+        "id": 151299,
+        "name": "Viceroy's Umbral Mantle",
+        "icon": "inv_shoulder_cloth_legiondungeon_c_03",
+        "quality": 3,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 50,
+        "itemSetId": 1332,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4000,
+            "mastery": 3000
+        },
+        "slot": "Shoulder",
+        "sources": [
+            {
+                "encounterId": 945,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 151300,
+        "name": "Handwraps of the Ascended",
+        "icon": "inv_glove_cloth_legiondungeon_c_03",
+        "quality": 3,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 50,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 3800,
+            "mastery": 3200
+        },
+        "slot": "Hands",
+        "sources": [
+            {
+                "encounterId": 945,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 151301,
+        "name": "Slippers of Growing Despair",
+        "icon": "inv_boot_cloth_legiondungeon_c_03",
+        "quality": 3,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 50,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2500,
+            "versatility": 4500
+        },
+        "slot": "Feet",
+        "sources": [
+            {
+                "encounterId": 945,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 151302,
+        "name": "Cord of Unraveling Reality",
+        "icon": "inv_belt_cloth_legiondungeon_c_03",
+        "quality": 3,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 50,
+        "itemSetId": 1332,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "mastery": 3700,
+            "versatility": 3300
+        },
+        "slot": "Waist",
+        "sources": [
+            {
+                "encounterId": 945,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 151303,
+        "name": "Voidbender Robe",
+        "icon": "inv_chest_cloth_legiondungeon_c_03",
+        "quality": 3,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 50,
+        "itemSetId": 1332,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 3800,
+            "haste": 3200
+        },
+        "slot": "Chest",
+        "sources": [
+            {
+                "encounterId": 945,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 151304,
+        "name": "Subjugator's Leggings",
+        "icon": "inv_pant_cloth_legiondungeon_c_03",
+        "quality": 3,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 50,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "mastery": 3800,
+            "versatility": 3200
+        },
+        "slot": "Legs",
+        "sources": [
+            {
+                "encounterId": 945,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 151305,
+        "name": "Entropic Wristwraps",
+        "icon": "inv_bracer_cloth_legiondungeon_c_03",
+        "quality": 3,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 50,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2900,
+            "mastery": 4100
+        },
+        "slot": "Wrist",
+        "sources": [
+            {
+                "encounterId": 945,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 151307,
+        "name": "Void Stalker's Contract",
+        "icon": "inv_enchant_formulaepic_01",
+        "quality": 3,
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 50,
+        "stats": {
+            "intellect": 0,
+            "stamina": 0
+        },
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Void Stalker's Contract"
+        },
+        "offspecItem": true,
+        "levelRange": []
+    },
+    {
+        "id": 151308,
+        "name": "Eredath Seal of Nobility",
+        "icon": "inv_70_dungeon_ring3c",
+        "quality": 3,
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 50,
+        "itemSetId": 1331,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "crit": 6800,
+            "versatility": 10700
+        },
+        "slot": "Finger",
+        "sources": [
+            {
+                "encounterId": 945,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 151309,
+        "name": "Necklace of the Twisting Void",
+        "icon": "inv_7_0raid_necklace_06d",
+        "quality": 3,
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 50,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 9800,
+            "versatility": 7700
+        },
+        "slot": "Neck",
+        "sources": [
+            {
+                "encounterId": 945,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 151310,
+        "name": "Reality Breacher",
+        "icon": "achievement_battleground_templeofkotmogu_02_purple",
+        "quality": 3,
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 50,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0
+        },
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Reality Breacher"
+        },
+        "sources": [
+            {
+                "encounterId": 945,
+                "instanceId": -96
+            }
+        ],
+        "levelRange": []
+    },
+    {
+        "id": 151311,
+        "name": "Band of the Triumvirate",
+        "icon": "inv_70_dungeon_ring2b",
+        "quality": 3,
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 50,
+        "itemSetId": 1331,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 10000,
+            "versatility": 7500
+        },
+        "slot": "Finger",
+        "sources": [
+            {
+                "encounterId": 945,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 151312,
+        "name": "Ampoule of Pure Void",
+        "icon": "inv_archaeology_70_highborne_vialofpoison",
+        "quality": 3,
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 50,
+        "stats": {
+            "intellect": 0,
+            "stamina": 0
+        },
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Ampoule of Pure Void"
+        },
+        "offspecItem": true,
+        "levelRange": []
+    },
+    {
+        "id": 151313,
+        "name": "Vest of the Void's Embrace",
+        "icon": "inv_chest_leather_legiondungeon_c_03",
+        "quality": 3,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 50,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 2500,
+            "versatility": 4500
+        },
+        "slot": "Chest",
+        "sources": [
+            {
+                "encounterId": 945,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 151314,
+        "name": "Shifting Stalker Hide Pants",
+        "icon": "inv_pant_leather_legiondungeon_c_03",
+        "quality": 3,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 50,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "mastery": 4200,
+            "versatility": 2800
+        },
+        "slot": "Legs",
+        "sources": [
+            {
+                "encounterId": 945,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 151315,
+        "name": "Bracers of Dark Binding",
+        "icon": "inv_bracer_leather_legiondungeon_c_03",
+        "quality": 3,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 50,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 2600,
+            "haste": 4400
+        },
+        "slot": "Wrist",
+        "sources": [
+            {
+                "encounterId": 945,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 151316,
+        "name": "Cinch of the Umbral Lasher",
+        "icon": "inv_belt_leather_legiondungeon_c_03",
+        "quality": 3,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 50,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2900,
+            "versatility": 4100
+        },
+        "slot": "Waist",
+        "sources": [
+            {
+                "encounterId": 945,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 151317,
+        "name": "Footpads of Seeping Dread",
+        "icon": "inv_boot_leather_legiondungeon_c_03",
+        "quality": 3,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 50,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "mastery": 2900,
+            "versatility": 4100
+        },
+        "slot": "Feet",
+        "sources": [
+            {
+                "encounterId": 945,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 151318,
+        "name": "Gloves of the Dark Shroud",
+        "icon": "inv_glove_leather_legiondungeon_c_03",
+        "quality": 3,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 50,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 3200,
+            "haste": 3800
+        },
+        "slot": "Hands",
+        "sources": [
+            {
+                "encounterId": 945,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 151319,
+        "name": "Twilight's Edge Spaulders",
+        "icon": "inv_shoulder_leather_legiondungeon_c_03",
+        "quality": 3,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 50,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 3900,
+            "mastery": 3100
+        },
+        "slot": "Shoulder",
+        "sources": [
+            {
+                "encounterId": 945,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 151320,
+        "name": "Void-Coated Stompers",
+        "icon": "inv_boot_mail_legiondungeon_c_03",
+        "quality": 3,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 50,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3950,
+            "mastery": 3050
+        },
+        "slot": "Feet",
+        "sources": [
+            {
+                "encounterId": 945,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 151321,
+        "name": "Darkfang Scale Wristguards",
+        "icon": "inv_bracer_mail_legiondungeon_c_03",
+        "quality": 3,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 50,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 4400,
+            "mastery": 2600
+        },
+        "slot": "Wrist",
+        "sources": [
+            {
+                "encounterId": 945,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 151322,
+        "name": "Void-Touched Grips",
+        "icon": "inv_glove_mail_legiondungeon_c_03",
+        "quality": 3,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 50,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "mastery": 3000,
+            "versatility": 4000
+        },
+        "slot": "Hands",
+        "sources": [
+            {
+                "encounterId": 945,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 151323,
+        "name": "Pauldrons of the Void Hunter",
+        "icon": "inv_shoulder_mail_legiondungeon_c_03",
+        "quality": 3,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 50,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3800,
+            "mastery": 3200
+        },
+        "slot": "Shoulder",
+        "sources": [
+            {
+                "encounterId": 945,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 151324,
+        "name": "Helm of Shadowy Descent",
+        "icon": "inv_helm_mail_legiondungeon_c_03",
+        "quality": 3,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 50,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3850,
+            "mastery": 3150
+        },
+        "slot": "Head",
+        "sources": [
+            {
+                "encounterId": 945,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 151325,
+        "name": "Void-Linked Robe",
+        "icon": "inv_robe_mail_legiondungeon_c_03",
+        "quality": 3,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 50,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "mastery": 4100,
+            "versatility": 2900
+        },
+        "slot": "Chest",
+        "sources": [
+            {
+                "encounterId": 945,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 151326,
+        "name": "Waistguard of Bound Energy",
+        "icon": "inv_belt_mail_legiondungeon_c_03",
+        "quality": 3,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 50,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2900,
+            "versatility": 4100
+        },
+        "slot": "Waist",
+        "sources": [
+            {
+                "encounterId": 945,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 151327,
+        "name": "Girdle of the Shadowguard",
+        "icon": "inv_belt_plate_legiondungeon_c_03",
+        "quality": 3,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 50,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 2750,
+            "mastery": 4250
+        },
+        "slot": "Waist",
+        "sources": [
+            {
+                "encounterId": 945,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 151328,
+        "name": "Vambraces of Lost Hope",
+        "icon": "inv_bracer_plate_legiondungeon_c_03",
+        "quality": 3,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 50,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 2550,
+            "haste": 4450
+        },
+        "slot": "Wrist",
+        "sources": [
+            {
+                "encounterId": 945,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 151329,
+        "name": "Breastplate of the Dark Touch",
+        "icon": "inv_chest_plate_legiondungeon_c_03",
+        "quality": 3,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 50,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3100,
+            "mastery": 3900
+        },
+        "slot": "Chest",
+        "sources": [
+            {
+                "encounterId": 945,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 151330,
+        "name": "Trap Jammers",
+        "icon": "inv_boot_plate_legiondungeon_c_03",
+        "quality": 3,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 50,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "mastery": 2900,
+            "versatility": 4100
+        },
+        "slot": "Feet",
+        "sources": [
+            {
+                "encounterId": 945,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 151331,
+        "name": "Pauldrons of the Broken",
+        "icon": "inv_shoulder_plate_legiondungeon_c_03",
+        "quality": 3,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 50,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 3000,
+            "versatility": 4000
+        },
+        "slot": "Shoulder",
+        "sources": [
+            {
+                "encounterId": 945,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 151332,
+        "name": "Voidclaw Gauntlets",
+        "icon": "inv_glove_plate_legiondungeon_c_03",
+        "quality": 3,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 50,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3800,
+            "versatility": 3200
+        },
+        "slot": "Hands",
+        "sources": [
+            {
+                "encounterId": 945,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 151333,
+        "name": "Crown of the Dark Envoy",
+        "icon": "inv_helm_plate_legiondungeon_c_03",
+        "quality": 3,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 50,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 4100,
+            "mastery": 2900
+        },
+        "slot": "Head",
+        "sources": [
+            {
+                "encounterId": 945,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 151336,
+        "name": "Voidlashed Hood",
+        "icon": "inv_helm_leather_legiondungeon_c_03",
+        "quality": 3,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 50,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 3800,
+            "haste": 3200
+        },
+        "slot": "Head",
+        "sources": [
+            {
+                "encounterId": 945,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 151337,
+        "name": "Shadow-Weaver's Crown",
+        "icon": "inv_helm_cloth_legiondungeon_c_03",
+        "quality": 3,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 50,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 2900,
+            "mastery": 4100
+        },
+        "slot": "Head",
+        "sources": [
+            {
+                "encounterId": 945,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 151338,
+        "name": "Leggings of Shifting Darkness",
+        "icon": "inv_pant_mail_legiondungeon_c_03",
+        "quality": 3,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 50,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 4050,
+            "haste": 2950
+        },
+        "slot": "Legs",
+        "sources": [
+            {
+                "encounterId": 945,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 151339,
+        "name": "Legplates of Ultimate Sacrifice",
+        "icon": "inv_pant_plate_legiondungeon_c_03",
+        "quality": 3,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 50,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 3700,
+            "mastery": 3300
+        },
+        "slot": "Legs",
+        "sources": [
+            {
+                "encounterId": 945,
+                "instanceId": -96
+            }
+        ]
+    },
+    {
+        "id": 151340,
+        "name": "Echo of L'ura",
+        "icon": "inv_pet_naaru_purple",
+        "quality": 3,
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 50,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0
+        },
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Echo of L'ura"
+        },
+        "sources": [
+            {
+                "encounterId": 945,
+                "instanceId": -96
+            }
+        ],
+        "levelRange": [
+            272,
+            276,
+            285,
+            289,
+            295,
+            298
         ]
     },
     {
@@ -83017,7 +84759,13 @@
             "crit": 4550,
             "haste": 2450
         },
-        "slot": "Head"
+        "slot": "Head",
+        "sources": [
+            {
+                "encounterId": 1201,
+                "instanceId": -96
+            }
+        ]
     },
     {
         "id": 193704,
@@ -83033,7 +84781,13 @@
             "mastery": 4250,
             "crit": 2750
         },
-        "slot": "Shoulder"
+        "slot": "Shoulder",
+        "sources": [
+            {
+                "encounterId": 1201,
+                "instanceId": -96
+            }
+        ]
     },
     {
         "id": 193705,
@@ -83049,7 +84803,13 @@
             "versatility": 4250,
             "crit": 2750
         },
-        "slot": "Chest"
+        "slot": "Chest",
+        "sources": [
+            {
+                "encounterId": 1201,
+                "instanceId": -96
+            }
+        ]
     },
     {
         "id": 193706,
@@ -83065,7 +84825,13 @@
             "versatility": 4400,
             "crit": 2600
         },
-        "slot": "Legs"
+        "slot": "Legs",
+        "sources": [
+            {
+                "encounterId": 1201,
+                "instanceId": -96
+            }
+        ]
     },
     {
         "id": 193707,
@@ -83081,7 +84847,13 @@
             "mastery": 4400,
             "haste": 2600
         },
-        "slot": "2H Weapon"
+        "slot": "2H Weapon",
+        "sources": [
+            {
+                "encounterId": 1201,
+                "instanceId": -96
+            }
+        ]
     },
     {
         "id": 193708,
@@ -83097,7 +84869,13 @@
             "crit": 11500,
             "mastery": 6000
         },
-        "slot": "Finger"
+        "slot": "Finger",
+        "sources": [
+            {
+                "encounterId": 1201,
+                "instanceId": -96
+            }
+        ]
     },
     {
         "id": 193709,
@@ -83113,7 +84891,13 @@
             "crit": 4100,
             "haste": 2900
         },
-        "slot": "Offhand"
+        "slot": "Offhand",
+        "sources": [
+            {
+                "encounterId": 1201,
+                "instanceId": -96
+            }
+        ]
     },
     {
         "id": 193710,
@@ -83129,7 +84913,13 @@
             "haste": 4250,
             "mastery": 2750
         },
-        "slot": "1H Weapon"
+        "slot": "1H Weapon",
+        "sources": [
+            {
+                "encounterId": 1201,
+                "instanceId": -96
+            }
+        ]
     },
     {
         "id": 193712,
@@ -83145,7 +84935,13 @@
             "versatility": 4250,
             "haste": 2750
         },
-        "slot": "Back"
+        "slot": "Back",
+        "sources": [
+            {
+                "encounterId": 1201,
+                "instanceId": -96
+            }
+        ]
     },
     {
         "id": 193713,
@@ -83161,7 +84957,13 @@
             "versatility": 4100,
             "crit": 2900
         },
-        "slot": "Hands"
+        "slot": "Hands",
+        "sources": [
+            {
+                "encounterId": 1201,
+                "instanceId": -96
+            }
+        ]
     },
     {
         "id": 193714,
@@ -83177,7 +84979,13 @@
             "haste": 4100,
             "mastery": 2900
         },
-        "slot": "Wrist"
+        "slot": "Wrist",
+        "sources": [
+            {
+                "encounterId": 1201,
+                "instanceId": -96
+            }
+        ]
     },
     {
         "id": 193715,
@@ -83193,7 +85001,13 @@
             "crit": 4550,
             "haste": 2450
         },
-        "slot": "Feet"
+        "slot": "Feet",
+        "sources": [
+            {
+                "encounterId": 1201,
+                "instanceId": -96
+            }
+        ]
     },
     {
         "id": 193717,
@@ -83209,7 +85023,13 @@
             "versatility": 4100,
             "crit": 2900
         },
-        "slot": "Warglaive Weapon"
+        "slot": "Warglaive Weapon",
+        "sources": [
+            {
+                "encounterId": 1201,
+                "instanceId": -96
+            }
+        ]
     },
     {
         "id": 193718,
@@ -83228,6 +85048,12 @@
             "type": "trinket",
             "name": "Emerald Coach's Whistle"
         },
+        "sources": [
+            {
+                "encounterId": 1201,
+                "instanceId": -96
+            }
+        ],
         "levelRange": []
     },
     {
@@ -83264,7 +85090,13 @@
             "mastery": 4100,
             "crit": 2900
         },
-        "slot": "Chest"
+        "slot": "Chest",
+        "sources": [
+            {
+                "encounterId": 1201,
+                "instanceId": -96
+            }
+        ]
     },
     {
         "id": 193721,
@@ -83280,7 +85112,13 @@
             "versatility": 4100,
             "mastery": 2900
         },
-        "slot": "Hands"
+        "slot": "Hands",
+        "sources": [
+            {
+                "encounterId": 1201,
+                "instanceId": -96
+            }
+        ]
     },
     {
         "id": 193722,
@@ -83296,7 +85134,13 @@
             "versatility": 4550,
             "mastery": 2450
         },
-        "slot": "Waist"
+        "slot": "Waist",
+        "sources": [
+            {
+                "encounterId": 1201,
+                "instanceId": -96
+            }
+        ]
     },
     {
         "id": 193724,
@@ -83644,12 +85488,11 @@
             "name": "Kyrakka's Searing Embers"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
-            298,
+            295,
             302,
             308,
             315,
@@ -83793,12 +85636,11 @@
             "name": "Ruby Whelp Shell"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
-            298,
+            295,
             302,
             308,
             315,
@@ -218365,11 +220207,10 @@
             "name": "Magister's Alchemist Stone"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
-            298
+            295
         ]
     },
     {
@@ -226698,12 +228539,11 @@
             "name": "Drum of Renewed Bonds"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
-            298,
+            295,
             302,
             308,
             315,
@@ -227760,11 +229600,11 @@
             "name": "Volatile Void Suffuser"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
+            295,
             298
         ]
     },
@@ -227813,11 +229653,11 @@
             "name": "Gaze of the Alnseer"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
+            295,
             298
         ]
     },
@@ -227885,11 +229725,11 @@
             "name": "Vaelgor's Final Stare"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
+            295,
             298
         ]
     },
@@ -229298,11 +231138,11 @@
             "name": "Litany of Lightblind Wrath"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
+            295,
             298
         ]
     },
@@ -229331,11 +231171,11 @@
             "name": "Locus-Walker's Ribbon"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
+            295,
             298
         ]
     },
@@ -229388,11 +231228,11 @@
             "name": "Light of the Cosmic Crescendo"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
+            295,
             298
         ]
     },
@@ -232636,11 +234476,11 @@
             "name": "Emberwing Feather"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
+            295,
             298
         ]
     },
@@ -232668,12 +234508,11 @@
             "name": "Lightspire Core"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
-            298,
+            295,
             302,
             308,
             315,
@@ -232707,12 +234546,11 @@
             "name": "Freightrunner's Flask"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
-            298,
+            295,
             302,
             308,
             315,
@@ -233035,11 +234873,11 @@
             "name": "Refueling Orb"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
+            295,
             298
         ]
     },
@@ -233090,12 +234928,11 @@
             "name": "Mycolic Medicine"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
-            298,
+            295,
             302,
             308,
             315,
@@ -233133,11 +234970,11 @@
             "name": "Whisper of the Duskwraith"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
+            295,
             298
         ]
     },
@@ -233165,12 +235002,11 @@
             "name": "Seed of Radiant Hope"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
-            298,
+            295,
             302,
             308,
             315,
@@ -233204,12 +235040,11 @@
             "name": "Unstable Felheart Crystal"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
-            298,
+            295,
             302,
             308,
             315,
@@ -233247,11 +235082,11 @@
             "name": "Heart of Wind"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
+            295,
             298
         ]
     },
@@ -233313,11 +235148,11 @@
             "name": "Vessel of Tortured Souls"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
+            295,
             298
         ]
     },
@@ -237475,12 +239310,11 @@
             "name": "Gift of Light"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
-            298,
+            295,
             302,
             308,
             315,
@@ -237512,12 +239346,11 @@
         },
         "crafted": true,
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
-            298,
+            295,
             302,
             308,
             315,
@@ -237588,12 +239421,11 @@
             "name": "Glorious Crusader's Keepsake"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
-            298,
+            295,
             302,
             308,
             315,
@@ -238043,8 +239875,8 @@
         },
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ],
         "levelRange": []
@@ -238173,12 +240005,11 @@
             "name": "Tangle of Vibrant Vines"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
-            298,
+            295,
             302,
             308,
             315,
@@ -246521,9 +248352,7 @@
             "type": "trinket",
             "name": "Galactic Gladiator's Insignia of Alacrity"
         },
-        "levelRange": [
-            263
-        ]
+        "levelRange": []
     },
     {
         "id": 255615,
@@ -250795,8 +252624,8 @@
         "slot": "2H Weapon",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -250817,8 +252646,8 @@
         "slot": "Shield",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -250839,8 +252668,8 @@
         "slot": "1H Weapon",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -250861,8 +252690,8 @@
         "slot": "1H Weapon",
         "sources": [
             {
-                "encounterId": 965,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -250883,8 +252712,8 @@
         "slot": "Offhand",
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -250902,7 +252731,13 @@
             "mastery": 4250,
             "crit": 2750
         },
-        "slot": "2H Weapon"
+        "slot": "2H Weapon",
+        "sources": [
+            {
+                "encounterId": 945,
+                "instanceId": -96
+            }
+        ]
     },
     {
         "id": 258516,
@@ -250918,7 +252753,13 @@
             "crit": 4400,
             "versatility": 2600
         },
-        "slot": "1H Weapon"
+        "slot": "1H Weapon",
+        "sources": [
+            {
+                "encounterId": 945,
+                "instanceId": -96
+            }
+        ]
     },
     {
         "id": 258523,
@@ -250934,7 +252775,13 @@
             "crit": 4100,
             "mastery": 2900
         },
-        "slot": "Offhand"
+        "slot": "Offhand",
+        "sources": [
+            {
+                "encounterId": 945,
+                "instanceId": -96
+            }
+        ]
     },
     {
         "id": 258531,
@@ -250950,7 +252797,13 @@
             "versatility": 4550,
             "mastery": 2450
         },
-        "slot": "Shield"
+        "slot": "Shield",
+        "sources": [
+            {
+                "encounterId": 1201,
+                "instanceId": -96
+            }
+        ]
     },
     {
         "id": 258532,
@@ -251013,8 +252866,8 @@
         "slot": "Legs",
         "sources": [
             {
-                "encounterId": 965,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -251035,8 +252888,8 @@
         "slot": "Back",
         "sources": [
             {
-                "encounterId": 965,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -251057,8 +252910,8 @@
         "slot": "Chest",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -251079,8 +252932,8 @@
         "slot": "Feet",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -251101,8 +252954,8 @@
         "slot": "Shoulder",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -251123,8 +252976,8 @@
         "slot": "Head",
         "sources": [
             {
-                "encounterId": 966,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -251145,8 +252998,8 @@
         "slot": "Wrist",
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -251167,8 +253020,8 @@
         "slot": "Shoulder",
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -251189,8 +253042,8 @@
         "slot": "Feet",
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -251211,8 +253064,8 @@
         "slot": "Hands",
         "sources": [
             {
-                "encounterId": 967,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -251233,8 +253086,8 @@
         "slot": "Feet",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -251255,8 +253108,8 @@
         "slot": "Head",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -251277,8 +253130,8 @@
         "slot": "Chest",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -251299,8 +253152,8 @@
         "slot": "Shoulder",
         "sources": [
             {
-                "encounterId": 968,
-                "instanceId": -67
+                "encounterId": 476,
+                "instanceId": -96
             }
         ]
     },
@@ -259342,7 +261195,11 @@
             "name": "Crucible of Erratic Energies"
         },
         "levelRange": [
-            263
+            272,
+            276,
+            285,
+            289,
+            295
         ]
     },
     {
@@ -261224,12 +263081,11 @@
             "name": "Ultradon Cuirass"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
-            298,
+            295,
             302,
             308,
             315,
@@ -261262,12 +263118,11 @@
             "name": "Cosmic Bell"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
-            298,
+            295,
             302,
             308,
             315,
@@ -263823,11 +265678,11 @@
             "name": "Sporelord's Mycelial Insignia"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
+            295,
             298
         ]
     },
@@ -264175,12 +266030,11 @@
             "name": "Soulcoiler Ritual Vessel"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
-            298,
+            295,
             302,
             308,
             315,
@@ -264236,12 +266090,11 @@
             "name": "Gebbo's Bottomless Bag"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
-            298,
+            295,
             302,
             308,
             315,
@@ -264319,12 +266172,11 @@
             "name": "Wavecaller's Seastone"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
-            298,
+            295,
             302,
             308,
             315,
@@ -264387,12 +266239,11 @@
             "name": "Hex Lord's Dooming Idol"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
-            298,
+            295,
             302,
             308,
             315,
@@ -264455,12 +266306,11 @@
             "name": "Preternatural Antivenom"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
-            298,
+            295,
             302,
             308,
             315,
@@ -276019,8 +277869,8 @@
         },
         "sources": [
             {
-                "instanceId": 1320,
-                "encounterId": 999
+                "instanceId": -100,
+                "encounterId": -100
             }
         ],
         "squishEra": 2,
@@ -276046,8 +277896,8 @@
         },
         "sources": [
             {
-                "instanceId": 1320,
-                "encounterId": 999
+                "instanceId": -100,
+                "encounterId": -100
             }
         ],
         "squishEra": 2,
@@ -276073,8 +277923,8 @@
         },
         "sources": [
             {
-                "instanceId": 1320,
-                "encounterId": 999
+                "instanceId": -100,
+                "encounterId": -100
             }
         ],
         "squishEra": 2,
@@ -276212,8 +278062,8 @@
         },
         "sources": [
             {
-                "instanceId": 1320,
-                "encounterId": 999
+                "instanceId": -100,
+                "encounterId": -100
             }
         ],
         "squishEra": 2,
@@ -276506,8 +278356,8 @@
         },
         "sources": [
             {
-                "instanceId": 1320,
-                "encounterId": 999
+                "instanceId": -100,
+                "encounterId": -100
             }
         ],
         "squishEra": 2,
@@ -276532,8 +278382,8 @@
         },
         "sources": [
             {
-                "instanceId": 1320,
-                "encounterId": 999
+                "instanceId": -100,
+                "encounterId": -100
             }
         ],
         "squishEra": 2,
@@ -276558,8 +278408,8 @@
         },
         "sources": [
             {
-                "instanceId": 1320,
-                "encounterId": 999
+                "instanceId": -100,
+                "encounterId": -100
             }
         ],
         "squishEra": 2,
@@ -276692,8 +278542,8 @@
         },
         "sources": [
             {
-                "instanceId": 1320,
-                "encounterId": 999
+                "instanceId": -100,
+                "encounterId": -100
             }
         ],
         "squishEra": 2,
@@ -276984,8 +278834,8 @@
         },
         "sources": [
             {
-                "instanceId": 1320,
-                "encounterId": 999
+                "instanceId": -100,
+                "encounterId": -100
             }
         ],
         "squishEra": 2,
@@ -277010,8 +278860,8 @@
         },
         "sources": [
             {
-                "instanceId": 1320,
-                "encounterId": 999
+                "instanceId": -100,
+                "encounterId": -100
             }
         ],
         "squishEra": 2,
@@ -277036,8 +278886,8 @@
         },
         "sources": [
             {
-                "instanceId": 1320,
-                "encounterId": 999
+                "instanceId": -100,
+                "encounterId": -100
             }
         ],
         "squishEra": 2,
@@ -277170,8 +279020,8 @@
         },
         "sources": [
             {
-                "instanceId": 1320,
-                "encounterId": 999
+                "instanceId": -100,
+                "encounterId": -100
             }
         ],
         "squishEra": 2,
@@ -277462,8 +279312,8 @@
         },
         "sources": [
             {
-                "instanceId": 1320,
-                "encounterId": 999
+                "instanceId": -100,
+                "encounterId": -100
             }
         ],
         "squishEra": 2,
@@ -277488,8 +279338,8 @@
         },
         "sources": [
             {
-                "instanceId": 1320,
-                "encounterId": 999
+                "instanceId": -100,
+                "encounterId": -100
             }
         ],
         "squishEra": 2,
@@ -277514,8 +279364,8 @@
         },
         "sources": [
             {
-                "instanceId": 1320,
-                "encounterId": 999
+                "instanceId": -100,
+                "encounterId": -100
             }
         ],
         "squishEra": 2,
@@ -277648,8 +279498,8 @@
         },
         "sources": [
             {
-                "instanceId": 1320,
-                "encounterId": 999
+                "instanceId": -100,
+                "encounterId": -100
             }
         ],
         "squishEra": 2,
@@ -277701,8 +279551,8 @@
         },
         "sources": [
             {
-                "instanceId": 1320,
-                "encounterId": 999
+                "instanceId": -100,
+                "encounterId": -100
             }
         ],
         "squishEra": 2,
@@ -277727,8 +279577,8 @@
         },
         "sources": [
             {
-                "instanceId": 1320,
-                "encounterId": 999
+                "instanceId": -100,
+                "encounterId": -100
             }
         ],
         "squishEra": 2,
@@ -277753,8 +279603,8 @@
         },
         "sources": [
             {
-                "instanceId": 1320,
-                "encounterId": 999
+                "instanceId": -100,
+                "encounterId": -100
             }
         ],
         "squishEra": 2,
@@ -277887,8 +279737,8 @@
         },
         "sources": [
             {
-                "instanceId": 1320,
-                "encounterId": 999
+                "instanceId": -100,
+                "encounterId": -100
             }
         ],
         "squishEra": 2,
@@ -278418,8 +280268,8 @@
         },
         "sources": [
             {
-                "instanceId": 1320,
-                "encounterId": 999
+                "instanceId": -100,
+                "encounterId": -100
             }
         ],
         "squishEra": 2,
@@ -278445,8 +280295,8 @@
         },
         "sources": [
             {
-                "instanceId": 1320,
-                "encounterId": 999
+                "instanceId": -100,
+                "encounterId": -100
             }
         ],
         "squishEra": 2,
@@ -278472,8 +280322,8 @@
         },
         "sources": [
             {
-                "instanceId": 1320,
-                "encounterId": 999
+                "instanceId": -100,
+                "encounterId": -100
             }
         ],
         "squishEra": 2,
@@ -278611,8 +280461,8 @@
         },
         "sources": [
             {
-                "instanceId": 1320,
-                "encounterId": 999
+                "instanceId": -100,
+                "encounterId": -100
             }
         ],
         "squishEra": 2,
@@ -280191,12 +282041,11 @@
             "name": "Stormbound Emblem of Dazar"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
-            298,
+            295,
             302,
             308,
             315,
@@ -280262,7 +282111,7 @@
             "intellect": 5259,
             "stamina": 7889,
             "mastery": 3800,
-            "crit": 3200
+            "versatility": 3200
         },
         "sources": [
             {
@@ -280630,12 +282479,11 @@
             "name": "Vile Vial of Volatile Venom"
         },
         "levelRange": [
-            263,
             272,
             276,
             285,
             289,
-            298,
+            295,
             302,
             308,
             315,
@@ -280680,8 +282528,8 @@
         },
         "sources": [
             {
-                "instanceId": -98,
-                "encounterId": -98
+                "instanceId": -69,
+                "encounterId": -69
             }
         ],
         "squishEra": 2,
@@ -280690,7 +282538,17 @@
             "type": "trinket",
             "name": "Effigy of Ula'tek's Faithful"
         },
-        "levelRange": []
+        "levelRange": [
+            272,
+            276,
+            285,
+            289,
+            295,
+            302,
+            308,
+            315,
+            321
+        ]
     },
     {
         "id": 274494,
@@ -280707,12 +282565,8 @@
         },
         "sources": [
             {
-                "instanceId": -98,
-                "encounterId": -98
-            },
-            {
-                "instanceId": -99,
-                "encounterId": -99
+                "instanceId": -69,
+                "encounterId": -69
             }
         ],
         "squishEra": 2,
@@ -280721,7 +282575,17 @@
             "type": "trinket",
             "name": "Chiral Marrowgrafter"
         },
-        "levelRange": []
+        "levelRange": [
+            272,
+            276,
+            285,
+            289,
+            295,
+            302,
+            308,
+            315,
+            321
+        ]
     },
     {
         "id": 274495,
@@ -280737,12 +282601,8 @@
         },
         "sources": [
             {
-                "instanceId": -98,
-                "encounterId": -98
-            },
-            {
-                "instanceId": -99,
-                "encounterId": -99
+                "instanceId": -69,
+                "encounterId": -69
             }
         ],
         "squishEra": 2,
@@ -280751,7 +282611,17 @@
             "type": "trinket",
             "name": "Pulse Seeker's Oculus"
         },
-        "levelRange": []
+        "levelRange": [
+            272,
+            276,
+            285,
+            289,
+            295,
+            302,
+            308,
+            315,
+            321
+        ]
     },
     {
         "id": 274496,
@@ -286416,7 +288286,23 @@
             "type": "trinket",
             "name": "Latent Purifier"
         },
-        "levelRange": []
+        "sources": [
+            {
+                "instanceId": -69,
+                "encounterId": -69
+            }
+        ],
+        "levelRange": [
+            272,
+            276,
+            285,
+            289,
+            295,
+            302,
+            308,
+            315,
+            321
+        ]
     },
     {
         "id": 280097,

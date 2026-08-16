@@ -83,7 +83,7 @@
             "school": "nature",
             "cost": 3.0,
             "coeff": 2.58,
-            "aura": 1.536,
+            "aura": 2.9952,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -177,7 +177,7 @@
                 "maxCharges": 1
             },
             "coeff": 1.8694,
-            "aura": 1.41,
+            "aura": 2.679,
             "secondaries": [
                 "crit",
                 "versatility"
@@ -186,7 +186,7 @@
         },
         {
             "coeff": 5.0,
-            "aura": 1.41,
+            "aura": 0.8,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -212,7 +212,7 @@
             },
             "targets": 5,
             "coeff": 11.0,
-            "aura": 1.0,
+            "aura": 0.8,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -271,7 +271,7 @@
                 "maxCharges": 1
             },
             "coeff": 1.4955,
-            "aura": 1.41,
+            "aura": 2.679,
             "secondaries": [
                 "crit",
                 "versatility"
@@ -452,7 +452,7 @@
             "school": "nature",
             "cost": 0.0,
             "coeff": 3.51,
-            "aura": 1.0,
+            "aura": 1.9,
             "secondaries": [
                 "crit",
                 "versatility"
@@ -602,7 +602,8 @@
             "cooldownData": {
                 "cooldown": 120.0,
                 "hasted": false
-            }
+            },
+            "buffDuration": 25.0
         }
     ],
     "Invigorating Mists": [

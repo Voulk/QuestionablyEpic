@@ -7,12 +7,13 @@ import TCPanel from "./TCPanel";
 import StatScalingChart from "./StatScalingPanel";
 import { useSelector } from "react-redux";
 import { RootState } from "Redux/Reducers/RootReducer";
-import { buildStatWeights, buildTCStatChart } from "General/Modules/Player/ClassDefaults/Generic/RampTestSuite"
+import { buildBestDistChart, buildStatWeights, buildTCStatChart } from "General/Modules/Player/ClassDefaults/Generic/RampTestSuite"
 import SequenceDataTable from "../SequenceGenerator/SequenceDataTable";
 import ModelInformationTabs from "./ModelInformationTabs";
 
 import { getSelectedTalentsFromString } from "General/Modules/Player/ClassDefaults/Generic/TalentStrings/TalentDecoder"
 import { CONSTANTS } from "General/Engine/CONSTANTS";
+import BestInSlotPanel from "./BestDistributionPanel";
 
 
 export default function TheorycraftingGUI(props) {
@@ -37,29 +38,35 @@ export default function TheorycraftingGUI(props) {
     const [currentWeights, setCurrentWeights] = useState({ haste: 0.2, crit: 0.2, mastery: 0.2, versatility: 0.2, intellect: 1 });
 
     const [stats, setStats] = useState<Stats>({
-        intellect: 2800,
-        haste: 1000,
-        crit: 500,
-        mastery: 500,
-        versatility: 500,
+        intellect: 3400,
+        haste: 500,
+        crit: 1200,
+        mastery: 1200,
+        versatility: 100,
     });
+    const [bestStatCombo, setbestStatCombo] = useState({haste: 1, crit: 1, mastery: 1, versatility: 1});
     const [selectedProfile, setSelectedProfile] = useState(profiles[0]);
     const [talentString, setTalentString] = useState(profiles[0].talents);
-    const [talentsSelected, setTalentsSelected] = useState(getSelectedTalentsFromString(profiles[0].talents, selectedSpec));
-    console.log(profiles[0])
-    console.log(talentsSelected);
+    const talentsSelected = getSelectedTalentsFromString(selectedProfile.talents, selectedSpec);
     const params = {
-                filler: {
-                    hw: 0, ch: 1
-                },
-                asc: {
-                    hw: 0, ch: 1
-                },
-                downtime: 0
-            }
+        filler: {
+            hw: 0, ch: 1
+        },
+        asc: {
+            hw: 0, ch: 1
+        },
+        downtime: 0
+    }
 
-    const playerData = { spec: player.spec, heroTree: selectedProfile.heroTree || "Missing Hero Tree", profileName: selectedProfile.modelName, stats: stats,
-                                    masteryEffectiveness: 0.3, tierSets: ["Restoration Shaman S1-2", "Restoration Shaman S1-4"], params: params,  }
+    const playerData = {
+        spec: player.spec,
+        heroTree: selectedProfile.heroTree || "Missing Hero Tree",
+        profileName: selectedProfile.modelName,
+        stats: stats,
+        masteryEffectiveness: 0.3,
+        tierSets: /*["Preservation Evoker S2-2", "Preservation Evoker S2-4"]*/["Restoration Shaman S2-2", "Restoration Shaman S2-4"],
+        params: params,
+    }
 
     const runProfile = () => {
         const result = selectedProfile.runCastModel(stats, playerData, {}, true);
@@ -67,7 +74,6 @@ export default function TheorycraftingGUI(props) {
         setActiveResult(result);
         setStatChart(statResults);
         setCurrentWeights(buildStatWeights(playerData, selectedProfile.runCastModel, {}))
-        
     }
 
     const rows: SpellRow[] = [];
@@ -76,7 +82,7 @@ export default function TheorycraftingGUI(props) {
     return (
     <Box
       sx={{
-        width: "60%",
+        width: { xs: "90%", sm: "85%", md: "80%", lg: "60%" },
         margin: "0 auto",
         display: "flex",
         flexDirection: "column",
@@ -85,7 +91,14 @@ export default function TheorycraftingGUI(props) {
     >
         <div style={{ height: 5 }} />
       {/* Control panel spans full width as a header bar */}
-      <ControlPanel stats={stats} setStats={setStats} profiles={profiles} onRunProfile={runProfile} />
+      <ControlPanel
+            stats={stats}
+            setStats={setStats}
+            profiles={profiles}
+            selectedProfile={selectedProfile}
+            onProfileChange={setSelectedProfile}
+            onRunProfile={runProfile}
+        />
  
       {/* Charts flow vertically below */}
       <ModelInformationTabs
@@ -96,8 +109,11 @@ export default function TheorycraftingGUI(props) {
       <StatScalingChart data={statChart} currentWeights={currentWeights} />
  
       {/* Future panels go here */}
+      <BestInSlotPanel stats={bestStatCombo} onRun={() => buildBestDistChart(selectedProfile.runCastModel, playerData).then(result => {
+        setbestStatCombo(result);
+      })} />
 
-      {<SequenceDataTable data={""} spec={selectedSpec} stats={stats} talents={[]} />}
+      {/*<SequenceDataTable data={""} spec={selectedSpec} stats={stats} talents={[]} />*/}
 
       <div style={{ height: 100 }} />
     </Box>

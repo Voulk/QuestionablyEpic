@@ -41,7 +41,7 @@ export const applyRaidBuffs = (settings) => {
     statBonuses.mastery = 0.02
 
     // Versatility
-    //statBonuses.versatility = 0.03
+    statBonuses.versatility = 0.03
 
     // Vantus?
 
@@ -91,6 +91,11 @@ export const buildCPM = (spells, spell, efficiency = 0.9) => {
     return 60 / getSpellAttribute(spells[spell], "cooldown") * efficiency;
 }
 
+export const getSpellCooldown = (spells, spell, haste) => {
+    const cooldownData = spells[spell][0].cooldownData;
+    return cooldownData.hasted ? cooldownData.cooldown / haste : cooldownData.cooldown;
+}
+
 export const getSpellCritChance = (spell, statPercentages) => {
     return statPercentages.crit + (spell.statMods?.crit || 0) - 1
 }
@@ -109,7 +114,7 @@ export const convertStatPercentages = (statProfile, statBonuses, spec, masteryEf
         critMult: Math.max(statProfile.critMult || 2, 2) + (statBonuses.critMult || 0),
         genericHealingMult: (statBonuses.genericHealingMult) ? 1 + statBonuses.genericHealingMult : 1,
         genericDamageMult: (statBonuses.genericDamageMult) ? 1 + statBonuses.genericDamageMult : 1,
-        leech: (statProfile.leech / STATCONVERSION.LEECH / 100) + (statBonuses.leech || 0),
+        leech: ((statProfile.leech || 0) / STATCONVERSION.LEECH / 100) + (statBonuses.leech || 0),
     }
 
     //getClassicRaceBonuses(stats, race);
@@ -132,8 +137,7 @@ export const compileProfileReportingData = (healingEntries, damageEntries, castP
             hps: Math.round(entry[1] / 60), 
             percentHealing: ((entry[1] / totalHealing * 10000) / 100).toFixed(2), 
             overhealing: 0.25,
-            cpm: Math.round(100*castProfile.reduce((acc, spell) => acc + ((spell.cpm && (spell.label ? spell.label === entry[0] : spell.spell === entry[0])) ? spell.cpm : 0), 0))/100,
-            icon: spellDB[realSpellName] ? spellDB[realSpellName][0].displayInfo.icon : null
+            cpm: Math.round(100 * castProfile.reduce((acc, spell) => acc + (!spell.autoSpell && spell.cpm && (spell.label ? spell.label === entry[0] : spell.spell === entry[0]) ? spell.cpm : 0), 0)) / 100,            icon: spellDB[realSpellName] ? spellDB[realSpellName][0].displayInfo.icon : null
 
 
         });
@@ -215,7 +219,7 @@ export const getSpellThroughput = (spell, statPercentages, spec, settings, flags
         const masterySize = spec === "Mistweaver Monk" ? (1 + (statPercentages.mastery) * (spell.statMods && spell.statMods.masteryMult ? (spell.statMods.masteryMult + 0) : 0)) : 
                         (1 + (statPercentages.mastery) * (spell.statMods && spell.statMods.masteryMult ? (spell.statMods.masteryMult + 1) : 1));
         
-        const masteryMult = (spell.secondaries && spell.secondaries.includes("mastery") && !spec.includes("Holy Priest")) ? masterySize : 1; // We'll handle Holy mastery differently.
+        const masteryMult = (spell.secondaries && spell.secondaries.includes("mastery") && !spec.includes("Holy Priest") && !spec.includes("Restoration Druid")) ? masterySize : 1; // We'll handle Holy mastery differently.
         spellOutput = (spell.aura * spell.coeff * statPercentages.intellect) * 
                             critMult * // Multiply by secondary stats & any generic multipliers. 
                             masteryMult *
@@ -240,9 +244,8 @@ export const getSpellThroughput = (spell, statPercentages, spec, settings, flags
     }
     else if (spell.spellType === "damage" || spell.buffType === "damage") {
         spellOutput *= statPercentages.genericDamageMult;
-        if (spell.damageType === "physical") spellOutput *= 0.7 //getEnemyArmor(statPercentages.armorReduction);
+        if (spell.school === "physical") spellOutput *= 0.7 //getEnemyArmor(statPercentages.armorReduction);
         targetCount = settings.enemyTargets ? Math.min(settings.enemyTargets, (spell.maxTargets || 1)) : (spell.targets ? spell.targets : 1);
-
     }
 
     // Handle HoT
@@ -278,14 +281,13 @@ export const applyTalentsFromString = (state, spellDB, talentInfo) => {
     });
 
     Object.keys(state.talents).forEach(talentName => {
-        if (selectedTalents[talentName]) {
-            state.talents[talentName].points = selectedTalents[talentName].points;
+        const talent = state.talents[talentName];
+        const selectedPoints = selectedTalents[talentName]?.points || 0;
+        talent.points = selectedPoints;
 
-            const talent = state.talents[talentName];
-            if (talent.points > 0 && (!talent.heroTree || state.heroTree === talent.heroTree)) {
-                talent.runFunc(state, spellDB, talent.values, talent.points);
-            }
-        } 
+        if (talent.points > 0 && (!talent.heroTree || state.heroTree === talent.heroTree)) {
+            talent.runFunc(state, spellDB, talent.values, talent.points);
+        }
     });
 };
 

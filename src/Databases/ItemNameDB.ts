@@ -9442,6 +9442,196 @@ export const nameDB =
         "fr": "Chevalière malveillante",
         "de": "Boshaftes Siegel"
     },
+    "49801": {
+        "cn": "",
+        "en": "Unspeakable Secret",
+        "ru": "Тайна за семью печатями",
+        "es": "Secreto inconfesable",
+        "br": "Segredo Indizível",
+        "kr": "",
+        "fr": "Secret innommable",
+        "de": "Unaussprechliches Geheimnis"
+    },
+    "49804": {
+        "cn": "",
+        "en": "Polished Mirror Helm",
+        "ru": "Начищенный до блеска шлем",
+        "es": "Yelmo de espejo pulido",
+        "br": "Elmo de Espelho Polido",
+        "kr": "",
+        "fr": "Heaume en miroir poli",
+        "de": "Polierter Spiegelhelm"
+    },
+    "49805": {
+        "cn": "",
+        "en": "Ice-Steeped Sandals",
+        "ru": "Окутанные льдом сандалии",
+        "es": "Sandalias cubiertas de hielo",
+        "br": "Sandálias Saturadas de Gelo",
+        "kr": "",
+        "fr": "Sandales imprégnées de glace",
+        "de": "Eisgetränkte Sandalen"
+    },
+    "49806": {
+        "cn": "",
+        "en": "Flayer's Black Belt",
+        "ru": "Черный пояс живодера",
+        "es": "Cinturón negro del despellejador",
+        "br": "Cinto Preto do Esfolador",
+        "kr": "",
+        "fr": "Ceinture noire d'écorcheur",
+        "de": "Schwarzer Gürtel des Peitschers"
+    },
+    "49808": {
+        "cn": "",
+        "en": "Bent Gold Belt",
+        "ru": "Свитый золотой пояс",
+        "es": "Cinturón de oro doblado",
+        "br": "Cinto Dobrado de Ouro",
+        "kr": "",
+        "fr": "Ceinture d'or tordue",
+        "de": "Verbogener goldener Gürtel"
+    },
+    "49809": {
+        "cn": "",
+        "en": "Wristguards of Subterranean Moss",
+        "ru": "Нарукавники подземного мха",
+        "es": "Guardamuñecas de moho subterráneo",
+        "br": "Munhequeiras do Musgo Subterrâneo",
+        "kr": "",
+        "fr": "Garde-poignets de mousse souterraine",
+        "de": "Handgelenksschützer aus unterirdischem Moos"
+    },
+    "49810": {
+        "cn": "",
+        "en": "Scabrous Zombie Belt",
+        "ru": "Пояс бородавчатого зомби",
+        "es": "Cinturón escabroso de zombi",
+        "br": "Cinto do Zumbi Escabroso",
+        "kr": "",
+        "fr": "Ceinture de zombie rêche",
+        "de": "Geschmackloser Zombiegürtel"
+    },
+    "49811": {
+        "cn": "",
+        "en": "Black Dragonskin Breeches",
+        "ru": "Брюки из черной драконьей шкуры",
+        "es": "Calzones de piel de dragón Negro",
+        "br": "Calções Pretos de Peledrago",
+        "kr": "",
+        "fr": "Braies en peau de dragon noir",
+        "de": "Schwarze Drachenhautbundhosen"
+    },
+    "49812": {
+        "cn": "",
+        "en": "Purloined Wedding Ring",
+        "ru": "Похищенное обручальное кольцо",
+        "es": "Alianza hurtada",
+        "br": "Aliança de Casamento Furtada",
+        "kr": "",
+        "fr": "Anneau de mariage dérobé",
+        "de": "Entwendeter Ehering"
+    },
+    "49816": {
+        "cn": "",
+        "en": "Scourgelord's Frigid Chestplate",
+        "ru": "Хладная бригантина повелителя Плети",
+        "es": "Peto gélido de Señor de la Plaga",
+        "br": "Guarda-peito Frígido do Senhor do Flagelo",
+        "kr": "",
+        "fr": "Pansière glaciale de seigneur du Fléau",
+        "de": "Kalte Brustplatte des Geißelfürsten"
+    },
+    "49817": {
+        "cn": "",
+        "en": "Shaggy Wyrmleather Leggings",
+        "ru": "Мохнатые поножи из кожи змея",
+        "es": "Leotardos peludos de cuero de vermis",
+        "br": "Perneiras Ásperas de Couro de Serpe",
+        "kr": "",
+        "fr": "Jambières velues en cuir de wyrm",
+        "de": "Zottige Wyrmledergamaschen"
+    },
+    "49819": {
+        "cn": "",
+        "en": "Skeleton Lord's Cranium",
+        "ru": "Череп повелителя скелетов",
+        "es": "Cráneo del señor esqueleto",
+        "br": "Crânio do Senhor Esqueletal",
+        "kr": "",
+        "fr": "Crâne de seigneur squelette",
+        "de": "Schädeldecke des Skelettfürsten"
+    },
+    "49820": {
+        "cn": "",
+        "en": "Gondria's Spectral Bracer",
+        "ru": "Спектральный наруч Гондрии",
+        "es": "Brazales espectrales de Gondria",
+        "br": "Braçadeira Espectral de Gondria",
+        "kr": "",
+        "fr": "Brassards spectraux de Gondria",
+        "de": "Gondrias spektrale Armschienen"
+    },
+    "49821": {
+        "cn": "",
+        "en": "Protector of Frigid Souls",
+        "ru": "Защитник хладных душ",
+        "es": "Protector de almas gélidas",
+        "br": "Protetor das Almas Frígidas",
+        "kr": "",
+        "fr": "Protecteur des âmes glaciales",
+        "de": "Beschützer der kalten Seelen"
+    },
+    "49822": {
+        "cn": "",
+        "en": "Rimewoven Silks",
+        "ru": "Сотканные морозом шелка",
+        "es": "Sedas de tejido de relente",
+        "br": "Sedas Tecidas em Gelo",
+        "kr": "",
+        "fr": "Pantalon en soie tissé de givre",
+        "de": "Raureifgewebtes Seidentuch"
+    },
+    "49823": {
+        "cn": "",
+        "en": "Cloak of the Fallen Cardinal",
+        "ru": "Плащ падшего кардинала",
+        "es": "Capa del cardenal caído",
+        "br": "Manto do Cardeal Caído",
+        "kr": "",
+        "fr": "Cape du cardinal déchu",
+        "de": "Umhang des gefallenen Kardinals"
+    },
+    "49824": {
+        "cn": "",
+        "en": "Horns of the Spurned Val'kyr",
+        "ru": "Рогатый шлем отверженной валь'киры",
+        "es": "Cuernos de la Val'kyr despechada",
+        "br": "Chifres das Val'kyren Rejeitadas",
+        "kr": "",
+        "fr": "Cornes de val'kyr éconduite",
+        "de": "Hörner der verschmähten Val'kyr"
+    },
+    "49825": {
+        "cn": "",
+        "en": "Palebone Robes",
+        "ru": "Белесые одеяния",
+        "es": "Togas de hueso pálido",
+        "br": "Vestes de Osso Pálido",
+        "kr": "",
+        "fr": "Robe d'os pâle",
+        "de": "Bleichknochenroben"
+    },
+    "49826": {
+        "cn": "",
+        "en": "Shroud of Rime",
+        "ru": "Накидка из инея",
+        "es": "Embozo de relente",
+        "br": "Mortalha de Geada",
+        "kr": "",
+        "fr": "Voile de givre",
+        "de": "Raureifschleier"
+    },
     "50193": {
         "cn": "",
         "en": "Very Fashionable Shoulders",
@@ -9591,6 +9781,206 @@ export const nameDB =
         "kr": "",
         "fr": "Bottes de reliquaire de récupération",
         "de": "Zurückerlangte Reliquiarstiefel"
+    },
+    "50227": {
+        "cn": "",
+        "en": "Surgeon's Needle",
+        "ru": "Игла хирурга",
+        "es": "Aguja de cirujano",
+        "br": "Agulha do Cirurgião",
+        "kr": "",
+        "fr": "Aiguille de chirurgien",
+        "de": "Chirurgennadel"
+    },
+    "50228": {
+        "cn": "",
+        "en": "Barbed Ymirheim Choker",
+        "ru": "Имирхеймское шипастое колье",
+        "es": "Gargantilla de púas de Ymirheim",
+        "br": "Gargantilha Farpada de Ymarheim",
+        "kr": "",
+        "fr": "Sautoir ymirheim barbelé",
+        "de": "Stachelhalsreif aus Ymirheim"
+    },
+    "50229": {
+        "cn": "",
+        "en": "Legguards of the Frosty Depths",
+        "ru": "Набедренники морозных глубин",
+        "es": "Musleras de las profundidades heladas",
+        "br": "Guarda-pernas das Profundezas Geladas",
+        "kr": "",
+        "fr": "Garde-jambes des profondeurs givrées",
+        "de": "Beinschützer der frostigen Tiefen"
+    },
+    "50230": {
+        "cn": "",
+        "en": "Malykriss Vambraces",
+        "ru": "Тяжелые наручи Маликрисса",
+        "es": "Avambrazos de Malykriss",
+        "br": "Avambraços Malykriss",
+        "kr": "",
+        "fr": "Protège-bras de Malykriss",
+        "de": "Malykrissschienen"
+    },
+    "50233": {
+        "cn": "",
+        "en": "Spurned Val'kyr Shoulderguards",
+        "ru": "Наплечные щитки отверженной валь'киры",
+        "es": "Guardahombros de la Val'kyr despechada",
+        "br": "Guarda-ombros das Val'kyren Rejeitadas",
+        "kr": "",
+        "fr": "Garde-épaules de Val'kyr éconduit",
+        "de": "Schulterschützer der verschmähten Val'kyr"
+    },
+    "50234": {
+        "cn": "",
+        "en": "Shoulderplates of Frozen Blood",
+        "ru": "Латные наплечники стынущей крови",
+        "es": "Hombreras de placas de sangre helada",
+        "br": "Placa d'Ombros do Sangue Congelado",
+        "kr": "",
+        "fr": "Plaques d'épaule de sang gelé",
+        "de": "Schulterplatten aus gefrorenem Blut"
+    },
+    "50235": {
+        "cn": "",
+        "en": "Ick's Rotting Thumb",
+        "ru": "Гниющий палец Ика",
+        "es": "Pulgar putrefacto de Agh",
+        "br": "Dedo Aprodrecido do Ick",
+        "kr": "",
+        "fr": "Pouce pourrissant d'Ick",
+        "de": "Icks verrottender Daumen"
+    },
+    "50259": {
+        "cn": "",
+        "en": "Nevermelting Ice Crystal",
+        "ru": "Нетающий кристалл льда",
+        "es": "Cristal de hielo perenne",
+        "br": "Cristal de Gelo Perene",
+        "kr": "",
+        "fr": "Cristal de glace perpétuelle",
+        "de": "Nimmerschmelzender Eiskristall"
+    },
+    "50263": {
+        "cn": "",
+        "en": "Braid of Salt and Fire",
+        "ru": "Сплетение огня и соли",
+        "es": "Trenza de sal y fuego",
+        "br": "Trança de Sal e Fogo",
+        "kr": "",
+        "fr": "Tresse de sel et de feu",
+        "de": "Verflechtung von Salz und Feuer"
+    },
+    "50264": {
+        "cn": "",
+        "en": "Chewed Leather Wristguards",
+        "ru": "Нарукавники из пожеванной кожи",
+        "es": "Guardamuñecas de cuero roído",
+        "br": "Munhequeiras de Couro Mastigado",
+        "kr": "",
+        "fr": "Garde-poignets en cuir mâchonné",
+        "de": "Zerkaute Lederhandgelenksschützer"
+    },
+    "50265": {
+        "cn": "",
+        "en": "Blackened Ghoul Skin Leggings",
+        "ru": "Черненые поножи из кожи вурдалака",
+        "es": "Leotardos de piel de necrófago ennegrecidos",
+        "br": "Perneiras de Pele de Carniçal Enegrecida",
+        "kr": "",
+        "fr": "Jambières en peau de goule noircies",
+        "de": "Geschwärzte Ghulhautgamaschen"
+    },
+    "50266": {
+        "cn": "",
+        "en": "Ancient Polar Bear Hide",
+        "ru": "Шкура древнего северного медведя",
+        "es": "Pellejo de oso polar antiguo",
+        "br": "Pelego de Urso Polar Antigo",
+        "kr": "",
+        "fr": "Peau d'ours polaire ancienne",
+        "de": "Uralter Polarbärenbalg"
+    },
+    "50269": {
+        "cn": "",
+        "en": "Fleshwerk Leggings",
+        "ru": "Поножи Мясопилки",
+        "es": "Leotardos de remiendo de carne",
+        "br": "Perneiras da Usina de Carne",
+        "kr": "",
+        "fr": "Jambières de la Charognerie",
+        "de": "Fleischwerksgamaschen"
+    },
+    "50270": {
+        "cn": "",
+        "en": "Belt of Rotted Fingernails",
+        "ru": "Пояс из подгнивших ногтей",
+        "es": "Cinturón de uñas podridas",
+        "br": "Cinto de Unhas Podres",
+        "kr": "",
+        "fr": "Ceinture des ongles pourris",
+        "de": "Gürtel aus verrotteten Fingernägeln"
+    },
+    "50272": {
+        "cn": "",
+        "en": "Frost Wyrm Ribcage",
+        "ru": "Реберный остов ледяного змея",
+        "es": "Caja torácica de vermis de escarcha",
+        "br": "Costelas de Serpe Gélida",
+        "kr": "",
+        "fr": "Cage thoracique de wyrm de givre",
+        "de": "Brustkorb eines Frostwyrms"
+    },
+    "50273": {
+        "cn": "",
+        "en": "Engraved Gargoyle Femur",
+        "ru": "Резная бедренная кость горгульи",
+        "es": "Fémur de gárgola grabada",
+        "br": "Fêmur Gravado de Gárgula",
+        "kr": "",
+        "fr": "Fémur de gargouille ciselé",
+        "de": "Gravierter Gargylenknochen"
+    },
+    "50283": {
+        "cn": "",
+        "en": "Mudslide Boots",
+        "ru": "Сапоги грязевых оползней",
+        "es": "Botas de barrizal",
+        "br": "Botas Avalanche de Lama",
+        "kr": "",
+        "fr": "Bottes de coulée de boue",
+        "de": "Matschschlidderstiefel"
+    },
+    "50284": {
+        "cn": "",
+        "en": "Rusty Frozen Fingerguards",
+        "ru": "Замерзшие ржавые напалечники",
+        "es": "Guardadedos helados y oxidados",
+        "br": "Guarda-dedos Congelado Enferrujado",
+        "kr": "",
+        "fr": "Garde-doigts gelés rouillés",
+        "de": "Rostige gefrorene Fingerschützer"
+    },
+    "50285": {
+        "cn": "",
+        "en": "Icebound Bronze Cuirass",
+        "ru": "Бронзовый панцирь оков льда",
+        "es": "Loriga de bronce forrada de hielo",
+        "br": "Corselete Gelado de Bronze",
+        "kr": "",
+        "fr": "Thorax en bronze cerclé de glace",
+        "de": "Eisbeschlagener Bronzekürass"
+    },
+    "50286": {
+        "cn": "",
+        "en": "Prelate's Snowshoes",
+        "ru": "Снегоступы прелата",
+        "es": "Zapatos para la nieve de prelado",
+        "br": "Sapatos de Neve do Prelado",
+        "kr": "",
+        "fr": "Raquettes du prélat",
+        "de": "Schneeschuhe des Prälaten"
     },
     "56267": {
         "cn": "",
@@ -23571,6 +23961,396 @@ export const nameDB =
         "kr": "",
         "fr": "Espauliers du diplomate disparu",
         "de": "Schulterstücke des vermissten Diplomaten"
+    },
+    "151299": {
+        "cn": "",
+        "en": "Viceroy's Umbral Mantle",
+        "ru": "Темное оплечье наместника",
+        "es": "Manto umbrío del Virrey",
+        "br": "Dragonas Umbráticas do Vice-rei",
+        "kr": "",
+        "fr": "Mantelet ombreux de vice-roi",
+        "de": "Umbralmantel des Vizekönigs"
+    },
+    "151300": {
+        "cn": "",
+        "en": "Handwraps of the Ascended",
+        "ru": "Повязки Перерожденного",
+        "es": "Manijas del Ascendido",
+        "br": "Mitenes dos Elevados",
+        "kr": "",
+        "fr": "Protège-mains du Zélateur",
+        "de": "Handlappen des Aufgestiegenen"
+    },
+    "151301": {
+        "cn": "",
+        "en": "Slippers of Growing Despair",
+        "ru": "Туфли растущего отчаяния",
+        "es": "Zapatillas de desesperación creciente",
+        "br": "Sapatilhas do Desespero Crescente",
+        "kr": "",
+        "fr": "Mules de désespoir croissant",
+        "de": "Pantoffeln der wachsenden Verzweiflung"
+    },
+    "151302": {
+        "cn": "",
+        "en": "Cord of Unraveling Reality",
+        "ru": "Шнур расползающейся реальности",
+        "es": "Cordón de realidad desmoronadiza",
+        "br": "Cordão da Realidade Esclarecedora",
+        "kr": "",
+        "fr": "Corde de réalité disloquée",
+        "de": "Kordel der zerrinnenden Realität"
+    },
+    "151303": {
+        "cn": "",
+        "en": "Voidbender Robe",
+        "ru": "Одеяния заклинателя Бездны",
+        "es": "Toga de dominador del Vacío",
+        "br": "Veste de Dobra-Caos",
+        "kr": "",
+        "fr": "Robe d'Arqueur du Vide",
+        "de": "Robe des Leerenformers"
+    },
+    "151304": {
+        "cn": "",
+        "en": "Subjugator's Leggings",
+        "ru": "Поножи поработителя",
+        "es": "Leotardos de subyugador",
+        "br": "Perneiras do Subjugante",
+        "kr": "",
+        "fr": "Jambières de subjugateur",
+        "de": "Gamaschen des Unterwerfers"
+    },
+    "151305": {
+        "cn": "",
+        "en": "Entropic Wristwraps",
+        "ru": "Энтропические кулачные обмотки",
+        "es": "Cubremuñecas entrópicas",
+        "br": "Munhequeiras Entrópicas",
+        "kr": "",
+        "fr": "Bandelettes entropiques",
+        "de": "Entropische Gelenkbänder"
+    },
+    "151307": {
+        "cn": "",
+        "en": "Void Stalker's Contract",
+        "ru": "Контракт ловчего Бездны",
+        "es": "Contrato de acechador del Vacío",
+        "br": "Contrato de Espreitador do Caos",
+        "kr": "",
+        "fr": "Contrat de traqueur du Vide",
+        "de": "Vertrag des Leerenpirschers"
+    },
+    "151308": {
+        "cn": "",
+        "en": "Eredath Seal of Nobility",
+        "ru": "Печать благородства Эредата",
+        "es": "Sello de nobleza de Eredath",
+        "br": "Selo da Nobreza de Eredath",
+        "kr": "",
+        "fr": "Sceau de noblesse d’Érédath",
+        "de": "Adelssiegel von Eredath"
+    },
+    "151309": {
+        "cn": "",
+        "en": "Necklace of the Twisting Void",
+        "ru": "Ожерелье яростной Бездны",
+        "es": "Collar del Vacío giratorio",
+        "br": "Colar do Caos Rodopiante",
+        "kr": "",
+        "fr": "Collier du Vide distordu",
+        "de": "Halskette der wirbelnden Leere"
+    },
+    "151310": {
+        "cn": "",
+        "en": "Reality Breacher",
+        "ru": "Разрушитель реальности",
+        "es": "Alterador de la realidad",
+        "br": "Abre-dimensões",
+        "kr": "",
+        "fr": "Disrupteur de réalités",
+        "de": "Realitätsbrecher"
+    },
+    "151311": {
+        "cn": "",
+        "en": "Band of the Triumvirate",
+        "ru": "Печать Триумвирата",
+        "es": "Anillo del Triunvirato",
+        "br": "Elo do Triunvirato",
+        "kr": "",
+        "fr": "Bague du triumvirat",
+        "de": "Band des Triumvirats"
+    },
+    "151312": {
+        "cn": "",
+        "en": "Ampoule of Pure Void",
+        "ru": "Флакон чистейшей Бездны",
+        "es": "Ampolleta de Vacío puro",
+        "br": "Ampola de Puro Caos",
+        "kr": "",
+        "fr": "Ampoule de Vide pur",
+        "de": "Ampulle der reinen Leere"
+    },
+    "151313": {
+        "cn": "",
+        "en": "Vest of the Void's Embrace",
+        "ru": "Жилет объятий Бездны",
+        "es": "Jubón de abrazo del Vacío",
+        "br": "Colete do Abraço do Caos",
+        "kr": "",
+        "fr": "Gilet de l'étreinte du Vide",
+        "de": "Weste der Leerenumklammerung"
+    },
+    "151314": {
+        "cn": "",
+        "en": "Shifting Stalker Hide Pants",
+        "ru": "Штаны из шкуры фазового хищника",
+        "es": "Pantalones de pellejo de acechador cambiante",
+        "br": "Calças de Pelego de Espreitador Cambiante",
+        "kr": "",
+        "fr": "Pantalon en peau de traqueur changeant",
+        "de": "Balghose des flüchtigen Pirschers"
+    },
+    "151315": {
+        "cn": "",
+        "en": "Bracers of Dark Binding",
+        "ru": "Наручи темных пут",
+        "es": "Brazales de vínculo oscuro",
+        "br": "Braçadeiras do Vínculo Negro",
+        "kr": "",
+        "fr": "Brassards de lien des ténèbres",
+        "de": "Armschienen der dunklen Bindung"
+    },
+    "151316": {
+        "cn": "",
+        "en": "Cinch of the Umbral Lasher",
+        "ru": "Кушак темного плеточника",
+        "es": "Cincho de azotador umbrío",
+        "br": "Cilha da Açoitadeira Umbrática",
+        "kr": "",
+        "fr": "Cordelière de flagellant ombreux",
+        "de": "Hüftgurt des Umbralpeitschers"
+    },
+    "151317": {
+        "cn": "",
+        "en": "Footpads of Seeping Dread",
+        "ru": "Сапоги просачивающегося ужаса",
+        "es": "Escarpines de pavor envolvente",
+        "br": "Pisantes do Pavor Vazante",
+        "kr": "",
+        "fr": "Souliers d'effroi suintant",
+        "de": "Fußpolster des sickernden Unheils"
+    },
+    "151318": {
+        "cn": "",
+        "en": "Gloves of the Dark Shroud",
+        "ru": "Перчатки темного покрова",
+        "es": "Guantes de embozo oscuro",
+        "br": "Luvas da Mortalha Sombria",
+        "kr": "",
+        "fr": "Gants du voile sombre",
+        "de": "Handschuhe des dunklen Schleiers"
+    },
+    "151319": {
+        "cn": "",
+        "en": "Twilight's Edge Spaulders",
+        "ru": "Наплеч грани сумрака",
+        "es": "Bufas de filo crepuscular",
+        "br": "Espaldares da Fronteira do Crepúsculo",
+        "kr": "",
+        "fr": "Espauliers de tranchant du crépuscule",
+        "de": "Schiftung der Zwielichtschneide"
+    },
+    "151320": {
+        "cn": "",
+        "en": "Void-Coated Stompers",
+        "ru": "Покрытые Бездной высокие ботинки",
+        "es": "Apisonadoras cubiertas de Vacío",
+        "br": "Pisoteadores Cobertos de Caos",
+        "kr": "",
+        "fr": "Croquenots recouverts de Vide",
+        "de": "Leerenbesetzte Stampfer"
+    },
+    "151321": {
+        "cn": "",
+        "en": "Darkfang Scale Wristguards",
+        "ru": "Нарукавники из чешуи Черноклыка",
+        "es": "Guardamuñecas de escamas de Colmillo Umbrío",
+        "br": "Munhequeiras de Escama de Presanegra",
+        "kr": "",
+        "fr": "Garde-poignets en écailles de sombrecroc",
+        "de": "Handgelenksschützer aus Dunkelzahnschuppen"
+    },
+    "151322": {
+        "cn": "",
+        "en": "Void-Touched Grips",
+        "ru": "Меченные Бездной захваты",
+        "es": "Mandiletes tocados por el Vacío",
+        "br": "Garras Tocadas pelo Caos",
+        "kr": "",
+        "fr": "Poignes touchées par le Vide",
+        "de": "Leerenberührter Handschutz"
+    },
+    "151323": {
+        "cn": "",
+        "en": "Pauldrons of the Void Hunter",
+        "ru": "Наплечье охотника Бездны",
+        "es": "Espaldares del cazador del Vacío",
+        "br": "Brafoneiras do Caçador do Caos",
+        "kr": "",
+        "fr": "Espauliers du chasseur du Vide",
+        "de": "Schulterstücke des Leerenjägers"
+    },
+    "151324": {
+        "cn": "",
+        "en": "Helm of Shadowy Descent",
+        "ru": "Шлем падения во Тьму",
+        "es": "Yelmo de caída sombría",
+        "br": "Elmo do Descenso Sombrio",
+        "kr": "",
+        "fr": "Heaume de la descente ténébreuse",
+        "de": "Helm des Abstiegs in die Schatten"
+    },
+    "151325": {
+        "cn": "",
+        "en": "Void-Linked Robe",
+        "ru": "Пронизанное Бездной одеяние",
+        "es": "Toga ligada al Vacío",
+        "br": "Veste Vinculada ao Caos",
+        "kr": "",
+        "fr": "Robe rivetée de Vide",
+        "de": "Leerenkettenrobe"
+    },
+    "151326": {
+        "cn": "",
+        "en": "Waistguard of Bound Energy",
+        "ru": "Пояс покоренной энергии",
+        "es": "Guardarrenes de energía contenida",
+        "br": "Cinta de Energia Aprisionada",
+        "kr": "",
+        "fr": "Sangle d'énergie liée",
+        "de": "Taillenschutz der gebundenen Energie"
+    },
+    "151327": {
+        "cn": "",
+        "en": "Girdle of the Shadowguard",
+        "ru": "Ремень Темной Стражи",
+        "es": "Faja del guardia de las Sombras",
+        "br": "Cinturão da Guarda Sombria",
+        "kr": "",
+        "fr": "Ceinturon de l'Ombre-Garde",
+        "de": "Gürtung der Schattenwache"
+    },
+    "151328": {
+        "cn": "",
+        "en": "Vambraces of Lost Hope",
+        "ru": "Тяжелые наручи утерянной надежды",
+        "es": "Avambrazos de esperanza perdida",
+        "br": "Avambraços da Esperança Perdida",
+        "kr": "",
+        "fr": "Protège-bras de l'espoir perdu",
+        "de": "Unterarmschienen der aufgegebenen Hoffnung"
+    },
+    "151329": {
+        "cn": "",
+        "en": "Breastplate of the Dark Touch",
+        "ru": "Кираса темного касания",
+        "es": "Coraza de toque oscuro",
+        "br": "Peitoral do Toque Sombrio",
+        "kr": "",
+        "fr": "Cuirasse du sombre toucher",
+        "de": "Brustplatte der dunklen Berührung"
+    },
+    "151330": {
+        "cn": "",
+        "en": "Trap Jammers",
+        "ru": "Ловушкодавы",
+        "es": "Machacatrampas",
+        "br": "Calçados da Armadilha",
+        "kr": "",
+        "fr": "Contreurs de piège",
+        "de": "Fallenblocker"
+    },
+    "151331": {
+        "cn": "",
+        "en": "Pauldrons of the Broken",
+        "ru": "Наплечье сломленных",
+        "es": "Espaldares de los Tábidos",
+        "br": "Brafoneiras dos Degradados",
+        "kr": "",
+        "fr": "Espauliers des Roués",
+        "de": "Schulterstücke der Zerschlagenen"
+    },
+    "151332": {
+        "cn": "",
+        "en": "Voidclaw Gauntlets",
+        "ru": "Перчатки когтей Бездны",
+        "es": "Guanteletes de garra del Vacío",
+        "br": "Manoplas da Garra do Caos",
+        "kr": "",
+        "fr": "Gantelets de griffe-du-Vide",
+        "de": "Leerenklauenstulpen"
+    },
+    "151333": {
+        "cn": "",
+        "en": "Crown of the Dark Envoy",
+        "ru": "Корона темного посланника",
+        "es": "Corona del enviado oscuro",
+        "br": "Coroa do Enviado Sombrio",
+        "kr": "",
+        "fr": "Couronne du sombre émissaire",
+        "de": "Krone des dunklen Gesandten"
+    },
+    "151336": {
+        "cn": "",
+        "en": "Voidlashed Hood",
+        "ru": "Истерзанный Бездной капюшон",
+        "es": "Caperuza golpeada por el Vacío",
+        "br": "Capuz do Açoite Etéreo",
+        "kr": "",
+        "fr": "Chaperon fouetté par le Vide",
+        "de": "Leerenzerfetzte Kapuze"
+    },
+    "151337": {
+        "cn": "",
+        "en": "Shadow-Weaver's Crown",
+        "ru": "Корона заклинателя теней",
+        "es": "Corona de tejesombras",
+        "br": "Coroa do Tecelão das Sombras",
+        "kr": "",
+        "fr": "Couronne de tisse-ombre",
+        "de": "Krone des Schattenwirkers"
+    },
+    "151338": {
+        "cn": "",
+        "en": "Leggings of Shifting Darkness",
+        "ru": "Поножи сгущающейся тьмы",
+        "es": "Leotardos de oscuridad cambiante",
+        "br": "Perneiras da Escuridão Cambiante",
+        "kr": "",
+        "fr": "Jambières de l'obscurité changeante",
+        "de": "Gamaschen der flüchtigen Dunkelheit"
+    },
+    "151339": {
+        "cn": "",
+        "en": "Legplates of Ultimate Sacrifice",
+        "ru": "Набедренные повязки самопожертвования",
+        "es": "Quijotes de sacrificio definitivo",
+        "br": "Coxotes do Sacrifício Final",
+        "kr": "",
+        "fr": "Cuissards du sacrifice ultime",
+        "de": "Beinplatten des größten Opfers"
+    },
+    "151340": {
+        "cn": "",
+        "en": "Echo of L'ura",
+        "ru": "Тень Л'уры",
+        "es": "Eco de L'ura",
+        "br": "Eco de L'ura",
+        "kr": "",
+        "fr": "Echo de L'ura",
+        "de": "Echo von L'ura"
     },
     "151403": {
         "cn": "",
@@ -148713,9 +149493,23 @@ export const nameDB =
         "de": "Unflatterbarer Flatterumhang"
     },
     "282425": {
-        "en": "Band of the Beast Reaper"
+        "cn": "",
+        "en": "Band of the Beast Reaper",
+        "ru": "Кольцо жнеца зверей",
+        "es": "Sortija del segador de bestias",
+        "br": "Elo da Fera Retalhadora",
+        "kr": "",
+        "fr": "Bague de l’arrache-bête",
+        "de": "Band des Bestienschnitters"
     },
     "282426": {
-        "en": "Draenic Drive Chain"
+        "cn": "",
+        "en": "Draenic Drive Chain",
+        "ru": "Цепь дренейского рвения",
+        "es": "Cadena de motor draénico",
+        "br": "Corrente de Acionamento Draenoriana",
+        "kr": "",
+        "fr": "Chaîne de transmission draenique",
+        "de": "Draenische Antriebskette"
     }
 };

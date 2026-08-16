@@ -207,7 +207,7 @@ export default function ItemCardReport(props) {
                 }}
               >
                 <div className="container-ItemCards">
-                  <WowheadTooltip type="item" id={item.id} craftedStats={item.craftedStats} level={item.level} bonusIDS={item.bonusIDS} forg={reforgeID ? reforgeID : 0} domain={wowheadDom} gems={gemString}>
+                  <WowheadTooltip type="item" id={item.id} catalyzedID={item.catalyzedID} craftedStats={item.craftedStats} level={item.level} bonusIDS={item.bonusIDS} forg={reforgeID ? reforgeID : 0} domain={wowheadDom} gems={gemString}>
                     <img
                       alt="img"
                       width={44}
