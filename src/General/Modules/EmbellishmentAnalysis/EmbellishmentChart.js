@@ -5,6 +5,7 @@ import { getGemIcon, getEmbellishmentIcon, getTranslatedEmbellishment } from "Ge
 import MuiTooltip from '@mui/material/Tooltip';
 import IconButton from '@mui/material/IconButton';
 import HelpIcon from '@mui/icons-material/Help';
+import WarningAmber from '@mui/icons-material/WarningAmber';
 import "General/Modules/TrinketAnalysis/Charts/VerticalChart.css";
 import i18n from "i18next";
 import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips.tsx";
@@ -117,6 +118,7 @@ export default class EmbelChart extends PureComponent {
     const barColours = this.props.theme;
     let arr = [];
     let cleanedArray = [];
+    console.log(data);
     // 
     Object.entries(data)
       .map((key) => key[1])
@@ -130,6 +132,8 @@ export default class EmbelChart extends PureComponent {
           305: getRankDiff(305, map2, 285),
           285: map2.r285,
 
+          warningFlag: db[map2.id] ? db[map2.id].warningFlag : false,
+
           /*691: getRankDiff(691, map2, 675),
           704: getRankDiff(704, map2, 691),
           720: getRankDiff(720, map2, 704),*/
@@ -139,8 +143,10 @@ export default class EmbelChart extends PureComponent {
     /* ------------ Map new Array of Cleaned Objects (No Zero Values) ----------- */
     arr.map((key) => cleanedArray.push(cleanZerosFromArray(key)));
     /* ----------------------- Y-Axis Label Customization ----------------------- */
-    const CustomizedYAxisTick = (props) => {
-      const { x, y, payload } = props;
+    const CustomizedYAxisTick = ({ x, y, payload, data}) => {
+      const row = payload?.payload ?? data?.[payload.index];
+      console.log(row);
+      const rowName = row ? row.name : "Unknown Item" //getTranslatedItemName(row.id, currentLanguage) : "";
       return (
         <g transform={`translate(${x},${y})`}>
           <foreignObject x={-300} y={-10} width="300" height="22" style={{ textAlign: "right" }}>
@@ -172,7 +178,9 @@ export default class EmbelChart extends PureComponent {
                                 marginTop: '-14px'  // Move the icon slightly upward 
                                 }} 
               size="small">
-                <HelpIcon fontSize="inherit" />
+              <IconButton sx={{ color: row.warningFlag ? 'red' : 'goldenrod', marginTop: '-5px' }} size="small">
+                {row.warningFlag ? <WarningAmber fontSize="inherit" /> : <HelpIcon fontSize="inherit" />}
+              </IconButton>
               </IconButton>
             </StyledTooltip>
           </foreignObject>
@@ -223,7 +231,10 @@ export default class EmbelChart extends PureComponent {
           />
           <Legend verticalAlign="top" />
           <CartesianGrid vertical={true} horizontal={false} />
-          <YAxis type="category" dataKey="name" stroke="#f5f5f5" interval={0} tick={CustomizedYAxisTick} />
+          <YAxis type="category" dataKey="name" stroke="#f5f5f5" interval={0} tick={<CustomizedYAxisTick
+                  data={data}
+                  isMobile={this.state.width < mobileWidthThreshold}
+                />} />
           {[285, 305, 318, 331].map((key, i) => (
             <Bar key={"bar" + i} dataKey={key} fill={barColours[i]} stackId="a" />
           ))}

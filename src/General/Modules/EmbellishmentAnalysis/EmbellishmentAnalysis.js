@@ -225,7 +225,8 @@ export default function EmbellishmentAnalysis(props) {
     let gemAtLevels = {
       id: domGem.id,
       name: domGem.name["en"],
-      tooltip: []
+      tooltip: [],
+      warningFlag: domGem.warningFlag || false
     };
 
     for (var x = 0; x < itemLevels.length; x++) {

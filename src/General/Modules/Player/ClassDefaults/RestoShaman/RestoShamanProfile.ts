@@ -306,7 +306,7 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
     }
 
     // Max mana
-    let manaPool = 250000;
+    let manaPool = 250000 * (stats.manaPerc || 1);
 
     if (hasTalent(talents, "Primordial Capacity")){
         manaPool *= 1.1

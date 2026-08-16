@@ -97,7 +97,7 @@ export const effectData = [
       bonus_stats.haste = negativeStats;
       bonus_stats.mastery = negativeStats;
 
-      console.log("Cuirass", bonus_stats);
+      //console.log("Cuirass", bonus_stats);
 
       return bonus_stats;
     },
@@ -127,7 +127,7 @@ export const effectData = [
       bonus_stats.haste = negativeStats;
       bonus_stats.mastery = negativeStats;
 
-      console.log("Neck", bonus_stats);
+      //console.log("Neck", bonus_stats);
 
       return bonus_stats;
     },
@@ -175,7 +175,7 @@ export const effectData = [
 
       bonus_stats.haste = runGenericPPMTrinket(data[0], itemLevel);
 
-      console.log("Dagger", bonus_stats);
+      //console.log("Dagger", bonus_stats);
 
       return bonus_stats;
     },

@@ -19,6 +19,16 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+        {
+    version: "12.1 / 5.5.4",
+    update: 4,
+    date: "August 16",
+    changes: [ 
+      "Upgrade Finder is now live.",
+      "Added warning flags to a few embellishments / trinkets that require you learn more about them.",
+      "Updated default enchants for some specs - particularly Resto Shaman",
+    ]
+  },
       {
     version: "12.1 / 5.5.4",
     update: 3,
