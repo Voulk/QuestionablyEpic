@@ -5,7 +5,7 @@ import ItemUpgradeCard from "./ItemUpgradeCard";
 import "./Panels.css";
 import { encounterDB } from "../../../../Databases/InstanceDB";
 import { useTranslation } from "react-i18next";
-import { filterItemListBySource, filterItemListByDropLoc, getDifferentialByID, getNumUpgrades } from "../../../Engine/ItemUtilities";
+import { filterItemListBySource, filterItemListByDropLoc, getDifferentialByID, getNumUpgrades, getRollExpectedValue, getBonusRollChanceUpgrade } from "../../../Engine/ItemUtilities";
 import { useSelector } from "react-redux";
 import bossHeaders from "General/Modules/IconFunctions/BossHeaderIcons";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -192,8 +192,8 @@ export default function RaidGearContainer(props) {
                                       whiteSpace: "nowrap",
                                     }}
                                   >
-                                    <span>Bonus roll chance: --%</span>
-                                    <span>Avg bonus upgrade: --%</span>
+                                    <span>Bonus roll chance: {Math.round(getBonusRollChanceUpgrade(itemDifferentials, raidID, key, firstDifficulty)) + "%"}</span>
+                                    <span>Roll Expected Value: {getRollExpectedValue(itemDifferentials, raidID, key, firstDifficulty).toFixed(2) + "%"}</span>
                                   </div>
                                 </div>
                               </UFAccordionSummary>

@@ -10,7 +10,7 @@ import { applyDiminishingReturns, getAllyStatsValue, getGemElement, getGems } fr
 import { getTrinketValue } from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketEffectFormulas";
 import { allRamps, allRampsHealing, getDefaultDiscTalents } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscRampUtilities";
 import { buildRamp } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscRampGen";
-import { getItemSet } from "Classic/Databases/RetailItemSetDB";
+import { getItemSet, getSeasonalTier } from "Classic/Databases/RetailItemSetDB";
 import { CONSTANTS } from "General/Engine/CONSTANTS";
 import { getCircletEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/CyrcesCircletData"
 import { generateReportCode } from "General/Modules/TopGear/Engine/TopGearEngineShared"
@@ -839,6 +839,13 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
         }
       })
     }
+
+    if (userSettings.forceTier) {
+      // Override tier. Used sometimes in upgrade finder where we want to compare items post-catalyst.
+      effectList = effectList.filter(effect => effect.type !== "set bonus");
+      effectList = effectList.concat(getSeasonalTier(userSettings.forceTier.value, player.spec))
+    }
+
   }
 
   // Armor Banding

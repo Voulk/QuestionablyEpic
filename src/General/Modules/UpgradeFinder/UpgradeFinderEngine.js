@@ -100,9 +100,12 @@ export function buildNewWepCombosUF(player, itemList) {
   return combos
 }
 
+
+// PlayerSettings = Upgrade Finder Settings
 export function runUpgradeFinder(player, contentType, currentLanguage, playerSettings, userSettings) {
   // TEMP VARIABLES
   const completedItemList = [];
+
 
   // console.log("Running Upgrade Finder. Strap in.");
   const baseItemList = player.getEquippedItems(true);
@@ -110,16 +113,17 @@ export function runUpgradeFinder(player, contentType, currentLanguage, playerSet
   const wepList = buildNewWepCombosUF(player, baseItemList);
   const castModel = player.getActiveModel(contentType);
 
+  const moddedSettings = {...userSettings, forceTier: {value: "S2"}};
 
   const baseHPS = player.getHPS(contentType);
   //userSettings.dominationSockets = "Upgrade Finder";
-  const baseSet = runTopGear(baseItemList, wepList, player, contentType, baseHPS, userSettings, castModel);
+  const baseSet = runTopGear(baseItemList, wepList, player, contentType, baseHPS, moddedSettings, castModel);
   const baseScore = baseSet.itemSet.hardScore;
 
   const itemPoss = buildItemPossibilities(player, contentType, playerSettings, userSettings);
 
   for (var x = 0; x < itemPoss.length; x++) {
-    completedItemList.push(processItem(itemPoss[x], baseItemList, baseScore, player, contentType, baseHPS, currentLanguage, userSettings, castModel));
+    completedItemList.push(processItem(itemPoss[x], baseItemList, baseScore, player, contentType, baseHPS, currentLanguage, moddedSettings, castModel));
   }
 
   const result = new UpgradeFinderResult(itemPoss, completedItemList, contentType);

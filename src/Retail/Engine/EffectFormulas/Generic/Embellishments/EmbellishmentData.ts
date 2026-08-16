@@ -449,8 +449,8 @@ export const embellishmentData = [
         ],
         runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
             let bonus_stats: Stats = {};
-            console.log(additionalData);
-            const minStat = (Object.keys(additionalData.setStats).length > 1) ? Object.keys(additionalData.setStats).filter(x => x !== "critMult").reduce((a, b) => additionalData.setStats[a] < additionalData.setStats[b] ? a : b) : "versatility";
+
+            const minStat = (Object.keys(additionalData.setStats).length > 1) ? Object.keys(additionalData.setStats).filter(x => x !== "critMult" && x !== "manaPerc").reduce((a, b) => additionalData.setStats[a] < additionalData.setStats[b] ? a : b) : "versatility";
 
             bonus_stats[minStat] = runGenericPPMTrinket({...data[0], stat: minStat}, itemLevel, additionalData.setStats);
 

@@ -1,5 +1,15 @@
 
 
+// Converts a generic tier reference to a spec specific one.
+export function getSeasonalTier(reference: string, spec: string): {type: string, name: string, class: string}[] {
+  const entry = itemSets.find(set => set.class === spec && set.setBonuses[2].includes(reference));
+  return [
+    {type: 'set bonus', name: entry.setBonuses[2], class: entry.class},
+    {type: 'set bonus', name: entry.setBonuses[4], class: entry.class}
+  ];
+
+}
+
 export function getItemSet(id: number, pieces: number, spec: string) {
     let effects: ItemEffect[] = [];
     let temp = itemSets.filter(function (set) {
