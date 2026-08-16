@@ -147,6 +147,8 @@ class CastModel {
       } else if (modelID === "Totemic") {
         this.modelName = "Totemic"
         this.heroTree = "Totemic";
+        this.modelType["Raid"] = "CastModel";
+        this.modelType["Dungeon"] = "Default";
         this.talents = restoShamanProfile.defaultTalents;
         this.runCastModel = scoreShamanSet;
         spellList = shamanDefaultSpellData(contentType);
@@ -155,6 +157,8 @@ class CastModel {
       } else if (modelID === "Farseer") {
         this.modelName = "Farseer"
         this.heroTree = "Farseer";
+        this.modelType["Raid"] = "CastModel";
+        this.modelType["Dungeon"] = "Default";
         this.talents = restoShamanProfile.farseerTalents;
         this.runCastModel = scoreShamanSet;
         spellList = shamanDefaultSpellData(contentType);

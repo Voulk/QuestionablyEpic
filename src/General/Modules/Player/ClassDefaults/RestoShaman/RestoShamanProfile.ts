@@ -105,6 +105,10 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
         talentImport.filter(talent => talent.talentName === "Supportive Imbuements")[0].talentRanks = 0;
         talentImport.push({talentName: "Pulse Capacitor", talentRanks: 1, tree: "hero", talentIcon: "spell_nature_elementalprecision_1"})
     }
+    if (playerData.tierSets.includes("Restoration Shaman S1-2") && playerData.heroTree === "Totemic"){
+        talentImport.filter(talent => talent.talentName === "Overflowing Shores")[0].talentRanks = 0;
+        talentImport.push({talentName: "Unleash Life", talentRanks: 1, tree: "spec", talentIcon: "spell_shaman_unleashweapon_life"})
+    }
     applyTalentsFromString(initialState, spellDB, talentImport);
     addAscendanceSpells(spellDB)
     addTiersetRains(spellDB)

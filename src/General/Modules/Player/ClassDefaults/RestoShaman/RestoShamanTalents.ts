@@ -275,6 +275,15 @@ const specTalents: TalentTree = {
     "Stormstream Totem3": {id: 1267120, values: [0.0], points: 0, maxPoints: 4, icon: "inv12_apextalent_shaman_stormstreamtotem", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
         //Implemented in profile
     }},
+
+    /* Talent Stubs and Other stuff */
+    "Unleash Life": {id: 73685, values: [],  points: 0, maxPoints: 1, icon: "spell_shaman_unleashweapon_life", select: true, tier: 2, runFunc: function () {}},
+    "Earthliving Weapon": {id: 382021, values: [],  points: 0, maxPoints: 1, icon: "spell_shaman_giftearthmother", select: true, tier: 2, runFunc: function () {}},
+    "Healing Tide Totem": {id: 108280, values: [], points: 0, maxPoints: 1, icon: "ability_shaman_healingtide", select: true, tier: 1, runFunc: function () {}},
+    "Ascendance": {id: 114052, values: [], points: 0, maxPoints: 1, icon: "spell_fire_elementaldevastation", select: true, tier: 1, runFunc: function () {}},
+    "Spirit Link Totem": {id: 98008, values: [], points: 0, maxPoints: 1, icon: "spell_shaman_spiritlink", select: true, tier: 3, runFunc: function () {}},
+    "Downpour": {id: 462486, values: [], points: 0, maxPoints: 1, icon: "ability_mage_waterjet", select: true, tier: 3, runFunc: function () {}},
+    "Healing Rain": {id: 73920, values: [], points: 0, maxPoints: 1, icon: "spell_nature_giftofthewaterspirit", select: true, tier: 1, runFunc: function () {}},
 }
 
 const heroTalents: TalentTree = {
@@ -442,15 +451,6 @@ const heroTalents: TalentTree = {
     "Whirling Elements": {id: 445024, values: [0.0], heroTree: "Totemic", points: 0, maxPoints: 1, icon: "inv_10_enchanting2_elementalswirl_color1", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
         //Implemented in profile
     }},
-
-    /* Talent Stubs and Other stuff */
-    "Unleash Life": {id: 73685, values: [],  points: 0, maxPoints: 1, icon: "spell_shaman_unleashweapon_life", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {}},
-    "Earthliving Weapon": {id: 382021, values: [],  points: 0, maxPoints: 1, icon: "spell_shaman_giftearthmother", select: true, tier: 2, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {}},
-    "Healing Tide Totem": {id: 108280, values: [], points: 0, maxPoints: 1, icon: "ability_shaman_healingtide", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {}},
-    "Ascendance": {id: 114052, values: [], points: 0, maxPoints: 1, icon: "spell_fire_elementaldevastation", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {}},
-    "Spirit Link Totem": {id: 98008, values: [], points: 0, maxPoints: 1, icon: "spell_shaman_spiritlink", select: true, tier: 3, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {}},
-    "Downpour": {id: 462486, values: [], points: 0, maxPoints: 1, icon: "ability_mage_waterjet", select: true, tier: 3, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {}},
-    "Healing Rain": {id: 73920, values: [], points: 0, maxPoints: 1, icon: "spell_nature_giftofthewaterspirit", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {}},
 
     /* This is the totemic aura */
     "Totemic Init": {id: 455630, values: [0.0], heroTree: "Totemic", points: 0, maxPoints: 1, icon: "inv_ability_totemicshaman_surgingtotem", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {

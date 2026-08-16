@@ -1,32 +1,27 @@
 export const itemLevels: {raid: number[]; dungeon: number[]; pvp: number[]; crafted: number[];} = {
-  raid: [ // Updated for S4.
-    /* ----------------------------------------- Raid Finder ---------------------------------------- */
-    // Slider Value = 0
-    279,
-    292,
-    305,
-    318,
+  // Midnight Season 2 spreadsheet: drop bases, then track caps (LFR/Veteran, Normal/Champion, Heroic/Hero, Mythic/Myth).
+  raid: [
+    /* ----------------------------------------- Drop bases ---------------------------------------- */
+    279, // LFR (Veteran)
+    292, // Normal (Champion)
+    305, // Heroic (Hero)
+    318, // Mythic (Myth) — most bosses; last 2 override higher in engine
 
-    // Fully ugpraded versions
-    298,
-    308,
-    321,
-    334
-
+    /* --------------------------------------- Fully upgraded -------------------------------------- */
+    295, // Veteran max
+    308, // Champion max
+    321, // Hero max
+    334, // Myth 6/6; some bosses drop above this (engine overrides last 2 to 344)
   ],
+  // End-of-run dungeon drops (UF uses MPlusKeyRewards for key → vault/bonus mapping).
   dungeon: [
-    292,
-    295,
-    298,
-    302,
-    305,
-    308,
-    311,
-    315, 
-    318,
-    321,
-    328,
-    334,
+    292, // M0
+    295, // +2/3
+    298, // +4
+    302, // +5
+    305, // +6/7
+    308, // +8/9
+    311, // +10
   ],
   pvp: [
     /* ------------------------------------------ Unranked ------------------------------------------ */
