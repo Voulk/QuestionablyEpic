@@ -261782,29 +261782,13 @@
             "stamina": 0,
             "versatility": 6666
         },
-        "sources": [
-            {
-                "instanceId": -69,
-                "encounterId": -69
-            }
-        ],
         "squishEra": 2,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
             "name": "Ultradon Cuirass"
         },
-        "levelRange": [
-            272,
-            276,
-            285,
-            289,
-            295,
-            302,
-            308,
-            315,
-            321
-        ]
+        "levelRange": []
     },
     {
         "id": 264701,

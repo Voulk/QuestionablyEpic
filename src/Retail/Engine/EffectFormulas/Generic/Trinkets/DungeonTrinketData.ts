@@ -91,8 +91,9 @@ export const dungeonTrinketData =
     /* ---------------------------------------------------------------------------------------------- */
 
     name: "Ruby Whelp Shell",
-    description: "Can be trained over 6 days in order to proc one of its 6 effects more frequently. There's a setting in QE Live for this and it will impact its value.",
+    description: "CHART DEFAULT IS UNTRAINED. Can be trained over 6 days in order to proc one of its 6 effects more frequently. There's a setting in QE Live for this and it will impact its value.",
     setting: true,
+    warningFlag: true,
     effects: [
       { // ST Damage Portion
         secondaries: ['crit', 'versatility'],

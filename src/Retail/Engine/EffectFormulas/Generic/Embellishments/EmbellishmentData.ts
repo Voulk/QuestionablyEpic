@@ -367,7 +367,7 @@ export const embellishmentData = [
       */
         id: 0,
         name: "Loa Worshiper's Band",
-        description: "",
+        description: "Only procs off DPS spells. That makes it a difficult choice for non-Discipline specs, unless you are in an environment where you will DPS a lot.",
         effects: [
         { // Capybara / Int buff - 40
             scalingClass: -1,
