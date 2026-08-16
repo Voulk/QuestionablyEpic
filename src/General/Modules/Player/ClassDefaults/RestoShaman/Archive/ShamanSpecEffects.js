@@ -16,36 +16,31 @@ export const getShamanSpecEffect = (effectName, player, contentType) => {
   const riptidesActive = 4.9;
   // Tier Sets
   if (effectName === "Shaman S3-2") {
-      bonus_stats.hps = player.getHPS() * 0.075;
+
   }
   else if (effectName === "Shaman S3-4") {
     // 
 
-    bonus_stats.hps = bonus_stats.hps = player.getHPS() * 0.148;
-
   }
-  else if (effectName === "Shaman S2-2") {
-    const insuranceRPPM = 4 * player.getStatPerc('haste');
-    const insuranceHealing = 1.92 * 5 * player.getStatMults(['haste', 'crit', 'versatility', 'intellect', 'mastery'])
-    bonus_stats.hps = insuranceHealing * insuranceRPPM / 60;
-
+  else if (effectName === "Restoration Shaman S2-2" && contentType === "Dungeon") {
+    bonus_stats.bonusHPS = 0.085;
   }
-  else if (effectName === "Shaman S2-4") {
+  else if (effectName === "Restoration Shaman S2-4" && contentType === "Dungeon") {
     // 
 
-    bonus_stats.hps = player.getHPS() * 0.032
+    bonus_stats.bonusHPS = 0.04;
 
   }
   else if (effectName === "Restoration Shaman S1-2" && contentType === "Dungeon") {
     // 
 
-    bonus_stats.hps = player.getHPS() * 0.024;
+    bonus_stats.bonusHPS = 0.024;
 
   }
   else if (effectName === "Restoration Shaman S1-4" && contentType === "Dungeon") {
     // 
 
-    bonus_stats.hps = player.getHPS() * 0.029;
+    bonus_stats.bonusHPS = 0.029;
 
   }
   else if (effectName === "Shaman T30-2") {

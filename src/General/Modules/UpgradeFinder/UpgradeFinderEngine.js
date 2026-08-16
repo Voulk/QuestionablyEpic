@@ -362,9 +362,10 @@ function processItem(item, baseItemList, baseScore, player, contentType, baseHPS
   const newScore = newTGSet.itemSet.hardScore;
   //const differential = Math.round(100*(newScore - baseScore))/100 // This is a raw int difference.
   let differential = 0;
+  const modelDiff = castModel.modelType[contentType] === "Default" ? CONSTANTS.modelDiff : 1; //
 
-  const rawDiff = Math.round(((newScore - baseScore) / baseScore) * baseHPS);
-  const percDiff = (newScore - baseScore) / baseScore
+  const rawDiff = Math.round(((newScore - baseScore) / baseScore) * baseHPS * modelDiff);
+  const percDiff = ((newScore - baseScore) / baseScore) * modelDiff;
 
   if (getSetting(userSettings, "upgradeFinderMetric") === "Show HPS") differential = rawDiff;
   else differential = percDiff;
