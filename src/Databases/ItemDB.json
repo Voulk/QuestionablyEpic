@@ -1360,12 +1360,6 @@
             "type": "trinket",
             "name": "Force of Will"
         },
-        "sources": [
-            {
-                "encounterId": 378,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -1449,12 +1443,6 @@
             "type": "trinket",
             "name": "Second Wind"
         },
-        "sources": [
-            {
-                "instanceId": -12,
-                "encounterId": 1
-            }
-        ],
         "levelRange": []
     },
     {
@@ -1584,12 +1572,6 @@
             "type": "trinket",
             "name": "Burst of Knowledge"
         },
-        "sources": [
-            {
-                "encounterId": 384,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -2445,12 +2427,6 @@
             "type": "trinket",
             "name": "Cannonball Runner"
         },
-        "sources": [
-            {
-                "encounterId": 446,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -2845,12 +2821,6 @@
             "type": "trinket",
             "name": "Ramstein's Lightning Bolts"
         },
-        "sources": [
-            {
-                "encounterId": 455,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -3814,12 +3784,6 @@
             "type": "trinket",
             "name": "Vigilance Charm"
         },
-        "sources": [
-            {
-                "encounterId": 409,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -3840,12 +3804,6 @@
             "type": "trinket",
             "name": "Mindtap Talisman"
         },
-        "sources": [
-            {
-                "encounterId": 408,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -5183,12 +5141,6 @@
             "type": "trinket",
             "name": "Auslese's Light Channeler"
         },
-        "sources": [
-            {
-                "encounterId": 556,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -6376,12 +6328,6 @@
             "type": "trinket",
             "name": "Figurine of the Colossus"
         },
-        "sources": [
-            {
-                "encounterId": 566,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -6873,12 +6819,6 @@
             "type": "trinket",
             "name": "Argussian Compass"
         },
-        "sources": [
-            {
-                "encounterId": 579,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -7287,12 +7227,6 @@
             "type": "trinket",
             "name": "Warp-Scarab Brooch"
         },
-        "sources": [
-            {
-                "encounterId": 537,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -7487,12 +7421,6 @@
             "type": "trinket",
             "name": "Alembic of Infernal Power"
         },
-        "sources": [
-            {
-                "encounterId": 579,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -7557,12 +7485,6 @@
             "type": "trinket",
             "name": "Icon of Unyielding Courage"
         },
-        "sources": [
-            {
-                "encounterId": 557,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -8096,12 +8018,6 @@
             "type": "trinket",
             "name": "Bangle of Endless Blessings"
         },
-        "sources": [
-            {
-                "encounterId": 562,
-                "instanceId": -67
-            }
-        ],
         "stats": {
             "intellect": 0,
             "stamina": 0
@@ -10188,12 +10104,6 @@
             "type": "trinket",
             "name": "The Skull of Gul'dan"
         },
-        "sources": [
-            {
-                "instanceId": -12,
-                "encounterId": 2
-            }
-        ],
         "levelRange": []
     },
     {
@@ -10213,12 +10123,6 @@
             "type": "trinket",
             "name": "Memento of Tyrande"
         },
-        "sources": [
-            {
-                "instanceId": -12,
-                "encounterId": 2
-            }
-        ],
         "levelRange": []
     },
     {
@@ -10259,12 +10163,6 @@
             "type": "trinket",
             "name": "Shadowmoon Insignia"
         },
-        "sources": [
-            {
-                "encounterId": 1586,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -10496,12 +10394,6 @@
             "type": "trinket",
             "name": "Timbal's Focusing Crystal"
         },
-        "sources": [
-            {
-                "encounterId": 532,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -10522,12 +10414,6 @@
             "type": "trinket",
             "name": "Vial of the Sunwell"
         },
-        "sources": [
-            {
-                "encounterId": 532,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -10548,12 +10434,6 @@
             "type": "trinket",
             "name": "Shard of Contempt"
         },
-        "sources": [
-            {
-                "encounterId": 532,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -10573,12 +10453,6 @@
             "type": "trinket",
             "name": "Commendation of Kael'thas"
         },
-        "sources": [
-            {
-                "encounterId": 532,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -12214,12 +12088,6 @@
             "type": "trinket",
             "name": "Seal of the Pantheon"
         },
-        "sources": [
-            {
-                "encounterId": 600,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -12562,12 +12430,6 @@
             "type": "trinket",
             "name": "Sphere of Red Dragon's Blood"
         },
-        "sources": [
-            {
-                "encounterId": 621,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -13021,12 +12883,6 @@
             "type": "trinket",
             "name": "Essence of Gossamer"
         },
-        "sources": [
-            {
-                "encounterId": 586,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -13495,12 +13351,6 @@
             "type": "trinket",
             "name": "Offering of Sacrifice"
         },
-        "sources": [
-            {
-                "encounterId": 596,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -13864,12 +13714,6 @@
             "type": "trinket",
             "name": "Winged Talisman"
         },
-        "sources": [
-            {
-                "encounterId": 599,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -14723,12 +14567,6 @@
             "type": "trinket",
             "name": "Living Flame"
         },
-        "sources": [
-            {
-                "instanceId": -12,
-                "encounterId": 3
-            }
-        ],
         "levelRange": []
     },
     {
@@ -14814,12 +14652,6 @@
             "type": "trinket",
             "name": "Heart of Iron"
         },
-        "sources": [
-            {
-                "encounterId": 1638,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -15668,12 +15500,6 @@
             "type": "trinket",
             "name": "Wrathstone"
         },
-        "sources": [
-            {
-                "encounterId": 1642,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -15941,12 +15767,6 @@
             "type": "trinket",
             "name": "Pyrite Infuser"
         },
-        "sources": [
-            {
-                "encounterId": 1637,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -16054,12 +15874,6 @@
             "type": "trinket",
             "name": "Energy Siphon"
         },
-        "sources": [
-            {
-                "instanceId": -12,
-                "encounterId": 3
-            }
-        ],
         "levelRange": []
     },
     {
@@ -16350,12 +16164,6 @@
             "type": "trinket",
             "name": "Eye of the Broodmother"
         },
-        "sources": [
-            {
-                "instanceId": -12,
-                "encounterId": 3
-            }
-        ],
         "levelRange": []
     },
     {
@@ -16420,12 +16228,6 @@
             "type": "trinket",
             "name": "Furnace Stone"
         },
-        "sources": [
-            {
-                "encounterId": 1638,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -17275,12 +17077,6 @@
             "type": "trinket",
             "name": "Scale of Fates"
         },
-        "sources": [
-            {
-                "instanceId": -12,
-                "encounterId": 3
-            }
-        ],
         "levelRange": []
     },
     {
@@ -17595,12 +17391,6 @@
             "type": "trinket",
             "name": "Pandora's Plea"
         },
-        "sources": [
-            {
-                "instanceId": -12,
-                "encounterId": 3
-            }
-        ],
         "levelRange": []
     },
     {
@@ -17823,12 +17613,6 @@
             "type": "trinket",
             "name": "The General's Heart"
         },
-        "sources": [
-            {
-                "encounterId": 1648,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -17984,12 +17768,6 @@
             "type": "trinket",
             "name": "Flare of the Heavens"
         },
-        "sources": [
-            {
-                "encounterId": 1648,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -18056,12 +17834,6 @@
             "type": "trinket",
             "name": "Blood of the Old God"
         },
-        "sources": [
-            {
-                "encounterId": 1649,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -18237,12 +18009,6 @@
             "type": "trinket",
             "name": "Show of Faith"
         },
-        "sources": [
-            {
-                "instanceId": -12,
-                "encounterId": 3
-            }
-        ],
         "levelRange": []
     },
     {
@@ -18934,12 +18700,6 @@
             "type": "trinket",
             "name": "Spark of Hope"
         },
-        "sources": [
-            {
-                "encounterId": 1642,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -19163,12 +18923,6 @@
             "type": "trinket",
             "name": "Elemental Focus Stone"
         },
-        "sources": [
-            {
-                "encounterId": 1643,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -19437,12 +19191,6 @@
             "type": "trinket",
             "name": "Sif's Remembrance"
         },
-        "sources": [
-            {
-                "instanceId": -12,
-                "encounterId": 3
-            }
-        ],
         "levelRange": []
     },
     {
@@ -19463,12 +19211,6 @@
             "type": "trinket",
             "name": "Mjolnir Runestone"
         },
-        "sources": [
-            {
-                "encounterId": 1645,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -20004,12 +19746,6 @@
             "type": "trinket",
             "name": "Royal Seal of King Llane"
         },
-        "sources": [
-            {
-                "encounterId": 1649,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -20413,12 +20149,6 @@
             "type": "trinket",
             "name": "Meteorite Crystal"
         },
-        "sources": [
-            {
-                "encounterId": 1650,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -20508,12 +20238,6 @@
             "type": "trinket",
             "name": "Vanquished Clutches of Yogg-Saron"
         },
-        "sources": [
-            {
-                "encounterId": 1649,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -21347,12 +21071,6 @@
             "type": "trinket",
             "name": "Needle-Encrusted Scorpion"
         },
-        "sources": [
-            {
-                "encounterId": 616,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -21723,12 +21441,6 @@
             "type": "trinket",
             "name": "Ick's Rotting Thumb"
         },
-        "sources": [
-            {
-                "encounterId": 278,
-                "instanceId": -96
-            }
-        ],
         "levelRange": []
     },
     {
@@ -22267,13 +21979,7 @@
         "effect": {
             "type": "trinket",
             "name": "Porcelain Crab"
-        },
-        "sources": [
-            {
-                "encounterId": 103,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 56281,
@@ -22337,13 +22043,7 @@
         "effect": {
             "type": "trinket",
             "name": "Might of the Ocean"
-        },
-        "sources": [
-            {
-                "encounterId": 104,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 56286,
@@ -22429,13 +22129,7 @@
         "effect": {
             "type": "trinket",
             "name": "Sea Star"
-        },
-        "sources": [
-            {
-                "encounterId": 104,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 56291,
@@ -22873,13 +22567,7 @@
         "effect": {
             "type": "trinket",
             "name": "Witching Hourglass"
-        },
-        "sources": [
-            {
-                "encounterId": 109,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 56321,
@@ -22988,13 +22676,7 @@
         "effect": {
             "type": "trinket",
             "name": "Key to the Endless Chamber"
-        },
-        "sources": [
-            {
-                "encounterId": 110,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 56330,
@@ -23127,13 +22809,7 @@
         "effect": {
             "type": "trinket",
             "name": "Tendrils of Burrowing Dark"
-        },
-        "sources": [
-            {
-                "encounterId": 112,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 56340,
@@ -23219,13 +22895,7 @@
         "effect": {
             "type": "trinket",
             "name": "Magnetite Mirror"
-        },
-        "sources": [
-            {
-                "encounterId": 113,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 56347,
@@ -23243,13 +22913,7 @@
         "effect": {
             "type": "trinket",
             "name": "Leaden Despair"
-        },
-        "sources": [
-            {
-                "encounterId": 113,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 56348,
@@ -23312,13 +22976,7 @@
         "effect": {
             "type": "trinket",
             "name": "Tear of Blood"
-        },
-        "sources": [
-            {
-                "encounterId": 113,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 56352,
@@ -23562,13 +23220,7 @@
         "effect": {
             "type": "trinket",
             "name": "Heart of Thunder"
-        },
-        "sources": [
-            {
-                "encounterId": 116,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 56371,
@@ -23878,13 +23530,7 @@
         "effect": {
             "type": "trinket",
             "name": "Heart of Solace"
-        },
-        "sources": [
-            {
-                "encounterId": 119,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 56394,
@@ -23903,13 +23549,7 @@
         "effect": {
             "type": "trinket",
             "name": "Tia's Grace"
-        },
-        "sources": [
-            {
-                "encounterId": 122,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 56395,
@@ -23974,13 +23614,7 @@
         "effect": {
             "type": "trinket",
             "name": "Sorrowsong"
-        },
-        "sources": [
-            {
-                "encounterId": 122,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 56401,
@@ -24517,12 +24151,6 @@
             "type": "trinket",
             "name": "Variable Pulse Lightning Capacitor"
         },
-        "sources": [
-            {
-                "encounterId": 198,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -24542,12 +24170,6 @@
             "type": "trinket",
             "name": "Jaws of Defeat"
         },
-        "sources": [
-            {
-                "encounterId": 197,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -24588,12 +24210,6 @@
             "type": "trinket",
             "name": "Spidersilk Spindle"
         },
-        "sources": [
-            {
-                "encounterId": 192,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -24708,13 +24324,7 @@
         "effect": {
             "type": "trinket",
             "name": "Variable Pulse Lightning Capacitor"
-        },
-        "sources": [
-            {
-                "encounterId": 198,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 69111,
@@ -24732,13 +24342,7 @@
         "effect": {
             "type": "trinket",
             "name": "Jaws of Defeat"
-        },
-        "sources": [
-            {
-                "encounterId": 197,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 69112,
@@ -24776,13 +24380,7 @@
         "effect": {
             "type": "trinket",
             "name": "Spidersilk Spindle"
-        },
-        "sources": [
-            {
-                "encounterId": 192,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 69139,
@@ -29111,13 +28709,7 @@
         "effect": {
             "type": "trinket",
             "name": "Searing Words"
-        },
-        "sources": [
-            {
-                "encounterId": 684,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 88356,
@@ -29180,13 +28772,7 @@
         "effect": {
             "type": "trinket",
             "name": "Lessons of the Darkmaster"
-        },
-        "sources": [
-            {
-                "encounterId": 684,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 88359,
@@ -29226,13 +28812,7 @@
         "effect": {
             "type": "trinket",
             "name": "Price of Progress"
-        },
-        "sources": [
-            {
-                "encounterId": 684,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 88361,
@@ -34043,12 +33623,6 @@
             "type": "trinket",
             "name": "Crushto's Runic Alarm"
         },
-        "sources": [
-            {
-                "encounterId": 888,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -34069,12 +33643,6 @@
             "type": "trinket",
             "name": "Tovra's Lightning Repository"
         },
-        "sources": [
-            {
-                "encounterId": 1133,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -34094,12 +33662,6 @@
             "type": "trinket",
             "name": "Coagulated Genesaur Blood"
         },
-        "sources": [
-            {
-                "encounterId": 1210,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -34121,12 +33683,6 @@
             "type": "trinket",
             "name": "Crystalline Blood Drop"
         },
-        "sources": [
-            {
-                "encounterId": 1225,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -34148,12 +33704,6 @@
             "type": "trinket",
             "name": "Rukhran's Quill"
         },
-        "sources": [
-            {
-                "encounterId": 476,
-                "instanceId": -96
-            }
-        ],
         "levelRange": []
     },
     {
@@ -34173,12 +33723,6 @@
             "type": "trinket",
             "name": "Voidmender's Shadowgem"
         },
-        "sources": [
-            {
-                "encounterId": 1168,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -34199,12 +33743,6 @@
             "type": "trinket",
             "name": "Leaf of the Ancient Protectors"
         },
-        "sources": [
-            {
-                "encounterId": 1207,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -34308,12 +33846,6 @@
             "type": "trinket",
             "name": "Toria's Unseeing Eye"
         },
-        "sources": [
-            {
-                "encounterId": 887,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -34335,12 +33867,6 @@
             "type": "trinket",
             "name": "Solar Containment Unit"
         },
-        "sources": [
-            {
-                "encounterId": 476,
-                "instanceId": -96
-            }
-        ],
         "levelRange": []
     },
     {
@@ -34360,12 +33886,6 @@
             "type": "trinket",
             "name": "Xeri'tac's Unhatched Egg Sac"
         },
-        "sources": [
-            {
-                "encounterId": 1210,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -35304,13 +34824,7 @@
         "effect": {
             "type": "trinket",
             "name": "Figurine of the Colossus"
-        },
-        "sources": [
-            {
-                "encounterId": 566,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 123993,
@@ -36115,13 +35629,7 @@
         "effect": {
             "type": "trinket",
             "name": "Warp-Scarab Brooch"
-        },
-        "sources": [
-            {
-                "encounterId": 537,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 127247,
@@ -36687,13 +36195,7 @@
         "effect": {
             "type": "trinket",
             "name": "Winged Talisman"
-        },
-        "sources": [
-            {
-                "encounterId": 599,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 127513,
@@ -37347,13 +36849,7 @@
         "effect": {
             "type": "trinket",
             "name": "Offering of Sacrifice"
-        },
-        "sources": [
-            {
-                "encounterId": 596,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 127551,
@@ -37985,13 +37481,7 @@
         "effect": {
             "type": "trinket",
             "name": "Sphere of Red Dragon's Blood"
-        },
-        "sources": [
-            {
-                "encounterId": 620,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 127595,
@@ -38615,13 +38105,7 @@
         "effect": {
             "type": "trinket",
             "name": "Might of the Ocean"
-        },
-        "sources": [
-            {
-                "encounterId": 104,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 133198,
@@ -38706,13 +38190,7 @@
         "effect": {
             "type": "trinket",
             "name": "Sea Star"
-        },
-        "sources": [
-            {
-                "encounterId": 104,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 133202,
@@ -38819,13 +38297,7 @@
         "effect": {
             "type": "trinket",
             "name": "Key to the Endless Chamber"
-        },
-        "sources": [
-            {
-                "encounterId": 110,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 133208,
@@ -38998,13 +38470,7 @@
         "effect": {
             "type": "trinket",
             "name": "Tendrils of Burrowing Dark"
-        },
-        "sources": [
-            {
-                "encounterId": 112,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 133217,
@@ -39089,13 +38555,7 @@
         "effect": {
             "type": "trinket",
             "name": "Magnetite Mirror"
-        },
-        "sources": [
-            {
-                "encounterId": 113,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 133224,
@@ -39113,13 +38573,7 @@
         "effect": {
             "type": "trinket",
             "name": "Leaden Despair"
-        },
-        "sources": [
-            {
-                "encounterId": 113,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 133225,
@@ -39181,13 +38635,7 @@
         "effect": {
             "type": "trinket",
             "name": "Tear of Blood"
-        },
-        "sources": [
-            {
-                "encounterId": 112,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 133228,
@@ -39492,13 +38940,7 @@
         "effect": {
             "type": "trinket",
             "name": "Heart of Thunder"
-        },
-        "sources": [
-            {
-                "encounterId": 116,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 133247,
@@ -39604,13 +39046,7 @@
         "effect": {
             "type": "trinket",
             "name": "Rainsong"
-        },
-        "sources": [
-            {
-                "encounterId": 114,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 133253,
@@ -39871,13 +39307,7 @@
         "effect": {
             "type": "trinket",
             "name": "Heart of Solace"
-        },
-        "sources": [
-            {
-                "encounterId": 119,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 133269,
@@ -39896,13 +39326,7 @@
         "effect": {
             "type": "trinket",
             "name": "Tia's Grace"
-        },
-        "sources": [
-            {
-                "encounterId": 122,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 133270,
@@ -39987,13 +39411,7 @@
         "effect": {
             "type": "trinket",
             "name": "Sorrowsong"
-        },
-        "sources": [
-            {
-                "encounterId": 122,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 133276,
@@ -40100,13 +39518,7 @@
         "effect": {
             "type": "trinket",
             "name": "Impetuous Query"
-        },
-        "sources": [
-            {
-                "encounterId": 118,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 133356,
@@ -41731,13 +41143,7 @@
         "effect": {
             "type": "trinket",
             "name": "Timbal's Focusing Crystal"
-        },
-        "sources": [
-            {
-                "encounterId": 532,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 133462,
@@ -41756,13 +41162,7 @@
         "effect": {
             "type": "trinket",
             "name": "Vial of the Sunwell"
-        },
-        "sources": [
-            {
-                "encounterId": 532,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 133463,
@@ -41781,13 +41181,7 @@
         "effect": {
             "type": "trinket",
             "name": "Shard of Contempt"
-        },
-        "sources": [
-            {
-                "encounterId": 532,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 133464,
@@ -41805,13 +41199,7 @@
         "effect": {
             "type": "trinket",
             "name": "Commendation of Kael'thas"
-        },
-        "sources": [
-            {
-                "encounterId": 532,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 133465,
@@ -44883,12 +44271,6 @@
             "type": "trinket",
             "name": "Amalgam's Seventh Spine"
         },
-        "sources": [
-            {
-                "encounterId": 1518,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -44909,12 +44291,6 @@
             "type": "trinket",
             "name": "Spiked Counterweight"
         },
-        "sources": [
-            {
-                "encounterId": 1664,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -44935,12 +44311,6 @@
             "type": "trinket",
             "name": "Caged Horror"
         },
-        "sources": [
-            {
-                "encounterId": 1672,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -45114,12 +44484,6 @@
             "type": "trinket",
             "name": "Corrupted Starlight"
         },
-        "sources": [
-            {
-                "encounterId": 1654,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -45184,12 +44548,6 @@
             "type": "trinket",
             "name": "Oakheart's Gnarled Root"
         },
-        "sources": [
-            {
-                "encounterId": 1655,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -45318,12 +44676,6 @@
             "type": "trinket",
             "name": "Writhing Heart of Darkness"
         },
-        "sources": [
-            {
-                "encounterId": 1657,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -45540,12 +44892,6 @@
             "type": "trinket",
             "name": "Talisman of the Cragshaper"
         },
-        "sources": [
-            {
-                "encounterId": 1665,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -45588,12 +44934,6 @@
             "type": "trinket",
             "name": "Naraxas' Spiked Tongue"
         },
-        "sources": [
-            {
-                "encounterId": 1673,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -45702,12 +45042,6 @@
             "type": "trinket",
             "name": "Mark of Dargrul"
         },
-        "sources": [
-            {
-                "encounterId": 1687,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -45771,12 +45105,6 @@
             "type": "trinket",
             "name": "Parjesh's Medallion"
         },
-        "sources": [
-            {
-                "encounterId": 1480,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -45818,12 +45146,6 @@
             "type": "trinket",
             "name": "Stormsinger Fulmination Charge"
         },
-        "sources": [
-            {
-                "encounterId": 1490,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -45866,12 +45188,6 @@
             "type": "trinket",
             "name": "Giant Ornamental Pearl"
         },
-        "sources": [
-            {
-                "encounterId": 1491,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -45934,12 +45250,6 @@
             "type": "trinket",
             "name": "Bottled Hurricane"
         },
-        "sources": [
-            {
-                "encounterId": 1492,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -46026,12 +45336,6 @@
             "type": "trinket",
             "name": "Flask of the Solemn Night"
         },
-        "sources": [
-            {
-                "encounterId": 1718,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -46051,12 +45355,6 @@
             "type": "trinket",
             "name": "Infernal Writ"
         },
-        "sources": [
-            {
-                "encounterId": 1719,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -46077,12 +45375,6 @@
             "type": "trinket",
             "name": "Windscar Whetstone"
         },
-        "sources": [
-            {
-                "encounterId": 1720,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -47026,12 +46318,6 @@
             "type": "trinket",
             "name": "Orb of Torment"
         },
-        "sources": [
-            {
-                "encounterId": 1695,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -47052,12 +46338,6 @@
             "type": "trinket",
             "name": "Faulty Countermeasure"
         },
-        "sources": [
-            {
-                "encounterId": 1468,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -47078,12 +46358,6 @@
             "type": "trinket",
             "name": "Concave Reflecting Lens"
         },
-        "sources": [
-            {
-                "encounterId": 1469,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -47104,12 +46378,6 @@
             "type": "trinket",
             "name": "Moonlit Prism"
         },
-        "sources": [
-            {
-                "encounterId": 1470,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -49304,13 +48572,7 @@
         "effect": {
             "type": "trinket",
             "name": "Empty Fruit Barrel"
-        },
-        "sources": [
-            {
-                "encounterId": 668,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 144120,
@@ -49502,13 +48764,7 @@
         "effect": {
             "type": "trinket",
             "name": "Heart of Fire"
-        },
-        "sources": [
-            {
-                "encounterId": 657,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 144129,
@@ -49680,13 +48936,7 @@
         "effect": {
             "type": "trinket",
             "name": "Vision of the Predator"
-        },
-        "sources": [
-            {
-                "encounterId": 675,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 144137,
@@ -49902,13 +49152,7 @@
         "effect": {
             "type": "trinket",
             "name": "Iron Protector Talisman"
-        },
-        "sources": [
-            {
-                "encounterId": 690,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 144147,
@@ -50080,13 +49324,7 @@
         "effect": {
             "type": "trinket",
             "name": "Price of Progress"
-        },
-        "sources": [
-            {
-                "encounterId": 684,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 144160,
@@ -50105,13 +49343,7 @@
         "effect": {
             "type": "trinket",
             "name": "Searing Words"
-        },
-        "sources": [
-            {
-                "encounterId": 684,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 144161,
@@ -50130,13 +49362,7 @@
         "effect": {
             "type": "trinket",
             "name": "Lessons of the Darkmaster"
-        },
-        "sources": [
-            {
-                "encounterId": 684,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 144180,
@@ -51695,13 +50921,7 @@
         "effect": {
             "type": "trinket",
             "name": "The Skull of Gul'dan"
-        },
-        "sources": [
-            {
-                "instanceId": -12,
-                "encounterId": 2
-            }
-        ]
+        }
     },
     {
         "id": 150523,
@@ -51719,13 +50939,7 @@
         "effect": {
             "type": "trinket",
             "name": "Memento of Tyrande"
-        },
-        "sources": [
-            {
-                "instanceId": -12,
-                "encounterId": 2
-            }
-        ]
+        }
     },
     {
         "id": 150524,
@@ -53338,12 +52552,6 @@
             "type": "trinket",
             "name": "Reality Breacher"
         },
-        "sources": [
-            {
-                "encounterId": 945,
-                "instanceId": -96
-            }
-        ],
         "levelRange": []
     },
     {
@@ -58912,13 +58120,7 @@
         "effect": {
             "type": "trinket",
             "name": "Living Flame"
-        },
-        "sources": [
-            {
-                "instanceId": -12,
-                "encounterId": 3
-            }
-        ]
+        }
     },
     {
         "id": 155948,
@@ -59002,13 +58204,7 @@
         "effect": {
             "type": "trinket",
             "name": "Heart of Iron"
-        },
-        "sources": [
-            {
-                "encounterId": 1638,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 155953,
@@ -59775,13 +58971,7 @@
         "effect": {
             "type": "trinket",
             "name": "Wrathstone"
-        },
-        "sources": [
-            {
-                "encounterId": 1642,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 156001,
@@ -60042,13 +59232,7 @@
         "effect": {
             "type": "trinket",
             "name": "Pyrite Infuser"
-        },
-        "sources": [
-            {
-                "encounterId": 1637,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 156017,
@@ -60154,13 +59338,7 @@
         "effect": {
             "type": "trinket",
             "name": "Energy Siphon"
-        },
-        "sources": [
-            {
-                "instanceId": -12,
-                "encounterId": 3
-            }
-        ]
+        }
     },
     {
         "id": 156022,
@@ -60421,13 +59599,7 @@
         "effect": {
             "type": "trinket",
             "name": "Eye of the Broodmother"
-        },
-        "sources": [
-            {
-                "instanceId": -12,
-                "encounterId": 3
-            }
-        ]
+        }
     },
     {
         "id": 156038,
@@ -60490,13 +59662,7 @@
         "effect": {
             "type": "trinket",
             "name": "Furnace Stone"
-        },
-        "sources": [
-            {
-                "encounterId": 1638,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 156042,
@@ -62511,13 +61677,7 @@
         "effect": {
             "type": "trinket",
             "name": "Scale of Fates"
-        },
-        "sources": [
-            {
-                "instanceId": -12,
-                "encounterId": 3
-            }
-        ]
+        }
     },
     {
         "id": 156188,
@@ -62822,13 +61982,7 @@
         "effect": {
             "type": "trinket",
             "name": "Pandora's Plea"
-        },
-        "sources": [
-            {
-                "instanceId": -12,
-                "encounterId": 3
-            }
-        ]
+        }
     },
     {
         "id": 156208,
@@ -63045,13 +62199,7 @@
         "effect": {
             "type": "trinket",
             "name": "The General's Heart"
-        },
-        "sources": [
-            {
-                "encounterId": 1648,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 156222,
@@ -63180,13 +62328,7 @@
         "effect": {
             "type": "trinket",
             "name": "Flare of the Heavens"
-        },
-        "sources": [
-            {
-                "encounterId": 1648,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 156231,
@@ -63249,13 +62391,7 @@
         "effect": {
             "type": "trinket",
             "name": "Blood of the Old God"
-        },
-        "sources": [
-            {
-                "encounterId": 1649,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 156235,
@@ -63405,13 +62541,7 @@
         "effect": {
             "type": "trinket",
             "name": "Show of Faith"
-        },
-        "sources": [
-            {
-                "instanceId": -12,
-                "encounterId": 3
-            }
-        ]
+        }
     },
     {
         "id": 156246,
@@ -63759,13 +62889,7 @@
         "effect": {
             "type": "trinket",
             "name": "Spark of Hope"
-        },
-        "sources": [
-            {
-                "encounterId": 1642,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 156278,
@@ -64003,13 +63127,7 @@
         "effect": {
             "type": "trinket",
             "name": "Elemental Focus Stone"
-        },
-        "sources": [
-            {
-                "encounterId": 1643,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 156289,
@@ -64292,13 +63410,7 @@
         "effect": {
             "type": "trinket",
             "name": "Sif's Remembrance"
-        },
-        "sources": [
-            {
-                "instanceId": -12,
-                "encounterId": 3
-            }
-        ]
+        }
     },
     {
         "id": 156310,
@@ -64819,13 +63931,7 @@
         "effect": {
             "type": "trinket",
             "name": "Royal Seal of King Llane"
-        },
-        "sources": [
-            {
-                "encounterId": 1649,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 156348,
@@ -66300,13 +65406,7 @@
         "effect": {
             "type": "trinket",
             "name": "Vanquished Clutches of Yogg-Saron"
-        },
-        "sources": [
-            {
-                "encounterId": 1649,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 156459,
@@ -67816,12 +66916,6 @@
             "type": "trinket",
             "name": "Revitalizing Voodoo Totem"
         },
-        "sources": [
-            {
-                "encounterId": 2036,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -68099,12 +67193,6 @@
             "intellect": 6666,
             "stamina": 0
         },
-        "sources": [
-            {
-                "instanceId": -1,
-                "encounterId": 1030
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -69840,12 +68928,6 @@
             "type": "trinket",
             "name": "Vessel of Skittering Shadows"
         },
-        "sources": [
-            {
-                "encounterId": 2030,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -69965,12 +69047,6 @@
             "type": "trinket",
             "name": "Conch of Dark Whispers"
         },
-        "sources": [
-            {
-                "encounterId": 2156,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -69991,12 +69067,6 @@
             "type": "trinket",
             "name": "Balefire Branch"
         },
-        "sources": [
-            {
-                "encounterId": 2126,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -70017,12 +69087,6 @@
             "type": "trinket",
             "name": "Lady Waycrest's Music Box"
         },
-        "sources": [
-            {
-                "encounterId": 2128,
-                "instanceId": -67
-            }
-        ],
         "levelRange": []
     },
     {
@@ -70443,13 +69507,7 @@
         "effect": {
             "type": "trinket",
             "name": "Variable Pulse Lightning Capacitor"
-        },
-        "sources": [
-            {
-                "encounterId": 198,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 171641,
@@ -70467,13 +69525,7 @@
         "effect": {
             "type": "trinket",
             "name": "Jaws of Defeat"
-        },
-        "sources": [
-            {
-                "encounterId": 197,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 171642,
@@ -70511,13 +69563,7 @@
         "effect": {
             "type": "trinket",
             "name": "Spidersilk Spindle"
-        },
-        "sources": [
-            {
-                "encounterId": 192,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 171644,
@@ -75097,13 +74143,7 @@
         "effect": {
             "type": "trinket",
             "name": "Auslese's Light Channeler"
-        },
-        "sources": [
-            {
-                "encounterId": 556,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 188283,
@@ -75628,13 +74668,7 @@
         "effect": {
             "type": "trinket",
             "name": "Icon of Unyielding Courage"
-        },
-        "sources": [
-            {
-                "encounterId": 557,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 188310,
@@ -76445,13 +75479,7 @@
         "effect": {
             "type": "trinket",
             "name": "Argussian Compass"
-        },
-        "sources": [
-            {
-                "encounterId": 579,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 188353,
@@ -76602,13 +75630,7 @@
         "effect": {
             "type": "trinket",
             "name": "Alembic of Infernal Power"
-        },
-        "sources": [
-            {
-                "encounterId": 579,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 188360,
@@ -77305,12 +76327,6 @@
             "type": "trinket",
             "name": "Bangle of Endless Blessings"
         },
-        "sources": [
-            {
-                "encounterId": 562,
-                "instanceId": -67
-            }
-        ],
         "stats": {
             "intellect": 0,
             "stamina": 0
@@ -77683,13 +76699,7 @@
         "effect": {
             "type": "trinket",
             "name": "Essence of Gossamer"
-        },
-        "sources": [
-            {
-                "encounterId": 586,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 188416,
@@ -78830,13 +77840,7 @@
         "effect": {
             "type": "trinket",
             "name": "Needle-Encrusted Scorpion"
-        },
-        "sources": [
-            {
-                "encounterId": 616,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 188480,
@@ -79555,13 +78559,7 @@
         "effect": {
             "type": "trinket",
             "name": "Witching Hourglass"
-        },
-        "sources": [
-            {
-                "encounterId": 109,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 188515,
@@ -85048,12 +84046,6 @@
             "type": "trinket",
             "name": "Emerald Coach's Whistle"
         },
-        "sources": [
-            {
-                "encounterId": 1201,
-                "instanceId": -96
-            }
-        ],
         "levelRange": []
     },
     {
@@ -85745,12 +84737,6 @@
             "stamina": 0,
             "haste": 6666
         },
-        "sources": [
-            {
-                "instanceId": -1,
-                "encounterId": 1202
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -144603,12 +143589,6 @@
             "type": "trinket",
             "name": "Algari Alchemist Stone"
         },
-        "sources": [
-            {
-                "instanceId": -4,
-                "encounterId": 6
-            }
-        ],
         "crafted": true,
         "levelRange": []
     },
@@ -225527,12 +224507,6 @@
             "intellect": 6666,
             "stamina": 0
         },
-        "sources": [
-            {
-                "instanceId": -90,
-                "encounterId": -36
-            }
-        ],
         "squishEra": 2,
         "slot": "Trinket",
         "effect": {
@@ -225555,12 +224529,6 @@
             "stamina": 0,
             "haste": 6666
         },
-        "sources": [
-            {
-                "instanceId": -90,
-                "encounterId": -36
-            }
-        ],
         "squishEra": 2,
         "slot": "Trinket",
         "effect": {
@@ -225582,12 +224550,6 @@
             "intellect": 6666,
             "stamina": 0
         },
-        "sources": [
-            {
-                "instanceId": -90,
-                "encounterId": -36
-            }
-        ],
         "squishEra": 2,
         "slot": "Trinket",
         "effect": {
@@ -226284,12 +225246,6 @@
             "intellect": 6666,
             "stamina": 0
         },
-        "sources": [
-            {
-                "instanceId": -88,
-                "encounterId": -36
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -226309,12 +225265,6 @@
             "intellect": 6666,
             "stamina": 0
         },
-        "sources": [
-            {
-                "instanceId": -88,
-                "encounterId": -36
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -226334,12 +225284,6 @@
             "intellect": 6666,
             "stamina": 0
         },
-        "sources": [
-            {
-                "instanceId": -88,
-                "encounterId": -36
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -226359,12 +225303,6 @@
             "intellect": 6666,
             "stamina": 0
         },
-        "sources": [
-            {
-                "instanceId": -88,
-                "encounterId": -36
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -229537,12 +228475,6 @@
             "stamina": 0,
             "crit": 6666
         },
-        "sources": [
-            {
-                "instanceId": 1307,
-                "encounterId": 2735
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -229562,12 +228494,6 @@
             "intellect": 6666,
             "stamina": 0
         },
-        "sources": [
-            {
-                "instanceId": 1307,
-                "encounterId": 2736
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -231191,12 +230117,6 @@
             "intellect": 6666,
             "stamina": 0
         },
-        "sources": [
-            {
-                "instanceId": 1308,
-                "encounterId": 2740
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -234572,16 +233492,6 @@
             "intellect": 6666,
             "stamina": 0
         },
-        "sources": [
-            {
-                "instanceId": 1315,
-                "encounterId": 2811
-            },
-            {
-                "instanceId": -32,
-                "encounterId": 1315
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -234597,12 +233507,6 @@
         "itemClass": 4,
         "itemSubClass": 0,
         "itemLevel": 108,
-        "sources": [
-            {
-                "instanceId": -1,
-                "encounterId": 1313
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -234707,12 +233611,6 @@
             "stamina": 0,
             "crit": 6666
         },
-        "sources": [
-            {
-                "instanceId": -1,
-                "encounterId": 1311
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -234808,12 +233706,6 @@
         "itemClass": 4,
         "itemSubClass": 0,
         "itemLevel": 108,
-        "sources": [
-            {
-                "instanceId": -1,
-                "encounterId": 1311
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -235102,16 +233994,6 @@
             "intellect": 6666,
             "stamina": 0
         },
-        "sources": [
-            {
-                "instanceId": 1300,
-                "encounterId": 2662
-            },
-            {
-                "instanceId": -32,
-                "encounterId": 1300
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -235168,12 +234050,6 @@
             "intellect": 6666,
             "stamina": 0
         },
-        "sources": [
-            {
-                "instanceId": -1,
-                "encounterId": 1309
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -235538,24 +234414,6 @@
             "stamina": 0,
             "unallocated": 6666
         },
-        "sources": [
-            {
-                "instanceId": 1312,
-                "encounterId": 2782
-            },
-            {
-                "instanceId": 1312,
-                "encounterId": 2827
-            },
-            {
-                "instanceId": 1312,
-                "encounterId": 2828
-            },
-            {
-                "instanceId": 1312,
-                "encounterId": 2829
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -239124,12 +237982,6 @@
             "stamina": 0,
             "haste": 6666
         },
-        "sources": [
-            {
-                "instanceId": -92,
-                "encounterId": -92
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -239149,20 +238001,6 @@
             "intellect": 0,
             "stamina": 0
         },
-        "sources": [
-            {
-                "instanceId": -98,
-                "encounterId": -98
-            },
-            {
-                "instanceId": -99,
-                "encounterId": -99
-            },
-            {
-                "instanceId": -92,
-                "encounterId": -92
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -239182,16 +238020,6 @@
             "intellect": 6666,
             "stamina": 0
         },
-        "sources": [
-            {
-                "instanceId": -98,
-                "encounterId": -98
-            },
-            {
-                "instanceId": -92,
-                "encounterId": -92
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -239211,20 +238039,6 @@
             "intellect": 6666,
             "stamina": 0
         },
-        "sources": [
-            {
-                "instanceId": -98,
-                "encounterId": -98
-            },
-            {
-                "instanceId": -99,
-                "encounterId": -99
-            },
-            {
-                "instanceId": -92,
-                "encounterId": -92
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -239244,16 +238058,6 @@
             "intellect": 6666,
             "stamina": 0
         },
-        "sources": [
-            {
-                "instanceId": -98,
-                "encounterId": -98
-            },
-            {
-                "instanceId": -92,
-                "encounterId": -92
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -239273,12 +238077,6 @@
             "intellect": 6666,
             "stamina": 0
         },
-        "sources": [
-            {
-                "instanceId": -92,
-                "encounterId": -92
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -239444,12 +238242,6 @@
             "intellect": 6666,
             "stamina": 0
         },
-        "sources": [
-            {
-                "instanceId": -92,
-                "encounterId": -92
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -239469,12 +238261,6 @@
             "intellect": 6666,
             "stamina": 0
         },
-        "sources": [
-            {
-                "instanceId": -92,
-                "encounterId": -92
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -239873,12 +238659,6 @@
             "type": "trinket",
             "name": "Radiant Sunstone"
         },
-        "sources": [
-            {
-                "encounterId": 476,
-                "instanceId": -96
-            }
-        ],
         "levelRange": []
     },
     {
@@ -241470,12 +240250,6 @@
             "stamina": 0,
             "haste": 6666
         },
-        "sources": [
-            {
-                "instanceId": -84,
-                "encounterId": -84
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -241496,12 +240270,6 @@
             "intellect": 6666,
             "stamina": 0
         },
-        "sources": [
-            {
-                "instanceId": -84,
-                "encounterId": -84
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -241523,12 +240291,6 @@
             "stamina": 0,
             "haste": 6666
         },
-        "sources": [
-            {
-                "instanceId": -84,
-                "encounterId": -84
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -241549,12 +240311,6 @@
             "intellect": 6666,
             "stamina": 0
         },
-        "sources": [
-            {
-                "instanceId": -84,
-                "encounterId": -84
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -241575,12 +240331,6 @@
             "intellect": 6666,
             "stamina": 0
         },
-        "sources": [
-            {
-                "instanceId": -84,
-                "encounterId": -84
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -248314,12 +247064,6 @@
             "stamina": 0,
             "crit": 6666
         },
-        "sources": [
-            {
-                "instanceId": -85,
-                "encounterId": -85
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -248341,12 +247085,6 @@
             "stamina": 0,
             "haste": 6666
         },
-        "sources": [
-            {
-                "instanceId": -85,
-                "encounterId": -85
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -248367,12 +247105,6 @@
             "intellect": 6666,
             "stamina": 0
         },
-        "sources": [
-            {
-                "instanceId": -85,
-                "encounterId": -85
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -248393,12 +247125,6 @@
             "intellect": 6666,
             "stamina": 0
         },
-        "sources": [
-            {
-                "instanceId": -85,
-                "encounterId": -85
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -248419,12 +247145,6 @@
             "intellect": 6666,
             "stamina": 0
         },
-        "sources": [
-            {
-                "instanceId": -85,
-                "encounterId": -85
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -254638,12 +253358,6 @@
             "stamina": 0,
             "mastery": 6666
         },
-        "sources": [
-            {
-                "instanceId": -92,
-                "encounterId": -92
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -263068,29 +261782,13 @@
             "stamina": 0,
             "versatility": 6666
         },
-        "sources": [
-            {
-                "instanceId": -69,
-                "encounterId": -69
-            }
-        ],
         "squishEra": 2,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
             "name": "Ultradon Cuirass"
         },
-        "levelRange": [
-            272,
-            276,
-            285,
-            289,
-            295,
-            302,
-            308,
-            315,
-            321
-        ]
+        "levelRange": []
     },
     {
         "id": 264701,
@@ -263141,12 +261839,6 @@
             "intellect": 6666,
             "stamina": 0
         },
-        "sources": [
-            {
-                "instanceId": -92,
-                "encounterId": -92
-            }
-        ],
         "squishEra": 2,
         "slot": "Trinket",
         "effect": {
@@ -263185,12 +261877,6 @@
             "stamina": 0,
             "haste": 6666
         },
-        "sources": [
-            {
-                "instanceId": -92,
-                "encounterId": -92
-            }
-        ],
         "squishEra": 2,
         "slot": "Trinket",
         "effect": {
@@ -265991,12 +264677,6 @@
             "intellect": 6666,
             "stamina": 0
         },
-        "sources": [
-            {
-                "instanceId": 1320,
-                "encounterId": 2882
-            }
-        ],
         "squishEra": 2,
         "slot": "Trinket",
         "effect": {
@@ -266199,12 +264879,6 @@
             "stamina": 0,
             "mastery": 6666
         },
-        "sources": [
-            {
-                "instanceId": 1320,
-                "encounterId": 2895
-            }
-        ],
         "squishEra": 2,
         "slot": "Trinket",
         "effect": {
@@ -266266,12 +264940,6 @@
             "intellect": 6666,
             "stamina": 0
         },
-        "sources": [
-            {
-                "instanceId": 1320,
-                "encounterId": 2887
-            }
-        ],
         "squishEra": 2,
         "slot": "Trinket",
         "effect": {
@@ -266355,12 +265023,6 @@
             "stamina": 0,
             "mastery": 6666
         },
-        "sources": [
-            {
-                "instanceId": 1320,
-                "encounterId": 2871
-            }
-        ],
         "squishEra": 2,
         "slot": "Trinket",
         "effect": {
@@ -266382,12 +265044,6 @@
             "stamina": 0,
             "crit": 6666
         },
-        "sources": [
-            {
-                "instanceId": 1320,
-                "encounterId": 2895
-            }
-        ],
         "squishEra": 2,
         "slot": "Trinket",
         "effect": {
@@ -269483,12 +268139,6 @@
             "intellect": 6666,
             "stamina": 0
         },
-        "sources": [
-            {
-                "instanceId": -94,
-                "encounterId": -94
-            }
-        ],
         "squishEra": 2,
         "slot": "Trinket",
         "effect": {
@@ -269510,12 +268160,6 @@
             "intellect": 6666,
             "stamina": 0
         },
-        "sources": [
-            {
-                "instanceId": -94,
-                "encounterId": -94
-            }
-        ],
         "squishEra": 2,
         "slot": "Trinket",
         "effect": {
@@ -269537,12 +268181,6 @@
             "intellect": 6666,
             "stamina": 0
         },
-        "sources": [
-            {
-                "instanceId": -94,
-                "encounterId": -94
-            }
-        ],
         "squishEra": 2,
         "slot": "Trinket",
         "effect": {
@@ -269565,12 +268203,6 @@
             "stamina": 0,
             "haste": 6666
         },
-        "sources": [
-            {
-                "instanceId": -94,
-                "encounterId": -94
-            }
-        ],
         "squishEra": 2,
         "slot": "Trinket",
         "effect": {
@@ -269593,12 +268225,6 @@
             "stamina": 0,
             "haste": 6666
         },
-        "sources": [
-            {
-                "instanceId": -94,
-                "encounterId": -94
-            }
-        ],
         "squishEra": 2,
         "slot": "Trinket",
         "effect": {
@@ -270626,12 +269252,6 @@
             "stamina": 0,
             "crit": 6666
         },
-        "sources": [
-            {
-                "instanceId": -95,
-                "encounterId": -95
-            }
-        ],
         "squishEra": 2,
         "slot": "Trinket",
         "effect": {
@@ -270654,12 +269274,6 @@
             "stamina": 0,
             "haste": 6666
         },
-        "sources": [
-            {
-                "instanceId": -95,
-                "encounterId": -95
-            }
-        ],
         "squishEra": 2,
         "slot": "Trinket",
         "effect": {
@@ -270681,12 +269295,6 @@
             "intellect": 6666,
             "stamina": 0
         },
-        "sources": [
-            {
-                "instanceId": -95,
-                "encounterId": -95
-            }
-        ],
         "squishEra": 2,
         "slot": "Trinket",
         "effect": {
@@ -270708,12 +269316,6 @@
             "intellect": 6666,
             "stamina": 0
         },
-        "sources": [
-            {
-                "instanceId": -95,
-                "encounterId": -95
-            }
-        ],
         "squishEra": 2,
         "slot": "Trinket",
         "effect": {
@@ -270735,12 +269337,6 @@
             "intellect": 6666,
             "stamina": 0
         },
-        "sources": [
-            {
-                "instanceId": -95,
-                "encounterId": -95
-            }
-        ],
         "squishEra": 2,
         "slot": "Trinket",
         "effect": {
@@ -282419,12 +281015,6 @@
             "intellect": 6666,
             "stamina": 0
         },
-        "sources": [
-            {
-                "instanceId": -1,
-                "encounterId": 1322
-            }
-        ],
         "squishEra": 2,
         "slot": "Trinket",
         "effect": {
@@ -282636,16 +281226,6 @@
             "stamina": 0,
             "crit": 6666
         },
-        "sources": [
-            {
-                "instanceId": -98,
-                "encounterId": -98
-            },
-            {
-                "instanceId": -99,
-                "encounterId": -99
-            }
-        ],
         "squishEra": 2,
         "slot": "Trinket",
         "effect": {
@@ -282667,16 +281247,6 @@
             "stamina": 0,
             "haste": 6666
         },
-        "sources": [
-            {
-                "instanceId": -98,
-                "encounterId": -98
-            },
-            {
-                "instanceId": -99,
-                "encounterId": -99
-            }
-        ],
         "squishEra": 2,
         "slot": "Trinket",
         "effect": {
@@ -282698,16 +281268,6 @@
             "stamina": 0,
             "versatility": 6666
         },
-        "sources": [
-            {
-                "instanceId": -98,
-                "encounterId": -98
-            },
-            {
-                "instanceId": -99,
-                "encounterId": -99
-            }
-        ],
         "squishEra": 2,
         "slot": "Trinket",
         "effect": {
@@ -288318,12 +286878,6 @@
             "stamina": 0,
             "haste": 6666
         },
-        "sources": [
-            {
-                "instanceId": -94,
-                "encounterId": -94
-            }
-        ],
         "squishEra": 2,
         "slot": "Trinket",
         "effect": {
@@ -288344,12 +286898,6 @@
             "intellect": 6666,
             "stamina": 0
         },
-        "sources": [
-            {
-                "instanceId": -94,
-                "encounterId": -94
-            }
-        ],
         "squishEra": 2,
         "slot": "Trinket",
         "effect": {

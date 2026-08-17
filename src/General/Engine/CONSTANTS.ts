@@ -58,7 +58,8 @@ export const CONSTANTS = {
         "Restoration Shaman": 264,
         "Mistweaver Monk": 270,
         "Restoration Druid": 105,
-    }
+    },
+    modelDiff: 1.5,
 
 }
 

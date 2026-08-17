@@ -46,6 +46,13 @@ import Neltharus from "../../../Images/MythicPlus/Neltharus.png";
 import HallsofInfusion from "../../../Images/MythicPlus/HallsofInfusion.png";
 import BrackenhideHollow from "../../../Images/MythicPlus/BrackenhideHollow.png";
 
+import DenOfNalorakk from "../../../Images/MythicPlus/DenofNalorakk.png";
+import MurderRow from "../../../Images/MythicPlus/MurderRow.png";
+import BlindingVale from "../../../Images/MythicPlus/BlindingVale.png";
+import VoidscarArena from "../../../Images/MythicPlus/VoidscarArena.png";
+import KingsRest from "../../../Images/MythicPlus/KingsRest.png";
+import TempleofSethraliss from "../../../Images/MythicPlus/TempleofSethraliss.png";
+
 import HallsofValor from "../../../Images/MythicPlus/HallsOfValor.png";
 import CourtofStars from "../../../Images/MythicPlus/CourtofStars.png";
 import ShadowmoonBurialGrounds from "../../../Images/MythicPlus/ShadowmoonBurialGrounds.png";
@@ -231,6 +238,24 @@ export default function DungeonHeaderIcons(props) {
   if (props === 1203) {
     // The Azure Vault
     source = TheAzureVault;
+  }
+  if (props === 1311) {
+    source = DenOfNalorakk;
+  }
+  if (props === 1304) {
+    source = MurderRow;
+  }
+  if (props === 1313) {
+    source = VoidscarArena;
+  }
+  if (props === 1041) {
+    source = KingsRest;
+  }
+  if (props === 1030) {
+    source = TempleofSethraliss;
+  }
+  if (props === 1309) {
+    source = BlindingVale;
   }
   if (props === 1199) {
     // Neltharus

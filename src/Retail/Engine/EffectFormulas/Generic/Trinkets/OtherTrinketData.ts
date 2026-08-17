@@ -126,10 +126,9 @@ export const otherTrinketData = [
   },
         { 
     name: "Crucible of Erratic Energies",
-    description: "A powerful crit / leech stat stick that's STILL very overbudget. Includes the world buffs available since they work in raids / dungeons too. You can turn this off in settings. Further nerfs possible.",
-    warningFlag: true,
+    description: "A powerful crit / leech stat stick that's a little overbudget. Includes the world buffs available since they work in raids / dungeons too. You can turn this off in settings.",
     setting: true,
-    addonDescription: "A powerful crit / leech stat stick that's STILL very overbudget. Includes the world buffs available since they work in raids / dungeons too. You can turn this off in settings. Further nerfs possible.",
+    addonDescription: "",
     effects: [
       {
         duration: 10,

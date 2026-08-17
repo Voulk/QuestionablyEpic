@@ -3,6 +3,7 @@ type embellishmentData = {
   icon: string; // Shown in the Embellishment Chart
   armorType: 0 | 1 | 2 | 3 | 4; // Cloth, Leather etc.
   name: string;
+  warningFlag?: boolean; // True if we want to display a red symbol on the chart.
   pieces?: 1 | 2; // Number of pieces required for the effect. Always 1 or 2.
   effect: {
     type: "embellishment";
@@ -16,6 +17,7 @@ export const embellishmentDB: embellishmentData[] = [
     icon: "inv_12_profession_blacksmithing_weightstone_green",
     armorType: 0, // Works on Weapons
     name: "Hunter's Ritual Stone",
+    warningFlag: true,
     effect: {
       type: "embellishment",
       name: "Hunter's Ritual Stone",
@@ -56,6 +58,7 @@ export const embellishmentDB: embellishmentData[] = [
     icon: "inv_12_profession_jewelcrafting_ring3_silver",
     armorType: 0, // Ring
     name: "Loa Worshiper's Band",
+    warningFlag: true,
     effect: {
       type: "embellishment",
       name: "Loa Worshiper's Band",

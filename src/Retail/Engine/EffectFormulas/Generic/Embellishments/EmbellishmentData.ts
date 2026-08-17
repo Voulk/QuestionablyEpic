@@ -367,7 +367,7 @@ export const embellishmentData = [
       */
         id: 0,
         name: "Loa Worshiper's Band",
-        description: "",
+        description: "Only procs off DPS spells. That makes it a difficult choice for non-Discipline specs, unless you are in an environment where you will DPS a lot.",
         effects: [
         { // Capybara / Int buff - 40
             scalingClass: -1,
@@ -449,8 +449,8 @@ export const embellishmentData = [
         ],
         runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
             let bonus_stats: Stats = {};
-            console.log(additionalData);
-            const minStat = (Object.keys(additionalData.setStats).length > 1) ? Object.keys(additionalData.setStats).filter(x => x !== "critMult").reduce((a, b) => additionalData.setStats[a] < additionalData.setStats[b] ? a : b) : "versatility";
+
+            const minStat = (Object.keys(additionalData.setStats).length > 1) ? Object.keys(additionalData.setStats).filter(x => x !== "critMult" && x !== "manaPerc").reduce((a, b) => additionalData.setStats[a] < additionalData.setStats[b] ? a : b) : "versatility";
 
             bonus_stats[minStat] = runGenericPPMTrinket({...data[0], stat: minStat}, itemLevel, additionalData.setStats);
 
