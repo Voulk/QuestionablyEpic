@@ -1152,7 +1152,7 @@ function compileStats(stats: Stats, bonus_stats: Stats) {
   for (var stat in stats) {
     if (stat === "manaPerc") stats[stat] = (stats[stat] || 1) * (bonus_stats[stat] || 1);
     else stats[stat] += stat in bonus_stats ? bonus_stats[stat] : 0;
-    stats[stat] = Math.max(stats[stat], 0); // Make sure we don't have negative stats. Some effects can bring us below 0, but gear can make up for it.
+    stats[stat] = (stat === "hps" ? stats[stat] : Math.max(stats[stat], 0)); // Make sure we don't have negative stats. Some effects can bring us below 0, but gear can make up for it.
   }
 
   return stats;
