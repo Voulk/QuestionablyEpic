@@ -189,6 +189,32 @@ function IndicatorOverlay({ formattedGraphicalItems, indicators, hoverSlice }) {
   );
 }
 
+function TrinketTooltip({ active, payload, label, hoverSlice, breakdown, data, currentLanguage }) {
+  if (!active || !payload || !payload.length) return null;
+  const itemId = payload[0].payload && payload[0].payload.name;
+  if (!breakdown && (!hoverSlice || hoverSlice.id !== itemId)) return null;
+  return (
+    <div className="trinket-tooltip">
+      <div className="trinket-tooltip-label">{getTranslatedItemName(label, currentLanguage)}</div>
+      {payload.map((entry) => {
+        const name = entry.dataKey;
+        const hovered = !breakdown && hoverSlice && hoverSlice.id === itemId && hoverSlice.ilvl == name;
+        let text;
+        if (entry.value <= 0) text = "Unobtainable";
+        else if (breakdown) text = Math.round(entry.value);
+        else text = data.filter((row) => row.id === itemId).map((row) => row["i" + name]).toString();
+        const displayName = breakdown ? (name === "passive" ? "Passive Stats" : "Effect") : name;
+        return (
+          <div key={String(name)} className={"trinket-tooltip-row" + (hovered ? " is-hovered" : "")} style={{ color: entry.color }}>
+            {hovered ? "▸ " : ""}
+            {displayName} : {text}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 function IndicatorLegend({ items }) {
   return (
     <ul className="recharts-default-legend" style={{ padding: 0, margin: 0, textAlign: "center" }}>
@@ -351,27 +377,16 @@ export default class VerticalChart extends PureComponent {
           <XAxis type="number" stroke="#f5f5f5" orientation="top" xAxisId={1} padding={0} height={1} axisLine={false} />
           <Tooltip
             cursor={false}
-            labelStyle={{ color: "#ffffff" }}
-            contentStyle={{
-              backgroundColor: "#1b1b1b",
-              border: "1px solid rgba(255, 255, 255, 0.12)",
-            }}
             isAnimationActive={false}
-            labelFormatter={(timeStr) => getTranslatedItemName(timeStr, currentLanguage)}
-            formatter={(value, name, props) => {
-              if (value <= 0) return ["Unobtainable", name];
-              if (breakdown) {
-                const isPassive = name === "passive";
-                return [Math.round(value), isPassive ? "Passive Stats" : "Effect"];
-              }
-              return [
-                data
-                  .filter((filter) => filter.id === props["payload"].name)
-                  .map((key) => key["i" + name])
-                  .toString(),
-                name,
-              ];
-            }}
+            wrapperStyle={{ pointerEvents: "none" }}
+            content={
+              <TrinketTooltip
+                hoverSlice={hoverSlice}
+                breakdown={breakdown}
+                data={data}
+                currentLanguage={currentLanguage}
+              />
+            }
           />
           <Legend
             verticalAlign="top"
