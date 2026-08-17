@@ -3,3 +3,20 @@
   font-size: 0.9rem;
 }
 
+.ResponsiveContainer2 .recharts-legend-item-text {
+  color: inherit !important;
+}
+
+.ResponsiveContainer2 .recharts-default-legend {
+  line-height: 22px;
+}
+
+.ResponsiveContainer2 .recharts-legend-item {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.ResponsiveContainer2 .recharts-default-legend + .recharts-default-legend {
+  margin-top: 8px;
+}
+

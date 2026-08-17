@@ -362,6 +362,7 @@ export default function TrinketChart({ player }) {
                   theme={themeSelection(theme ? "candidate2" : "candidate21")}
                   gameType={gameType}
                   breakdown={breakdown}
+                  player={player}
                 />
               </Grid>
             </Grid>
