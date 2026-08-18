@@ -31,11 +31,11 @@ export const embellishmentData = [
       { // Proc for all secondary stats. +1% power for each unique gem colour in gear.
         id: 273059,
         name: "Hunter's Ritual Stone",
-        description: "Extremely overbudget, but only procs off DPS spells. Worth using if you play Discipline, or if you're in an environment where you will DPS a lot.",
+        description: "Recently nerfed.",
         effects: [
         { // 
             scalingClass: -790,
-            coefficient: 0.830768,
+            coefficient: 0.507458,
             stat: "all",
             duration: 15,
             ppm: 3,
@@ -352,6 +352,7 @@ export const embellishmentData = [
 
             const enemyType = (getSetting(additionalData.settings, "darkmoonHuntStat") ?? "mastery").toLowerCase();
 
+            console.log(processedValue(data[0], itemLevel))
             bonus_stats[enemyType] = runGenericPPMTrinket({...data[0], stat: enemyType}, itemLevel, additionalData.setStats);
 
             return bonus_stats;

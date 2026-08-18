@@ -1,4 +1,4 @@
-import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket, forceGenericOnUseTrinket, runGenericRandomPPMTrinket, runGenericOnUseTrinket, getHighestStat, runGenericPPMTrinketHasted, runGenericFlatProc } from "../EffectUtilities";
+import { convertPPMToUptimeExtended, getSetting, processedValue, runGenericPPMTrinket, forceGenericOnUseTrinket, runGenericRandomPPMTrinket, runGenericOnUseTrinket, getHighestStat, runGenericPPMTrinketHasted, runGenericFlatProc } from "../EffectUtilities";
 
 /*
 S2 Special Effect Items
@@ -17,7 +17,7 @@ S2 Special Effect Items
 
 export const effectData = [
         { 
-    name: "Chausses of Unbound Rancor",
+    name: "Awoken Dreadfang Cuirass",
     effects: [
       {
         coefficient: 1.264787, 
@@ -73,7 +73,7 @@ export const effectData = [
     },
   },
         { 
-    name: "Awoken Dreadfang Cuirass",
+    name: "Chausses of Unbound Rancor",
     effects: [
       {
         coefficient: 1.264787, 
@@ -106,13 +106,13 @@ export const effectData = [
     name: "Aqirbane Reliquary",
     effects: [
       {
-        coefficient: 1.264787, 
+        coefficient: 0.951328, 
         scalingClass: -72,
         ppm: 2,
         duration: 12,
       },
       {
-        coefficient: -0.210792, 
+        coefficient: -0.158555, 
         scalingClass: -72,
         ppm: 2,
         duration: 12,
@@ -126,6 +126,7 @@ export const effectData = [
       bonus_stats.versatility = negativeStats;
       bonus_stats.haste = negativeStats;
       bonus_stats.mastery = negativeStats;
+
 
       //console.log("Neck", bonus_stats);
 
