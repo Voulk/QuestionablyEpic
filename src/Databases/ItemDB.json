@@ -279444,7 +279444,7 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "crit": 7000
+            "mastery": 7000
         },
         "sources": [
             {
@@ -279470,7 +279470,7 @@
         "stats": {
             "intellect": 5259,
             "stamina": 7889,
-            "mastery": 7000
+            "crit": 7000
         },
         "sources": [
             {

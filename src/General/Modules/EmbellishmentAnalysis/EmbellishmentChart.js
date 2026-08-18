@@ -145,7 +145,7 @@ export default class EmbelChart extends PureComponent {
     /* ----------------------- Y-Axis Label Customization ----------------------- */
     const CustomizedYAxisTick = ({ x, y, payload, data}) => {
       const row = payload?.payload ?? data?.[payload.index];
-      console.log(row);
+
       const rowName = row ? row.name : "Unknown Item" //getTranslatedItemName(row.id, currentLanguage) : "";
       return (
         <g transform={`translate(${x},${y})`}>
