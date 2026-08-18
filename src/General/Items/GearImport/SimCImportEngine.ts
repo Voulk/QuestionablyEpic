@@ -251,15 +251,17 @@ export function runSimC(simCInput: string, player: Player, contentType: contentT
     processAllLines(player, contentType, lines, linkedItems, vaultItems, playerSettings, autoUpgradeVault, autoUpgradeAll);
 
     if (autoCatalyze) {
-      // The catalyst inherits slot/socket/tertiary/level from the source, so two sources
-      // that differ in socket or tertiary produce genuinely different tier pieces and
-      // both should be kept. Group by (slot, socket, tertiary) and pick the highest-level
-      // source per group.
-      const bestPerVariant = new Map<string, Item>();
+      // Keep the original piece in the listing and add a catalyzed copy for Top Gear.
+      const catalyzedCopies: Item[] = [];
       player.activeItems.forEach((item: Item) => {
         if (!item.canBeCatalyzed()) return;
-        player.catalyzeItemInPlace(item)
+        const catalyzed = item.clone();
+        catalyzed.stats = { ...item.stats };
+        catalyzed.convertToTier(player.spec);
+        catalyzed.isCatalystItem = true;
+        catalyzedCopies.push(catalyzed);
       });
+      player.activeItems.push(...catalyzedCopies);
     }
 
     player.savedPTRString = simCInput;
