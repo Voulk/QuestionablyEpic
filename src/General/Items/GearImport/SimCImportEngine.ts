@@ -475,6 +475,7 @@ export function processItem(line: string, player: Player, contentType: contentTy
     missiveStats: string[];
     effect?: ItemEffect | null;
     itemConversion?: number;
+    redirectedBaseStats?: number;
   }
 
   let protoItem: ProtoItem = {
@@ -522,6 +523,7 @@ export function processItem(line: string, player: Player, contentType: contentTy
     else if (info.includes("gem_id=")) gemID = info.split("=")[1].split("/");
     else if (info.includes("enchant_id=")) enchantID = parseInt(info.split("=")[1]);
     else if (info.includes("titan_disc_id=")) titanDisc = parseInt(info.split("=")[1]);
+    else if (info.includes("redirected_base_stats=")) protoItem.redirectedBaseStats = parseInt(info.split("=")[1]);
     else if (info.includes("id=") && !(info.includes("gem_bonus_id="))) protoItem.id = parseInt(info.split("=")[1]);
     else if (info.includes("drop_level=")) dropLevel = parseInt(info.split("=")[1]);
     else if (info.includes("crafted_stats=")) {
@@ -692,10 +694,14 @@ export function processItem(line: string, player: Player, contentType: contentTy
   if (protoItem.level > 50 && protoItem.id !== 0 && getItem(protoItem.id) !== "" && isSuitable) {
 
 
-    let itemAllocations = getItemAllocations(protoItem.id, protoItem.missiveStats);
+    const redirectedId = protoItem.redirectedBaseStats || 0;
+    const useRedirectedStats = Boolean(redirectedId && getItem(redirectedId));
+    const statSourceId = useRedirectedStats ? redirectedId : protoItem.id;
+
+    let itemAllocations = getItemAllocations(statSourceId, protoItem.missiveStats);
     itemAllocations = Object.keys(specialAllocations).length > 0 ? compileStats(itemAllocations, specialAllocations) : itemAllocations;
     
-    let item = new Item(protoItem.id, "", protoItem.slot, protoItem.sockets || checkDefaultSocket(protoItem.id), protoItem.tertiary, 0, protoItem.level, bonusIDS);
+    let item = new Item(protoItem.id, "", protoItem.slot, protoItem.sockets || checkDefaultSocket(protoItem.id), protoItem.tertiary, 0, protoItem.level, bonusIDS, "Retail", useRedirectedStats ? redirectedId : 0);
     if (craftedIDs) item.craftedStats = craftedIDs;
     // Make some further changes to our item based on where it's located and if it's equipped.
     item.vaultItem = type === "Vault";
@@ -711,7 +717,8 @@ export function processItem(line: string, player: Player, contentType: contentTy
     if (Object.keys(itemBonusStats).length > 0) item.addStats(itemBonusStats);
 
     // Special effects. Note we handle them here instead of in the items constructor in case the player has added an effect to an item like an Embellishment.
-    item.effect = protoItem.effect ? protoItem.effect : getItemProp(protoItem.id, "effect");
+    // Post-12.1 catalyzed pieces keep the source item's secondaries and cantrips (redirected_base_stats).
+    item.effect = protoItem.effect ? protoItem.effect : getItemProp(statSourceId, "effect");
 
     if (item.vaultItem) item.uniqueEquip = "vault";
     else if (protoItem.uniqueTag !== "") item.uniqueEquip = protoItem.uniqueTag;
