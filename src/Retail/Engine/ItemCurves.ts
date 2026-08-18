@@ -18813,5 +18813,205 @@ export const curveDB: { [key: string]: CurveData } =
         "itemLevel": 192
       }
     ]
+  },
+  "105141": {
+    "curveId": 105141,
+    "points": [
+      {
+        "playerLevel": 1,
+        "itemLevel": 4
+      },
+      {
+        "playerLevel": 79,
+        "itemLevel": 120
+      },
+      {
+        "playerLevel": 80,
+        "itemLevel": 165
+      },
+      {
+        "playerLevel": 81,
+        "itemLevel": 174
+      },
+      {
+        "playerLevel": 82,
+        "itemLevel": 183
+      },
+      {
+        "playerLevel": 83,
+        "itemLevel": 192
+      },
+      {
+        "playerLevel": 84,
+        "itemLevel": 197
+      },
+      {
+        "playerLevel": 85,
+        "itemLevel": 204
+      },
+      {
+        "playerLevel": 86,
+        "itemLevel": 211
+      },
+      {
+        "playerLevel": 87,
+        "itemLevel": 217
+      },
+      {
+        "playerLevel": 88,
+        "itemLevel": 227
+      },
+      {
+        "playerLevel": 89,
+        "itemLevel": 237
+      },
+      {
+        "playerLevel": 90,
+        "itemLevel": 246
+      }
+    ]
+  },
+  "105142": {
+    "curveId": 105142,
+    "points": [
+      {
+        "playerLevel": 1,
+        "itemLevel": 7
+      },
+      {
+        "playerLevel": 79,
+        "itemLevel": 124
+      },
+      {
+        "playerLevel": 80,
+        "itemLevel": 174
+      },
+      {
+        "playerLevel": 81,
+        "itemLevel": 183
+      },
+      {
+        "playerLevel": 82,
+        "itemLevel": 192
+      },
+      {
+        "playerLevel": 83,
+        "itemLevel": 197
+      },
+      {
+        "playerLevel": 84,
+        "itemLevel": 204
+      },
+      {
+        "playerLevel": 85,
+        "itemLevel": 211
+      },
+      {
+        "playerLevel": 86,
+        "itemLevel": 217
+      },
+      {
+        "playerLevel": 87,
+        "itemLevel": 227
+      },
+      {
+        "playerLevel": 88,
+        "itemLevel": 237
+      },
+      {
+        "playerLevel": 89,
+        "itemLevel": 243
+      },
+      {
+        "playerLevel": 90,
+        "itemLevel": 253
+      }
+    ]
+  },
+  "109495": {
+    "curveId": 109495,
+    "points": [
+      {
+        "playerLevel": 70,
+        "itemLevel": 133
+      },
+      {
+        "playerLevel": 83,
+        "itemLevel": 133
+      },
+      {
+        "playerLevel": 84,
+        "itemLevel": 152
+      },
+      {
+        "playerLevel": 86,
+        "itemLevel": 152
+      },
+      {
+        "playerLevel": 87,
+        "itemLevel": 165
+      },
+      {
+        "playerLevel": 89,
+        "itemLevel": 165
+      },
+      {
+        "playerLevel": 90,
+        "itemLevel": 253
+      },
+      {
+        "playerLevel": 100,
+        "itemLevel": 253
+      }
+    ]
+  },
+  "109508": {
+    "curveId": 109508,
+    "points": [
+      {
+        "playerLevel": 80,
+        "itemLevel": 120
+      },
+      {
+        "playerLevel": 81,
+        "itemLevel": 133
+      },
+      {
+        "playerLevel": 82,
+        "itemLevel": 139
+      },
+      {
+        "playerLevel": 83,
+        "itemLevel": 145
+      },
+      {
+        "playerLevel": 84,
+        "itemLevel": 152
+      },
+      {
+        "playerLevel": 85,
+        "itemLevel": 159
+      },
+      {
+        "playerLevel": 86,
+        "itemLevel": 165
+      },
+      {
+        "playerLevel": 87,
+        "itemLevel": 174
+      },
+      {
+        "playerLevel": 88,
+        "itemLevel": 183
+      },
+      {
+        "playerLevel": 89,
+        "itemLevel": 192
+      },
+      {
+        "playerLevel": 90,
+        "itemLevel": 256
+      }
+    ]
   }
 }
