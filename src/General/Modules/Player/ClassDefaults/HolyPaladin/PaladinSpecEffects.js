@@ -15,13 +15,23 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
   const holyShockCPM = holyShockBaseCPM + (5 + 4 + 2 + 3) * 60/60; // Holy Shock raw + Divine Toll / Rising Sunlight
   const insuranceHealing = 1.2752 * 5 * player.getStatMults(['haste', 'crit', 'versatility', 'intellect', 'mastery'])
 
+  // Season 1
   if (effectName === "Holy Paladin S1-4") {
-    // We're unlikely to cap this, so every holy shock is basically just 8% of a spender.
+    // Holy Shock Beacon transfer
     bonus_stats.bonusHPS = 0.015;
   }
   else if (effectName === "Holy Paladin S1-2") {
-    // We're unlikely to cap this, so every holy shock is basically just 8% of a spender.
+    // Holy Shock healing increase
     bonus_stats.bonusHPS = 0.035;
+  }
+  // Season 2
+  else if (effectName === "Holy Paladin S2-4") {
+    // HL / Judgment can proc Infusion
+    bonus_stats.bonusHPS = 0.012;
+  }
+  else if (effectName === "Holy Paladin S2-2") {
+    // Infusion bonuses increased
+    bonus_stats.bonusHPS = 0.025;
   }
  
   // Tier Sets
