@@ -11,7 +11,7 @@ export const getHolyPriestSpecEffect = (effectName, player, contentType) => {
 
   }
   else if (effectName === "Holy Priest S2-2") {
-    bonus_stats.bonusHPS = 0.02;
+    bonus_stats.bonusHPS = 0.05;
 
   }
   else if (effectName === "Holy Priest S2-4") {
@@ -26,7 +26,7 @@ export const getHolyPriestSpecEffect = (effectName, player, contentType) => {
 
   }
   else if (effectName === "Holy Priest S1-4") {
-    bonus_stats.bonusHPS = 0.0302;
+    bonus_stats.bonusHPS = 0.022;
   }
   else if (effectName === "Holy Priest T31-2") { 
 

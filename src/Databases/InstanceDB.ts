@@ -123,7 +123,7 @@ export const retailInstanceDB: Record<string | number, any> = {
       2888: "Nek'zali",
       2874: "Entomed Sentinels",
       2894: "Lost Explorers",
-      2882: "Vashnikt",
+      2882: "Vashnik",
       2871: "Sszorak",
       2887: "Twin Fangs",
       2883: "Coiled Altar",
