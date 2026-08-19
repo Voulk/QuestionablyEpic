@@ -19,6 +19,14 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+          {
+    version: "12.1 / 5.5.4",
+    update: 5,
+    date: "August 16",
+    changes: [ 
+      "Fixed a few tier sets.",
+    ]
+  },
         {
     version: "12.1 / 5.5.4",
     update: 4,
