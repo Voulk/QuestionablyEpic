@@ -269,6 +269,7 @@ export class Player {
       Object.assign(newItem, { isCatalystItem: true });
       newItem.stats = originalItem.stats;
       newItem.active = true;
+      newItem.catalyzedID = originalItem.id;
       if (originalItem.uniqueEquip === "vault") {
         newItem.uniqueEquip = "vault";
         newItem.vaultItem = true;
