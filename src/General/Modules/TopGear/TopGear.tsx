@@ -464,6 +464,7 @@ export default function TopGear(props: any) {
         if (item.selectedOptions) newItem.selectedOptions = item.selectedOptions;
         if (isChosen) newItem.isChosen = true;
         if (item.catalyzedID) newItem.catalyzedID = item.catalyzedID;
+        if (item.isCatalystItem) newItem.isCatalystItem = true;
   
         shortReport.itemSet.itemList.push(newItem)
         itemsAdded.push(item.uniqueHash)
