@@ -250,7 +250,7 @@ export default function ItemCardReport(props) {
                   <Grid item xs>
                     <div style={{ display: "inline-flex", marginLeft: 4, height: 18, verticalAlign: "middle", alignItems: "center" }}>
                       <Typography variant="subtitle2" display="block" align="left" style={{ fontSize: "12px", lineHeight: "normal" }}>
-                        {socket} {statString} {reforgeText}
+                        {socket} {/*statString*/} {reforgeText}
                       </Typography>
                     </div>
                   </Grid>
