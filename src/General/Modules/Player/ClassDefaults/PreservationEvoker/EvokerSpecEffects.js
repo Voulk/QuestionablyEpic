@@ -43,11 +43,11 @@ export const getEvokerSpecEffect = (effectName, player, contentType, setStats) =
   }
   else if (effectName === "Preservation Evoker S2-2" && contentType === "Dungeon") {
     // Raid tier is just included in-model.
-      bonus_stats.hps = 0.09;
+      bonus_stats.bonusHPS = 0.09;
   }
   else if (effectName === "Preservation Evoker S2-4" && contentType === "Dungeon") {
     // Raid tier is just included in-model.
-      bonus_stats.hps = 0.4;
+      bonus_stats.bonusHPS = 0.04;
   }
   else if (effectName === "Evoker T31-2") {
     // 
