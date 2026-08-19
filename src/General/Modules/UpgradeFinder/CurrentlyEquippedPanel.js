@@ -40,6 +40,7 @@ export default function EquippedItems({ items, gameType, contentType = "Raid" })
               id={item.id}
               level={item.level}
               bonusIDS={item.bonusIDS}
+              catalyzedID={item.catalyzedID}
               domain={gameType === "Retail" ? "en" : "mop-classic"}
             >
               <Box

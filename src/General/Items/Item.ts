@@ -86,6 +86,7 @@ export class Item {
     if (getItemProp(id, "offspecWeapon", gameType)) this.flags.push("offspecWeapon");
     this.bonusIDS = bonusIDS || "";
     this.quality = getItemProp(id, "quality", gameType);
+    if (catalyzedID) this.catalyzedID = catalyzedID;
 
     if (gameType === "Classic") {
       const sockets = getItemProp(id, "sockets", gameType);
