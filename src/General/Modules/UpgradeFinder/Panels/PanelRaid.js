@@ -48,6 +48,7 @@ export default function RaidGearContainer(props) {
   const currentLanguage = i18n.language;
   const itemList = props.itemList;
   const itemDifferentials = props.itemDifferentials;
+  const subpanelsEnabled = props.playerSettings.itemTypes || ["Drop", "Upgraded", "Bonus Roll"]
 
   const gameType = useSelector((state) => state.gameType);
 
@@ -199,7 +200,7 @@ export default function RaidGearContainer(props) {
                               </UFAccordionSummary>
                               <AccordionDetails style={sharedAccordionDetailsStyles}>
                                 <Grid item xs={12} sm container direction="row" spacing={1}>
-                                  <Grid item xs={12} container spacing={1}>
+                                  {subpanelsEnabled.includes("Bonus Roll") ? <Grid item xs={12} container spacing={1}>
                                     <Grid item xs={12}>
                                       <div
                                         style={{
@@ -223,9 +224,9 @@ export default function RaidGearContainer(props) {
                                     {[...filterItemListByDropLoc(itemDifferentials, raidID, key, "Raid", firstDifficulty, "bonus")].map((item, index) => (
                                       <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
                                     ))}
-                                  </Grid>
+                                  </Grid> : null}
 
-                                  <Grid item xs={12} container spacing={1}>
+                                  {subpanelsEnabled.includes("Upgraded") ?<Grid item xs={12} container spacing={1}>
                                     <Grid item xs={12}>
                                       <Typography
                                         variant="h6"
@@ -245,9 +246,9 @@ export default function RaidGearContainer(props) {
                                     {[...filterItemListByDropLoc(itemDifferentials, raidID, key, "Raid", firstDifficulty, "max")].map((item, index) => (
                                       <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={false} />
                                     ))}
-                                  </Grid>
+                                  </Grid> : null }
 
-                                  {firstDifficulty !== -1 ? (
+                                  {firstDifficulty !== -1 && subpanelsEnabled.includes("Drop") ? (
                                     <Grid item xs={12} container spacing={1}>
                                       <Grid item xs={12}>
                                         <Typography

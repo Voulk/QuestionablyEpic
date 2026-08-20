@@ -38,7 +38,7 @@ export const monkDefaultSpecialQueries = (contentType) => {
       cooldownMult: {
         c60: 1,
         c90: 1,
-        c120: 1.5,
+        c120: 1,
         c180: 1,
       },
       HoldYourGroundUptime: 0.6

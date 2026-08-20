@@ -41,6 +41,7 @@ export default function MythicPlusGearContainer(props) {
   const gameType = useSelector((state) => state.gameType);
   const keyReward = getMPlusKeyReward(difficulty);
   const sameTrack = mplusEndAndVaultSameTrack(difficulty);
+  const subpanelsEnabled = props.playerSettings.itemTypes || ["Drop", "Upgraded", "Bonus Roll"]
 
   const contentGenerator = (gameType) => {
     return (
@@ -81,7 +82,7 @@ export default function MythicPlusGearContainer(props) {
                           </UFAccordionSummary>
                           <AccordionDetails style={sharedAccordionDetailsStyles}>
                             <Grid item xs={12} sm container direction="row" spacing={1}>
-                              <Grid item xs={12} container spacing={1}>
+                              {subpanelsEnabled.includes("Bonus Roll") ? <Grid item xs={12} container spacing={1}>
                                 <Grid item xs={12}>
                                   <div style={sectionHeaderStyle(true)}>
                                     <Typography variant="h6" color="primary" align="left">
@@ -92,9 +93,9 @@ export default function MythicPlusGearContainer(props) {
                                 {[...filterItemListByDropLoc(itemDifferentials, -1, key, "Dungeon", difficulty, "bonus")].map((item, index) => (
                                   <ItemUpgradeCard key={"bonus-" + index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.item, item.level)} slotPanel={false} />
                                 ))}
-                              </Grid>
+                              </Grid> : null}
 
-                              {!sameTrack ? (
+                              {!sameTrack && subpanelsEnabled.includes("Upgraded") ? (
                                 <Grid item xs={12} container spacing={1}>
                                   <Grid item xs={12}>
                                     <Typography variant="h6" color="primary" align="left" style={sectionHeaderStyle(false)}>
@@ -107,7 +108,7 @@ export default function MythicPlusGearContainer(props) {
                                 </Grid>
                               ) : null}
 
-                              <Grid item xs={12} container spacing={1}>
+                              {subpanelsEnabled.includes("Drop") ?<Grid item xs={12} container spacing={1}>
                                 <Grid item xs={12}>
                                   <Typography variant="h6" color="primary" align="left" style={sectionHeaderStyle(false)}>
                                     {keyReward.label} - End of Run ({keyReward.endIlvl} {keyReward.endTrack})
@@ -116,7 +117,7 @@ export default function MythicPlusGearContainer(props) {
                                 {[...filterItemListByDropLoc(itemDifferentials, -1, key, "Dungeon", difficulty, "drop")].map((item, index) => (
                                   <ItemUpgradeCard key={"drop-" + index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.item, item.level)} slotPanel={false} />
                                 ))}
-                              </Grid>
+                              </Grid> : null}
                             </Grid>
                           </AccordionDetails>
                         </UFAccordion>

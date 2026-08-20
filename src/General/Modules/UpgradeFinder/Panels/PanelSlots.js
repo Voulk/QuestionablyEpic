@@ -11,10 +11,19 @@ import { getTranslatedSlotName } from "locale/slotsLocale";
 import UFAccordion from "./ufComponents/ufAccordian";
 import UFAccordionSummary from "./ufComponents/ufAccordianSummary";
 
-function filterItemListBySlot(itemList, slot) {
+function filterItemListBySlot(itemList, slot, itemTypesEnabled) {
   const excludedInstance = [748, 749, 750, 751, 321, 752];
+  const dropTypes = {
+    "drop": itemTypesEnabled.includes("Drop"),
+    "bonus": itemTypesEnabled.includes("Bonus Roll"),
+    "max": itemTypesEnabled.includes("Upgraded"),
+  }
 
   let temp = itemList.filter(function (item) {
+    if (item.dropType && dropTypes[item.dropType] === false) {
+      return false;
+    }
+
     if ("source" in item && !excludedInstance.includes(item.source.instanceId) && item.source.encounterId !== 249) {
       if (slot === "AllMainhands") {
         return item.slot === "1H Weapon" || item.slot === "2H Weapon";
@@ -37,6 +46,8 @@ export default function SlotsContainer(props) {
   const currentLanguage = i18n.language;
   const itemDifferentials = props.itemDifferentials;
   const spec = props.spec;
+  const itemTypesEnabled = props.playerSettings.itemTypes
+  console.log(itemDifferentials);
 
   itemDifferentials.sort((a, b) => (a.score < b.score ? 1 : -1));
 
@@ -88,12 +99,12 @@ export default function SlotsContainer(props) {
           <img src={iconReturn(key.slot, spec)} height={30} width={30} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
           <Typography align="center" variant="h6" noWrap color="primary">
             {getTranslatedSlotName(key.label, currentLanguage)} -{" "}
-            {[...filterItemListBySlot(itemDifferentials, key.slot)].filter((item) => item.score > 0).length} Upgrades
+            {[...filterItemListBySlot(itemDifferentials, key.slot, itemTypesEnabled)].filter((item) => item.score > 0).length} Upgrades
           </Typography>
         </UFAccordionSummary>
         <AccordionDetails style={{ backgroundColor: "#191c23" }}>
           <Grid xs={12} container spacing={1}>
-            {[...filterItemListBySlot(itemDifferentials, key.slot)].map((item, index) => (
+            {[...filterItemListBySlot(itemDifferentials, key.slot, itemTypesEnabled)].map((item, index) => (
               <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={true} />
             ))}
           </Grid>

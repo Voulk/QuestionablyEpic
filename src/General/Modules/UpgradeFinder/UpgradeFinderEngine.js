@@ -115,6 +115,8 @@ export function runUpgradeFinder(player, contentType, currentLanguage, playerSet
 
   const moddedSettings = {...userSettings, forceTier: {value: "S2"}};
 
+  console.log(playerSettings);
+
   const baseHPS = player.getHPS(contentType);
   //userSettings.dominationSockets = "Upgrade Finder";
   const baseSet = runTopGear(baseItemList, wepList, player, contentType, baseHPS, moddedSettings, castModel);
@@ -381,13 +383,14 @@ function checkItemViable(rawItem, player) {
   const spec = player.getSpec();
   const acceptableArmorTypes = getValidArmorTypes(spec);
   const acceptableWeaponTypes = getValidWeaponTypes(spec, "Weapons");
-  const acceptableOffhands = getValidWeaponTypes(spec, "Offhands");
+  let acceptableOffhands = getValidWeaponTypes(spec, "Offhands");
+  if (player.spec === "Restoration Shaman" || player.spec === "Holy Paladin") acceptableOffhands = [6]; // Don't show offhands for Resto Sham or Holy Paladin.
   const classRestriction = getItemProp(rawItem.id, "classRestriction");
 
   // Check that the item is wearable by the given class. Could be split into an armor and weapons check for code cleanliness.
   const slotCheck =
     rawItem.slot === "Back" ||
-    (rawItem.itemClass === 4 && acceptableArmorTypes.includes(rawItem.itemSubClass)) ||
+    (rawItem.itemClass === 4 && rawItem.slot !== "Offhand" && acceptableArmorTypes.includes(rawItem.itemSubClass)) ||
     ((rawItem.slot === "Holdable" || rawItem.slot === "Offhand" || rawItem.slot === "Shield") && acceptableOffhands.includes(rawItem.itemSubClass)) ||
     (rawItem.itemClass === 2 && acceptableWeaponTypes.includes(rawItem.itemSubClass));
 
