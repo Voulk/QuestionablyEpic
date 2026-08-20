@@ -127,6 +127,8 @@ const craftedOptions = [
   "Mastery / Versatility",
 ]
 
+const itemTypeOptions = ["Drop", "Upgraded", "Bonus Roll"];
+
 const PvPRating = [
   { value: 0, label: "Unranked" },
   { value: 600, label: "Combatant I" },
@@ -215,13 +217,22 @@ export default function UpgradeFinderFront(props) {
   const [ufPvPRank, setUfPvPRank] = useState(() => getSessionStorageOrDefault("ufPvPRank", 0));
   const [ufCraftedLevel, setUfCraftedLevel] = useState(() => Math.min(getSessionStorageOrDefault("ufCraftedLevel", 2), 2));
   const [ufCraftedStats, setUfCraftedStats] = useState(() => getSessionStorageOrDefault("ufCraftedStats", "Crit / Haste"));
+  const [ufItemTypes, setUfItemTypes] = useState(() => {
+    const stored = getSessionStorageOrDefault("ufItemTypes", itemTypeOptions);
+    if (!Array.isArray(stored) || stored.length === 0) {
+      return [...itemTypeOptions];
+    }
+
+    return itemTypeOptions.filter((option) => stored.includes(option));
+  });
 
   const ufSettings = {
       raid: ufRaidDifficulty,
       dungeon: ufDungeonDifficulty,
       pvp: ufPvPRank,
       craftedLevel: ufCraftedLevel,
-      craftedStats: ufCraftedStats
+      craftedStats: ufCraftedStats,
+      itemTypes: ufItemTypes
   };
 
   useEffect(() => {
@@ -245,6 +256,10 @@ export default function UpgradeFinderFront(props) {
   }, [ufCraftedStats]);
 
   useEffect(() => {
+    setSessionStorage("ufItemTypes", ufItemTypes);
+  }, [JSON.stringify(ufItemTypes)]);
+
+  useEffect(() => {
     trackPageView(window.location.pathname + window.location.search);
   }, []);
 
@@ -259,6 +274,12 @@ export default function UpgradeFinderFront(props) {
   const setCraftedLevel = (event, newLevel) => {
     setUfCraftedLevel(newLevel);
   }
+
+  const setItemTypeSelection = (event, newItemTypes) => {
+    if (newItemTypes) {
+      setUfItemTypes(newItemTypes);
+    }
+  };
 
   const setDungeonDifficulty = (difficulty) => {
     if (difficulty <= MPLUS_KEY_REWARDS.length - 1 && difficulty >= 0) setUfDungeonDifficulty(difficulty);
@@ -576,6 +597,54 @@ export default function UpgradeFinderFront(props) {
         </div>
       </Paper>
     </Grid> ) : null}
+
+        {/* Item Types */}
+        {gameType === "Retail" ? (
+          <Grid item xs={12}>
+            <Paper elevation={3} sx={{ width: { xs: "100%", sm: "80%" }, margin: "auto" }}>
+              <div style={{ padding: 8 }}>
+                <Grid container justifyContent="center" spacing={1}>
+                  <Grid item xs={12}>
+                    <IconHeader
+                      icon={require("Images/Logos/DisplaySelectIcon.jpg")}
+                      alt="Item Types Icon"
+                      text={"Item Types"}
+                    />
+                    <Grid item xs={12}>
+                      <Typography align="center">{"Choose which item sources are included"}</Typography>
+                    </Grid>
+                  </Grid>
+                </Grid>
+
+                <Grid container justifyContent="center" spacing={1} columns={12} className={classes.difficultyGrid}>
+                  {itemTypeOptions.map((option) => (
+                    <Grid item xs={4} key={option}>
+                      <ToggleButton
+                        value={option}
+                        fullWidth
+                        selected={ufItemTypes.includes(option)}
+                        onChange={(event) => {
+                          const next = event.currentTarget.value;
+                          setUfItemTypes((current) =>
+                            current.includes(next)
+                              ? current.filter((item) => item !== next)
+                              : [...current, next]
+                          );
+                        }}
+                        classes={{
+                          root: classes.difficultyToggle,
+                          selected: classes.difficultyToggleSelected,
+                        }}
+                      >
+                        {option}
+                      </ToggleButton>
+                    </Grid>
+                  ))}
+                </Grid>
+              </div>
+            </Paper>
+          </Grid>
+        ) : null}
         {/* ------------------------------- PvP Section ------------------------------ */}
         {/*<Grid item xs={12}>
           <Paper elevation={0} style={{ width: "80%", margin: "auto" }}>

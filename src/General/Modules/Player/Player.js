@@ -274,6 +274,7 @@ export class Player {
         newItem.uniqueEquip = "vault";
         newItem.vaultItem = true;
       }
+      if (originalItem.effect) newItem.effect = originalItem.effect;
       newItem.quality = 4;
       newItem.upgradeTrack = originalItem.upgradeTrack;
       newItem.upgradeRank = originalItem.upgradeRank;

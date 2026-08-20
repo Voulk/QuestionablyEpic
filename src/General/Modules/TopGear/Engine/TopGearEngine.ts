@@ -828,7 +828,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
 
   // == Set Bonuses ==
   // --- Item Set Bonuses (usually tier) ---
-  const usedSets: any[] = []
+  let usedSets: any[] = []
   for (const set in setBonuses) {
     if (setBonuses[set] > 1) {
       const itemSet: ItemEffect[] = getItemSet(set, setBonuses[set], player.getSpec())
@@ -843,7 +843,9 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     if (userSettings.forceTier) {
       // Override tier. Used sometimes in upgrade finder where we want to compare items post-catalyst.
       effectList = effectList.filter(effect => effect.type !== "set bonus");
-      effectList = effectList.concat(getSeasonalTier(userSettings.forceTier.value, player.spec))
+      const seasonalTier = getSeasonalTier(userSettings.forceTier.value, player.spec);
+      effectList = effectList.concat(seasonalTier);
+      usedSets = seasonalTier.map(tier => tier.name);
     }
 
   }
@@ -1074,6 +1076,8 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   }
 
   if (evalStats.bonusHPS) {
+    console.log(evalStats.bonusHPS);
+    console.log(usedSets);
     hardScore *= ((evalStats.bonusHPS || 0) + 1);
   }
 

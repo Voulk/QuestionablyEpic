@@ -19,6 +19,17 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+    {
+    version: "12.1 / 5.5.4",
+    update: 0,
+    date: "August 16",
+    changes: [ 
+      "Upgrade Finder: Added filters so that you're not forced to see all of bonus roll / upgrades / drops at once.",
+      "Upgrade Finder: Offhands will no longer show up for Resto Shaman / Holy Paladin.",
+      "Catalyzing effect items will now correctly keep the effect.",
+      "Competitive Alternatives: Catalyzed items should now keep their updated tooltip."
+    ]
+  },
           {
     version: "12.1 / 5.5.4",
     update: 5,

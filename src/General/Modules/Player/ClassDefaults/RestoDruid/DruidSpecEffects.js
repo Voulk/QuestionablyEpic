@@ -24,7 +24,7 @@ export const getDruidSpecEffect = (effectName, player, contentType) => {
     bonus_stats.bonusHPS = 0.0204;
   }
   else if (effectName === "Restoration Druid S1-4") {
-    bonus_stats.bonusHPS = 0.007;
+    bonus_stats.bonusHPS = 0.003;
   }
   else if (effectName === "Druid T31-4") {
     // 
