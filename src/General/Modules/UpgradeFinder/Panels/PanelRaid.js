@@ -200,7 +200,7 @@ export default function RaidGearContainer(props) {
                               </UFAccordionSummary>
                               <AccordionDetails style={sharedAccordionDetailsStyles}>
                                 <Grid item xs={12} sm container direction="row" spacing={1}>
-                                  {subpanelsEnabled.includes("Bonus") ? <Grid item xs={12} container spacing={1}>
+                                  {subpanelsEnabled.includes("Bonus Roll") ? <Grid item xs={12} container spacing={1}>
                                     <Grid item xs={12}>
                                       <div
                                         style={{

@@ -20,7 +20,6 @@ function filterItemListBySlot(itemList, slot, itemTypesEnabled) {
   }
 
   let temp = itemList.filter(function (item) {
-    console.log(item);
     if (item.dropType && dropTypes[item.dropType] === false) {
       return false;
     }

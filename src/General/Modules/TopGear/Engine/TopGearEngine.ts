@@ -1076,8 +1076,6 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   }
 
   if (evalStats.bonusHPS) {
-    console.log(evalStats.bonusHPS);
-    console.log(usedSets);
     hardScore *= ((evalStats.bonusHPS || 0) + 1);
   }
 
