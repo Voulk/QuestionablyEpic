@@ -11,7 +11,7 @@
             "school": "nature",
             "cost": 3.6,
             "coeff": 1.248,
-            "aura": 0.8,
+            "aura": 0.86,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -28,7 +28,7 @@
         },
         {
             "coeff": 7.488,
-            "aura": 0.8,
+            "aura": 0.86,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -83,7 +83,7 @@
             "school": "nature",
             "cost": 3.0,
             "coeff": 2.58,
-            "aura": 2.9952,
+            "aura": 3.21945,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -104,7 +104,7 @@
             "school": "nature",
             "cost": 3.0,
             "coeff": 4.1696,
-            "aura": 0.8,
+            "aura": 0.86,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -186,7 +186,7 @@
         },
         {
             "coeff": 5.0,
-            "aura": 0.8,
+            "aura": 0.86,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -212,7 +212,7 @@
             },
             "targets": 5,
             "coeff": 11.0,
-            "aura": 0.8,
+            "aura": 0.86,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -241,7 +241,7 @@
             "targets": 20,
             "targetScript": "Sqrt",
             "coeff": 59.8828,
-            "aura": 0.8,
+            "aura": 0.86,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -403,7 +403,7 @@
             "school": "nature",
             "cost": 0.0,
             "coeff": 1.6,
-            "aura": 0.8,
+            "aura": 0.86,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -424,7 +424,7 @@
             "school": "nature",
             "cost": 0.0,
             "coeff": 2.1,
-            "aura": 0.8,
+            "aura": 0.86,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -498,7 +498,7 @@
             "school": "nature",
             "cost": 0.0,
             "coeff": 8.06,
-            "aura": 0.8,
+            "aura": 0.86,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -541,7 +541,7 @@
             "school": "nature",
             "cost": 0.0,
             "coeff": 0.7,
-            "aura": 0.8,
+            "aura": 0.86,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -602,8 +602,7 @@
             "cooldownData": {
                 "cooldown": 120.0,
                 "hasted": false
-            },
-            "buffDuration": 25.0
+            }
         }
     ],
     "Invigorating Mists": [
@@ -618,7 +617,7 @@
             "school": "nature",
             "cost": 0.0,
             "coeff": 3.2318,
-            "aura": 0.8,
+            "aura": 0.86,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
@@ -639,7 +638,7 @@
             "school": "nature",
             "cost": 0.0,
             "coeff": 0.001,
-            "aura": 0.8,
+            "aura": 0.86,
             "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",

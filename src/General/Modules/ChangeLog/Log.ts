@@ -19,10 +19,20 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+      {
+    version: "12.1 / 5.5.4",
+    update: 7,
+    date: "August 21",
+    changes: [ 
+      "In-game change: Aqirbane Reliquary now has all four secondaries instead of just crit",
+      "Preservation Evoker: Minor profile optimizations.",
+      "Upgrade Finder visual cleanup."
+    ]
+  },
     {
     version: "12.1 / 5.5.4",
-    update: 0,
-    date: "August 16",
+    update: 6,
+    date: "August 20",
     changes: [ 
       "Upgrade Finder: Added filters so that you're not forced to see all of bonus roll / upgrades / drops at once.",
       "Upgrade Finder: Offhands will no longer show up for Resto Shaman / Holy Paladin.",

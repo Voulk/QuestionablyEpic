@@ -9,10 +9,10 @@ export const defaultTalents = (talents: TalentTree, loadoutName: string, heroTre
     let halfTalents: string[] = []
 
     if (loadoutName === "default") talentsEnabled = [
-        "Natural Convergence", "Attuned to the Dream", "Bountiful Bloom", "Panacea", "Lush Growth", "Leaping Flames", "Regenerative Magic",
-
-        "Unshakable", "Golden Hour", "Time Lord", "Nozdormu's Teachings","Fluttering Seedlings", "Field of Dreams", "Call of Ysera", "Grace Period", "Ouroboros", "Temporal Artificer", "Energy Loop",
-        "Renewing Breath", "Timeless Magic", "Twin Echoes", "Tempo Charged", "Merithra's Blessing1", "Merithra's Blessing2", "Merithra's Blessing3", "Dream Simulacrum"
+        "Natural Convergence", "Attuned to the Dream", "Bountiful Bloom", "Panacea", "Lush Growth", "Leaping Flames", "Regenerative Magic", "Enkindled",
+        "Inner Flame",
+        "Exhilarating Burst", "Unshakable", "Golden Hour", "Time Lord", "Nozdormu's Teachings","Fluttering Seedlings", "Field of Dreams", "Call of Ysera", "Grace Period", "Ouroboros", "Temporal Artificer", "Energy Loop",
+        "Renewing Breath", "Timeless Magic", "Twin Echoes", "Tempo Charged", "Merithra's Blessing1", "Merithra's Blessing2", "Merithra's Blessing3", "Titan's Gift"
     ]
 
     // Apply talents
@@ -142,7 +142,8 @@ const specTalents: TalentTree = {
 
     /* Casting Dream Flight or Stasis increases your healing over time by $1242747s1% and causes Living Flame and Reversion to have a $1242747s2% increased chance to grant Essence Burst. Lasts $?s359816[Y][Z] sec.   */
     "Inner Flame": {id: 1242745, values: [0.0, 20.0, 15.0],  points: 0, maxPoints: 1, icon: "ability_evoker_infernosblessing", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
-
+        buffSpellPerc(spellDB["Dream Breath"], 50 * (1 / 6), 0);
+        buffSpellPerc(spellDB["Reversion"], 50 * (1 / 6), 0);
     }},
 
     /* Rewind's cooldown is reduced by ${X/-1000} sec. */
@@ -307,8 +308,9 @@ const classTalents: TalentTree = {
 
     /* Emerald Blossom and Verdant Embrace instantly heal you for $387763s1 when cast. */
     "Panacea": {id: 387761, values: [2.0],  points: 0, maxPoints: 1, icon: "ability_druid_protectionofthegrove", select: true, tier: 0, runFunc: function (state: any, spellDB: SpellDB, talentData: any, points: number) {
-        attachSpellEffect(spellDB["Emerald Blossom"], spellDB["Panacea"]);
-        attachSpellEffect(spellDB["Verdant Embrace"], spellDB["Panacea"]);
+        const panacea = [{...spellDB["Fluttering Seedlings"][0], specialLabel: "Panacea"}];
+        spellDB['Emerald Blossom'] = attachSpellEffect(spellDB['Emerald Blossom'], panacea);
+        spellDB['Verdant Embrace'] = attachSpellEffect(spellDB['Verdant Embrace'], panacea);
     }},
 
     /* Renewing Blaze restores you more quickly, causing damage you take to be healed back over $<newDur> sec. */

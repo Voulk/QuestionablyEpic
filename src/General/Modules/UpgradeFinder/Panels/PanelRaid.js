@@ -175,12 +175,12 @@ export default function RaidGearContainer(props) {
                                   >
                                     {bossHeaders({ id: key, style: { height: 36, verticalAlign: "middle" } })}
                                     <Divider flexItem orientation="vertical" style={{ margin: "0px 5px 0px 0px" }} />
-                                    {encounterDB[raidID].bosses[key]} -{" "}
-                                    {getNumUpgrades(itemDifferentials, raidID, key, firstDifficulty) +
+                                    {encounterDB[raidID].bosses[key]} {" "}
+                                    {/*getNumUpgrades(itemDifferentials, raidID, key, firstDifficulty) +
                                       (secondDifficulty !== -1
                                         ? getNumUpgrades(itemDifferentials, raidID, key, secondDifficulty)
-                                        : 0)}{" "}
-                                    Upgrades
+                                        : 0)*/}{" "}
+                                    {/*Upgrades*/}
                                   </Typography>
 
                                   <div
@@ -238,8 +238,8 @@ export default function RaidGearContainer(props) {
                                           padding: "6px 10px",
                                         }}
                                       >
-                                        {getDifficultyName(firstDifficulty) + " - Upgraded "} -{" "}
-                                        {getNumUpgrades(itemDifferentials, raidID, key, firstDifficulty)} Upgrades
+                                        {getDifficultyName(firstDifficulty) + " - Upgraded "} {" "}
+                                        {/*getNumUpgrades(itemDifferentials, raidID, key, firstDifficulty)} Upgrades*/}
                                       </Typography>
                                     </Grid>
 
@@ -261,8 +261,8 @@ export default function RaidGearContainer(props) {
                                             padding: "6px 10px",
                                           }}
                                         >
-                                          {getDifficultyName(firstDifficulty)} -{" "}
-                                          {getNumUpgrades(itemDifferentials, raidID, key, firstDifficulty)} Upgrades
+                                          {getDifficultyName(firstDifficulty)}{" "}
+                                          {/*getNumUpgrades(itemDifferentials, raidID, key, firstDifficulty) Upgrades*/}
                                         </Typography>
                                       </Grid>
 
@@ -371,10 +371,10 @@ export default function RaidGearContainer(props) {
                                   {bossHeaders(key, { height: 36, verticalAlign: "middle" }, "UpgradeFinder")}
                                   <Divider flexItem orientation="vertical" style={{ margin: "0px 5px 0px 0px" }} />
                                   {encounterDB[raidID].bosses[key]} -{" "}
-                                  {getNumUpgrades(itemDifferentials, raidID, key, firstDifficulty) +
+                                  {/*getNumUpgrades(itemDifferentials, raidID, key, firstDifficulty) +
                                     (secondDifficulty !== -1
                                       ? getNumUpgrades(itemDifferentials, raidID, key, secondDifficulty)
-                                      : 0)}{" "}
+                                      : 0)*/}{" "}
                                   Upgrades
                                 </Typography>
                               </UFAccordionSummary>
