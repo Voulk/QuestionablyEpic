@@ -76,8 +76,8 @@ export default function MythicPlusGearContainer(props) {
                             >
                               <img style={{ height: 36, width: 56, verticalAlign: "middle" }} src={DungeonHeaderIcons(key)} alt={encounterDB["-1"][gameType][key]} />
                               <Divider flexItem orientation="vertical" style={{ margin: "0px 5px 0px 0px" }} />
-                              {encounterDB["-1"][gameType][key]} -{" "}
-                              {getNumUpgrades(itemDifferentials, -1, key, difficulty, true)} Upgrades
+                              {encounterDB["-1"][gameType][key]} {" "}
+                              {/*getNumUpgrades(itemDifferentials, -1, key, difficulty, true)} Upgrades*/}
                             </Typography>
                           </UFAccordionSummary>
                           <AccordionDetails style={sharedAccordionDetailsStyles}>

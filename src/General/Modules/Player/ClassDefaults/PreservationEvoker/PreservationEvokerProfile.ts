@@ -92,11 +92,11 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
 
     state.statPercentages.critMult = 2.6//26// 1.3 * 1.02 + 1;
     const incomingDTPS = 60000;
-    const burstDTPS = 90000; 
+    const burstDTPS = 80000; 
 
     const castProfile: CastProfile = [
         {spell: "Echo", cpm: 60 / 5 / 2 * 1.1, hastedCPM: true}, // Do essence stuff separately
-        {spell: "Dream Breath", efficiency: 0.95,  },         
+        {spell: "Dream Breath", efficiency: 1,  }, // Two charges   
         {spell: "Fire Breath", efficiency: 0.9 },     
         {spell: "Temporal Anomaly", efficiency: 0.9, hastedCPM: true },
         {spell: "Reversion", efficiency: 0.66, },
@@ -104,6 +104,8 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
         {spell: "Verdant Embrace", hastedCPM: true, efficiency: 0.2 },
         {spell: "Dream Flight", efficiency: 0.9  }
     ]
+
+    
 
     // Assign echo usage
     const echoUsage: Record<string, number> = {
@@ -120,9 +122,12 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
 
     completeCastProfile(castProfile, spellDB, state.statPercentages);
 
+    if (playerData.heroTree === "Flameshaper") getSpellEntry(castProfile, "Dream Breath").cpm + (1 / (fightLength / 60)); // Extra charge
+
     if (hasTalent(talents, "Nozdormu's Teachings")) {
         // 
         getSpellEntry(castProfile, "Dream Breath").cpm += (getCPM(castProfile, "Temporal Anomaly") * 5 / spellDB['Dream Breath'][0].cooldownData.cooldown);
+        getSpellEntry(castProfile, "Fire Breath").cpm += (getCPM(castProfile, "Temporal Anomaly") * 5 / spellDB['Fire Breath'][0].cooldownData.cooldown)
     }
 
     const spellCosts = Object.fromEntries(Object.keys(spellDB).map((s: string) => [s, spellDB[s][0].cost * 250000 / 100]));
@@ -232,8 +237,8 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
     // you need to convert into Disintegrate casts.
     const disintCasts = 0 //Math.max(0,(-fillerMana / 9000));
     reportingData.fillerManaPerMinute += disintCasts * 9000;
-    const blossomCasts = (essenceBurstCount - disintCasts) * 0.6;
-    let bonusEchoCasts = (essenceBurstCount - disintCasts) * 0.4;
+    const blossomCasts = (essenceBurstCount - disintCasts) * 0.55;
+    let bonusEchoCasts = (essenceBurstCount - disintCasts) * 0.45;
     reportingData.disintBlossomRatio = disintCasts / essenceBurstCount;
     if (hasTalent(talents, "Twin Flame")) {
         castProfile.push({spell: "Twin Flame", cpm: essenceBurstCount, autoSpell: true });
@@ -253,6 +258,7 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
         bonusEchoCasts += blossomCasts;
     }
 
+
     spendEchoes(castProfile, echoUsage, bonusEchoCasts * 0.7 * echoMult); 
 
     // Calculate Time Available
@@ -266,8 +272,6 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
     castProfile.push({spell: "Living Flame O", cpm: fillerCPM * 5});
     castProfile.push({spell: "Emerald Blossom", cpm: fillerCPM});
     //castProfile.push({spell: "Disintegrate", cpm: fillerCPM / 2});
-
-
 
     // However, if you are NOT running Energy Loop, then we need to start cutting casts if mana runs out. Assess which order to cut spells.
 
@@ -294,9 +298,9 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
                 "spellName": "Consume Flame",
                 "cat": "heal"
             },
-            "coeff": spellDB["Dream Breath"][0].coeff * 1.4 * (2 / spellDB["Dream Breath"][0].tickData.tickRate) * state.statPercentages.haste,
+            "coeff": spellDB["Dream Breath"][0].coeff * (2.4 - 1) * (2 / spellDB["Dream Breath"][0].tickData.tickRate) * state.statPercentages.haste,
             "aura": 0.8,
-            "expectedOverheal": 0.25,
+            "expectedOverheal": 0.2,
             "secondaries": [
                 "crit",
                 "versatility",
@@ -307,8 +311,8 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
         ];
         spellDB["Consume Flame"] = consumeFlame;
 
-        const possibleProcs = getCPM(castProfile, "Emerald Blossom") * spellDB["Emerald Blossom"][0].targets * 0.7;
-
+        const possibleProcs = getCPM(castProfile, "Emerald Blossom") * (spellDB["Emerald Blossom"][0].targets + 2) * 0.9; // TODO: Add code for Fluttering instead of magic number.
+        reportingData.consumeFlameCPM = possibleProcs;
         castProfile.push({spell: "Consume Flame", cpm: possibleProcs , autoSpell: true});
 
     }

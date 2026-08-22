@@ -263857,7 +263857,10 @@
         "stats": {
             "intellect": 0,
             "stamina": 7889,
-            "crit": 17500
+            "crit": 4375,
+            "mastery": 4375,
+            "haste": 4375,
+            "versatility": 4375
         },
         "sources": [
             {

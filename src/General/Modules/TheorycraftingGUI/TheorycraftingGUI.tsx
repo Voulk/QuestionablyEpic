@@ -64,7 +64,7 @@ export default function TheorycraftingGUI(props) {
         profileName: selectedProfile.modelName,
         stats: stats,
         masteryEffectiveness: 0.3,
-        tierSets: /*["Preservation Evoker S2-2", "Preservation Evoker S2-4"]*/["Restoration Shaman S2-2", "Restoration Shaman S2-4"],
+        tierSets: [/*"Preservation Evoker S2-2", "Preservation Evoker S2-4",*/ "Restoration Shaman S2-2", "Restoration Shaman S2-4"],
         params: params,
     }
 
