@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Legend, CartesianGrid, Tooltip } from "recharts";
+import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, CartesianGrid, Tooltip, ReferenceLine, Customized, Legend, DefaultLegendContent } from "recharts";
 // import chroma from "chroma-js";
 import { getItemIcon, getTranslatedItemName } from "../../../Engine/ItemUtilities";
 import MuiTooltip from '@mui/material/Tooltip';
@@ -89,10 +89,150 @@ function getInitials(str) {
     .map(word => word[0].toUpperCase())
     .join('');
 }
+
+const Indicator = {
+  EQUIPPED: { id: "equipped", color: "#4FC3F7", label: "Equipped" },
+  OWNED: { id: "owned", color: "#CE93D8", label: "In bags" },
+  VAULT: { id: "vault", color: "#00FFFF", label: "Great Vault" },
+  key(id, ilvl) {
+    return `${id}:${ilvl}`;
+  },
+  of(trinket, current) {
+    if (trinket.isEquipped) return this.EQUIPPED;
+    if (trinket.vaultItem && current !== this.EQUIPPED) return this.VAULT;
+    return current || this.OWNED;
+  },
+  fromPlayer(trinkets, itemLevels) {
+    const indicators = {};
+    (trinkets || []).forEach((t) => {
+      if (!t) return;
+      const key = this.key(t.id, snapIlvl(t.level, itemLevels));
+      indicators[key] = this.of(t, indicators[key]);
+    });
+    return indicators;
+  },
+  legend() {
+    return [this.EQUIPPED, this.OWNED, this.VAULT];
+  },
+};
+
+const snapIlvl = (level, itemLevels) => {
+  if (!itemLevels || !itemLevels.length) return level;
+  return itemLevels.reduce((best, ilvl) =>
+    Math.abs(ilvl - level) < Math.abs(best - level) ? ilvl : best
+  );
+};
+
+const sliceScore = (rows, id, ilvl) => {
+  const row = (rows || []).find((entry) => entry.id === id);
+  return row ? row["i" + ilvl] || 0 : 0;
+};
+
+const playerTrinkets = (player) => (player && player.getActiveItems("Trinket")) || [];
+
+const chartSignature = ({ itemLevels = [], data = [], theme = [], breakdown, player }) => {
+  const top = itemLevels[itemLevels.length - 1] || "";
+  return [
+    itemLevels.join(),
+    !!breakdown,
+    theme.join(),
+    playerTrinkets(player).map((t) => `${t.id}:${t.level}:${!!t.isEquipped}:${!!t.vaultItem}`).join(),
+    data.map((row) => `${row.id}:${row["i" + top] || 0}`).join(),
+  ].join("|");
+};
+
+function IndicatorOverlay({ formattedGraphicalItems, indicators, hoverSlice }) {
+  if (!formattedGraphicalItems) return null;
+  const overlays = [];
+  let hoverRect = null;
+  formattedGraphicalItems.forEach((entry) => {
+    const ilvl = entry.item && entry.item.props && entry.item.props.dataKey;
+    const rects = entry.props && entry.props.data;
+    if (ilvl == null || !rects) return;
+    rects.forEach((rect) => {
+      const id = rect.payload && rect.payload.name;
+      if (id == null || !(rect.width > 0) || !(rect.height > 0)) return;
+      const indicator = indicators[Indicator.key(id, ilvl)];
+      if (indicator) {
+        overlays.push(
+          <rect
+            key={Indicator.key(id, ilvl)}
+            x={rect.x + rect.width - 3}
+            y={rect.y - 3}
+            width={3}
+            height={rect.height + 6}
+            fill={indicator.color}
+            stroke="#111"
+            strokeWidth={1}
+            style={{ filter: "drop-shadow(0 0 4px rgba(0,0,0,0.8))" }}
+          />
+        );
+      }
+      if (hoverSlice && hoverSlice.id === id && hoverSlice.ilvl === ilvl) hoverRect = rect;
+    });
+  });
+  return (
+    <g pointerEvents="none">
+      {hoverRect ? (
+        <rect
+          x={hoverRect.x - 1}
+          y={hoverRect.y - 1}
+          width={hoverRect.width + 2}
+          height={hoverRect.height + 2}
+          fill="none"
+          stroke="rgba(0,0,0,0.45)"
+          strokeWidth={2}
+        />
+      ) : null}
+      {overlays}
+    </g>
+  );
+}
+
+function TrinketTooltip({ active, payload, label, hoverSlice, breakdown, data, currentLanguage }) {
+  if (!active || !payload || !payload.length) return null;
+  const itemId = payload[0].payload && payload[0].payload.name;
+  if (!breakdown && (!hoverSlice || hoverSlice.id !== itemId)) return null;
+  return (
+    <div className="trinket-tooltip">
+      <div className="trinket-tooltip-label">{getTranslatedItemName(label, currentLanguage)}</div>
+      {payload.map((entry) => {
+        const name = entry.dataKey;
+        const hovered = !breakdown && hoverSlice && hoverSlice.id === itemId && hoverSlice.ilvl == name;
+        let text;
+        if (entry.value <= 0) text = "Unobtainable";
+        else if (breakdown) text = Math.round(entry.value);
+        else text = data.filter((row) => row.id === itemId).map((row) => row["i" + name]).toString();
+        const displayName = breakdown ? (name === "passive" ? "Passive Stats" : "Effect") : name;
+        return (
+          <div key={String(name)} className={"trinket-tooltip-row" + (hovered ? " is-hovered" : "")} style={{ color: entry.color }}>
+            {hovered ? "▸ " : ""}
+            {displayName} : {text}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+function IndicatorLegend({ items }) {
+  return (
+    <ul className="recharts-default-legend" style={{ padding: 0, margin: 0, textAlign: "center" }}>
+      {items.map(({ label, color }) => (
+        <li key={label} className="recharts-legend-item" style={{ display: "inline-block", marginRight: 10 }}>
+          <svg width={8} height={14} viewBox="0 0 8 14" style={{ display: "inline-block", verticalAlign: "middle", marginRight: 4 }}>
+            <rect x={2.5} y={1} width={3} height={12} fill={color} stroke="#111" strokeWidth={1} style={{ filter: "drop-shadow(0 0 4px rgba(0,0,0,0.8))" }} />
+          </svg>
+          <span className="recharts-legend-item-text">{label}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
 export default class VerticalChart extends PureComponent {
   constructor() {
     super();
-    this.state = { focusBar: null, mouseLeave: true, width: window.innerWidth, height: window.innerHeight };
+    this.state = { focusBar: null, mouseLeave: true, width: window.innerWidth, height: window.innerHeight, hoverSlice: null, compare: null };
   }
    
   updateDimensions = () => {
@@ -100,6 +240,11 @@ export default class VerticalChart extends PureComponent {
   };
   componentDidMount() {
     window.addEventListener('resize', this.updateDimensions);
+  }
+  componentDidUpdate(prevProps) {
+    if (this.state.compare && chartSignature(prevProps) !== chartSignature(this.props)) {
+      this.setState({ compare: null, hoverSlice: null });
+    }
   }
   componentWillUnmount() {
     window.removeEventListener('resize', this.updateDimensions);
@@ -120,6 +265,14 @@ export default class VerticalChart extends PureComponent {
 
     const barColours = this.props.theme;
     const breakdown = this.props.breakdown ?? false;
+    const indicators = breakdown ? {} : Indicator.fromPlayer(playerTrinkets(this.props.player), itemLevels);
+    const { hoverSlice, compare } = this.state;
+    const guide = compare || (hoverSlice && hoverSlice.indicator ? hoverSlice : null);
+    const readSlice = (entry, ilvl) => {
+      const id = entry && entry.payload && entry.payload.name;
+      if (id == null) return null;
+      return { id, ilvl, score: sliceScore(data, id, ilvl), indicator: indicators[Indicator.key(id, ilvl)] };
+    };
 
     let arr = [];
     let cleanedArray = [];
@@ -212,12 +365,11 @@ export default class VerticalChart extends PureComponent {
           barCategoryGap="15%"
           data={cleanedArray}
           layout="vertical"
-          
           onMouseMove={(state) => {
             if (state.isTooltipActive) {
               this.setState({ focusBar: state.activeTooltipIndex, mouseLeave: false });
             } else {
-              this.setState({ focusBar: null, mouseLeave: true });
+              this.setState({ focusBar: null, mouseLeave: true, hoverSlice: null });
             }
           }}
         >
@@ -225,46 +377,32 @@ export default class VerticalChart extends PureComponent {
           <XAxis type="number" stroke="#f5f5f5" orientation="top" xAxisId={1} padding={0} height={1} axisLine={false} />
           <Tooltip
             cursor={false}
-            labelStyle={{ color: "#ffffff" }}
-            contentStyle={{
-              backgroundColor: "#1b1b1b",
-              border: "1px solid rgba(255, 255, 255, 0.12)",
-            }}
             isAnimationActive={false}
-            labelFormatter={(timeStr) => getTranslatedItemName(timeStr, currentLanguage)}
-            formatter={(value, name, props) => {
-              if (value <= 0) return ["Unobtainable", name];
-              if (breakdown) {
-                const isPassive = name === "passive";
-                return [Math.round(value), isPassive ? "Passive Stats" : "Effect"];
-              }
-              return [
-                data
-                  .filter((filter) => filter.id === props["payload"].name)
-                  .map((key) => key["i" + name])
-                  .toString(),
-                name,
-              ];
-            }}
+            wrapperStyle={{ pointerEvents: "none" }}
+            content={
+              <TrinketTooltip
+                hoverSlice={hoverSlice}
+                breakdown={breakdown}
+                data={data}
+                currentLanguage={currentLanguage}
+              />
+            }
           />
-          {breakdown ? null : <Legend verticalAlign="top" />}
-          {breakdown ? (
-            <Legend
-              verticalAlign="top"
-              content={() => (
-                <div style={{ textAlign: "center", color: "#fff", fontSize: 12, paddingBottom: 4 }}>
-                  <span style={{ marginRight: 16 }}>
-                    <span style={{ display: "inline-block", width: 12, height: 12, background: barColours[0], marginRight: 4, verticalAlign: "middle" }} />
-                    Passive Stats
-                  </span>
-                  <span>
-                    <span style={{ display: "inline-block", width: 12, height: 12, background: barColours[Math.floor(barColours.length / 2)], marginRight: 4, verticalAlign: "middle" }} />
-                    Effect
-                  </span>
-                </div>
-              )}
-            />
-          ) : null}
+          <Legend
+            verticalAlign="top"
+            iconType="square"
+            wrapperStyle={{ color: "#fff", fontSize: 12, paddingBottom: 8 }}
+            content={
+              breakdown
+                ? undefined
+                : (props) => (
+                    <div>
+                      <IndicatorLegend items={Indicator.legend()} />
+                      <DefaultLegendContent {...props} payload={props.payload || []} />
+                    </div>
+                  )
+            }
+          />
           <CartesianGrid vertical={true} horizontal={false} />
           <YAxis type="category" className="CustomizedYAxis" width={this.state.width < mobileWidthThreshold ? 110 : 300} dataKey="name" stroke="#f5f5f5" interval={0}
               tick={<CustomizedYAxisTick
@@ -278,8 +416,60 @@ export default class VerticalChart extends PureComponent {
                 <Bar key="effect" dataKey="effect" fill={barColours[Math.floor(barColours.length / 2)]} stackId="a" />,
               ]
             : itemLevels.map((key, i) => (
-                <Bar key={"bar" + i} dataKey={key} fill={barColours[i]} stackId="a" />
+                <Bar
+                  key={"bar" + i}
+                  dataKey={key}
+                  fill={barColours[i]}
+                  stackId="a"
+                  isAnimationActive={false}
+                  cursor="pointer"
+                  onClick={(entry) => {
+                    const slice = readSlice(entry, key);
+                    if (!slice) return;
+                    this.setState((prev) => ({
+                      compare: prev.compare && prev.compare.id === slice.id && prev.compare.ilvl === slice.ilvl ? null : slice,
+                    }));
+                  }}
+                  onMouseEnter={(entry) => {
+                    const slice = readSlice(entry, key);
+                    if (slice) this.setState({ hoverSlice: slice });
+                  }}
+                  onMouseLeave={() => this.setState({ hoverSlice: null })}
+                />
               ))}
+          {breakdown ? null : (
+            <Customized
+              component={(chartProps) => (
+                <IndicatorOverlay formattedGraphicalItems={chartProps.formattedGraphicalItems} indicators={indicators} hoverSlice={hoverSlice} />
+              )}
+            />
+          )}
+          {breakdown || !guide ? null : (
+            <ReferenceLine
+              x={guide.score}
+              stroke="#fff"
+              strokeWidth={2}
+              ifOverflow="visible"
+              isFront
+              style={{ pointerEvents: compare ? "auto" : "none" }}
+              shape={
+                compare
+                  ? (props) => (
+                      <line
+                        x1={props.x1}
+                        y1={props.y1}
+                        x2={props.x2}
+                        y2={props.y2}
+                        stroke="#fff"
+                        strokeWidth={2}
+                        cursor="pointer"
+                        onClick={() => this.setState({ compare: null })}
+                      />
+                    )
+                  : undefined
+              }
+            />
+          )}
         </BarChart>
       </ResponsiveContainer>
     );
