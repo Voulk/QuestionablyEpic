@@ -1,8 +1,9 @@
 
 import { runSpellScript } from "../Generic/SpellScripts";
-import specSpellDB from "./DiscSpellDB.json";
+import specSpellDB from "./DisciplinePriestSpellDB.json";
+import { runCastSequence } from "./DiscPriestRamps";
 import { defaultTalents, discPriestTalents } from "./DiscPriestTalents";
-import { printHealingBreakdownWithCPM, convertStatPercentages, getSpellEntry, updateSpellCPM, buildCPM, getSpellThroughput, applyTalents, completeCastProfile } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities";
+import { printHealingBreakdownWithCPM, convertStatPercentages, getSpellEntry, updateSpellCPM, buildCPM, getSpellThroughput, applyTalents, completeCastProfile, applyRaidBuffs, compileProfileReportingData } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities";
 
 
 export const discPriestProfile = {
@@ -37,11 +38,11 @@ export const discPriestProfile = {
 
 
 
-export function scoreDiscPriestSet(stats: Stats, playerData: any, settings: PlayerSettings = {}) {
+export function scoreDiscPriestSet(stats: Stats, playerData: any, settings: PlayerSettings = {}, reporting = false) {
 
     const fightLength = 6;
     const spellDB = JSON.parse(JSON.stringify(specSpellDB));
-    let initialState = {statBonuses: {}, talents: discPriestTalents, heroTree: playerData.heroTree};
+    let initialState = {statBonuses: applyRaidBuffs(settings), talents: discPriestTalents, heroTree: playerData.heroTree, specSettings: {}};
     const reportingData: any = {};
 
     const damageBreakdown: Record<string, number> = {};
@@ -51,7 +52,7 @@ export function scoreDiscPriestSet(stats: Stats, playerData: any, settings: Play
     
     // Apply Talents
     defaultTalents(initialState.talents, "default", playerData.heroTree);
-    applyTalents(initialState, spellDB, initialState.statBonuses);
+    applyTalents(initialState, spellDB);
 
     // Apply Stats
     const state = { fightLength: 6, spec: "Discipline Priest", statPercentages: convertStatPercentages(stats, initialState.statBonuses, "Discipline Priest"), settings: settings, talents: discPriestTalents};
@@ -63,6 +64,8 @@ export function scoreDiscPriestSet(stats: Stats, playerData: any, settings: Play
     ]
 
     completeCastProfile(castProfile, spellDB);
+
+    const sampleSequence = ["Flash Heal", "Smite"]
 
     const evangSeq = [];
     
@@ -79,10 +82,12 @@ export function scoreDiscPriestSet(stats: Stats, playerData: any, settings: Play
     const fillerMana = manaAvailable - baselineCostPerMinute;
     reportingData.fillerManaPerMinute = fillerMana;
 
+    runCastSequence(sampleSequence, state.statPercentages, spellDB, state.talents, {})
+
 
     // Calculate *time* left, fill it with packages.
 
-    castProfile.forEach(spellProfile => {
+    /*castProfile.forEach(spellProfile => {
         const fullSpell = spellDB[spellProfile.spell];
         const spellName = spellProfile.spell;
         const spellFlags = spellProfile.flags || {};
@@ -108,11 +113,18 @@ export function scoreDiscPriestSet(stats: Stats, playerData: any, settings: Play
 
         })
 
-    })
+    })*/
     const totalHealing = Object.values(healingBreakdown).reduce((sum: number, val: number) => sum + val, 0);
+    const totalDamage = 0;
+    console.log("Running");
 
-    console.log(reportingData)
-    printHealingBreakdownWithCPM(healingBreakdown, totalHealing, castProfile);
+    const result = { damage: totalDamage / 60, healing: totalHealing / 60 }
 
-    return { damage: 0 / 60, healing: totalHealing / 60 }
+    if (reporting) {
+        console.log(reportingData);
+        result.spellBreakdowns = compileProfileReportingData(healingBreakdown, damageBreakdown, castProfile, spellDB, totalHealing, totalDamage)
+    }
+
+
+    return result //{ damage: 0 / 60, healing: totalHealing / 60 }
 }

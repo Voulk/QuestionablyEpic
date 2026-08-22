@@ -11,10 +11,11 @@ import { holyPriestDefaultSpecialQueries, holyPriestDefaultSpellData, holyPriest
 import { chronoDefaultSpecialQueries, chronoDefaultSpellData, chronoDefaultStatWeights } from "./ClassDefaults/PreservationEvoker/ChronowardenEvokerDefaults";
 import { evokerDefaultSpecialQueries, evokerDefaultSpellData, evokerDefaultStatWeights, runFlameshaperCastModel } from "./ClassDefaults/PreservationEvoker/FlameshaperEvokerDefaults";
 import { discPriestDefaultSpecialQueries, discPriestDefaultSpellData, discPriestDefaultStatWeights } from "./ClassDefaults/DisciplinePriest/DiscPriestVoidweaver";
-import { discPriestOracleSpecialQueries, discPriestOracleStatWeights, runOracleCastModel, modelOracleOnUseTrinket } from "./ClassDefaults/DisciplinePriest/DiscPriestOracle";
+import { discPriestOracleSpecialQueries, discPriestOracleStatWeights, modelOracleOnUseTrinket } from "./ClassDefaults/DisciplinePriest/DiscPriestOracle";
 import { restoShamanProfile, scoreShamanSet } from "./ClassDefaults/RestoShaman/RestoShamanProfile";
 import { scoreEvokerSet } from "./ClassDefaults/PreservationEvoker/PreservationEvokerProfile";
 import { scoreDruidSet } from "./ClassDefaults/RestoDruid/RestoDruidProfile";
+import { scoreDiscPriestSet } from "./ClassDefaults/DisciplinePriest/DiscPriestProfile";
 import { monkModels } from "./ClassDefaults/MistweaverMonk/MonkModels";
 
 import { holyPriestDefaults } from "General/Modules/Player/ClassDefaults/Classic/Priest/HolyPriestClassic"
@@ -193,7 +194,8 @@ class CastModel {
           this.modelName = "Default";
           this.modelType["Raid"] = "Default";
           this.modelType["Dungeon"] = "Default";
-          this.runCastModel = runOracleCastModel;
+          this.heroTree = "Voidweaver";
+          this.runCastModel = scoreDiscPriestSet;
           this.modelOnUseTrinket = modelOracleOnUseTrinket;
           spellList = {};
           specialQueries = discPriestDefaultSpecialQueries(contentType);

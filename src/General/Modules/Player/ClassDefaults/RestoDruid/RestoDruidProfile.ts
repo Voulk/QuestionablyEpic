@@ -116,7 +116,7 @@ export function scoreDruidSet(stats: Stats, playerData: any, settings: PlayerSet
     
     // Apply Talents
     defaultTalents(initialState.talents, "default", playerData.heroTree);
-    applyTalents(initialState, spellDB, initialState.statBonuses);
+    applyTalents(initialState, spellDB);
 
     // Apply Stats
     const state = { fightLength: 6, spec: "Restoration Druid", statPercentages: convertStatPercentages(stats, initialState.statBonuses, "Restoration Druid", 1), settings: settings, talents: druidTalents};

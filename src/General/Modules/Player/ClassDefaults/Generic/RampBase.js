@@ -467,15 +467,14 @@ export const getSpellCastTime = (spell, state, currentStats, spellName) => {
  */
 export const getStatMult = (currentStats, stats, statMods, specConstants) => {
     let mult = 1;
-    const baseMastery = specConstants.masteryMod / 100 * 8; // Every spec owns 8 mastery points baseline
 
-    const critChance = 0.05 + currentStats['crit'] / GLOBALCONST.statPoints.crit / 100 + (statMods['crit'] || 0 );
+    const critChance = 0.05 + currentStats['crit'] + (statMods['crit'] || 0 );
     const critMult = (currentStats['critMult'] || 2) + (statMods['critEffect'] || 0);
     
-    if (stats.includes("vers") || stats.includes("versatility")) mult *= (1.03 + currentStats['versatility'] / GLOBALCONST.statPoints.vers / 100); // Mark of the Wild built in.
-    if (stats.includes("haste")) mult *= (1 + currentStats['haste'] / GLOBALCONST.statPoints.haste / 100);
+    if (stats.includes("vers") || stats.includes("versatility")) mult *= (currentStats['versatility']);
+    if (stats.includes("haste")) mult *= (currentStats['haste']);
     if (stats.includes("crit")) mult *= ((1-critChance) + critChance * critMult);
-    if (stats.includes("mastery")) mult *= (1+(baseMastery + currentStats['mastery'] / GLOBALCONST.statPoints.mastery * specConstants.masteryMod / 100) * specConstants.masteryEfficiency);
+    if (stats.includes("mastery")) mult *= (currentStats['mastery']);
 
     return mult;
 }
@@ -492,7 +491,7 @@ export const getMastery = (stats, specConstants) => {
  * @returns 
  */
 export const getCurrentStats = (statArray, buffs) => {
-    const statBuffs = buffs.filter(function (buff) {return buff.buffType === "stats"});
+    /*const statBuffs = buffs.filter(function (buff) {return buff.buffType === "stats"});
     statBuffs.forEach(buff => {
         statArray[buff.stat] = (statArray[buff.stat] || 0) + buff.value;
     });
@@ -506,7 +505,7 @@ export const getCurrentStats = (statArray, buffs) => {
         // Multiplicative Haste buffs need some extra code as they are increased by the amount of haste you already have.
         if (buff.stat === "haste") statArray["haste"] = (((statArray[buff.stat] / STATCONVERSION.HASTE / 100 + 1) * buff.value)-1) * STATCONVERSION.HASTE * 100;
         else statArray[buff.stat] = (statArray[buff.stat] || 0) + buff.value;
-    });
+    });*/
 
     return statArray;
 }

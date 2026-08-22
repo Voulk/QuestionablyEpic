@@ -25,12 +25,6 @@ export const DISCCONSTANTS = {
     masteryEfficiency: 1,
 
     atonementBaseTransfer: 0.38,
-    auraHealingBuff: 0.97, 
-    auraDamageBuff: {
-        periodic: 1,
-        direct: 1,
-        pet: 1.17,
-    },
     
     atonementMults: {"shadow": 1, "holy": 1},
     shadowCovenantSpells: ["Halo", "Divine Star", "DefPenance", "DefPenanceTick"],
@@ -83,15 +77,6 @@ const getDamMult = (state, buffs, activeAtones, t, spellName, talents, spell) =>
         sinMult = DISCCONSTANTS.sins[activeAtones];
         mult = schism * sinMult;
     }
-    else if (spellName === "Inescapable Torment") {
-        // IT is a special baby that uses both player and pet auras.
-        mult *= DISCCONSTANTS.auraDamageBuff.direct * DISCCONSTANTS.auraDamageBuff.pet;
-    }
-    else {
-        // Pet special cases.
-        mult *= DISCCONSTANTS.auraDamageBuff.pet;
-    }
-    
     
     //console.log("Spell: " + spellName + ". Mult: " + mult);
     if (discSettings.chaosBrand) mult = mult * 1.05;
@@ -207,7 +192,6 @@ const getSpellSchool = (state, spellName, spell) => {
     let spellSchool = "";
     if (DISCCONSTANTS.shadowCovenantSpells.includes(spellName) && checkBuffActive(state.activeBuffs, "Shadow Covenant")) spellSchool = "shadow";
     else spellSchool = spell.school || "";
-    //console.log(spellName + " " + spellSchool)
     return spellSchool;
 
 }
@@ -216,6 +200,7 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
 
     // Pre-heal processing
     const currentStats = state.currentStats;
+    console.log(currentStats);
 
     const healingMult = getHealingMult(state, state.activeBuffs, spellName, spell); 
     const targetMult = (('tags' in spell && spell.tags.includes('sqrt')) ? getSqrt(spell.targets, spell.sqrtMin) : spell.targets) || 1;
@@ -227,7 +212,7 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
 
     if (spell.healType === "direct" && state.talents.divineAegis) {
         // If the spell crits, DA absorbs 30% of the value.
-        const aegisHeal = healingVal * 0.3 * getCrit(state.currentStats);
+        const aegisHeal = healingVal * 0.3 * state.currentStats.crit;
 
         state.healingDone["Divine Aegis"] = (state.healingDone["Divine Aegis"] || 0) + aegisHeal;
     }
@@ -241,7 +226,7 @@ export const runHeal = (state, spell, spellName, specialMult = 1) => {
         addReport(state, base);
     }
 
-    if ((spell.name === "Power Word: Shield") && state.talents.crystallineReflection) {
+    if ((spell.name === "Void Shield")) {
         const reflection = {
             type: "damage",
             coeff: 0,
@@ -261,6 +246,7 @@ export const runDamage = (state, spell, spellName, atonementApp) => {
     const damageVal = getSpellRaw(spell, state.currentStats, DISCCONSTANTS) * damMultiplier;
     const atonementHealing = Math.round(activeAtonements * damageVal * getAtoneTrans(state.currentStats.mastery) * getAtonementBonus(state, spellName, spell));
     const atonementOverhealing = atonementHealing * spell.atoneOverheal;
+    console.log(damMultiplier, damageVal);
     // This is stat tracking, the atonement healing will be returned as part of our result.
     state.damageDone[spellName] = (state.damageDone[spellName] || 0) + damageVal; // This is just for stat tracking.
     state.healingDone['atonement'] = (state.healingDone['atonement'] || 0) + (atonementHealing - atonementOverhealing);
@@ -269,7 +255,7 @@ export const runDamage = (state, spell, spellName, atonementApp) => {
 
     if (checkBuffActive(state.activeBuffs, "Premonition of Piety")) {
         // Piety active. Transfer a portion of overhealing.
-        const pietyPercentage = 0.98;
+        const pietyPercentage = 0.15;
         state.healingDone['premonition of piety'] = (state.healingDone['premonition of piety'] || 0) + atonementOverhealing * pietyPercentage;
         if (!spellName.includes("dot")) addReport(state, `Premonition of Piety transferred ${Math.round(atonementOverhealing * pietyPercentage)} atonement overhealing`);
 
@@ -301,7 +287,7 @@ const runSpell = (fullSpell, state, spellName, specSpells, atonementApp, seq, ca
 
         if (canProceed) {
             // The spell casts a different spell. 
-            if (spell.type === 'castSpell' && canRepeat) {
+            if (spell.spellType === 'castSpell' && canRepeat) {
                 addReport(state, `Spell Proc: ${spellName}`)
                 const newSpell = deepCopyFunction(specSpells[spell.storedSpell]); // This might fail on function-based spells.
                 if (spell.powerMod) {
@@ -331,15 +317,15 @@ const runSpell = (fullSpell, state, spellName, specSpells, atonementApp, seq, ca
 
                     }
                 }
-        
                 // The spell has a healing component. Add it's effective healing.
                 // Power Word: Shield is included as a heal, since there is no functional difference for the purpose of this calculation.
-                if (spell.type === 'heal') {
+                if (spell.spellType === 'heal') {
                     runHeal(state, spell, spellName)
                 }
                 
                 // The spell has a damage component. Add it to our damage meter, and heal based on how many atonements are out.
-                else if (spell.type === 'damage') {
+                else if (spell.spellType === 'damage') {
+                    console.log("Running damage spell");
                     // This should be refactored into a more generic conditional on spells.
                     if (spell.name === "Inescapable Torment") {
                         if (state.activeBuffs.filter(buff => buff.name === "Shadowfiend" || buff.name === "Mindbender").length > 0) runDamage(state, spell, spellName, atonementApp)
@@ -350,7 +336,7 @@ const runSpell = (fullSpell, state, spellName, specSpells, atonementApp, seq, ca
                 }
 
                 // The spell extends atonements already active. This is specific to Evanglism. 
-                else if (spell.type === "atonementExtension") {
+                else if (spell.spellType === "atonementExtension") {
                     if (spell.extensionType === "all") {
                         extendActiveAtonements(atonementApp, state.t, spell.extension);
                     }
@@ -362,17 +348,17 @@ const runSpell = (fullSpell, state, spellName, specSpells, atonementApp, seq, ca
                     
                 }
                 // The spell extends atonements already active. This is specific to Evanglism. 
-                else if (spell.type === "buffExtension") {
+                else if (spell.spellType === "buffExtension") {
                     extendBuff(state.activeBuffs, state.t, spell.buffName, spell.extension);
                 }
                 // The spell extends atonements already active. This is specific to Evanglism. 
-                else if (spell.type === "function") {
+                else if (spell.spellType === "function") {
                     spell.runFunc(state, atonementApp);
                 }
 
                 // The spell adds a buff to our player.
                 // We'll track what kind of buff, and when it expires.
-                else if (spell.type === "buff") {
+                else if (spell.spellType === "buff") {
                     addBuff(state, spell, spellName);
                 }
 
@@ -416,34 +402,6 @@ const runSpell = (fullSpell, state, spellName, specSpells, atonementApp, seq, ca
                     }
                 }
 
-                if (state.talents.twilightEquilibrium && spell.type === 'damage' && !spellName.includes("Tick")) {
-                    // If we cast a damage spell and have Twilight Equilibrium then we'll add a 6s buff that 
-                    // increases the power of our next cast of the opposite school by 15%.
-                    //const spellSchool = spell.school;
-
-                    if (getSpellSchool(state, spellName, spell) === "holy") {
-                        // Check if buff already exists, if it does add a stack.
-                        addReport(state, `Adding Twilight Equilibrium - Shadow Buff (next Shadow spell buffed)`)
-                        const buffStacks = state.activeBuffs.filter(function (buff) {return buff.name === "Twilight Equilibrium - Shadow"}).length;
-                        if (buffStacks === 0) state.activeBuffs.push({name: "Twilight Equilibrium - Shadow", expiration: (state.t + spell.castTime + 6) || 999, buffType: "special", value: 1.15, stacks: 1, canStack: false});
-                        else {
-                            const buff = state.activeBuffs.filter(buff => buff.name === "Twilight Equilibrium - Shadow")[0]
-                            buff.expiration = state.t + spell.castTime + 6;
-                        }
-                    }
-                    else if (getSpellSchool(state, spellName, spell) === "shadow") {
-                        // Check if buff already exists, if it does add a stack.
-                        addReport(state, `Adding Twilight Equilibrium - Holy Buff (next Holy spell buffed)`)
-                        const buffStacks = state.activeBuffs.filter(function (buff) {return buff.name === "Twilight Equilibrium - Holy"}).length;
-                        if (buffStacks === 0) state.activeBuffs.push({name: "Twilight Equilibrium - Holy", expiration: (state.t + spell.castTime + 6) || 999, buffType: "special", value: 1.15, stacks: 1, canStack: false});
-                        else {
-                            const buff = state.activeBuffs.filter(buff => buff.name === "Twilight Equilibrium - Holy")[0]
-                            buff.expiration = state.t + spell.castTime + 6;
-                        }
-                    }
-                    // If Spell doesn't have a school, or if it does and it's not Holy / Shadow, then ignore.
-                }
-
                 // Penance ticks are a bit weird and need to be cleaned up when we're done with them. 
                 if (spellName === "PenanceTick" && seq[0] !== "PenanceTick") penanceCleanup(state);
                 
@@ -473,15 +431,12 @@ const runSpell = (fullSpell, state, spellName, specSpells, atonementApp, seq, ca
  * @param {object} conduits Any conduits we want to include. The conduits object is made up of {ConduitName: ConduitLevel} pairs where the conduit level is an item level rather than a rank.
  * @returns The expected healing of the full ramp.
  */
-export const runCastSequence = (sequence, incStats, settings = {}, incTalents = {}, apl = []) => {
+export const runCastSequence = (sequence, incStats, discSpells, discTalents, settings = {}, apl = []) => {
     //console.log("Running cast sequence");
-    const talents = {};
-    for (const [key, value] of Object.entries(incTalents)) {
-        talents[key] = value.points;
-    }
 
-    let state = {t: 0, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, manaSpent: 0, settings: settings, talents: talents, reporting: true, heroTree: "oracle"}
+    let state = {t: 0, report: [], activeBuffs: [], healingDone: {}, damageDone: {}, manaSpent: 0, settings: settings, talents: discTalents, reporting: true, heroTree: "oracle"}
     let stats = JSON.parse(JSON.stringify(incStats));
+    state.currentStats = stats;
     stats.critMult = 2;
 
     state.settings.reporting = true;
@@ -492,9 +447,6 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
     let queuedSpell = "";
     const seqType = apl.length > 0 ? "Auto" : "Manual"; // Auto / Manual.
 
-    // Note that any talents that permanently modify spells will be done so in this loadoutEffects function. 
-    // Ideally we'll cover as much as we can in here.
-    const discSpells = applyLoadoutEffects(deepCopyFunction(DISCSPELLS), settings, talents, state, stats);
 
     let seq = [...sequence];
     const sequenceLength = 55; // The length of any given sequence. Note that each ramp is calculated separately and then summed so this only has to cover a single ramp.
@@ -504,12 +456,6 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
         if (settings.trinkets.filter(effect => effect.name === "House of Cards").length > 0) {
             const onUseData = getTrinketData("House of Cards", settings.trinkets.filter(effect => effect.name === "House of Cards")[0].level);
             const spell = discSpells["House of Cards"][0];
-            spell.value = onUseData.value;
-            spell.buffDuration = onUseData.duration;
-        }
-        else if (settings.trinkets.filter(effect => effect.name === "Lily of the Eternal Weave").length > 0) {
-            const onUseData = getTrinketData("Lily of the Eternal Weave", settings.trinkets.filter(effect => effect.name === "Lily of the Eternal Weave")[0].level);
-            const spell = discSpells["Lily of the Eternal Weave"][0];
             spell.value = onUseData.value;
             spell.buffDuration = onUseData.duration;
         }
@@ -560,7 +506,7 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
                     const func = buff.attFunction;
                     func(state);
                 } 
-                buff.next = buff.next + (buff.tickRate / getHaste(state.currentStats));
+                buff.next = buff.next + (buff.tickRate / state.currentStats.haste);
             });  
         }
 
@@ -570,7 +516,7 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
         // Note that some effects do not partially tick (like Fiend), so we'll use the canPartialTick flag to designate which do and don't. 
         const expiringHots = state.activeBuffs.filter(function (buff) {return (buff.buffType === "heal" || buff.buffType === "damage") && state.t >= buff.expiration && buff.canPartialTick})
         expiringHots.forEach(buff => {
-            const tickRate = buff.tickRate / getHaste(state.currentStats)
+            const tickRate = buff.tickRate / state.currentStats.haste;
             const partialTickPercentage = 1 - ((buff.next - state.t) / tickRate);
             const spell = buff.attSpell;
             spell.coeff = spell.coeff * partialTickPercentage;
@@ -589,7 +535,7 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
             // Update current stats for this combat tick.
             // Effectively base stats + any current stat buffs.
             let currentStats = {...stats};
-            state.currentStats = getCurrentStats(currentStats, state.activeBuffs);
+            //state.currentStats = getCurrentStats(currentStats, state.activeBuffs);
 
             // If the sequence type is not "Auto" it should
             // follow the given sequence list
@@ -606,11 +552,13 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
                 }
                 
             }
+
+            console.log("Queuing spell" + queuedSpell + " at time " + state.t);
             const fullSpell = discSpells[queuedSpell];
             const castTime = getSpellCastTime(fullSpell[0], state, currentStats);
             spellFinish = state.t + castTime - 0.01;
             if (fullSpell[0].castTime === 0 && fullSpell[0].onGCD === false) nextSpell = state.t + 0.01;
-            else if (fullSpell[0].castTime === 0 && fullSpell[0].onGCD) nextSpell = state.t + 1.5 / getHaste(currentStats);
+            else if (fullSpell[0].castTime === 0 && fullSpell[0].onGCD) nextSpell = state.t + 1.5 / currentStats.haste;
             else if (fullSpell[0].channel) { nextSpell = state.t + castTime; spellFinish = state.t }
             else nextSpell = state.t + castTime;
 
@@ -624,10 +572,11 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
             // Update current stats for this combat tick.
             // Effectively base stats + any current stat buffs.
             let currentStats = {...stats};
-            state.currentStats = getCurrentStats(currentStats, state.activeBuffs);
+            //state.currentStats = getCurrentStats(currentStats, state.activeBuffs);
 
             const spellName = queuedSpell;
             const fullSpell = discSpells[queuedSpell];
+            console.log("Casting spell " + spellName);
             //state.manaSpent += 'cost' in fullSpell ? fullSpell[0].cost : 0;
             spendSpellCost(fullSpell, state);
             //state.casts[spellName] = (state.casts[spellName] || 0) + 1;
@@ -662,6 +611,7 @@ export const runCastSequence = (sequence, incStats, settings = {}, incTalents = 
     //console.log(JSON.stringify(totalHealingValues));
     //console.log(state.report);
     //printHealingBreakdown(state.healingDone, state.totalHealing);
+    console.log(state);
 
     return state;
 

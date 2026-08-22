@@ -1,5 +1,4 @@
 import { allRamps, allRampsHealing } from "./DiscRampUtilities";
-import { DISCSPELLS, baseTalents } from "./DiscSpellDB";
 
 export const discPriestOracleSpellData = (contentType) => {
   let spellList = {};
@@ -17,8 +16,8 @@ export const discPriestOracleSpellData = (contentType) => {
 // Run an on-use trinket through our model to get the amount of HPS it adds. Top Gear can just do this directly,
 // but trinket charts need a stronger way to approximate value.
 export const modelOracleOnUseTrinket = (setStats, trinketName, trinketLevel ) => {
-  const baseline = allRampsHealing([], setStats, {}, baseTalents, []);
-  const withTrinket = allRampsHealing([], setStats, {}, baseTalents, [{name: trinketName, level: trinketLevel}])
+  const baseline = allRampsHealing([], setStats, {}, {}, []);
+  const withTrinket = allRampsHealing([], setStats, {}, {}, [{name: trinketName, level: trinketLevel}])
   //const withTrinket = runChijiCastModel(null, {...setStats, critMult: 2}, null, [{name: trinketName, level: trinketLevel}]).hps;
 
   return (withTrinket - baseline) / 60;
@@ -28,7 +27,7 @@ export const modelOracleOnUseTrinket = (setStats, trinketName, trinketLevel ) =>
 export const runOracleCastModel = (itemSet, setStats, castModel, effectList) => {
   const settings = {masteryEfficiency: 1, includeOverheal: true, reporting: false};
   const playerData = { spec: "Discipline Priest", settings: settings, stats: setStats, tier: [], effects: effectList }
-  const result = allRampsHealing([], setStats, {}, baseTalents, [])
+  const result = allRampsHealing([], setStats, {}, {}, [])
   //const result = runMistweaverMonkCastProfile(playerData);
   return {hps: result};
 }
