@@ -363,9 +363,13 @@
           "title": "Mastery Effectiveness",
           "tooltip": "Expected Mastery Effectiveness. Can be pulled from a specific log on wowanalyzer.com. Top Gear only."
         },
-        "waterShieldBugShaman" : {
-          "title": "Enable Water Shield Bug",
-          "tooltip": "Utilize the water shield bug for extra mana."
+        "fightLengthShaman" : {
+          "title": "Fight Length",
+          "tooltip": "Approximate duration of the fight. Most progress fights will be covered under 'Long' while early fights or farm can get closer to 'Short'."
+        },
+        "innervateCountShaman" : {
+          "title": "Innervate Count",
+          "tooltip": "Amount of Innervates you will get during the fight. One innervate means a single cast of it, not one druid giving it to you on cooldown."
         },
 
         "flaskChoice": {

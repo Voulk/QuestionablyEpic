@@ -56,7 +56,9 @@ const initialState : RootState = {
     liningUptime: { value: 60, options: [], category: "embellishments", type: "Entry", gameType: "Retail" },
 
     // Spec values:
-    masteryEffectivenessShaman: { value: 30, options: [], category: "specSpecific", type: "Entry", gameType: "Retail", spec: "Restoration Shaman" },
+    masteryEffectivenessShaman: { value: 20, options: [], category: "specSpecific", type: "Entry", gameType: "Retail", spec: "Restoration Shaman" },
+    fightLengthShaman: { value: "Long", options: ["Long", "Short"], category: "specSpecific", type: "selector", gameType: "Retail", spec: "Restoration Shaman" },
+    innervateCountShaman: { value: 0, options: [], category: "specSpecific", type: "Entry", gameType: "Retail", spec: "Restoration Shaman" },
 
     // Classic Settings
     manaProfile: {value: "Standard", options: ["Standard", "More Efficient", "More Burst Healing"], category: "topGear", type: "selector", gameType: "Classic"},
