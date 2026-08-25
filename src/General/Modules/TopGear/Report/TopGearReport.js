@@ -389,10 +389,10 @@ function displayReport(
             color={"#CC7102"} title={"Dinar Advice - READ THIS"} /> )
             :  
           hasVault ? (
-          <ListedInformationBox introText={"While QE Live wll pick a vault item for you, there is a high chance you should opt for a bonus roll instead"} 
+          <ListedInformationBox introText={"While QE Live wll pick a vault item for you, there is a high chance you should opt for a bonus roll instead."} 
             bulletPoints={["Use Upgrade Finder to analyze bonus roll upgrades.", 
               "Or, check your favourite guide or class discord for updated bonus roll advice.", 
-              "Always consider the long-term value of your choices."]} color={"#0288d1"} title={"Vault Advice - READ THIS"} /> )
+              "Always consider the long-term value of your choices."]} color={"#CE0202"} title={"Vault Advice - READ THIS"} /> )
             : 
           <Grid item xs={12}>
             <InformationBox variant={topInfo.color} title={"Top Set"} information={topInfo.info}></InformationBox>
