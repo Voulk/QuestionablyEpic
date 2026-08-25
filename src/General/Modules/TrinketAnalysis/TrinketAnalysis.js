@@ -53,6 +53,7 @@ export const TRINKET_SOURCES = {
     -18, // PVP
     -17, // PVP
     -85, // Also PVP
+    -95, // Believe it or not, also PVP
   ],
 };
 

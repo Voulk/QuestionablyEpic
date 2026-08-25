@@ -781,7 +781,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
 
   // Vantus Rune
   if (contentType === "Raid") {
-    consumableStats.versatility = (consumableStats.versatility ?? 0) + 270;
+    consumableStats.versatility = (consumableStats.versatility ?? 0) + 165;
   }
 
   statBreakdown.consumables = consumableStats;  
