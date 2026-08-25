@@ -389,11 +389,10 @@ function displayReport(
             color={"#CC7102"} title={"Dinar Advice - READ THIS"} /> )
             :  
           hasVault ? (
-          <ListedInformationBox introText={"Your early vaults are vital choices where you have to balance short term and long term goals along with your future crafts. While QE Live will help with short term, consider the following when picking a vault:"} 
-            bulletPoints={["Tier Pieces can be very good choices early on.", 
-              "This week you should take any Tier piece if one is available, or", 
-              "A socket if you will be doing a slot of splits and can guarantee tier anyway.", 
-              "Ask in your class discord for a second opinion if you are unsure."]} color={"#0288d1"} title={"Vault Advice - READ THIS"} /> )
+          <ListedInformationBox introText={"While QE Live wll pick a vault item for you, there is a high chance you should opt for a bonus roll instead."} 
+            bulletPoints={["Use Upgrade Finder to analyze bonus roll upgrades.", 
+              "Or, check your favourite guide or class discord for updated bonus roll advice.", 
+              "Always consider the long-term value of your choices."]} color={"#CE0202"} title={"Vault Advice - READ THIS"} /> )
             : 
           <Grid item xs={12}>
             <InformationBox variant={topInfo.color} title={"Top Set"} information={topInfo.info}></InformationBox>

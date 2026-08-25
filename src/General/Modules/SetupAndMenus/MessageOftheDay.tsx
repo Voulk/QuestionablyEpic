@@ -4,7 +4,7 @@ export default function MessageOfTheDay({ gameType = "Retail" }) {
   //prettier-ignore
   const messageOfTheDay: string[] = gameType === "Retail" ?
    [
-    "QE is updated for 12.1. All modules are live but be cautious of results for 48 hours as class-tuning is not live yet."
+    "QE is updated for 12.1."
   ] : 
   [
     "The Siege of Orgrimmar update is now live. Please report any bugs you find to the QE Live Discord.",

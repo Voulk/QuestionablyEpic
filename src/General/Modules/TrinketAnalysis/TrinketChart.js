@@ -73,7 +73,7 @@ export const sourceHandler = (array, sources, playerSpec) => {
   const raidSources = [1314, 1308, 1307, 1320, 1317, 1305];
   const dungeonSources = [-1];
   const delveSources = [-69];
-  const otherSources = [1192, 1205, -18, -17, -85, -4];
+  const otherSources = [1192, 1205, -18, -17, -85, -4, -95];
   const timewalkingSources = [-12];
 
   let results;
@@ -359,7 +359,7 @@ export default function TrinketChart({ player }) {
                   data={activeTrinkets}
                   db={finalDB}
                   itemLevels={itemLevels}
-                  theme={themeSelection(theme ? "candidate2" : "candidate21")}
+                  theme={themeSelection(theme ? "candidate2" : "wong")}
                   gameType={gameType}
                   breakdown={breakdown}
                 />
