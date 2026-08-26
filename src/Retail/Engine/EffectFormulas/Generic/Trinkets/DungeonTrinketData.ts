@@ -530,7 +530,7 @@ export const dungeonTrinketData =
         runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
           let bonus_stats: Stats = {};
     
-          bonus_stats[data[0].stat!] = runGenericOnUseTrinket({...data[0], ...trinketRawData["Nevermelting Ice Crystal"][0]}, itemLevel, additionalData.castModel) * 2.5
+          //bonus_stats[] = runGenericOnUseTrinket({...data[0], ...trinketRawData["Nevermelting Ice Crystal"][0]}, itemLevel, additionalData.castModel) * 2.5
           
           return bonus_stats;
         }

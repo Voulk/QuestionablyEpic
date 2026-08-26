@@ -74,7 +74,7 @@ export const sourceHandler = (array, sources, playerSpec) => {
   const dungeonSources = [-1];
   const delveSources = [-69];
   const otherSources = [1192, 1205, -18, -17, -85, -4, -95];
-  const timewalkingSources = [-12];
+  const timewalkingSources = [-12, -67];
 
   let results;
   if (

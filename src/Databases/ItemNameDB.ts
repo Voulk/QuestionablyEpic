@@ -28852,6 +28852,46 @@ export const nameDB =
         "fr": "Bottines du faux oracle",
         "de": "Treter des falschen Orakels"
     },
+    "156251": {
+        "cn": "",
+        "en": "Shroud of Alteration",
+        "ru": "Накидка изменения",
+        "es": "Embozo de alteración",
+        "br": "Mortalha da Alteração",
+        "kr": "",
+        "fr": "Voile d’altération",
+        "de": "Tuch der Veränderung"
+    },
+    "156253": {
+        "cn": "",
+        "en": "Shoulders of Misfortune",
+        "ru": "Наплечники невзгод",
+        "es": "Sobrehombros de infortunio",
+        "br": "Omoplatas do Infortúnio",
+        "kr": "",
+        "fr": "Epaulières de malchance",
+        "de": "Schultern des Unglücks"
+    },
+    "156255": {
+        "cn": "",
+        "en": "Belt of the Sleeper",
+        "ru": "Пояс спящего",
+        "es": "Cinturón del durmiente",
+        "br": "Cinto do Adormecido",
+        "kr": "",
+        "fr": "Ceinture du dormeur",
+        "de": "Gürtel des Schläfers"
+    },
+    "156256": {
+        "cn": "",
+        "en": "Grips of Chaos",
+        "ru": "Захваты Хаоса",
+        "es": "Mandiletes de caos",
+        "br": "Guantes do Caos",
+        "kr": "",
+        "fr": "Poignes du chaos",
+        "de": "Handschutz des Chaos"
+    },
     "156258": {
         "cn": "",
         "en": "Armbands of Bedlam",
@@ -30081,6 +30121,36 @@ export const nameDB =
         "kr": "",
         "fr": "Couvre-chef chantenuit valeureux",
         "de": "Nachtweisenbedeckung der Tapferkeit"
+    },
+    "156461": {
+        "cn": "",
+        "en": "Adamant Handguards",
+        "ru": "Адамантиновые боевые рукавицы",
+        "es": "Manoplas de adamantita",
+        "br": "Protetores de Mão Taxativos",
+        "kr": "",
+        "fr": "Garde-mains intraitables",
+        "de": "Steinharte Handschützer"
+    },
+    "156462": {
+        "cn": "",
+        "en": "Drape of the Spellweaver",
+        "ru": "Пелерина заклинателя",
+        "es": "Mantón del tejehechizos",
+        "br": "Clâmide do Tecencantos",
+        "kr": "",
+        "fr": "Drapé du tisse-sort",
+        "de": "Tuch des Spruchwirkers"
+    },
+    "156469": {
+        "cn": "",
+        "en": "Pillar of Fortitude",
+        "ru": "Столп стойкости",
+        "es": "Pilar de entereza",
+        "br": "Pilar da Fortitude",
+        "kr": "",
+        "fr": "Pilier de robustesse",
+        "de": "Säule der Seelenstärke"
     },
     "156488": {
         "cn": "",
@@ -31841,6 +31911,236 @@ export const nameDB =
         "kr": "",
         "fr": "Bague tissépine",
         "de": "Dorngewebtes Band"
+    },
+    "171509": {
+        "cn": "",
+        "en": "Breastplate of Tormented Rage",
+        "ru": "Кираса нестерпимого гнева",
+        "es": "Coraza de rabia atormentada",
+        "br": "Peitoral da Raiva Atormentada",
+        "kr": "",
+        "fr": "Cuirasse de la rage tourmentée",
+        "de": "Brustplatte des gepeinigten Zorns"
+    },
+    "171510": {
+        "cn": "",
+        "en": "Legguards of the Apostle",
+        "ru": "Апостольские набедренники",
+        "es": "Musleras del apóstol",
+        "br": "Guarda-pernas do Apóstolo",
+        "kr": "",
+        "fr": "Garde-jambes de l’apôtre",
+        "de": "Beinschützer des Apostels"
+    },
+    "171511": {
+        "cn": "",
+        "en": "Stalk-Skin Belt",
+        "ru": "Камуфляжный пояс",
+        "es": "Cinturón de piel de acechador",
+        "br": "Cinto de Pele de Tocaia",
+        "kr": "",
+        "fr": "Ceinture de traque-peau",
+        "de": "Stängelhautgürtel"
+    },
+    "171516": {
+        "cn": "",
+        "en": "Chestguard of Bitter Charms",
+        "ru": "Нагрудный доспех горьких оберегов",
+        "es": "Coselete de talismanes amargos",
+        "br": "Couraça dos Encantos Mordazes",
+        "kr": "",
+        "fr": "Corselet des charmes amers",
+        "de": "Brustschutz der bitteren Reize"
+    },
+    "171521": {
+        "cn": "",
+        "en": "Eruption-Scarred Boots",
+        "ru": "Поврежденные взрывом сапоги",
+        "es": "Botas marcadas por erupción",
+        "br": "Botas Bexiguentas",
+        "kr": "",
+        "fr": "Bottes marquées par une éruption",
+        "de": "Eruptionsgezeichnete Stiefel"
+    },
+    "171522": {
+        "cn": "",
+        "en": "Gloves of the Dancing Bear",
+        "ru": "Перчатки пляшущего медведя",
+        "es": "Guantes del oso danzante",
+        "br": "Luvas do Urso Dançante",
+        "kr": "",
+        "fr": "Gants de l’ours danseur",
+        "de": "Handschuhe des Tanzbären"
+    },
+    "171527": {
+        "cn": "",
+        "en": "Band of the Traitor King",
+        "ru": "Кольцо короля-предателя",
+        "es": "Sortija del rey traidor",
+        "br": "Elo do Rei Traidor",
+        "kr": "",
+        "fr": "Bague du roi traître",
+        "de": "Band des Verräterkönigs"
+    },
+    "171532": {
+        "cn": "",
+        "en": "Might of the Nerub",
+        "ru": "Мощь нерубов",
+        "es": "Poderío de los Nerub",
+        "br": "Poder dos Nerub",
+        "kr": "",
+        "fr": "Puissance des nérubiens",
+        "de": "Macht der Neruber"
+    },
+    "171539": {
+        "cn": "",
+        "en": "Lurid Manifestation",
+        "ru": "Проявление Лурида",
+        "es": "Manifestación escabrosa",
+        "br": "Manifestação Lúrida",
+        "kr": "",
+        "fr": "Manifestation horrible",
+        "de": "Blutrünstige Offenbarung"
+    },
+    "171543": {
+        "cn": "",
+        "en": "Band of Deplorable Violence",
+        "ru": "Кольцо удручающего насилия",
+        "es": "Sortija de violencia deplorable",
+        "br": "Elo da Deplorável Violência",
+        "kr": "",
+        "fr": "Bague de violence déplorable",
+        "de": "Band der bedauernswerten Gewalt"
+    },
+    "171545": {
+        "cn": "",
+        "en": "Signet of the Traitor King",
+        "ru": "Перстень короля-предателя",
+        "es": "Sello del rey traidor",
+        "br": "Sinete do Rei Traidor",
+        "kr": "",
+        "fr": "Chevalière du roi traître",
+        "de": "Siegel des Verräterkönigs"
+    },
+    "171550": {
+        "cn": "",
+        "en": "Strength of the Nerub",
+        "ru": "Сила нерубов",
+        "es": "Fuerza de los Nerub",
+        "br": "Força dos Nerub",
+        "kr": "",
+        "fr": "Force des nérubiens",
+        "de": "Stärke der Neruber"
+    },
+    "171559": {
+        "cn": "",
+        "en": "Maiden's Favor",
+        "ru": "Девичья благосклонность",
+        "es": "Favor de Doncella",
+        "br": "Benevolência da Donzela",
+        "kr": "",
+        "fr": "Faveur de la damoiselle",
+        "de": "Gabe der Maid"
+    },
+    "171570": {
+        "cn": "",
+        "en": "Royal Scepter of Terenas II",
+        "ru": "Королевский скипетр Теренаса II",
+        "es": "Cetro real de Terenas II",
+        "br": "Cetro Real de Terenas II",
+        "kr": "",
+        "fr": "Sceptre royal de Terenas II",
+        "de": "Königliches Szepter von Terenas II"
+    },
+    "171571": {
+        "cn": "",
+        "en": "Archus, Greatstaff of Antonidas",
+        "ru": "Аркус, великий посох Антонидаса",
+        "es": "Archus, gran bastón de Antonidas",
+        "br": "Archus, Grande Cajado de Antônidas",
+        "kr": "",
+        "fr": "Archus, grand bâton d’Antonidas",
+        "de": "Archus, Hohestab des Antonidas"
+    },
+    "171575": {
+        "cn": "",
+        "en": "Valius, Gavel of the Lightbringer",
+        "ru": "Валий, молот Светоносного",
+        "es": "Valius, mazo del Iluminado",
+        "br": "Valius, Martelete do Arauto da Luz",
+        "kr": "",
+        "fr": "Valius, martelet du porteur de Lumière",
+        "de": "Valius, Hammer des Lichtbringers"
+    },
+    "171576": {
+        "cn": "",
+        "en": "Halion, Staff of Forgotten Love",
+        "ru": "Халион, посох забытой любви",
+        "es": "Halion, bastón del amor olvidado",
+        "br": "Halion, Cajado do Amor Esquecido",
+        "kr": "",
+        "fr": "Halion, le bâton de l’amour oublié",
+        "de": "Halion, Stab der vergessenen Liebe"
+    },
+    "171580": {
+        "cn": "",
+        "en": "Tel'thas, Dagger of the Blood King",
+        "ru": "Тель'тас, кинжал Кровавого короля",
+        "es": "Tel'thas, daga del rey de sangre",
+        "br": "Tel'thas, Adaga do Rei Sanguinário",
+        "kr": "",
+        "fr": "Tel’thas, dague du roi de sang",
+        "de": "Tel'thas, Dolch des Blutkönigs"
+    },
+    "171589": {
+        "cn": "",
+        "en": "Cold Convergence",
+        "ru": "Холодное сосредоточение",
+        "es": "Convergencia fría",
+        "br": "Convergência Gélida",
+        "kr": "",
+        "fr": "Convergence froide",
+        "de": "Kalte Konvergenz"
+    },
+    "171605": {
+        "cn": "",
+        "en": "Perdition",
+        "ru": "Вечные муки",
+        "es": "Perdición",
+        "br": "Perdição",
+        "kr": "",
+        "fr": "Perdition",
+        "de": "Verderben"
+    },
+    "171619": {
+        "cn": "",
+        "en": "Cuffs of Dark Shadows",
+        "ru": "Манжеты Темных теней",
+        "es": "Puños de sombras oscuras",
+        "br": "Manilhas das Sombras Tenebrosas",
+        "kr": "",
+        "fr": "Crispins des ombres obscures",
+        "de": "Manschetten der dunklen Schatten"
+    },
+    "171621": {
+        "cn": "",
+        "en": "Shoulderplates of Bloodshed",
+        "ru": "Латные наплечники кровопролития",
+        "es": "Hombreras de placas de derramamiento de sangre",
+        "br": "Placa d'Ombros do Sangue Derramado",
+        "kr": "",
+        "fr": "Plaques d’épaule d’effusion de sang",
+        "de": "Schulterplatten des Blutvergießens"
+    },
+    "171622": {
+        "cn": "",
+        "en": "Ring of Holy Cleansing",
+        "ru": "Кольцо святого очищения",
+        "es": "Anillo de limpieza sagrada",
+        "br": "Anel da Sagrada Purificação",
+        "kr": "",
+        "fr": "Anneau de purification sacrée",
+        "de": "Ring der heiligen Läuterung"
     },
     "171627": {
         "cn": "",

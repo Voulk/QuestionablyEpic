@@ -19,6 +19,15 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+        {
+    version: "12.1 / 5.5.4",
+    update: 8,
+    date: "August 26",
+    changes: [ 
+      "Added all items that drop from the timewalking box.",
+      "Refurbished timewalking trinkets on the chart." 
+    ]
+  },
       {
     version: "12.1 / 5.5.4",
     update: 7,
