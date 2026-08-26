@@ -25,7 +25,7 @@ export const changeLog: entry[] = [
     date: "August 26",
     changes: [ 
       "Added all items that drop from the timewalking box.",
-      "Refurbished timewalking trinkets on the chart."
+      "Refurbished timewalking trinkets on the chart." 
     ]
   },
       {
