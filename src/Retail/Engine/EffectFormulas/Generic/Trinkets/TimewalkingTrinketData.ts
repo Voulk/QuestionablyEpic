@@ -80,7 +80,7 @@ export const timewalkingTrinketData = [
     effects: [
       { // 
         coefficient: 2.399108, 
-        table: -7,
+        scalingClass: -7,
         duration: 20,
         cooldown: 120,
       },
@@ -96,7 +96,7 @@ export const timewalkingTrinketData = [
     effects: [
       { // 
         coefficient: 2.39909, 
-        table: -7,
+        scalingClass: -7,
         duration: 20,
         cooldown: 120,
       },
@@ -112,7 +112,7 @@ export const timewalkingTrinketData = [
         effects: [
           { // 
             coefficient: 2.000788 * 0.95, 
-            table: -1,
+            scalingClass: -1,
             duration: 20,
             cooldown: 120,
           },
@@ -128,7 +128,7 @@ export const timewalkingTrinketData = [
         effects: [
             { // Mana proc chance.
             coefficient: 2.03251,
-            table: -7,
+            scalingClass: -7,
             ppm: 2.5,
             },
         ],
@@ -145,7 +145,7 @@ export const timewalkingTrinketData = [
         effects: [
           { // (Fel infusion)
             coefficient: 1.815054, 
-            table: -7,
+            scalingClass: -7,
             duration: 20,
             cooldown: 120,
           },
@@ -166,7 +166,7 @@ export const timewalkingTrinketData = [
         effects: [
           { // Mastery portion
             coefficient: 0.450353,
-            table: -7,
+            scalingClass: -7,
             ppm: {"Restoration Druid": 35.5, "Holy Priest": 14, "Restoration Shaman": 12, "Holy Paladin": 10, "Mistweaver Monk": 12, 
                   "Preservation Evoker": 6, "Discipline Priest": 9} // Relevant casts per minute. Can auto-pull from logs.
           },
@@ -187,7 +187,7 @@ export const timewalkingTrinketData = [
         effects: [
           { // 
             coefficient: 1.595796,
-            table: -7,
+            scalingClass: -7,
             ppm: 2
           },
         ],
@@ -208,7 +208,7 @@ export const timewalkingTrinketData = [
           { // 
             coefficient: 1.125146,
             duration: 15,
-            table: -1,
+            scalingClass: -1,
             ppm: 2
           },
         ],
@@ -229,7 +229,7 @@ export const timewalkingTrinketData = [
           { // 
             coefficient: 1.561615,
             duration: 10,
-            table: -1,
+            scalingClass: -1,
             ppm: 2
           },
         ],
@@ -251,7 +251,7 @@ export const timewalkingTrinketData = [
             coefficient: 0.10503 * 0.95,
             duration: 10,
             stacks: 5,
-            table: -1,
+            scalingClass: -1,
           },
         ],
         runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
@@ -265,7 +265,7 @@ export const timewalkingTrinketData = [
         effects: [
           { // 469925
             coefficient: 0.137649, 
-            table: -1,
+            scalingClass: -1,
             duration: 20,
             cooldown: 120,
           },
@@ -288,7 +288,7 @@ export const timewalkingTrinketData = [
         effects: [
           {
             coefficient: 42.78218, 
-            table: -9,
+            scalingClass: -9,
             efficiency: 0.9,
             secondaries: ["crit", "haste", "versatility"], // Crit untested, haste in PPM scaling
             ppm: 3,
@@ -307,7 +307,7 @@ export const timewalkingTrinketData = [
         effects: [
             { // Mana proc chance.
               coefficient: 2.240427,
-              table: -1,
+              scalingClass: -1,
               cooldown: 300,
               ticks: 10,
             },

@@ -1359,8 +1359,7 @@
         "effect": {
             "type": "trinket",
             "name": "Force of Will"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 11812,
@@ -1423,8 +1422,7 @@
             "type": "trinket",
             "name": "Hand of Justice"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 11819,
@@ -1442,8 +1440,7 @@
         "effect": {
             "type": "trinket",
             "name": "Second Wind"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 11820,
@@ -1571,8 +1568,7 @@
         "effect": {
             "type": "trinket",
             "name": "Burst of Knowledge"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 11839,
@@ -2426,8 +2422,7 @@
         "effect": {
             "type": "trinket",
             "name": "Cannonball Runner"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 13383,
@@ -2820,8 +2815,7 @@
         "effect": {
             "type": "trinket",
             "name": "Ramstein's Lightning Bolts"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 13524,
@@ -3783,8 +3777,7 @@
         "effect": {
             "type": "trinket",
             "name": "Vigilance Charm"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 18371,
@@ -3803,8 +3796,7 @@
         "effect": {
             "type": "trinket",
             "name": "Mindtap Talisman"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 18372,
@@ -5140,8 +5132,7 @@
         "effect": {
             "type": "trinket",
             "name": "Auslese's Light Channeler"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 24391,
@@ -6327,8 +6318,7 @@
         "effect": {
             "type": "trinket",
             "name": "Figurine of the Colossus"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 27531,
@@ -6818,8 +6808,7 @@
         "effect": {
             "type": "trinket",
             "name": "Argussian Compass"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 27771,
@@ -7226,8 +7215,7 @@
         "effect": {
             "type": "trinket",
             "name": "Warp-Scarab Brooch"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 27831,
@@ -7420,8 +7408,7 @@
         "effect": {
             "type": "trinket",
             "name": "Alembic of Infernal Power"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 27907,
@@ -7484,8 +7471,7 @@
         "effect": {
             "type": "trinket",
             "name": "Icon of Unyielding Courage"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 28166,
@@ -8021,8 +8007,7 @@
         "stats": {
             "intellect": 0,
             "stamina": 0
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 29239,
@@ -10103,8 +10088,7 @@
         "effect": {
             "type": "trinket",
             "name": "The Skull of Gul'dan"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 32496,
@@ -10122,8 +10106,7 @@
         "effect": {
             "type": "trinket",
             "name": "Memento of Tyrande"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 32500,
@@ -10162,8 +10145,7 @@
         "effect": {
             "type": "trinket",
             "name": "Shadowmoon Insignia"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 32505,
@@ -10183,8 +10165,7 @@
             "type": "trinket",
             "name": "Madness of the Betrayer"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 32510,
@@ -10393,8 +10374,7 @@
         "effect": {
             "type": "trinket",
             "name": "Timbal's Focusing Crystal"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 34471,
@@ -10413,8 +10393,7 @@
         "effect": {
             "type": "trinket",
             "name": "Vial of the Sunwell"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 34472,
@@ -10433,8 +10412,7 @@
         "effect": {
             "type": "trinket",
             "name": "Shard of Contempt"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 34473,
@@ -10452,8 +10430,7 @@
         "effect": {
             "type": "trinket",
             "name": "Commendation of Kael'thas"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 34601,
@@ -12087,8 +12064,7 @@
         "effect": {
             "type": "trinket",
             "name": "Seal of the Pantheon"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 36995,
@@ -12429,8 +12405,7 @@
         "effect": {
             "type": "trinket",
             "name": "Sphere of Red Dragon's Blood"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 37167,
@@ -12882,8 +12857,7 @@
         "effect": {
             "type": "trinket",
             "name": "Essence of Gossamer"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 37221,
@@ -13350,8 +13324,7 @@
         "effect": {
             "type": "trinket",
             "name": "Offering of Sacrifice"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 37639,
@@ -13713,8 +13686,7 @@
         "effect": {
             "type": "trinket",
             "name": "Winged Talisman"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 37845,
@@ -14567,7 +14539,23 @@
             "type": "trinket",
             "name": "Living Flame"
         },
-        "levelRange": []
+        "sources": [
+            {
+                "instanceId": -12,
+                "encounterId": 3
+            }
+        ],
+        "levelRange": [
+            272,
+            276,
+            285,
+            289,
+            295,
+            302,
+            308,
+            315,
+            321
+        ]
     },
     {
         "id": 45149,
@@ -14651,8 +14639,7 @@
         "effect": {
             "type": "trinket",
             "name": "Heart of Iron"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 45161,
@@ -15499,8 +15486,7 @@
         "effect": {
             "type": "trinket",
             "name": "Wrathstone"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 45264,
@@ -15766,8 +15752,7 @@
         "effect": {
             "type": "trinket",
             "name": "Pyrite Infuser"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 45287,
@@ -15874,7 +15859,23 @@
             "type": "trinket",
             "name": "Energy Siphon"
         },
-        "levelRange": []
+        "sources": [
+            {
+                "instanceId": -12,
+                "encounterId": 3
+            }
+        ],
+        "levelRange": [
+            272,
+            276,
+            285,
+            289,
+            295,
+            302,
+            308,
+            315,
+            321
+        ]
     },
     {
         "id": 45293,
@@ -16164,7 +16165,23 @@
             "type": "trinket",
             "name": "Eye of the Broodmother"
         },
-        "levelRange": []
+        "sources": [
+            {
+                "instanceId": -12,
+                "encounterId": 3
+            }
+        ],
+        "levelRange": [
+            272,
+            276,
+            285,
+            289,
+            295,
+            302,
+            308,
+            315,
+            321
+        ]
     },
     {
         "id": 45310,
@@ -16227,8 +16244,7 @@
         "effect": {
             "type": "trinket",
             "name": "Furnace Stone"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 45314,
@@ -17077,7 +17093,23 @@
             "type": "trinket",
             "name": "Scale of Fates"
         },
-        "levelRange": []
+        "sources": [
+            {
+                "instanceId": -12,
+                "encounterId": 3
+            }
+        ],
+        "levelRange": [
+            272,
+            276,
+            285,
+            289,
+            295,
+            302,
+            308,
+            315,
+            321
+        ]
     },
     {
         "id": 45467,
@@ -17390,8 +17422,7 @@
         "effect": {
             "type": "trinket",
             "name": "Pandora's Plea"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 45491,
@@ -17612,8 +17643,7 @@
         "effect": {
             "type": "trinket",
             "name": "The General's Heart"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 45508,
@@ -17767,8 +17797,7 @@
         "effect": {
             "type": "trinket",
             "name": "Flare of the Heavens"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 45519,
@@ -17833,8 +17862,7 @@
         "effect": {
             "type": "trinket",
             "name": "Blood of the Old God"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 45523,
@@ -18009,7 +18037,23 @@
             "type": "trinket",
             "name": "Show of Faith"
         },
-        "levelRange": []
+        "sources": [
+            {
+                "instanceId": -12,
+                "encounterId": 3
+            }
+        ],
+        "levelRange": [
+            272,
+            276,
+            285,
+            289,
+            295,
+            302,
+            308,
+            315,
+            321
+        ]
     },
     {
         "id": 45536,
@@ -18139,8 +18183,7 @@
             "type": "trinket",
             "name": "Comet's Trail"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 45610,
@@ -18699,8 +18742,7 @@
         "effect": {
             "type": "trinket",
             "name": "Spark of Hope"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 45707,
@@ -18922,8 +18964,7 @@
         "effect": {
             "type": "trinket",
             "name": "Elemental Focus Stone"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 45867,
@@ -19191,7 +19232,23 @@
             "type": "trinket",
             "name": "Sif's Remembrance"
         },
-        "levelRange": []
+        "sources": [
+            {
+                "instanceId": -12,
+                "encounterId": 3
+            }
+        ],
+        "levelRange": [
+            272,
+            276,
+            285,
+            289,
+            295,
+            302,
+            308,
+            315,
+            321
+        ]
     },
     {
         "id": 45931,
@@ -19210,8 +19267,7 @@
         "effect": {
             "type": "trinket",
             "name": "Mjolnir Runestone"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 45933,
@@ -19745,8 +19801,7 @@
         "effect": {
             "type": "trinket",
             "name": "Royal Seal of King Llane"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 46025,
@@ -19900,8 +19955,7 @@
             "type": "trinket",
             "name": "Dark Matter"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 46039,
@@ -20148,8 +20202,7 @@
         "effect": {
             "type": "trinket",
             "name": "Meteorite Crystal"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 46068,
@@ -20237,8 +20290,7 @@
         "effect": {
             "type": "trinket",
             "name": "Vanquished Clutches of Yogg-Saron"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 49784,
@@ -21070,8 +21122,7 @@
         "effect": {
             "type": "trinket",
             "name": "Needle-Encrusted Scorpion"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 50206,
@@ -21440,8 +21491,7 @@
         "effect": {
             "type": "trinket",
             "name": "Ick's Rotting Thumb"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 50259,
@@ -21459,21 +21509,7 @@
         "effect": {
             "type": "trinket",
             "name": "Nevermelting Ice Crystal"
-        },
-        "sources": [
-            {
-                "encounterId": 278,
-                "instanceId": -96
-            }
-        ],
-        "levelRange": [
-            272,
-            276,
-            285,
-            289,
-            295,
-            298
-        ]
+        }
     },
     {
         "id": 50263,
@@ -24150,8 +24186,7 @@
         "effect": {
             "type": "trinket",
             "name": "Variable Pulse Lightning Capacitor"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 68926,
@@ -24169,8 +24204,7 @@
         "effect": {
             "type": "trinket",
             "name": "Jaws of Defeat"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 68927,
@@ -24189,8 +24223,7 @@
             "type": "trinket",
             "name": "The Hungerer"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 68981,
@@ -24209,8 +24242,7 @@
         "effect": {
             "type": "trinket",
             "name": "Spidersilk Spindle"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 68982,
@@ -24228,17 +24260,7 @@
         "effect": {
             "type": "trinket",
             "name": "Necromantic Focus"
-        },
-        "sources": [
-            {
-                "encounterId": 196,
-                "instanceId": -67
-            }
-        ],
-        "levelRange": [
-            272,
-            276
-        ]
+        }
     },
     {
         "id": 68983,
@@ -24256,17 +24278,7 @@
         "effect": {
             "type": "trinket",
             "name": "Eye of Blazing Power"
-        },
-        "sources": [
-            {
-                "encounterId": 194,
-                "instanceId": -67
-            }
-        ],
-        "levelRange": [
-            272,
-            276
-        ]
+        }
     },
     {
         "id": 68994,
@@ -24285,8 +24297,7 @@
             "type": "trinket",
             "name": "Matrix Restabilizer"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 68995,
@@ -24305,8 +24316,7 @@
             "type": "trinket",
             "name": "Vessel of Acceleration"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 69110,
@@ -24398,13 +24408,7 @@
         "effect": {
             "type": "trinket",
             "name": "Necromantic Focus"
-        },
-        "sources": [
-            {
-                "encounterId": 196,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 69149,
@@ -24422,13 +24426,7 @@
         "effect": {
             "type": "trinket",
             "name": "Eye of Blazing Power"
-        },
-        "sources": [
-            {
-                "encounterId": 194,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 69150,
@@ -28293,8 +28291,7 @@
             "type": "trinket",
             "name": "Arrow of Time"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 88335,
@@ -33561,8 +33558,7 @@
             "type": "trinket",
             "name": "Blood Seal of Azzakel"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 109996,
@@ -33582,8 +33578,7 @@
             "type": "trinket",
             "name": "Thundertower's Targeting Reticle"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 109999,
@@ -33602,8 +33597,7 @@
             "type": "trinket",
             "name": "Witherbark's Branch"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 110000,
@@ -33622,8 +33616,7 @@
         "effect": {
             "type": "trinket",
             "name": "Crushto's Runic Alarm"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 110001,
@@ -33642,8 +33635,7 @@
         "effect": {
             "type": "trinket",
             "name": "Tovra's Lightning Repository"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 110004,
@@ -33661,8 +33653,7 @@
         "effect": {
             "type": "trinket",
             "name": "Coagulated Genesaur Blood"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 110005,
@@ -33682,8 +33673,7 @@
         "effect": {
             "type": "trinket",
             "name": "Crystalline Blood Drop"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 110006,
@@ -33703,8 +33693,7 @@
         "effect": {
             "type": "trinket",
             "name": "Rukhran's Quill"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 110007,
@@ -33722,8 +33711,7 @@
         "effect": {
             "type": "trinket",
             "name": "Voidmender's Shadowgem"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 110009,
@@ -33742,8 +33730,7 @@
         "effect": {
             "type": "trinket",
             "name": "Leaf of the Ancient Protectors"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 110010,
@@ -33763,8 +33750,7 @@
             "type": "trinket",
             "name": "Mote of Corruption"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 110011,
@@ -33784,8 +33770,7 @@
             "type": "trinket",
             "name": "Fires of the Sun"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 110012,
@@ -33804,8 +33789,7 @@
             "type": "trinket",
             "name": "Bonemaw's Big Toe"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 110014,
@@ -33824,8 +33808,7 @@
             "type": "trinket",
             "name": "Spores of Alacrity"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 110015,
@@ -33845,8 +33828,7 @@
         "effect": {
             "type": "trinket",
             "name": "Toria's Unseeing Eye"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 110016,
@@ -33866,8 +33848,7 @@
         "effect": {
             "type": "trinket",
             "name": "Solar Containment Unit"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 110019,
@@ -33885,8 +33866,7 @@
         "effect": {
             "type": "trinket",
             "name": "Xeri'tac's Unhatched Egg Sac"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 110031,
@@ -44270,8 +44250,7 @@
         "effect": {
             "type": "trinket",
             "name": "Amalgam's Seventh Spine"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 136715,
@@ -44290,8 +44269,7 @@
         "effect": {
             "type": "trinket",
             "name": "Spiked Counterweight"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 136716,
@@ -44310,8 +44288,7 @@
         "effect": {
             "type": "trinket",
             "name": "Caged Horror"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 136724,
@@ -44419,8 +44396,7 @@
             "type": "trinket",
             "name": "Ember of Nullification"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 136979,
@@ -44483,8 +44459,7 @@
         "effect": {
             "type": "trinket",
             "name": "Corrupted Starlight"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 137304,
@@ -44547,8 +44522,7 @@
         "effect": {
             "type": "trinket",
             "name": "Oakheart's Gnarled Root"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 137309,
@@ -44633,8 +44607,7 @@
             "type": "trinket",
             "name": "Nightmare Egg Shell"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 137314,
@@ -44675,8 +44648,7 @@
         "effect": {
             "type": "trinket",
             "name": "Writhing Heart of Darkness"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 137319,
@@ -44827,8 +44799,7 @@
             "type": "trinket",
             "name": "Shard of Rokmora"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 137341,
@@ -44891,8 +44862,7 @@
         "effect": {
             "type": "trinket",
             "name": "Talisman of the Cragshaper"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 137348,
@@ -44933,8 +44903,7 @@
         "effect": {
             "type": "trinket",
             "name": "Naraxas' Spiked Tongue"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 137352,
@@ -45041,8 +45010,7 @@
         "effect": {
             "type": "trinket",
             "name": "Mark of Dargrul"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 137360,
@@ -45104,8 +45072,7 @@
         "effect": {
             "type": "trinket",
             "name": "Parjesh's Medallion"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 137364,
@@ -45145,8 +45112,7 @@
         "effect": {
             "type": "trinket",
             "name": "Stormsinger Fulmination Charge"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 137368,
@@ -45187,8 +45153,7 @@
         "effect": {
             "type": "trinket",
             "name": "Giant Ornamental Pearl"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 137372,
@@ -45229,8 +45194,7 @@
             "type": "trinket",
             "name": "Tempered Egg of Serpentrix"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 137378,
@@ -45249,8 +45213,7 @@
         "effect": {
             "type": "trinket",
             "name": "Bottled Hurricane"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 137480,
@@ -45335,8 +45298,7 @@
         "effect": {
             "type": "trinket",
             "name": "Flask of the Solemn Night"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 137485,
@@ -45354,8 +45316,7 @@
         "effect": {
             "type": "trinket",
             "name": "Infernal Writ"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 137486,
@@ -45374,8 +45335,7 @@
         "effect": {
             "type": "trinket",
             "name": "Windscar Whetstone"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 137487,
@@ -46297,8 +46257,7 @@
             "type": "trinket",
             "name": "Tirathon's Betrayal"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 137538,
@@ -46317,8 +46276,7 @@
         "effect": {
             "type": "trinket",
             "name": "Orb of Torment"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 137539,
@@ -46337,8 +46295,7 @@
         "effect": {
             "type": "trinket",
             "name": "Faulty Countermeasure"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 137540,
@@ -46357,8 +46314,7 @@
         "effect": {
             "type": "trinket",
             "name": "Concave Reflecting Lens"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 137541,
@@ -46377,8 +46333,7 @@
         "effect": {
             "type": "trinket",
             "name": "Moonlit Prism"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 139056,
@@ -52487,8 +52442,7 @@
             "type": "trinket",
             "name": "Void Stalker's Contract"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 151308,
@@ -52551,8 +52505,7 @@
         "effect": {
             "type": "trinket",
             "name": "Reality Breacher"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 151311,
@@ -52594,8 +52547,7 @@
             "type": "trinket",
             "name": "Ampoule of Pure Void"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 151313,
@@ -53163,21 +53115,7 @@
         "effect": {
             "type": "trinket",
             "name": "Echo of L'ura"
-        },
-        "sources": [
-            {
-                "encounterId": 945,
-                "instanceId": -96
-            }
-        ],
-        "levelRange": [
-            272,
-            276,
-            285,
-            289,
-            295,
-            298
-        ]
+        }
     },
     {
         "id": 151403,
@@ -57594,8 +57532,7 @@
             "type": "trinket",
             "name": "Harlan's Loaded Dice"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 155884,
@@ -58120,7 +58057,13 @@
         "effect": {
             "type": "trinket",
             "name": "Living Flame"
-        }
+        },
+        "sources": [
+            {
+                "instanceId": -12,
+                "encounterId": 3
+            }
+        ]
     },
     {
         "id": 155948,
@@ -59338,7 +59281,13 @@
         "effect": {
             "type": "trinket",
             "name": "Energy Siphon"
-        }
+        },
+        "sources": [
+            {
+                "instanceId": -12,
+                "encounterId": 3
+            }
+        ]
     },
     {
         "id": 156022,
@@ -59599,7 +59548,13 @@
         "effect": {
             "type": "trinket",
             "name": "Eye of the Broodmother"
-        }
+        },
+        "sources": [
+            {
+                "instanceId": -12,
+                "encounterId": 3
+            }
+        ]
     },
     {
         "id": 156038,
@@ -61677,7 +61632,13 @@
         "effect": {
             "type": "trinket",
             "name": "Scale of Fates"
-        }
+        },
+        "sources": [
+            {
+                "instanceId": -12,
+                "encounterId": 3
+            }
+        ]
     },
     {
         "id": 156188,
@@ -61982,7 +61943,24 @@
         "effect": {
             "type": "trinket",
             "name": "Pandora's Plea"
-        }
+        },
+        "sources": [
+            {
+                "encounterId": 1647,
+                "instanceId": -67
+            }
+        ],
+        "levelRange": [
+            272,
+            276,
+            285,
+            289,
+            295,
+            302,
+            308,
+            315,
+            321
+        ]
     },
     {
         "id": 156208,
@@ -62541,7 +62519,13 @@
         "effect": {
             "type": "trinket",
             "name": "Show of Faith"
-        }
+        },
+        "sources": [
+            {
+                "instanceId": -12,
+                "encounterId": 3
+            }
+        ]
     },
     {
         "id": 156246,
@@ -62586,6 +62570,70 @@
                 "instanceId": -67
             }
         ]
+    },
+    {
+        "id": 156251,
+        "name": "Shroud of Alteration",
+        "icon": "inv_misc_cape_05",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 5250,
+            "versatility": 1750
+        },
+        "slot": "Back"
+    },
+    {
+        "id": 156253,
+        "name": "Shoulders of Misfortune",
+        "icon": "inv_shoulder_101",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500
+        },
+        "slot": "Shoulder"
+    },
+    {
+        "id": 156255,
+        "name": "Belt of the Sleeper",
+        "icon": "inv_belt_49c",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "versatility": 3750,
+            "haste": 3250
+        },
+        "slot": "Waist"
+    },
+    {
+        "id": 156256,
+        "name": "Grips of Chaos",
+        "icon": "inv_bracer_31b",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 4000,
+            "haste": 3000
+        },
+        "slot": "Wrist"
     },
     {
         "id": 156258,
@@ -63410,7 +63458,13 @@
         "effect": {
             "type": "trinket",
             "name": "Sif's Remembrance"
-        }
+        },
+        "sources": [
+            {
+                "instanceId": -12,
+                "encounterId": 3
+            }
+        ]
     },
     {
         "id": 156310,
@@ -65434,6 +65488,54 @@
         ]
     },
     {
+        "id": 156461,
+        "name": "Adamant Handguards",
+        "icon": "inv_gauntlets_54",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 4750,
+            "versatility": 2250
+        },
+        "slot": "Hands"
+    },
+    {
+        "id": 156462,
+        "name": "Drape of the Spellweaver",
+        "icon": "inv_misc_cape_09",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 4000,
+            "haste": 3000
+        },
+        "slot": "Back"
+    },
+    {
+        "id": 156469,
+        "name": "Pillar of Fortitude",
+        "icon": "inv_staff_94",
+        "quality": 4,
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 23380,
+            "stamina": 7889,
+            "crit": 3750,
+            "versatility": 3250
+        },
+        "slot": "2H Weapon"
+    },
+    {
         "id": 156488,
         "name": "Conqueror's Glaivedancer Breastplate",
         "icon": "inv_chest_leather_01",
@@ -66896,8 +66998,7 @@
             "type": "trinket",
             "name": "My'das Talisman"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 158320,
@@ -66915,8 +67016,7 @@
         "effect": {
             "type": "trinket",
             "name": "Revitalizing Voodoo Totem"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 158321,
@@ -67178,8 +67278,7 @@
             "type": "trinket",
             "name": "Merektha's Fang"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 158368,
@@ -67197,8 +67296,7 @@
         "effect": {
             "type": "trinket",
             "name": "Sethraliss' Defiled Relic"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 158369,
@@ -67259,8 +67357,7 @@
             "type": "trinket",
             "name": "Tiny Electromental in a Jar"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 158375,
@@ -67301,8 +67398,7 @@
             "type": "trinket",
             "name": "Rezan's Gleaming Eye"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 158713,
@@ -68927,8 +69023,7 @@
         "effect": {
             "type": "trinket",
             "name": "Vessel of Skittering Shadows"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 159614,
@@ -68947,8 +69042,7 @@
             "type": "trinket",
             "name": "Galecaller's Boon"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 159616,
@@ -68967,8 +69061,7 @@
             "type": "trinket",
             "name": "Gore-Crusted Butcher's Block"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 159617,
@@ -68987,8 +69080,7 @@
             "type": "trinket",
             "name": "Lustrous Golden Plumage"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 159618,
@@ -69007,8 +69099,7 @@
             "type": "trinket",
             "name": "Mchimba's Ritual Bandages"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 159619,
@@ -69027,8 +69118,7 @@
             "type": "trinket",
             "name": "Briny Barnacle"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 159620,
@@ -69046,8 +69136,7 @@
         "effect": {
             "type": "trinket",
             "name": "Conch of Dark Whispers"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 159630,
@@ -69066,8 +69155,7 @@
         "effect": {
             "type": "trinket",
             "name": "Balefire Branch"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 159631,
@@ -69086,8 +69174,7 @@
         "effect": {
             "type": "trinket",
             "name": "Lady Waycrest's Music Box"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 159636,
@@ -69330,6 +69417,383 @@
                 "instanceId": -67
             }
         ]
+    },
+    {
+        "id": 171509,
+        "name": "Breastplate of Tormented Rage",
+        "icon": "inv_chest_plate09",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "versatility": 5000,
+            "crit": 2000
+        },
+        "slot": "Chest"
+    },
+    {
+        "id": 171510,
+        "name": "Legguards of the Apostle",
+        "icon": "inv_pants_plate_20",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 3050,
+            "haste": 3950
+        },
+        "slot": "Legs"
+    },
+    {
+        "id": 171511,
+        "name": "Stalk-Skin Belt",
+        "icon": "inv_belt_15",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 4400,
+            "haste": 2600
+        },
+        "slot": "Waist"
+    },
+    {
+        "id": 171516,
+        "name": "Chestguard of Bitter Charms",
+        "icon": "inv_chest_plate11",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 3800,
+            "versatility": 3200
+        },
+        "slot": "Chest"
+    },
+    {
+        "id": 171521,
+        "name": "Eruption-Scarred Boots",
+        "icon": "inv_boots_chain_13",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 3650
+        },
+        "slot": "Feet"
+    },
+    {
+        "id": 171522,
+        "name": "Gloves of the Dancing Bear",
+        "icon": "inv_gauntlets_13",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "versatility": 3800,
+            "crit": 3200
+        },
+        "slot": "Hands"
+    },
+    {
+        "id": 171527,
+        "name": "Band of the Traitor King",
+        "icon": "inv_jewelry_ring_57",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 10500,
+            "versatility": 7000
+        },
+        "faction": "horde",
+        "slot": "Finger"
+    },
+    {
+        "id": 171532,
+        "name": "Might of the Nerub",
+        "icon": "inv_misc_cape_18",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 3800,
+            "haste": 3200
+        },
+        "faction": "horde",
+        "slot": "Back"
+    },
+    {
+        "id": 171539,
+        "name": "Lurid Manifestation",
+        "icon": "inv_jewelry_ring_55",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "versatility": 7750,
+            "crit": 9750
+        },
+        "faction": "horde",
+        "slot": "Finger"
+    },
+    {
+        "id": 171543,
+        "name": "Band of Deplorable Violence",
+        "icon": "inv_jewelry_ring_55",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "versatility": 8000,
+            "crit": 9500
+        },
+        "faction": "alliance",
+        "slot": "Finger"
+    },
+    {
+        "id": 171545,
+        "name": "Signet of the Traitor King",
+        "icon": "inv_jewelry_ring_57",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "haste": 10500,
+            "versatility": 7000
+        },
+        "faction": "alliance",
+        "slot": "Finger"
+    },
+    {
+        "id": 171550,
+        "name": "Strength of the Nerub",
+        "icon": "inv_misc_cape_16",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 3800,
+            "haste": 3200
+        },
+        "faction": "alliance",
+        "slot": "Back"
+    },
+    {
+        "id": 171559,
+        "name": "Maiden's Favor",
+        "icon": "inv_misc_cape_16",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 3500,
+            "versatility": 3500
+        },
+        "faction": "alliance",
+        "slot": "Back"
+    },
+    {
+        "id": 171570,
+        "name": "Royal Scepter of Terenas II",
+        "icon": "inv_mace_115",
+        "quality": 4,
+        "itemClass": 2,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "crit": 3500,
+            "haste": 3500
+        },
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 171571,
+        "name": "Archus, Greatstaff of Antonidas",
+        "icon": "inv_staff_108",
+        "quality": 4,
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 23380,
+            "stamina": 7889,
+            "versatility": 3500,
+            "haste": 3500
+        },
+        "slot": "2H Weapon"
+    },
+    {
+        "id": 171575,
+        "name": "Valius, Gavel of the Lightbringer",
+        "icon": "inv_mace_115",
+        "quality": 4,
+        "itemClass": 2,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "crit": 3500,
+            "versatility": 3500
+        },
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 171576,
+        "name": "Halion, Staff of Forgotten Love",
+        "icon": "inv_staff_109",
+        "quality": 4,
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 23380,
+            "stamina": 7889,
+            "crit": 3950,
+            "haste": 3050
+        },
+        "slot": "2H Weapon"
+    },
+    {
+        "id": 171580,
+        "name": "Tel'thas, Dagger of the Blood King",
+        "icon": "inv_weapon_shortblade_101",
+        "quality": 4,
+        "itemClass": 2,
+        "itemSubClass": 15,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "crit": 3050,
+            "haste": 3950
+        },
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 171589,
+        "name": "Cold Convergence",
+        "icon": "inv_staff_98",
+        "quality": 4,
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 23380,
+            "stamina": 7889,
+            "crit": 3050,
+            "haste": 3950
+        },
+        "faction": "alliance",
+        "slot": "2H Weapon"
+    },
+    {
+        "id": 171605,
+        "name": "Perdition",
+        "icon": "inv_staff_102",
+        "quality": 4,
+        "itemClass": 2,
+        "itemSubClass": 10,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 23380,
+            "stamina": 7889,
+            "crit": 3050,
+            "haste": 3950
+        },
+        "faction": "horde",
+        "slot": "2H Weapon"
+    },
+    {
+        "id": 171619,
+        "name": "Cuffs of Dark Shadows",
+        "icon": "inv_bracer_18",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 3950,
+            "haste": 3050
+        },
+        "slot": "Wrist"
+    },
+    {
+        "id": 171621,
+        "name": "Shoulderplates of Bloodshed",
+        "icon": "inv_shoulder_75",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 4850,
+            "haste": 2150
+        },
+        "slot": "Shoulder"
+    },
+    {
+        "id": 171622,
+        "name": "Ring of Holy Cleansing",
+        "icon": "inv_jewelry_ring_50naxxramas",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "versatility": 7750,
+            "haste": 9750
+        },
+        "slot": "Finger"
     },
     {
         "id": 171627,
@@ -69581,13 +70045,7 @@
         "effect": {
             "type": "trinket",
             "name": "Necromantic Focus"
-        },
-        "sources": [
-            {
-                "encounterId": 196,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 171645,
@@ -69605,13 +70063,7 @@
         "effect": {
             "type": "trinket",
             "name": "Eye of Blazing Power"
-        },
-        "sources": [
-            {
-                "encounterId": 194,
-                "instanceId": -67
-            }
-        ]
+        }
     },
     {
         "id": 171646,
@@ -78808,8 +79260,7 @@
         "effect": {
             "type": "trinket",
             "name": "Emerald Winglord's Insignia"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 188817,
@@ -78828,8 +79279,7 @@
         "effect": {
             "type": "trinket",
             "name": "Claw-Carved Figurine"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 188818,
@@ -79436,8 +79886,7 @@
         "effect": {
             "type": "trinket",
             "name": "Sustaining Alchemist Stone"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 191492,
@@ -79456,8 +79905,7 @@
         "effect": {
             "type": "trinket",
             "name": "Alacritous Alchemist Stone"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 191623,
@@ -80795,8 +81243,7 @@
         "effect": {
             "type": "trinket",
             "name": "Gral's Discarded Tooth"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 192996,
@@ -80932,8 +81379,7 @@
         "effect": {
             "type": "trinket",
             "name": "Idol of the Life-Binder"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 193004,
@@ -80952,8 +81398,7 @@
             "type": "trinket",
             "name": "Idol of the Spell-Weaver"
         },
-        "crafted": true,
-        "levelRange": []
+        "crafted": true
     },
     {
         "id": 193005,
@@ -80972,8 +81417,7 @@
             "type": "trinket",
             "name": "Idol of the Dreamer"
         },
-        "crafted": true,
-        "levelRange": []
+        "crafted": true
     },
     {
         "id": 193006,
@@ -80991,8 +81435,7 @@
         "effect": {
             "type": "trinket",
             "name": "Idol of the Earth-Warder"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 193386,
@@ -81919,8 +82362,7 @@
             "type": "trinket",
             "name": "Battle-Scarred Scale"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 193481,
@@ -82595,8 +83037,7 @@
         "effect": {
             "type": "trinket",
             "name": "Engraved Spearhead"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 193602,
@@ -82750,8 +83191,7 @@
         "effect": {
             "type": "trinket",
             "name": "Tome of Unstable Power"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 193629,
@@ -82834,8 +83274,7 @@
             "type": "trinket",
             "name": "Burgeoning Seed"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 193635,
@@ -82901,8 +83340,7 @@
         "effect": {
             "type": "trinket",
             "name": "Umbrelskul's Fractured Heart"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 193641,
@@ -83065,8 +83503,7 @@
             "type": "trinket",
             "name": "Treemouth's Festering Splinter"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 193653,
@@ -83164,8 +83601,7 @@
         "effect": {
             "type": "trinket",
             "name": "Idol of Pure Decay"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 193661,
@@ -83328,8 +83764,7 @@
             "type": "trinket",
             "name": "Frenzying Signoll Flare"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 193673,
@@ -83395,8 +83830,7 @@
         "effect": {
             "type": "trinket",
             "name": "Furious Ragefeather"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 193678,
@@ -83414,8 +83848,7 @@
         "effect": {
             "type": "trinket",
             "name": "Miniature Singing Stone"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 193679,
@@ -83434,8 +83867,7 @@
             "type": "trinket",
             "name": "Idol of Trampling Hooves"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 193680,
@@ -83566,8 +83998,7 @@
             "type": "trinket",
             "name": "Granyth's Enduring Scale"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 193690,
@@ -83688,8 +84119,7 @@
         "effect": {
             "type": "trinket",
             "name": "Bottle of Spiraling Winds"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 193698,
@@ -83740,8 +84170,7 @@
             "type": "trinket",
             "name": "Algeth'ar Puzzle Box"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 193703,
@@ -84045,8 +84474,7 @@
         "effect": {
             "type": "trinket",
             "name": "Emerald Coach's Whistle"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 193719,
@@ -84065,8 +84493,7 @@
             "type": "trinket",
             "name": "Dragon Games Equipment"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 193720,
@@ -84253,8 +84680,7 @@
             "type": "trinket",
             "name": "Globe of Jagged Ice"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 193733,
@@ -84320,8 +84746,7 @@
         "effect": {
             "type": "trinket",
             "name": "Water's Beating Heart"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 193738,
@@ -84404,8 +84829,7 @@
         "effect": {
             "type": "trinket",
             "name": "Irideus Fragment"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 193744,
@@ -84741,8 +85165,7 @@
         "effect": {
             "type": "trinket",
             "name": "Blazebinder's Hoof"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 193763,
@@ -84864,8 +85287,7 @@
         "effect": {
             "type": "trinket",
             "name": "Erupting Spear Fragment"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 193770,
@@ -84915,8 +85337,7 @@
         "effect": {
             "type": "trinket",
             "name": "Spoils of Neltharus"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 193775,
@@ -85095,8 +85516,7 @@
             "type": "trinket",
             "name": "Mutated Magmammoth Scale"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 193787,
@@ -85179,8 +85599,7 @@
         "effect": {
             "type": "trinket",
             "name": "Time-Breaching Talon"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 193792,
@@ -85358,8 +85777,7 @@
         "effect": {
             "type": "trinket",
             "name": "Inexorable Resonator"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 193806,
@@ -85490,8 +85908,7 @@
             "type": "trinket",
             "name": "Homeland Raid Horn"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 193816,
@@ -85589,8 +86006,7 @@
         "effect": {
             "type": "trinket",
             "name": "Crystalline Lapis"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 193916,
@@ -85690,8 +86106,7 @@
             "type": "trinket",
             "name": "Decoration of Flame"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 194300,
@@ -85709,8 +86124,7 @@
         "effect": {
             "type": "trinket",
             "name": "Conjured Chillglobe"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 194301,
@@ -85728,8 +86142,7 @@
         "effect": {
             "type": "trinket",
             "name": "Whispering Incarnate Icon"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 194302,
@@ -85748,8 +86161,7 @@
             "type": "trinket",
             "name": "Storm-Eater's Boon"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 194303,
@@ -85768,8 +86180,7 @@
             "type": "trinket",
             "name": "Rumbling Ruby"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 194304,
@@ -85787,8 +86198,7 @@
         "effect": {
             "type": "trinket",
             "name": "Iceblood Deathsnare"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 194305,
@@ -85807,8 +86217,7 @@
             "type": "trinket",
             "name": "Controlled Current Technique"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 194306,
@@ -85827,8 +86236,7 @@
             "type": "trinket",
             "name": "All-Totem of the Master"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 194307,
@@ -85846,8 +86254,7 @@
         "effect": {
             "type": "trinket",
             "name": "Broodkeeper's Promise"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 194308,
@@ -85866,8 +86273,7 @@
             "type": "trinket",
             "name": "Manic Grieftorch"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 194309,
@@ -85885,8 +86291,7 @@
         "effect": {
             "type": "trinket",
             "name": "Spiteful Storm"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 194310,
@@ -85904,8 +86309,7 @@
         "effect": {
             "type": "trinket",
             "name": "Desperate Invoker's Codex"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 194314,
@@ -86028,8 +86432,7 @@
         "effect": {
             "type": "trinket",
             "name": "Ekrazathal's Colored Fang"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 194335,
@@ -86544,8 +86947,7 @@
         "effect": {
             "type": "trinket",
             "name": "Worldbreaker's Charm"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 194369,
@@ -86772,8 +87174,7 @@
         "effect": {
             "type": "trinket",
             "name": "Lifegift Ruby"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 194400,
@@ -87048,8 +87449,7 @@
             "type": "trinket",
             "name": "Titan Lightning Generator"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 194422,
@@ -87274,8 +87674,7 @@
         "effect": {
             "type": "trinket",
             "name": "Blue Winglord's Insignia"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 194533,
@@ -87369,8 +87768,7 @@
         "effect": {
             "type": "trinket",
             "name": "Darkmoon Deck Box: Inferno"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 194877,
@@ -88063,8 +88461,7 @@
         "effect": {
             "type": "trinket",
             "name": "Magmasworn Spearhead"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 195220,
@@ -88082,8 +88479,7 @@
         "effect": {
             "type": "trinket",
             "name": "Uncanny Pocketwatch"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 195221,
@@ -89689,8 +90085,7 @@
         "effect": {
             "type": "trinket",
             "name": "Ohn'ahra's Carving"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 197886,
@@ -90061,8 +90456,7 @@
             "type": "trinket",
             "name": "Ancestral Protector's Stone"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 197937,
@@ -90176,8 +90570,7 @@
         "effect": {
             "type": "trinket",
             "name": "Bag of Biscuits"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 197988,
@@ -90836,8 +91229,7 @@
             "type": "trinket",
             "name": "Spineripper's Fang"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 198037,
@@ -90855,8 +91247,7 @@
         "stats": {
             "intellect": 0,
             "stamina": 0
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 198041,
@@ -90890,8 +91281,7 @@
         "effect": {
             "type": "trinket",
             "name": "Caregiver's Charm"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 198086,
@@ -90909,8 +91299,7 @@
         "effect": {
             "type": "trinket",
             "name": "Darkmoon Deck: Inferno"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 198087,
@@ -90928,8 +91317,7 @@
         "effect": {
             "type": "trinket",
             "name": "Darkmoon Deck: Rime"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 198088,
@@ -90947,8 +91335,7 @@
         "effect": {
             "type": "trinket",
             "name": "Darkmoon Deck: Dance"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 198089,
@@ -90966,8 +91353,7 @@
         "effect": {
             "type": "trinket",
             "name": "Darkmoon Deck: Watcher"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 198322,
@@ -91177,8 +91563,7 @@
         "effect": {
             "type": "trinket",
             "name": "Azure Arcanic Amplifier"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 198429,
@@ -91212,8 +91597,7 @@
         "effect": {
             "type": "trinket",
             "name": "Crude Wind Charm"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 198451,
@@ -91232,8 +91616,7 @@
             "type": "trinket",
             "name": "Lifeflame Ampoule"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 198477,
@@ -91251,8 +91634,7 @@
         "effect": {
             "type": "trinket",
             "name": "Darkmoon Deck Box: Rime"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 198478,
@@ -91270,8 +91652,7 @@
         "effect": {
             "type": "trinket",
             "name": "Darkmoon Deck Box: Dance"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 198481,
@@ -91289,8 +91670,7 @@
         "effect": {
             "type": "trinket",
             "name": "Darkmoon Deck Box: Watcher"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 198488,
@@ -91324,8 +91704,7 @@
         "effect": {
             "type": "trinket",
             "name": "Dreamscape Prism"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 198490,
@@ -91344,8 +91723,7 @@
             "type": "trinket",
             "name": "Bushwhacker's Compass"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 198529,
@@ -91364,8 +91742,7 @@
             "type": "trinket",
             "name": "Wayfarer's Iron Torch"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 198532,
@@ -91383,8 +91760,7 @@
         "effect": {
             "type": "trinket",
             "name": "The Cartographer's Calipers"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 198539,
@@ -91402,8 +91778,7 @@
         "effect": {
             "type": "trinket",
             "name": "Breath of the Plains"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 198542,
@@ -91422,8 +91797,7 @@
             "type": "trinket",
             "name": "Shikaari Huntress' Arrowhead"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 198565,
@@ -91986,8 +92360,7 @@
         "effect": {
             "type": "trinket",
             "name": "Blood of the Khansguard"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 198671,
@@ -92037,8 +92410,7 @@
         "effect": {
             "type": "trinket",
             "name": "Bottomless Reliquary Satchel"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 198734,
@@ -92767,8 +93139,7 @@
             "type": "trinket",
             "name": "Stonewatcher's Toe"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 199030,
@@ -92787,8 +93158,7 @@
             "type": "trinket",
             "name": "Stonewatcher's Thumb"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 199031,
@@ -92806,8 +93176,7 @@
         "effect": {
             "type": "trinket",
             "name": "Stonewatcher's Eye"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 199032,
@@ -94378,8 +94747,7 @@
         "effect": {
             "type": "trinket",
             "name": "Razorwind Talisman"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 200163,
@@ -94880,8 +95248,7 @@
             "type": "trinket",
             "name": "Blazing Essence"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 200219,
@@ -95011,8 +95378,7 @@
         "effect": {
             "type": "trinket",
             "name": "Memory of Nulltheria"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 200237,
@@ -98287,8 +98653,7 @@
         "effect": {
             "type": "trinket",
             "name": "Tamed Eagle"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 200542,
@@ -98306,8 +98671,7 @@
         "effect": {
             "type": "trinket",
             "name": "Breezy Companion"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 200549,
@@ -98325,8 +98689,7 @@
         "effect": {
             "type": "trinket",
             "name": "Restored Titan Artifact"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 200552,
@@ -98345,8 +98708,7 @@
             "type": "trinket",
             "name": "Torrent Caller's Shell"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 200563,
@@ -98364,8 +98726,7 @@
         "effect": {
             "type": "trinket",
             "name": "Primal Ritual Shell"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 200641,
@@ -98613,8 +98974,7 @@
             "type": "trinket",
             "name": "Beogoka's Tooth and Claw"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 200676,
@@ -98632,8 +98992,7 @@
         "effect": {
             "type": "trinket",
             "name": "Static-Charged Scale"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 200679,
@@ -98652,8 +99011,7 @@
         "effect": {
             "type": "trinket",
             "name": "Essence of Somnikus's Shade"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 200682,
@@ -98784,8 +99142,7 @@
             "type": "trinket",
             "name": "Magically Magical Faerie Flower"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 200736,
@@ -98852,8 +99209,7 @@
             "type": "trinket",
             "name": "Pipspark's Prestigious Pendant of Protection"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 200742,
@@ -98952,8 +99308,7 @@
             "type": "trinket",
             "name": "Gruffy's Dented Horn"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 200757,
@@ -99003,8 +99358,7 @@
         "effect": {
             "type": "trinket",
             "name": "Unstable Arcane Cell"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 200761,
@@ -99071,8 +99425,7 @@
             "type": "trinket",
             "name": "Plume of the Forgotten"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 200859,
@@ -99091,8 +99444,7 @@
             "type": "trinket",
             "name": "Seasoned Hunter's Trophy"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 200868,
@@ -99111,8 +99463,7 @@
             "type": "trinket",
             "name": "Integrated Primal Fire"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 200875,
@@ -99146,8 +99497,7 @@
         "effect": {
             "type": "trinket",
             "name": "Wind-Sealed Mana Capsule"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 200968,
@@ -101070,8 +101420,7 @@
         "effect": {
             "type": "trinket",
             "name": "Crimson Aspirant's Badge of Ferocity"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 201450,
@@ -101090,8 +101439,7 @@
         "effect": {
             "type": "trinket",
             "name": "Crimson Aspirant's Medallion"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 201451,
@@ -101111,8 +101459,7 @@
         "effect": {
             "type": "trinket",
             "name": "Insignia of Alacrity"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 201452,
@@ -101131,8 +101478,7 @@
         "effect": {
             "type": "trinket",
             "name": "Crimson Aspirant's Emblem"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 201453,
@@ -101151,8 +101497,7 @@
         "effect": {
             "type": "trinket",
             "name": "Crimson Aspirant's Sigil of Adaptation"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 201472,
@@ -105566,8 +105911,7 @@
         "effect": {
             "type": "trinket",
             "name": "Crimson Gladiator's Badge of Ferocity"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 201808,
@@ -105587,8 +105931,7 @@
         "effect": {
             "type": "trinket",
             "name": "Insignia of Alacrity"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 201809,
@@ -105607,8 +105950,7 @@
         "effect": {
             "type": "trinket",
             "name": "Crimson Gladiator's Emblem"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 201810,
@@ -105627,8 +105969,7 @@
         "effect": {
             "type": "trinket",
             "name": "Crimson Gladiator's Medallion"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 201811,
@@ -105647,8 +105988,7 @@
         "effect": {
             "type": "trinket",
             "name": "Crimson Gladiator's Sigil of Adaptation"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 201884,
@@ -107083,8 +107423,7 @@
         "effect": {
             "type": "trinket",
             "name": "Sands of Temporal Perfection"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 202089,
@@ -107393,8 +107732,7 @@
         "effect": {
             "type": "trinket",
             "name": "Defender of the Winterpelt"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 202268,
@@ -107412,8 +107750,7 @@
         "effect": {
             "type": "trinket",
             "name": "Winterpelt Totem"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 202282,
@@ -110369,8 +110706,7 @@
             "type": "trinket",
             "name": "Dragonfire Bomb Dispenser"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 202612,
@@ -110388,8 +110724,7 @@
         "effect": {
             "type": "trinket",
             "name": "Screaming Black Dragonscale"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 202613,
@@ -110408,8 +110743,7 @@
             "type": "trinket",
             "name": "Zaqali Chaos Grapnel"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 202614,
@@ -110427,8 +110761,7 @@
         "effect": {
             "type": "trinket",
             "name": "Rashok's Molten Heart"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 202615,
@@ -110446,8 +110779,7 @@
         "effect": {
             "type": "trinket",
             "name": "Vessel of Searing Shadow"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 202616,
@@ -110466,8 +110798,7 @@
             "type": "trinket",
             "name": "Enduring Dreadplate"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 202617,
@@ -110486,8 +110817,7 @@
             "type": "trinket",
             "name": "Elementium Pocket Anvil"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 202618,
@@ -110571,8 +110901,7 @@
             "type": "trinket",
             "name": "Crimson Combatant's Medallion"
         },
-        "crafted": true,
-        "levelRange": []
+        "crafted": true
     },
     {
         "id": 203376,
@@ -110593,8 +110922,7 @@
             "type": "trinket",
             "name": "Insignia of Alacrity"
         },
-        "crafted": true,
-        "levelRange": []
+        "crafted": true
     },
     {
         "id": 203377,
@@ -110614,8 +110942,7 @@
             "type": "trinket",
             "name": "Crimson Combatant's Emblem"
         },
-        "crafted": true,
-        "levelRange": []
+        "crafted": true
     },
     {
         "id": 203382,
@@ -110968,8 +111295,7 @@
             "type": "trinket",
             "name": "Totem Toss"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 203714,
@@ -110987,8 +111313,7 @@
         "effect": {
             "type": "trinket",
             "name": "Ward of Faceless Ire"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 203729,
@@ -111006,8 +111331,7 @@
         "effect": {
             "type": "trinket",
             "name": "Ominous Chromatic Essence"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 203963,
@@ -111026,8 +111350,7 @@
         "effect": {
             "type": "trinket",
             "name": "Beacon to the Beyond"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 203996,
@@ -111045,8 +111368,7 @@
         "effect": {
             "type": "trinket",
             "name": "Igneous Flowstone"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 204094,
@@ -111625,8 +111947,7 @@
         "effect": {
             "type": "trinket",
             "name": "Obsidian Combatant's Medallion"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 204165,
@@ -111646,8 +111967,7 @@
         "effect": {
             "type": "trinket",
             "name": "Insignia of Alacrity"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 204166,
@@ -111666,8 +111986,7 @@
         "effect": {
             "type": "trinket",
             "name": "Obsidian Combatant's Emblem"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 204177,
@@ -111705,8 +112024,7 @@
         "effect": {
             "type": "trinket",
             "name": "Neltharion's Call to Chaos"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 204202,
@@ -111725,8 +112043,7 @@
         "effect": {
             "type": "trinket",
             "name": "Neltharion's Call to Dominance"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 204211,
@@ -111745,8 +112062,7 @@
         "effect": {
             "type": "trinket",
             "name": "Neltharion's Call to Suffering"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 204318,
@@ -111812,8 +112128,7 @@
         "effect": {
             "type": "trinket",
             "name": "Pocket Darkened Elemental Core"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 204387,
@@ -111831,8 +112146,7 @@
         "effect": {
             "type": "trinket",
             "name": "Buzzing Orb Core"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 204388,
@@ -111850,8 +112164,7 @@
         "effect": {
             "type": "trinket",
             "name": "Draconic Cauterizing Magma"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 204390,
@@ -113336,8 +113649,7 @@
         "effect": {
             "type": "trinket",
             "name": "Satchel of Healing Spores"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 204728,
@@ -113355,8 +113667,7 @@
         "effect": {
             "type": "trinket",
             "name": "Friendship Censer"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 204732,
@@ -113423,8 +113734,7 @@
         "effect": {
             "type": "trinket",
             "name": "Heatbound Medallion"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 204737,
@@ -114115,8 +114425,7 @@
             "type": "trinket",
             "name": "Djaradin Boasting Tablets"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 204805,
@@ -114135,8 +114444,7 @@
         "effect": {
             "type": "trinket",
             "name": "Suspended Sulfuric Droplet"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 204810,
@@ -114156,8 +114464,7 @@
         "effect": {
             "type": "trinket",
             "name": "Drogbar Rocks"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 204811,
@@ -114177,8 +114484,7 @@
             "type": "trinket",
             "name": "Drogbar Stones"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 204896,
@@ -114245,8 +114551,7 @@
         "effect": {
             "type": "trinket",
             "name": "Firecaller's Focus"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 204914,
@@ -115819,8 +116124,7 @@
         "effect": {
             "type": "trinket",
             "name": "Underlight Globe"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 205192,
@@ -115838,8 +116142,7 @@
         "effect": {
             "type": "trinket",
             "name": "Volatile Crystal Shard"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 205193,
@@ -115857,8 +116160,7 @@
         "effect": {
             "type": "trinket",
             "name": "Sturdy Deepflayer Scute"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 205194,
@@ -115877,8 +116179,7 @@
             "type": "trinket",
             "name": "Fractured Crystalspine Quill"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 205195,
@@ -115897,8 +116198,7 @@
         "effect": {
             "type": "trinket",
             "name": "Drakeforged Magma Charm"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 205196,
@@ -115916,8 +116216,7 @@
         "effect": {
             "type": "trinket",
             "name": "Zaqali Hand Cauldron"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 205200,
@@ -115935,8 +116234,7 @@
         "effect": {
             "type": "trinket",
             "name": "Stirring Twilight Ember"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 205201,
@@ -115954,8 +116252,7 @@
         "effect": {
             "type": "trinket",
             "name": "Smoldering Howler Horn"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 205229,
@@ -115973,8 +116270,7 @@
         "effect": {
             "type": "trinket",
             "name": "Magma Serpent Lure"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 205262,
@@ -115992,8 +116288,7 @@
         "effect": {
             "type": "trinket",
             "name": "Magmaclaw Lure"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 205264,
@@ -116140,8 +116435,7 @@
             "type": "trinket",
             "name": "Deepflayer Lure"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 205278,
@@ -121749,8 +122043,7 @@
         "effect": {
             "type": "trinket",
             "name": "Obsidian Gladiator's Badge of Ferocity"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 205709,
@@ -121770,8 +122063,7 @@
         "effect": {
             "type": "trinket",
             "name": "Insignia of Alacrity"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 205710,
@@ -121790,8 +122082,7 @@
         "effect": {
             "type": "trinket",
             "name": "Obsidian Gladiator's Emblem"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 205711,
@@ -121810,8 +122101,7 @@
         "effect": {
             "type": "trinket",
             "name": "Obsidian Gladiator's Medallion"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 205712,
@@ -121830,8 +122120,7 @@
         "effect": {
             "type": "trinket",
             "name": "Obsidian Gladiator's Sigil of Adaptation"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 205714,
@@ -122875,8 +123164,7 @@
         "effect": {
             "type": "trinket",
             "name": "Obsidian Aspirant's Badge of Ferocity"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 205779,
@@ -122895,8 +123183,7 @@
         "effect": {
             "type": "trinket",
             "name": "Obsidian Aspirant's Medallion"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 205780,
@@ -122916,8 +123203,7 @@
         "effect": {
             "type": "trinket",
             "name": "Insignia of Alacrity"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 205781,
@@ -122936,8 +123222,7 @@
         "effect": {
             "type": "trinket",
             "name": "Obsidian Aspirant's Emblem"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 205782,
@@ -122956,8 +123241,7 @@
         "effect": {
             "type": "trinket",
             "name": "Obsidian Aspirant's Sigil of Adaptation"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 205783,
@@ -125648,8 +125932,7 @@
         "effect": {
             "type": "trinket",
             "name": "Paracausal Fragment of Seschenal"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 206820,
@@ -125699,8 +125982,7 @@
             "type": "trinket",
             "name": "Paracausal Fragment of Sulfuras"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 206958,
@@ -125718,8 +126000,7 @@
         "effect": {
             "type": "trinket",
             "name": "Paracausal Fragment of Val'anyr"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 206964,
@@ -125739,8 +126020,7 @@
             "type": "trinket",
             "name": "Paracausal Fragment of Doomhammer"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 206972,
@@ -125758,8 +126038,7 @@
         "effect": {
             "type": "trinket",
             "name": "Paracausal Fragment of Azzinoth"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 206983,
@@ -125777,8 +126056,7 @@
         "effect": {
             "type": "trinket",
             "name": "Paracausal Fragment of Frostmourne"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 207005,
@@ -125796,8 +126074,7 @@
         "effect": {
             "type": "trinket",
             "name": "Paracausal Fragment of Thunderfin, Humid Blade of the Tideseeker"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 207024,
@@ -125817,8 +126094,7 @@
             "type": "trinket",
             "name": "Paracausal Fragment of Shalamayne"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 207115,
@@ -126558,8 +126834,7 @@
             "type": "trinket",
             "name": "Bandolier of Twisted Blades"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 207166,
@@ -126578,8 +126853,7 @@
             "type": "trinket",
             "name": "Cataclysmic Signet Brand"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 207167,
@@ -126598,8 +126872,7 @@
         "effect": {
             "type": "trinket",
             "name": "Ashes of the Embersoul"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 207168,
@@ -126617,8 +126890,7 @@
         "effect": {
             "type": "trinket",
             "name": "Pip's Emerald Friendship Badge"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 207169,
@@ -126637,8 +126909,7 @@
             "type": "trinket",
             "name": "Branch of the Tormented Ancient"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 207170,
@@ -126656,8 +126927,7 @@
         "effect": {
             "type": "trinket",
             "name": "Smoldering Seedling"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 207171,
@@ -126676,8 +126946,7 @@
         "effect": {
             "type": "trinket",
             "name": "Blossom of Amirdrassil"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 207172,
@@ -126695,8 +126964,7 @@
         "effect": {
             "type": "trinket",
             "name": "Belor'relos, the Suncaller"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 207173,
@@ -126715,8 +126983,7 @@
             "type": "trinket",
             "name": "Gift of Ursine Vengeance"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 207174,
@@ -126735,8 +127002,7 @@
         "effect": {
             "type": "trinket",
             "name": "Fyrakk's Tainted Rageheart"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 207175,
@@ -126755,8 +127021,7 @@
             "type": "trinket",
             "name": "Coiled Serpent Idol"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 207176,
@@ -129071,8 +129336,7 @@
         "effect": {
             "type": "trinket",
             "name": "Delve Ring"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 207528,
@@ -129091,8 +129355,7 @@
             "type": "trinket",
             "name": "Prophetic Stonescales"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 207552,
@@ -129110,8 +129373,7 @@
         "effect": {
             "type": "trinket",
             "name": "Echoing Tyrstone"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 207566,
@@ -129130,8 +129392,7 @@
             "type": "trinket",
             "name": "Accelerating Sandglass"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 207579,
@@ -129149,8 +129410,7 @@
         "effect": {
             "type": "trinket",
             "name": "Time-Thief's Gambit"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 207581,
@@ -129168,8 +129428,7 @@
         "effect": {
             "type": "trinket",
             "name": "Mirror of Fractured Tomorrows"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 207595,
@@ -131205,8 +131464,7 @@
         "effect": {
             "type": "trinket",
             "name": "Verdant Combatant's Medallion"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 208308,
@@ -131226,8 +131484,7 @@
         "effect": {
             "type": "trinket",
             "name": "Insignia of Alacrity"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 208309,
@@ -131246,8 +131503,7 @@
         "effect": {
             "type": "trinket",
             "name": "Verdant Combatant's Emblem"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 208313,
@@ -133028,8 +133284,7 @@
         "effect": {
             "type": "trinket",
             "name": "Augury of the Primal Flame"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 208615,
@@ -133047,8 +133302,7 @@
         "effect": {
             "type": "trinket",
             "name": "Nymue's Unraveling Spindle"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 208616,
@@ -137892,8 +138146,7 @@
         "effect": {
             "type": "trinket",
             "name": "Verdant Gladiator's Badge of Ferocity"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 209344,
@@ -137913,8 +138166,7 @@
         "effect": {
             "type": "trinket",
             "name": "Insignia of Alacrity"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 209345,
@@ -137933,8 +138185,7 @@
         "effect": {
             "type": "trinket",
             "name": "Verdant Gladiator's Emblem"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 209346,
@@ -137953,8 +138204,7 @@
         "effect": {
             "type": "trinket",
             "name": "Verdant Gladiator's Medallion"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 209347,
@@ -137973,8 +138223,7 @@
         "effect": {
             "type": "trinket",
             "name": "Verdant Gladiator's Sigil of Adaptation"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 209356,
@@ -139930,8 +140179,7 @@
         "effect": {
             "type": "trinket",
             "name": "Verdant Aspirant's Badge of Ferocity"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 209764,
@@ -139950,8 +140198,7 @@
         "effect": {
             "type": "trinket",
             "name": "Verdant Aspirant's Medallion"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 209765,
@@ -139971,8 +140218,7 @@
         "effect": {
             "type": "trinket",
             "name": "Insignia of Alacrity"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 209766,
@@ -139991,8 +140237,7 @@
         "effect": {
             "type": "trinket",
             "name": "Verdant Aspirant's Emblem"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 209767,
@@ -140011,8 +140256,7 @@
         "effect": {
             "type": "trinket",
             "name": "Verdant Aspirant's Sigil of Adaptation"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 209768,
@@ -140926,8 +141170,7 @@
         "effect": {
             "type": "trinket",
             "name": "Dancing Dream Blossoms"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 209954,
@@ -140946,8 +141189,7 @@
             "type": "trinket",
             "name": "Moragh's Favorite Rock"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 209955,
@@ -140966,8 +141208,7 @@
         "effect": {
             "type": "trinket",
             "name": "Root of Fire"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 209956,
@@ -140986,8 +141227,7 @@
         "effect": {
             "type": "trinket",
             "name": "Ori's Verdant Feather"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 209957,
@@ -141006,8 +141246,7 @@
             "type": "trinket",
             "name": "Fang of the Frenzied Nightclaw"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 209958,
@@ -141025,8 +141264,7 @@
         "effect": {
             "type": "trinket",
             "name": "Rune of the Umbramane"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 209959,
@@ -141045,8 +141283,7 @@
         "effect": {
             "type": "trinket",
             "name": "Pinch of Dream Magic"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 209960,
@@ -143589,8 +143826,7 @@
             "type": "trinket",
             "name": "Algari Alchemist Stone"
         },
-        "crafted": true,
-        "levelRange": []
+        "crafted": true
     },
     {
         "id": 210961,
@@ -145808,8 +146044,7 @@
         "effect": {
             "type": "trinket",
             "name": "Draconic Combatant's Medallion"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 211607,
@@ -145829,8 +146064,7 @@
         "effect": {
             "type": "trinket",
             "name": "Insignia of Alacrity"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 211608,
@@ -145849,8 +146083,7 @@
         "effect": {
             "type": "trinket",
             "name": "Draconic Combatant's Emblem"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 211612,
@@ -148914,8 +149147,7 @@
             "type": "trinket",
             "name": "Sikran's Endless Arsenal"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 212450,
@@ -148934,8 +149166,7 @@
         "effect": {
             "type": "trinket",
             "name": "Swarmlord's Authority"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 212451,
@@ -148953,8 +149184,7 @@
         "effect": {
             "type": "trinket",
             "name": "Aberrant Spellforge"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 212452,
@@ -148973,8 +149203,7 @@
         "effect": {
             "type": "trinket",
             "name": "Gruesome Syringe"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 212453,
@@ -148993,8 +149222,7 @@
             "type": "trinket",
             "name": "Skyterror's Corrosive Organ"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 212454,
@@ -149013,8 +149241,7 @@
         "effect": {
             "type": "trinket",
             "name": "Mad Queen's Mandate"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 212456,
@@ -149034,8 +149261,7 @@
             "type": "trinket",
             "name": "Void Reaper's Contract"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 212682,
@@ -149296,8 +149522,7 @@
         "effect": {
             "type": "trinket",
             "name": "Everburning Lantern"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 215170,
@@ -149316,8 +149541,7 @@
             "type": "trinket",
             "name": "Abyssal Trap"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 215171,
@@ -149335,8 +149559,7 @@
         "effect": {
             "type": "trinket",
             "name": "Fungal Friend Flute"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 215172,
@@ -149355,8 +149578,7 @@
             "type": "trinket",
             "name": "Silken Chain Weaver"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 215173,
@@ -149374,8 +149596,7 @@
         "effect": {
             "type": "trinket",
             "name": "Serum of Unconstrained Senses"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 215174,
@@ -149393,8 +149614,7 @@
         "effect": {
             "type": "trinket",
             "name": "Concoction: Kiss of Death"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 215178,
@@ -149413,8 +149633,7 @@
         "effect": {
             "type": "trinket",
             "name": "Shadow-Binding Ritual Knife"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 216026,
@@ -154242,8 +154461,7 @@
         "effect": {
             "type": "trinket",
             "name": "Draconic Gladiator's Badge of Ferocity"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 216280,
@@ -154263,8 +154481,7 @@
         "effect": {
             "type": "trinket",
             "name": "Insignia of Alacrity"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 216281,
@@ -154283,8 +154500,7 @@
         "effect": {
             "type": "trinket",
             "name": "Draconic Gladiator's Emblem"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 216282,
@@ -154303,8 +154519,7 @@
         "effect": {
             "type": "trinket",
             "name": "Draconic Gladiator's Medallion"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 216283,
@@ -154323,8 +154538,7 @@
         "effect": {
             "type": "trinket",
             "name": "Draconic Gladiator's Sigil of Adaptation"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 216286,
@@ -155496,8 +155710,7 @@
         "effect": {
             "type": "trinket",
             "name": "Draconic Aspirant's Badge of Ferocity"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 216369,
@@ -155516,8 +155729,7 @@
         "effect": {
             "type": "trinket",
             "name": "Draconic Aspirant's Medallion"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 216370,
@@ -155537,8 +155749,7 @@
         "effect": {
             "type": "trinket",
             "name": "Insignia of Alacrity"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 216371,
@@ -155557,8 +155768,7 @@
         "effect": {
             "type": "trinket",
             "name": "Draconic Aspirant's Emblem"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 216372,
@@ -155577,8 +155787,7 @@
         "effect": {
             "type": "trinket",
             "name": "Draconic Aspirant's Sigil of Adaptation"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 216373,
@@ -155868,8 +156077,7 @@
         "effect": {
             "type": "trinket",
             "name": "Test Item C"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 216668,
@@ -155903,8 +156111,7 @@
         "effect": {
             "type": "trinket",
             "name": "Horn of Declaration"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 217045,
@@ -158745,8 +158952,7 @@
         "stats": {
             "intellect": 0,
             "stamina": 0
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 218125,
@@ -158794,8 +159000,7 @@
         "effect": {
             "type": "trinket",
             "name": "Wildfire Wick"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 218357,
@@ -159839,8 +160044,7 @@
         "effect": {
             "type": "trinket",
             "name": "Forged Aspirant's Badge of Ferocity"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 218422,
@@ -159859,8 +160063,7 @@
         "effect": {
             "type": "trinket",
             "name": "Forged Aspirant's Medallion"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 218423,
@@ -159880,8 +160083,7 @@
         "effect": {
             "type": "trinket",
             "name": "Insignia of Alacrity"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 218424,
@@ -159900,8 +160102,7 @@
         "effect": {
             "type": "trinket",
             "name": "Forged Aspirant's Emblem"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 218425,
@@ -159920,8 +160121,7 @@
         "effect": {
             "type": "trinket",
             "name": "Forged Aspirant's Sigil of Adaptation"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 218426,
@@ -165021,8 +165221,7 @@
         "effect": {
             "type": "trinket",
             "name": "Forged Gladiator's Badge of Ferocity"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 218714,
@@ -165042,8 +165241,7 @@
         "effect": {
             "type": "trinket",
             "name": "Insignia of Alacrity"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 218715,
@@ -165062,8 +165260,7 @@
         "effect": {
             "type": "trinket",
             "name": "Forged Gladiator's Emblem"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 218716,
@@ -165082,8 +165279,7 @@
         "effect": {
             "type": "trinket",
             "name": "Forged Gladiator's Medallion"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 218717,
@@ -165102,8 +165298,7 @@
         "effect": {
             "type": "trinket",
             "name": "Forged Gladiator's Sigil of Adaptation"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 218720,
@@ -165250,8 +165445,7 @@
         "effect": {
             "type": "trinket",
             "name": "Vengeful Fire Spirit"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 219018,
@@ -165269,8 +165463,7 @@
         "effect": {
             "type": "trinket",
             "name": "Esteemed Earthen Emblem"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 219151,
@@ -166057,8 +166250,7 @@
             "type": "trinket",
             "name": "Charged Stormrook Plume"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 219295,
@@ -166076,8 +166268,7 @@
         "effect": {
             "type": "trinket",
             "name": "Sigil of Algari Concordance"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 219296,
@@ -166096,8 +166287,7 @@
         "effect": {
             "type": "trinket",
             "name": "Entropic Skardyn Core"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 219297,
@@ -166115,8 +166305,7 @@
         "stats": {
             "intellect": 0,
             "stamina": 0
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 219298,
@@ -166135,8 +166324,7 @@
             "type": "trinket",
             "name": "Ravenous Honey Buzzer"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 219299,
@@ -166154,8 +166342,7 @@
         "effect": {
             "type": "trinket",
             "name": "Synergistic Brewterializer"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 219300,
@@ -166174,8 +166361,7 @@
             "type": "trinket",
             "name": "Skarmorak Shard"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 219301,
@@ -166193,8 +166379,7 @@
         "stats": {
             "intellect": 0,
             "stamina": 0
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 219302,
@@ -166212,8 +166397,7 @@
         "effect": {
             "type": "trinket",
             "name": "Scrapsinger's Symphony"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 219303,
@@ -166232,8 +166416,7 @@
         "effect": {
             "type": "trinket",
             "name": "High Speaker's Accretion"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 219304,
@@ -166252,8 +166435,7 @@
             "type": "trinket",
             "name": "Conductor's Wax Whistle"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 219305,
@@ -166271,8 +166453,7 @@
         "effect": {
             "type": "trinket",
             "name": "Carved Blazikon Wax"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 219306,
@@ -166290,8 +166471,7 @@
         "effect": {
             "type": "trinket",
             "name": "Burin of the Candle King"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 219307,
@@ -166309,8 +166489,7 @@
         "stats": {
             "intellect": 0,
             "stamina": 0
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 219308,
@@ -166328,8 +166507,7 @@
         "effect": {
             "type": "trinket",
             "name": "Signet of the Priory"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 219309,
@@ -166347,8 +166525,7 @@
         "stats": {
             "intellect": 0,
             "stamina": 0
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 219310,
@@ -166366,8 +166543,7 @@
         "effect": {
             "type": "trinket",
             "name": "Bursting Lightshard"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 219311,
@@ -166386,8 +166562,7 @@
             "type": "trinket",
             "name": "Void Pactstone"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 219312,
@@ -166405,8 +166580,7 @@
         "effect": {
             "type": "trinket",
             "name": "Empowering Crystal of Anub'ikkaj"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 219313,
@@ -166424,8 +166598,7 @@
         "effect": {
             "type": "trinket",
             "name": "Mereldar's Toll"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 219314,
@@ -166444,8 +166617,7 @@
         "effect": {
             "type": "trinket",
             "name": "Ara-Kara Sacbrood"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 219315,
@@ -166464,8 +166636,7 @@
             "type": "trinket",
             "name": "Refracting Aggression Module"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 219316,
@@ -166484,8 +166655,7 @@
             "type": "trinket",
             "name": "Ceaseless Swarmgland"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 219317,
@@ -166503,8 +166673,7 @@
         "effect": {
             "type": "trinket",
             "name": "Harvester's Edict"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 219318,
@@ -166522,8 +166691,7 @@
         "stats": {
             "intellect": 0,
             "stamina": 0
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 219319,
@@ -166542,8 +166710,7 @@
             "type": "trinket",
             "name": "Twin Fang Instruments"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 219320,
@@ -166561,8 +166728,7 @@
         "effect": {
             "type": "trinket",
             "name": "Viscous Coaglam"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 219321,
@@ -166580,8 +166746,7 @@
         "effect": {
             "type": "trinket",
             "name": "Cirral Concoctory"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 219327,
@@ -168387,8 +168552,7 @@
         "effect": {
             "type": "trinket",
             "name": "Darkmoon Deck: Radiance"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 219746,
@@ -168874,8 +169038,7 @@
             "type": "trinket",
             "name": "Foul Behemoth's Chelicera"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 219917,
@@ -168893,8 +169056,7 @@
         "effect": {
             "type": "trinket",
             "name": "Creeping Coagulum"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 219923,
@@ -168933,8 +169095,7 @@
             "type": "trinket",
             "name": "Algari Competitor's Medallion"
         },
-        "crafted": true,
-        "levelRange": []
+        "crafted": true
     },
     {
         "id": 219932,
@@ -168955,8 +169116,7 @@
             "type": "trinket",
             "name": "Insignia of Alacrity"
         },
-        "crafted": true,
-        "levelRange": []
+        "crafted": true
     },
     {
         "id": 219933,
@@ -168976,8 +169136,7 @@
             "type": "trinket",
             "name": "Algari Competitor's Emblem"
         },
-        "crafted": true,
-        "levelRange": []
+        "crafted": true
     },
     {
         "id": 219941,
@@ -169137,8 +169296,7 @@
         "effect": {
             "type": "trinket",
             "name": "Arathi Demolition Charge"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 220119,
@@ -169333,8 +169491,7 @@
         "effect": {
             "type": "trinket",
             "name": "Spymaster's Web"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 220305,
@@ -169352,8 +169509,7 @@
         "stats": {
             "intellect": 0,
             "stamina": 0
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 221023,
@@ -169372,8 +169528,7 @@
         "effect": {
             "type": "trinket",
             "name": "Treacherous Transmitter"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 221032,
@@ -172016,8 +172171,7 @@
             "type": "trinket",
             "name": "Deephunter's Bloody Hook"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 221234,
@@ -172211,8 +172365,7 @@
         "effect": {
             "type": "trinket",
             "name": "Nerubian Venom-Tipped Dart"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 221264,
@@ -172230,8 +172383,7 @@
         "effect": {
             "type": "trinket",
             "name": "Fungarian Mystic's Cluster"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 221265,
@@ -172249,8 +172401,7 @@
         "effect": {
             "type": "trinket",
             "name": "Charm of the Underground Beast"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 221506,
@@ -172936,8 +173087,7 @@
         "effect": {
             "type": "trinket",
             "name": "Darkmoon Deck: Symbiosis"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 222671,
@@ -172955,8 +173105,7 @@
         "effect": {
             "type": "trinket",
             "name": "Darkmoon Deck: Vivacity"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 222680,
@@ -172974,8 +173123,7 @@
         "effect": {
             "type": "trinket",
             "name": "Darkmoon Deck: Ascension"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 222807,
@@ -176823,8 +176971,7 @@
         "effect": {
             "type": "trinket",
             "name": "Stormrider Flight Badge"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 224404,
@@ -176874,8 +177021,7 @@
         "effect": {
             "type": "trinket",
             "name": "Fearbreaker's Echo"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 224453,
@@ -179540,8 +179686,7 @@
             "name": "Spelunker's Waning Candle"
         },
         "crafted": true,
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 225642,
@@ -179622,8 +179767,7 @@
         "effect": {
             "type": "trinket",
             "name": "Shining Arathor Insignia"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 225648,
@@ -179641,8 +179785,7 @@
         "effect": {
             "type": "trinket",
             "name": "Candle Confidant"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 225649,
@@ -179660,8 +179803,7 @@
         "effect": {
             "type": "trinket",
             "name": "Quickwick Candlestick"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 225651,
@@ -179679,8 +179821,7 @@
         "effect": {
             "type": "trinket",
             "name": "Kaheti Shadeweaver's Emblem"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 225653,
@@ -179699,8 +179840,7 @@
             "type": "trinket",
             "name": "Siphoning Lightbrand"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 225654,
@@ -179719,8 +179859,7 @@
         "effect": {
             "type": "trinket",
             "name": "Imperfect Ascendancy Serum"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 225656,
@@ -179738,8 +179877,7 @@
         "effect": {
             "type": "trinket",
             "name": "Goldenglow Censer"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 225657,
@@ -179758,8 +179896,7 @@
             "type": "trinket",
             "name": "Detachable Fang"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 225668,
@@ -179777,8 +179914,7 @@
         "effect": {
             "type": "trinket",
             "name": "Unstable Power Suit Core"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 225693,
@@ -179796,8 +179932,7 @@
         "stats": {
             "intellect": 0,
             "stamina": 0
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 225720,
@@ -180205,8 +180340,7 @@
         "effect": {
             "type": "trinket",
             "name": "Vile Vial of Kaheti Bile"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 225970,
@@ -180224,8 +180358,7 @@
         "effect": {
             "type": "trinket",
             "name": "Nizrek's Holographic Manipulator"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 226111,
@@ -180387,8 +180520,7 @@
         "effect": {
             "type": "trinket",
             "name": "Message-Imprinted Silken Square"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 226173,
@@ -180485,8 +180617,7 @@
             "type": "trinket",
             "name": "Reinforced Wax Plating"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 226539,
@@ -180505,8 +180636,7 @@
             "type": "trinket",
             "name": "Scroll of Momentum"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 226672,
@@ -187389,8 +187519,7 @@
         "effect": {
             "type": "trinket",
             "name": "Prized Aspirant's Badge of Ferocity"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 229492,
@@ -187409,8 +187538,7 @@
         "effect": {
             "type": "trinket",
             "name": "Prized Aspirant's Medallion"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 229493,
@@ -187430,8 +187558,7 @@
         "effect": {
             "type": "trinket",
             "name": "Insignia of Alacrity"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 229494,
@@ -187450,8 +187577,7 @@
         "effect": {
             "type": "trinket",
             "name": "Prized Aspirant's Emblem"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 229495,
@@ -187470,8 +187596,7 @@
         "effect": {
             "type": "trinket",
             "name": "Prized Aspirant's Sigil of Adaptation"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 229496,
@@ -192571,8 +192696,7 @@
         "effect": {
             "type": "trinket",
             "name": "Prized Gladiator's Badge of Ferocity"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 229781,
@@ -192592,8 +192716,7 @@
         "effect": {
             "type": "trinket",
             "name": "Insignia of Alacrity"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 229782,
@@ -192612,8 +192735,7 @@
         "effect": {
             "type": "trinket",
             "name": "Prized Gladiator's Emblem"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 229783,
@@ -192632,8 +192754,7 @@
         "effect": {
             "type": "trinket",
             "name": "Prized Gladiator's Medallion"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 229784,
@@ -192652,8 +192773,7 @@
         "effect": {
             "type": "trinket",
             "name": "Prized Gladiator's Sigil of Adaptation"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 229785,
@@ -192816,8 +192936,7 @@
             "type": "trinket",
             "name": "Vexie's Pit Whistle"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 230026,
@@ -192836,8 +192955,7 @@
             "type": "trinket",
             "name": "Scrapfield 9001"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 230027,
@@ -192855,8 +192973,7 @@
         "effect": {
             "type": "trinket",
             "name": "House of Cards"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 230029,
@@ -192875,8 +192992,7 @@
         "effect": {
             "type": "trinket",
             "name": "Chromebustible Bomb Suit"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 230106,
@@ -193630,8 +193746,7 @@
         "effect": {
             "type": "trinket",
             "name": "Mister Pick-Me-Up"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 230188,
@@ -193650,8 +193765,7 @@
         "effect": {
             "type": "trinket",
             "name": "Gallagio Bottle Service"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 230189,
@@ -193670,8 +193784,7 @@
             "type": "trinket",
             "name": "Junkmaestro's Mega Magnet"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 230190,
@@ -193690,8 +193803,7 @@
         "effect": {
             "type": "trinket",
             "name": "Torq's Big Red Button"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 230191,
@@ -193710,8 +193822,7 @@
         "effect": {
             "type": "trinket",
             "name": "Flarendo's Pilot Light"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 230192,
@@ -193729,8 +193840,7 @@
         "effect": {
             "type": "trinket",
             "name": "Mug's Moxie Jug"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 230193,
@@ -193749,8 +193859,7 @@
         "effect": {
             "type": "trinket",
             "name": "Mister Lock-N-Stalk"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 230194,
@@ -193768,8 +193877,7 @@
         "effect": {
             "type": "trinket",
             "name": "Reverb Radio"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 230197,
@@ -193787,8 +193895,7 @@
         "effect": {
             "type": "trinket",
             "name": "Geargrinder's Spare Keys"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 230198,
@@ -193807,8 +193914,7 @@
         "effect": {
             "type": "trinket",
             "name": "Eye of Kezan"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 230199,
@@ -193827,8 +193933,7 @@
             "type": "trinket",
             "name": "Zee's Thug Hotline"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 230288,
@@ -194872,8 +194977,7 @@
         "effect": {
             "type": "trinket",
             "name": "Astral Aspirant's Badge of Ferocity"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 230353,
@@ -194892,8 +194996,7 @@
         "effect": {
             "type": "trinket",
             "name": "Astral Aspirant's Medallion"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 230354,
@@ -194913,8 +195016,7 @@
         "effect": {
             "type": "trinket",
             "name": "Insignia of Alacrity"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 230355,
@@ -194933,8 +195035,7 @@
         "effect": {
             "type": "trinket",
             "name": "Astral Aspirant's Emblem"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 230356,
@@ -194953,8 +195054,7 @@
         "effect": {
             "type": "trinket",
             "name": "Astral Aspirant's Sigil of Adaptation"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 230357,
@@ -200054,8 +200154,7 @@
         "effect": {
             "type": "trinket",
             "name": "Astral Gladiator's Badge of Ferocity"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 230639,
@@ -200075,8 +200174,7 @@
         "effect": {
             "type": "trinket",
             "name": "Insignia of Alacrity"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 230640,
@@ -200095,8 +200193,7 @@
         "effect": {
             "type": "trinket",
             "name": "Astral Gladiator's Emblem"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 230641,
@@ -200115,8 +200212,7 @@
         "effect": {
             "type": "trinket",
             "name": "Astral Gladiator's Medallion"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 230642,
@@ -200135,8 +200231,7 @@
         "effect": {
             "type": "trinket",
             "name": "Astral Gladiator's Sigil of Adaptation"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 230645,
@@ -201018,8 +201113,7 @@
         "effect": {
             "type": "trinket",
             "name": "Wayward Vrykul's Lantern"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 231116,
@@ -201039,8 +201133,7 @@
             "type": "trinket",
             "name": "Cursed Pirate Skull"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 231117,
@@ -201058,8 +201151,7 @@
         "effect": {
             "type": "trinket",
             "name": "Darktide Wavebender's Orb"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 231118,
@@ -201077,8 +201169,7 @@
         "effect": {
             "type": "trinket",
             "name": "Runecaster's Stormbound Rune"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 231265,
@@ -201849,8 +201940,7 @@
             "type": "trinket",
             "name": "Mechano-Core Amplifier"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 232486,
@@ -201869,8 +201959,7 @@
         "effect": {
             "type": "trinket",
             "name": "Noggenfogger Ultimate Deluxe"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 232541,
@@ -201889,8 +201978,7 @@
             "type": "trinket",
             "name": "Improvised Seaforium Pacemaker"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 232542,
@@ -201908,8 +201996,7 @@
         "effect": {
             "type": "trinket",
             "name": "Darkfuse Medichopper"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 232543,
@@ -201928,8 +202015,7 @@
         "effect": {
             "type": "trinket",
             "name": "Ringing Ritual Mud"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 232545,
@@ -201947,8 +202033,7 @@
         "effect": {
             "type": "trinket",
             "name": "Gigazap's Zap-Cap"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 232546,
@@ -201967,8 +202052,7 @@
             "type": "trinket",
             "name": "K.U.-J.0.'s Flame Vents"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 232620,
@@ -203229,8 +203313,7 @@
         "effect": {
             "type": "trinket",
             "name": "Turbo-Drain 5000"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 232891,
@@ -203248,8 +203331,7 @@
         "stats": {
             "intellect": 0,
             "stamina": 0
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 232904,
@@ -204463,8 +204545,7 @@
         "effect": {
             "type": "trinket",
             "name": "Dr. Scrapheal"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 234217,
@@ -204482,8 +204563,7 @@
         "effect": {
             "type": "trinket",
             "name": "Funhouse Lens"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 234218,
@@ -204501,8 +204581,7 @@
         "effect": {
             "type": "trinket",
             "name": "Goo-blin Grenade"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 234326,
@@ -204521,8 +204600,7 @@
             "type": "trinket",
             "name": "Core Recycling Unit"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 234491,
@@ -204796,8 +204874,7 @@
         "effect": {
             "type": "trinket",
             "name": "Blastmaster3000"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 234821,
@@ -204816,8 +204893,7 @@
             "type": "trinket",
             "name": "Papa's Prized Putter"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 235146,
@@ -204963,8 +205039,7 @@
         "effect": {
             "type": "trinket",
             "name": "Bashful Book"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 235300,
@@ -205526,8 +205601,7 @@
         "effect": {
             "type": "trinket",
             "name": "Ratfang Toxin"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 235363,
@@ -205545,8 +205619,7 @@
         "effect": {
             "type": "trinket",
             "name": "Suspicious Energy Drink"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 235373,
@@ -205564,8 +205637,7 @@
         "effect": {
             "type": "trinket",
             "name": "Abyssal Volt"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 235415,
@@ -206368,8 +206440,7 @@
             "type": "trinket",
             "name": "Ominous Oil Residue"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 235487,
@@ -206932,8 +207003,7 @@
         "effect": {
             "type": "trinket",
             "name": "Garbagemancer's Last Resort"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 236003,
@@ -208264,8 +208334,7 @@
         "effect": {
             "type": "trinket",
             "name": "Unbound Vision Journal"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 236915,
@@ -208284,8 +208353,7 @@
         "effect": {
             "type": "trinket",
             "name": "Book of Dark Visions"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 236916,
@@ -208305,8 +208373,7 @@
             "type": "trinket",
             "name": "Void-Whittled Spike"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 236917,
@@ -208326,8 +208393,7 @@
             "type": "trinket",
             "name": "Dark Dreamer's Talisman"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 236918,
@@ -208347,8 +208413,7 @@
             "type": "trinket",
             "name": "Pulsating Void Disk"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 236919,
@@ -208368,8 +208433,7 @@
             "type": "trinket",
             "name": "Void Spike"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 236968,
@@ -210400,8 +210464,7 @@
         "effect": {
             "type": "trinket",
             "name": "Hallowed Tome"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 237495,
@@ -210419,8 +210482,7 @@
         "stats": {
             "intellect": 0,
             "stamina": 0
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 237522,
@@ -216434,8 +216496,7 @@
         "effect": {
             "type": "trinket",
             "name": "Void-Touched Fragment"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 238390,
@@ -216453,8 +216514,7 @@
         "effect": {
             "type": "trinket",
             "name": "Soulbreaker's Sigil"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 238391,
@@ -216473,8 +216533,7 @@
         "effect": {
             "type": "trinket",
             "name": "Arathi Minister's Receptacle"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 238624,
@@ -218866,8 +218925,7 @@
         "effect": {
             "type": "trinket",
             "name": "Observer's Soul Fetters"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 240172,
@@ -218885,8 +218943,7 @@
         "effect": {
             "type": "trinket",
             "name": "Depleted K'areshi Battery"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 240213,
@@ -218905,8 +218962,7 @@
             "type": "trinket",
             "name": "Veiling Mana Shroud"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 240214,
@@ -218924,8 +218980,7 @@
         "effect": {
             "type": "trinket",
             "name": "Miniature Reshii Sandgarden"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 240947,
@@ -219159,8 +219214,7 @@
             "type": "trinket",
             "name": "Primal Philosopher's Stone"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 241340,
@@ -219210,8 +219264,7 @@
             "type": "trinket",
             "name": "Soulbinder's Embrace"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 242392,
@@ -219231,8 +219284,7 @@
         "effect": {
             "type": "trinket",
             "name": "Diamantine Voidcore"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 242393,
@@ -219251,8 +219303,7 @@
         "effect": {
             "type": "trinket",
             "name": "Loom'ithar's Living Silk"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 242394,
@@ -219271,8 +219322,7 @@
             "type": "trinket",
             "name": "Eradicating Arcanocore"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 242395,
@@ -219290,8 +219340,7 @@
         "effect": {
             "type": "trinket",
             "name": "Astral Antenna"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 242396,
@@ -219309,8 +219358,7 @@
         "stats": {
             "intellect": 0,
             "stamina": 0
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 242397,
@@ -219329,8 +219377,7 @@
             "type": "trinket",
             "name": "Sigil of the Cosmic Hunt"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 242398,
@@ -219348,8 +219395,7 @@
         "effect": {
             "type": "trinket",
             "name": "Naazindhri's Mystic Lash"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 242399,
@@ -219368,8 +219414,7 @@
         "effect": {
             "type": "trinket",
             "name": "Screams of a Forgotten Sky"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 242400,
@@ -219388,8 +219433,7 @@
         "effect": {
             "type": "trinket",
             "name": "Nexus-King's Command"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 242401,
@@ -219408,8 +219452,7 @@
         "effect": {
             "type": "trinket",
             "name": "Brand of Ceaseless Ire"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 242402,
@@ -219428,8 +219471,7 @@
         "effect": {
             "type": "trinket",
             "name": "Araz's Ritual Forge"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 242403,
@@ -219448,8 +219490,7 @@
         "effect": {
             "type": "trinket",
             "name": "Perfidious Projector"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 242404,
@@ -219468,8 +219509,7 @@
         "effect": {
             "type": "trinket",
             "name": "All-Devouring Nucleus"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 242405,
@@ -219759,8 +219799,7 @@
         "effect": {
             "type": "trinket",
             "name": "Lily of the Eternal Weave"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 242495,
@@ -219779,8 +219818,7 @@
             "type": "trinket",
             "name": "Incorporeal Warpclaw"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 242497,
@@ -219799,8 +219837,7 @@
         "effect": {
             "type": "trinket",
             "name": "Azhiccaran Parapodia"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 242664,
@@ -219833,8 +219870,7 @@
         "effect": {
             "type": "trinket",
             "name": "Automatic Footbomb Dispenser"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 243006,
@@ -224491,8 +224527,7 @@
         "effect": {
             "type": "trinket",
             "name": "Darkmoon Deck: Void"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 245751,
@@ -224512,8 +224547,7 @@
         "effect": {
             "type": "trinket",
             "name": "Thalassian Competitor's Medallion"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 245752,
@@ -224534,8 +224568,7 @@
         "effect": {
             "type": "trinket",
             "name": "Insignia of Alacrity"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 245753,
@@ -224555,8 +224588,7 @@
         "effect": {
             "type": "trinket",
             "name": "Thalassian Competitor's Emblem"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 245768,
@@ -224664,8 +224696,7 @@
         "effect": {
             "type": "trinket",
             "name": "Darkmoon Deck: Hunt"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 245846,
@@ -224683,8 +224714,7 @@
         "effect": {
             "type": "trinket",
             "name": "Darkmoon Deck: Rot"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 245855,
@@ -224702,8 +224732,7 @@
         "effect": {
             "type": "trinket",
             "name": "Darkmoon Deck: Blood"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 245870,
@@ -225250,8 +225279,7 @@
         "effect": {
             "type": "trinket",
             "name": "Darkmoon Dominion: Hunt"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 246305,
@@ -225269,8 +225297,7 @@
         "effect": {
             "type": "trinket",
             "name": "Darkmoon Dominion: Blood"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 246306,
@@ -225288,8 +225315,7 @@
         "effect": {
             "type": "trinket",
             "name": "Darkmoon Dominion: Rot"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 246307,
@@ -225307,8 +225333,7 @@
         "effect": {
             "type": "trinket",
             "name": "Darkmoon Dominion: Void"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 246344,
@@ -225327,8 +225352,7 @@
             "type": "trinket",
             "name": "Cursed Stone Idol"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 246629,
@@ -226178,8 +226202,7 @@
         "effect": {
             "type": "trinket",
             "name": "Shadowguard's Twisted Harvester"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 246825,
@@ -226198,8 +226221,7 @@
         "effect": {
             "type": "trinket",
             "name": "Chaotic Nethergate"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 246939,
@@ -226217,8 +226239,7 @@
         "effect": {
             "type": "trinket",
             "name": "Essence-Hunter's Eyeglass"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 246940,
@@ -226236,8 +226257,7 @@
         "effect": {
             "type": "trinket",
             "name": "Manaforged Aethercell"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 246941,
@@ -226255,8 +226275,7 @@
         "effect": {
             "type": "trinket",
             "name": "Symbiotic Ethergauze"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 246944,
@@ -226275,8 +226294,7 @@
             "type": "trinket",
             "name": "Mind-Fracturing Odium"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 246945,
@@ -226294,8 +226312,7 @@
         "effect": {
             "type": "trinket",
             "name": "Incorporeal Essence-Gorger"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 246947,
@@ -226314,8 +226331,7 @@
         "effect": {
             "type": "trinket",
             "name": "Twisted Mana Sprite"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 248018,
@@ -228479,8 +228495,7 @@
         "effect": {
             "type": "trinket",
             "name": "Gloom-Spattered Dreadscale"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 249340,
@@ -228498,8 +228513,7 @@
         "effect": {
             "type": "trinket",
             "name": "Wraps of Cosmic Madness"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 249341,
@@ -228551,8 +228565,7 @@
             "type": "trinket",
             "name": "Heart of Ancient Hunger"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 249343,
@@ -228604,8 +228617,7 @@
             "type": "trinket",
             "name": "Light Company Guidon"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 249345,
@@ -228624,8 +228636,7 @@
             "type": "trinket",
             "name": "Ranger-Captain's Iridescent Insignia"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 249346,
@@ -229997,8 +230008,7 @@
             "type": "trinket",
             "name": "Undreamt God's Oozing Vestige"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 249806,
@@ -230017,8 +230027,7 @@
             "type": "trinket",
             "name": "Radiant Plume"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 249807,
@@ -230037,8 +230046,7 @@
             "type": "trinket",
             "name": "The Eternal Egg"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 249808,
@@ -230121,8 +230129,7 @@
         "effect": {
             "type": "trinket",
             "name": "Shadow of the Empyrean Requiem"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 249811,
@@ -233496,8 +233503,7 @@
         "effect": {
             "type": "trinket",
             "name": "Soulcatcher's Charm"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 250224,
@@ -233515,8 +233521,7 @@
         "stats": {
             "intellect": 0,
             "stamina": 0
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 250225,
@@ -233535,8 +233540,7 @@
             "type": "trinket",
             "name": "Void Execution Mandate"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 250226,
@@ -233555,8 +233559,7 @@
             "type": "trinket",
             "name": "Latch's Crooked Hook"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 250227,
@@ -233575,8 +233578,7 @@
             "type": "trinket",
             "name": "Kroluk's Warbanner"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 250228,
@@ -233595,8 +233597,7 @@
             "type": "trinket",
             "name": "Resonant Bellowstone"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 250229,
@@ -233615,8 +233616,7 @@
         "effect": {
             "type": "trinket",
             "name": "Idol of the War Loa"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 250238,
@@ -233635,8 +233635,7 @@
             "type": "trinket",
             "name": "Seed of the Devouring Wild"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 250241,
@@ -233655,8 +233654,7 @@
             "type": "trinket",
             "name": "Mark of Light"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 250242,
@@ -233675,8 +233673,7 @@
             "type": "trinket",
             "name": "Jelly Replicator"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 250243,
@@ -233695,8 +233692,7 @@
             "type": "trinket",
             "name": "Manaheart's Binding Flame"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 250244,
@@ -233714,8 +233710,7 @@
         "stats": {
             "intellect": 0,
             "stamina": 0
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 250245,
@@ -233734,8 +233729,7 @@
             "type": "trinket",
             "name": "Tumor of the Swarm"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 250246,
@@ -233749,29 +233743,11 @@
             "intellect": 6666,
             "stamina": 0
         },
-        "sources": [
-            {
-                "instanceId": 1300,
-                "encounterId": 2659
-            },
-            {
-                "instanceId": -32,
-                "encounterId": 1300
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
             "name": "Refueling Orb"
-        },
-        "levelRange": [
-            272,
-            276,
-            285,
-            289,
-            295,
-            298
-        ]
+        }
     },
     {
         "id": 250247,
@@ -233846,29 +233822,11 @@
             "intellect": 6666,
             "stamina": 0
         },
-        "sources": [
-            {
-                "instanceId": 1316,
-                "encounterId": 2814
-            },
-            {
-                "instanceId": -32,
-                "encounterId": 1316
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
             "name": "Whisper of the Duskwraith"
-        },
-        "levelRange": [
-            272,
-            276,
-            285,
-            289,
-            295,
-            298
-        ]
+        }
     },
     {
         "id": 250254,
@@ -233998,8 +233956,7 @@
         "effect": {
             "type": "trinket",
             "name": "Eye of the Drowning Void"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 250258,
@@ -234014,29 +233971,11 @@
             "stamina": 0,
             "mastery": 6666
         },
-        "sources": [
-            {
-                "instanceId": 1315,
-                "encounterId": 2812
-            },
-            {
-                "instanceId": -32,
-                "encounterId": 1315
-            }
-        ],
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
             "name": "Vessel of Tortured Souls"
-        },
-        "levelRange": [
-            272,
-            276,
-            285,
-            289,
-            295,
-            298
-        ]
+        }
     },
     {
         "id": 250259,
@@ -234054,8 +233993,7 @@
         "effect": {
             "type": "trinket",
             "name": "Sapling of the Dawnroot"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 250271,
@@ -234418,8 +234356,7 @@
         "effect": {
             "type": "trinket",
             "name": "Forgotten Farstrider's Insignia"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 250472,
@@ -237986,8 +237923,7 @@
         "effect": {
             "type": "trinket",
             "name": "Withered Saptor's Paw"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 251783,
@@ -238005,8 +237941,7 @@
         "effect": {
             "type": "trinket",
             "name": "Lost Idol of the Hash'ey"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 251784,
@@ -238024,8 +237959,7 @@
         "effect": {
             "type": "trinket",
             "name": "Sylvan Wakrapuku"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 251785,
@@ -238043,8 +237977,7 @@
         "effect": {
             "type": "trinket",
             "name": "Void-Reaper's Libram"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 251786,
@@ -238062,8 +237995,7 @@
         "effect": {
             "type": "trinket",
             "name": "Ever-Collapsing Void Fissure"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 251787,
@@ -238081,8 +238013,7 @@
         "effect": {
             "type": "trinket",
             "name": "Sealed Chaos Urn"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 251788,
@@ -238172,8 +238103,7 @@
             "type": "trinket",
             "name": "Desecrated Chalice"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 251791,
@@ -238192,8 +238122,7 @@
             "type": "trinket",
             "name": "Holy Retributor's Order"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 251792,
@@ -238246,8 +238175,7 @@
         "effect": {
             "type": "trinket",
             "name": "Endosymbiotic Mycelium"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 251794,
@@ -238265,8 +238193,7 @@
         "effect": {
             "type": "trinket",
             "name": "Gris-gris of Confidence"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 251816,
@@ -238524,8 +238451,7 @@
         "effect": {
             "type": "trinket",
             "name": "Fragmented Light Shard"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 251883,
@@ -238543,8 +238469,7 @@
         "effect": {
             "type": "trinket",
             "name": "Umbric's Channeling Focus"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 251886,
@@ -238658,8 +238583,7 @@
         "effect": {
             "type": "trinket",
             "name": "Radiant Sunstone"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 252418,
@@ -238678,8 +238602,7 @@
             "type": "trinket",
             "name": "Solar Core Igniter"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 252420,
@@ -238698,8 +238621,7 @@
             "type": "trinket",
             "name": "Solarflare Prism"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 252421,
@@ -238718,8 +238640,7 @@
             "type": "trinket",
             "name": "Rotting Globule"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 252677,
@@ -238737,8 +238658,7 @@
         "effect": {
             "type": "trinket",
             "name": "Puzzling Crypt Relic"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 252956,
@@ -238757,8 +238677,7 @@
         "effect": {
             "type": "trinket",
             "name": "Aln-Bound Essence"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 252957,
@@ -240254,8 +240173,7 @@
         "effect": {
             "type": "trinket",
             "name": "Galactic Aspirant's Badge of Ferocity"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 255327,
@@ -240274,8 +240192,7 @@
         "effect": {
             "type": "trinket",
             "name": "Galactic Aspirant's Medallion"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 255328,
@@ -240295,8 +240212,7 @@
         "effect": {
             "type": "trinket",
             "name": "Insignia of Alacrity"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 255329,
@@ -240315,8 +240231,7 @@
         "effect": {
             "type": "trinket",
             "name": "Galactic Aspirant's Emblem"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 255330,
@@ -240335,8 +240250,7 @@
         "effect": {
             "type": "trinket",
             "name": "Galactic Aspirant's Sigil of Adaptation"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 255331,
@@ -247068,8 +246982,7 @@
         "effect": {
             "type": "trinket",
             "name": "Galactic Gladiator's Badge of Ferocity"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 255614,
@@ -247089,8 +247002,7 @@
         "effect": {
             "type": "trinket",
             "name": "Insignia of Alacrity"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 255615,
@@ -247109,8 +247021,7 @@
         "effect": {
             "type": "trinket",
             "name": "Galactic Gladiator's Emblem"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 255616,
@@ -247129,8 +247040,7 @@
         "effect": {
             "type": "trinket",
             "name": "Galactic Gladiator's Medallion"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 255617,
@@ -247149,8 +247059,7 @@
         "effect": {
             "type": "trinket",
             "name": "Galactic Gladiator's Sigil of Adaptation"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 255620,
@@ -249114,8 +249023,7 @@
         "effect": {
             "type": "trinket",
             "name": "Fetid Dartfrog Idol"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 256334,
@@ -250952,8 +250860,7 @@
         "effect": {
             "type": "trinket",
             "name": "Relic of the Somnambulant"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 257300,
@@ -250972,8 +250879,7 @@
         "effect": {
             "type": "trinket",
             "name": "Seed from the Dream"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 257301,
@@ -252902,8 +252808,7 @@
         "effect": {
             "type": "trinket",
             "name": "Arcane Stone"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 259000,
@@ -252922,8 +252827,7 @@
         "effect": {
             "type": "trinket",
             "name": "Azure Runes"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 259001,
@@ -253342,8 +253246,7 @@
         "effect": {
             "type": "trinket",
             "name": "Thriving Essence Sprig"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 259896,
@@ -253362,8 +253265,7 @@
         "effect": {
             "type": "trinket",
             "name": "Bark of the Guardian Tree"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 259909,
@@ -254394,8 +254296,7 @@
             "type": "trinket",
             "name": "Umbral Plume"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 260312,
@@ -256167,8 +256068,7 @@
         "effect": {
             "type": "trinket",
             "name": "Repurposed Volatile Manacell"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 263324,
@@ -261787,8 +261687,7 @@
         "effect": {
             "type": "trinket",
             "name": "Ultradon Cuirass"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 264701,
@@ -261844,8 +261743,7 @@
         "effect": {
             "type": "trinket",
             "name": "Astalor's Anguish Agitator"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 264912,
@@ -261882,8 +261780,7 @@
         "effect": {
             "type": "trinket",
             "name": "Telluric Leyblossom"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 265027,
@@ -261903,8 +261800,7 @@
             "type": "trinket",
             "name": "Lucky Lynx Locket"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 265657,
@@ -261924,8 +261820,7 @@
             "type": "trinket",
             "name": "Fiber of Living Agony"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 265739,
@@ -262166,8 +262061,7 @@
         "effect": {
             "type": "trinket",
             "name": "Novice Combatant's Medallion"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 267077,
@@ -262187,8 +262081,7 @@
         "effect": {
             "type": "trinket",
             "name": "Novice Combatant's Emblem"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 267267,
@@ -262323,8 +262216,7 @@
         "effect": {
             "type": "trinket",
             "name": "Insignia of Alacrity"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 267479,
@@ -264449,8 +264341,7 @@
         "effect": {
             "type": "trinket",
             "name": "Sanctum's Decree"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 269972,
@@ -264665,8 +264556,7 @@
             "type": "trinket",
             "name": "First Mate's Shellward"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 270161,
@@ -264685,8 +264575,7 @@
         "effect": {
             "type": "trinket",
             "name": "Fang of Umbral Malignance"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 270162,
@@ -264745,8 +264634,7 @@
             "type": "trinket",
             "name": "Sszorak's Ferocity"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 270164,
@@ -264805,8 +264693,7 @@
             "type": "trinket",
             "name": "Keeper's Seething Core"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 270166,
@@ -264826,8 +264713,7 @@
             "type": "trinket",
             "name": "Vashnik's Sanguine Rancor"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 270167,
@@ -264887,8 +264773,7 @@
         "effect": {
             "type": "trinket",
             "name": "Font of Venomous Rage"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 270169,
@@ -264948,8 +264833,7 @@
         "effect": {
             "type": "trinket",
             "name": "Vexhul's Everflowing Gland"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 270171,
@@ -265010,8 +264894,7 @@
             "type": "trinket",
             "name": "Zul'jin's Guillotine Technique"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 270174,
@@ -265031,8 +264914,7 @@
         "effect": {
             "type": "trinket",
             "name": "Idol of the Howling Nexus"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 270175,
@@ -265052,8 +264934,7 @@
         "effect": {
             "type": "trinket",
             "name": "Voracious Heart of Ula'tek"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 270347,
@@ -268147,8 +268028,7 @@
         "effect": {
             "type": "trinket",
             "name": "Venomous Aspirant's Emblem"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 270556,
@@ -268168,8 +268048,7 @@
         "effect": {
             "type": "trinket",
             "name": "Venomous Aspirant's Medallion"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 270557,
@@ -268189,8 +268068,7 @@
         "effect": {
             "type": "trinket",
             "name": "Venomous Aspirant's Sigil of Adaptation"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 270558,
@@ -268211,8 +268089,7 @@
         "effect": {
             "type": "trinket",
             "name": "Insignia of Alacrity"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 270559,
@@ -268233,8 +268110,7 @@
         "effect": {
             "type": "trinket",
             "name": "Venomous Aspirant's Badge of Ferocity"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 270563,
@@ -269260,8 +269136,7 @@
         "effect": {
             "type": "trinket",
             "name": "Venomous Gladiator's Badge of Ferocity"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 270603,
@@ -269317,8 +269192,7 @@
         "effect": {
             "type": "trinket",
             "name": "Venomous Gladiator's Sigil of Adaptation"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 270605,
@@ -269338,8 +269212,7 @@
         "effect": {
             "type": "trinket",
             "name": "Venomous Gladiator's Medallion"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 270606,
@@ -269359,8 +269232,7 @@
         "effect": {
             "type": "trinket",
             "name": "Venomous Gladiator's Emblem"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 270607,
@@ -276013,8 +275885,7 @@
         "effect": {
             "type": "trinket",
             "name": "Ranger Recruit's Medallion"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 271092,
@@ -281037,8 +280908,7 @@
         "effect": {
             "type": "trinket",
             "name": "Knot of Writhing Serpents"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 273795,
@@ -281058,8 +280928,7 @@
             "type": "trinket",
             "name": "Coiled Fangstone"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 273796,
@@ -281118,8 +280987,7 @@
             "type": "trinket",
             "name": "Tattered Amani War Banner"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 274493,
@@ -281248,8 +281116,7 @@
         "effect": {
             "type": "trinket",
             "name": "Ophidian Bone Whistle"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 274497,
@@ -281269,8 +281136,7 @@
         "effect": {
             "type": "trinket",
             "name": "Spirit-Rending Poison"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 274498,
@@ -281290,8 +281156,7 @@
         "effect": {
             "type": "trinket",
             "name": "Spirit Ward"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 274499,
@@ -281311,8 +281176,7 @@
             "type": "trinket",
             "name": "Toxiferous Transfusion"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 274818,
@@ -282165,8 +282029,7 @@
         "effect": {
             "type": "trinket",
             "name": "Enchanted Spore"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 274891,
@@ -282185,8 +282048,7 @@
         "effect": {
             "type": "trinket",
             "name": "Mk XII Gear Drive"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 274892,
@@ -282206,8 +282068,7 @@
         "effect": {
             "type": "trinket",
             "name": "Resilient Felblood Vial"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 274893,
@@ -282226,8 +282087,7 @@
         "effect": {
             "type": "trinket",
             "name": "Frosty Klaxid Stinger"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 275136,
@@ -286842,8 +286702,7 @@
             "type": "trinket",
             "name": "Feathered Bell"
         },
-        "offspecItem": true,
-        "levelRange": []
+        "offspecItem": true
     },
     {
         "id": 280091,
@@ -286939,8 +286798,7 @@
         "effect": {
             "type": "trinket",
             "name": "Sharp Axe Holster"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 280277,
@@ -286993,8 +286851,7 @@
         "effect": {
             "type": "trinket",
             "name": "Shadow Shard Sliver"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 280377,
@@ -287013,8 +286870,7 @@
         "effect": {
             "type": "trinket",
             "name": "Breath of Jan'alai"
-        },
-        "levelRange": []
+        }
     },
     {
         "id": 280693,
