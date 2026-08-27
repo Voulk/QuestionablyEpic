@@ -68366,8 +68366,7 @@
                 "encounterId": 1041
             }
         ],
-        "slot": "Waist",
-        "crafted": true
+        "slot": "Waist"
     },
     {
         "id": 159371,
@@ -69481,6 +69480,22 @@
             "versatility": 3200
         },
         "slot": "Chest"
+    },
+    {
+        "id": 171519,
+        "name": "Helm of Pilgrimage",
+        "icon": "inv_helmet_18",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 3500,
+            "versatility": 3500
+        },
+        "slot": "Head"
     },
     {
         "id": 171521,
@@ -170711,8 +170726,7 @@
             "mastery": 4550,
             "haste": 2450
         },
-        "slot": "Wrist",
-        "crafted": true
+        "slot": "Wrist"
     },
     {
         "id": 221125,
@@ -173239,8 +173253,7 @@
             "unallocated": 3500,
             "unallocated2": 3500
         },
-        "slot": "Feet",
-        "crafted": true
+        "slot": "Feet"
     },
     {
         "id": 222815,
@@ -173256,8 +173269,7 @@
             "unallocated": 3500,
             "unallocated2": 3500
         },
-        "slot": "Wrist",
-        "crafted": true
+        "slot": "Wrist"
     },
     {
         "id": 222816,
@@ -173273,8 +173285,7 @@
             "unallocated": 3500,
             "unallocated2": 3500
         },
-        "slot": "Waist",
-        "crafted": true
+        "slot": "Waist"
     },
     {
         "id": 222817,
@@ -173290,8 +173301,7 @@
             "unallocated": 3500,
             "unallocated2": 3500
         },
-        "slot": "Back",
-        "crafted": true
+        "slot": "Back"
     },
     {
         "id": 222818,
@@ -173307,8 +173317,7 @@
             "unallocated": 3500,
             "unallocated2": 3500
         },
-        "slot": "Head",
-        "crafted": true
+        "slot": "Head"
     },
     {
         "id": 222819,
@@ -173324,8 +173333,7 @@
             "unallocated": 3500,
             "unallocated2": 3500
         },
-        "slot": "Chest",
-        "crafted": true
+        "slot": "Chest"
     },
     {
         "id": 222820,
@@ -173341,8 +173349,7 @@
             "unallocated": 3500,
             "unallocated2": 3500
         },
-        "slot": "Legs",
-        "crafted": true
+        "slot": "Legs"
     },
     {
         "id": 222821,
@@ -173358,8 +173365,7 @@
             "unallocated": 3500,
             "unallocated2": 3500
         },
-        "slot": "Shoulder",
-        "crafted": true
+        "slot": "Shoulder"
     },
     {
         "id": 222822,
@@ -173375,8 +173381,7 @@
             "unallocated": 3500,
             "unallocated2": 3500
         },
-        "slot": "Hands",
-        "crafted": true
+        "slot": "Hands"
     },
     {
         "id": 222832,
@@ -209757,8 +209762,7 @@
             "haste": 9500,
             "mastery": 8000
         },
-        "slot": "Finger",
-        "crafted": true
+        "slot": "Finger"
     },
     {
         "id": 237431,
@@ -238073,7 +238077,6 @@
             "type": "trinket",
             "name": "Consecrated Chalice"
         },
-        "crafted": true,
         "levelRange": [
             272,
             276,
@@ -264595,6 +264598,7 @@
                 "encounterId": 2888
             }
         ],
+        "onUseTrinket": true,
         "squishEra": 2,
         "slot": "Trinket",
         "effect": {
@@ -264794,6 +264798,7 @@
                 "encounterId": 2883
             }
         ],
+        "onUseTrinket": true,
         "squishEra": 2,
         "slot": "Trinket",
         "effect": {
@@ -276359,7 +276364,6 @@
         ],
         "squishEra": 2,
         "slot": "Back",
-        "crafted": true,
         "classRestriction": [
             "Holy Paladin"
         ]
@@ -276386,7 +276390,6 @@
         ],
         "squishEra": 2,
         "slot": "Wrist",
-        "crafted": true,
         "classRestriction": [
             "Holy Paladin"
         ]
@@ -276413,7 +276416,6 @@
         ],
         "squishEra": 2,
         "slot": "Waist",
-        "crafted": true,
         "classRestriction": [
             "Holy Paladin"
         ]
@@ -276441,7 +276443,6 @@
         ],
         "squishEra": 2,
         "slot": "Shoulder",
-        "crafted": true,
         "classRestriction": [
             "Holy Paladin"
         ]
@@ -276469,7 +276470,6 @@
         ],
         "squishEra": 2,
         "slot": "Legs",
-        "crafted": true,
         "classRestriction": [
             "Holy Paladin"
         ]
@@ -276497,7 +276497,6 @@
         ],
         "squishEra": 2,
         "slot": "Head",
-        "crafted": true,
         "classRestriction": [
             "Holy Paladin"
         ]
@@ -276525,7 +276524,6 @@
         ],
         "squishEra": 2,
         "slot": "Hands",
-        "crafted": true,
         "classRestriction": [
             "Holy Paladin"
         ]
@@ -276552,7 +276550,6 @@
         ],
         "squishEra": 2,
         "slot": "Feet",
-        "crafted": true,
         "classRestriction": [
             "Holy Paladin"
         ]
@@ -276580,7 +276577,6 @@
         ],
         "squishEra": 2,
         "slot": "Chest",
-        "crafted": true,
         "classRestriction": [
             "Holy Paladin"
         ]
