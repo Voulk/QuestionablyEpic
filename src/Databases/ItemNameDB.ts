@@ -31952,6 +31952,16 @@ export const nameDB =
         "fr": "Corselet des charmes amers",
         "de": "Brustschutz der bitteren Reize"
     },
+    "171519": {
+        "cn": "",
+        "en": "Helm of Pilgrimage",
+        "ru": "Шлем странствий",
+        "es": "Yelmo de peregrinación",
+        "br": "Elmo da Peregrinação",
+        "kr": "",
+        "fr": "Heaume de pèlerinage",
+        "de": "Wallfahrtshelm"
+    },
     "171521": {
         "cn": "",
         "en": "Eruption-Scarred Boots",

@@ -19,7 +19,19 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
-        {
+  {
+    version: "12.1 / 5.5.4",
+    update: 9,
+    date: "August 27",
+    changes: [ 
+      "Upgrade Finder: Resto Shaman will no longer see extreme values on tier set items.",
+      "Upgrade Finder: Delve trinkets will now display at Hero-track item level.",
+      "Added a few more timewalking items.",
+      "Sets with two on-use trinkets will now be penalized.",
+      "Items that are already Catalyzed in-game will no longer show as Catalyst items in reports.",
+    ]
+  },
+  {
     version: "12.1 / 5.5.4",
     update: 8,
     date: "August 26",

@@ -115,8 +115,6 @@ export function runUpgradeFinder(player, contentType, currentLanguage, playerSet
 
   const moddedSettings = {...userSettings, forceTier: {value: "S2"}};
 
-  console.log(playerSettings);
-
   const baseHPS = player.getHPS(contentType);
   //userSettings.dominationSockets = "Upgrade Finder";
   const baseSet = runTopGear(baseItemList, wepList, player, contentType, baseHPS, moddedSettings, castModel);
@@ -183,7 +181,7 @@ export function getSetItemLevel(itemSource, playerSettings, difficultyType = "dr
   }
   else if (instanceID === -69) {
     // Delves
-    itemLevel = 276 //itemLevels.crafted[playerSettings.craftedLevel]; // Temporary. Will need its own panel.
+    itemLevel = 321 //itemLevels.crafted[playerSettings.craftedLevel]; // Temporary. Will need its own panel.
   }
   //else if (instanceID === 1209) itemLevel = 441; // Dawn of the Infinite, upgraded one time.
   else if (instanceID === -30) itemLevel = 359; // Honor. Currently unused.
@@ -194,8 +192,8 @@ export function getSetItemLevel(itemSource, playerSettings, difficultyType = "dr
 
   if (instanceID === 1305 || itemSlot.includes("Weapon") || itemSlot === "Offhand" || itemSlot === "Shield" || itemSlot === "Trinket") {
     // Voidcores
-    if (itemLevel === 276 || itemLevel === 289) itemLevel += 9;
-    else if (itemLevel === 272 || itemLevel === 285) itemLevel += 10;
+    //if (itemLevel === 276 || itemLevel === 289) itemLevel += 9;
+    //else if (itemLevel === 272 || itemLevel === 285) itemLevel += 10;
   }
 
   return itemLevel;

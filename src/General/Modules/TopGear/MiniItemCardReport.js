@@ -77,7 +77,7 @@ export default function ItemCardReport(props) {
   const isEmbellishment = item.effect && item.effect.type === "embellishment";
   const embellishmentLabel = isEmbellishment ? <div style={{ fontSize: 10, lineHeight: 1, color: "lightblue" }}>{t('Embellishment')}</div> : null;
   const catalyzedID = item.catalyzedID || null;
-  const isCatalyzed = Boolean(catalyzedID) || item.isCatalystItem;
+  const isCatalyzed = /*Boolean(catalyzedID) ||*/ item.isCatalystItem;
   const catalyst = isCatalyzed ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Catalyst")}</div> : null;
   // TODO: Items should track their own quality, and this function shouldn't be in ItemCard.
   

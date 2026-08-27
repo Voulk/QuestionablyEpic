@@ -840,15 +840,18 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
       })
     }
 
-    if (userSettings.forceTier) {
+  }
+    if (userSettings.forceTier?.value) {
       // Override tier. Used sometimes in upgrade finder where we want to compare items post-catalyst.
       effectList = effectList.filter(effect => effect.type !== "set bonus");
       const seasonalTier = getSeasonalTier(userSettings.forceTier.value, player.spec);
       effectList = effectList.concat(seasonalTier);
       usedSets = seasonalTier.map(tier => tier.name);
-    }
+      
+        //console.log(JSON.stringify(effectList))
+        //console.log(userSettings);
 
-  }
+    }
 
   // Armor Banding
   if (effectList.filter(effect => effect.name === "Writhing Armor Banding").length > 0) {
@@ -860,8 +863,10 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     const effect = effectList[x];
     if (!useSeq || (castModel.modelType[contentType] === "Sequences" && !effect.onUse)) {
       effectStats.push(getEffectValue(effect, player, castModel, contentType, effect.level, userSettings, "Retail", setStats, setVariables));
+      
     }
   }
+
 
   // Omnium Folio
   // Handle user entry / unlocks later.
@@ -1087,7 +1092,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   // Wearing two on-use trinkets is generally a bad idea since they're underbudget compared to procs, only one can be combined with cooldowns, and 
   // player usage is likely to be managed poorly.
   if ( "onUseTrinkets" in builtSet && builtSet.onUseTrinkets.length == 2) {
-    hardScore -= 2800;
+    hardScore -= 150;
   }
 
   builtSet.hardScore = Math.round(1000 * hardScore) / 1000;

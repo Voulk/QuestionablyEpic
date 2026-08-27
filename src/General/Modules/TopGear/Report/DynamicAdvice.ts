@@ -28,6 +28,9 @@ export const getDynamicAdvice = (report : any, strippedPlayer: any, contentType:
                     spending those stats elsewhere. As a result, best in slot sets should expect to hit it, but don't be too surprised if QE Live doesn't reforge your set that way until you have some good items.");
         if (strippedPlayer.spec === "Restoration Druid Classic") advice.push("Resto Druid has haste breakpoints at 3043 (Rejuv, Tranq) and 5176 (Soul of the Forest + Wild Growth). Expect most sets to hit the first, and some to hit the second - often only with the T14 4pc bonus.");
     }
+    if (gameType === "Retail") {
+        advice.push("Avoid wearing two on-use trinkets if possible. They lock each other out and greatly complicate the playstyle.")
+    }
     if (topSet.enchantBreakdown["flask"]) {
         advice.push("Recommended Flask: " + topSet.enchantBreakdown["flask"] + ".");
     }
@@ -53,12 +56,6 @@ export const getDynamicAdvice = (report : any, strippedPlayer: any, contentType:
     // -- Individual Item advice or warnings
     if (checkHasItem(itemList, 203460)) { // Annulet
         advice.push("It's time to unequip Onyx Annulet."); 
-    }
-
-    if (checkHasItem(itemList, 204465)) { // Sark Cloak
-        advice.push("While Voice of the Silent Star (cape) offers a high item level and a small stat proc, it generally is not recommended for healers. \
-                It doesn't have any stamina on it which loses you about 20k health and the proc is very rare.")
-    
     }
     if (gameType === "Retail") {
         advice.push("It's acceptable to swap to Avoidance enchants for high Mythic+ dungeons.")
