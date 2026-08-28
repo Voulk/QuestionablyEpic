@@ -12,10 +12,16 @@ const ID_ENVELOPING_BREATH_ID = 325209;
 export const getMonkSpecEffect = (effectName, player, contentType) => {
   let bonus_stats = {};
 
-  if (effectName === "Mistweaver Monk S1-2") {
+  if (effectName === "Mistweaver Monk S2-2" && contentType === "Dungeon") {
+    bonus_stats.bonusHPS = 0.03;
+  } 
+  else if (effectName === "Mistweaver Monk S2-4" && contentType === "Dungeon") {
+    bonus_stats.bonusHPS = 0.03;
+  } 
+  else if (effectName === "Mistweaver Monk S1-2" && contentType === "Dungeon") {
     bonus_stats.bonusHPS = 0.031;
   } 
-    else if (effectName === "Mistweaver Monk S1-4") {
+  else if (effectName === "Mistweaver Monk S1-4" && contentType === "Dungeon") {
     bonus_stats.bonusHPS = 0.0312;
   } 
 else {

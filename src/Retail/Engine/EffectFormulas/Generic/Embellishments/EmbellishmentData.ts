@@ -31,11 +31,11 @@ export const embellishmentData = [
       { // Proc for all secondary stats. +1% power for each unique gem colour in gear.
         id: 273059,
         name: "Hunter's Ritual Stone",
-        description: "Extremely overbudget, but only procs off DPS spells. Worth using if you play Discipline, or if you're in an environment where you will DPS a lot.",
+        description: "Recently nerfed.",
         effects: [
         { // 
             scalingClass: -790,
-            coefficient: 0.830768,
+            coefficient: 0.507458,
             stat: "all",
             duration: 15,
             ppm: 3,
@@ -369,7 +369,7 @@ export const embellishmentData = [
       */
         id: 0,
         name: "Loa Worshiper's Band",
-        description: "",
+        description: "Only procs off DPS spells. That makes it a difficult choice for non-Discipline specs, unless you are in an environment where you will DPS a lot.",
         effects: [
         { // Capybara / Int buff - 40
             scalingClass: -1,
@@ -451,8 +451,8 @@ export const embellishmentData = [
         ],
         runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
             let bonus_stats: Stats = {};
-            console.log(additionalData);
-            const minStat = (Object.keys(additionalData.setStats).length > 1) ? Object.keys(additionalData.setStats).filter(x => x !== "critMult").reduce((a, b) => additionalData.setStats[a] < additionalData.setStats[b] ? a : b) : "versatility";
+
+            const minStat = (Object.keys(additionalData.setStats).length > 1) ? Object.keys(additionalData.setStats).filter(x => x !== "critMult" && x !== "manaPerc").reduce((a, b) => additionalData.setStats[a] < additionalData.setStats[b] ? a : b) : "versatility";
 
             bonus_stats[minStat] = runGenericPPMTrinket({...data[0], stat: minStat}, itemLevel, additionalData.setStats);
 

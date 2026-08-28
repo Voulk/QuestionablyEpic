@@ -181,6 +181,7 @@ export default function ItemCard(props) {
     }
 
     /* ---------------- Three Midnight Season 1 Raids ---------------- */
+    // Replace these with a call to instanceDB
     if (item.source.instanceId === 1307 && item.source.encounterId > 0) {
       return encounterDB[1307].bosses[item.source.encounterId];
     }
@@ -189,6 +190,12 @@ export default function ItemCard(props) {
     }
     if (item.source.instanceId === 1308 && item.source.encounterId > 0) {
       return encounterDB[1308].bosses[item.source.encounterId];
+    }
+    if (item.source.instanceId === 1320 && item.source.encounterId > 0) {
+      return encounterDB[1320].bosses[item.source.encounterId];
+    }
+    if (item.source.instanceId === 1317 && item.source.encounterId > 0) {
+      return encounterDB[1317].bosses[item.source.encounterId];
     }
 
     /* -------------------------- Classic Bosses ---------------------- */

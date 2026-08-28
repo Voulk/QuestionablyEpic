@@ -117,6 +117,7 @@ describe("MergeBonusStats function", () => {
             versatility: 0,
             leech: 0,
             mana: 0,
+            manaPerc: 0,
             dps: 0,
             allyStats: 0,
             bonusHPS: 0,

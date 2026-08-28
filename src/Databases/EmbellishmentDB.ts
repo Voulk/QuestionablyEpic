@@ -9,6 +9,7 @@ type embellishmentData = {
   icon: string; // Shown in the Embellishment Chart
   armorType: 0 | 1 | 2 | 3 | 4; // 0 = any, 1 Cloth, 2 Leather, 3 Mail, 4 Plate.
   name: string;
+  warningFlag?: boolean; // True if we want to display a red symbol on the chart.
   pieces?: 1 | 2; // Number of pieces required for the effect. Always 1 or 2.
 
   // "applicable" embellishments are reagents the player chooses to add to a crafted item, so they need to show up
@@ -37,6 +38,7 @@ export const embellishmentDB: embellishmentData[] = [
     name: "Hunter's Ritual Stone",
     applicable: true,
     slots: EMBELLISHMENT_WEAPON_SLOTS,
+    warningFlag: true,
     effect: {
       type: "embellishment",
       name: "Hunter's Ritual Stone",
@@ -82,6 +84,7 @@ export const embellishmentDB: embellishmentData[] = [
     armorType: 0, // Ring
     name: "Loa Worshiper's Band",
     setItems: [251513],
+    warningFlag: true,
     effect: {
       type: "embellishment",
       name: "Loa Worshiper's Band",

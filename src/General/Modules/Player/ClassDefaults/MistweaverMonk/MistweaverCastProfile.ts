@@ -177,6 +177,11 @@ const applyPoolOfMists = (talents: any, castProfile: CastProfile, spellDB: Recor
 }
 
 const applyTierSet = (playerData: any, castProfile: CastProfile, spellDB: Record<string, any[]>): void => {
+    if (playerData.tierSets.includes("Mistweaver Monk S1-2")) {
+        buffSpellPerc(spellDB["Renewing Mist"], 20);
+        // s1-4 is done by adding to freeRenewingMistSec to add to average rem count
+    }
+
     if (playerData.tierSets.includes("Mistweaver Monk S2-2")) {
         buffSpellPerc(spellDB["Rising Sun Kick"], 30); // damage
         buffSpellPerc(spellDB["Rushing Wind Kick"], 100, 1); // healing only
@@ -187,6 +192,15 @@ const applyTierSet = (playerData: any, castProfile: CastProfile, spellDB: Record
             if (entry) entry.cpm *= 1.15;
         }
     }
+}
+
+const getTierSetRemSec = (playerData: any, spellDB: Record<string, any[]>, tftCpm: number, remStandard: number): number => {
+    if (!playerData.tierSets.includes("Mistweaver Monk S1-4")) return 0;
+
+    // lotus infusion that adds +2s doesn't work here
+    const remDuration = 20; //spellDB["Renewing Mist"][0].buffDuration
+
+    return tftCpm * remDuration * (1 + remStandard);
 }
 
 // Freightrunner's Flask on-use: applies its crit bonus directly to state and returns the effect data for later use.
@@ -906,6 +920,8 @@ function runMonkCastProfile(
     reportingData.freeRenewingMistSec = getRapidDiffusionRemSec(talents, castProfile, localSettings.risingMist.remStandard);
     
     reportingData.freeRenewingMistSec += getTftRenewingMistSec(tftEmpowers, reportingData.tftCpm, localSettings.risingMist.remStandard);
+
+    reportingData.freeRenewingMistSec += getTierSetRemSec(playerData, spellDB, reportingData.tftCpm, localSettings.risingMist.remStandard);
 
     reportingData.freeRenewingMistSec += getDancingMistsRemSec(talents, castProfile, spellDB, reportingData.freeRenewingMistSec);
 

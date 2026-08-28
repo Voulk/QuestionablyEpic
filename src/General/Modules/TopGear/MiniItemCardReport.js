@@ -1,7 +1,7 @@
 import React from "react";
 import makeStyles from "@mui/styles/makeStyles";
 import { Card, CardContent, CardActionArea, Typography, Grid, Divider, Tooltip } from "@mui/material";
-import { getTranslatedItemName, buildStatString, getItemIcon, getItemProp, getGemProp, getGemIcon } from "../../Engine/ItemUtilities";
+import { getTranslatedItemName, buildStatStringSlim, getItemIcon, getItemProp, getGemProp, getGemIcon } from "../../Engine/ItemUtilities";
 import { buildPrimGems } from "../../Engine/InterfaceUtilities";
 import { reforgeIDs } from "Databases/ReforgeDB";
 import "./MiniItemCard.css";
@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 
 import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips.tsx";
 import { getTitanDiscName } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/TitanDiscBeltData"
+import CatalyzedFromIndicator from "General/Modules/GeneralComponents/CatalyzedFromIndicator";
 
 
 const useStyles = makeStyles({
@@ -58,7 +59,7 @@ export default function ItemCardReport(props) {
   const gameType = props.gameType;
   //const gameType = useSelector((state) => state.gameType);
   const currentLanguage = i18n.language;
-  let statString = ""//buildStatString(item.stats, item.effect, currentLanguage);
+  let statString = buildStatStringSlim(item.stats || {}, item.effect, currentLanguage);
   if (item.flags.includes("DelveBelt")) {
     statString = getTitanDiscName(item.selectedOptions[0]) //item.customOptions.find(option => option.id === item.selectedOptions).label;
   }
@@ -75,8 +76,9 @@ export default function ItemCardReport(props) {
   const tertiary = "leech" in item && item.leech >= 0 ? <div style={{ fontSize: 10, lineHeight: 1, color: "lime" }}>{t('Leech')}</div> : null;
   const isEmbellishment = item.effect && item.effect.type === "embellishment";
   const embellishmentLabel = isEmbellishment ? <div style={{ fontSize: 10, lineHeight: 1, color: "lightblue" }}>{t('Embellishment')}</div> : null;
-  const isCatalysable = item.isCatalystItem;
-  const catalyst = isCatalysable ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Catalyst")}</div> : null;
+  const catalyzedID = item.catalyzedID || null;
+  const isCatalyzed = /*Boolean(catalyzedID) ||*/ item.isCatalystItem;
+  const catalyst = isCatalyzed ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Catalyst")}</div> : null;
   // TODO: Items should track their own quality, and this function shouldn't be in ItemCard.
   
   let reforgeText = null;
@@ -110,8 +112,6 @@ export default function ItemCardReport(props) {
   let itemName = "";
   let isVault = item.vaultItem;
   let isExclusive = item.exclusiveItem;
-
-  const catalyzedID = item.catalyzedID || null;
 
   let socket = [];
 
@@ -195,7 +195,7 @@ export default function ItemCardReport(props) {
       <Card
         className={isExclusive? classes.exclusive : isVault ? classes.vault : (!item.isEquipped && gameType === "Retail" && item.slot != "CombinedWeapon") ? classes.notequipped : catalyst ? classes.catalyst : classes.root}
         elevation={0}
-        style={{ backgroundColor: "rgba(34, 34, 34, 0.26)" }} // 52
+        style={{ backgroundColor: "rgba(34, 34, 34, 0.26)" }}
       >
         <CardActionArea disabled={false}>
           <Grid container display="inline-flex" wrap="nowrap" justifyContent="space-between">
@@ -225,14 +225,13 @@ export default function ItemCardReport(props) {
                 </div>
               </CardContent>
             </Grid>
-            {/*<Divider orientation="vertical" flexItem /> */}
-            <CardContent style={{ padding: 2, width: "100%" }}>
-              <Grid item container display="inline" direction="column" justifyContent="space-around" xs="auto">
+            <CardContent style={{ padding: 0, width: "100%" }}>
+              <Grid item container direction="column" justifyContent="space-around" xs="auto">
                 <Grid container item wrap="nowrap" justifyContent="space-between" alignItems="center" style={{ width: "100%" }}>
                   <Grid item xs={12} display="inline">
                     <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ marginLeft: 4, padding: "1px 0px" }}>
                       <div style={{ color: itemQuality(itemLevel, item.id), lineHeight: "normal" }}>{itemName}</div>
-                      <div style={{ display: "flex", gap: 4 }}>
+                      <div style={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
                         {tertiary}
                         {isExclusive ? <div style={{ fontSize: 10, lineHeight: 1, color: "#CC7102" }}>{t("itemTags.exclusive")}</div> : ""}
                         {tertiary && isVault ? <div style={{ fontSize: 10, lineHeight: 1, marginLeft: 4, marginRight: 4 }}>{"/"}</div> : ""}
@@ -247,21 +246,17 @@ export default function ItemCardReport(props) {
                   </Grid>
                 </Grid>
                 <Divider />
-                <Grid container spacing={0}>
-                  <Grid item container direction="row" xs={12} justifyContent="space-between" spacing={1}>
-                    <Grid item>
-                      <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px", marginLeft: "3px" }}>
-                      {socket} {statString}
+                <Grid item container xs={12} display="inline-flex" direction="row" justifyContent="space-between" alignItems="center" wrap="nowrap" style={{ marginTop: 2 }}>
+                  <Grid item xs>
+                    <div style={{ display: "inline-flex", marginLeft: 4, height: 18, verticalAlign: "middle", alignItems: "center" }}>
+                      <Typography variant="subtitle2" display="block" align="left" style={{ fontSize: "12px", lineHeight: "normal" }}>
+                        {socket} {/*statString*/} {reforgeText}
                       </Typography>
-                    </Grid>
-                    <Grid item>{enchantCheck(item)}</Grid> 
+                    </div>
                   </Grid>
-                  <Grid item container direction="row" xs={12} justifyContent="space-between" spacing={1}>
-                    <Grid item>
-                      <Typography variant="subtitle2" wrap="nowrap" display="block" align="left" style={{ fontSize: "12px", marginLeft: "2px" }}>
-                         {reforgeText} 
-                      </Typography>
-                    </Grid>
+                  <Grid item style={{ display: "inline-flex", alignItems: "center", gap: 2, paddingRight: 4 }}>
+                    <CatalyzedFromIndicator catalyzedID={catalyzedID} gameType={gameType} />
+                    {enchantCheck(item)}
                   </Grid>
                 </Grid>
               </Grid>

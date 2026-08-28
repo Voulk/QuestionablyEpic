@@ -19,6 +19,66 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+  {
+    version: "12.1 / 5.5.4",
+    update: 9,
+    date: "August 27",
+    changes: [ 
+      "Upgrade Finder: Resto Shaman will no longer see extreme values on tier set items.",
+      "Upgrade Finder: Delve trinkets will now display at Hero-track item level.",
+      "Added a few more timewalking items.",
+      "Sets with two on-use trinkets will now be penalized.",
+      "Items that are already Catalyzed in-game will no longer show as Catalyst items in reports.",
+    ]
+  },
+  {
+    version: "12.1 / 5.5.4",
+    update: 8,
+    date: "August 26",
+    changes: [ 
+      "Added all items that drop from the timewalking box.",
+      "Refurbished timewalking trinkets on the chart." 
+    ]
+  },
+      {
+    version: "12.1 / 5.5.4",
+    update: 7,
+    date: "August 21",
+    changes: [ 
+      "In-game change: Aqirbane Reliquary now has all four secondaries instead of just crit",
+      "Preservation Evoker: Minor profile optimizations.",
+      "Upgrade Finder visual cleanup."
+    ]
+  },
+    {
+    version: "12.1 / 5.5.4",
+    update: 6,
+    date: "August 20",
+    changes: [ 
+      "Upgrade Finder: Added filters so that you're not forced to see all of bonus roll / upgrades / drops at once.",
+      "Upgrade Finder: Offhands will no longer show up for Resto Shaman / Holy Paladin.",
+      "Catalyzing effect items will now correctly keep the effect.",
+      "Competitive Alternatives: Catalyzed items should now keep their updated tooltip."
+    ]
+  },
+          {
+    version: "12.1 / 5.5.4",
+    update: 5,
+    date: "August 16",
+    changes: [ 
+      "Fixed a few tier sets.",
+    ]
+  },
+        {
+    version: "12.1 / 5.5.4",
+    update: 4,
+    date: "August 16",
+    changes: [ 
+      "Upgrade Finder is now live.",
+      "Added warning flags to a few embellishments / trinkets that require you learn more about them.",
+      "Updated default enchants for some specs - particularly Resto Shaman",
+    ]
+  },
       {
     version: "12.1 / 5.5.4",
     update: 3,

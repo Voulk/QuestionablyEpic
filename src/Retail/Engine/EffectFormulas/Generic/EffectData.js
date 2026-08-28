@@ -1,4 +1,4 @@
-import { convertPPMToUptime, getSetting, processedValue, runGenericPPMTrinket, forceGenericOnUseTrinket, runGenericRandomPPMTrinket, runGenericOnUseTrinket, getHighestStat, runGenericPPMTrinketHasted, runGenericFlatProc } from "../EffectUtilities";
+import { convertPPMToUptimeExtended, getSetting, processedValue, runGenericPPMTrinket, forceGenericOnUseTrinket, runGenericRandomPPMTrinket, runGenericOnUseTrinket, getHighestStat, runGenericPPMTrinketHasted, runGenericFlatProc } from "../EffectUtilities";
 
 /*
 S2 Special Effect Items
@@ -17,7 +17,7 @@ S2 Special Effect Items
 
 export const effectData = [
         { 
-    name: "Chausses of Unbound Rancor",
+    name: "Awoken Dreadfang Cuirass",
     effects: [
       {
         coefficient: 1.264787, 
@@ -73,7 +73,7 @@ export const effectData = [
     },
   },
         { 
-    name: "Awoken Dreadfang Cuirass",
+    name: "Chausses of Unbound Rancor",
     effects: [
       {
         coefficient: 1.264787, 
@@ -97,7 +97,7 @@ export const effectData = [
       bonus_stats.haste = negativeStats;
       bonus_stats.mastery = negativeStats;
 
-      console.log("Cuirass", bonus_stats);
+      //console.log("Cuirass", bonus_stats);
 
       return bonus_stats;
     },
@@ -106,13 +106,13 @@ export const effectData = [
     name: "Aqirbane Reliquary",
     effects: [
       {
-        coefficient: 1.264787, 
+        coefficient: 0.997962, 
         scalingClass: -72,
         ppm: 2,
         duration: 12,
       },
       {
-        coefficient: -0.210792, 
+        coefficient: -0.167881, 
         scalingClass: -72,
         ppm: 2,
         duration: 12,
@@ -121,13 +121,14 @@ export const effectData = [
     runFunc: function(data, itemLevel, additionalData) {
       let bonus_stats = {};
 
-      bonus_stats.crit = runGenericPPMTrinket(data[0], itemLevel);
-      const negativeStats = runGenericPPMTrinket(data[1], itemLevel);
-      bonus_stats.versatility = negativeStats;
-      bonus_stats.haste = negativeStats;
-      bonus_stats.mastery = negativeStats;
-
-      console.log("Neck", bonus_stats);
+      const uptime = convertPPMToUptimeExtended(data[0].ppm, data[0].duration)
+      const positiveStat = uptime * processedValue(data[0], itemLevel) / 4;
+      const negativeStat = uptime * processedValue(data[1], itemLevel, 1, "floor") / 4;
+      
+      bonus_stats.versatility = positiveStat + negativeStat * 3;
+      bonus_stats.haste = positiveStat + negativeStat * 3;
+      bonus_stats.mastery = positiveStat + negativeStat * 3;
+      bonus_stats.crit = positiveStat + negativeStat * 3;
 
       return bonus_stats;
     },
@@ -175,7 +176,7 @@ export const effectData = [
 
       bonus_stats.haste = runGenericPPMTrinket(data[0], itemLevel);
 
-      console.log("Dagger", bonus_stats);
+      //console.log("Dagger", bonus_stats);
 
       return bonus_stats;
     },

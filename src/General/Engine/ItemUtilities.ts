@@ -506,6 +506,31 @@ export const getNumUpgrades = (items: any[], raidID : number, bossID : number, d
   return filtered.length;
 }
 
+// Returns the number of upgrades (score > 0) for a given section.
+// uniqueByItem: count each item id once across drop/max/bonus variants (for accordion headers).
+export const getRollExpectedValue = (items: any[], raidID : number, bossID : number, difficultyID? : number, uniqueByItem: boolean = false) => {
+  const filtered = items.filter((item: any) => {
+    if (item.source.instanceId !== raidID || item.source.encounterId !== bossID) return false;
+    if (difficultyID !== undefined && item.dropDifficulty !== difficultyID) return false;
+    if (item.dropType !== "bonus") return false;
+    return true;
+  });
+
+  return filtered.reduce((sum, x) => sum + x.percDiff, 0) / (filtered.length || 1);
+}
+
+export const getBonusRollChanceUpgrade = (items: any[], raidID : number, bossID : number, difficultyID? : number) => {
+  const filtered = items.filter((item: any) => {
+    if (item.source.instanceId !== raidID || item.source.encounterId !== bossID) return false;
+    if (difficultyID !== undefined && item.dropDifficulty !== difficultyID) return false;
+    if (item.dropType !== "bonus") return false;
+    return true;
+  });
+
+  return (filtered.filter(x => x.percDiff > 0).length / (filtered.length || 1)) * 100;
+
+}
+
 // Returns true or false based on whether an ID exists in our item database.
 // Items that won't be found include stuff like shirts, low level items, quest items without stats and so on.
 // Importing these would be a waste of the user interface.

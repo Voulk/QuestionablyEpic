@@ -174,7 +174,7 @@ export function convertPPMToUptimeExtended(PPM, duration) {
   const regularUptime = convertPPMToUptime(PPM, duration);
   const overlappingUptime = 1.13 * duration * PPM / 60;
 
-  return (regularUptime * 0.8 + overlappingUptime * 0.2);
+  return (regularUptime * 0.6 + overlappingUptime * 0.4);
 }
 
 export function convertPPMToUptimeWithICD(PPM, duration) {

@@ -118,6 +118,7 @@ class ItemSet {
         hps: 0, // Items and effects that give HPS.
         dps: 0,
         mana: 0, // Evoker 2091
+        manaPerc: 1, // For percentage mana increases (usually enchants / metagem, not for talents)
         allyStats: 0,
         bonusHPS: 0, // Percent increases to score.
       } :

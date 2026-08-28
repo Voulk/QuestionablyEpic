@@ -146,7 +146,7 @@
             },
             "buffDuration": 5,
             "coeff": 0.408,
-            "aura": 0.88
+            "aura": 0.35
         }
     ],
     "Mindbender": [
@@ -172,7 +172,7 @@
             },
             "buffDuration": 12,
             "coeff": 0.6,
-            "aura": 0.88
+            "aura": 0.35
         }
     ],
     "Voidwraith": [

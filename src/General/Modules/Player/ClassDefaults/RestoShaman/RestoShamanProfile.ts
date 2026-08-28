@@ -88,7 +88,8 @@ const getRealCrit = (spellName: string, state, spellDB) => {
 export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSettings = {}, reporting = false) {
     if (playerData.heroTree === "Default"){ playerData.heroTree = "Totemic" }
     const spellDB = JSON.parse(JSON.stringify(specSpellDB));
-    const fightLength = 5
+    const lengthSetting = getSetting(settings, "fightLengthShaman")
+    const fightLength = lengthSetting === "Short" ? 5 : 7
     // This will be sent to applyTalents and then we'll turn it into a proper state variable afterwards.
     let initialState = {statBonuses: applyRaidBuffs(settings), talents: deepCopyFunction(shamanTalents), heroTree: playerData.heroTree};
     const reportingData: any = {};
@@ -306,8 +307,9 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
     }
 
     // Max mana
-    let manaPool = 250000;
-
+    let manaPool = 250000 * (stats.manaPerc || 1);
+    const innervateCount = getSetting(settings, "innervateCountShaman")
+    manaPool += (manaPool * (0.25 * innervateCount))
     if (hasTalent(talents, "Primordial Capacity")){
         manaPool *= 1.1
     }

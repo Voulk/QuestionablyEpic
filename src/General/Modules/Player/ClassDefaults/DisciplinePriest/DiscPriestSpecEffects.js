@@ -19,7 +19,7 @@ export const getDiscPriestSpecEffect = (effectName, player, contentType) => {
 
   }
   else if (effectName === "Discipline Priest S2-4") {
-    bonus_stats.bonusHPS = 0.018;
+    bonus_stats.bonusHPS = 0.02;
   }
   else if (effectName === "Discipline Priest S1-2") {
     bonus_stats.bonusHPS = 0.018;

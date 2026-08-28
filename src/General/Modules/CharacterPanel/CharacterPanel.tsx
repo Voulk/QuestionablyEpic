@@ -336,7 +336,7 @@ export default function CharacterPanel(props: Props) {
                       .filter((key) => key.isEquipped === true)
                       .map((key, i) => (
                         <Grid item key={i}>
-                          <WowheadTooltip type="item" id={key.id} level={key.level} bonusIDS={key.bonusIDS} domain={wowheadDom}>
+                          <WowheadTooltip type="item" id={key.id} level={key.level} bonusIDS={key.bonusIDS} catalyzedID={key.catalyzedID} domain={wowheadDom}>
                             <img
                               style={{
                                 height: 22,
@@ -395,7 +395,7 @@ export default function CharacterPanel(props: Props) {
                       .filter((key) => key.isEquipped === true)
                       .map((key, i) => (
                         <Grid item key={i}>
-                          <WowheadTooltip type="item" id={key.id} level={key.level} bonusIDS={key.bonusIDS} domain={wowheadDom}>
+                          <WowheadTooltip type="item" id={key.id} level={key.level} bonusIDS={key.bonusIDS} catalyzedID={key.catalyzedID} domain={wowheadDom}>
                             <img
                               style={{
                                 height: 22,

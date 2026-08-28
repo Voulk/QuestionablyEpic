@@ -40,9 +40,14 @@ export const getEvokerSpecEffect = (effectName, player, contentType, setStats) =
       const emeraldBlossomTalents = 1.1;
       const verdantEmbraceTalents = 1.3 * 1.6 * 1.1 * 1.06;
       bonus_stats.hps = (emeraldBlossomHealing * emeraldBlossomTalents + verdantEmbraceHealing * verdantEmbraceTalents) * verdantEmbraceCPM / 60;
-
-
-
+  }
+  else if (effectName === "Preservation Evoker S2-2" && contentType === "Dungeon") {
+    // Raid tier is just included in-model.
+      bonus_stats.bonusHPS = 0.09;
+  }
+  else if (effectName === "Preservation Evoker S2-4" && contentType === "Dungeon") {
+    // Raid tier is just included in-model.
+      bonus_stats.bonusHPS = 0.04;
   }
   else if (effectName === "Evoker T31-2") {
     // 

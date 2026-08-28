@@ -11,7 +11,7 @@ import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { getTrinketValue } from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketEffectFormulas";
 import { allRamps, allRampsHealing, getDefaultDiscTalents } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscRampUtilities";
 import { buildRamp } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscRampGen";
-import { getItemSet } from "Classic/Databases/RetailItemSetDB";
+import { getItemSet, getSeasonalTier } from "Classic/Databases/RetailItemSetDB";
 import { CONSTANTS, MODEL_TYPES } from "General/Engine/CONSTANTS";
 import { getCircletEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/CyrcesCircletData"
 import { generateReportCode } from "General/Modules/TopGear/Engine/TopGearEngineShared"
@@ -28,7 +28,7 @@ import { getFolioEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffect
  */
 
 const softSlice = 3000;
-const adjustWeights = false;
+const adjustWeights = true;
 
 
 // This is just a timer function. We might eventually just move it to a timeUtility file for better re-use.
@@ -173,6 +173,9 @@ function getGemStats(gemArray: number[]) {
       gem_stats[stat] = (gem_stats[stat] ?? 0) + gemStats[stat];
     });
   });
+
+
+
   return gem_stats;
 }
 
@@ -304,7 +307,7 @@ export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Playe
   let primeSet = resultSets[0];
   for (var k = 1; k < Math.min(CONSTRAINTS.Shared.topGearDifferentials + 1, resultSets.length); k++) {
     //differentials.push(buildDifferential(itemSets[k], primeSet, newPlayer, contentType));
-    differentials.push(buildDifferential(resultSets[k], primeSet, newPlayer, contentType));
+    differentials.push(buildDifferential(resultSets[k], primeSet, newPlayer, contentType, newCastModel.modelType[contentType] || "Default"));
   }
 
   // == Return sets ==
@@ -491,10 +494,11 @@ function createSets(itemList: Item[], rawWepCombos: Item[], spec: string) {
   return itemSets;
 }
 
-function buildDifferential(itemSet: ItemSet, primeSet: ItemSet, player: Player, contentType: contentTypes) {
+function buildDifferential(itemSet: ItemSet, primeSet: ItemSet, player: Player, contentType: contentTypes, castModelType: string) {
   let doubleSlot: {[key: string]: number} = {};
   const primeList = primeSet.itemList;
   const diffList = itemSet.itemList;
+  const modelDiff = (castModelType === "Default" ? CONSTANTS.modelDiff : 1);
 
   let differentials: {
     items: Item[]; //
@@ -506,14 +510,16 @@ function buildDifferential(itemSet: ItemSet, primeSet: ItemSet, player: Player, 
   } = {
     items: [],
     gems: [],
-    scoreDifference: (Math.round(primeSet.hardScore - itemSet.hardScore) / primeSet.hardScore) * 100,
-    rawDifference: Math.round(((itemSet.hardScore - primeSet.hardScore) / primeSet.hardScore) * player.getHPS(contentType)),
+    scoreDifference: ((Math.round(primeSet.hardScore - itemSet.hardScore) / primeSet.hardScore) * 100 * modelDiff),
+    rawDifference: Math.round(((itemSet.hardScore - primeSet.hardScore) / primeSet.hardScore) * player.getHPS(contentType) * modelDiff),
 
     // Absolute throughput for this alternative, and the healing it gives up against the best set.
     // Both are 0 when the spec / content type is scored on stat weights, since no HPS figure exists there.
+    // modelDiff only scales the Default path, which is exactly where these stay 0, so the two don't interact.
     hps: itemSet.setHPS || 0,
     hpsDifference: Math.round((itemSet.setHPS || 0) - (primeSet.setHPS || 0)),
   };
+
 
   for (var x = 0; x < primeList.length; x++) {
     // Check if the other set has the corresponding slot.
@@ -613,18 +619,24 @@ function enchantItems(bonus_stats: Stats, setStats: Stats, castModel: any, conte
 
   // Chest
   // There is a mana option too that we might include later.
-  bonus_stats.intellect = (bonus_stats.intellect || 0) + 50; 
-  enchants["Chest"] = "Mark of the Worldsoul";
+  if (spec === "Restoration Shaman") {
+    bonus_stats.intellect = (bonus_stats.intellect || 0) + 40;
+    bonus_stats.manaPerc = (bonus_stats.manaPerc || 1) * 1.05; 
+    enchants["Chest"] = "Mark of the Magister";
+  }
+  else {
+    bonus_stats.intellect = (bonus_stats.intellect || 0) + 50; 
+    enchants["Chest"] = "Mark of the Worldsoul";
+  }
+
 
   // Shoulders
   bonus_stats.leech = (bonus_stats.leech || 0) + 166;
   enchants["Shoulder"] = "Silvermoon's Mending";
 
-  // Belt
-  //enchants["Waist"] = "Shadowed Belt Clasp";
-
   // Legs - Also gives 3/4/5% mana.
   bonus_stats.intellect += 41;
+  bonus_stats.manaPerc = (bonus_stats.manaPerc || 1) * 1.04;
   enchants["Legs"] = "Arcanoweave Spellthread";
 
   // Boots
@@ -633,19 +645,22 @@ function enchantItems(bonus_stats: Stats, setStats: Stats, castModel: any, conte
 
 
   // Weapon - Acuity of the Ren'dorei. Should add a setting for secondary enchants too.
-  bonus_stats.intellect += 67 * convertPPMToUptime(2, 15);
-
   let wepEnchantName = "Acuity of the Ren'dorei"
-  /*if (highestWeight === "mastery") wepEnchantName = "Stonebound Artistry";
-  else if (highestWeight === "haste") wepEnchantName = "Stormrider's Fury";
-  else if (highestWeight === "crit") wepEnchantName = "Council's Guile";
-  else if (highestWeight === "versatility") wepEnchantName = "Oathsworn's Tenacity";*/
-
+  if (spec === "Discipline Priest" || spec === "Restoration Druid") {
+    wepEnchantName = "Berserker's Rage";
+    bonus_stats.haste = (bonus_stats.mastery || 0) + 124 * convertPPMToUptime(3, 15);
+  }
+  else if (spec === "Preservation Evoker") {
+    wepEnchantName = "Arcane Mastery";
+    bonus_stats.mastery = (bonus_stats.mastery || 0) + 124 * convertPPMToUptime(3, 15);
+  }
+  else {
+    bonus_stats.intellect += 67 * convertPPMToUptime(3, 15);
+  }
+  
   enchants["CombinedWeapon"] = wepEnchantName; 
   enchants["2H Weapon"] = wepEnchantName; 
   enchants["1H Weapon"] = wepEnchantName; 
-
-
 
   return enchants;
 }
@@ -731,7 +746,9 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     hps: 0,
     dps: 0,
     mana: 0,
+    manaPerc: 1, // Mana *pool* increases
     allyStats: 0,
+    critMult: 1, // Bonuses to the crit multiplier
   };
 
 
@@ -801,7 +818,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
 
   // Vantus Rune
   if (contentType === "Raid") {
-    consumableStats.versatility = (consumableStats.versatility ?? 0) + 270;
+    consumableStats.versatility = (consumableStats.versatility ?? 0) + 162;
   }
 
   statBreakdown.consumables = consumableStats;  
@@ -848,7 +865,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
 
   // == Set Bonuses ==
   // --- Item Set Bonuses (usually tier) ---
-  const usedSets: any[] = []
+  let usedSets: any[] = []
   for (const set in setBonuses) {
     if (setBonuses[set] > 1) {
       const itemSet: ItemEffect[] = getItemSet(set, setBonuses[set], player.getSpec())
@@ -859,7 +876,19 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
         }
       })
     }
+
   }
+    if (userSettings.forceTier?.value) {
+      // Override tier. Used sometimes in upgrade finder where we want to compare items post-catalyst.
+      effectList = effectList.filter(effect => effect.type !== "set bonus");
+      const seasonalTier = getSeasonalTier(userSettings.forceTier.value, player.spec);
+      effectList = effectList.concat(seasonalTier);
+      usedSets = seasonalTier.map(tier => tier.name);
+      
+        //console.log(JSON.stringify(effectList))
+        //console.log(userSettings);
+
+    }
 
   // Armor Banding
   if (effectList.filter(effect => effect.name === "Writhing Armor Banding").length > 0) {
@@ -871,8 +900,10 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     const effect = effectList[x];
     if (!useSeq || (castModel.modelType[contentType] === "Sequences" && !effect.onUse)) {
       effectStats.push(getEffectValue(effect, player, castModel, contentType, effect.level, userSettings, "Retail", setStats, setVariables));
+      
     }
   }
+
 
   // Omnium Folio
   // Handle user entry / unlocks later.
@@ -998,6 +1029,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   else {
     setStats = applyDiminishingReturns(setStats); // Apply Diminishing returns to our haul.
 
+
     // Talents (DR does not apply)
     if (player.spec === "Holy Paladin") {
       setStats.crit = (setStats.crit || 0) + STATCONVERSION.CRIT * 4;
@@ -1019,16 +1051,27 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     setStats.versatility = (setStats.versatility || 0) + STATCONVERSION.VERSATILITY * 3;
     setStats.intellect = (setStats.intellect || 0) * 1.03; // Arcane Intellect
 
-    const DR_CONST = adjustWeights ? 0.00263669230769231 : 0;
+    const DR_CONST = adjustWeights ? 0.00083669230769231 : 0;
     const DR_CONSTLEECH = 0.05122569230769231;
 
     // Apply soft DR formula to stats, as the more we get of any stat the weaker it becomes relative to our other stats.
+    const adjust_perc = {
+      haste: setStats.haste! / STATCONVERSION.HASTE,
+      crit: setStats.crit! / STATCONVERSION.CRIT,
+      versatility: setStats.versatility! / STATCONVERSION.VERSATILITY,
+      mastery: setStats.mastery! / (STATCONVERSION.MASTERY / STATCONVERSION.MASTERYMULT[player.spec]),
+      leech: setStats.leech! / STATCONVERSION.LEECH,
+    }
+
+    
     adjusted_weights.haste = (adjusted_weights.haste + adjusted_weights.haste * (1 - (DR_CONST * setStats.haste!) / STATCONVERSION.HASTE)) / 2;
     adjusted_weights.crit = (adjusted_weights.crit + adjusted_weights.crit * (1 - (DR_CONST * setStats.crit!) / STATCONVERSION.CRIT)) / 2;
     adjusted_weights.versatility = (adjusted_weights.versatility + adjusted_weights.versatility * (1 - (DR_CONST * setStats.versatility!) / STATCONVERSION.VERSATILITY)) / 2;
     adjusted_weights.mastery = (adjusted_weights.mastery + adjusted_weights.mastery * (1 - (DR_CONST * setStats.mastery!) / (STATCONVERSION.MASTERY / STATCONVERSION.MASTERYMULT[player.spec]))) / 2;
     adjusted_weights.leech = (adjusted_weights.leech + adjusted_weights.leech * (1 - (DR_CONSTLEECH * setStats.leech!) / STATCONVERSION.LEECH)) / 2;
     //addBaseStats(setStats, player.spec); // Add our base stats, which are immune to DR. This includes our base 5% crit, and whatever base mastery our spec has.
+    
+    
     setStats = compileStats(setStats, mergedEffectStats); // DR for effects are handled separately.
 
     // == Apply same set int bonus ==
@@ -1038,6 +1081,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
 
     evalStats = setStats;
   }
+
   // == Scoring ==
   for (var stat in evalStats) {
     // Handle flat HPS increases like most tier sets, some trinkets, Annulet and more.
@@ -1046,14 +1090,14 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     } 
     // Handle flat DPS increases like DPS trinkets. Note that additional DPS value isn't currently evaluated.
     else if (stat === "dps" && evalStats.dps) {
-      if (contentType === "Dungeon") hardScore += (evalStats.dps * CONSTANTS.dpsValue / baseHPS) * player.activeStats.intellect;
+      if (contentType === "Dungeon") hardScore += (evalStats.dps * CONSTANTS.dpsValue / baseHPS) * evalStats.intellect!;
       else continue;
     } 
     // Handle mana increases. 
     // Currently we don't apply any form of diminishing returns to extra mana, though its value definitely decreases as you get more of it.
     // Somewhat saved by the fact that getting even a single source of extra mana on gear is rare but could be an exercise in future.
     else if (stat === "mana" && evalStats.mana) {
-      hardScore += evalStats.mana * player.getSpecialQuery("OneManaHealing", contentType) / player.getHPS(contentType) * player.activeStats.intellect
+      hardScore += evalStats.mana * player.getSpecialQuery("OneManaHealing", contentType) / player.getHPS(contentType) * evalStats.intellect!;
     }
     // Handle stats we give to allies.
     // This is somewhat of an estimate but it's more reasonable than leaving it out entirely.
@@ -1074,9 +1118,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   }
 
   if (evalStats.bonusHPS) {
-
-    hardScore *= (evalStats.bonusHPS + 1);
-
+    hardScore *= ((evalStats.bonusHPS || 0) + 1);
   }
 
   addBaseStats(setStats); // Add our base stats, which are immune to DR. This includes our base 5% crit, and whatever base mastery our spec has.
@@ -1087,7 +1129,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   // Wearing two on-use trinkets is generally a bad idea since they're underbudget compared to procs, only one can be combined with cooldowns, and 
   // player usage is likely to be managed poorly.
   if ( "onUseTrinkets" in builtSet && builtSet.onUseTrinkets.length == 2) {
-    hardScore -= 2800;
+    hardScore -= 150;
   }
 
   builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
@@ -1135,8 +1177,10 @@ export function mergeBonusStats(stats: any) {
     hps: mergeStat(stats, "hps") + mergeStat(stats, "HPS"),
     dps: mergeStat(stats, "dps"),
     mana: mergeStat(stats, "mana"),
+    manaPerc: mergeStat(stats, "manaPerc"),
     allyStats: mergeStat(stats, "allyStats"),
     bonusHPS: mergeStat(stats, "bonusHPS")
+
   };
 
   return val;
@@ -1161,8 +1205,9 @@ function getHighestWeight(castModel : any, exclusion?: string): "crit" | "haste"
 // Compiles stats & bonus stats into one array to which we can then apply DR etc.
 function compileStats(stats: Stats, bonus_stats: Stats) {
   for (var stat in stats) {
-    stats[stat] += stat in bonus_stats ? bonus_stats[stat] : 0;
-    stats[stat] = Math.max(stats[stat], 0); // Make sure we don't have negative stats. Some effects can bring us below 0, but gear can make up for it.
+    if (stat === "manaPerc") stats[stat] = (stats[stat] || 1) * (bonus_stats[stat] || 1);
+    else stats[stat] += stat in bonus_stats ? bonus_stats[stat] : 0;
+    stats[stat] = (stat === "hps" ? stats[stat] : Math.max(stats[stat], 0)); // Make sure we don't have negative stats. Some effects can bring us below 0, but gear can make up for it.
   }
 
   return stats;

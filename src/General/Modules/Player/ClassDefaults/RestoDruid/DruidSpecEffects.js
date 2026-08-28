@@ -12,26 +12,19 @@ export const getDruidSpecEffect = (effectName, player, contentType) => {
   let bonus_stats = {};
   const healingMult = 1.06 * 1.04 // Class talents
 
-  if (effectName === "Druid S3-2") {
-    bonus_stats.bonusHPS = 0;
-  }
-  else if (effectName === "Druid S3-4") {
-    bonus_stats.bonusHPS = 0;
-  }
-  else if (effectName === "Druid S2-2") {
+  if (effectName === "Restoration Druid S2-2") {
     
     bonus_stats.bonusHPS = 0.03;
   }
-  else if (effectName === "Druid S2-4") {
-    bonus_stats.bonusHPS = 0.05;
+  else if (effectName === "Restoration Druid S2-4") {
+    bonus_stats.bonusHPS = 0.055;
 
   }
   else if (effectName === "Restoration Druid S1-2") {
-    // +10% Regrowth, Swiftmend, Wild Growth
     bonus_stats.bonusHPS = 0.0204;
   }
   else if (effectName === "Restoration Druid S1-4") {
-    bonus_stats.bonusHPS = 0.007;
+    bonus_stats.bonusHPS = 0.003;
   }
   else if (effectName === "Druid T31-4") {
     // 

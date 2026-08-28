@@ -91,8 +91,9 @@ export const dungeonTrinketData =
     /* ---------------------------------------------------------------------------------------------- */
 
     name: "Ruby Whelp Shell",
-    description: "Can be trained over 6 days in order to proc one of its 6 effects more frequently. There's a setting in QE Live for this and it will impact its value.",
+    description: "CHART DEFAULT IS UNTRAINED. Can be trained over 6 days in order to proc one of its 6 effects more frequently. There's a setting in QE Live for this and it will impact its value.",
     setting: true,
+    warningFlag: true,
     effects: [
       { // ST Damage Portion
         secondaries: ['crit', 'versatility'],
@@ -529,7 +530,7 @@ export const dungeonTrinketData =
         runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
           let bonus_stats: Stats = {};
     
-          bonus_stats[data[0].stat!] = runGenericOnUseTrinket({...data[0], ...trinketRawData["Nevermelting Ice Crystal"][0]}, itemLevel, additionalData.castModel) * 2.5
+          //bonus_stats[] = runGenericOnUseTrinket({...data[0], ...trinketRawData["Nevermelting Ice Crystal"][0]}, itemLevel, additionalData.castModel) * 2.5
           
           return bonus_stats;
         }

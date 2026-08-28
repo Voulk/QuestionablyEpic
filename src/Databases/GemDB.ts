@@ -14,7 +14,7 @@ export const gemDB: GemEntry[] = [
       element: "Meta",
       name: "Telluric Eversong Diamond",
       icon: "inv_12_profession_jewelcrafting_epic_gem_cut_blue",
-      stats: { intellect: 23 },
+      stats: { intellect: 23, manaPerc: 1.04 },
     },
       {
       id: 240983,

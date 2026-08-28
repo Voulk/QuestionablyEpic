@@ -126,10 +126,9 @@ export const otherTrinketData = [
   },
         { 
     name: "Crucible of Erratic Energies",
-    description: "A powerful crit / leech stat stick that's STILL very overbudget. Includes the world buffs available since they work in raids / dungeons too. You can turn this off in settings. Further nerfs possible.",
-    warningFlag: true,
+    description: "A powerful crit / leech stat stick that's a little overbudget. Includes the world buffs available since they work in raids / dungeons too. You can turn this off in settings.",
     setting: true,
-    addonDescription: "A powerful crit / leech stat stick that's STILL very overbudget. Includes the world buffs available since they work in raids / dungeons too. You can turn this off in settings. Further nerfs possible.",
+    addonDescription: "",
     effects: [
       {
         duration: 10,
@@ -180,7 +179,7 @@ export const otherTrinketData = [
     }
   },
         { 
-    name: "Galactic Gladiator's Insignia of Alacrity",
+    name: "Insignia of Alacrity",
     description: "",
     addonDescription: "",
     effects: [
@@ -192,8 +191,9 @@ export const otherTrinketData = [
     ],
     runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
       let bonus_stats: Stats = {};
-
-      bonus_stats.intellect = runGenericPPMTrinket({...data[0], ...trinketRawData["Galactic Gladiator's Insignia of Alacrity"][0]}, itemLevel);
+      console.log({...data[0], ...trinketRawData["Insignia of Alacrity"][0]})
+      bonus_stats.intellect = runGenericPPMTrinket({...data[0], ...trinketRawData["Insignia of Alacrity"][0]}, itemLevel);
+      console.log(bonus_stats.intellect);
 
       return bonus_stats;
     }
