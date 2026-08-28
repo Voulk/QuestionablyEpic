@@ -7,11 +7,12 @@ import Player from "../../Player/Player";
 import CastModel from "../../Player/CastModel";
 import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectEngine";
 import { applyDiminishingReturns, getAllyStatsValue, getGemElement, getGems } from "General/Engine/ItemUtilities";
+import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { getTrinketValue } from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketEffectFormulas";
 import { allRamps, allRampsHealing, getDefaultDiscTalents } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscRampUtilities";
 import { buildRamp } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscRampGen";
 import { getItemSet, getSeasonalTier } from "Classic/Databases/RetailItemSetDB";
-import { CONSTANTS } from "General/Engine/CONSTANTS";
+import { CONSTANTS, MODEL_TYPES } from "General/Engine/CONSTANTS";
 import { getCircletEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/CyrcesCircletData"
 import { generateReportCode } from "General/Modules/TopGear/Engine/TopGearEngineShared"
 import Item from "General/Items/Item";
@@ -252,6 +253,21 @@ export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Playe
   let itemSets = createSets(itemList, wepCombos, player.spec);
   let resultSets = [];
 
+  // == Currently equipped set ==
+  // Run the player's current gear through the same evaluation so the report can show how big an upgrade the best
+  // set actually is. Display only, and deliberately outside the ranking loop so it never competes.
+  let equippedHPS = 0;
+  try {
+    const equippedItems = itemList.filter((item: Item) => item.isEquipped);
+    if (equippedItems.length > 0) {
+      const equippedSet = evalSet(new ItemSet(-1, equippedItems, 0, player.spec), newPlayer, contentType, baseHPS, userSettings, newCastModel, false, 0);
+      equippedHPS = equippedSet.setHPS || 0;
+    }
+  } catch (err) {
+    // A malformed equipped set shouldn't take down the whole run - we just lose the upgrade percentage.
+    reportError(newPlayer, "Top Gear", "Failed to evaluate equipped set for upgrade comparison", String(err));
+  }
+
   itemSets.sort((a, b) => (a.sumSoftScore < b.sumSoftScore ? 1 : -1));
   
   // == Evaluate Sets ==
@@ -299,6 +315,7 @@ export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Playe
   } else {
     let result: TopGearResult = new TopGearResult(resultSets[0], differentials, contentType);
     result.itemsCompared = resultSets.length;
+    result.equippedHPS = equippedHPS;
     result.new = true;
     result.id = generateReportCode();
     return result;
@@ -477,13 +494,21 @@ function buildDifferential(itemSet: ItemSet, primeSet: ItemSet, player: Player, 
   let differentials: {
     items: Item[]; //
     gems: number[]; //
-    scoreDifference: number; 
-    rawDifference: number; 
+    scoreDifference: number;
+    rawDifference: number;
+    hps: number;
+    hpsDifference: number;
   } = {
     items: [],
     gems: [],
     scoreDifference: ((Math.round(primeSet.hardScore - itemSet.hardScore) / primeSet.hardScore) * 100 * modelDiff),
     rawDifference: Math.round(((itemSet.hardScore - primeSet.hardScore) / primeSet.hardScore) * player.getHPS(contentType) * modelDiff),
+
+    // Absolute throughput for this alternative, and the healing it gives up against the best set.
+    // Both are 0 when the spec / content type is scored on stat weights, since no HPS figure exists there.
+    // modelDiff only scales the stat weight path, which is exactly where these stay 0, so the two don't interact.
+    hps: itemSet.setHPS || 0,
+    hpsDifference: Math.round((itemSet.setHPS || 0) - (primeSet.setHPS || 0)),
   };
 
 
@@ -1096,6 +1121,17 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   }
 
   builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
+
+  // == Absolute Throughput ==
+  // hardScore is an intellect-equivalent ranking number and can't be shown to the player as healing. Where the set
+  // was run through a cast model or a ramp sim though, setStats.hps is a genuine HPS figure we can report directly.
+  // On the stat weight path setStats.hps only holds flat HPS granted by effects, which is not the player's total
+  // healing, so we leave this at 0 rather than report a misleading number.
+  const evaluationPath = castModel.modelType[contentType];
+  builtSet.setHPS = (evaluationPath === MODEL_TYPES.CAST_MODEL || evaluationPath === MODEL_TYPES.SEQUENCES)
+                      ? Math.round(setStats.hps || 0)
+                      : 0;
+
   builtSet.setStats = setStats;
   builtSet.enchantBreakdown = enchants;
   builtSet.gemBreakdown = JSON.stringify(enchants["Gems"] || []);
@@ -1348,6 +1384,7 @@ function evalSetOld(itemSet, player, contentType, baseHPS, userSettings, castMod
   }
 
   builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
+
   builtSet.setStats = setStats;
   builtSet.enchantBreakdown = enchants;
   return builtSet; // Temp

@@ -14,6 +14,12 @@ class ItemSet {
   sumSoftScore: number = 0;
   hardScore: number = 0;
 
+  // The set's absolute throughput in HPS. Only populated when the set was evaluated through a cast model or a ramp
+  // sim, since those are the only paths that produce a healing number. On the stat weight path the score is an
+  // intellect-equivalent ranking figure with no throughput attached, so this stays 0 and the report shows nothing
+  // rather than inventing a value.
+  setHPS: number = 0;
+
   // The number of sockets in the set
   setSockets: number = 0;
 
@@ -74,6 +80,7 @@ class ItemSet {
       clonedSet.spec = this.spec;
       clonedSet.sumSoftScore = this.sumSoftScore;
       clonedSet.hardScore = this.hardScore;
+      clonedSet.setHPS = this.setHPS;
       clonedSet.setSockets = this.setSockets;
       clonedSet.uniques = { ...this.uniques };
       clonedSet.effectList = this.effectList.slice();
