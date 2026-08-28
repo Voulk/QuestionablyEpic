@@ -21,6 +21,13 @@ export class TopGearResult {
   // Throughput of the gear the player is currently wearing, evaluated through the same path as the candidate sets.
   // Used to show how much of an upgrade the best set is. 0 when the spec has no cast model, or nothing is equipped.
   equippedHPS: number = 0;
+
+  // Per-option comparison table for gems, enchants, flask and Folio runes, priced against the player's currently
+  // equipped gear so they can fine tune stats. Null when nothing is flagged as equipped.
+  optionComparisons: any = null;
+
+  // The winning gem / enchant / Folio configuration when joint optimisation ran, plus what it gained.
+  optimalConfig: any = null;
 }
 
 export default TopGearResult;

@@ -41,6 +41,57 @@ export const getFolioIcon = (id: number) => {
   else console.error("Gem Icon not found");
 }
 
+// The Folio has five rune slots. Slots 2 and 3 currently have a single option each, so only 1, 4 and 5 are
+// configurable. Each setting accepts "Automatic" (keep the engine's own pick) or a rune's shortName.
+export const FOLIO_SLOT_SETTINGS: { [slot: number]: string } = { 1: "folioSlot1", 4: "folioSlot4", 5: "folioSlot5" };
+
+// The rune the engine falls back to when a slot is left on Automatic and there is no stat-weight rule for it.
+const FOLIO_AUTO_DEFAULTS: { [slot: number]: number } = { 1: 1279599, 2: 1279603, 3: 1287555, 5: 1279614 };
+
+// Slot 4 is the pure secondary stat slot, so Automatic follows the player's best stat.
+const FOLIO_STAT_RUNES: { [stat: string]: number } = {
+  haste: 1287774,
+  crit: 1279609,
+  mastery: 1287771,
+  versatility: 1279613,
+};
+
+export const getFolioOptions = (slot: number): string[] => {
+  return omniumFolioData.filter((gem) => gem.slot === slot).map((gem) => gem.shortName);
+};
+
+/**
+ * Resolves the player's Folio settings into the five rune IDs to equip.
+ * Anything left on "Automatic" keeps the behaviour the engine had before the setting existed, so an untouched
+ * settings object produces exactly the same set of runes it always did.
+ * @param settings The player settings object.
+ * @param bestStat The player's highest weighted secondary, used for the Automatic slot 4 pick.
+ */
+export const getFolioGems = (settings: any, bestStat: string): number[] => {
+  const chosen: number[] = [];
+
+  [1, 2, 3, 4, 5].forEach((slot) => {
+    const settingKey = FOLIO_SLOT_SETTINGS[slot];
+    const raw = settingKey && settings && settingKey in settings ? settings[settingKey].value : "Automatic";
+    const choice = typeof raw === "string" ? raw : "Automatic";
+
+    if (choice !== "Automatic") {
+      const match = omniumFolioData.find((gem) => gem.slot === slot && gem.shortName === choice);
+      if (match) {
+        chosen.push(match.id);
+        return;
+      }
+      // An unrecognised choice (renamed rune, stale local storage) falls through to Automatic rather than
+      // dropping the slot entirely, which would silently cost the player a rune.
+    }
+
+    if (slot === 4) chosen.push(FOLIO_STAT_RUNES[bestStat] || FOLIO_STAT_RUNES.haste);
+    else chosen.push(FOLIO_AUTO_DEFAULTS[slot]);
+  });
+
+  return chosen;
+};
+
 export const getShortName = (id: number) => {
   const gem = omniumFolioData.filter(gem => gem.id == id)[0];
   if (gem) return gem.shortName;

@@ -29,7 +29,6 @@
     "5": "5",
     "6": "6",
     "7": "7",
-    
     "Leech": "Leech",
     "Burning Crusade": "Burning Crusade",
     "Cancel": "Cancel",
@@ -219,7 +218,6 @@
       "Gold": "Gold",
       "Sapphire": "Sapphire",
       "RollsRoyce": "Rolls Royce"
-
     },
     "QeHeader": {
       "InsertLogLabel": "Insert Log",
@@ -286,15 +284,12 @@
         "embellishments": "Embellishments",
         "enchants": "Enchants",
         "specSpecific": "Spec Specific",
-
         "enchantItems": {
           "title": "Enchant Items",
-          "tooltip": ""
+          "tooltip": "Whether Top Gear should assume your gear is enchanted."
         },
-
         "Setting5Title": "Playstyle",
         "Setting5Tooltip": "Choose your playstyle",
-
         "includeGroupBenefits": {
           "title": "Ally Buffs",
           "tooltip": "Estimate value from stats you give to your group."
@@ -310,7 +305,7 @@
         "idolGems": {
           "title": "JC Idol Trinkets",
           "tooltip": "Select how many associated gems you have in your gear."
-        },  
+        },
         "alchStonePotions": {
           "title": "Alch Stone",
           "tooltip": "Number of extra potions Alch Stone gives you over a fight."
@@ -363,15 +358,14 @@
           "title": "Mastery Effectiveness",
           "tooltip": "Expected Mastery Effectiveness. Can be pulled from a specific log on wowanalyzer.com. Top Gear only."
         },
-        "fightLengthShaman" : {
+        "fightLengthShaman": {
           "title": "Fight Length",
           "tooltip": "Approximate duration of the fight. Most progress fights will be covered under 'Long' while early fights or farm can get closer to 'Short'."
         },
-        "innervateCountShaman" : {
+        "innervateCountShaman": {
           "title": "Innervate Count",
           "tooltip": "Amount of Innervates you will get during the fight. One innervate means a single cast of it, not one druid giving it to you on cooldown."
         },
-
         "flaskChoice": {
           "title": "Flask",
           "tooltip": "Pick which flask you want QE Live to use."
@@ -408,7 +402,6 @@
           "title": "Darkmoon Hunt: Stat",
           "tooltip": "Darkmoon Hunts stat is based on what you are targeting. Targeting allies gives you Mastery so this is the most consistent stat, but it otherwise differs per boss."
         },
-        
         "dpsFlag": {
           "title": "DPS Flag",
           "tooltip": "Include DPS for specs that don't do it naturally as part of their healing rotation. Does not effect Disc Priest, Pres Evoker. May effect which trinkets you can proc."
@@ -449,9 +442,6 @@
           "title": "Shattered Soul Efficiency",
           "tooltip": "Set to 100 if you expect to get full Shattered Soul value on a fight. It works on Cosmic, Nature, Holy, Arcane and Shadow damage."
         },
-
-        
-
         "manaProfile": {
           "title": "Mana Profile",
           "tooltip": "Pick a more or less aggressive mana profile."
@@ -472,7 +462,6 @@
           "title": "Scoring Metric",
           "tooltip": "Pick whether to include DPS value in your score or not."
         },
-
         "wristEnchant": {
           "title": "Wrist Enchant",
           "tooltip": "While intellect is always better, it's also very expensive which can be prohibitive during early gearing."
@@ -489,14 +478,13 @@
           "title": "Include Enchants",
           "tooltip": "Whether or not to include enchants."
         },
-
         "numManaTides": {
           "title": "Mana Tide #",
           "tooltip": "Select the number of Resto Shamans in your raid, not the number of times they'll drop the totem."
         },
         "metaGem": {
           "title": "Meta Gem",
-          "tooltip": "More options coming soon!"
+          "tooltip": "Which meta gem to socket. Automatic uses the default for your spec."
         },
         "professionOne": {
           "title": "First Profession",
@@ -517,11 +505,50 @@
         "druidLevelSixtyTalent": {
           "title": "Druid L60 Talent",
           "tooltip": "Pick which level 60 talent you'd like to optimize for."
+        },
+        "consumables": "Consumables",
+        "omniumFolio": "Omnium Folio",
+        "foodBuff": {
+          "title": "Food",
+          "tooltip": "Whether to include a food buff. Only the standard intellect food is modelled right now."
+        },
+        "weaponOil": {
+          "title": "Weapon Oil",
+          "tooltip": "Whether to include a weapon oil in the simulation."
+        },
+        "vantusRune": {
+          "title": "Vantus Rune",
+          "tooltip": "Whether to include a Vantus Rune. Raid only."
+        },
+        "ringEnchant": {
+          "title": "Ring Enchant",
+          "tooltip": "Which stat to enchant your rings with. Automatic uses your highest weighted stat."
+        },
+        "weaponEnchant": {
+          "title": "Weapon Enchant",
+          "tooltip": "Which weapon enchant to use. Automatic uses the default for your spec."
+        },
+        "folioSlot1": {
+          "title": "Folio Slot 1",
+          "tooltip": "Which rune to socket in the first Omnium Folio slot."
+        },
+        "folioSlot4": {
+          "title": "Folio Slot 4",
+          "tooltip": "Which secondary stat rune to socket in the fourth Omnium Folio slot. Automatic uses your highest weighted stat."
+        },
+        "folioSlot5": {
+          "title": "Folio Slot 5",
+          "tooltip": "Which rune to socket in the fifth Omnium Folio slot."
+        },
+        "gems": "Gems",
+        "gemCombo": {
+          "title": "Gems",
+          "tooltip": "Which stat combination to socket in your non-meta sockets. The first stat is the major one. Automatic uses the default for your spec."
+        },
+        "optimizeGemsEnchants": {
+          "title": "Optimise Gems & Enchants",
+          "tooltip": "Search gem, enchant, flask and Folio combinations together across the leading gear sets. Slower, and it can change which set wins."
         }
-
-        
-
-
       },
       "SettingsTitle": "Optional Settings"
     },

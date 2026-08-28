@@ -48,9 +48,14 @@ export default function TopSetStatsPanel(props) {
   const setHPS = props.setHPS || 0;
   const equippedHPS = props.equippedHPS || 0;
 
-  // How much of an upgrade the best set is over what the player is wearing right now.
+  // How much of an upgrade the best set is over what the player is wearing right now. Negative is possible and is
+  // shown as such - it means the set Top Gear built is worse than what they already have on.
   const upgradePercent = equippedHPS > 0 && setHPS > 0 ? ((setHPS - equippedHPS) / equippedHPS) * 100 : null;
-  const formatUpgrade = (percent: number) => (percent >= 0 ? "+" : "") + (Math.round(percent * 100) / 100) + "%";
+  const formatUpgrade = (percent: number) => (percent > 0 ? "+" : "") + (Math.round(percent * 100) / 100) + "%";
+
+  // A dead-on 0% almost always means the player ran Top Gear without adding any candidate items, so the best set
+  // is simply the gear they're wearing. "+0.00%" reads like the comparison failed, so say what happened instead.
+  const isSameAsEquipped = upgradePercent !== null && Math.abs(setHPS - equippedHPS) < 1;
   const stats =
     gameType === "Retail"
       ? [
@@ -231,13 +236,19 @@ return (
                 }}
               >
                 {Math.round(setHPS).toLocaleString() + " HPS"}
-                {upgradePercent !== null && (
-                  <span style={{ color: upgradePercent >= 0 ? "#a0f0a0" : "#f28b82", fontWeight: "normal" }}>
+                {upgradePercent !== null && !isSameAsEquipped && (
+                  <span style={{ color: upgradePercent > 0 ? "#a0f0a0" : "#f28b82", fontWeight: "normal" }}>
                     {" (" + formatUpgrade(upgradePercent) + ")"}
                   </span>
                 )}
               </Typography>
             </Tooltip>
+
+            {isSameAsEquipped && (
+              <Typography variant="caption" align="center" sx={{ color: "rgba(255,255,255,0.5)", display: "block" }}>
+                Same as your equipped gear — add items to compare
+              </Typography>
+            )}
           </>
         )}
       </Grid>

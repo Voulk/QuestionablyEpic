@@ -53,6 +53,28 @@ const initialState : RootState = {
     //gemSettings: {value: "Simple", options: ["Simple", /*"Precise (Beta)"*/], category: "topGear", type: "selector", gameType: "Retail"}, // TODO: Add a "Keep current".
     //runeChoice: {value: "Automatic", options: ["Automatic", "Haste", "Crit", "Mastery"], category: "topGear", type: "selector", gameType: "Retail"},
     flaskChoice: {value: "Automatic", options: ["Automatic", "Crit", "Mastery", "Versatility", "Haste"], category: "topGear", type: "selector", gameType: "Retail"},
+
+    // Consumables. Only options with real modelled values are offered - see the consumables block in TopGearEngine.
+    foodBuff: {value: "Intellect Food", options: ["Intellect Food", "None"], category: "consumables", type: "selector", gameType: "Retail"},
+    weaponOil: {value: true, options: [true, false], category: "consumables", type: "selector", gameType: "Retail"},
+    vantusRune: {value: true, options: [true, false], category: "consumables", type: "selector", gameType: "Retail"},
+
+    // Enchants. Automatic keeps the engine's own pick, which is what it did before these were configurable.
+    ringEnchant: {value: "Automatic", options: ["Automatic", "Haste", "Crit", "Mastery", "Versatility"], category: "enchants", type: "selector", gameType: "Retail"},
+    weaponEnchant: {value: "Automatic", options: ["Automatic", "Intellect", "Haste", "Mastery"], category: "enchants", type: "selector", gameType: "Retail"},
+
+    // Searches gem / enchant / flask / Folio combinations jointly across the leading gear sets. Off by default
+    // because it changes which set wins, and existing users shouldn't have their results shift without asking.
+    optimizeGemsEnchants: {value: false, options: [true, false], category: "topGear", type: "selector", gameType: "Retail"},
+
+    // Gems. Meta and stat gems are chosen independently.
+    metaGem: {value: "Automatic", options: ["Automatic", "Indecipherable (Intellect)", "Telluric (Mana)"], category: "gems", type: "selector", gameType: "Retail"},
+    gemCombo: {value: "Automatic", options: ["Automatic", "Haste / Crit", "Haste / Mastery", "Haste / Vers", "Crit / Haste", "Crit / Mastery", "Crit / Vers", "Mastery / Haste", "Mastery / Crit", "Mastery / Vers", "Vers / Haste", "Vers / Crit", "Vers / Mastery"], category: "gems", type: "selector", gameType: "Retail"},
+
+    // Omnium Folio. Slots 2 and 3 have a single option each so they aren't configurable.
+    folioSlot1: {value: "Automatic", options: ["Automatic", "Unleashed Fire", "Void-Touched"], category: "omniumFolio", type: "selector", gameType: "Retail"},
+    folioSlot4: {value: "Automatic", options: ["Automatic", "Haste", "Crit", "Mastery", "Vers"], category: "omniumFolio", type: "selector", gameType: "Retail"},
+    folioSlot5: {value: "Automatic", options: ["Automatic", "Overload", "Residual Energy", "Echoes"], category: "omniumFolio", type: "selector", gameType: "Retail"},
     liningUptime: { value: 60, options: [], category: "embellishments", type: "Entry", gameType: "Retail" },
 
     // Spec values:

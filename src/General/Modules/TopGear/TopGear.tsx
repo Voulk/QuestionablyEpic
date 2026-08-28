@@ -39,6 +39,8 @@ type ShortReport = {
   contentType: string; // TODO: Replace with contentTypes
   embellishedSelected?: number; // Drives the "only two embellishments can be worn" note in the report.
   equippedHPS?: number; // Throughput of the player's current gear, for the upgrade percentage.
+  optionComparisons?: any; // Per-option gem / enchant / Folio pricing for the Fine Tuning tab.
+  optimalConfig?: any; // Winning configuration when joint optimisation ran.
   itemSet: {
     itemList: any[]; // TODO: Replace with Item
     setStats: any; // TODO: Replace with nice stat object.
@@ -442,6 +444,8 @@ export default function TopGear(props: any) {
         contentType: report.contentType,
         embellishedSelected: report.embellishedSelected,
         equippedHPS: report.equippedHPS,
+        optionComparisons: report.optionComparisons,
+        optimalConfig: report.optimalConfig,
         effectList: report.itemSet.effectList,
         
        
