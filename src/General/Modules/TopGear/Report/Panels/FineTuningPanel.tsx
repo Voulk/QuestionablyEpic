@@ -77,8 +77,15 @@ export default function FineTuningPanel(props: any) {
       <Grid item xs={12}>
         <Typography variant="body2" style={{ color: "rgba(255,255,255,0.7)", marginBottom: 4 }}>
           {hasHPS
-            ? "Each option priced against your currently equipped gear. Your current pick is outlined."
+            ? "Each option priced against your currently equipped gear, changing that one thing only. Your current pick is outlined."
             : "Each option compared against your currently equipped gear, as a percentage of set score. Your current pick is outlined."}
+        </Typography>
+        {/* These are single-axis figures. Stats share diminishing returns, so two options that each look good
+            can compete for the same headroom - the numbers do not add up, and the best row here is not always
+            part of the best overall setup. Say so, because the optimiser can and does disagree with this table. */}
+        <Typography variant="caption" style={{ color: "#f0c674", display: "block", marginBottom: 6 }}>
+          These are priced one change at a time, so they don't add together — two options that each gain can be
+          chasing the same stat.{optimal ? " The optimised setup above accounts for that and is the one to follow where they disagree." : ""}
         </Typography>
       </Grid>
 

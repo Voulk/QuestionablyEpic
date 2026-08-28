@@ -79,6 +79,7 @@ const initialState : RootState = {
 
     // Spec values:
     masteryEffectivenessShaman: { value: 20, options: [], category: "specSpecific", type: "Entry", gameType: "Retail", spec: "Restoration Shaman" },
+    masteryEffectivenessEvoker: { value: 90, options: [], category: "specSpecific", type: "Entry", gameType: "Retail", spec: "Preservation Evoker" },
     fightLengthShaman: { value: "Long", options: ["Long", "Short"], category: "specSpecific", type: "selector", gameType: "Retail", spec: "Restoration Shaman" },
     innervateCountShaman: { value: 0, options: [], category: "specSpecific", type: "Entry", gameType: "Retail", spec: "Restoration Shaman" },
 

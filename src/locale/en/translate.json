@@ -548,6 +548,10 @@
         "optimizeGemsEnchants": {
           "title": "Optimise Gems & Enchants",
           "tooltip": "Search gem, enchant, flask and Folio combinations together across the leading gear sets. Slower, and it can change which set wins."
+        },
+        "masteryEffectivenessEvoker": {
+          "title": "Mastery Effectiveness %",
+          "tooltip": "How effective your mastery is, as a percentage. Preservation mastery scales with how injured your targets are, so raise this for heavy raid damage and lower it for lighter healing."
         }
       },
       "SettingsTitle": "Optional Settings"
