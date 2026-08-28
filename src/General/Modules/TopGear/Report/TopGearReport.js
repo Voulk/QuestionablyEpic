@@ -595,6 +595,8 @@ function displayReport(
                             spec={player.spec}
                             currentLanguage={currentLanguage}
                             gameType={gameType}
+                            setHPS={topSet.setHPS}
+                            equippedHPS={result.equippedHPS}
                           />
                         </Grid>
                       </Grid>
@@ -778,6 +780,8 @@ function displayReport(
               statList={statList}
               manaSources={manaSources}
               spec={player.spec}
+              optionComparisons={result.optionComparisons}
+              optimalConfig={result.optimalConfig}
             />
           </Grid>
           <Grid item style={{ height: 60 }} xs={12} />{" "}

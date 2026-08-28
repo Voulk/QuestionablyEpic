@@ -17,6 +17,7 @@ export const CONSTRAINTS = {
     Shared: {
         topGearMaxItems: 32, // The maximum number of items selectable by the player. Combinatorial explosion requires we keep this reasonable. 
         topGearDifferentials: 12, // Number of competitive alternatives to show.
+        topGearOptimizeSets: 20, // How many leading sets get their gems/enchants jointly optimised when that setting is on.
     }
 
 }

@@ -6,17 +6,18 @@ import { convertPPMToUptime, getSetting, getDiminishedValue } from "../../../../
 import Player from "../../Player/Player";
 import CastModel from "../../Player/CastModel";
 import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectEngine";
-import { applyDiminishingReturns, getAllyStatsValue, getGemElement, getGems } from "General/Engine/ItemUtilities";
+import { applyDiminishingReturns, getAllyStatsValue, getGemElement, getGems, isEmbellished, MAX_EMBELLISHMENTS } from "General/Engine/ItemUtilities";
+import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { getTrinketValue } from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketEffectFormulas";
 import { allRamps, allRampsHealing, getDefaultDiscTalents } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscRampUtilities";
 import { buildRamp } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscRampGen";
 import { getItemSet, getSeasonalTier } from "Classic/Databases/RetailItemSetDB";
-import { CONSTANTS } from "General/Engine/CONSTANTS";
+import { CONSTANTS, MODEL_TYPES } from "General/Engine/CONSTANTS";
 import { getCircletEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/CyrcesCircletData"
 import { generateReportCode } from "General/Modules/TopGear/Engine/TopGearEngineShared"
 import Item from "General/Items/Item";
-import { gemDB } from "Databases/GemDB";
-import { getFolioEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/OmniumFolioData";
+import { gemDB, META_GEM_OPTIONS, GEM_COMBO_OPTIONS, findGemByStats } from "Databases/GemDB";
+import { getFolioEffect, getFolioGems, getFolioOptions } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/OmniumFolioData";
 
 /**
  * == Top Gear Engine ==
@@ -82,6 +83,181 @@ function getGemID(bigStat: string, littleStat: string): number {
 }
 
 // Return an array of gem IDs based on the spec and content type. 
+/**
+ * Resolves the gems to socket. Automatic keeps the per-spec picks the engine already made, so an untouched
+ * settings object produces exactly the same gems it did before this was configurable. The meta and the stat gems
+ * are chosen independently, since a player often wants a specific meta but the default stat pairing (or vice versa).
+ */
+/* ---------------------------------------------------------------------------------------------- */
+/*                                     Fine Tuning Comparisons                                    */
+/* ---------------------------------------------------------------------------------------------- */
+// Which settings the player can fine tune, and the options each offers. Kept next to the engine because the
+// comparison has to re-run evalSet with each value substituted - there is no cheaper way to price them, since
+// gems and enchants interact with diminishing returns and with the cast model.
+// `artifact` reads back what a setting actually resolved to on an evaluated set. That's how we mark the player's
+// current pick: their settings almost always say "Automatic", which matches no option label, so comparing labels
+// would never find a match. Comparing the resolved gem / enchant / rune instead always does.
+export const TUNABLE_OPTIONS: { key: string; label: string; options: string[]; artifact: (set: any) => any }[] = [
+  { key: "gemCombo", label: "Gems", options: Object.keys(GEM_COMBO_OPTIONS),
+    artifact: (set) => (set.enchantBreakdown && set.enchantBreakdown["Gems"] ? set.enchantBreakdown["Gems"][1] : null) },
+  { key: "metaGem", label: "Meta Gem", options: Object.keys(META_GEM_OPTIONS),
+    artifact: (set) => (set.enchantBreakdown && set.enchantBreakdown["Gems"] ? set.enchantBreakdown["Gems"][0] : null) },
+  { key: "ringEnchant", label: "Ring Enchant", options: ["Haste", "Crit", "Mastery", "Versatility"],
+    artifact: (set) => (set.enchantBreakdown ? set.enchantBreakdown["Finger"] : null) },
+  { key: "weaponEnchant", label: "Weapon Enchant", options: ["Intellect", "Haste", "Mastery"],
+    artifact: (set) => (set.enchantBreakdown ? set.enchantBreakdown["CombinedWeapon"] : null) },
+  { key: "flaskChoice", label: "Flask", options: ["Haste", "Crit", "Mastery", "Versatility"],
+    artifact: (set) => (set.enchantBreakdown ? set.enchantBreakdown.flask : null) },
+  { key: "folioSlot1", label: "Folio Slot 1", options: getFolioOptions(1), artifact: (set) => (set.folioGems || [])[0] },
+  { key: "folioSlot4", label: "Folio Slot 4", options: getFolioOptions(4), artifact: (set) => (set.folioGems || [])[3] },
+  { key: "folioSlot5", label: "Folio Slot 5", options: getFolioOptions(5), artifact: (set) => (set.folioGems || [])[4] },
+];
+
+// Returns a copy of the settings with one key forced to a given value.
+function withSetting(userSettings: any, key: string, value: string) {
+  const existing = userSettings && userSettings[key] ? userSettings[key] : { options: [], category: "topGear", type: "selector", gameType: "Retail" };
+  return { ...userSettings, [key]: { ...existing, value: value } };
+}
+
+// Applies a whole configuration (several settings at once) on top of the player's settings.
+export function withConfig(userSettings: any, config: { [key: string]: string }) {
+  let result = userSettings;
+  Object.keys(config).forEach((key) => { result = withSetting(result, key, config[key]); });
+  return result;
+}
+
+// Score a set the way the optimiser ranks it: real throughput where the spec has a cast model, otherwise the
+// stat weight score. Both are "higher is better" so the search doesn't care which it got.
+export function scoreConfiguration(evaluated: any) {
+  return (evaluated.setHPS || 0) > 0 ? evaluated.setHPS : evaluated.hardScore;
+}
+
+/**
+ * Finds the best combination of gems, enchants, flask and Folio runes for one gear set.
+ *
+ * These axes interact: secondary stats share diminishing returns, so the best gem depends on what the enchants
+ * and flask already gave you. Evaluating each axis independently (as the Fine Tuning table does) can therefore
+ * miss the joint optimum. The full cross product is ~27k evaluations per set which is far too slow, so this walks
+ * coordinate ascent instead: repeatedly take the best option on each axis holding the others fixed, until a full
+ * pass changes nothing. That's ~34 evaluations per pass and converges in two or three passes.
+ *
+ * The search space is smooth and monotonic in stats, so ascent lands on the true optimum in practice -
+ * GearOptimizer.test.js checks it against brute force on a real set.
+ */
+export function optimizeConfiguration(itemSet: ItemSet, player: Player, contentType: contentTypes, baseHPS: number,
+                               userSettings: any, castModel: any, maxPasses: number = 4) {
+  const config: { [key: string]: string } = {};
+  let evaluations = 0;
+
+  const scoreOf = (candidate: { [key: string]: string }) => {
+    evaluations += 1;
+    return scoreConfiguration(evalSet(itemSet, player, contentType, baseHPS, withConfig(userSettings, candidate), castModel, false, 0));
+  };
+
+  let best = scoreOf(config);
+  const baseline = best;
+
+  for (let pass = 0; pass < maxPasses; pass++) {
+    let improved = false;
+
+    TUNABLE_OPTIONS.forEach(({ key, options }) => {
+      let bestOption: string | null = null;
+
+      options.forEach((option) => {
+        if (config[key] === option) return; // already the incumbent
+        try {
+          const score = scoreOf({ ...config, [key]: option });
+          if (score > best) { best = score; bestOption = option; }
+        } catch (err) {
+          // A failed option is simply not a candidate.
+        }
+      });
+
+      if (bestOption !== null) { config[key] = bestOption; improved = true; }
+    });
+
+    if (!improved) break;
+  }
+
+  return { config: config, score: best, baseline: baseline, gain: best - baseline, evaluations: evaluations };
+}
+
+/**
+ * Prices every gem, enchant, flask and Folio rune against the player's currently equipped gear.
+ * Each option is scored by re-running the set through evalSet with only that setting changed, so the numbers
+ * include diminishing returns and the cast model rather than being a flat stat-weight estimate.
+ *
+ * Reported both ways: hps / hpsDelta when the spec runs a cast model, and scoreDelta (a percentage of the
+ * baseline score) which is available on every spec including the stat weight path.
+ */
+function buildOptionComparisons(equippedSet: ItemSet, player: Player, contentType: contentTypes, baseHPS: number,
+                                userSettings: any, castModel: any, baselineSet: any) {
+  const baselineHPS = baselineSet.setHPS || 0;
+  const baselineScore = baselineSet.hardScore || 0;
+  const comparisons: any = {};
+
+  TUNABLE_OPTIONS.forEach(({ key, label, options, artifact }) => {
+    const setting = userSettings && userSettings[key] ? userSettings[key].value : "Automatic";
+    const baselineArtifact = artifact(baselineSet);
+    const rows: any[] = [];
+
+    options.forEach((option) => {
+      try {
+        const evaluated = evalSet(equippedSet, player, contentType, baseHPS, withSetting(userSettings, key, option), castModel, false, 0);
+        rows.push({
+          option: option,
+          hps: Math.round(evaluated.setHPS || 0),
+          hpsDelta: Math.round((evaluated.setHPS || 0) - baselineHPS),
+          scoreDelta: baselineScore > 0 ? Math.round(((evaluated.hardScore - baselineScore) / baselineScore) * 10000) / 100 : 0,
+          // True when this option is what the player is already effectively using, whether they picked it
+          // explicitly or arrived at it through Automatic.
+          isCurrent: baselineArtifact != null && artifact(evaluated) === baselineArtifact,
+        });
+      } catch (err) {
+        // One bad option shouldn't cost the player the whole table.
+      }
+    });
+
+    if (rows.length === 0) return;
+
+    // Best first, so the top row is the recommendation.
+    rows.sort((a, b) => (b.hpsDelta - a.hpsDelta) || (b.scoreDelta - a.scoreDelta));
+
+    // Name the option Automatic actually resolved to, so the UI can say "Automatic (Crit / Haste)".
+    const resolved = rows.find((row) => row.isCurrent);
+
+    // If every option prices identically there is nothing to choose between them - almost always because the
+    // effects aren't modelled yet (several Folio runes have empty formulas). Showing a column of zeroes reads as
+    // a real tie, so flag it and let the UI say so instead.
+    const allEqual = rows.every((row) => row.hps === rows[0].hps && row.scoreDelta === rows[0].scoreDelta);
+
+    comparisons[key] = { label: label, current: setting, resolvedTo: resolved ? resolved.option : null, unmodelled: allEqual, rows: rows };
+  });
+
+  return Object.keys(comparisons).length > 0 ? comparisons : null;
+}
+
+function resolveGems(spec: string, contentType: contentTypes, userSettings: any) {
+  const gems = getMidnightGemOptions(spec, contentType, userSettings).slice();
+
+  const metaChoice = getSetting(userSettings, "metaGem");
+  if (typeof metaChoice === "string" && metaChoice !== "Automatic" && META_GEM_OPTIONS[metaChoice]) {
+    gems[0] = META_GEM_OPTIONS[metaChoice];
+  }
+
+  const comboChoice = getSetting(userSettings, "gemCombo");
+  if (typeof comboChoice === "string" && comboChoice !== "Automatic" && GEM_COMBO_OPTIONS[comboChoice]) {
+    const [major, minor] = GEM_COMBO_OPTIONS[comboChoice];
+    const gemID = findGemByStats(major, minor);
+    // A missing gem falls through to the automatic picks rather than socketing nothing.
+    if (gemID) {
+      for (let i = 1; i < gems.length; i++) gems[i] = gemID;
+    }
+  }
+
+  return gems;
+}
+
 function getMidnightGemOptions(spec: string, contentType: contentTypes, settings: PlayerSettings) {
   const metaGem = 240983; // Elusive Meta Gem
   const gemArray = Array(8);
@@ -252,6 +428,31 @@ export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Playe
   let itemSets = createSets(itemList, wepCombos, player.spec);
   let resultSets = [];
 
+  // Tracked so the report can explain why a selected embellished item never shows up in a set.
+  const embellishedSelected = itemList.filter((item: Item) => isEmbellished(item)).length;
+
+  // == Currently equipped set ==
+  // Run the player's current gear through the same evaluation so the report can show how big an upgrade the best
+  // set actually is. This is display only and deliberately sits outside the ranking loop - it never competes.
+  let equippedHPS = 0;
+  let optionComparisons: any = null;
+  try {
+    const equippedItems = itemList.filter((item: Item) => item.isEquipped);
+    if (equippedItems.length > 0) {
+      const baseEquipped = new ItemSet(-1, equippedItems, 0, player.spec);
+      const equippedSet = evalSet(baseEquipped, newPlayer, contentType, baseHPS, userSettings, newCastModel, false, 0);
+      equippedHPS = equippedSet.setHPS || 0;
+
+      // Fine tuning table: what every gem, enchant and Folio rune would be worth on the gear the player is
+      // actually wearing. Evaluated on the equipped set rather than the best set so the numbers answer
+      // "what should I socket right now", and always outside the ranking loop so it can't influence results.
+      optionComparisons = buildOptionComparisons(baseEquipped, newPlayer, contentType, baseHPS, userSettings, newCastModel, equippedSet);
+    }
+  } catch (err) {
+    // A malformed equipped set shouldn't take down the whole run - we just lose the comparison table.
+    reportError(newPlayer, "Top Gear", "Failed to evaluate equipped set for upgrade comparison", String(err));
+  }
+
   itemSets.sort((a, b) => (a.sumSoftScore < b.sumSoftScore ? 1 : -1));
   
   // == Evaluate Sets ==
@@ -280,6 +481,60 @@ export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Playe
   resultSets.sort((a, b) => (a.hardScore < b.hardScore ? 1 : -1));
   //itemSets = pruneItems(itemSets, userSettings);
   resultSets = pruneSets(resultSets, userSettings);
+
+  // == Joint gem / enchant / Folio optimisation ==
+  // Every set above was scored with one fixed configuration. Because secondary stats share diminishing returns,
+  // the best gems depend on the gear, so a set that ranks second with default gems can win once optimally gemmed.
+  // When enabled we re-optimise the leading sets and re-rank on the result.
+  let optimalConfig: any = null;
+  if (getSetting(userSettings, "optimizeGemsEnchants") === true && resultSets.length > 0) {
+    try {
+      const rawById = new Map<number, ItemSet>(itemSets.map((set: ItemSet) => [set.id, set]));
+      const contenders = resultSets.slice(0, CONSTRAINTS.Shared.topGearOptimizeSets);
+
+      const optimised = contenders.map((evaluated: any) => {
+        const raw = rawById.get(evaluated.id);
+        if (!raw) return null;
+        const result = optimizeConfiguration(raw, newPlayer, contentType, baseHPS, userSettings, newCastModel);
+        return { raw: raw, evaluated: evaluated, ...result };
+      }).filter((entry: any) => entry !== null);
+
+      if (optimised.length > 0) {
+        optimised.sort((a: any, b: any) => b.score - a.score);
+        const winner = optimised[0];
+
+        // Re-evaluate the winner with its optimal configuration so the reported stats, gems and enchants all
+        // reflect what the player is actually being told to wear.
+        const finalSettings = withConfig(userSettings, winner.config);
+        const finalSet = evalSet(winner.raw, newPlayer, contentType, baseHPS, finalSettings, newCastModel, reporting, 0);
+
+        // Re-score the remaining sets under the same configuration so the alternatives stay comparable.
+        resultSets = resultSets.map((evaluated: any) => {
+          if (evaluated.id === winner.raw.id) return finalSet;
+          const raw = rawById.get(evaluated.id);
+          if (!raw) return evaluated;
+          try {
+            return evalSet(raw, newPlayer, contentType, baseHPS, finalSettings, newCastModel, false, 0);
+          } catch (err) {
+            return evaluated;
+          }
+        });
+        resultSets.sort((a: any, b: any) => (a.hardScore < b.hardScore ? 1 : -1));
+
+        optimalConfig = {
+          config: winner.config,
+          gain: Math.round(winner.gain),
+          baseline: Math.round(winner.baseline),
+          score: Math.round(winner.score),
+          setsOptimized: optimised.length,
+          evaluations: optimised.reduce((acc: number, entry: any) => acc + entry.evaluations, 0),
+        };
+      }
+    } catch (err) {
+      // Optimisation is an enhancement - if it fails the player still gets the normal, correctly ranked result.
+      reportError(newPlayer, "Top Gear", "Gem/enchant optimisation failed", String(err));
+    }
+  }
   
   // == Build Differentials (sets similar in strength) ==
   // A differential is a set that wasn't our best but was close. We'll display these beneath our top gear so that a player could choose a higher stamina option, or a trinket they prefer
@@ -295,10 +550,19 @@ export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Playe
   // If we were able to make a set then create a Top Gear result and return it.
   // If not we'll send back an empty set which will show an error to the player. That's pretty rare nowadays but can happen if their SimC has empty slots in it and so on.
   if (resultSets.length === 0) {
+    // Every set we built was thrown out. By far the most common cause is the embellishment cap: a player who already
+    // wears two embellishments and then adds a third embellished item has no wearable combination left, and used to
+    // just get an empty report with no explanation.
+    reportError(newPlayer, "Top Gear", "No valid sets after verification. Sets built: " + itemSets.length +
+                ", embellished items selected: " + embellishedSelected, contentType);
     return null;
   } else {
     let result: TopGearResult = new TopGearResult(resultSets[0], differentials, contentType);
     result.itemsCompared = resultSets.length;
+    result.embellishedSelected = embellishedSelected;
+    result.equippedHPS = equippedHPS;
+    result.optionComparisons = optionComparisons;
+    result.optimalConfig = optimalConfig;
     result.new = true;
     result.id = generateReportCode();
     return result;
@@ -477,13 +741,21 @@ function buildDifferential(itemSet: ItemSet, primeSet: ItemSet, player: Player, 
   let differentials: {
     items: Item[]; //
     gems: number[]; //
-    scoreDifference: number; 
-    rawDifference: number; 
+    scoreDifference: number;
+    rawDifference: number;
+    hps: number;
+    hpsDifference: number;
   } = {
     items: [],
     gems: [],
     scoreDifference: ((Math.round(primeSet.hardScore - itemSet.hardScore) / primeSet.hardScore) * 100 * modelDiff),
     rawDifference: Math.round(((itemSet.hardScore - primeSet.hardScore) / primeSet.hardScore) * player.getHPS(contentType) * modelDiff),
+
+    // Absolute throughput for this alternative, and the healing it gives up against the best set.
+    // Both are 0 when the spec / content type is scored on stat weights, since no HPS figure exists there.
+    // modelDiff only scales the Default path, which is exactly where these stay 0, so the two don't interact.
+    hps: itemSet.setHPS || 0,
+    hpsDifference: Math.round((itemSet.setHPS || 0) - (primeSet.setHPS || 0)),
   };
 
 
@@ -561,21 +833,32 @@ function sumScore(obj: any) {
   return sum;
 }
 
-function enchantItems(bonus_stats: Stats, setStats: Stats, castModel: any, contentType: contentTypes, spec: string) {
+// Reads an enchant setting, tolerating a missing or malformed value (getSetting returns 0 when absent).
+function getEnchantChoice(userSettings: any, key: string): string {
+  const raw = getSetting(userSettings, key);
+  return typeof raw === "string" && raw ? raw : "Automatic";
+}
+
+function enchantItems(bonus_stats: Stats, setStats: Stats, castModel: any, contentType: contentTypes, spec: string, userSettings: any) {
   let enchants: {[key: string]: string | number | number[]} = {}; // TODO: Cleanup
   // Rings - Best secondary.
   // We use the players highest stat weight here. Using an adjusted weight could be more accurate, but the difference is likely to be the smallest fraction of a
   // single percentage. The stress this could cause a player is likely not worth the optimization.
-  let highestWeight = getHighestWeight(castModel);
+  const highestWeight = getHighestWeight(castModel);
 
-  bonus_stats[highestWeight as keyof typeof bonus_stats] = (bonus_stats[highestWeight as keyof typeof bonus_stats] || 0) +  29; // 64 x 2.
+  // Ring enchants all grant the same amount, so the only choice is which stat. Automatic follows the player's
+  // highest weighted stat, which is what the engine did before this was configurable.
+  const ringChoice = getEnchantChoice(userSettings, "ringEnchant");
+  const ringStat = ringChoice === "Automatic" ? highestWeight : ringChoice.toLowerCase();
+
+  bonus_stats[ringStat as keyof typeof bonus_stats] = (bonus_stats[ringStat as keyof typeof bonus_stats] || 0) +  29; // 64 x 2.
   let ringEnchantName = "";
 
   if (spec === "Holy Priest" || spec === "Restoration Shaman") ringEnchantName = "Eyes of the Eagle";
-  else if (highestWeight === "haste") ringEnchantName = "Silvermoon's Alacrity";
-  else if (highestWeight === "crit") ringEnchantName = "Nature's Fury";
-  else if (highestWeight === "mastery") ringEnchantName = "Zul'jin's Mastery";
-  else if (highestWeight === "versatility") ringEnchantName = "Silvermoon's Tenacity";
+  else if (ringStat === "haste") ringEnchantName = "Silvermoon's Alacrity";
+  else if (ringStat === "crit") ringEnchantName = "Nature's Fury";
+  else if (ringStat === "mastery") ringEnchantName = "Zul'jin's Mastery";
+  else if (ringStat === "versatility") ringEnchantName = "Silvermoon's Tenacity";
   enchants["Finger"] = ringEnchantName;
 
 
@@ -610,18 +893,30 @@ function enchantItems(bonus_stats: Stats, setStats: Stats, castModel: any, conte
   enchants["Feet"] = "Shaladrassil's Roots";
 
 
-  // Weapon - Acuity of the Ren'dorei. Should add a setting for secondary enchants too.
-  let wepEnchantName = "Acuity of the Ren'dorei"
-  if (spec === "Discipline Priest" || spec === "Restoration Druid") {
+  // Weapon. Automatic keeps the per-spec default; otherwise the player picks the stat they want.
+  // Note the secondary enchants are budgeted higher than the intellect one, so this is a real choice.
+  const weaponUptime = convertPPMToUptime(3, 15);
+  const weaponChoice = getEnchantChoice(userSettings, "weaponEnchant");
+
+  let weaponStat: string;
+  if (weaponChoice !== "Automatic") weaponStat = weaponChoice.toLowerCase();
+  else if (spec === "Discipline Priest" || spec === "Restoration Druid") weaponStat = "haste";
+  else if (spec === "Preservation Evoker") weaponStat = "mastery";
+  else weaponStat = "intellect";
+
+  let wepEnchantName = "Acuity of the Ren'dorei";
+  if (weaponStat === "haste") {
     wepEnchantName = "Berserker's Rage";
-    bonus_stats.haste = (bonus_stats.mastery || 0) + 124 * convertPPMToUptime(3, 15);
+    // This previously read bonus_stats.mastery while assigning to haste, so these two specs lost their haste
+    // and inherited their mastery instead.
+    bonus_stats.haste = (bonus_stats.haste || 0) + 124 * weaponUptime;
   }
-  else if (spec === "Preservation Evoker") {
+  else if (weaponStat === "mastery") {
     wepEnchantName = "Arcane Mastery";
-    bonus_stats.mastery = (bonus_stats.mastery || 0) + 124 * convertPPMToUptime(3, 15);
+    bonus_stats.mastery = (bonus_stats.mastery || 0) + 124 * weaponUptime;
   }
   else {
-    bonus_stats.intellect += 67 * convertPPMToUptime(3, 15);
+    bonus_stats.intellect = (bonus_stats.intellect || 0) + 67 * weaponUptime;
   }
   
   enchants["CombinedWeapon"] = wepEnchantName; 
@@ -743,7 +1038,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
 
 
   // == Enchants and gems ==
-  const enchants = enchantItems(enchantStats, setStats, castModel, contentType, player.spec);
+  const enchants = enchantItems(enchantStats, setStats, castModel, contentType, player.spec, userSettings);
   compileStats(bonus_stats, enchantStats);
   statBreakdown.enchants = enchantStats;
   
@@ -753,7 +1048,10 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   const consumableStats: Stats = {};
   // == Flask ==
   let selectedChoice = "";
-  if (getSetting(userSettings, "flaskChoice") === "Automatic") {
+  // getSetting returns 0 when the setting is missing (stale local storage, an engine test that passes a partial
+  // settings object), so treat anything that isn't a usable string as Automatic rather than crashing the whole run.
+  const flaskChoice = getSetting(userSettings, "flaskChoice");
+  if (typeof flaskChoice !== "string" || !flaskChoice || flaskChoice === "Automatic") {
     const bestStat = getHighestWeight(castModel);
 
     if ((setStats[bestStat] + bonus_stats[bestStat]) > 28000) {
@@ -763,7 +1061,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     selectedChoice = bestStat;
   }
   else {
-    selectedChoice = getSetting(userSettings, "flaskChoice").toLowerCase();
+    selectedChoice = flaskChoice.toLowerCase();
     consumableStats[selectedChoice]  = (consumableStats[selectedChoice] || 0) + 165;
   }
 
@@ -772,16 +1070,23 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   else if (selectedChoice === "crit") enchants.flask = "Flask of the Shattered Sun";
   else if (selectedChoice === "versatility") enchants.flask = "Flask of Thalassian Resistance";
 
-  // Food buff
-  consumableStats.intellect = (consumableStats.intellect ?? 0) + 50;
+  // Food buff. Only the standard intellect food is modelled - see CONSUMABLES below for how to add more.
+  if (getSetting(userSettings, "foodBuff") !== "None") {
+    consumableStats.intellect = (consumableStats.intellect ?? 0) + 50;
+    enchants.food = "Intellect Food";
+  }
 
   // Weapon Oil
-  consumableStats.haste = (consumableStats.haste ?? 0) + 15;
-  consumableStats.crit = (consumableStats.crit ?? 0) + 15;
+  if (getSetting(userSettings, "weaponOil") !== false) {
+    consumableStats.haste = (consumableStats.haste ?? 0) + 15;
+    consumableStats.crit = (consumableStats.crit ?? 0) + 15;
+    enchants.oil = "Weapon Oil";
+  }
 
-  // Vantus Rune
-  if (contentType === "Raid") {
+  // Vantus Rune. Raid only, and only if the player actually uses one.
+  if (contentType === "Raid" && getSetting(userSettings, "vantusRune") !== false) {
     consumableStats.versatility = (consumableStats.versatility ?? 0) + 162;
+    enchants.rune = "Vantus Rune";
   }
 
   statBreakdown.consumables = consumableStats;  
@@ -795,7 +1100,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     
   }
   else {
-    enchants["Gems"] = getMidnightGemOptions(player.spec, contentType, userSettings).slice(0, Math.max(0, builtSet.setSockets));
+    enchants["Gems"] = resolveGems(player.spec, contentType, userSettings).slice(0, Math.max(0, builtSet.setSockets));
     const gemStats = getGemStats(enchants["Gems"]);
     statBreakdown.gems = gemStats;
 
@@ -869,24 +1174,9 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
 
 
   // Omnium Folio
-  // Handle user entry / unlocks later.
-  const folioGems = [1279599, 1279603, 1287555]
-  const bestStat = getHighestWeight(castModel);
-  switch (bestStat) {
-    case "haste":
-      folioGems.push(1287774);
-      break;
-    case "crit":
-      folioGems.push(1279609);
-      break;
-    case "mastery":
-      folioGems.push(1287771);
-      break;
-    case "versatility":
-      folioGems.push(1279613);
-      break;
-  }
-  folioGems.push(1279614)
+  // Slots 1, 4 and 5 are player-configurable through settings. Anything left on Automatic resolves to the same
+  // rune the engine used to hardcode, so an untouched settings object produces an identical set.
+  const folioGems = getFolioGems(userSettings, getHighestWeight(castModel));
 
 
   const folioStats = getFolioEffect(folioGems, {player: player, contentType: contentType, settings: userSettings, setStats: setStats, castModel: castModel, setVariables: setVariables});
@@ -1096,6 +1386,17 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   }
 
   builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
+
+  // == Absolute Throughput ==
+  // hardScore is an intellect-equivalent ranking number and can't be shown to the player as healing. Where the set
+  // was run through a cast model or a ramp sim though, setStats.hps is a genuine HPS figure we can report directly.
+  // On the stat weight path setStats.hps only holds flat HPS granted by effects (tier bonuses, some trinkets), which
+  // is not the player's total healing, so we deliberately leave this at 0 rather than report a misleading number.
+  const evaluationPath = castModel.modelType[contentType];
+  builtSet.setHPS = (evaluationPath === MODEL_TYPES.CAST_MODEL || evaluationPath === MODEL_TYPES.SEQUENCES)
+                      ? Math.round(setStats.hps || 0)
+                      : 0;
+
   builtSet.setStats = setStats;
   builtSet.enchantBreakdown = enchants;
   builtSet.gemBreakdown = JSON.stringify(enchants["Gems"] || []);

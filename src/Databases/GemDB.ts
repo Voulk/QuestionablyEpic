@@ -248,4 +248,37 @@ export const gemDB: GemEntry[] = [
       stats: { intellect: 12 },
     },
 ];
-  
+
+/* ---------------------------------------------------------------------------------------------- */
+/*                                        Gem Choices                                             */
+/* ---------------------------------------------------------------------------------------------- */
+// The current tier's gems form a complete matrix: each secondary as the major stat (12) paired with each of the
+// other three as the minor (5). These drive the gem dropdowns, so the labels here are what the player sees.
+
+export const META_GEM_OPTIONS: { [label: string]: number } = {
+  "Indecipherable (Intellect)": 240983,
+  "Telluric (Mana)": 240969,
+};
+
+// label -> [major stat, minor stat]. getGemID resolves the pair to an actual gem.
+export const GEM_COMBO_OPTIONS: { [label: string]: [string, string] } = {
+  "Haste / Crit": ["haste", "crit"],
+  "Haste / Mastery": ["haste", "mastery"],
+  "Haste / Vers": ["haste", "versatility"],
+  "Crit / Haste": ["crit", "haste"],
+  "Crit / Mastery": ["crit", "mastery"],
+  "Crit / Vers": ["crit", "versatility"],
+  "Mastery / Haste": ["mastery", "haste"],
+  "Mastery / Crit": ["mastery", "crit"],
+  "Mastery / Vers": ["mastery", "versatility"],
+  "Vers / Haste": ["versatility", "haste"],
+  "Vers / Crit": ["versatility", "crit"],
+  "Vers / Mastery": ["versatility", "mastery"],
+};
+
+// Finds the gem that grants 12 of the major stat and 5 of the minor. Returns 0 when no such gem exists so the
+// caller can fall back rather than socketing something arbitrary.
+export const findGemByStats = (majorStat: string, minorStat: string): number => {
+  const match = gemDB.find((gem) => gem.stats[majorStat] === 12 && gem.stats[minorStat] === 5);
+  return match ? match.id : 0;
+};

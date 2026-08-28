@@ -5,6 +5,7 @@ import ManaSourcesComponent from "./ManaComponent";
 import SpellDataAccordion from "./SpellDataAccordion";
 import TopGearGemList from "./Panels/TopGearGemPanel";
 import ErrorBoundary from "./Panels/PanelErrorBoundary";
+import FineTuningPanel from "./Panels/FineTuningPanel";
 
 // To add a tab: append one entry. Each tab owns its label, colors,
 // visibility rule (`show`), and content (`render`). Both `show` and
@@ -23,6 +24,17 @@ const TAB_DEFS = [
         backgroundCol="transparent"
         title="Insights - Set Notes"
       />
+    ),
+  },
+  {
+    label: "Fine Tuning",
+    bg: "#2B5A78",
+    accent: "#7fd1ff",
+    show: ({ optionComparisons, optimalConfig }) => (!!optionComparisons && Object.keys(optionComparisons).length > 0) || !!optimalConfig,
+    render: ({ optionComparisons, optimalConfig }) => (
+      <ErrorBoundary>
+        <FineTuningPanel optionComparisons={optionComparisons} optimalConfig={optimalConfig} />
+      </ErrorBoundary>
     ),
   },
   {

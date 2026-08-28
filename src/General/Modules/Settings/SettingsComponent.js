@@ -6,6 +6,13 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { togglePlayerSettings } from "Redux/Actions";
 
+// Any category listed here is rendered. A setting whose category is missing from this list exists in the store
+// but is never drawn, which is silent - SettingsCategories.test.js guards against that.
+export const SETTINGS_CATEGORIES = {
+  Retail: ["trinkets", "embellishments", "topGear", "enchants", "gems", "consumables", "omniumFolio", "upgradeFinder", "specSpecific"],
+  Classic: ["topGear", "enchants", "specSpecific"],
+};
+
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
@@ -31,7 +38,7 @@ export default function SettingsComponent(props) {
 
   const dispatch = useDispatch();
 
-  const categories = gameType === "Retail" ? ["trinkets", "embellishments", "topGear", "upgradeFinder", "specSpecific"] : ["topGear", "enchants", "specSpecific"];
+  const categories = SETTINGS_CATEGORIES[gameType] || SETTINGS_CATEGORIES.Retail;
 
   //const settingsCategories = [...new Set(playerSettings.map(o => o.category))];
   /* ---------------------------------------------------------------------------------------------- */
@@ -73,6 +80,9 @@ export default function SettingsComponent(props) {
   return (
     <Grid container spacing={1} direction="row">
       {categories.map((category) => {
+        const categoryKeys = mappedKeys[category] || [];
+        if (categoryKeys.length === 0) return null;
+
         return (
           <Grid item xs={12}>
             <Grid container spacing={1}>
@@ -81,7 +91,7 @@ export default function SettingsComponent(props) {
                   {t("Settings.Retail." + category)}
                 </Typography>
               </Grid>
-              {mappedKeys[category].map((key, i) => {
+              {categoryKeys.map((key, i) => {
                 return (
                   <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
                     <Tooltip
