@@ -6,7 +6,8 @@ import { convertPPMToUptime, getSetting, getDiminishedValue } from "../../../../
 import Player from "../../Player/Player";
 import CastModel from "../../Player/CastModel";
 import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectEngine";
-import { applyDiminishingReturns, getAllyStatsValue, getGemElement, getGems } from "General/Engine/ItemUtilities";
+import { applyDiminishingReturns, getAllyStatsValue, getGemElement, getGems, isEmbellished } from "General/Engine/ItemUtilities";
+import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { getTrinketValue } from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketEffectFormulas";
 import { allRamps, allRampsHealing, getDefaultDiscTalents } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscRampUtilities";
 import { buildRamp } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscRampGen";
@@ -252,6 +253,9 @@ export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Playe
   let itemSets = createSets(itemList, wepCombos, player.spec);
   let resultSets = [];
 
+  // Tracked so the report can explain why a selected embellished item never shows up in a set.
+  const embellishedSelected = itemList.filter((item: Item) => isEmbellished(item)).length;
+
   itemSets.sort((a, b) => (a.sumSoftScore < b.sumSoftScore ? 1 : -1));
   
   // == Evaluate Sets ==
@@ -295,10 +299,16 @@ export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Playe
   // If we were able to make a set then create a Top Gear result and return it.
   // If not we'll send back an empty set which will show an error to the player. That's pretty rare nowadays but can happen if their SimC has empty slots in it and so on.
   if (resultSets.length === 0) {
+    // Every set we built was thrown out. By far the most common cause is the embellishment cap: a player who already
+    // wears two embellishments and then adds a third embellished item has no wearable combination left, and used to
+    // just get an empty report with no explanation.
+    reportError(newPlayer, "Top Gear", "No valid sets after verification. Sets built: " + itemSets.length +
+                ", embellished items selected: " + embellishedSelected, contentType);
     return null;
   } else {
     let result: TopGearResult = new TopGearResult(resultSets[0], differentials, contentType);
     result.itemsCompared = resultSets.length;
+    result.embellishedSelected = embellishedSelected;
     result.new = true;
     result.id = generateReportCode();
     return result;
@@ -753,7 +763,10 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   const consumableStats: Stats = {};
   // == Flask ==
   let selectedChoice = "";
-  if (getSetting(userSettings, "flaskChoice") === "Automatic") {
+  // getSetting returns 0 when the setting is missing (stale local storage, an engine test that passes a partial
+  // settings object), so treat anything that isn't a usable string as Automatic rather than crashing the whole run.
+  const flaskChoice = getSetting(userSettings, "flaskChoice");
+  if (typeof flaskChoice !== "string" || !flaskChoice || flaskChoice === "Automatic") {
     const bestStat = getHighestWeight(castModel);
 
     if ((setStats[bestStat] + bonus_stats[bestStat]) > 28000) {
@@ -763,7 +776,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     selectedChoice = bestStat;
   }
   else {
-    selectedChoice = getSetting(userSettings, "flaskChoice").toLowerCase();
+    selectedChoice = flaskChoice.toLowerCase();
     consumableStats[selectedChoice]  = (consumableStats[selectedChoice] || 0) + 165;
   }
 
