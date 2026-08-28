@@ -1,5 +1,5 @@
 import itemDB from "Databases/ItemDB.json";
-import { embellishmentDB } from "../../Databases/EmbellishmentDB";
+import { embellishmentDB, getApplicableEmbellishments, getEmbellishmentForItem } from "../../Databases/EmbellishmentDB";
 import { getOnyxAnnuletEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/OnyxAnnuletData";
 import { getCircletEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/CyrcesCircletData";
 import classicItemDB from "Databases/ClassicItemDB.json";
@@ -383,28 +383,23 @@ export function getItemLevelBoost(bossID: number, difficulty: number) {
 }
 
 // Sometimes items have an optional effect that can be added to them. Embellishments for example, or different variations (Changeling / Circlet).
+// The embellishment list is generated from EmbellishmentDB rather than hardcoded here. Hardcoding it meant every new patch
+// silently shipped a dropdown that was missing embellishments we already had working formulas for.
 export const getItemEffectOptions = (itemID: number, gameType: gameTypes = "Retail"): { type: string; label: string; effectName: string }[] => {
   const options: { type: string; label: string; effectName: string }[] = []; // type: "embellishment", label: "Add Embellishment: Writhing Armor Banding", effectName: "Writhing Armor Banding"
   const item = getItem(itemID);
+  if (!item) return options;
+
   const isEngineering = getItemProp(itemID, "engineering");
 
   if (getItemProp(item.id, "crafted")) {
     // Crafted item effects are limited to Embellishments currently.
-    if (item.slot.includes("Weapon") || item.slot === "Offhand") {
-      // Sigil embellishments are limited to weapon and offhand slots. Does NOT include Shields.
-      options.push({type: "embellishment", label: "Darkmoon Sigil: Hunt", effectName: "Darkmoon Sigil: Hunt"})
-      options.push({type: "embellishment", label: "Darkmoon Sigil: Void", effectName: "Darkmoon Sigil: Void"})
-      options.push({type: "embellishment", label: "Hunter's Ritual Stone", effectName: "Hunter's Ritual Stone"})
-      //options.push({type: "embellishment", label: "Darkmoon Sigil: Symbiosis", effectName: "Darkmoon Sigil: Symbiosis"})
+    // Engineering pieces take their own tinkers and can't hold a normal embellishment.
+    if (!isEngineering) {
+      getApplicableEmbellishments(item.slot).forEach((embel) => {
+        options.push({ type: "embellishment", label: embel.name, effectName: embel.effect.name });
+      });
     }
-    if (item.slot !== "Finger" && item.slot !== "Neck" && !item.slot.includes("Weapon") && !isEngineering) {
-      // Linings & Armor Banding are limited to non-weapon, non-jewelry slots.
-      options.push({type: "embellishment", label: "Arcanoweave Lining", effectName: "Arcanoweave Lining"})
-      options.push({type: "embellishment", label: "Primal Spore Binding", effectName: "Primal Spore Binding"})
-      options.push({type: "embellishment", label: "Blessed Pango Charm", effectName: "Blessed Pango Charm"})
-      options.push({type: "embellishment", label: "Adorned Fang", effectName: "Adorned Fang"})
-    }
-    
   }
   // Now, we can also add non-embellishment options here but we don't have any prominent ones yet so TODO.
 
@@ -642,6 +637,43 @@ export function checkDefaultSocket(id: number) {
 }
 
 // Returns item stat allocations. MUST be converted to stats before it's used in any scoring capacity.
+// The number of embellishments a character can wear at once. Exceeding it makes a set unwearable in game, so
+// Top Gear discards those sets entirely - which looks like the item you just added being ignored.
+export const MAX_EMBELLISHMENTS = 2;
+
+// True if wearing this item uses up one of the player's embellishment slots.
+export function isEmbellished(item: any) {
+  if (!item) return false;
+  return (typeof item.uniqueEquip === "string" && item.uniqueEquip.toLowerCase() === "embellishment") ||
+         (!!item.effect && item.effect.type === "embellishment");
+}
+
+// Counts the embellishments the player is forced to wear: slots where every selected item is embellished leave no
+// choice. If that forced total exceeds the cap then no wearable set exists at all and Top Gear will return nothing,
+// so we can tell the player up front instead of handing them an empty report.
+export function getForcedEmbellishmentCount(itemList: any[]) {
+  const bySlot: { [key: string]: { total: number; embellished: number } } = {};
+
+  itemList.forEach((item) => {
+    // Weapons are combined separately and a set only ever takes one combination, so count them as a single slot.
+    const slot = ["1H Weapon", "2H Weapon", "Offhand", "Holdable", "Shield"].includes(item.slot) ? "Weapon" : item.slot;
+    if (!bySlot[slot]) bySlot[slot] = { total: 0, embellished: 0 };
+    bySlot[slot].total += 1;
+    if (isEmbellished(item)) bySlot[slot].embellished += 1;
+  });
+
+  return Object.keys(bySlot).filter((slot) => bySlot[slot].total > 0 && bySlot[slot].total === bySlot[slot].embellished).length;
+}
+
+// Returns true if the item has stat budget that is assigned by the player (missives / crafted stats) rather than
+// baked into the DB row. Newer crafted gear frequently ships with its secondaries already fixed, in which case the
+// crafted stat picker does nothing and showing it just misleads people into thinking they've changed something.
+export function hasUnallocatedStats(id: number, gameType: gameTypes = "Retail") {
+  const item = getItem(id, gameType);
+  if (!item || !item.stats) return false;
+  return "unallocated" in item.stats || "unallocated2" in item.stats;
+}
+
 export function getItemAllocations(id: number, missiveStats: any[] = [], gameType: gameTypes = "Retail") {
   const item = getItem(id, gameType);
 
@@ -713,6 +745,7 @@ export function buildNewWepCombos(player: Player, active: boolean = false, equip
   for (let i = 0; i < main_hands.length; i++) {
     // Some say j is the best variable for a nested loop, but are they right?
     let main_hand = main_hands[i];
+    let paired = false;
     for (let k = 0; k < off_hands.length; k++) {
       let off_hand = off_hands[k];
 
@@ -722,8 +755,14 @@ export function buildNewWepCombos(player: Player, active: boolean = false, equip
       } else {
         const combo = [main_hand, off_hand];
         combos.push(combo);
+        paired = true;
       }
     }
+
+    // A one hander that couldn't be paired with anything still has to be offered on its own. Dropping it used to
+    // make the weapon invisible to Top Gear, and if it was the player's only weapon there were no valid combos at
+    // all, which meant zero sets and an empty report rather than a result with an empty offhand slot.
+    if (!paired) combos.push([main_hand]);
   }
 
   for (let j = 0; j < two_handers.length; j++) {

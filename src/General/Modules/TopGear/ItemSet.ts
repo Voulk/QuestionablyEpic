@@ -1,6 +1,7 @@
 // Represents a full set of items.
 import { getTranslatedItemName } from "../../Engine/ItemUtilities";
 import Item from "../../Items/Item";
+import { getEmbellishmentByEffectName } from "Databases/EmbellishmentDB";
 
 
 class ItemSet {
@@ -13,6 +14,12 @@ class ItemSet {
   // and optimal gemming.
   sumSoftScore: number = 0;
   hardScore: number = 0;
+
+  // The set's absolute throughput in HPS. This is only populated when the set was evaluated through a cast model or
+  // a ramp sim, since those are the only paths that actually produce a healing number. On the stat weight path the
+  // score is an intellect-equivalent ranking figure with no throughput attached, so this stays 0 and the report
+  // shows nothing rather than inventing a value.
+  setHPS: number = 0;
 
   // The number of sockets in the set
   setSockets: number = 0;
@@ -74,6 +81,7 @@ class ItemSet {
       clonedSet.spec = this.spec;
       clonedSet.sumSoftScore = this.sumSoftScore;
       clonedSet.hardScore = this.hardScore;
+      clonedSet.setHPS = this.setHPS;
       clonedSet.setSockets = this.setSockets;
       clonedSet.uniques = { ...this.uniques };
       clonedSet.effectList = this.effectList.slice();
@@ -131,7 +139,8 @@ class ItemSet {
     //console.log("Compiling Stats for Item List of legnth: " + this.itemList.length);
     let setStats =  this.getStartingStats(gameType)
     let setSockets = 0;
-    
+    const multiPieceEmbellishments: { [key: string]: { count: number; effect: any; pieces: number } } = {};
+
     if (gameType === "Classic") {
       // Replace every item with a duplicate.
       this.itemList = this.itemList.map(item => JSON.parse(JSON.stringify(item)));
@@ -163,20 +172,44 @@ class ItemSet {
 
       }
       if (item.onUse) this.onUseTrinkets.push({name: item.effect.name, level: item.level});
-        
+
       if (item.effect) {
         let effect = item.effect;
         effect.level = item.level;
         if (item.selectedOptions) effect.selectedOptions = item.selectedOptions;
-        this.effectList.push(effect);
+
+        // Multi-piece embellishments (the "(Set)" entries in EmbellishmentDB) are carried by several crafted items
+        // but only grant their effect once, and only once enough pieces are worn. Hold them back and resolve after
+        // the loop so we don't count the same bonus two or three times over.
+        const embelSet = effect.type === "embellishment" ? getEmbellishmentByEffectName(effect.name) : undefined;
+        if (embelSet && (embelSet.pieces || 1) > 1) {
+          const held = multiPieceEmbellishments[effect.name] || { count: 0, effect: effect, pieces: embelSet.pieces || 1 };
+          held.count += 1;
+          // Use the lowest item level of the contributing pieces - the set bonus can't scale off gear you aren't wearing.
+          if ((effect.level || 0) < (held.effect.level || 0)) held.effect = effect;
+          multiPieceEmbellishments[effect.name] = held;
+
+          // A multi-piece embellishment consumes an embellishment slot per piece, same as any other. Most carriers
+          // are already tagged uniqueEquip: "Embellishment" in ItemDB and counted above - only top up the ones that
+          // aren't, so the set still respects the two embellishment cap.
+          if (!item.uniqueEquip) this.uniques["embellishment"] = (this.uniques["embellishment"] || 0) + 1;
+        }
+        else {
+          this.effectList.push(effect);
+        }
       }
     }
 
+    // Resolve multi-piece embellishments now that we know how many carriers made it into the set.
+    for (const key in multiPieceEmbellishments) {
+      const held = multiPieceEmbellishments[key];
+      if (held.count >= held.pieces) this.effectList.push(held.effect);
+    }
 
     this.setStats = setStats;
     //this.baseStats = {...setStats};
     this.setSockets = setSockets;
-    
+
     return this;
   }
 

@@ -7,6 +7,7 @@ import { CONSTANTS } from "General/Engine/CONSTANTS";
 import { getTitanDiscName } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/TitanDiscBeltData"
 import ItemSquishEras from "Retail/Engine/ItemSquishEras.json"
 import { bonusLootCaches } from "Databases/InstanceDB";
+import { getEmbellishmentByEffectName } from "Databases/EmbellishmentDB";
 
 /**
  * This entire page is a bit of a disaster, owing mostly to how bizarrely some things are implemented in game. 
@@ -19,6 +20,18 @@ const stat_ids: {[key: number]: string} = {
   32: "crit",
   40: "versatility",
   49: "mastery",
+};
+
+// SimC gives us the spell name for Darkmoon Sigils, which is only the suffix ("Hunt", "Void" and so on).
+// Map those back to the full embellishment name before we look them up.
+const DARKMOON_SIGIL_SPELLS: {[key: string]: string} = {
+  "Ascendance": "Darkmoon Sigil: Ascension",
+  "Symbiosis": "Darkmoon Sigil: Symbiosis",
+  "Vivacity": "Darkmoon Sigil: Vivacity",
+  "Hunt": "Darkmoon Sigil: Hunt",
+  "Void": "Darkmoon Sigil: Void",
+  "Blood": "Darkmoon Sigil: Blood",
+  "Rot": "Darkmoon Sigil: Rot",
 };
 
 function getPlayerServerName(lines: string[]) {
@@ -609,18 +622,19 @@ export function processItem(line: string, player: Player, contentType: contentTy
 
 
           // Embellishments that require a tag.
-          if (['Blessed Pango Charm', 'Arcanoweave Lining', 'Sunfire Silk Lining', 'Primal Spore Binding', 'Hunt', 'Void', 'Rot', 'Blood'].includes(specialEffectName)) {
-            if (specialEffectName === "Ascendance") specialEffectName = "Darkmoon Sigil: Ascension"
-            else if (specialEffectName === "Symbiosis") specialEffectName = "Darkmoon Sigil: Symbiosis"
-            else if (specialEffectName === 'Hunt') specialEffectName = "Darkmoon Sigil: Hunt"
-            else if (specialEffectName === "Void") specialEffectName = "Darkmoon Sigil: Void"
-            
+          // SimC reports the *spell* name, which for the Darkmoon Sigils is just the suffix. Normalise those first,
+          // then check the result against EmbellishmentDB rather than a hardcoded list - the old allowlist only
+          // covered eight names and silently dropped every other embellishment on import.
+          if (DARKMOON_SIGIL_SPELLS[specialEffectName]) specialEffectName = DARKMOON_SIGIL_SPELLS[specialEffectName];
+
+          const matchedEmbellishment = getEmbellishmentByEffectName(specialEffectName);
+          if (matchedEmbellishment) {
             protoItem.effect = {
               type: "embellishment",
-              name: specialEffectName,
+              name: matchedEmbellishment.effect.name,
               level: protoItem.level //(itemBaseLevel + itemLevelGain),
             }
-            
+
             protoItem.uniqueTag = "embellishment";
           }
 

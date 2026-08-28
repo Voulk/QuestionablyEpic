@@ -6,12 +6,13 @@ import { convertPPMToUptime, getSetting, getDiminishedValue } from "../../../../
 import Player from "../../Player/Player";
 import CastModel from "../../Player/CastModel";
 import { getEffectValue } from "../../../../Retail/Engine/EffectFormulas/EffectEngine";
-import { applyDiminishingReturns, getAllyStatsValue, getGemElement, getGems } from "General/Engine/ItemUtilities";
+import { applyDiminishingReturns, getAllyStatsValue, getGemElement, getGems, isEmbellished, MAX_EMBELLISHMENTS } from "General/Engine/ItemUtilities";
+import { reportError } from "General/SystemTools/ErrorLogging/ErrorReporting";
 import { getTrinketValue } from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketEffectFormulas";
 import { allRamps, allRampsHealing, getDefaultDiscTalents } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscRampUtilities";
 import { buildRamp } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscRampGen";
 import { getItemSet } from "Classic/Databases/RetailItemSetDB";
-import { CONSTANTS } from "General/Engine/CONSTANTS";
+import { CONSTANTS, MODEL_TYPES } from "General/Engine/CONSTANTS";
 import { getCircletEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/CyrcesCircletData"
 import { generateReportCode } from "General/Modules/TopGear/Engine/TopGearEngineShared"
 import Item from "General/Items/Item";
@@ -249,6 +250,24 @@ export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Playe
   let itemSets = createSets(itemList, wepCombos, player.spec);
   let resultSets = [];
 
+  // Tracked so the report can explain why a selected embellished item never shows up in a set.
+  const embellishedSelected = itemList.filter((item: Item) => isEmbellished(item)).length;
+
+  // == Currently equipped set ==
+  // Run the player's current gear through the same evaluation so the report can show how big an upgrade the best
+  // set actually is. This is display only and deliberately sits outside the ranking loop - it never competes.
+  let equippedHPS = 0;
+  try {
+    const equippedItems = itemList.filter((item: Item) => item.isEquipped);
+    if (equippedItems.length > 0) {
+      const equippedSet = evalSet(new ItemSet(-1, equippedItems, 0, player.spec), newPlayer, contentType, baseHPS, userSettings, newCastModel, false, 0);
+      equippedHPS = equippedSet.setHPS || 0;
+    }
+  } catch (err) {
+    // A malformed equipped set shouldn't take down the whole run - we just lose the upgrade percentage.
+    reportError(newPlayer, "Top Gear", "Failed to evaluate equipped set for upgrade comparison", String(err));
+  }
+
   itemSets.sort((a, b) => (a.sumSoftScore < b.sumSoftScore ? 1 : -1));
   
   // == Evaluate Sets ==
@@ -292,10 +311,17 @@ export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Playe
   // If we were able to make a set then create a Top Gear result and return it.
   // If not we'll send back an empty set which will show an error to the player. That's pretty rare nowadays but can happen if their SimC has empty slots in it and so on.
   if (resultSets.length === 0) {
+    // Every set we built was thrown out. By far the most common cause is the embellishment cap: a player who already
+    // wears two embellishments and then adds a third embellished item has no wearable combination left, and used to
+    // just get an empty report with no explanation.
+    reportError(newPlayer, "Top Gear", "No valid sets after verification. Sets built: " + itemSets.length +
+                ", embellished items selected: " + embellishedSelected, contentType);
     return null;
   } else {
     let result: TopGearResult = new TopGearResult(resultSets[0], differentials, contentType);
     result.itemsCompared = resultSets.length;
+    result.embellishedSelected = embellishedSelected;
+    result.equippedHPS = equippedHPS;
     result.new = true;
     result.id = generateReportCode();
     return result;
@@ -473,13 +499,20 @@ function buildDifferential(itemSet: ItemSet, primeSet: ItemSet, player: Player, 
   let differentials: {
     items: Item[]; //
     gems: number[]; //
-    scoreDifference: number; 
-    rawDifference: number; 
+    scoreDifference: number;
+    rawDifference: number;
+    hps: number;
+    hpsDifference: number;
   } = {
     items: [],
     gems: [],
     scoreDifference: (Math.round(primeSet.hardScore - itemSet.hardScore) / primeSet.hardScore) * 100,
     rawDifference: Math.round(((itemSet.hardScore - primeSet.hardScore) / primeSet.hardScore) * player.getHPS(contentType)),
+
+    // Absolute throughput for this alternative, and the healing it gives up against the best set.
+    // Both are 0 when the spec / content type is scored on stat weights, since no HPS figure exists there.
+    hps: itemSet.setHPS || 0,
+    hpsDifference: Math.round((itemSet.setHPS || 0) - (primeSet.setHPS || 0)),
   };
 
   for (var x = 0; x < primeList.length; x++) {
@@ -737,7 +770,10 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   const consumableStats: Stats = {};
   // == Flask ==
   let selectedChoice = "";
-  if (getSetting(userSettings, "flaskChoice") === "Automatic") {
+  // getSetting returns 0 when the setting is missing (stale local storage, an engine test that passes a partial
+  // settings object), so treat anything that isn't a usable string as Automatic rather than crashing the whole run.
+  const flaskChoice = getSetting(userSettings, "flaskChoice");
+  if (typeof flaskChoice !== "string" || !flaskChoice || flaskChoice === "Automatic") {
     const bestStat = getHighestWeight(castModel);
 
     if ((setStats[bestStat] + bonus_stats[bestStat]) > 28000) {
@@ -747,7 +783,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     selectedChoice = bestStat;
   }
   else {
-    selectedChoice = getSetting(userSettings, "flaskChoice").toLowerCase();
+    selectedChoice = flaskChoice.toLowerCase();
     consumableStats[selectedChoice]  = (consumableStats[selectedChoice] || 0) + 165;
   }
 
@@ -1055,6 +1091,17 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   }
 
   builtSet.hardScore = Math.round(1000 * hardScore) / 1000;
+
+  // == Absolute Throughput ==
+  // hardScore is an intellect-equivalent ranking number and can't be shown to the player as healing. Where the set
+  // was run through a cast model or a ramp sim though, setStats.hps is a genuine HPS figure we can report directly.
+  // On the stat weight path setStats.hps only holds flat HPS granted by effects (tier bonuses, some trinkets), which
+  // is not the player's total healing, so we deliberately leave this at 0 rather than report a misleading number.
+  const evaluationPath = castModel.modelType[contentType];
+  builtSet.setHPS = (evaluationPath === MODEL_TYPES.CAST_MODEL || evaluationPath === MODEL_TYPES.SEQUENCES)
+                      ? Math.round(setStats.hps || 0)
+                      : 0;
+
   builtSet.setStats = setStats;
   builtSet.enchantBreakdown = enchants;
   builtSet.gemBreakdown = JSON.stringify(enchants["Gems"] || []);

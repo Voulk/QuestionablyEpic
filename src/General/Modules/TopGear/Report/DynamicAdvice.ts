@@ -1,6 +1,7 @@
 
 import { Player } from "General/Modules/Player/Player"
 import { Item } from "General/Items/Item"
+import { isEmbellished, MAX_EMBELLISHMENTS } from "General/Engine/ItemUtilities"
 
 const checkHasItem = (itemList: Item[], itemID: number) => {
     return itemList.filter((item: Item) => item.id === itemID).length > 0;
@@ -18,6 +19,25 @@ export const getDynamicAdvice = (report : any, strippedPlayer: any, contentType:
     if (differentials.length === 0 && gameType === "Retail") {
         advice.push("You didn't actually click any extra items which means the set above is what you are currently wearing. You can add items to the comparison \
         by clicking on them in the top gear item select screen.")
+    }
+
+    // A one hander is evaluated with an empty offhand when the player hasn't selected one. That's a real result for
+    // the items they picked, but it costs the one hander a whole item's worth of stats against any two hander it is
+    // being compared to, so say so rather than letting it quietly lose.
+    // Only two embellishments can be worn at once, so any others the player selected are dropped from every set.
+    // Without this the item simply never appears in the report and it looks like Top Gear ignored it.
+    const embellishedInSet = itemList.filter((item: any) => isEmbellished(item)).length;
+    if (report.embellishedSelected > MAX_EMBELLISHMENTS) {
+        advice.push("You selected " + report.embellishedSelected + " embellished items but only " + MAX_EMBELLISHMENTS +
+        " can be worn at once, so the set above uses the best " + embellishedInSet + ". If an embellished item you added \
+        isn't showing up, that's why - deselect one of the others to compare it directly.")
+    }
+
+    const hasOneHander = itemList.some((item: Item) => item.slot === "1H Weapon");
+    const hasOffhand = itemList.some((item: Item) => ["Offhand", "Holdable", "Shield"].includes(item.slot));
+    if (hasOneHander && !hasOffhand) {
+        advice.push("This set uses a one handed weapon but no offhand was selected, so the offhand slot is being scored as empty. \
+        Add an offhand in the item select screen to see what the one hander is really worth.")
     }
     if (gameType === "Classic") {
         advice.push("Expected HPS: " + Math.round(topSet.metrics.healing / 60 * 0.85) + " - " + Math.round(topSet.metrics.healing / 60 * 1) + ". Your HPS can be very fight dependent and it's ok if you aren't perfectly in this range.")

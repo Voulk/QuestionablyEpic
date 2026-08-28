@@ -19,6 +19,7 @@ import {
   calcStatsAtLevel,
   autoAddItems,
   getItemEffectOptions,
+  hasUnallocatedStats,
 } from "../../Engine/ItemUtilities";
 import { CONSTRAINTS } from "../../Engine/CONSTRAINTS";
 import { useSelector } from "react-redux";
@@ -330,7 +331,9 @@ export default function ItemBar(props) {
     itemLevel: true,
     socket: gameType === "Retail" && CONSTANTS.socketSlots.includes(getItemProp(itemID, "slot", gameType)),
     tertiaries: !(isItemCrafted) && gameType === "Retail",
-    missives: isItemCrafted || getItemProp(itemID, "randomStats", gameType),
+    // Only offer the crafted stat picker when the item actually has stat budget for the player to assign.
+    // A lot of the newer crafted gear ships with fixed secondaries, where picking stats here would do nothing.
+    missives: (isItemCrafted && hasUnallocatedStats(itemID, gameType)) || getItemProp(itemID, "randomStats", gameType),
     specialEffect: itemEffectOptions.length > 0,
   }
 

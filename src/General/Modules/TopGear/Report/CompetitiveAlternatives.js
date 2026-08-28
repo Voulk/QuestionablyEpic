@@ -57,6 +57,24 @@ function CompetitiveAlternatives(props) {
     return Math.abs(diff);
   };
 
+  /* ------------------------------------ Alternative Set Value ----------------------------------- */
+  // Where the spec is evaluated through a cast model we have a real HPS figure for every alternative, so show the
+  // absolute throughput of the set alongside the healing and percentage it gives up. When the percentage can be
+  // derived from HPS we use that rather than the score difference, since it's the same quantity being reported.
+  // Otherwise fall back to the relative score difference, which is all the stat weight path can honestly tell us.
+  const getSetValueText = (differential) => {
+    if (differential.hps > 0) {
+      const lost = Math.round(differential.hpsDifference || 0);
+      const primeHPS = differential.hps - lost; // the best set's HPS
+      const percent = primeHPS > 0 ? (lost / primeHPS) * 100 : 0;
+      const percentText = Math.abs(percent) < 0.01 ? "<0.01%" : (Math.round(percent * 100) / 100) + "%";
+
+      return Math.round(differential.hps).toLocaleString() + " HPS (" +
+             (lost >= 0 ? "+" : "-") + Math.abs(lost).toLocaleString() + ", " + percentText + ")";
+    }
+    return (gameType === "Classic" ? Math.round(differential.rawDifference / 60) : differential.rawDifference) + " (" + roundTo(differential.scoreDifference, 2) + "%)";
+  };
+
   return (
     <Grid item xs={12}>
       <Paper style={{ padding: 8 }} elevation={0}>
@@ -165,7 +183,7 @@ function CompetitiveAlternatives(props) {
                               width: "100%",
                             }}
                           >
-                            {(gameType === "Classic" ? Math.round(key.rawDifference / 60) : key.rawDifference) + " HPS (" + roundTo(key.scoreDifference, 2) + "%)"}
+                            {getSetValueText(key)}
                           </Typography>
                         </Grid>
                       </Grid>

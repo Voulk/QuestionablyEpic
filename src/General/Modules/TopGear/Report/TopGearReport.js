@@ -600,6 +600,8 @@ function displayReport(
                             spec={player.spec}
                             currentLanguage={currentLanguage}
                             gameType={gameType}
+                            setHPS={topSet.setHPS}
+                            equippedHPS={result.equippedHPS}
                           />
                         </Grid>
                       </Grid>

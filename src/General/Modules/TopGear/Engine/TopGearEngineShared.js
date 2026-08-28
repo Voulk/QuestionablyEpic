@@ -5,10 +5,6 @@ import { CONSTANTS } from "General/Engine/CONSTANTS";
 import { getTranslatedSlotName } from "locale/slotsLocale";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
 
-export function createTopGearWorker() {
-  return new Worker(new URL('./TopGearWorker.js', import.meta.url), { type: 'module' });
-}
-
 // Compiles stats & bonus stats into one array to which we can then apply DR etc. 
 export function compileStats(stats, bonus_stats) {
 
@@ -49,6 +45,11 @@ export const generateReportCode = () => {
       gems: [],
       scoreDifference: (Math.round(primeSet.hardScore - itemSet.hardScore) / primeSet.hardScore) * 100,
       rawDifference: Math.round(((itemSet.hardScore - primeSet.hardScore)))/* * player.getHPS(contentType))*/,
+
+      // Absolute throughput for this alternative, and how much healing it gives up against the best set.
+      // Both are 0 when the spec / content type is scored on stat weights, since no HPS figure exists there.
+      hps: itemSet.setHPS || 0,
+      hpsDifference: Math.round((itemSet.setHPS || 0) - (primeSet.setHPS || 0)),
     };
   
     for (var x = 0; x < diffList.length; x++) {
