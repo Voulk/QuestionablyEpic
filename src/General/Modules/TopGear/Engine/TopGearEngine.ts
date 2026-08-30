@@ -614,7 +614,7 @@ function enchantItems(bonus_stats: Stats, setStats: Stats, castModel: any, conte
   let wepEnchantName = "Acuity of the Ren'dorei"
   if (spec === "Discipline Priest" || spec === "Restoration Druid") {
     wepEnchantName = "Berserker's Rage";
-    bonus_stats.haste = (bonus_stats.mastery || 0) + 124 * convertPPMToUptime(3, 15);
+    bonus_stats.haste = (bonus_stats.haste || 0) + 124 * convertPPMToUptime(3, 15);
   }
   else if (spec === "Preservation Evoker") {
     wepEnchantName = "Arcane Mastery";

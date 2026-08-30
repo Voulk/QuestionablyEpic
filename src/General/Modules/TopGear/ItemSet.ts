@@ -155,7 +155,11 @@ class ItemSet {
         setSockets += item.socket;
       }
       
-      if (item.uniqueEquip) this.uniques[item.uniqueEquip] = (this.uniques[item.uniqueEquip] || 0) + 1;
+      if (item.uniqueEquip && item.uniqueEquip.length > 0) {
+        for (const unique of item.uniqueEquip) {
+          this.uniques[unique] = (this.uniques[unique] || 0) + 1;
+        }
+      }
       if (item.isCatalystItem) this.uniques['catalyst'] = (this.uniques['catalyst'] || 0) + 1;
       if (item.exclusiveItem) this.uniques['exclusive'] = (this.uniques['exclusive'] || 0) + 1;
 

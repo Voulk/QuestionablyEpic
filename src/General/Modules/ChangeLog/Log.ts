@@ -19,6 +19,15 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+    {
+    version: "12.1 / 5.5.4",
+    update: 9,
+    date: "August 30",
+    changes: [ 
+      "Manually added items can now be catalyzed if they are in tier slots.",
+      "Items can now have multiple unique restrictions at once (vault, embellished etc)."
+    ]
+  },
   {
     version: "12.1 / 5.5.4",
     update: 9,

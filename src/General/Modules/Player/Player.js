@@ -270,14 +270,15 @@ export class Player {
       newItem.stats = originalItem.stats;
       newItem.active = true;
       newItem.catalyzedID = originalItem.id;
-      if (originalItem.uniqueEquip === "vault") {
-        newItem.uniqueEquip = "vault";
+      if (originalItem.uniqueEquip.includes("vault")) {
+        newItem.uniqueEquip.push("vault");
         newItem.vaultItem = true;
       }
       if (originalItem.effect) newItem.effect = originalItem.effect;
       newItem.quality = 4;
       newItem.upgradeTrack = originalItem.upgradeTrack;
       newItem.upgradeRank = originalItem.upgradeRank;
+
       this.activeItems = this.activeItems.concat(newItem);
     } else {
       // We should probably write an error check here.
@@ -311,8 +312,9 @@ export class Player {
     }
     if (vaultFlag) {
       newItem.vaultItem = true;
-      newItem.uniqueEquip = "vault";
+      newItem.uniqueEquip.push("vault");
     }
+          console.log(newItem);
     if (newItem) this.activeItems = this.activeItems.concat(newItem);
     
   };
@@ -327,7 +329,7 @@ export class Player {
       name: embellishmentName,
       level: item.level,
     }
-    newItem.uniqueEquip = "embellishment";
+    newItem.uniqueEquip.push("embellishment");
     newItem.bonusIDS = newItem.bonusIDS// + ":" + 11109;
     newItem.updateLevel(item.level, item.missiveStats);
 
@@ -366,8 +368,8 @@ export class Player {
     newItem.active = true;
     newItem.socket = 1;
     if (item.catalyzedID) newItem.catalyzedID = item.catalyzedID;
-    if (item.uniqueEquip === "vault") {
-      newItem.uniqueEquip = "vault";
+    if (item.uniqueEquip.includes("vault")) {
+      newItem.uniqueEquip.push("vault");
       newItem.vaultItem = true;
     }
     newItem.quality = item.quality || 4;

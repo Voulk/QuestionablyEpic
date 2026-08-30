@@ -38,7 +38,7 @@ export class Item {
 
   effect: ItemEffect | "";
   uniqueHash: string; // Technically not a hash.
-  uniqueEquip: string; // Unique Equip type if relevant.
+  uniqueEquip: string[]; // Unique Equip type if relevant. Multiple unique equip types can co-exist.
   active: boolean = false; // An active item is selected for inclusion in Top Gear.
   
   vaultItem: boolean = false; // If true, the item is in a vault and so gains a special Vault color and restriction.
@@ -78,7 +78,7 @@ export class Item {
 
     this.effect = getItemProp(id, "effect", gameType);
     this.setID = getItemProp(id, "itemSetId", gameType);
-    this.uniqueEquip = getItemProp(catalyzedID ? catalyzedID : id, "uniqueEquip", gameType).toLowerCase();
+    this.uniqueEquip = [getItemProp(catalyzedID ? catalyzedID : id, "uniqueEquip", gameType).toLowerCase()];
     this.onUse = (slot === "Trinket" && getItemProp(id, "onUseTrinket", gameType) === true);
     if (this.onUse && this.effect) this.effect['onUse'] = true;
     if ((slot === "Neck" || slot === "Finger") && this.gameType === "Retail" && this.id !== 228411) this.socket = 1; // We'll just auto apply sockets to rings / necks now.

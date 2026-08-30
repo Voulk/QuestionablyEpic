@@ -202,7 +202,7 @@ export default function ItemBar(props) {
         if (itemEffect.type !== "") {
           item.effect = {type: itemEffect.type, name: itemEffect.effectName, level: parseInt(itemLevel)};
           if (itemEffect.type === "embellishment") {
-            item.uniqueEquip = "embellishment";
+            item.uniqueEquip = ["embellishment"];
             
             if (itemEffect.effectName === "Darkmoon Sigil: Hunt") item.bonusIDS = (item.bonusIDS || "") + ":12693";
             if (itemEffect.effectName === "Darkmoon Sigil: Void") item.bonusIDS = (item.bonusIDS || "") + ":13640";
@@ -212,6 +212,10 @@ export default function ItemBar(props) {
             //else if (itemEffect.effectName === "Hunter's Ritual Stone") item.bonusIDS = (item.bonusIDS || "") + ":12687";
           }
         }
+
+        // We'll let manually added items Catalyze now.
+        if (itemLevel > 300 && ["Head", "Chest", "Legs", "Hands", "Shoulder"].includes(item.slot)) item.itemConversion = CONSTANTS.seasonalItemConversion;
+          
 
         item.softScore = scoreItem(item, player, contentType, gameType, playerSettings);
         item.active = true;
@@ -224,7 +228,6 @@ export default function ItemBar(props) {
         setItemSocket(false);
         setItemTertiary("");
 
-        console.log(item);
       }
           
     };

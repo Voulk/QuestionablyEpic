@@ -191,9 +191,8 @@ export const otherTrinketData = [
     ],
     runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
       let bonus_stats: Stats = {};
-      console.log({...data[0], ...trinketRawData["Insignia of Alacrity"][0]})
+
       bonus_stats.intellect = runGenericPPMTrinket({...data[0], ...trinketRawData["Insignia of Alacrity"][0]}, itemLevel);
-      console.log(bonus_stats.intellect);
 
       return bonus_stats;
     }
