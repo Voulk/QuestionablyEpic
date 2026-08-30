@@ -28862,6 +28862,16 @@ export const nameDB =
         "fr": "Voile d’altération",
         "de": "Tuch der Veränderung"
     },
+    "156252": {
+        "cn": "",
+        "en": "Greaves of the Stonewarder",
+        "ru": "Наголенники хранителя камня",
+        "es": "Grebas del guardaescudos",
+        "br": "Grevas do Guardião de Pedra",
+        "kr": "",
+        "fr": "Grèves du garde-pierre",
+        "de": "Schienbeinschützer des Steinwächters"
+    },
     "156253": {
         "cn": "",
         "en": "Shoulders of Misfortune",
@@ -30141,6 +30151,16 @@ export const nameDB =
         "kr": "",
         "fr": "Drapé du tisse-sort",
         "de": "Tuch des Spruchwirkers"
+    },
+    "156467": {
+        "cn": "",
+        "en": "Boots of Unsettled Prey",
+        "ru": "Сапоги встревоженной дичи",
+        "es": "Botas de la presa intranquila",
+        "br": "Botas da Presa Inquieta",
+        "kr": "",
+        "fr": "Bottes de la proie incertaine",
+        "de": "Stiefel der unruhigen Beute"
     },
     "156469": {
         "cn": "",
@@ -31982,6 +32002,16 @@ export const nameDB =
         "fr": "Gants de l’ours danseur",
         "de": "Handschuhe des Tanzbären"
     },
+    "171523": {
+        "cn": "",
+        "en": "Waistguard of Deathly Dominion",
+        "ru": "Воинский пояс смертельной власти",
+        "es": "Guardarrenes de dominio sepulcral",
+        "br": "Cinta da Dominação Mortal",
+        "kr": "",
+        "fr": "Sangle de domination mortelle",
+        "de": "Taillenschutz der tödlichen Vorherrschaft"
+    },
     "171527": {
         "cn": "",
         "en": "Band of the Traitor King",
@@ -31991,6 +32021,16 @@ export const nameDB =
         "kr": "",
         "fr": "Bague du roi traître",
         "de": "Band des Verräterkönigs"
+    },
+    "171531": {
+        "cn": "",
+        "en": "Leggings of the Lurking Threat",
+        "ru": "Поножи скрытой угрозы",
+        "es": "Leotardos de amenaza acechante",
+        "br": "Perneiras da Ameaça Espreitadora",
+        "kr": "",
+        "fr": "Jambières de la menace tapie",
+        "de": "Gamaschen der lauernden Bedrohung"
     },
     "171532": {
         "cn": "",
@@ -32112,6 +32152,16 @@ export const nameDB =
         "fr": "Convergence froide",
         "de": "Kalte Konvergenz"
     },
+    "171597": {
+        "cn": "",
+        "en": "Cinch of the Undying",
+        "ru": "Кушак Неумирающего",
+        "es": "Cincho del Indestructible",
+        "br": "Cilha do Imortal",
+        "kr": "",
+        "fr": "Cordelière de l’impérissable",
+        "de": "Sattelgurt der Unsterblichen"
+    },
     "171605": {
         "cn": "",
         "en": "Perdition",
@@ -32122,6 +32172,26 @@ export const nameDB =
         "fr": "Perdition",
         "de": "Verderben"
     },
+    "171615": {
+        "cn": "",
+        "en": "Aegis of the Coliseum",
+        "ru": "Эгида Колизея",
+        "es": "Égida del Coliseo",
+        "br": "Égide do Coliseu",
+        "kr": "",
+        "fr": "Egide du colisée",
+        "de": "Aegis des Kolosseums"
+    },
+    "171618": {
+        "cn": "",
+        "en": "Amulet of Autopsy",
+        "ru": "Амулет посмертного вскрытия",
+        "es": "Amuleto de autopsia",
+        "br": "Amuleto da Autópsia",
+        "kr": "",
+        "fr": "Amulette d’autopsie",
+        "de": "Amulett der Autopsie"
+    },
     "171619": {
         "cn": "",
         "en": "Cuffs of Dark Shadows",
@@ -32131,6 +32201,16 @@ export const nameDB =
         "kr": "",
         "fr": "Crispins des ombres obscures",
         "de": "Manschetten der dunklen Schatten"
+    },
+    "171620": {
+        "cn": "",
+        "en": "Tunic of the Lost Pack",
+        "ru": "Мундир Заблудившейся стаи",
+        "es": "Guerrera de la manada perdida",
+        "br": "Túnica do Bando Perdido",
+        "kr": "",
+        "fr": "Tunique de la meute perdue",
+        "de": "Tunika des verlorenen Rudels"
     },
     "171621": {
         "cn": "",

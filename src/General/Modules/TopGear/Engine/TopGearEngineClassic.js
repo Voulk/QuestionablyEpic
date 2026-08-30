@@ -272,7 +272,11 @@ function compileSetStats(itemSet) {
       }
       
       
-      if (item.uniqueEquip) itemSet.uniques[item.uniqueEquip] = (itemSet.uniques[item.uniqueEquip] || 0) + 1;
+      if (item.uniqueEquip && item.uniqueEquip.length > 0) {
+        for (const unique of item.uniqueEquip) {
+          itemSet.uniques[unique] = (itemSet.uniques[unique] || 0) + 1;
+        }
+      }
 
       if (item.setID) {
         itemSet.sets[item.setID] = (item.setID in itemSet.sets) ? itemSet.sets[item.setID] + 1 : 1;

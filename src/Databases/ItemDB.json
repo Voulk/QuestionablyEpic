@@ -62588,6 +62588,22 @@
         "slot": "Back"
     },
     {
+        "id": 156252,
+        "name": "Greaves of the Stonewarder",
+        "icon": "inv_boots_plate_08",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 4750,
+            "versatility": 2250
+        },
+        "slot": "Feet"
+    },
+    {
         "id": 156253,
         "name": "Shoulders of Misfortune",
         "icon": "inv_shoulder_101",
@@ -65518,6 +65534,22 @@
             "haste": 3000
         },
         "slot": "Back"
+    },
+    {
+        "id": 156467,
+        "name": "Boots of Unsettled Prey",
+        "icon": "inv_boots_chain_07",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 35,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 5500,
+            "crit": 1500
+        },
+        "slot": "Feet"
     },
     {
         "id": 156469,
@@ -69530,6 +69562,23 @@
         "slot": "Hands"
     },
     {
+        "id": 171523,
+        "name": "Waistguard of Deathly Dominion",
+        "icon": "inv_belt_45a",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 3500,
+            "haste": 3500
+        },
+        "faction": "horde",
+        "slot": "Waist"
+    },
+    {
         "id": 171527,
         "name": "Band of the Traitor King",
         "icon": "inv_jewelry_ring_57",
@@ -69545,6 +69594,23 @@
         },
         "faction": "horde",
         "slot": "Finger"
+    },
+    {
+        "id": 171531,
+        "name": "Leggings of the Lurking Threat",
+        "icon": "inv_pants_mail_24",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 4550,
+            "haste": 2450
+        },
+        "faction": "horde",
+        "slot": "Legs"
     },
     {
         "id": 171532,
@@ -69746,6 +69812,23 @@
         "slot": "2H Weapon"
     },
     {
+        "id": 171597,
+        "name": "Cinch of the Undying",
+        "icon": "inv_belt_52",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "versatility": 3800,
+            "crit": 3200
+        },
+        "faction": "alliance",
+        "slot": "Waist"
+    },
+    {
         "id": 171605,
         "name": "Perdition",
         "icon": "inv_staff_102",
@@ -69763,6 +69846,39 @@
         "slot": "2H Weapon"
     },
     {
+        "id": 171615,
+        "name": "Aegis of the Coliseum",
+        "icon": "inv_shield_71",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "haste": 4250,
+            "mastery": 2750
+        },
+        "faction": "horde",
+        "slot": "Shield"
+    },
+    {
+        "id": 171618,
+        "name": "Amulet of Autopsy",
+        "icon": "inv_jewelry_necklace_30naxxramas",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "crit": 12500,
+            "versatility": 5000
+        },
+        "slot": "Neck"
+    },
+    {
         "id": 171619,
         "name": "Cuffs of Dark Shadows",
         "icon": "inv_bracer_18",
@@ -69777,6 +69893,22 @@
             "haste": 3050
         },
         "slot": "Wrist"
+    },
+    {
+        "id": 171620,
+        "name": "Tunic of the Lost Pack",
+        "icon": "inv_chest_leather_02",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 3800,
+            "haste": 3200
+        },
+        "slot": "Chest"
     },
     {
         "id": 171621,

@@ -59,7 +59,7 @@ export function buildWepCombosUF(player, itemList) {
         );
         item.stats = sumObjectsByKey(main_hand.stats, off_hand.stats);
         item.stats.bonus_stats = {};
-        item.uniqueEquip = item.vaultItem ? "vault" : "";
+        //item.uniqueEquip = item.vaultItem ? "vault" : "";
 
         item.softScore = main_hand.softScore + off_hand.softScore;
         item.offhandID = off_hand.id;
