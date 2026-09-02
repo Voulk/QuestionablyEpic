@@ -2,7 +2,7 @@ import { sourceHandler, getHighestTrinketScore } from "./TrinketChart";
 
 const raid = (instanceId) => ({ sources: [{ instanceId }] });
 const dungeon = () => ({ sources: [{ instanceId: -1 }] });
-const delve = () => ({ sources: [{ instanceId: -69 }] });
+const delve = () => ({ sources: [{ instanceId: -98 }] });
 const timewalking = () => ({ sources: [{ instanceId: -12 }] });
 const other = () => ({ sources: [{ instanceId: 1192 }] });
 const noSource = () => ({});
@@ -39,7 +39,7 @@ describe("sourceHandler — source filtering", () => {
   test("Delves only returns only delve items", () => {
     const result = sourceHandler(items, ["Delves"], "Holy Priest");
     expect(result).toHaveLength(1);
-    expect(result[0].sources[0].instanceId).toBe(-69);
+    expect(result[0].sources[0].instanceId).toBe(-98);
   });
 
   test("Timewalking only returns only timewalking items", () => {

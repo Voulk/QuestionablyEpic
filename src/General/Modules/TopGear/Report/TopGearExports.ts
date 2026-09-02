@@ -265,7 +265,7 @@ function getWowheadBonusTag(itemId: number) {
   const source = sources[0];
   
   if (CONSTANTS.currentRaidIDs.includes(source.instanceId)) return "[=gv-raid]";
-  if (source.instanceId === -69) return "[=gv-delves]";
+  if (source.instanceId === -98) return "[=gv-delves]";
   if (source.instanceId === -1) {
     const instanceID = source.encounterId;
     if ([1210, 1272, 1268, 1267, 1298, 1271, 1270, 1303].includes(instanceID)) return "[=gv-tww-dun]";

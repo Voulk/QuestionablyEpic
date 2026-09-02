@@ -22,12 +22,12 @@ export const getPaladinSpecEffect = (effectName, player, contentType) => {
   }
   else if (effectName === "Holy Paladin S1-2") {
     // Holy Shock healing increase
-    bonus_stats.bonusHPS = 0.035;
+    bonus_stats.bonusHPS = 0.0325;
   }
   // Season 2
   else if (effectName === "Holy Paladin S2-4") {
     // HL / Judgment can proc Infusion
-    if (contentType === "Raid") bonus_stats.bonusHPS = 0.012;
+    if (contentType === "Raid") bonus_stats.bonusHPS = 0.013;
     else bonus_stats.bonusHPS = 0.04;  
 
   }

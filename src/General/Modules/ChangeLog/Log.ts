@@ -19,9 +19,21 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+      {
+    version: "12.1 / 5.5.4",
+    update: 11,
+    date: "September 2",
+    changes: [ 
+      "In-game aura buffs / tier set change to Mistweaver Monk & Resto Druid",
+      "Added more items to the Delve tab in Upgrade Finder.",
+      "Bugfix: Weapons should now behave more consistently in Upgrade Finder.",
+      "Bugfix: Fixed a rare bug where converting some items to Vault would also add the vault tag to the original item.",
+      "Even more Timewalking items."
+    ]
+  },
     {
     version: "12.1 / 5.5.4",
-    update: 9,
+    update: 10,
     date: "August 30",
     changes: [ 
       "Manually added items can now be catalyzed if they are in tier slots.",

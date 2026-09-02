@@ -356,7 +356,7 @@ const specTalents: TalentTree = {
     }},
 
     /* Regrowth heals all other allies with Regrowth for X% of its healing. */
-    "Nature's Bounty": {id: 1263879, values: [20.0],  points: 0, maxPoints: 1, icon: "talentspec_druid_restoration", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
+    "Nature's Bounty": {id: 1263879, values: [10.0],  points: 0, maxPoints: 1, icon: "talentspec_druid_restoration", select: true, tier: 1, runFunc: function (state: any, spellDB: SpellDB, talentValues: number[], points: number) {
 
     }},
 

@@ -739,7 +739,6 @@ export function processItem(line: string, player: Player, contentType: contentTy
 
     item.quality = protoItem.quality !== 0 ? protoItem.quality : (getItemProp(protoItem.id, "quality") || 4);
     item.softScore = scoreItem(item, player, contentType, "Retail", playerSettings);
-
     return item;  
   } else {
     return null;

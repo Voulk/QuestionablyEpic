@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
 export const TRINKET_SOURCES = {
   raid: CONSTANTS.currentRaidIDs,
   dungeon: [-1],
-  delves: [-69],
+  delves: [-98],
   crafted: [-4],
   timewalking: [-67],
   other: [

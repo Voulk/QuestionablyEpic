@@ -31932,6 +31932,16 @@ export const nameDB =
         "fr": "Bague tissépine",
         "de": "Dorngewebtes Band"
     },
+    "171508": {
+        "cn": "",
+        "en": "Leggings of Colossal Strides",
+        "ru": "Поножи семимильных шагов",
+        "es": "Leotardos de zancada colosal",
+        "br": "Perneiras dos Passos Colossais",
+        "kr": "",
+        "fr": "Jambières de foulées colossales",
+        "de": "Gamaschen der gigantischen Schritte"
+    },
     "171509": {
         "cn": "",
         "en": "Breastplate of Tormented Rage",
@@ -31961,6 +31971,16 @@ export const nameDB =
         "kr": "",
         "fr": "Ceinture de traque-peau",
         "de": "Stängelhautgürtel"
+    },
+    "171512": {
+        "cn": "",
+        "en": "Iron-Spring Jumpers",
+        "ru": "Пружинные прыгуны",
+        "es": "Botas de resortes de hierro",
+        "br": "Saltadores de Mola de Ferro",
+        "kr": "",
+        "fr": "Souliers à ressort d’acier",
+        "de": "Eisenfedertreter"
     },
     "171516": {
         "cn": "",
@@ -32011,6 +32031,16 @@ export const nameDB =
         "kr": "",
         "fr": "Sangle de domination mortelle",
         "de": "Taillenschutz der tödlichen Vorherrschaft"
+    },
+    "171525": {
+        "cn": "",
+        "en": "Armbands of Dark Determination",
+        "ru": "Поручи мрачной решимости",
+        "es": "Bandas de determinación oscura",
+        "br": "Embraces da Determinação Sombria",
+        "kr": "",
+        "fr": "Bracières de la sombre détermination",
+        "de": "Armbänder des dunklen Beschlusses"
     },
     "171527": {
         "cn": "",
@@ -32162,6 +32192,16 @@ export const nameDB =
         "fr": "Cordelière de l’impérissable",
         "de": "Sattelgurt der Unsterblichen"
     },
+    "171600": {
+        "cn": "",
+        "en": "Pride of the Kor'kron",
+        "ru": "Гордость кор'крона",
+        "es": "Orgullo de los Kor'kron",
+        "br": "Orgulho dos Kor'kron",
+        "kr": "",
+        "fr": "Orgueil des kor’krons",
+        "de": "Stolz der Kor'kron"
+    },
     "171605": {
         "cn": "",
         "en": "Perdition",
@@ -32171,6 +32211,16 @@ export const nameDB =
         "kr": "",
         "fr": "Perdition",
         "de": "Verderben"
+    },
+    "171613": {
+        "cn": "",
+        "en": "Sunwalker Legguards",
+        "ru": "Набедренники Служителя Солнца",
+        "es": "Musleras del caminasol",
+        "br": "Guarda-pernas do Andarilho do Sol",
+        "kr": "",
+        "fr": "Garde-jambes de marche-soleil",
+        "de": "Beinschützer des Sonnenläufers"
     },
     "171615": {
         "cn": "",
@@ -32231,6 +32281,16 @@ export const nameDB =
         "kr": "",
         "fr": "Anneau de purification sacrée",
         "de": "Ring der heiligen Läuterung"
+    },
+    "171623": {
+        "cn": "",
+        "en": "Necrogenic Belt",
+        "ru": "Некрогенный пояс",
+        "es": "Cinturón necrogénico",
+        "br": "Cinto Necrogênico",
+        "kr": "",
+        "fr": "Ceinture nécrogénique",
+        "de": "Nekrogenischer Gürtel"
     },
     "171627": {
         "cn": "",

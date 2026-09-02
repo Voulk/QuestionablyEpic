@@ -108,9 +108,10 @@ export function runUpgradeFinder(player, contentType, currentLanguage, playerSet
 
 
   // console.log("Running Upgrade Finder. Strap in.");
-  const baseItemList = player.getEquippedItems(true);
+  const baseItemList = player.getEquippedItems(false);
   //const wepList = buildWepCombosUF(player, baseItemList);
   const wepList = buildNewWepCombosUF(player, baseItemList);
+
   const castModel = player.getActiveModel(contentType);
 
   const moddedSettings = {...userSettings, forceTier: {value: "S2"}};
@@ -179,7 +180,7 @@ export function getSetItemLevel(itemSource, playerSettings, difficultyType = "dr
     // Crafted
     itemLevel = itemLevels.crafted[playerSettings.craftedLevel]; // We'll have a setting for this.
   }
-  else if (instanceID === -69) {
+  else if (instanceID === -98) {
     // Delves
     itemLevel = 321 //itemLevels.crafted[playerSettings.craftedLevel]; // Temporary. Will need its own panel.
   }
@@ -305,7 +306,7 @@ function buildItemPossibilities(player, contentType, playerSettings, settings) {
         item.quality = 4;
         itemPoss.push(item);
       }
-      else if (primarySource === -69) {
+      else if (primarySource === -98) {
         // Delves
         const itemLevel = getSetItemLevel(itemSources, playerSettings, 0, rawItem.slot);
         const item = buildItem(player, contentType, rawItem, itemLevel, rawItem.sources[0], settings, playerSettings);

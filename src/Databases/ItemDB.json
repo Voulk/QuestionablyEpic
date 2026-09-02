@@ -69450,6 +69450,22 @@
         ]
     },
     {
+        "id": 171508,
+        "name": "Leggings of Colossal Strides",
+        "icon": "inv_pants_03",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3050,
+            "crit": 3950
+        },
+        "slot": "Legs"
+    },
+    {
         "id": 171509,
         "name": "Breastplate of Tormented Rage",
         "icon": "inv_chest_plate09",
@@ -69496,6 +69512,22 @@
             "haste": 2600
         },
         "slot": "Waist"
+    },
+    {
+        "id": 171512,
+        "name": "Iron-Spring Jumpers",
+        "icon": "inv_boots_plate_02",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4700,
+            "crit": 2300
+        },
+        "slot": "Feet"
     },
     {
         "id": 171516,
@@ -69577,6 +69609,23 @@
         },
         "faction": "horde",
         "slot": "Waist"
+    },
+    {
+        "id": 171525,
+        "name": "Armbands of Dark Determination",
+        "icon": "inv_bracer_36a",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3500,
+            "crit": 3500
+        },
+        "faction": "horde",
+        "slot": "Wrist"
     },
     {
         "id": 171527,
@@ -69829,6 +69878,23 @@
         "slot": "Waist"
     },
     {
+        "id": 171600,
+        "name": "Pride of the Kor'kron",
+        "icon": "inv_shield_70",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "crit": 3200,
+            "versatility": 3800
+        },
+        "faction": "horde",
+        "slot": "Shield"
+    },
+    {
         "id": 171605,
         "name": "Perdition",
         "icon": "inv_staff_102",
@@ -69844,6 +69910,23 @@
         },
         "faction": "horde",
         "slot": "2H Weapon"
+    },
+    {
+        "id": 171613,
+        "name": "Sunwalker Legguards",
+        "icon": "inv_pants_plate_30",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 3500,
+            "versatility": 3500
+        },
+        "faction": "horde",
+        "slot": "Legs"
     },
     {
         "id": 171615,
@@ -69941,6 +70024,22 @@
             "haste": 9750
         },
         "slot": "Finger"
+    },
+    {
+        "id": 171623,
+        "name": "Necrogenic Belt",
+        "icon": "inv_belt_15",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 3350,
+            "versatility": 3650
+        },
+        "slot": "Waist"
     },
     {
         "id": 171627,
@@ -227619,8 +227718,8 @@
         },
         "sources": [
             {
-                "instanceId": -69,
-                "encounterId": -69
+                "instanceId": -98,
+                "encounterId": -98
             }
         ],
         "slot": "Trinket",
@@ -238165,8 +238264,8 @@
         },
         "sources": [
             {
-                "instanceId": -69,
-                "encounterId": -69
+                "instanceId": -98,
+                "encounterId": -98
             }
         ],
         "slot": "Trinket",
@@ -238200,8 +238299,8 @@
         },
         "sources": [
             {
-                "instanceId": -69,
-                "encounterId": -69
+                "instanceId": -98,
+                "encounterId": -98
             }
         ],
         "slot": "Trinket",
@@ -238273,8 +238372,8 @@
         },
         "sources": [
             {
-                "instanceId": -69,
-                "encounterId": -69
+                "instanceId": -98,
+                "encounterId": -98
             }
         ],
         "slot": "Trinket",
@@ -238829,8 +238928,8 @@
         },
         "sources": [
             {
-                "instanceId": -69,
-                "encounterId": -69
+                "instanceId": -98,
+                "encounterId": -98
             }
         ],
         "slot": "Trinket",
@@ -261839,8 +261938,8 @@
         },
         "sources": [
             {
-                "instanceId": -69,
-                "encounterId": -69
+                "instanceId": -98,
+                "encounterId": -98
             }
         ],
         "squishEra": 2,
@@ -281131,8 +281230,8 @@
         },
         "sources": [
             {
-                "instanceId": -69,
-                "encounterId": -69
+                "instanceId": -98,
+                "encounterId": -98
             }
         ],
         "squishEra": 2,
@@ -281168,8 +281267,8 @@
         },
         "sources": [
             {
-                "instanceId": -69,
-                "encounterId": -69
+                "instanceId": -98,
+                "encounterId": -98
             }
         ],
         "squishEra": 2,
@@ -281204,8 +281303,8 @@
         },
         "sources": [
             {
-                "instanceId": -69,
-                "encounterId": -69
+                "instanceId": -98,
+                "encounterId": -98
             }
         ],
         "squishEra": 2,
@@ -286852,8 +286951,8 @@
         },
         "sources": [
             {
-                "instanceId": -69,
-                "encounterId": -69
+                "instanceId": -98,
+                "encounterId": -98
             }
         ],
         "levelRange": [

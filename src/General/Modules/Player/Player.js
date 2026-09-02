@@ -287,7 +287,6 @@ export class Player {
 
   // Options: Convert to Vault, Add socket, change item level.
   upgradeItem = (item, newLevel, socketFlag, vaultFlag) => {
-
     /*
     const newItem = new Item(item.id, "", item.slot, item.socket, item.tertiary, 0, item.level, "");
     newItem.active = true;
@@ -300,7 +299,6 @@ export class Player {
     newItem.quality = item.quality || 4;
     newItem.itemConversion = item.itemConversion || 0;
     this.activeItems = this.activeItems.concat(newItem); */
-
     const newItem = item.clone();
     newItem.active = true;
 
@@ -314,7 +312,7 @@ export class Player {
       newItem.vaultItem = true;
       newItem.uniqueEquip.push("vault");
     }
-          console.log(newItem);
+
     if (newItem) this.activeItems = this.activeItems.concat(newItem);
     
   };
