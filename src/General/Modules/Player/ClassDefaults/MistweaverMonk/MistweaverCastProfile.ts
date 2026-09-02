@@ -187,9 +187,9 @@ const applyTierSet = (playerData: any, castProfile: CastProfile, spellDB: Record
         buffSpellPerc(spellDB["Rushing Wind Kick"], 100, 1); // healing only
 
         if (playerData.tierSets.includes("Mistweaver Monk S2-4")) {
-            // using 0.15 as opposed to 0.2 since procs cannot proc their own reset
+            // using 0.20 as opposed to 0.25 since procs cannot proc their own reset
             const entry = getSelectedKick(castProfile);
-            if (entry) entry.cpm *= 1.15;
+            if (entry) entry.cpm *= 1.20;
         }
     }
 }
