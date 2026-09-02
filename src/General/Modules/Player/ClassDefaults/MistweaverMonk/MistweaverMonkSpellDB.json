@@ -602,7 +602,8 @@
             "cooldownData": {
                 "cooldown": 120.0,
                 "hasted": false
-            }
+            },
+            "buffDuration": 25.0
         }
     ],
     "Invigorating Mists": [
