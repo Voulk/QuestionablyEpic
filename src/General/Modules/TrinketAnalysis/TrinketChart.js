@@ -72,7 +72,7 @@ const handleDownload = () => {
 export const sourceHandler = (array, sources, playerSpec) => {
   const raidSources = [1314, 1308, 1307, 1320, 1317, 1305];
   const dungeonSources = [-1];
-  const delveSources = [-69];
+  const delveSources = [-98];
   const otherSources = [1192, 1205, -18, -17, -85, -4, -95];
   const timewalkingSources = [-12, -67];
 

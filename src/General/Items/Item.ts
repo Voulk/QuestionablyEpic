@@ -78,7 +78,8 @@ export class Item {
 
     this.effect = getItemProp(id, "effect", gameType);
     this.setID = getItemProp(id, "itemSetId", gameType);
-    this.uniqueEquip = [getItemProp(catalyzedID ? catalyzedID : id, "uniqueEquip", gameType).toLowerCase()];
+    const inbuiltUnique = getItemProp(catalyzedID ? catalyzedID : id, "uniqueEquip", gameType)?.toLowerCase();
+    this.uniqueEquip = inbuiltUnique ?[inbuiltUnique] : [];
     this.onUse = (slot === "Trinket" && getItemProp(id, "onUseTrinket", gameType) === true);
     if (this.onUse && this.effect) this.effect['onUse'] = true;
     if ((slot === "Neck" || slot === "Finger") && this.gameType === "Retail" && this.id !== 228411) this.socket = 1; // We'll just auto apply sockets to rings / necks now.
@@ -169,7 +170,7 @@ export class Item {
 
     // 
     clonedItem.effect = this.effect ? { ...this.effect } : ""; 
-    clonedItem.uniqueEquip = this.uniqueEquip;
+    clonedItem.uniqueEquip = [...this.uniqueEquip];
     clonedItem.active = this.active;
     clonedItem.vaultItem = this.vaultItem;
     clonedItem.isEquipped = false; // We don't want to duplicate isEquipped since it isn't possible for the original and the clone to both be equipped at the same time.

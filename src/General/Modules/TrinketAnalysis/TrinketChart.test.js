@@ -39,7 +39,7 @@ describe("sourceHandler — source filtering", () => {
   test("Delves only returns only delve items", () => {
     const result = sourceHandler(items, ["Delves"], "Holy Priest");
     expect(result).toHaveLength(1);
-    expect(result[0].sources[0].instanceId).toBe(-69);
+    expect(result[0].sources[0].instanceId).toBe(-98);
   });
 
   test("Timewalking only returns only timewalking items", () => {
