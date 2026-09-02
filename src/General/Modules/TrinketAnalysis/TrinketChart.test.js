@@ -2,7 +2,7 @@ import { sourceHandler, getHighestTrinketScore } from "./TrinketChart";
 
 const raid = (instanceId) => ({ sources: [{ instanceId }] });
 const dungeon = () => ({ sources: [{ instanceId: -1 }] });
-const delve = () => ({ sources: [{ instanceId: -69 }] });
+const delve = () => ({ sources: [{ instanceId: -98 }] });
 const timewalking = () => ({ sources: [{ instanceId: -12 }] });
 const other = () => ({ sources: [{ instanceId: 1192 }] });
 const noSource = () => ({});
