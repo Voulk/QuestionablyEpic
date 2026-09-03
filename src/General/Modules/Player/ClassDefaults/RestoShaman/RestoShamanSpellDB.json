@@ -622,7 +622,7 @@
             "castTime": 0.0,
             "school": "nature",
             "cost": 0.0,
-            "targets": 3,
+            "targets": 5,
             "targetScript": "Chain Heal",
             "coeff": 2.475,
             "aura": 1.15,
@@ -634,7 +634,7 @@
             ],
             "spellType": "heal",
             "specialFields": {
-                "chainHealFalloff": 0.3
+                "chainHealFalloff": 0.1
             }
         }
     ],

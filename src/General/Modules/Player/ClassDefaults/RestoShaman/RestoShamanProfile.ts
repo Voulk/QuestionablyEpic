@@ -308,6 +308,7 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
 
     // Max mana
     let manaPool = 250000 * (stats.manaPerc || 1);
+    const resurgenceManaPool = manaPool
     const innervateCount = getSetting(settings, "innervateCountShaman")
     manaPool += (manaPool * (0.25 * innervateCount))
     if (hasTalent(talents, "Primordial Capacity")){
@@ -336,7 +337,7 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
         Object.keys(resurgenceManaReturns).forEach(spellName => {
             if (spellDB[spellName]){
                 // First figure out the real mana return because it is based on max mana
-                const realResurgenceReturn = manaPool * resurgenceManaReturns[spellName] / 250000
+                const realResurgenceReturn = resurgenceManaPool * resurgenceManaReturns[spellName] / 250000
                 // Every hit can proc resurgence so for Chains we need to see how many they hit
                 const spellTargets = spellDB[spellName][0].targets || 1
                 const spellCrit = getRealCrit(spellName, state, spellDB)
@@ -348,7 +349,7 @@ export function scoreShamanSet(stats: Stats, playerData: any, settings: PlayerSe
                 // Currently just handling it by hand. Some of these casts are actually from swiftness but they are also free so this includes them correctly.
                 if (spellName === "Chain Heal"){
                     const livelyTotemsChainHeals = getCPM(castProfile, "Chain Heal")
-                    const livelyTotemsManaReturn = manaPool * (manaRestored / 100) * livelyTotemsChainHeals
+                    const livelyTotemsManaReturn = resurgenceManaPool * (manaRestored / 100) * livelyTotemsChainHeals
                     manaAvailable += livelyTotemsManaReturn
                 }
             }
