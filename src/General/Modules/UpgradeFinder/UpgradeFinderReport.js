@@ -27,35 +27,32 @@ function a11yProps(index) {
 }
 
 async function fetchUpgradeReport(reportCode, setResult, setBackgroundImage) {
-  // Check that the reportCode is acceptable.
-  /*const requestOptions = {
-    method: 'GET',
-    mode: 'no-cors',
-    headers: { 'Content-Type': 'application/json' },
-  };*/
+  if (!reportCode || reportCode === "upgradereport") {
+    return;
+  }
 
   const url = "https://questionablyepic.com/api/getUpgradeReport.php?reportID=" + reportCode;
 
   fetch(url)
     .then(res => res.json())
     .then(data => {
-      //console.log(data);
-      if (typeof(data) === "string") {
-        const jsonData = JSON.parse(data);
-        //const img = apiGetPlayerImage3(jsonData.player.name, jsonData.player.realm, jsonData.player.region, setBackgroundImage);
-        setResult(JSON.parse(data))
-        
+      try {
+        if (typeof(data) === "string") {
+          setResult(JSON.parse(data));
+        }
+        else if (typeof(data) === "object"){
+          if ('status' in data && data.status === "Report not found") console.log("INVALID REPORT: " + reportCode);
+        }
+        else {
+          console.error("Invalid Report Data Type");
+        }
+      } catch (e) {
+        console.error("Failed to parse upgrade report", e);
       }
-      else if (typeof(data) === "object"){
-        if ('status' in data && data.status === "Report not found") console.log("INVALID REPORT: " + reportCode);
-      }
-      else {
-        console.error("Invalid Report Data Type");
-      }
-
     })
-
-    //.catch(err => { throw err });
+    .catch((e) => {
+      console.error("Failed to load upgrade report", e);
+    });
 }
 
 
@@ -109,7 +106,8 @@ export default function UpgradeFinderReport(props) {
     }
     else {
       // No result queued. Check URL for report code and load that.
-      fetchUpgradeReport(location.pathname.split("/").pop(), setResult, /*setBackgroundImage*/);
+      const reportCode = (typeof location !== "undefined" ? location.pathname : "").split("/").filter(Boolean).pop();
+      fetchUpgradeReport(reportCode, setResult, /*setBackgroundImage*/);
     }
 
     }, []);
@@ -265,9 +263,7 @@ export default function UpgradeFinderReport(props) {
           <Grid item xs={12}>
             <UFTabPanel value={tabValue} index={gameType === "Retail" ? 4 : 2}>
               <div className={classes.panel}>
-                <Grid container>
-                  <SlotsContainer spec={result.spec} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={ufSettings} />
-                </Grid>
+                <SlotsContainer spec={result.spec} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={ufSettings} gameType={gameType} />
               </div>
             </UFTabPanel>
           </Grid>
@@ -365,9 +361,7 @@ export default function UpgradeFinderReport(props) {
           <Grid item xs={12}>
             <UFTabPanel value={tabValue} index={3}>
               <div className={classes.panel}>
-                <Grid container>
-                  <SlotsContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={ufSettings} />
-                </Grid>
+                <SlotsContainer player={props.player} itemList={itemList} itemDifferentials={itemDifferentials} playerSettings={ufSettings} gameType="Classic" />
               </div>
             </UFTabPanel>
           </Grid>

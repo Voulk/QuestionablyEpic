@@ -40,6 +40,51 @@ export const rootStyles = makeStyles((theme) => {
       marginTop: 4,
       padding: 4,
     },
+    sourceBar: {
+      boxSizing: "border-box",
+      width: "100%",
+      display: "flex",
+      alignItems: "center",
+      gap: 12,
+      flexWrap: "wrap",
+      marginBottom: 8,
+      padding: "6px 10px",
+      background: "linear-gradient(180deg, rgba(28, 31, 38, 0.96) 0%, rgba(20, 23, 29, 0.98) 100%)",
+      border: "1px solid rgba(255, 255, 255, 0.12)",
+      borderRadius: 8,
+    },
+    sourceButtonRow: {
+      display: "flex",
+      flex: 1,
+      minWidth: 0,
+      gap: 6,
+    },
+    sourceToggle: {
+      flex: 1,
+      height: 32,
+      borderRadius: 4,
+      border: "1px solid rgba(255, 255, 255, 0.16)",
+      background: "rgba(18, 20, 26, 0.9)",
+      color: "rgba(255, 255, 255, 0.88)",
+      textTransform: "none",
+      fontWeight: 600,
+      fontSize: "0.82rem",
+      "&:hover": {
+        background: "rgba(40, 45, 56, 0.96)",
+        borderColor: "rgba(242, 191, 89, 0.3)",
+      },
+    },
+    sourceToggleSelected: {
+      "&$sourceToggle": {
+        color: "#000",
+        background: "linear-gradient(180deg, rgba(242, 191, 89, 0.98) 0%, rgba(214, 165, 71, 0.98) 100%)",
+        borderColor: "rgba(242, 191, 89, 0.95)",
+      },
+      "&$sourceToggle:hover": {
+        color: "#000",
+        background: "linear-gradient(180deg, rgba(235, 182, 77, 0.98) 0%, rgba(202, 153, 61, 0.98) 100%)",
+      },
+    },
   };
 });
 
