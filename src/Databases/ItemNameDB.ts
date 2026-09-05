@@ -32072,6 +32072,16 @@ export const nameDB =
         "fr": "Puissance des nérubiens",
         "de": "Macht der Neruber"
     },
+    "171534": {
+        "cn": "",
+        "en": "Suffering's End",
+        "ru": "Конец страданий",
+        "es": "Fin del sufrimiento",
+        "br": "Fim do Sofrimento",
+        "kr": "",
+        "fr": "Fin de la souffrance",
+        "de": "Ende des Leides"
+    },
     "171539": {
         "cn": "",
         "en": "Lurid Manifestation",
@@ -32202,6 +32212,16 @@ export const nameDB =
         "fr": "Orgueil des kor’krons",
         "de": "Stolz der Kor'kron"
     },
+    "171602": {
+        "cn": "",
+        "en": "Helm of the Crypt Lord",
+        "ru": "Шлем владыки склепа",
+        "es": "Yelmo del Señor de la cripta",
+        "br": "Elmo do Senhor da Cripta",
+        "kr": "",
+        "fr": "Heaume du seigneur des cryptes",
+        "de": "Helm des Gruftlords"
+    },
     "171605": {
         "cn": "",
         "en": "Perdition",
@@ -32221,6 +32241,16 @@ export const nameDB =
         "kr": "",
         "fr": "Garde-jambes de marche-soleil",
         "de": "Beinschützer des Sonnenläufers"
+    },
+    "171614": {
+        "cn": "",
+        "en": "Belt of the Eternal",
+        "ru": "Пояс Вечного",
+        "es": "Cinturón del eterno",
+        "br": "Cinto do Eterno",
+        "kr": "",
+        "fr": "Ceinture de l’éternel",
+        "de": "Gürtel des Ewigen"
     },
     "171615": {
         "cn": "",

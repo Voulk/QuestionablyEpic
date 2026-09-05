@@ -69679,6 +69679,23 @@
         "slot": "Back"
     },
     {
+        "id": 171534,
+        "name": "Suffering's End",
+        "icon": "inv_mace_103",
+        "quality": 4,
+        "itemClass": 2,
+        "itemSubClass": 4,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "haste": 4250,
+            "crit": 2750
+        },
+        "faction": "horde",
+        "slot": "1H Weapon"
+    },
+    {
         "id": 171539,
         "name": "Lurid Manifestation",
         "icon": "inv_jewelry_ring_55",
@@ -69895,6 +69912,23 @@
         "slot": "Shield"
     },
     {
+        "id": 171602,
+        "name": "Helm of the Crypt Lord",
+        "icon": "inv_helmet_100",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 3350,
+            "crit": 3650
+        },
+        "faction": "horde",
+        "slot": "Head"
+    },
+    {
         "id": 171605,
         "name": "Perdition",
         "icon": "inv_staff_102",
@@ -69927,6 +69961,23 @@
         },
         "faction": "horde",
         "slot": "Legs"
+    },
+    {
+        "id": 171614,
+        "name": "Belt of the Eternal",
+        "icon": "inv_belt_52",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "versatility": 3800,
+            "crit": 3200
+        },
+        "faction": "horde",
+        "slot": "Waist"
     },
     {
         "id": 171615,
@@ -224758,6 +224809,7 @@
             "intellect": 6666,
             "stamina": 0
         },
+        "squishEra": 2,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -224927,6 +224979,7 @@
             "intellect": 6666,
             "stamina": 0
         },
+        "squishEra": 2,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -224945,6 +224998,7 @@
             "intellect": 6666,
             "stamina": 0
         },
+        "squishEra": 2,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
@@ -224963,6 +225017,7 @@
             "intellect": 6666,
             "stamina": 0
         },
+        "squishEra": 2,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
