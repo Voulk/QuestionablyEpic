@@ -350,7 +350,9 @@ export const embellishmentData = [
         runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
             let bonus_stats: Stats = {};
 
-            const enemyType = (getSetting(additionalData.settings, "darkmoonHuntStat") ?? "mastery").toLowerCase();
+            // getSetting returns 0 rather than undefined when a setting is missing, which ?? does not catch.
+            const huntStat = getSetting(additionalData.settings, "darkmoonHuntStat");
+            const enemyType = (typeof huntStat === "string" && huntStat ? huntStat : "mastery").toLowerCase();
 
             bonus_stats[enemyType] = runGenericPPMTrinket({...data[0], stat: enemyType}, itemLevel, additionalData.setStats);
 
