@@ -45,6 +45,17 @@ export default function TopSetStatsPanel(props) {
   const breakdown = props.statBreakdown;
   const { t } = useTranslation();
   const gameType = props.gameType;
+  const setHPS = props.setHPS || 0;
+  const equippedHPS = props.equippedHPS || 0;
+
+  // How much of an upgrade the best set is over what the player is wearing right now. Negative is possible and is
+  // shown as such - it means the set Top Gear built is worse than what they already have on.
+  const upgradePercent = equippedHPS > 0 && setHPS > 0 ? ((setHPS - equippedHPS) / equippedHPS) * 100 : null;
+  const formatUpgrade = (percent: number) => (percent > 0 ? "+" : "") + (Math.round(percent * 100) / 100) + "%";
+
+  // A dead-on 0% almost always means the player ran Top Gear without adding any candidate items, so the best set
+  // is simply the gear they're wearing. "+0.00%" reads like the comparison failed, so say what happened instead.
+  const isSameAsEquipped = upgradePercent !== null && Math.abs(setHPS - equippedHPS) < 1;
   const stats =
     gameType === "Retail"
       ? [
@@ -175,6 +186,71 @@ return (
             </Grid>
           ))}
         </Grid>
+
+        {/* Absolute throughput. Only rendered for specs / content types that are evaluated through a cast model or
+            ramp sim, since those are the only paths that produce a real healing number. */}
+        {setHPS > 0 && (
+          <>
+            <Divider variant="middle" sx={{ mt: 1, mb: 1 }} />
+            <Tooltip
+              arrow
+              placement="right"
+              title={
+                <Box sx={{ p: 1, minWidth: 200 }}>
+                  <Typography variant="caption" sx={{ color: "goldenrod", fontWeight: "bold", display: "block", mb: 0.5 }}>
+                    Estimated HPS
+                  </Typography>
+                  <Divider sx={{ borderColor: "rgba(255,255,255,0.15)", mb: 0.75 }} />
+                  <Typography variant="caption" sx={{ color: "rgba(255,255,255,0.7)", display: "block" }}>
+                    Total healing per second this set is modelled to do, from a full cast profile at these stats.
+                    Use it to compare sets - it is not a prediction of your logs.
+                  </Typography>
+                  {upgradePercent !== null && (
+                    <>
+                      <Divider sx={{ borderColor: "rgba(255,255,255,0.15)", mt: 0.75, mb: 0.5 }} />
+                      <Box sx={{ display: "flex", justifyContent: "space-between", gap: 2 }}>
+                        <Typography variant="caption" sx={{ color: "rgba(255,255,255,0.6)" }}>Currently equipped</Typography>
+                        <Typography variant="caption" sx={{ color: "#aad4f5" }}>{Math.round(equippedHPS).toLocaleString()}</Typography>
+                      </Box>
+                      <Box sx={{ display: "flex", justifyContent: "space-between", gap: 2 }}>
+                        <Typography variant="caption" sx={{ color: "rgba(255,255,255,0.6)" }}>Gained</Typography>
+                        <Typography variant="caption" sx={{ color: "#a0f0a0" }}>
+                          {(setHPS - equippedHPS >= 0 ? "+" : "") + Math.round(setHPS - equippedHPS).toLocaleString()}
+                        </Typography>
+                      </Box>
+                    </>
+                  )}
+                </Box>
+              }
+              slotProps={tooltipSlotProps}
+            >
+              <Typography
+                variant="subtitle2"
+                align="center"
+                sx={{
+                  cursor: "help",
+                  color: "goldenrod",
+                  fontWeight: "bold",
+                  display: "block",
+                  transition: "color 0.15s ease",
+                }}
+              >
+                {Math.round(setHPS).toLocaleString() + " HPS"}
+                {upgradePercent !== null && !isSameAsEquipped && (
+                  <span style={{ color: upgradePercent > 0 ? "#a0f0a0" : "#f28b82", fontWeight: "normal" }}>
+                    {" (" + formatUpgrade(upgradePercent) + ")"}
+                  </span>
+                )}
+              </Typography>
+            </Tooltip>
+
+            {isSameAsEquipped && (
+              <Typography variant="caption" align="center" sx={{ color: "rgba(255,255,255,0.5)", display: "block" }}>
+                Same as your equipped gear — add items to compare
+              </Typography>
+            )}
+          </>
+        )}
       </Grid>
     </Grid>
   </Paper>
