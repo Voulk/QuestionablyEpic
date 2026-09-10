@@ -1031,7 +1031,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     adjusted_weights.haste = (adjusted_weights.haste + adjusted_weights.haste * (1 - (DR_CONST * setStats.haste!) / STATCONVERSION.HASTE)) / 2;
     adjusted_weights.crit = (adjusted_weights.crit + adjusted_weights.crit * (1 - (DR_CONST * setStats.crit!) / STATCONVERSION.CRIT)) / 2;
     adjusted_weights.versatility = (adjusted_weights.versatility + adjusted_weights.versatility * (1 - (DR_CONST * setStats.versatility!) / STATCONVERSION.VERSATILITY)) / 2;
-    adjusted_weights.mastery = (adjusted_weights.mastery + adjusted_weights.mastery * (1 - (DR_CONST * setStats.mastery!) / (STATCONVERSION.MASTERY / STATCONVERSION.MASTERYMULT[player.spec]))) / 2;
+    adjusted_weights.mastery = (adjusted_weights.mastery + adjusted_weights.mastery * (1 - (DR_CONST * setStats.mastery!) / (STATCONVERSION.MASTERY))) / 2;
     adjusted_weights.leech = (adjusted_weights.leech + adjusted_weights.leech * (1 - (DR_CONSTLEECH * setStats.leech!) / STATCONVERSION.LEECH)) / 2;
     //addBaseStats(setStats, player.spec); // Add our base stats, which are immune to DR. This includes our base 5% crit, and whatever base mastery our spec has.
     

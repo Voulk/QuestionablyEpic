@@ -32182,6 +32182,16 @@ export const nameDB =
         "fr": "Tel’thas, dague du roi de sang",
         "de": "Tel'thas, Dolch des Blutkönigs"
     },
+    "171586": {
+        "cn": "",
+        "en": "Vigilant Ward",
+        "ru": "Бдительный страж",
+        "es": "Resguardo alerta",
+        "br": "Proteção Vigilante",
+        "kr": "",
+        "fr": "Garde vigilante",
+        "de": "Wachsamer Zauberschutz"
+    },
     "171589": {
         "cn": "",
         "en": "Cold Convergence",
