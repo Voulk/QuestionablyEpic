@@ -1,6 +1,7 @@
 import { calcStatsAtLevel, calcStatsAtLevelClassic, getItemAllocations, getItemDB, getItemProp } from "../Engine/ItemUtilities";
 import { CONSTRAINTS, setBounds } from "../Engine/CONSTRAINTS";
 import { CONSTANTS } from "General/Engine/CONSTANTS";
+import { getEmbellishmentForItem } from "Databases/EmbellishmentDB";
 
 // The Item class represents an active item in the app at a specific item level.
 // We'll create them when we import a SimC string, or when an item is added manually.
@@ -77,6 +78,15 @@ export class Item {
 
 
     this.effect = getItemProp(id, "effect", gameType);
+
+    // Some crafted items carry an embellishment inherently rather than having one applied. Those are tracked in
+    // EmbellishmentDB via setItems, which lets us pick them up even when the ItemDB row is missing its effect block
+    // (a recurring gap on newly datamined crafted gear). ItemDB wins if it already has one.
+    if (!this.effect && gameType === "Retail") {
+      const bakedIn = getEmbellishmentForItem(id);
+      if (bakedIn) this.effect = { ...bakedIn.effect };
+    }
+
     this.setID = getItemProp(id, "itemSetId", gameType);
     const inbuiltUnique = getItemProp(catalyzedID ? catalyzedID : id, "uniqueEquip", gameType)?.toLowerCase();
     this.uniqueEquip = inbuiltUnique ?[inbuiltUnique] : [];
