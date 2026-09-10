@@ -69861,6 +69861,23 @@
         "slot": "1H Weapon"
     },
     {
+        "id": 171586,
+        "name": "Vigilant Ward",
+        "icon": "inv_shield_69",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 6,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "crit": 3200,
+            "versatility": 3800
+        },
+        "faction": "alliance",
+        "slot": "Shield"
+    },
+    {
         "id": 171589,
         "name": "Cold Convergence",
         "icon": "inv_staff_98",

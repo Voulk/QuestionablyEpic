@@ -24,10 +24,10 @@ export const chronoDefaultSpellData = (contentType) => {
     // Generated 11/8
     statWeights.Raid = {
       intellect: 1,
-      haste: 0.65, 
-      crit: 0.78, 
-      mastery: 0.8, 
-      versatility: 0.53, 
+      haste: 0.645, 
+      crit: 0.802, 
+      mastery: 0.79, 
+      versatility: 0.528, 
       leech: 0.2,
       defaults: true,
     };
