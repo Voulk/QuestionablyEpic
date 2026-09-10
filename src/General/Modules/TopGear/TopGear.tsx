@@ -6,7 +6,7 @@ import "./../QuickCompare/QuickCompare.css";
 import { useTranslation } from "react-i18next";
 // import { testTrinkets } from "../Engine/EffectFormulas/Generic/TrinketEffectFormulas";
 import { apiSendTopGearSet } from "../SetupAndMenus/ConnectionUtilities";
-import { Button, Grid, Typography, Divider, Snackbar, SnackbarCloseReason } from "@mui/material";
+import { Button, Grid, Typography, Divider, Snackbar, SnackbarCloseReason, Tooltip } from "@mui/material";
 import MuiAlert from "@mui/material/Alert";
 import { buildNewWepCombos } from "../../Engine/ItemUtilities";
 import MiniItemCard from "./MiniItemCard";
@@ -29,6 +29,7 @@ import { prepareTopGear } from "./Engine/TopGearEngineClassic";
 import { buildDifferential, generateReportCode, createTopGearWorker } from "./Engine/TopGearEngineShared";
 import { trackPageView } from "Analytics";
 import { getVersion } from "../ChangeLog/Log";
+import { getFlaskIcon, getFlaskIDs } from "../../Engine/EnchantUtilities";
 
 type ShortReport = {
   id: string;
@@ -158,6 +159,13 @@ export default function TopGear(props: any) {
 
   const [reforgeFromList, setReforgeFromList] = useState([]);
   const [reforgeToList, setReforgeToList] = useState([]);
+
+  const flaskOptions = getFlaskIDs();
+  const [selectedFlasks, setSelectedFlasks] = useState<string[]>([]);
+
+  const toggleFlask = (flask: string) => {
+    setSelectedFlasks((prev) => (prev.includes(flask) ? prev.filter((f) => f !== flask) : [...prev, flask]));
+  };
 
   const contentType = useSelector((state: RootState) => state.contentType);
   const gameType = useSelector((state: RootState) => state.gameType);
@@ -443,6 +451,7 @@ export default function TopGear(props: any) {
                   firstSocket: report.itemSet.firstSocket,
                   hardScore: report.itemSet.hardScore,
                   statBreakdown: report.itemSet.statBreakdown,
+                  flask: report.itemSet.flask || [],
                 },
         player: {name: player.charName, realm: player.realm, race: player.race || "", region: player.region, spec: player.spec, model: player.getActiveModel(report.contentType).modelName},
         version: getVersion(),
@@ -516,6 +525,9 @@ export default function TopGear(props: any) {
     const baseHPS = props.player.getHPS(contentType);
     const strippedPlayer = JSON.parse(JSON.stringify(props.player));
     const strippedCastModel = JSON.parse(JSON.stringify(props.player.getActiveModel(contentType)));
+    const advancedSelections = {
+      flask: selectedFlasks
+    }
 
     if (gameType === "Retail") {
       //console.log(instance);
@@ -528,6 +540,7 @@ export default function TopGear(props: any) {
         baseHPS,
         playerSettings,
         strippedCastModel,
+        advancedSelections,
       })
         .then((result: TopGearResult | null) => { // 
           if (result) {
@@ -808,6 +821,39 @@ export default function TopGear(props: any) {
             {t("TopGear.ItemsHereMessage")}
           </Typography>
         )}
+        <Grid item lg={12} xl={12} xs={12}>
+          <Typography color="primary" variant="h6">
+            Flask
+          </Typography>
+          <Divider style={{ marginBottom: 10, width: "42%" }} />
+          <Grid container spacing={1}>
+            {flaskOptions.map((flask) => {
+              const isSelected = selectedFlasks.includes(flask);
+              return (
+                <Grid item key={flask}>
+                  <Tooltip title={flask}>
+                    <div
+                      onClick={() => toggleFlask(flask)}
+                      style={{
+                        width: 56,
+                        height: 56,
+                        borderRadius: 3,
+                        borderWidth: isSelected ? 3 : 1,
+                        borderStyle: "solid",
+                        borderColor: isSelected ? "Goldenrod" : "grey",
+                        backgroundColor: isSelected ? "#515144" : undefined,
+                        cursor: "pointer",
+                        backgroundImage: `url(https://wow.zamimg.com/images/wow/icons/large/${getFlaskIcon(flask)}.jpg)`,
+                        backgroundSize: "cover",
+                      }}
+                    />
+                  </Tooltip>
+                </Grid>
+              );
+            })}
+          </Grid>
+        </Grid>
+
         <Grid item style={{ height: 100 }} xs={12} />
       </Grid>
 

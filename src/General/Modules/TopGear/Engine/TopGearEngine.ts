@@ -17,6 +17,7 @@ import { generateReportCode } from "General/Modules/TopGear/Engine/TopGearEngine
 import Item from "General/Items/Item";
 import { gemDB } from "Databases/GemDB";
 import { getFolioEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/OmniumFolioData";
+import { getEnchantByID } from "General/Engine/EnchantUtilities";
 
 /**
  * == Top Gear Engine ==
@@ -228,7 +229,7 @@ function getGemOptions(spec: string, contentType: contentTypes) {
  * @returns A Top Gear result which includes the best set, and how close various alternatives are.
  */
 export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Player, contentType: contentTypes, 
-                            baseHPS: number, userSettings: any, castModel: any, reporting: boolean = true) {
+                            baseHPS: number, userSettings: any, castModel: any, advancedSelections: any) {
   //console.log("Running Top Gear")
   // == Setup Player & Cast Model ==
   // Create player / cast model objects in this thread based on data from the player character & player model.
@@ -236,7 +237,6 @@ export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Playe
   let newCastModel = new CastModel(newPlayer.getSpec(), contentType, castModel.modelName, 0);
   newCastModel = Object.assign(newCastModel, castModel);
 
-  console.log(JSON.stringify(rawItemList.filter(item => item.id === 272254)));
   // == Setup our list of items ==
   // We duplicate the users items so that nothing is changed during the Top Gear process.
   // If a player has the auto-socket setting on then we'll add sockets to their items.
@@ -250,7 +250,7 @@ export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Playe
   // == Create Valid Item Sets ==
   // This just builds a set and adds it to our array so that we can score it later.
   // A valid set is just any combination of items that is wearable in-game. Item limits like on legendaries, unique items and so on are all adhered to.
-  let itemSets = createSets(itemList, wepCombos, player.spec);
+  let itemSets = createSets(itemList, wepCombos, player.spec, advancedSelections);
   let resultSets = [];
 
   itemSets.sort((a, b) => (a.sumSoftScore < b.sumSoftScore ? 1 : -1));
@@ -264,12 +264,12 @@ export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Playe
     if (false) { // Add setting here.
       if (gemPoss.length > 0) {
         gemPoss.forEach(gem => {
-          resultSets.push(evalSet(itemSets[i], newPlayer, contentType, baseHPS, userSettings, newCastModel, reporting, gem));
+          resultSets.push(evalSet(itemSets[i], newPlayer, contentType, baseHPS, userSettings, newCastModel));
         });
       }
     }
     else { // Advanced Gems not turned on. 
-      resultSets.push(evalSet(itemSets[i], newPlayer, contentType, baseHPS, userSettings, newCastModel, reporting, 0));
+      resultSets.push(evalSet(itemSets[i], newPlayer, contentType, baseHPS, userSettings, newCastModel, advancedSelections));
     }
   }
 
@@ -313,8 +313,10 @@ export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Playe
  * @param {*} rawWepCombos Weapon combos are just a list of all possible weapon combinations (so staves are listed alone, and 1H + OHs are paired).
  * @returns
  */
-function createSets(itemList: Item[], rawWepCombos: Item[], spec: string) {
+function createSets(itemList: Item[], rawWepCombos: Item[], spec: string, advancedSelections: any) {
   const wepCombos = deepCopyFunction(rawWepCombos);
+
+  const flasks = advancedSelections.flask && advancedSelections.flask.length > 0 ? advancedSelections.flask : ["automatic"];
  
   let setCount = 0;
   let itemSets = [];
@@ -426,28 +428,36 @@ function createSets(itemList: Item[], rawWepCombos: Item[], spec: string) {
                                   softScore.trinket2 = splitItems.Trinket[trinket2].softScore;
 
                                   if (splitItems.Trinket[trinket].id !== splitItems.Trinket[trinket2].id && trinket < trinket2) {
-                                    let includedItems = [
-                                      splitItems.Head[head],
-                                      splitItems.Neck[neck],
-                                      splitItems.Shoulder[shoulder],
-                                      splitItems.Back[back],
-                                      splitItems.Chest[chest],
-                                      splitItems.Wrist[wrist],
-                                      splitItems.Hands[hands],
-                                      splitItems.Waist[waist],
-                                      splitItems.Legs[legs],
-                                      splitItems.Feet[feet],
-                                      splitItems.Finger[finger],
-                                      splitItems.Finger[finger2],
-                                      splitItems.Trinket[trinket],
-                                      splitItems.Trinket[trinket2],
-                                      wepCombos[weapon][0]
-                                    ];
-                                    if (wepCombos[weapon].length > 1) includedItems.push(wepCombos[weapon][1])
-                                    //console.log(JSON.stringify(wepCombos[weapon]));
-                                    let sumSoft = sumScore(softScore);
-                                    itemSets.push(new ItemSet(setCount, includedItems, sumSoft, spec));
-                                    setCount++;
+
+                                    for (var flask = 0; flask < flasks.length; flask++) {
+
+                                      let includedItems = [
+                                          splitItems.Head[head],
+                                          splitItems.Neck[neck],
+                                          splitItems.Shoulder[shoulder],
+                                          splitItems.Back[back],
+                                          splitItems.Chest[chest],
+                                          splitItems.Wrist[wrist],
+                                          splitItems.Hands[hands],
+                                          splitItems.Waist[waist],
+                                          splitItems.Legs[legs],
+                                          splitItems.Feet[feet],
+                                          splitItems.Finger[finger],
+                                          splitItems.Finger[finger2],
+                                          splitItems.Trinket[trinket],
+                                          splitItems.Trinket[trinket2],
+                                          wepCombos[weapon][0]
+                                        ];
+                                        if (wepCombos[weapon].length > 1) includedItems.push(wepCombos[weapon][1])
+                                        //console.log(JSON.stringify(wepCombos[weapon]));
+                                        let sumSoft = sumScore(softScore);
+   
+                                        itemSets.push(new ItemSet(setCount, includedItems, sumSoft, spec, flasks[flask]));
+                                        setCount++;
+
+                                    }
+
+ 
                                   }
                                 }
                               }
@@ -477,12 +487,12 @@ function buildDifferential(itemSet: ItemSet, primeSet: ItemSet, player: Player, 
 
   let differentials: {
     items: Item[]; //
-    gems: number[]; //
+    flask: number[]; //
     scoreDifference: number; 
     rawDifference: number; 
   } = {
     items: [],
-    gems: [],
+    flask: [],
     scoreDifference: ((Math.round(primeSet.hardScore - itemSet.hardScore) / primeSet.hardScore) * 100 * modelDiff),
     rawDifference: Math.round(((itemSet.hardScore - primeSet.hardScore) / primeSet.hardScore) * player.getHPS(contentType) * modelDiff),
   };
@@ -513,13 +523,9 @@ function buildDifferential(itemSet: ItemSet, primeSet: ItemSet, player: Player, 
     }
   }
 
-  // Check for gem differences
-  if (primeSet.enchantBreakdown["Gems"] !== itemSet.enchantBreakdown["Gems"]) {
-    itemSet.enchantBreakdown["Gems"].forEach(gem => {
-      if (!(primeSet.enchantBreakdown["Gems"].includes(gem))) {
-        differentials.gems.push(gem);
-      }
-    });
+  // Check for flask differences
+  if (primeSet.flask !== itemSet.flask && itemSet.flask && itemSet.flask !== "automatic") {
+    differentials.flask.push(itemSet.flask);
   }
 
   if (diffList.length > primeList.length) {
@@ -686,7 +692,7 @@ export function getTopGearGems(gemID: number, gemCount: number, bonus_stats: Sta
  * @param {*} castModel
  * @returns 
  */
-function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes, baseHPS: number, userSettings: any, castModel: any, reporting: boolean = false, gemID?: number) {
+function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes, baseHPS: number, userSettings: any, castModel: any, advancedSelections: any) {
   // == Setup ==
     const statBreakdown = {
     gear: {},
@@ -760,7 +766,16 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   const consumableStats: Stats = {};
   // == Flask ==
   let selectedChoice = "";
-  if (getSetting(userSettings, "flaskChoice") === "Automatic") {
+  if (itemSet.flask && itemSet.flask > 0) {
+    // The player has manually set up a Flask comparison and we will obey the selection.
+    const flaskData = getEnchantByID(itemSet.flask);
+    if (flaskData) {
+      consumableStats[flaskData.stat] = (consumableStats[flaskData.stat] || 0) + flaskData.statValue;
+      selectedChoice = flaskData.stat;
+    }
+  }
+  else if (getSetting(userSettings, "flaskChoice") === "Automatic") {
+    // The player has not set up a flask comparison, and has the Flask setting set to automatic.
     const bestStat = getHighestWeight(castModel);
 
     if ((setStats[bestStat] + bonus_stats[bestStat]) > 28000) {
@@ -770,6 +785,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     selectedChoice = bestStat;
   }
   else {
+    // The player has not setup a Flask comparison, but has manually selected a flask.
     selectedChoice = getSetting(userSettings, "flaskChoice").toLowerCase();
     consumableStats[selectedChoice]  = (consumableStats[selectedChoice] || 0) + 165;
   }
@@ -953,7 +969,7 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   if (castModel.modelType[contentType] === "Sequences") {
     setStats.intellect = (setStats.intellect || 0) * 1.05;
     const setRamp = evalDiscRamp(itemSet, setStats, castModel, effectList)
-    if (reporting) report.ramp = setRamp;
+
     setStats.hps = (setStats.hps || 0) + setRamp.totalHealing / 180;
 
     evalStats = JSON.parse(JSON.stringify(mergedEffectStats));

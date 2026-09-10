@@ -31,6 +31,8 @@ class ItemSet {
   // We only use it for display purposes on the report end.
   enchantBreakdown: { [key: string]: string | number | number[] } = {};
 
+  flask?: number; // The flask the set is using.
+
   // A list of all items in the set.
   itemList: Item[];
 
@@ -59,22 +61,25 @@ class ItemSet {
 
   report: any;
 
-  constructor(id: number, itemList: Item[], sumSoft: number, spec: string) {
+  constructor(id: number, itemList: Item[], sumSoft: number, spec: string, flask?: number) {
+    console.log("Item set;" + flask);
     this.id = id;
     this.itemList = itemList;
     this.sumSoftScore = Math.round(1000 * sumSoft) / 1000;
     this.spec = spec;
+    this.flask = flask || -1;
   }
 
     // Create a clone of the current instance
     clone(): ItemSet {
-      const clonedSet = new ItemSet(this.id, this.itemList.slice(), this.sumSoftScore, this.spec);
+      const clonedSet = new ItemSet(this.id, this.itemList.slice(), this.sumSoftScore, this.spec, this.flask);
   
       // Copy other properties
       clonedSet.spec = this.spec;
       clonedSet.sumSoftScore = this.sumSoftScore;
       clonedSet.hardScore = this.hardScore;
       clonedSet.setSockets = this.setSockets;
+      clonedSet.flask = this.flask;
       clonedSet.uniques = { ...this.uniques };
       clonedSet.effectList = this.effectList.slice();
       clonedSet.onUseTrinkets = this.onUseTrinkets.slice();

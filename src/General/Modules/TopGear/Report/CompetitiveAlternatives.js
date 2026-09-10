@@ -5,6 +5,7 @@ import { getGemIcon, getItemIcon, getItemProp } from "../../../Engine/ItemUtilit
 import { useSelector } from "react-redux";
 import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips.tsx";
 import { reforgeIDs } from "Databases/ReforgeDB";
+import { getFlaskIcon } from "../../../Engine/EnchantUtilities";
 
 function CompetitiveAlternatives(props) {
   const { t, i18n } = useTranslation();
@@ -109,23 +110,23 @@ function CompetitiveAlternatives(props) {
                             </Grid>
                           ));
                         })}
-                        {key.gems.map((gem, i) => {
+                        {key.flask.map((flask, i) => {
                           let itemArray = [];
                           // 
-                          itemArray = [gem];
+                          itemArray = [flask];
                           return itemArray.map((item) => (
                             <Grid item key={i}>
-                              <WowheadTooltip type="item" id={gem} domain={wowheadDom}>
+                              <WowheadTooltip type="item" id={flask} domain={wowheadDom}>
                                 <div className="container-ItemCards" style={{ height: 42 }}>
                                   <img
                                     alt="img"
                                     width={40}
                                     height={40}
-                                    src={getGemIcon(gem, gameType)}
+                                    src={`https://wow.zamimg.com/images/wow/icons/large/${getFlaskIcon(flask)}.jpg`}
                                     style={{
                                       borderRadius: 4,
-                                      borderWidth: item.vaultItem ? "2px" : "1px",
-                                      borderStyle: item.vaultItem ? "dashed" : "solid",
+                                      borderWidth: "1px",
+                                      borderStyle: "solid",
                                       borderColor: "purple",//item.vaultItem ? "#0288d1" : itemQuality(item, gameType),
                                     }}
                                   />
