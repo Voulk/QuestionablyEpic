@@ -161,10 +161,11 @@ export default function TopGear(props: any) {
   const [reforgeToList, setReforgeToList] = useState([]);
 
   const flaskOptions = getFlaskIDs();
-  const [selectedFlasks, setSelectedFlasks] = useState<string[]>([]);
+  const selectedFlasks: number[] = props.selectedFlasks;
+  const setSelectedFlasks: (flasks: number[]) => void = props.setSelectedFlasks;
 
-  const toggleFlask = (flask: string) => {
-    setSelectedFlasks((prev) => (prev.includes(flask) ? prev.filter((f) => f !== flask) : [...prev, flask]));
+  const toggleFlask = (flask: number) => {
+    setSelectedFlasks(selectedFlasks.includes(flask) ? selectedFlasks.filter((f) => f !== flask) : [...selectedFlasks, flask]);
   };
 
   const contentType = useSelector((state: RootState) => state.contentType);
@@ -821,7 +822,7 @@ export default function TopGear(props: any) {
             {t("TopGear.ItemsHereMessage")}
           </Typography>
         )}
-        <Grid item lg={12} xl={12} xs={12}>
+        {(gameType === "Retail" && ["Mistweaver Monk", "Preservation Evoker", "Holy Paladin"].includes(props.player.spec)) && (<Grid item lg={12} xl={12} xs={12}>
           <Typography color="primary" variant="h6">
             Flask
           </Typography>
@@ -852,7 +853,7 @@ export default function TopGear(props: any) {
               );
             })}
           </Grid>
-        </Grid>
+        </Grid>)}
 
         <Grid item style={{ height: 100 }} xs={12} />
       </Grid>

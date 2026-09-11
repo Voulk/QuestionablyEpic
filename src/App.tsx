@@ -69,6 +69,7 @@ const App = () => {
     const [patronStatus, setPatronStatus] = useState<string>("Standard");
     const [topSet, setTopSet] = useState<TopGearResult | null>(null);
     const [upgradeFinderSet, setUpgradeFinderSet] = useState<any>(null);
+    const [topGearSelectedFlasks, setTopGearSelectedFlasks] = useState<number[]>([]);
 
     const [articleList, setArticleList] = useState<any[]>([]);
     const [lang, setLang] = useState<string>("en");
@@ -219,6 +220,7 @@ const App = () => {
 
   const updatePlayerChars = (allChars: PlayerChars): void => {
     setCharacters({ ...allChars });
+    setTopGearSelectedFlasks([]);
   };
 
   /* -------------------- Update Character Information Handler ------------------- */
@@ -273,6 +275,7 @@ const App = () => {
   const handlePickPlayerSpec = (newPlayerClass: string) => {
     const newID = allChars.getCharOfClass(newPlayerClass.includes("Classic") ? "Classic" : "Retail", newPlayerClass);
     allChars.setActiveChar(newID);
+    setTopGearSelectedFlasks([]);
     updatePlayerChars(allChars);
   }
 
@@ -429,6 +432,8 @@ const App = () => {
                         simcSnack={handleSimCSnackOpen}
                         singleUpdate={updatePlayerChar}
                         patronStatus={patronStatus}
+                        selectedFlasks={topGearSelectedFlasks}
+                        setSelectedFlasks={setTopGearSelectedFlasks}
                       />
                     )}
                   />
