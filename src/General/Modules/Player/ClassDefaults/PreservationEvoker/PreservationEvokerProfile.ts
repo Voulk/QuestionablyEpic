@@ -80,7 +80,16 @@ export function scoreEvokerSet(stats: Stats, playerData: any, settings: PlayerSe
     const healingBreakdown: Record<string, number> = {};
     const castBreakdown: Record<string, number> = {};
 
-    playerData.masteryEffectiveness = 0.9;
+    // Preservation mastery scales with how injured your targets are, so its real effectiveness varies a lot by
+    // content. Resto Shaman already exposes this as a setting; Evoker now does too. Falls back to the previous
+    // hardcoded 0.9 when the setting is absent so existing results are unchanged.
+    // The settings panel writes number inputs back as strings (e.target.value), so this has to coerce rather than
+    // type-check. A strict typeof check here silently fell back to the default the moment the player edited the box.
+    const masteryEffectivenessRaw = settings && settings.masteryEffectivenessEvoker ? settings.masteryEffectivenessEvoker.value : null;
+    const masteryEffectivenessPct = Number(masteryEffectivenessRaw);
+    playerData.masteryEffectiveness = Number.isFinite(masteryEffectivenessPct) && masteryEffectivenessPct > 0
+      ? masteryEffectivenessPct / 100
+      : 0.9;
 
     // Apply Talents
     const talents = initialState.talents;
