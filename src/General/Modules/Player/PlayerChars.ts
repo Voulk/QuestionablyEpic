@@ -61,8 +61,17 @@ export function createPlayerChars(importedSpec?: string): PlayerChars {
 
           //if (spec === "Holy Paladin Classic" || spec === "Restoration Shaman Classic") newChar.enabled = false;
           charArray.push(newChar);
+        }
+    })
 
-          
+      // Auto-add Forever Specs
+      CONSTANTS.foreverSpecs.forEach(spec => {
+        if (!(specsAdded.includes(spec)) && (spec.includes("Forever"))) { // TODO: Remove as we add the other specs.
+          const newName = spec.replace("Restoration", "Resto").replace("Discipline", "Disc").replace("Forever", "").replace("Monk", "");
+          let newChar = new Player(newName, spec, charArray.length, "US", "Default", "Default", "", "Forever");
+
+          //if (spec === "Holy Paladin Forever" || spec === "Restoration Shaman Forever") newChar.enabled = false;
+          charArray.push(newChar);
         }
     })
 

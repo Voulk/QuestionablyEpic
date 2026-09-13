@@ -47,13 +47,13 @@ const specData: Record<string, ClassData> = {
  * Map Classic and Retail specs to the same Key.
  */
 const getSpecKey: Record<string, string> = {
-  "Holy Paladin": "HolyPaladin", "Holy Paladin Classic": "HolyPaladin",
-  "Discipline Priest": "DisciplinePriest", "Discipline Priest Classic": "DisciplinePriest",
-  "Restoration Druid": "RestorationDruid", "Restoration Druid Classic": "RestorationDruid",
+  "Holy Paladin": "HolyPaladin", "Holy Paladin Classic": "HolyPaladin", "Holy Paladin Forever": "HolyPaladin",
+  "Discipline Priest": "DisciplinePriest", "Discipline Priest Classic": "DisciplinePriest", "Discipline Priest Forever": "DisciplinePriest",
+  "Restoration Druid": "RestorationDruid", "Restoration Druid Classic": "RestorationDruid", "Restoration Druid Forever": "RestorationDruid",
   "Preservation Evoker": "PreservationEvoker",
-  "Holy Priest": "HolyPriest", "Holy Priest Classic": "HolyPriest",
+  "Holy Priest": "HolyPriest", "Holy Priest Classic": "HolyPriest", "Holy Priest Forever": "HolyPriest",
   "Mistweaver Monk": "MistweaverMonk",
-  "Restoration Shaman": "RestorationShaman", "Restoration Shaman Classic": "RestorationShaman",
+  "Restoration Shaman": "RestorationShaman", "Restoration Shaman Classic": "RestorationShaman", "Restoration Shaman Forever": "RestorationShaman",
 };
 
 /**

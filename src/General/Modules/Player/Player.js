@@ -48,6 +48,12 @@ export class Player {
           "Restoration Druid Classic": "Troll",
           "Restoration Shaman Classic": "Pandaren",
           "Holy Paladin Classic": "Blood Elf",
+
+          "Discipline Priest Forever": "Human",
+          "Holy Priest Forever": "Human",
+          "Restoration Shaman Forever": "Tauren",
+          "Holy Paladin Forever": "Human",
+          "Restoration Druid Forever": "Night Elf"
         }
         this.race = defaultRaces[this.spec] || "Pandaren";
       }
@@ -737,7 +743,7 @@ export class Player {
         stamina: 1900,
       };
     } 
-    else if (spec.includes("Classic")) {
+    else if (spec.includes("Classic") || spec.includes("Forever")) {
       //console.log("Setting up classic spec");
       this.castModels.push(new CastModel(spec, "Raid", "Healing Focused", 0));
       this.castModels.push(new CastModel(spec, "Dungeon", "Healing Focused", 0));
@@ -751,7 +757,8 @@ export class Player {
         spirit: 3000,
         stamina: 1900,
       }*/
-      this.activeStats = this.castModels[0].profile.defaultStatProfile;
+      if (spec.includes("Forever")) this.activeStats = {intellect: 100, spirit: 50}
+      else this.activeStats = this.castModels[0].profile.defaultStatProfile;
     } else {
       // Invalid spec replied. Error.
       reportError(this, "Player", "Invalid Spec Supplied during setupDefaults", spec);

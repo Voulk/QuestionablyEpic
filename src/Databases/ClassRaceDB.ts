@@ -22,6 +22,11 @@ export const classRaceDB: Record<string, ClassRaceEntry> = {
     races: ["Draenei", "Dwarf", "Human", "Blood Elf", "Tauren"],
     gameType: "Classic",
   },
+    /* --------------------------------------- Forever -------------------------------------- */
+  "Holy Paladin Forever": {
+    races: ["Dwarf", "Human", "Undead"],
+    gameType: "Forever",
+  },
 
   /* ---------------------------------------------------------------------------------------------- */
   /*                                             Druids                                             */
@@ -37,6 +42,11 @@ export const classRaceDB: Record<string, ClassRaceEntry> = {
   "Restoration Druid Classic": {
     races: ["Night Elf", "Tauren", "Worgen", "Troll"],
     gameType: "Classic",
+  },
+    /* --------------------------------------- Forever -------------------------------------- */
+  "Restoration Druid Forever": {
+    races: ["Night Elf", "Tauren", "Skyborne"],
+    gameType: "Forever",
   },
 
   /* ---------------------------------------------------------------------------------------------- */
@@ -127,6 +137,15 @@ export const classRaceDB: Record<string, ClassRaceEntry> = {
     gameType: "Classic",
   },
 
+  "Discipline Priest Forever": {
+    races: ["Dwarf", "Human", "Night Elf", "Undead", "Gnome", "Tauren"],
+    gameType: "Forever",
+  },
+  "Holy Priest Forever": {
+    races: ["Dwarf", "Human", "Night Elf", "Undead", "Gnome", "Tauren"],
+    gameType: "Forever",
+  },
+
   /* ---------------------------------------------------------------------------------------------- */
   /*                                             Shamans                                            */
   /* ---------------------------------------------------------------------------------------------- */
@@ -157,6 +176,10 @@ export const classRaceDB: Record<string, ClassRaceEntry> = {
   "Restoration Shaman Classic": {
     races: ["Draenei", "Orc", "Pandaren", "Tauren", "Troll", "Dwarf", "Goblin"],
     gameType: "Classic",
+  },
+  "Restoration Shaman Forever": {
+    races: ["Orc", "Tauren", "Troll", "Dwarf"],
+    gameType: "Forever",
   },
 
   /* ---------------------------------------------------------------------------------------------- */

@@ -128,7 +128,7 @@ declare type ProfileEntry = {
 declare type CastProfile = ProfileEntry[]
 
 declare type contentTypes = "Raid" | "Dungeon";
-declare type gameTypes = "Retail" | "Classic";
+declare type gameTypes = "Retail" | "Classic" | "Forever";
 
 // Unimplemented for now.
 declare type playerSpecs = "Restoration Druid" | "Mistweaver Monk" | "Restoration Shaman" | "Holy Priest" | "Discipline Priest" | "Preservation Evoker" | "Holy Paladin";

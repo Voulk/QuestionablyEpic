@@ -11,24 +11,12 @@ import {
 } from "@mui/material";
 import { classColours } from "General/Engine/ClassData";
 import ClassIcon from "General/Modules/IconFunctions/ClassIcons"; // Replace if needed
+import { CONSTANTS } from "General/Engine/CONSTANTS";
 
-const classNames = {"Retail": [
-    "Restoration Druid",
-    "Holy Priest",
-    "Discipline Priest",
-    "Restoration Shaman",
-    "Holy Paladin",
-    "Mistweaver Monk",
-    "Preservation Evoker",
-  ], 
-  "Classic": [
-    "Restoration Druid Classic",
-    "Holy Priest Classic",
-    "Discipline Priest Classic",
-    //"Restoration Shaman Classic",
-    "Holy Paladin Classic",
-    "Mistweaver Monk Classic",
-  ]};
+const classNames = {"Retail": CONSTANTS.specs, 
+  "Classic": CONSTANTS.classicSpecs,
+  "Forever": CONSTANTS.foreverSpecs
+};
 
 export default function HeaderClassSelect({gameType, selectedSpec, setSelectedSpec}) {
 

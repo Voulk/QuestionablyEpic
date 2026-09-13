@@ -44,19 +44,25 @@ const ALIAS_MAP: Record<string, string> = {
 
   // Paladin
   "holypaladin": "holypaladin", "holy paladin": "holypaladin", "paladin-holy": "holypaladin", "paladin": "holypaladin", "holy paladin classic": "holypaladin",
+  "holy paladin forever": "holypaladin",
 
   // Druid
   "restorationdruid": "restodruid", "restoration druid": "restodruid", "druid-restoration": "restodruid", "restoration druid classic": "restodruid",
   "druid": "druid",
+  "restoration druid forever": "restodruid",
 
   // Priest
   "holypriest": "holypriest", "holy priest": "holypriest", "priest-holy": "holypriest", "priest": "holypriest", "holy priest classic": "holypriest",
   "shadowpriest": "shadowpriest", "shadow priest": "shadowpriest", "priest-shadow": "shadowpriest", "dhadowpriest": "shadowpriest", // typo fix
   "disciplinepriest": "discpriest", "discipline priest": "discpriest", "priest-discipline": "discpriest", "discipline priest classic": "discpriest",
+  "discipline priest forever": "discpriest",
+  "holy priest forever": "holypriest",
+
 
   // Shaman
   "restorationshaman": "restoshaman", "restoration shaman": "restoshaman", "shaman-restoration": "restoshaman", "shaman": "restoshaman", "restoration shaman classic": "restoshaman",
   "shamandps": "shamandps",
+  "restoration shaman forever": "restoshaman",
 
   // Monk
   "mistweavermonk": "mistweaver", "mistweaver monk": "mistweaver", "monk-mistweaver": "mistweaver", "monk": "mistweaver", "mistweaver monk classic": "mistweaver",

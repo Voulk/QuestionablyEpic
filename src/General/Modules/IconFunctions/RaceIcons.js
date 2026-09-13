@@ -53,7 +53,7 @@ import HaranirFemale from "Images/Races/Haranir/HaranirFemale.jpg";
 export const getRacePath = (race) => {
   let sources = {male: "", female: ""};
 
-  if (race === "Blood Elf") {
+  if (race === "Blood Elf" || race === "Skyborne") {
     sources.male = BloodElfMale;
     sources.female = BloodElfFemale;
 

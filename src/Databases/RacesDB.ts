@@ -290,6 +290,17 @@ export const raceDB: RaceEntry[] = [
   },
     {
     name: {
+      en: "Skyborne",
+      fr: "Skyborne",
+      de: "Skyborne",
+      ru: "Skyborne",
+      ch: "Skyborne",
+    },
+    id: "Races.Earthen",
+    icon: "",
+  },
+    {
+    name: {
       en: "Haranir",
       fr: "Haranir",
       de: "Haranir",

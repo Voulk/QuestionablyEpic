@@ -23,6 +23,7 @@ export const CONSTANTS = {
     },
     specs: ["Holy Paladin", "Restoration Druid", "Preservation Evoker",  "Discipline Priest", "Holy Priest", "Restoration Shaman", "Mistweaver Monk"],
     classicSpecs: ["Restoration Druid Classic", "Holy Paladin Classic",  "Discipline Priest Classic", "Holy Priest Classic", "Restoration Shaman Classic", "Mistweaver Monk Classic"],
+    foreverSpecs: ["Restoration Druid Forever", "Holy Paladin Forever", "Discipline Priest Forever", "Holy Priest Forever", "Restoration Shaman Forever"],
 
     // SEASONAL CONSTANTS
     seasonalItemConversion: 13, // 6 = S2, 7 = S3, 8 = ??, 9 = S4. This value is used to determine if an item can be catalyzed.

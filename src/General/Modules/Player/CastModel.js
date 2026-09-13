@@ -248,7 +248,6 @@ class CastModel {
       this.profile = restoDruidDefaults;
       this.baseStatWeights = this.profile.defaultStatWeights;
       this.fightInfo.hps = 260000;
-
     } 
     else if (spec === "Holy Priest Classic") {
       this.modelName = "Default";
@@ -280,6 +279,12 @@ class CastModel {
       this.baseStatWeights = this.profile.defaultStatWeights;
       this.fightInfo.hps = 200000;
     } 
+    else if (spec.includes("Forever")) {
+      this.modelName = "Default";
+      this.profile = null;
+      this.baseStatWeights = {};
+      this.fightInfo.hps = 10000;
+    }
     else {
       spellList = {};
       specialQueries = {};

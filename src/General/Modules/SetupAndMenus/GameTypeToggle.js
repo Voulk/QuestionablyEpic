@@ -10,6 +10,7 @@ import { toggleContent } from "Redux/Actions";
 
 import RetailLogo from "../../../Images/Logos/Logo_Midnight.png";
 import ClassicLogo from "../../../Images/Logos/LogoMistsOfPandaria.png";
+import ForeverLogo from "../../../Images/Logos/LogoForever.png"; 
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -91,12 +92,22 @@ export default function GameTypeSwitch(props) {
       </ToggleButton>
 
       {/* ---------------------------------------------------------------------------------------------- */
-      /*                            Cataclysm: Classic Game Type Toggle                           */
+      /*                            Classic Game Type Toggle                           */
       /* ---------------------------------------------------------------------------------------------- */}
       <ToggleButton className={classes.root} value="Classic" aria-label="classicLabel">
         <Tooltip title={t("GameTypeToggle.Classic")} arrow>
           <div style={{ display: "inline-flex" }}>
-            <img src={ClassicLogo} alt={t("Cataclysm")} />
+            <img src={ClassicLogo} alt={t("Mists of Pandaria")} />
+          </div>
+        </Tooltip>
+      </ToggleButton>
+      {/* ---------------------------------------------------------------------------------------------- */
+      /*                            Forever Game Type Toggle                           */
+      /* ---------------------------------------------------------------------------------------------- */}
+      <ToggleButton className={classes.root} value="Forever" aria-label="foreverLabel">
+        <Tooltip title={t("GameTypeToggle.Forever")} arrow>
+          <div style={{ display: "inline-flex" }}>
+            <img src={ForeverLogo} alt={t("Forever")} />
           </div>
         </Tooltip>
       </ToggleButton>
