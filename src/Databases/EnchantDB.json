@@ -30,6 +30,14 @@
       "icon": "inv_12_profession_alchemy_flask_sindoreipotion_yellow",
       "stat": "versatility",
       "statValue": 165
+    },
+
+
+    {
+      "id": 271884,
+      "enchantType": "healthpotion",
+      "name": "Concentrated Silvermoon Health Potion",
+      "icon": "inv_12_profession_alchemy_lightpotion_purple"
     }
 
 ]

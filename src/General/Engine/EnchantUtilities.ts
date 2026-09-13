@@ -14,3 +14,8 @@ export const getEnchantByID = (effectID: number): any => {
     const effect = EnchantDB.find(item => item.id === effectID);
     return effect ? effect : null;
 };
+
+export const getEnchantIcon = (effectID: number): string => {
+    const effect = EnchantDB.find(item => item.id === effectID);
+    return effect ? effect.icon : '';
+};  

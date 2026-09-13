@@ -35,6 +35,7 @@ import { getWHData } from "./WowheadGearPlannerExport";
 import { trackPageView } from "Analytics";
 import TopGearReportTabs from "./TopGearReportTabs";
 import TopGearFolioEntry from "./TopGearFolioEntry";
+import TopGearConsumables from "./TopGearConsumables";  
 
 async function fetchReport(reportCode, setResult, setBackgroundImage) {
   // Check that the reportCode is acceptable.
@@ -516,6 +517,9 @@ function displayReport(
                           {/*newWeaponCombos.map((item, index) => (
                             <ItemCardReport key={index + "weapons"} item={item} activateItem={true} enchants={enchants} gems={getGemIDs(item.slot)} firstSlot={topSet.firstSocket === item.slot}  />
                           ))*/}
+                        </Grid>
+                        <Grid>
+                          {gameType === "Retail" ? <TopGearConsumables /> : null}
                         </Grid>
                       </Grid>
                       <Grid item xs={0} lg={4} height={500} display={{ xs: "none", lg: "block" }}>
