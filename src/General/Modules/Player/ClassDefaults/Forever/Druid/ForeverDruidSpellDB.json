@@ -9,9 +9,35 @@
                 "rank": "Rank 8"
             },
             "castTime": 0.0,
-            "cost": 235.0,
+            "cost": 235,
             "flat: ": 121,
-            "coeff": "0.20000000298"
+            "coeff": 0.2,
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 12.0
+        }
+    ],
+    "Regrowth": [
+        {
+            "displayInfo": {
+                "id": 9858,
+                "icon": "spell_nature_resistnature",
+                "spellName": "Regrowth",
+                "cat": "",
+                "rank": "Rank 9"
+            },
+            "castTime": 2.0,
+            "cost": 880,
+            "flat: ": 1002,
+            "coeff": 0.286,
+            "spellType": "heal"
+        },
+        {
+            "flat: ": 151,
+            "coeff": 0.071,
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 21.0
         }
     ]
 }
