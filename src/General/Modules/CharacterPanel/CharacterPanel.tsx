@@ -13,7 +13,7 @@ import Settings from "../Settings/Settings";
 // import ErrorTooltip from "./ErrorTooltip";
 import { getTranslatedClassName } from "locale/ClassNames";
 import { getTranslatedStats } from "locale/statsLocale";
-import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips";
+import WowheadTooltip from "General/Modules/GeneralComponents/WowheadTooltip";
 import { classRaceDB } from "Databases/ClassRaceDB";
 import { getRaceIcon } from "../IconFunctions/RaceIcons";
 
@@ -53,7 +53,8 @@ const checkCharacterValid = (player: Player, gameType: string) => {
   const weapon = weaponSet.length > 0 ? weaponSet[0] : "";
   if (gameType === "Retail") {
     return (weapon.slot === "2H Weapon" && player.getEquippedItems().length === 15) || (weapon.slot === "1H Weapon" && player.getEquippedItems().length === 16);
-  } else if (gameType === "Classic") {
+  } 
+  else if (gameType === "Forever") {
     return (weapon.slot === "2H Weapon" && player.getEquippedItems().length === 16) || (weapon.slot === "1H Weapon" && player.getEquippedItems().length === 17);
   }
 };
@@ -84,6 +85,13 @@ const specImages: { [key: string]: string } = {
   "Holy Priest Classic": require("Images/classicon_priest.jpg"),
   "Discipline Priest Classic": require("Images/classicon_priest.jpg"),
   "Mistweaver Monk Classic": require("Images/classicon_monk.jpg"),
+
+  "Holy Paladin Forever": require("Images/classicon_paladin.jpg"),
+  "Restoration Druid Forever": require("Images/classicon_druid.jpg"),
+  "Restoration Shaman Forever": require("Images/classicon_shaman.jpg"),
+  "Holy Priest Forever": require("Images/classicon_priest.jpg"),
+  "Discipline Priest Forever": require("Images/classicon_priest.jpg"),
+
 };
 
 const useStyles = makeStyles((theme) => ({
@@ -111,14 +119,13 @@ export default function CharacterPanel(props: Props) {
   const classes = useStyles();
   const specBuilds = props.player.getAllModels(props.contentType);
   
-  const raceOptions = gameType === "Classic" ? classRaceDB[props.player.spec].races : [];
+  const raceOptions = (gameType === "Classic" || gameType === "Forever") ? classRaceDB[props.player.spec].races : [];
 
   const [backgroundImage, setBackgroundImage] = useState("");
 
 
   const currentLanguage = i18n.language;
   const simcStatus = getSimCStatus(props.player, gameType);
-  const wowheadDom = (gameType === "Classic" ? "wotlk-" : "") + currentLanguage;
   const currentCharacter: CurrentCharacter = props.allChars.getActiveChar();
   const playerStats = props.player !== null ? props.player.getActiveStats() : {};
   const [specBuild, setSpecBuild] = useState(props.player.activeModelID[props.contentType]);
@@ -336,7 +343,7 @@ export default function CharacterPanel(props: Props) {
                       .filter((key) => key.isEquipped === true)
                       .map((key, i) => (
                         <Grid item key={i}>
-                          <WowheadTooltip type="item" id={key.id} level={key.level} bonusIDS={key.bonusIDS} catalyzedID={key.catalyzedID} domain={wowheadDom}>
+                          <WowheadTooltip type="item" id={key.id} level={key.level} bonusIDS={key.bonusIDS} catalyzedID={key.catalyzedID} gameType={gameType}>
                             <img
                               style={{
                                 height: 22,
@@ -395,7 +402,7 @@ export default function CharacterPanel(props: Props) {
                       .filter((key) => key.isEquipped === true)
                       .map((key, i) => (
                         <Grid item key={i}>
-                          <WowheadTooltip type="item" id={key.id} level={key.level} bonusIDS={key.bonusIDS} catalyzedID={key.catalyzedID} domain={wowheadDom}>
+                          <WowheadTooltip type="item" id={key.id} level={key.level} bonusIDS={key.bonusIDS} catalyzedID={key.catalyzedID} gameType={gameType}>
                             <img
                               style={{
                                 height: 22,
@@ -483,7 +490,7 @@ export default function CharacterPanel(props: Props) {
                   </Grid>
 
                   {/* Race Selection */}
-                  {gameType === "Classic" ? (
+                  {(gameType === "Classic" || gameType === "Forever") ? (
                   <Grid item xs={12} sm={4} md={4} lg={3} xl={"auto"}>
                     <Tooltip
                       title={

@@ -43,7 +43,7 @@ export default function SimCraftInput(props) {
   const buttonVariant = props.variant;
   const gameType = useSelector((state) => state.gameType);
   const addonLink =
-    gameType === "Classic"
+    (gameType === "Classic" || gameType === "Forever")
       ? "https://www.curseforge.com/wow/addons/qe-live-gear-importer-Classic"
       : "https://www.curseforge.com/wow/addons/simulationcraft";
 
@@ -58,7 +58,7 @@ export default function SimCraftInput(props) {
 
   const handleSubmit = () => {
       if (gameType === "Retail") runSimC(simC, props.player, contentType, setErrorMessage, props.simcSnack, handleClose, setSimC, playerSettings, props.allChars, autoUpgradeVault, autoUpgradeAll, autoCatalyze); // Add autoUpgradeVault here.
-      else runClassicGearImport(simC, props.player, contentType, setErrorMessage, props.simcSnack, handleClose, setSimC, props.allChars, autoUpgradeAll);
+      else runClassicGearImport(simC, props.player, contentType, setErrorMessage, props.simcSnack, handleClose, setSimC, props.allChars, autoUpgradeAll, gameType);
   };
 
   return (
@@ -119,10 +119,10 @@ export default function SimCraftInput(props) {
 
         </DialogContent>
         <DialogActions>
-        <FormControlLabel
+        {(gameType === "Retail" || gameType === "Classic") ?<FormControlLabel
             control={<Checkbox checked={autoUpgradeAll} onChange={() => setAutoUpgradeAll(!autoUpgradeAll)} />}
             label="Upgrade ALL to Max Level"
-          />
+          /> : ""}
         {gameType === "Retail" ? <FormControlLabel
             control={<Checkbox checked={autoUpgradeVault} onChange={() => setAutoUpgradeVault(!autoUpgradeVault)} />}
             label="Upgrade Vault to Max Level"

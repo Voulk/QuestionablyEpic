@@ -1,4 +1,4 @@
-import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips.tsx";
+import WowheadTooltip from "General/Modules/GeneralComponents/WowheadTooltip";
 
 export const SpellIcon = ({ spell, iconType, size, className, gameType, alt = "", ...others }) => {
   if (!spell) {

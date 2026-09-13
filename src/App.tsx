@@ -53,6 +53,9 @@ const App = () => {
       if (spec && spec.includes("classic")) {
         dispatch(toggleGameType("Classic"));
       }
+      else if (spec && spec.includes("forever")) {
+        dispatch(toggleGameType("Forever"));
+      }
       else if (spec) {
         dispatch(toggleGameType("Retail"));
       }
@@ -273,7 +276,7 @@ const App = () => {
 
   // We can use this function if we want a player to be able to swap to the first available character of a given spec.
   const handlePickPlayerSpec = (newPlayerClass: string) => {
-    const newID = allChars.getCharOfClass(newPlayerClass.includes("Classic") ? "Classic" : "Retail", newPlayerClass);
+    const newID = allChars.getCharOfClass(newPlayerClass.includes("Classic") ? "Classic" : newPlayerClass.includes("Forever") ? "Forever" : "Retail", newPlayerClass);
     allChars.setActiveChar(newID);
     setTopGearSelectedFlasks([]);
     updatePlayerChars(allChars);

@@ -7,6 +7,7 @@ const list = [
   { text: "Discord (bugs & suggestions)", link: "https://discord.gg/jBSGHDm5G8" },
   { text: "Developers", link: "https://github.com/Voulk/QuestionablyEpic" },
   { text: "DPS or Tank? Check out Wowsims", link: "https://wowsims.com/mop/", gameType: "Classic" },
+  { text: "DPS or Tank? Check out Wowsims", link: "https://wowsims.com/mop/", gameType: "Forever" },
 ];
 
 export default function FooterLinks(props) {

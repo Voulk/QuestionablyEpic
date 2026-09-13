@@ -7,7 +7,7 @@ import "General/Modules/TrinketAnalysis/Charts/VerticalChart.css";
 import IconButton from '@mui/material/IconButton';
 import HelpIcon from '@mui/icons-material/Help';
 import i18n from "i18next";
-import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips.tsx";
+import WowheadTooltip from "General/Modules/GeneralComponents/WowheadTooltip";
 import { styled } from "@mui/material/styles";
 import { getCircletIcon, } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/CyrcesCircletData";
 import { getShortName, getFolioIcon  } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/OmniumFolioData";

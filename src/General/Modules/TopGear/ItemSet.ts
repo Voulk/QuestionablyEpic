@@ -139,7 +139,7 @@ class ItemSet {
     let setSockets = 0;
     
     if (gameType === "Classic") {
-      // Replace every item with a duplicate.
+      // Replace every item with a duplicate. For Reforging reasons.
       this.itemList = this.itemList.map(item => JSON.parse(JSON.stringify(item)));
     }
 

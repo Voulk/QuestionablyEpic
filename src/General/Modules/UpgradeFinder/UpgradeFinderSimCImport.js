@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { getItemIcon } from "../../Engine/ItemUtilities";
 import SimCraftInput from "../SetupAndMenus/SimCraftDialog";
 import { useSelector } from "react-redux";
-import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips.tsx";
+import WowheadTooltip from "General/Modules/GeneralComponents/WowheadTooltip";
 
 const useStyles = makeStyles(() => ({
   slider: {
@@ -101,7 +101,7 @@ export default function UpgradeFinderSimC(props) {
                   .filter((key) => key.isEquipped === true)
                   .map((key, i) => (
                     <Grid item key={i}>
-                      <WowheadTooltip type="item" level={key.level} bonusIDS={key.bonusIDS} domain={wowheadDom}>
+                      <WowheadTooltip type="item" level={key.level} bonusIDS={key.bonusIDS} gameType={gameType}>
                         <img
                           style={{
                             height: 22,

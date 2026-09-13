@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import { useTranslation } from "react-i18next";
 import { Divider, Typography, Paper, useMediaQuery, useTheme, Grid } from "@mui/material";
 import { getItemIcon } from "General/Engine/ItemUtilities";
-import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips";
+import WowheadTooltip from "General/Modules/GeneralComponents/WowheadTooltip";
 
 interface Item {
   id: number;
@@ -46,7 +46,7 @@ const ItemDetailCard: FC<ItemDetailCardProps> = ({ item }) => {
       >
         <div>
           <div style={{ display: "flex", alignItems: "center" }}>
-            <WowheadTooltip type="item" id={item.id} domain={currentLanguage}>
+            <WowheadTooltip type="item" id={item.id} gameType="Retail"> 
               <img height={40} width={40} src={icon} alt="" style={{ borderRadius: 4, borderWidth: "1px", borderStyle: "solid", borderColor: "#ff8000" }} />
             </WowheadTooltip>
             <div style={{ marginLeft: 8 }}>

@@ -3,7 +3,7 @@ import Item from "General/Items/Item";
 import { suffixDB } from "Classic/Databases/SuffixDB";
 
 
-export function runClassicGearImport(simCInput, player, contentType, setErrorMessage, snackHandler, closeDialog, clearSimCInput, allPlayers, autoUpgradeItems = false) {
+export function runClassicGearImport(simCInput, player, contentType, setErrorMessage, snackHandler, closeDialog, clearSimCInput, allPlayers, autoUpgradeItems = false, gameType) {
   var lines = simCInput.split("\n");
 
   // Check that the SimC string is valid.

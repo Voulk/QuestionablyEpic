@@ -1,5 +1,5 @@
 import { Box, Grid, Paper, Typography, Divider } from "@mui/material";
-import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips";
+import WowheadTooltip from "General/Modules/GeneralComponents/WowheadTooltip";
 import { getItemIcon } from "General/Engine/ItemUtilities";
 import { CONSTANTS } from "General/Engine/CONSTANTS";
 
@@ -41,7 +41,7 @@ export default function EquippedItems({ items, gameType, contentType = "Raid" })
               level={item.level}
               bonusIDS={item.bonusIDS}
               catalyzedID={item.catalyzedID}
-              domain={gameType === "Retail" ? "en" : "mop-classic"}
+              gameType={gameType}
             >
               <Box
                 sx={{

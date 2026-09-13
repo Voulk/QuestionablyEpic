@@ -14,6 +14,9 @@ export const CONSTRAINTS = {
     Classic: {
 
     },
+    Forever: {
+
+    },
     Shared: {
         topGearMaxItems: 32, // The maximum number of items selectable by the player. Combinatorial explosion requires we keep this reasonable. 
         topGearDifferentials: 12, // Number of competitive alternatives to show.

@@ -108,7 +108,7 @@ export default function QEMainMenu(props: Props) {
           { route: "/topgear", disabled: false, tooltip: "TopGear", type: "Gearing", localization: "MainMenu.TopGear", glow: true },
           { route: "/upgradefinder", disabled: true, /*props.player.spec === "Restoration Druid Classic" ? true : false*/ tooltip: "UpgradeFinder", type: "Gearing", localization: "MainMenu.UpgradeFinder", glow: false },
           { route: "/trinkets", disabled: false, tooltip: "TrinketAnalysis", type: "Gearing", localization: "MainMenu.TrinketAnalysis", glow: false },
-          { route: "/TierSets", disabled: false, tooltip: "TierSets", type: "Gearing", localization: "MainMenu.TierSets", glow: false },
+          { route: "/tiersets", disabled: false, tooltip: "TierSets", type: "Gearing", localization: "MainMenu.TierSets", glow: false },
           //{ route: "/quickcompare", disabled: false, tooltip: "QuickCompare", type: "Gearing", localization: "MainMenu.QuickCompare", glow: false },
           { route: "/spelldata", disabled: false, tooltip: "SequenceSandbox", type: "Tools", localization: "MainMenu.SequenceSandbox", glow: false },
           // Tools
@@ -193,7 +193,7 @@ export default function QEMainMenu(props: Props) {
     ls.set("welcomeMessage", "true");
     */
 
-    const newID = props.allChars.getCharOfClass(selectedSpec.includes("Classic") ? "Classic" : "Retail", selectedSpec);
+    const newID = props.allChars.getCharOfClass(selectedGameType, selectedSpec);
     props.allChars.setActiveChar(newID);
     props.charUpdate(props.allChars);
     dispatch(toggleGameType(selectedGameType));

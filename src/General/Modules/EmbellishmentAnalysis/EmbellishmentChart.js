@@ -8,7 +8,7 @@ import HelpIcon from '@mui/icons-material/Help';
 import WarningAmber from '@mui/icons-material/WarningAmber';
 import "General/Modules/TrinketAnalysis/Charts/VerticalChart.css";
 import i18n from "i18next";
-import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips.tsx";
+import WowheadTooltip from "General/Modules/GeneralComponents/WowheadTooltip";
 import { styled } from "@mui/material/styles";
 
 
@@ -153,7 +153,7 @@ export default class EmbelChart extends PureComponent {
             <text x={0} y={-10} style={{ color: "#fff", marginRight: 5, verticalAlign: "top", position: "relative", top: 2 }}>
               {this.state.width < mobileWidthThreshold ? getInitials(truncateString(getTranslatedEmbellishment(payload.value, currentLanguage), 32)) : truncateString(getTranslatedEmbellishment(payload.value, currentLanguage), 32)}
             </text>
-            <WowheadTooltip type="item" id={payload.value} level={270}  domain={currentLanguage}>
+            <WowheadTooltip type="item" id={payload.value} level={270} gameType={gameType}>
               <img width={20} height={20} x={0} y={0} src={getEmbellishmentIcon(payload.value)} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
             </WowheadTooltip>
             <StyledTooltip title={

@@ -8,7 +8,7 @@ import "./MiniItemCard.css";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 
-import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips.tsx";
+import WowheadTooltip from "General/Modules/GeneralComponents/WowheadTooltip";
 import { getTitanDiscName } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/TitanDiscBeltData"
 import CatalyzedFromIndicator from "General/Modules/GeneralComponents/CatalyzedFromIndicator";
 
@@ -207,7 +207,7 @@ export default function ItemCardReport(props) {
                 }}
               >
                 <div className="container-ItemCards">
-                  <WowheadTooltip type="item" id={item.id} catalyzedID={item.catalyzedID} craftedStats={item.craftedStats} level={item.level} bonusIDS={item.bonusIDS} forg={reforgeID ? reforgeID : 0} domain={wowheadDom} gems={gemString}>
+                  <WowheadTooltip type="item" id={item.id} catalyzedID={item.catalyzedID} craftedStats={item.craftedStats} level={item.level} bonusIDS={item.bonusIDS} forg={reforgeID ? reforgeID : 0} gameType={gameType} gems={gemString}>
                     <img
                       alt="img"
                       width={44}

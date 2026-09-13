@@ -1,5 +1,5 @@
 import { Box, Grid, Typography, Divider, Tooltip, IconButton } from "@mui/material";
-import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips";
+import WowheadTooltip from "General/Modules/GeneralComponents/WowheadTooltip";
 import HelpIcon from '@mui/icons-material/Help';
 import { getFolioIcon } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/OmniumFolioData";
 
@@ -85,7 +85,7 @@ export default function TopGearFolioEntry({ folioGems = [] }: TopGearFolioEntryP
         }}
       >
         {slots.map((slot, i) => (
-            <WowheadTooltip type="spell" id={slot.id} domain="retail" >
+            <WowheadTooltip type="spell" id={slot.id} gameType="Retail" >
                 <img
                 alt="img"
                 width={28}

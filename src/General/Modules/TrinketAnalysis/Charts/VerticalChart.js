@@ -8,7 +8,7 @@ import IconButton from '@mui/material/IconButton';
 import HelpIcon from '@mui/icons-material/Help';
 import WarningAmber from '@mui/icons-material/WarningAmber';
 import i18n from "i18next";
-import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips.tsx";
+import WowheadTooltip from "General/Modules/GeneralComponents/WowheadTooltip";
 import { styled } from "@mui/material/styles";
 
 const mobileWidthThreshold = 650;
@@ -175,7 +175,7 @@ export default class VerticalChart extends PureComponent {
               }
               {this.state.width < mobileWidthThreshold ? getInitials(truncateString(payload.value === 242392 ?  "D V ( N S )": getTranslatedItemName(payload.value, currentLanguage), 32)) : payload.value === 242392 ? "Diamantine Voidcore (No Set)" : (truncateString(rowName, 32))}
             </text>
-            <WowheadTooltip type="item" id={payload.value} level={row.highestLevel} domain={gameType === "Retail" ? currentLanguage : "mop-classic"}>
+            <WowheadTooltip type="item" id={payload.value} level={row.highestLevel} gameType={gameType}>
               <img width={20} height={20} x={0} y={0} src={getItemIcon(payload.value, gameType)} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
             </WowheadTooltip>
             <StyledTooltip title={

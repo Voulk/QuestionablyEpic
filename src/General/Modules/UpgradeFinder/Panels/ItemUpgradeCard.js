@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { encounterDB, craftedDB } from "../../../../Databases/InstanceDB";
 import { getTranslatedPvP } from "locale/pvpLocale";
-import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips.tsx";
+import WowheadTooltip from "General/Modules/GeneralComponents/WowheadTooltip";
 
 import Tooltip from '@mui/material/Tooltip';
 import IconButton from '@mui/material/IconButton';
@@ -245,7 +245,7 @@ export default function ItemCard(props) {
                 display: "inline-flex",
               }}
             >
-              <WowheadTooltip type="item" id={itemID} level={item.level} bonusIDS={item.bonusIDS} domain={wowheadDomain}>
+              <WowheadTooltip type="item" id={itemID} level={item.level} bonusIDS={item.bonusIDS} gameType={gameType}>
                 <div className="container-ItemCards" style={{ height: props.slotPanel ? 44 : 30 }}>
                   <img
                     alt="img"

@@ -2,7 +2,7 @@ import React from "react";
 import makeStyles from "@mui/styles/makeStyles";
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips.tsx";
+import WowheadTooltip from "General/Modules/GeneralComponents/WowheadTooltip";
 
 const useStyles = makeStyles({
   table: { width: "100%" },

@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Paper, Typography, Divider, Grid } from "@mui/material";
 import { getGemIcon, getItemIcon, getItemProp } from "../../../Engine/ItemUtilities";
 import { useSelector } from "react-redux";
-import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips.tsx";
+import WowheadTooltip from "General/Modules/GeneralComponents/WowheadTooltip";
 import { reforgeIDs } from "Databases/ReforgeDB";
 import { getFlaskIcon } from "../../../Engine/EnchantUtilities";
 
@@ -90,7 +90,7 @@ function CompetitiveAlternatives(props) {
                           itemArray = [item];
                           return itemArray.map((item) => (
                             <Grid item key={i} >
-                              <WowheadTooltip type="item" id={item.id} level={item.level} catalyzedID={item.catalyzedID} bonusIDS={item.bonusIDS} craftedStats={item.craftedStats} domain={wowheadDom} gems={getGemString(item)} forg={getReforgeID(item)}>
+                              <WowheadTooltip type="item" id={item.id} level={item.level} catalyzedID={item.catalyzedID} bonusIDS={item.bonusIDS} craftedStats={item.craftedStats} gameType={gameType} gems={getGemString(item)} forg={getReforgeID(item)}>
                                 <div className="container-ItemCards" style={{ height: 42 }}>
                                   <img
                                     alt="img"
@@ -116,7 +116,7 @@ function CompetitiveAlternatives(props) {
                           itemArray = [flask];
                           return itemArray.map((item) => (
                             <Grid item key={i}>
-                              <WowheadTooltip type="item" id={flask} domain={wowheadDom}>
+                              <WowheadTooltip type="item" id={flask} gameType={gameType}>
                                 <div className="container-ItemCards" style={{ height: 42 }}>
                                   <img
                                     alt="img"

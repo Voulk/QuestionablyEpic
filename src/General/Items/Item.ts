@@ -100,15 +100,11 @@ export class Item {
       if (slot === "Waist"/* || slot.includes("Weapon")*/) this.classicSockets.sockets = sockets ? [...sockets.gems, 'prismatic'] : ['prismatic'];
  
       this.stats = calcStatsAtLevelClassic(id, level);
-
-
-      /*this.customOptions = [
-        {label: "No Reforge", id: [0]},
-        {label: "Reforge Mastery to Haste", id: [1]},
-        {label: "Reforge Mastery to Crit", id: [2]},
-                          ]
-      this.selectedOptions = this.customOptions[0].id;*/
-      //this.stats = calcStatsAtLevelClassic(this.level - 1, getItemProp(id, "slot", gameType), itemAllocations);
+    }
+    else if (gameType === "Forever") {
+      this.quality = getItemProp(id, "quality", gameType);
+      this.name = getItemProp(id, "name", gameType);
+      this.stats = getItemProp(id, "stats", gameType);
     }
     else if (gameType === "Retail") {
       if (this.id === 228411) this.primGems = [228639, 228638, 228640];
@@ -116,7 +112,6 @@ export class Item {
         if (tertiary !== "Leech") tertiary = "Leech"; // These special helms always have leech but apply it via bonus ID for some reason.
       }
       this.stats = calcStatsAtLevel(this.level, getItemProp(catalyzedID ? catalyzedID : id, "slot", gameType), getItemAllocations(catalyzedID ? catalyzedID : id, [], gameType), tertiary);
-
 
 
       // TEMPORARY

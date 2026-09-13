@@ -243,7 +243,7 @@ export default function ItemBar(props) {
       setItemID(val.value);
       setItemName(val.name);
       setItemEffect({type: "", effectName: "", label: ""});
-      if (gameType === "Classic") setItemLevel(getItemProp(val.value, "itemLevel", gameType));
+      if (gameType === "Classic" || gameType === "Forever") setItemLevel(getItemProp(val.value, "itemLevel", gameType));
     }
   };
 

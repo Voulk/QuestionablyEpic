@@ -12,7 +12,7 @@ import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import ItemCardButtonWithMenu from "../GeneralComponents/ItemCardButtonWithMenu";
 
-import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips.tsx";
+import WowheadTooltip from "General/Modules/GeneralComponents/WowheadTooltip";
 
 const useStyles = makeStyles({
   root: {
@@ -114,7 +114,7 @@ export default function ItemCard(props) {
   let itemName2 = "";
   let isVault = item.vaultItem;
   const deleteActive = item.offhandID === 0;
-  const wowheadDom = (gameType === "Classic" ? "mop-classic" : currentLanguage);
+  const wowheadDom = (gameType === "Classic" ? "mop-classic" : gameType === "Forever" ? "forever" : currentLanguage);
   let gemString = gameType === "Retail" && item.gemString ? "&gems=" + item.gemString : "";
   const catalyst = isCatalystItem ? <div style={{ fontSize: 10, lineHeight: 1, color: "plum" }}>{t("Catalyst")}</div> : null;
   const tier = item.isTierPiece() ? <div style={{ fontSize: 10, lineHeight: 1, color: "yellow" }}>{t("Tier")}</div> : null;
@@ -279,7 +279,7 @@ export default function ItemCard(props) {
                 }}
               >
                 <div className="container-ItemCards">
-                  <WowheadTooltip type="item" id={item.id} level={item.level} gems={gemString} bonusIDS={item.bonusIDS} domain={wowheadDom}>
+                  <WowheadTooltip type="item" id={item.id} level={item.level} gems={gemString} bonusIDS={item.bonusIDS} gameType={gameType}>
                     <img
                       alt="img"
                       width={46}

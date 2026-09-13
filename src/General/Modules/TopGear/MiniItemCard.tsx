@@ -11,7 +11,7 @@ import CardActionArea from "@mui/material/CardActionArea";
 import ItemCardButtonWithMenu from "../GeneralComponents/ItemCardButtonWithMenu";
 import { Difference } from "@mui/icons-material";
 import FileCopyIcon from "@mui/icons-material/FileCopy";
-import WowheadTooltip from "General/Modules/GeneralComponents/WHTooltips";
+import WowheadTooltip from "General/Modules/GeneralComponents/WowheadTooltip";
 import Item from "../../Items/Item";
 import { getTitanDiscName } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/TitanDiscBeltData"
 
@@ -294,7 +294,7 @@ export default function ItemCard(props: ItemCardProps) {
                   }}
                 >
                   <div className="container-MiniItemCards">
-                    <WowheadTooltip type={"item"} id={item.id} level={itemLevel} bonusIDS={item.bonusIDS} catalyzedID={item.catalyzedID} craftedStats={item.craftedStats} domain={gameType === "Retail" ? currentLanguage : "mop-classic"}>
+                    <WowheadTooltip type={"item"} id={item.id} level={itemLevel} bonusIDS={item.bonusIDS} catalyzedID={item.catalyzedID} craftedStats={item.craftedStats} gameType={gameType}>
                       <img
                         alt="img"
                         width={44}

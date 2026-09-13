@@ -1,0 +1,17 @@
+{
+    "Rejuvenation": [
+        {
+            "displayInfo": {
+                "id": 9839,
+                "icon": "spell_nature_rejuvenation",
+                "spellName": "Rejuvenation",
+                "cat": "",
+                "rank": "Rank 8"
+            },
+            "castTime": 0.0,
+            "cost": 235.0,
+            "flat: ": 121,
+            "coeff": "0.20000000298"
+        }
+    ]
+}

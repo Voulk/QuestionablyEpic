@@ -3,6 +3,7 @@ import { embellishmentDB } from "../../Databases/EmbellishmentDB";
 import { getOnyxAnnuletEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/OnyxAnnuletData";
 import { getCircletEffect } from "Retail/Engine/EffectFormulas/Generic/PatchEffectItems/CyrcesCircletData";
 import classicItemDB from "Databases/ClassicItemDB.json";
+import foreverItemDB from "Databases/Forever/ForeverItemDB.json";
 import { randPropPoints } from "../../Retail/Engine/RandPropPointsBylevel";
 import { randPropPointsClassic } from "../../Retail/Engine/RandPropPointsBylevelClassic";
 import { combat_ratings_mult_by_ilvl, combat_ratings_mult_by_ilvl_jewl } from "../../Retail/Engine/CombatMultByLevel";
@@ -56,6 +57,17 @@ export function getValidArmorTypes(spec: string) {
       return [0, 2, 8, 11]; // Misc + Plate
     case "Restoration Shaman Classic":
       return [0, 3, 6, 9, 11]; // Misc + Plate + Shields
+
+    // Forever Specs. It's vanilla so no bonus for wearing same-armor type.
+    case "Holy Priest Forever":
+    case "Discipline Priest Forever":
+      return [0, 1]; // Misc + Cloth
+    case "Holy Paladin Forever":
+      return [0, 1, 2, 3, 4, 6]; // Misc + Plate + Shields
+    case "Restoration Druid Forever":
+      return [0, 1, 2]; // Misc + Leather
+    case "Restoration Shaman Forever":
+      return [0, 1, 2, 3, 6]; // Misc + Mail + Shields
     default:
       return [-1];
   }
@@ -114,12 +126,17 @@ export function getValidWeaponTypes(spec: string, slot: string) {
         case "Holy Priest Classic":
         case SPEC.DISCPRIEST:
         case "Discipline Priest Classic":  
+        case "Discipline Priest Forever":
+        case "Holy Priest Forever":
           return [4, 10, 15, 19];
         case "Holy Paladin Classic":
+        case "Holy Paladin Forever":
           return [0, 1, 4, 5, 6, 7, 8, 11];
         case "Restoration Druid Classic":
+        case "Restoration Druid Forever":
           return [4, 5, 6, 10, 11, 13, 15];
         case "Restoration Shaman Classic":
+        case "Restoration Shaman Forever":
           return [0, 1, 4, 5, 10, 11, 13, 15];
 
         case "Mistweaver Monk Classic":
@@ -352,13 +369,19 @@ export function getValidWeaponTypesBySpec(spec: string) {
     case SPEC.DISCPRIEST:
       return [4, 10, 15, 19];
     case "Holy Paladin Classic":
+    case "Holy Paladin Forever":
       return [0, 1, 4, 5, 6, 7, 8, 11];
     case "Restoration Druid Classic":
+    case "Restoration Druid Forever":
       return [4, 5, 10, 11, 13, 15];
     case "Restoration Shaman Classic":
+    case "Restoration Shaman Forever":
       return [0, 1, 4, 5, 6, 10, 11, 13, 15];
     case "Holy Priest Classic":
     case "Discipline Priest Classic":
+    case "Discipline Priest Forever":
+    case "Holy Priest Forever":
+    
       return [4, 10, 15, 19];
     default:
       return [-1, 0];
@@ -487,7 +510,7 @@ function sortItems(container: any[]) {
 }
 
 export function getItemDB(gameType = "Retail") {
-  return gameType === "Retail" ? itemDB : classicItemDB;
+  return gameType === "Retail" ? itemDB : gameType === "Classic" ? classicItemDB : foreverItemDB;
 }
 
 export function getDifferentialByID(diffList: any, id: number, level: number) {
@@ -552,6 +575,7 @@ export function getTranslatedItemName(id: number, lang: string, effect: any, gam
   //else {
     // @ts-ignore
   if (gameType === "Classic") return classicItemDB.filter((item) => item.id === id)[0].names[lang];
+  else if (gameType === "Forever") return foreverItemDB.filter((item) => item.id === id)[0].names[lang];
   else if (idAsString in nameDB && nameDB[idAsString][lang]) return nameDB[idAsString][lang];
   else return "Unknown Item";
 }
@@ -629,7 +653,7 @@ export function getItemProp(id: number, prop: string, gameType: gameTypes = "Ret
 export function getItemIcon(id: number, gameType = "Retail") {
   const item = getItem(id, gameType);
 
-  if (gameType === "Classic" && item !== "") return "https://wow.zamimg.com/images/wow/icons/large/" + item.icon + ".jpg";
+  if ((gameType === "Classic" || gameType === "Forever") && item !== "") return "https://wow.zamimg.com/images/wow/icons/large/" + item.icon + ".jpg";
   if (item !== "" && "icon" in item) return process.env.PUBLIC_URL + "/Images/Icons/" + item.icon + ".jpg";
   else if (item !== "") {
     reportError("", "ItemUtilities", "Icon not found for ID", id.toString());
@@ -690,7 +714,7 @@ export function getItemAllocations(id: number, missiveStats: any[] = [], gameTyp
 
 // Returns which secondary item category a given slot falls in.
 function getItemCat(slot: string, gameType: gameTypes = "Retail") {
-  if (gameType === "Classic" && ["Offhand", "Shield", "Holdable"].includes(slot)) return 2;
+  if ((gameType === "Classic" || gameType === "Forever") && ["Offhand", "Shield", "Holdable"].includes(slot)) return 2;
   switch (slot) {
     case "Head":
     case "Chest":
