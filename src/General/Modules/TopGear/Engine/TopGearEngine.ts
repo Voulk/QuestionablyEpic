@@ -790,10 +790,10 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
     consumableStats[selectedChoice]  = (consumableStats[selectedChoice] || 0) + 165;
   }
 
-  if (selectedChoice === "haste") enchants.flask = "Flask of the Blood Knights";
-  else if (selectedChoice === "mastery") enchants.flask = "Flask of the Magisters";
-  else if (selectedChoice === "crit") enchants.flask = "Flask of the Shattered Sun";
-  else if (selectedChoice === "versatility") enchants.flask = "Flask of Thalassian Resistance";
+  if (selectedChoice === "haste") itemSet.flask = 241325;
+  else if (selectedChoice === "mastery") itemSet.flask = 241322;
+  else if (selectedChoice === "crit") itemSet.flask = 241326;
+  else if (selectedChoice === "versatility") itemSet.flask = 241320;
 
   // Food buff
   consumableStats.intellect = (consumableStats.intellect ?? 0) + 50;

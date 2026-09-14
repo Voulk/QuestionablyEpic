@@ -279,6 +279,8 @@ function displayReport(
   if (itemList.length === 0) itemList = fullItemList; // Fallback for older reports that don't have non-chosen items on them. Can be removed on a patch launch.
 
   console.log(fullItemList);
+  const setFlask = topSet.flask;
+  console.log(setFlask);
   console.log(topSet);
 
   // setup export button menu options
@@ -519,7 +521,7 @@ function displayReport(
                           ))*/}
                         </Grid>
                         <Grid>
-                          {gameType === "Retail" ? <TopGearConsumables /> : null}
+                          {gameType === "Retail" ? <TopGearConsumables flask={setFlask} /> : null}
                         </Grid>
                       </Grid>
                       <Grid item xs={0} lg={4} height={500} display={{ xs: "none", lg: "block" }}>

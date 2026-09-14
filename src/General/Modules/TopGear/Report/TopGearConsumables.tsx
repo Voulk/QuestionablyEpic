@@ -8,9 +8,9 @@ interface ConsumablesPanelProps {
   flask: number
 }
 
-export default function TopGearFolioEntry({ flask: id = 0 }: ConsumablesPanelProps) {
+export default function TopGearFolioEntry({ flask = 0 }: ConsumablesPanelProps) {
 
-  const slots = [241326, 271884]
+  const slots = [flask, 271884]
 
   return (
     <Grid
