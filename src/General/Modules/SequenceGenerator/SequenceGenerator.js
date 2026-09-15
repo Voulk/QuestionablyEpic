@@ -37,6 +37,9 @@ import { CLASSICPALADINSPELLDB, paladinTalents as classicPaladinTalents } from "
 import { CLASSICPRIESTSPELLDB, compiledDiscTalents as classicDiscTalents, compiledHolyTalents as classicHolyTalents } from "General/Modules/Player/ClassDefaults/Classic/Priest/ClassicPriestSpellDB";
 import { CLASSICMONKSPELLDB, monkTalents as classicMonkTalents } from "General/Modules/Player/ClassDefaults/Classic/Monk/ClassicMonkSpellDB";
 
+// Forever
+import ForeverDruidSpellDB from "General/Modules/Player/ClassDefaults/Forever/Druid/ForeverDruidSpellDB";
+
 import { SpellIcon } from "./SpellIcon";
 import { classColours } from "General/Engine/ClassData";
 import "./Sequence.css";
@@ -92,6 +95,8 @@ const getSpellDB = (spec) => {
   else if (spec === "Discipline Priest Classic") return CLASSICPRIESTSPELLDB;
   else if (spec === "Holy Priest Classic") return CLASSICPRIESTSPELLDB;
   else if (spec === "Mistweaver Monk Classic") return CLASSICMONKSPELLDB;
+
+  else if (spec === "Restoration Druid Forever") return ForeverDruidSpellDB;
 };
 
 const getTalentDB = (spec) => {
@@ -109,6 +114,8 @@ const getTalentDB = (spec) => {
   else if (spec === "Discipline Priest Classic") return classicDiscTalents;
   else if (spec === "Holy Priest Classic") return classicHolyTalents;
   else if (spec === "Mistweaver Monk Classic") return classicMonkTalents;
+
+  else if (spec === "Restoration Druid Forever") return [];
   else return null;
 };
 
@@ -155,6 +162,7 @@ const getSequence = (spec) => {
   else if (spec === "Mistweaver Monk") return monkSequence;
   else if (spec === "Holy Priest") return holyPriestSequence;
   else if (spec.includes("Classic")) return classicSequence;
+  else if (spec.includes("Forever")) return classicSequence;
   else console.error("Invalid Spec");
 
 };
@@ -440,7 +448,7 @@ export default function SequenceGenerator(props) {
             <Grid container spacing={1}>
               <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
 
-                <Paper
+                {/*<Paper
                   style={{
                     border: "1px solid rgba(255, 255, 255, 0.24)",
                     padding: "0px 8px 8px 8px",
@@ -460,7 +468,7 @@ export default function SequenceGenerator(props) {
                       ))}
                     </Grid>
                   </Grid>
-                </Paper>
+                </Paper>*/} 
               </Grid>
             </Grid>
           </Grid>
@@ -605,7 +613,7 @@ export default function SequenceGenerator(props) {
           </Grid>
 
           <Grid item xs={12} sm={12} md={12} lg={12} xl={6}>
-                <Paper
+                {/*<Paper
                   style={{
                     border: "1px solid rgba(255, 255, 255, 0.24)",
                     padding: "0px 8px 8px 8px",
@@ -625,12 +633,12 @@ export default function SequenceGenerator(props) {
                         </p>
                       </Paper>
                       </Grid> */}
-                    {/* Combat Log */}
+                    {/* Combat Log 
                     <Grid item xs={12}>
                       <TextField value={combatLog.join("\n")} variant="outlined" multiline minRows={8} maxRows={8} fullWidth disabled style={{ whiteSpace: "pre-line" }} />
                     </Grid>
                   </Grid>
-                </Paper>
+                </Paper>*/}
                 <Grid item xs={7} sm={7} md={7} lg={12} xl={12} style={{paddingTop: "10px"}}>
                   <StatPanel setActiveStats={setActiveStats} stats={activeStats} />
                 </Grid>
