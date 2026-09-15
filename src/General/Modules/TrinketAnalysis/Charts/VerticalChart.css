@@ -3,3 +3,35 @@
   font-size: 0.9rem;
 }
 
+.ResponsiveContainer2 .recharts-legend-item-text {
+  color: inherit !important;
+}
+
+.ResponsiveContainer2 .recharts-default-legend {
+  line-height: 22px;
+}
+
+.ResponsiveContainer2 .recharts-legend-item {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.ResponsiveContainer2 .recharts-default-legend + .recharts-default-legend {
+  margin-top: 8px;
+}
+
+.trinket-tooltip {
+  background: #1b1b1b;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 8px 10px;
+}
+
+.trinket-tooltip-label {
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.trinket-tooltip-row.is-hovered {
+  font-weight: 700;
+}
+
