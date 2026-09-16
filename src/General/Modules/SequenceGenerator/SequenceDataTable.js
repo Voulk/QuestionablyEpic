@@ -18,6 +18,7 @@ import { buildShamanChartData } from "General/Modules/Player/ClassDefaults/Resto
 import { buildMonkChartData } from "General/Modules/Player/ClassDefaults/MistweaverMonk/MistweaverChartGen";
 
 import { buildClassicChartData } from "General/Modules/Player/ClassDefaults/Classic/ClassicChartGen";
+import { buildForeverChartData } from "General/Modules/Player/ClassDefaults/Forever/ForeverChartGen";
 
 /*function createData(ability, tyrannical, fortified, spellID, icon, guid, active, bossName) {
   return { ability, tyrannical, fortified, spellID, icon, guid, active, bossName };
@@ -57,6 +58,9 @@ function buildChartData(spec, stats, talents) {
   }
   else if (spec === "Mistweaver Monk Classic") {
     return buildClassicChartData(stats, "Mistweaver Monk")
+  }
+  else if (spec.includes("Forever")) {
+    return buildForeverChartData(stats, spec, talents);
   }
   else {
     return [];
@@ -115,7 +119,7 @@ export default function SequenceDataTable(props) {
                                 </div>
                               </TableCell>
                               <TableCell align="right">{row.cost > 0 ? row.cost : "-"}</TableCell>
-                              <TableCell align="right">{row.coeff > 0 ? row.coeff : "-"}</TableCell>
+                              <TableCell align="right">{row.coeff ? row.coeff : "-"}</TableCell>
                               <TableCell align="right">{row.hps.toLocaleString()}</TableCell>
                               <TableCell align="right">{(row.hpm > 0 && Number.isFinite(row.hpm)) ? row.hpm : "-"}</TableCell>
                               <TableCell align="right">{row.hpct.toLocaleString()}</TableCell>

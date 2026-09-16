@@ -1,5 +1,5 @@
 {
-    "Rejuvenation": [
+    "Rejuvenation Rank 8": [
         {
             "displayInfo": {
                 "id": 9839,
@@ -10,14 +10,46 @@
             },
             "castTime": 0.0,
             "cost": 235,
-            "flat: ": 121,
+            "flat": 94,
             "coeff": 0.2,
             "spellType": "buff",
             "buffType": "heal",
-            "buffDuration": 12.0
+            "buffDuration": 12.0,
+            "secondaries": [
+                "crit"
+            ],
+            "tickData": {
+                "tickRate": 3
+            },
+            "expectedOverheal": 0.15
         }
     ],
-    "Regrowth": [
+    "Rejuvenation Rank 11": [
+        {
+            "displayInfo": {
+                "id": 25299,
+                "icon": "spell_nature_rejuvenation",
+                "spellName": "Rejuvenation",
+                "cat": "",
+                "rank": "Rank 11"
+            },
+            "castTime": 0.0,
+            "cost": 360,
+            "flat": 194,
+            "coeff": 0.2,
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 12.0,
+            "secondaries": [
+                "crit"
+            ],
+            "tickData": {
+                "tickRate": 3
+            },
+            "expectedOverheal": 0.15
+        }
+    ],
+    "Regrowth Rank 9": [
         {
             "displayInfo": {
                 "id": 9858,
@@ -27,17 +59,30 @@
                 "rank": "Rank 9"
             },
             "castTime": 2.0,
-            "cost": 880,
-            "flat: ": 1002,
+            "cost": 525,
+            "flat": 1021,
             "coeff": 0.286,
-            "spellType": "heal"
+            "spellType": "heal",
+            "secondaries": [
+                "crit"
+            ],
+            "expectedOverheal": 0.15
+
         },
         {
-            "flat: ": 151,
+            "flat": 142,
             "coeff": 0.071,
             "spellType": "buff",
             "buffType": "heal",
-            "buffDuration": 21.0
+            "buffDuration": 21.0,
+            "secondaries": [
+                "crit"
+            ],
+            "tickData": {
+                "tickRate": 3
+            },
+            "expectedOverheal": 0.15
+
         }
     ]
 }

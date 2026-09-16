@@ -131,11 +131,8 @@ export const buildDruidChartData = (activeStats) => {
 
         };  
     }); 
-        
-
 
     return results;
-
 }
 
 function expandArray(arr) {

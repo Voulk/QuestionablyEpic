@@ -1,5 +1,6 @@
 import { convertStatPercentages, runClassicSpell } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilitiesClassic"
 import { runProfileSpell } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities"
+import { runProfileSpellForever } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilitiesForever"
 
 const runChartEntry = (sequence, spellData, newSeq, activeStats, testSettings, talents, filterSpell, runCastSequence) => {
     const iterations = sequence.iterations ? sequence.iterations : 1; // Spells that require more RNG can set their own iteration count like Reversion.
@@ -74,6 +75,34 @@ export const getSpellCoeff = (spell) => {
     return Math.round(100*coeff)/100;
 }
 
+export const getSpellCoeffForever = (spell) => {
+    let coeff = 0;
+    let flat = 0;
+    spell.forEach(spellSlice => {
+        console.log(spellSlice);
+        let sliceCoeff = 0;
+        let sliceFlat = 0;
+        if (spellSlice.coeff) sliceCoeff = spellSlice.coeff;
+        if (spellSlice.flat) sliceFlat += spellSlice.flat;
+
+        // Mults
+        if (spellSlice.targets) {
+            sliceCoeff *= spellSlice.targets;
+            sliceFlat *= spellSlice.targets;
+        }
+        if (spellSlice.spellType === "buff" && spellSlice.buffType === "heal") {
+            const tickData = spellSlice.tickData;
+            sliceCoeff *= (spellSlice.buffDuration / tickData.tickRate + (tickData.tickOnCast ?? 0))
+            sliceFlat *= (spellSlice.buffDuration / tickData.tickRate + (tickData.tickOnCast ?? 0))
+        }
+
+        coeff += sliceCoeff;
+        flat += sliceFlat;
+    })
+
+    return Math.round(flat) + " + " + Math.round(100*coeff)/100 + "x";
+}
+
 export const buildFormulatedChartEntry = (sequence, displayInfo, rawSpell, activeStats, userSettings, playerData, scoreSet) => {
     let data = {
         coeff: 0,
@@ -112,6 +141,48 @@ export const buildFormulatedChartEntry = (sequence, displayInfo, rawSpell, activ
     const result = runProfileSpell(spell, statPercentages, playerData.spec, userSettings, {})
 
     data.coeff = getSpellCoeff(spell);
+    return {cat: sequence.cat, tag: sequence.tag ? sequence.tag : sequence.seq.join(", "), cost: Math.round(data.manaSpent), coeff: data.coeff, hps: Math.round(result.healing), hpm: Math.round(result.healing / data.manaSpent*100)/100, damage: Math.round(result.damage) || "-", dps: 0, spell: displayInfo, hpct: 0, advancedReport: {}}
+
+}
+
+export const buildFormulatedChartEntryForever = (sequence, displayInfo, rawSpell, activeStats, userSettings, playerData) => {
+    let data = {
+        coeff: 0,
+        healingDone: 0,
+        damageDone: 0,
+        manaSpent: 0,
+        execTime: 0,
+        spellValues: {
+
+        }
+    }
+
+    const spell = JSON.parse(JSON.stringify(rawSpell));
+
+    if (sequence.mods) {
+        if (sequence.mods.additionalTargets) {
+            spell.forEach(spellSlice => {
+                if (spellSlice.targets) spellSlice.targets += sequence.mods.additionalTargets;
+            });
+        }
+        if (sequence.mods.manaReduction) spell[0].cost *= sequence.mods.manaReduction;
+        if (sequence.mods.healingIncrease) {
+            spell.forEach(spellSlice => {
+                if (((spellSlice.spellType === "buff" && spellSlice.buffType === "heal") || spellSlice.spellType === "heal") && spellSlice.coeff)  {
+                    spellSlice.coeff *= sequence.mods.healingIncrease;
+                }
+            });
+        }
+            
+    }
+
+    data.manaSpent = spell[0].cost;
+
+    const statPercentages = {healingPower: 0, spellpower: 0, crit: 1, critMultHPS: 2}
+
+    const result = runProfileSpellForever(spell[0].displayInfo.spellName, spell, statPercentages, playerData.spec, userSettings, {})
+
+    data.coeff = getSpellCoeffForever(spell);
     return {cat: sequence.cat, tag: sequence.tag ? sequence.tag : sequence.seq.join(", "), cost: Math.round(data.manaSpent), coeff: data.coeff, hps: Math.round(result.healing), hpm: Math.round(result.healing / data.manaSpent*100)/100, damage: Math.round(result.damage) || "-", dps: 0, spell: displayInfo, hpct: 0, advancedReport: {}}
 
 }
