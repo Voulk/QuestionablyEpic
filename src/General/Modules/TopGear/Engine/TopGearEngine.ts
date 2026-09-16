@@ -125,7 +125,7 @@ function getMidnightGemOptions(spec: string, contentType: contentTypes, settings
   }
   else if (spec === "Preservation Evoker") {
     // Mastery / Crit, Mastery / Vers
-    gemArray.fill(getGemID('mastery', 'crit'), 1);
+    gemArray.fill(getGemID('crit', 'mastery'), 1);
     return gemArray;
     return [metaGem, getGemID('mastery', 'haste')]/*, getGemID('crit', 'mastery'), getGemID('versatility', 'mastery'), getGemID('haste', 'mastery'),
       getGemID('mastery', 'crit'), getGemID('mastery', 'crit'), getGemID('mastery', 'crit'), getGemID('mastery', 'crit')];*/
@@ -236,7 +236,6 @@ export function runTopGear(rawItemList: Item[], wepCombos: Item[], player: Playe
   let newCastModel = new CastModel(newPlayer.getSpec(), contentType, castModel.modelName, 0);
   newCastModel = Object.assign(newCastModel, castModel);
 
-  console.log(JSON.stringify(rawItemList.filter(item => item.id === 272254)));
   // == Setup our list of items ==
   // We duplicate the users items so that nothing is changed during the Top Gear process.
   // If a player has the auto-socket setting on then we'll add sockets to their items.
@@ -569,15 +568,20 @@ function enchantItems(bonus_stats: Stats, setStats: Stats, castModel: any, conte
   // single percentage. The stress this could cause a player is likely not worth the optimization.
   let highestWeight = getHighestWeight(castModel);
 
-  bonus_stats[highestWeight as keyof typeof bonus_stats] = (bonus_stats[highestWeight as keyof typeof bonus_stats] || 0) +  29; // 64 x 2.
+  
   let ringEnchantName = "";
 
-  if (spec === "Holy Priest" || spec === "Restoration Shaman") ringEnchantName = "Eyes of the Eagle";
+  if (spec === "Holy Priest" || spec === "Restoration Shaman" || spec === "Preservation Evoker") ringEnchantName = "Eyes of the Eagle";
   else if (highestWeight === "haste") ringEnchantName = "Silvermoon's Alacrity";
   else if (highestWeight === "crit") ringEnchantName = "Nature's Fury";
   else if (highestWeight === "mastery") ringEnchantName = "Zul'jin's Mastery";
   else if (highestWeight === "versatility") ringEnchantName = "Silvermoon's Tenacity";
   enchants["Finger"] = ringEnchantName;
+
+  if (ringEnchantName !== "Eyes of the Eagle") {
+    bonus_stats[highestWeight as keyof typeof bonus_stats] = (bonus_stats[highestWeight as keyof typeof bonus_stats] || 0) +  29; // 64 x 2.
+  }
+  
 
 
   // Helm
@@ -618,8 +622,9 @@ function enchantItems(bonus_stats: Stats, setStats: Stats, castModel: any, conte
     bonus_stats.haste = (bonus_stats.haste || 0) + 124 * convertPPMToUptime(3, 15);
   }
   else if (spec === "Preservation Evoker") {
-    wepEnchantName = "Arcane Mastery";
-    bonus_stats.mastery = (bonus_stats.mastery || 0) + 124 * convertPPMToUptime(3, 15);
+    wepEnchantName = "Rite of the Hash'ey";
+    let highestWeight = getHighestWeight(castModel);
+    bonus_stats[highestWeight as keyof typeof bonus_stats] = (bonus_stats[highestWeight as keyof typeof bonus_stats] || 0) + 139 * convertPPMToUptime(3, 15);
   }
   else {
     bonus_stats.intellect += 67 * convertPPMToUptime(3, 15);
