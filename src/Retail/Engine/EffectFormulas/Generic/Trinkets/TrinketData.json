@@ -156,11 +156,11 @@
     ],
     "Mycolic Medicine": [
         {
-            "coefficient": 100.0616,
+            "coefficient": 158.09,
             "scalingClass": -9
         },
         {
-            "coefficient": 57.178978,
+            "coefficient": 90.3427,
             "scalingClass": -9
         }
     ],
@@ -364,7 +364,7 @@
     ],
     "Preternatural Antivenom": [
         {
-            "coefficient": 481.779968,
+            "coefficient": 843.11,
             "scalingClass": -8
         }
     ],

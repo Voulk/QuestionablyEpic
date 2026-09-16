@@ -351,13 +351,13 @@ export const dungeonTrinketData =
       effects: [
         {  // Instant Heal
           secondaries: ['haste', 'crit', 'versatility'],
-          ppm: 3,
+          ppm: 3 * 1.33,
           efficiency: 0.7 //
         },
         { // Mushroom they need to stand on
           secondaries: ['haste', 'crit', 'versatility'],
-          ppm: 3,
-          efficiency: {Raid: 0.4, Dungeon: 0.5} //
+          ppm: 3 * 1.33,
+          efficiency: {Raid: 0.3, Dungeon: 0.3} //
         },
         
       ],
