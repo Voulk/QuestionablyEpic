@@ -100,7 +100,7 @@ export const otherTrinketData = [
         //console.log(JSON.stringify(additionalData.selectedOptions));
 
         const bestStat = player.getHighestStatWeight(additionalData.contentType);
-        bonus_stats[bestStat] = runGenericPPMTrinket({...data[0], ...trinketRawData["Drum of Renewed Bonds"][0], stat: bestStat}, itemLevel, player);
+        bonus_stats[bestStat] = runGenericPPMTrinket({...data[0], ...trinketRawData["Drum of Renewed Bonds"][0], stat: bestStat}, itemLevel, additionalData.setStats);
   
         return bonus_stats;
       }
@@ -219,7 +219,7 @@ export const otherTrinketData = [
         //console.log(JSON.stringify(additionalData.selectedOptions));
 
         const bestStat = getHighestStat(additionalData.setStats);
-        bonus_stats[bestStat] = runGenericPPMTrinket({...data[0], ...trinketRawData["Glorious Crusader's Keepsake"][0], stat: bestStat}, itemLevel, player);
+        bonus_stats[bestStat] = runGenericPPMTrinket({...data[0], ...trinketRawData["Glorious Crusader's Keepsake"][0], stat: bestStat}, itemLevel, additionalData.setStats);
         //bonus_stats.allyStats = runGenericPPMTrinket({...data[1], ...trinketRawData["Glorious Crusader's Keepsake"][1]}, itemLevel, player);
   
         return bonus_stats;
