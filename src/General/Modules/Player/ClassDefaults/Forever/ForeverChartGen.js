@@ -75,12 +75,10 @@ export const buildForeverDruidChartData = (activeStats) => {
     sequences = sequences.concat([
     ])
 
-    console.log(sequences);
-
     sequences.forEach(sequence => {
         let newSeq = sequence.seq;
         const tag = sequence.tag ? sequence.tag : sequence.seq.join(", ");
-        const displayInfo = {id: 0, icon: "" /*spellDB[newSeq[0]][0].displayInfo.icon || ""*/};
+        const displayInfo = {id: 0, icon: spellDB[newSeq[0]][0].displayInfo.icon || ""};
         const cat = sequence.cat;
 
         if (cat === "APLs") {

@@ -15,12 +15,13 @@
             "spellType": "buff",
             "buffType": "heal",
             "buffDuration": 12.0,
+            "tickData": {
+                "tickRate": 3.0,
+                "tickOnCast": false
+            },
             "secondaries": [
                 "crit"
             ],
-            "tickData": {
-                "tickRate": 3
-            },
             "expectedOverheal": 0.15
         }
     ],
@@ -40,12 +41,13 @@
             "spellType": "buff",
             "buffType": "heal",
             "buffDuration": 12.0,
+            "tickData": {
+                "tickRate": 3.0,
+                "tickOnCast": false
+            },
             "secondaries": [
                 "crit"
             ],
-            "tickData": {
-                "tickRate": 3
-            },
             "expectedOverheal": 0.15
         }
     ],
@@ -67,7 +69,6 @@
                 "crit"
             ],
             "expectedOverheal": 0.15
-
         },
         {
             "flat": 142,
@@ -75,14 +76,76 @@
             "spellType": "buff",
             "buffType": "heal",
             "buffDuration": 21.0,
+            "tickData": {
+                "tickRate": 3.0,
+                "tickOnCast": false
+            },
             "secondaries": [
                 "crit"
             ],
-            "tickData": {
-                "tickRate": 3
-            },
             "expectedOverheal": 0.15
-
+        }
+    ],
+    "Regrowth Rank 5": [
+        {
+            "displayInfo": {
+                "id": 8941,
+                "icon": "spell_nature_resistnature",
+                "spellName": "Regrowth",
+                "cat": "",
+                "rank": "Rank 5"
+            },
+            "castTime": 2.0,
+            "cost": 250,
+            "flat": 394,
+            "coeff": 0.286,
+            "spellType": "heal",
+            "secondaries": [
+                "crit"
+            ],
+            "expectedOverheal": 0.15
+        },
+        {
+            "flat": 52,
+            "coeff": 0.071,
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 21.0,
+            "tickData": {
+                "tickRate": 3.0,
+                "tickOnCast": false
+            },
+            "secondaries": [
+                "crit"
+            ],
+            "expectedOverheal": 0.15
+        }
+    ],
+    "Wild Growth Rank 3": [
+        {
+            "displayInfo": {
+                "id": 1238215,
+                "icon": "ability_druid_flourish",
+                "spellName": "Wild Growth",
+                "cat": "",
+                "rank": "Rank 3"
+            },
+            "castTime": 0.0,
+            "cost": 1050,
+            "flat": 97,
+            "coeff": 0.033,
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 7.0,
+            "tickData": {
+                "tickRate": 1.0,
+                "tickOnCast": false
+            },
+            "secondaries": [
+                "crit"
+            ],
+            "expectedOverheal": 0.15,
+            "targets": 5
         }
     ]
 }
