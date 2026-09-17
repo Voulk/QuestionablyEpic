@@ -183,6 +183,11 @@ export const dungeonTrinketData =
       // Haste Proc
       bonus_stats.haste = runGenericPPMTrinket(updatedData[5], itemLevel, setStats) * procRates["Haste"]// * data[3].specMult[player.spec];
 
+      if (additionalData.includeTooltip) {
+        additionalData.tooltipData.push({name: "Expected Crit Uptime ", value: Math.round(convertPPMToUptime(updatedData[4].ppm, updatedData[4].duration) * 100 * procRates["Crit"]) + "%"})
+        additionalData.tooltipData.push({name: "Expected Haste Uptime ", value: Math.round(convertPPMToUptime(updatedData[5].ppm, updatedData[5].duration) * 100 * procRates["Haste"]) + "%"})
+      }
+
       // ST DPS and AoE DPS TODO
       //bonus_stats.dps = processedValue(data[1], itemLevel) * player.getStatMults(data[1].secondaries) * data[1].ppm / 60;
 

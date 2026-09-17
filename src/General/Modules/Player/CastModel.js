@@ -96,6 +96,8 @@ class CastModel {
     if (spec === SPEC.RESTODRUID) {
       if (modelID === "Healing Focused") {
         this.modelName = "Healing Focused";
+        this.modelType["Raid"] = "Default"; 
+        this.modelType["Dungeon"] = "Default";
         this.heroTree = "Wildstalker"
         this.runCastModel = scoreDruidSet;
         spellList = druidDefaultSpellData(contentType);
@@ -115,6 +117,8 @@ class CastModel {
     } else if (spec === SPEC.HOLYPALADIN) {
       if (modelID === "Herald of the Sun") {
         this.modelName = "Herald of the Sun";
+        this.modelType["Raid"] = "Default"; 
+        this.modelType["Dungeon"] = "Default";
         spellList = paladinDefaultSpellData(contentType);
         specialQueries = paladinDefaultSpecialQueries(contentType);
         this.baseStatWeights = paladinDefaultStatWeights("Raid");
@@ -128,6 +132,8 @@ class CastModel {
       }
       else if (modelID === "Default") { // Dungeon
         this.modelName = "Default";
+        this.modelType["Raid"] = "Default"; 
+        this.modelType["Dungeon"] = "Default";
         spellList = paladinDefaultSpellData(contentType);
         specialQueries = paladinDefaultSpecialQueries(contentType);
         this.baseStatWeights = paladinDefaultStatWeights(contentType);
@@ -210,6 +216,8 @@ class CastModel {
 
     } else if (spec === SPEC.HOLYPRIEST) {
       this.modelName = "Default";
+      this.modelType["Raid"] = "Default"; 
+      this.modelType["Dungeon"] = "Default";
       spellList = holyPriestDefaultSpellData(contentType);
       specialQueries = holyPriestDefaultSpecialQueries(contentType);
       this.baseStatWeights = holyPriestDefaultStatWeights(contentType);
@@ -248,7 +256,6 @@ class CastModel {
       this.profile = restoDruidDefaults;
       this.baseStatWeights = this.profile.defaultStatWeights;
       this.fightInfo.hps = 260000;
-
     } 
     else if (spec === "Holy Priest Classic") {
       this.modelName = "Default";
@@ -280,6 +287,12 @@ class CastModel {
       this.baseStatWeights = this.profile.defaultStatWeights;
       this.fightInfo.hps = 200000;
     } 
+    else if (spec.includes("Forever")) {
+      this.modelName = "Default";
+      this.profile = null;
+      this.baseStatWeights = {};
+      this.fightInfo.hps = 10000;
+    }
     else {
       spellList = {};
       specialQueries = {};
