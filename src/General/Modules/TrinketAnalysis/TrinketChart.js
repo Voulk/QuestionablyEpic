@@ -257,7 +257,7 @@ export default function TrinketChart({ player }) {
 
   const trinketText =
     gameType === "Retail"
-      ? "Trinket tuning from 13/8 is included in the chart."
+      ? "Trinket tuning from 22 September is included in the chart."
       : "Rankings use a sample stat profile, use Top Gear to fine tune results for your specific loadout.";
 
   let exportOptions = ["Download JSON"];

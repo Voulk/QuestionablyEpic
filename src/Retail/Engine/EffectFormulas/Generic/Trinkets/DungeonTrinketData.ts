@@ -97,31 +97,31 @@ export const dungeonTrinketData =
     effects: [
       { // ST Damage Portion
         secondaries: ['crit', 'versatility'],
-        ppm: 1.01,
+        ppm: 2,
       },
       { // AoE Damage Portion
         secondaries: ['crit', 'versatility'],
-        ppm: 1.01,
+        ppm: 2,
       },
       { // Healing Portion - Single Target Heal
         //coefficient: 198.7088,
         //table: -9,
         secondaries: ['crit', 'versatility'],
-        ppm: 1.01,
+        ppm: 2,
         efficiency: 0.6, // Our expected overhealing.
       },
       { // Healing Portion - Mending Breath (AoE)
         //coefficient: 165.5901,
         //table: -9,
         secondaries: ['crit', 'versatility'],
-        ppm: 1.01,
+        ppm: 2,
         targets: 3.2,
         efficiency: 0.45, // Our expected overhealing. It's extremely high for this and it can also just whiff and hit pets. 
       },
       { // Crit Stat Buff (Sleepy Ruby Warmth)
         //coefficient: 2.661627,
         //table: -7,
-        ppm: 1.01,
+        ppm: 2,
         stat: "crit",
         duration: 12,
       },
@@ -130,7 +130,7 @@ export const dungeonTrinketData =
         //coefficient: 2.903762,
         //table: -7,
         stat: "haste",
-        ppm: 1.01,
+        ppm: 2,
         duration: 12,
         //specMult: {"Preservation Evoker": 0.5, "Restoration Druid": 0.8, "Holy Paladin": 0.67, "Mistweaver Monk": 0.8, "Restoration Shaman": 0.65, "Holy Priest": 0.7, "Discipline Priest": 0.7},
       },
@@ -346,18 +346,18 @@ export const dungeonTrinketData =
     },
     {
       name: "Mycolic Medicine",
-      description: "The flat intellect is the only thing keeping it from the bottom of the chart.",
+      description: "Post buffs, it still is not great but can fill an early trinket slot. Mostly carried by its flat intellect.",
       addonDescription: "Dreadful Trinket",
       effects: [
         {  // Instant Heal
           secondaries: ['haste', 'crit', 'versatility'],
           ppm: 3 * 1.33,
-          efficiency: 0.7 //
+          efficiency: 0.45 // Extremely high overhealing trinket.
         },
         { // Mushroom they need to stand on
           secondaries: ['haste', 'crit', 'versatility'],
           ppm: 3 * 1.33,
-          efficiency: {Raid: 0.3, Dungeon: 0.3} //
+          efficiency: {Raid: 0.25, Dungeon: 0.3} // This is very low because people rarely pick up the shrooms and when they go it's mostly overhealing.
         },
         
       ],
