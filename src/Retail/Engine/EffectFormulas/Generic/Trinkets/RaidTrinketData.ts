@@ -141,7 +141,7 @@ export const raidTrinketData = [
     },
     {
       name: "Preternatural Antivenom",
-      description: "",
+      description: "Will perform fine in lower HPS scenarios even up to heroic raid, but will fall heavily behind in Mythic raid scenarios.",
       setting: true,
       addonDescription: "",
       effects: [
