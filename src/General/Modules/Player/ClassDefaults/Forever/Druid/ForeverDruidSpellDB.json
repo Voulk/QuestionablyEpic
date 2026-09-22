@@ -1,16 +1,16 @@
 {
-    "Rejuvenation Rank 8": [
+    "Rejuvenation Rank 1": [
         {
             "displayInfo": {
-                "id": 9839,
+                "id": 774,
                 "icon": "spell_nature_rejuvenation",
                 "spellName": "Rejuvenation",
                 "cat": "",
-                "rank": "Rank 8"
+                "rank": "Rank 1"
             },
             "castTime": 0.0,
-            "cost": 235,
-            "flat": 94,
+            "cost": 25,
+            "flat": 8,
             "coeff": 0.2,
             "spellType": "buff",
             "buffType": "heal",
@@ -37,6 +37,32 @@
             "castTime": 0.0,
             "cost": 360,
             "flat": 194,
+            "coeff": 0.2,
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 12.0,
+            "tickData": {
+                "tickRate": 3.0,
+                "tickOnCast": false
+            },
+            "secondaries": [
+                "crit"
+            ],
+            "expectedOverheal": 0.15
+        }
+    ],
+    "Rejuvenation Rank 8": [
+        {
+            "displayInfo": {
+                "id": 9839,
+                "icon": "spell_nature_rejuvenation",
+                "spellName": "Rejuvenation",
+                "cat": "",
+                "rank": "Rank 8"
+            },
+            "castTime": 0.0,
+            "cost": 235,
+            "flat": 94,
             "coeff": 0.2,
             "spellType": "buff",
             "buffType": "heal",
