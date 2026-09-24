@@ -287,18 +287,18 @@ export const dungeonTrinketData =
     },
     {
       name: "Seed of Radiant Hope",
-      description: "Extremely undertuned. Quite bad even if you proc the extra heal every time.",
+      description: "Underwhelming. Quite bad even if you proc the extra heal every time.",
       addonDescription: "",
       effects: [
         {  // HoT effect
           secondaries: ['crit', 'versatility'],
-          cooldown: 90,
+          cooldown: 60,
           ticks: 8,
           efficiency: 0.65 //
         },
         { // Direct Heal effect
           secondaries: ['crit', 'versatility'],
-          cooldown: 90,
+          cooldown: 60,
           efficiency: {Raid: 0.3, Dungeon: 0.4} //
         },
         
@@ -333,12 +333,12 @@ export const dungeonTrinketData =
     },
         {
       name: "Unstable Felheart Crystal",
-      description: "Might find niche use in Mythic+ as a single target shield. The tuning is not really great for its 2-minute cooldown.",
+      description: "Might find use in Mythic+ as a single target shield.",
       addonDescription: "",
       effects: [
         { 
           secondaries: ['versatility'],
-          cooldown: 120,
+          cooldown: 90,
           efficiency: {Raid: 0.7, Dungeon: 0.85} //
         },
       ],

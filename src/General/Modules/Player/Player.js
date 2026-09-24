@@ -672,8 +672,8 @@ export class Player {
       this.castModels.push(new CastModel(spec, "Raid", "Farseer", 2));
       this.activeStats = {
         intellect: 3200,
-        haste: 240,
-        crit: 700,
+        haste: 400,
+        crit: 1200,
         mastery: 120,
         versatility: 410,
         stamina: 1900,
