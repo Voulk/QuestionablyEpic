@@ -141,21 +141,21 @@ export const raidTrinketData = [
     },
     {
       name: "Preternatural Antivenom",
-      description: "Will perform fine in lower HPS scenarios even up to heroic raid, but will fall heavily behind in Mythic raid scenarios.",
+      description: "Will perform fine in lower HPS scenarios including heroic raid, but tend to get outscaled as you head toward the later Mythic bosses.",
       setting: true,
       addonDescription: "",
       effects: [
         { 
-          secondaries: ['haste', 'versatility'],
+          secondaries: ['haste', 'versatility', 'crit'],
           ppm: 2.5,
-          targets: 1, // Heals for more per healed ally, up to 5.
-          //efficiency: {Raid: 0.9, Dungeon: 0.55}, //
+          targets: 1, //
+          efficiency: {Raid: 0.76, Dungeon: 0.76}, //
         },
       ],
       runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
         let bonus_stats: Stats = {};
 
-        bonus_stats.hps = runGenericFlatProc({...data[0], ...trinketRawData["Preternatural Antivenom"][0]}, itemLevel, player, additionalData.contentType);
+        bonus_stats.hps = runGenericFlatProc({...data[0], ...trinketRawData["Preternatural Antivenom"][0]}, itemLevel, player, additionalData.contentType, additionalData.setStats);
         
         return bonus_stats;
       }
