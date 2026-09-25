@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 import { apiSendTopGearSet } from "../SetupAndMenus/ConnectionUtilities";
 import { Button, Grid, Typography, Divider, Snackbar, SnackbarCloseReason } from "@mui/material";
 import MuiAlert from "@mui/material/Alert";
-import { buildNewWepCombos } from "../../Engine/ItemUtilities";
+import { buildNewWepCombos, getForcedEmbellishmentCount, MAX_EMBELLISHMENTS } from "../../Engine/ItemUtilities";
 import MiniItemCard from "./MiniItemCard";
 import { useHistory } from "react-router-dom";
 import HelpText from "../SetupAndMenus/HelpText";
@@ -26,7 +26,8 @@ import { TopGearResult } from "General/Modules/TopGear/Engine/TopGearResult";
 import TopGearReforgePanel from "./TopGearReforgePanel";
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
 import { prepareTopGear } from "./Engine/TopGearEngineClassic";
-import { buildDifferential, generateReportCode, createTopGearWorker } from "./Engine/TopGearEngineShared";
+import { buildDifferential, generateReportCode } from "./Engine/TopGearEngineShared";
+import { createTopGearWorker } from "./Engine/TopGearWorkerFactory";
 import { trackPageView } from "Analytics";
 import { getVersion } from "../ChangeLog/Log";
 
@@ -36,6 +37,7 @@ type ShortReport = {
   effectList: any[]; // TODO: Replace with proper Effect array.
   differentials: any[]; // TODO: Replace with Differentials.
   contentType: string; // TODO: Replace with contentTypes
+  embellishedSelected?: number; // Drives the "only two embellishments can be worn" note in the report.
   itemSet: {
     itemList: any[]; // TODO: Replace with Item
     setStats: any; // TODO: Replace with nice stat object.
@@ -383,9 +385,17 @@ export default function TopGear(props: any) {
 
       return errorMessage.slice(0, -2);
     }
-    else {
-      return "";
+
+    /* ------------------------------------ Embellishment cap ------------------------------------- */
+    // Only two embellishments can be worn at once. If three or more slots have nothing but embellished items
+    // selected then no wearable set exists, Top Gear discards every set it builds, and the player gets an empty
+    // report with no explanation. Say so on the selection screen instead.
+    const forcedEmbellishments = getForcedEmbellishmentCount(props.player.getSelectedItems());
+    if (forcedEmbellishments > MAX_EMBELLISHMENTS) {
+      return "Too many embellishments (" + forcedEmbellishments + "/" + MAX_EMBELLISHMENTS + "). Add a non-embellished option to one of those slots.";
     }
+
+    return "";
   }
 
   useEffect(() => {
@@ -428,6 +438,7 @@ export default function TopGear(props: any) {
         differentials: report.differentials, 
         new: false,
         contentType: report.contentType,
+        embellishedSelected: report.embellishedSelected,
         effectList: report.itemSet.effectList, 
         
        

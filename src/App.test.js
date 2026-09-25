@@ -10,10 +10,11 @@ import {render} from '@testing-library/react';
 const middlewares = []
 const mockStore = configureStore(middlewares)
 
-jest.mock('General/Modules/TopGear/Engine/TopGearEngineShared', () => {
+// Worker construction uses import.meta.url, which only the webpack build can parse. Stub the factory so importing
+// App doesn't drag it in. The rest of TopGearEngineShared is plain functions and loads fine.
+jest.mock('General/Modules/TopGear/Engine/TopGearWorkerFactory', () => {
   return {
-    createFetcherWorker: jest.fn(),
-    createLoaderWorker: jest.fn(),
+    createTopGearWorker: jest.fn(),
   };
 });
 
