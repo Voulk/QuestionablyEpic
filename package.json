@@ -23,7 +23,7 @@
     "i18next-xhr-backend": "^3.2.2",
     "local-storage": "^2.0.0",
     "mkcert": "^1.5.0",
-    "moment": "^2.29.2",
+    "moment": "^2.31.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-ga": "^3.3.0",
