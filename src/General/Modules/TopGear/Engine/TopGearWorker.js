@@ -11,7 +11,8 @@ self.onmessage = async function (e) {
       baseHPS,
       currentLanguage,
       playerSettings,
-      strippedCastModel
+      strippedCastModel,
+      advancedSelections
     } = e.data;
   
     try {
@@ -25,7 +26,8 @@ self.onmessage = async function (e) {
           contentType,
           baseHPS,
           playerSettings,
-          strippedCastModel
+          strippedCastModel,
+          advancedSelections
         );
   
         self.postMessage({ success: true, result });

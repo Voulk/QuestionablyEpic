@@ -35,6 +35,7 @@ import { getWHData } from "./WowheadGearPlannerExport";
 import { trackPageView } from "Analytics";
 import TopGearReportTabs from "./TopGearReportTabs";
 import TopGearFolioEntry from "./TopGearFolioEntry";
+import TopGearConsumables from "./TopGearConsumables";  
 
 async function fetchReport(reportCode, setResult, setBackgroundImage) {
   // Check that the reportCode is acceptable.
@@ -278,6 +279,8 @@ function displayReport(
   if (itemList.length === 0) itemList = fullItemList; // Fallback for older reports that don't have non-chosen items on them. Can be removed on a patch launch.
 
   console.log(fullItemList);
+  const setFlask = topSet.flask;
+  console.log(setFlask);
   console.log(topSet);
 
   // setup export button menu options
@@ -516,6 +519,9 @@ function displayReport(
                           {/*newWeaponCombos.map((item, index) => (
                             <ItemCardReport key={index + "weapons"} item={item} activateItem={true} enchants={enchants} gems={getGemIDs(item.slot)} firstSlot={topSet.firstSocket === item.slot}  />
                           ))*/}
+                        </Grid>
+                        <Grid>
+                          {gameType === "Retail" ? <TopGearConsumables flask={setFlask} /> : null}
                         </Grid>
                       </Grid>
                       <Grid item xs={0} lg={4} height={500} display={{ xs: "none", lg: "block" }}>

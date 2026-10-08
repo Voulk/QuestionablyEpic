@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
+import { queryWarcraftLogs } from "General/Modules/SetupAndMenus/LogUtilities";
 import moment from "moment";
 import { MenuItem, ListSubheader, Collapse, Divider } from "@mui/material";
 import { fightDuration, logDifficulty } from "General/Modules/GeneralComponents/Functions";
@@ -44,53 +45,31 @@ const LogImport = ({ reportid, cooldownImportFilter, clicker, close, update }) =
     const fetchReport = async () => {
       setIsLoading(true);
       setError(null);
+
       const REPORT_QUERY = `
         query ReportQuery($reportID: String!) {
           reportData {
             report(code: $reportID) {
-              fights(translate:true,killType:Encounters ){
-                id  
-                encounterID
-                difficulty
-                name
-                startTime
-                endTime
-                bossPercentage
-                fightPercentage
-                inProgress
-                size
-                maps{id }
-                kill
-                keystoneLevel
-                gameZone{id
-                name}
-            }
+              fights(translate: true, killType: Encounters) {
+                id encounterID difficulty name startTime endTime
+                bossPercentage fightPercentage inProgress size kill keystoneLevel
+                maps { id } gameZone { id name }
+              }
             }
           }
         }
       `;
 
       try {
-        const response = await axios({
-          url: "https://www.warcraftlogs.com/api/v2/client",
-          method: "post",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-            Authorization: `Bearer ${accessToken}`,
-          },
-          data: {
-            query: REPORT_QUERY,
-            variables: {
-              reportID: reportid,
-            },
-          },
-        });
-
-        setFights(response.data.data.reportData.report.fights);
-      } catch (error) {
-        console.error(error);
-        setError(error);
+        // Execute
+        const result = await queryWarcraftLogs(REPORT_QUERY, { reportID: reportid });
+        
+        // Map your component's state to the payload
+        if (result?.reportData?.report?.fights) {
+          setFights(result.reportData.report.fights);
+        }
+      } catch (err) {
+        setError(err || "Failed to parse report data.");
       } finally {
         setIsLoading(false);
       }
