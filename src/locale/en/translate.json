@@ -401,8 +401,8 @@
           "tooltip": "Expected number of stacks consumed by allies dropping low on health."
         },
         "averageRaidHealth": {
-          "title": "Volatile Void Suffuser",
-          "tooltip": "The average health of your raid for Volatile Void Suffuser. Note that it can proc off any healing event and you frequently have a lot of these on high health targets."
+          "title": "Sigil of the Impending Eclipse",
+          "tooltip": "The average health of your raid for Volatile Void Suffuser and Sigil of the Impending Eclipse. Note that it can proc off any healing event and you frequently have a lot of these on high health targets."
         },
         "darkmoonHuntStat": {
           "title": "Darkmoon Hunt: Stat",

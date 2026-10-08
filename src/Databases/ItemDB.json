@@ -14554,7 +14554,8 @@
             302,
             308,
             315,
-            321
+            321,
+            328
         ]
     },
     {
@@ -15874,7 +15875,8 @@
             302,
             308,
             315,
-            321
+            321,
+            328
         ]
     },
     {
@@ -16180,7 +16182,8 @@
             302,
             308,
             315,
-            321
+            321,
+            328
         ]
     },
     {
@@ -17108,7 +17111,8 @@
             302,
             308,
             315,
-            321
+            321,
+            328
         ]
     },
     {
@@ -18052,7 +18056,8 @@
             302,
             308,
             315,
-            321
+            321,
+            328
         ]
     },
     {
@@ -19247,7 +19252,8 @@
             302,
             308,
             315,
-            321
+            321,
+            328
         ]
     },
     {
@@ -61959,7 +61965,8 @@
             302,
             308,
             315,
-            321
+            321,
+            328
         ]
     },
     {
@@ -83722,7 +83729,7 @@
     },
     {
         "id": 193645,
-        "name": "Crystalized Bulwark",
+        "name": "Crystallized Bulwark",
         "icon": "inv_shield_1h_dragondungeon_c_02",
         "quality": 3,
         "itemClass": 4,
@@ -85229,7 +85236,8 @@
             321,
             328,
             331,
-            334
+            334,
+            340
         ]
     },
     {
@@ -85377,7 +85385,8 @@
             321,
             328,
             331,
-            334
+            334,
+            340
         ]
     },
     {
@@ -98793,7 +98802,7 @@
     },
     {
         "id": 200446,
-        "name": "Crystalized Sigil",
+        "name": "Crystallized Sigil",
         "icon": "inv_10_dungeonjewelry_explorer_necklace_1compassrose_color5",
         "quality": 3,
         "itemClass": 4,
@@ -227808,7 +227817,8 @@
             302,
             308,
             315,
-            321
+            321,
+            328
         ]
     },
     {
@@ -233753,7 +233763,8 @@
             321,
             328,
             331,
-            334
+            334,
+            340
         ]
     },
     {
@@ -233791,7 +233802,8 @@
             321,
             328,
             331,
-            334
+            334,
+            340
         ]
     },
     {
@@ -234114,7 +234126,8 @@
             321,
             328,
             331,
-            334
+            334,
+            340
         ]
     },
     {
@@ -234170,7 +234183,8 @@
             321,
             328,
             331,
-            334
+            334,
+            340
         ]
     },
     {
@@ -234208,7 +234222,8 @@
             321,
             328,
             331,
-            334
+            334,
+            340
         ]
     },
     {
@@ -238354,7 +238369,8 @@
             302,
             308,
             315,
-            321
+            321,
+            328
         ]
     },
     {
@@ -238389,7 +238405,8 @@
             302,
             308,
             315,
-            321
+            321,
+            328
         ]
     },
     {
@@ -238462,7 +238479,8 @@
             302,
             308,
             315,
-            321
+            321,
+            328
         ]
     },
     {
@@ -239018,7 +239036,8 @@
             302,
             308,
             315,
-            321
+            321,
+            328
         ]
     },
     {
@@ -262029,7 +262048,8 @@
             302,
             308,
             315,
-            321
+            321,
+            328
         ]
     },
     {
@@ -264920,7 +264940,8 @@
             321,
             328,
             331,
-            334
+            334,
+            340
         ]
     },
     {
@@ -264979,7 +265000,8 @@
             321,
             328,
             331,
-            334
+            334,
+            340
         ]
     },
     {
@@ -265059,7 +265081,8 @@
             321,
             328,
             331,
-            334
+            334,
+            340
         ]
     },
     {
@@ -265121,6 +265144,7 @@
             328,
             331,
             334,
+            340,
             344
         ]
     },
@@ -265180,7 +265204,8 @@
             321,
             328,
             331,
-            334
+            334,
+            340
         ]
     },
     {
@@ -280295,7 +280320,7 @@
     },
     {
         "id": 272248,
-        "name": "Galerider's Chausses",
+        "name": "Galerider's Footguards",
         "icon": "inv_boot_mail_outdooramaniloa_c_01",
         "quality": 4,
         "itemClass": 4,
@@ -280835,7 +280860,8 @@
             321,
             328,
             331,
-            334
+            334,
+            340
         ]
     },
     {
@@ -281265,7 +281291,8 @@
             321,
             328,
             331,
-            334
+            334,
+            340
         ]
     },
     {
@@ -281321,7 +281348,8 @@
             302,
             308,
             315,
-            321
+            321,
+            328
         ]
     },
     {
@@ -281358,7 +281386,8 @@
             302,
             308,
             315,
-            321
+            321,
+            328
         ]
     },
     {
@@ -281394,7 +281423,8 @@
             302,
             308,
             315,
-            321
+            321,
+            328
         ]
     },
     {
@@ -286094,6 +286124,261 @@
         "slot": "Shield"
     },
     {
+        "id": 277879,
+        "name": "Whisperthorn Ritual Knife",
+        "icon": "inv_knife_1h_zuljin_d_01",
+        "quality": 4,
+        "itemClass": 2,
+        "itemSubClass": 15,
+        "itemLevel": 219,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "versatility": 3900,
+            "crit": 3100
+        },
+        "squishEra": 2,
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 277880,
+        "name": "Runic Moonbrand",
+        "icon": "inv_axe_1h_outdooramaniloa_c_01",
+        "quality": 4,
+        "itemClass": 2,
+        "itemSubClass": 0,
+        "itemLevel": 219,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "versatility": 3700,
+            "haste": 3300
+        },
+        "squishEra": 2,
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 277881,
+        "name": "Fetid Reliquary Greaves",
+        "icon": "inv_boot_plate_outdooramaniloa_c_01",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 219,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "mastery": 3650,
+            "versatility": 3350
+        },
+        "squishEra": 2,
+        "slot": "Feet"
+    },
+    {
+        "id": 277883,
+        "name": "Duskmantle Spiteglass",
+        "icon": "inv_offhand_1h_outdooramaniloa_c_01",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 219,
+        "stats": {
+            "intellect": 16132,
+            "stamina": 7889,
+            "versatility": 3950,
+            "mastery": 3050
+        },
+        "squishEra": 2,
+        "slot": "Offhand"
+    },
+    {
+        "id": 277885,
+        "name": "Veilweaver Trousers",
+        "icon": "inv_pant_cloth_outdooramaniloa_c_01",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 219,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "versatility": 3850,
+            "haste": 3150
+        },
+        "squishEra": 2,
+        "slot": "Legs"
+    },
+    {
+        "id": 277886,
+        "name": "Pendant of Venomous Vigil",
+        "icon": "inv_jewelry_necklace_19",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 219,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "mastery": 9950,
+            "versatility": 7550
+        },
+        "squishEra": 2,
+        "slot": "Neck"
+    },
+    {
+        "id": 277888,
+        "name": "Veil of the Feral Rite",
+        "icon": "inv_helm_leather_outdooramaniloa_c_01",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 219,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "mastery": 4000,
+            "versatility": 3000
+        },
+        "squishEra": 2,
+        "slot": "Head"
+    },
+    {
+        "id": 277889,
+        "name": "Fanged Riftrazor",
+        "icon": "inv_glaive_1h_outdooramaniloa_c_01",
+        "quality": 4,
+        "itemClass": 2,
+        "itemSubClass": 9,
+        "itemLevel": 219,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "haste": 3900,
+            "crit": 3100
+        },
+        "squishEra": 2,
+        "slot": "Warglaive Weapon"
+    },
+    {
+        "id": 277890,
+        "name": "Wildwarden's Guise",
+        "icon": "inv_shoulder_leather_outdooramaniloa_c_01",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 219,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "mastery": 4100,
+            "versatility": 2900
+        },
+        "squishEra": 2,
+        "slot": "Shoulder"
+    },
+    {
+        "id": 277891,
+        "name": "Leviathan Bracerbands",
+        "icon": "inv_bracer_mail_outdooramaniloa_c_01",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 219,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "versatility": 3800,
+            "mastery": 3200
+        },
+        "squishEra": 2,
+        "slot": "Wrist"
+    },
+    {
+        "id": 277894,
+        "name": "Veilshroud Wraps",
+        "icon": "inv_glove_cloth_outdooramaniloa_c_01",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 219,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "versatility": 3800,
+            "haste": 3200
+        },
+        "squishEra": 2,
+        "slot": "Hands"
+    },
+    {
+        "id": 277895,
+        "name": "Veilweaver's Shadowgown",
+        "icon": "inv_robe_cloth_outdooramaniloa_c_01",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 219,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "versatility": 3650,
+            "haste": 3350
+        },
+        "squishEra": 2,
+        "slot": "Chest"
+    },
+    {
+        "id": 277896,
+        "name": "Bloodtide Hauberk",
+        "icon": "inv_chest_mail_outdooramaniloa_c_01",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 219,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "versatility": 3750,
+            "mastery": 3250
+        },
+        "squishEra": 2,
+        "slot": "Chest"
+    },
+    {
+        "id": 277897,
+        "name": "Bloodmark Signet",
+        "icon": "inv_12_jewelry_silvermoonelf_ring_green",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 219,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "mastery": 11150,
+            "versatility": 6350
+        },
+        "squishEra": 2,
+        "slot": "Finger"
+    },
+    {
+        "id": 277898,
+        "name": "Duskhallow Vanguard Greaves",
+        "icon": "inv_pant_plate_outdooramaniloa_c_01",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 219,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "versatility": 3750,
+            "mastery": 3250
+        },
+        "squishEra": 2,
+        "slot": "Legs"
+    },
+    {
         "id": 277951,
         "name": "Venomous Aspirant's Slicer",
         "icon": "inv_axe_1h_outdooramaniloa_c_01",
@@ -286984,6 +287269,108 @@
         "slot": "1H Weapon"
     },
     {
+        "id": 280033,
+        "name": "Veilshroud Grips",
+        "icon": "inv_glove_leather_outdooramaniloa_c_01",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 219,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "versatility": 3800,
+            "haste": 3200
+        },
+        "squishEra": 2,
+        "slot": "Hands"
+    },
+    {
+        "id": 280035,
+        "name": "Veilshroud Vambraces",
+        "icon": "inv_glove_mail_outdooramaniloa_c_01",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 219,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "versatility": 3800,
+            "haste": 3200
+        },
+        "squishEra": 2,
+        "slot": "Hands"
+    },
+    {
+        "id": 280036,
+        "name": "Veilshroud Gauntlets",
+        "icon": "inv_glove_plate_outdooramaniloa_c_01",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 219,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "versatility": 3800,
+            "haste": 3200
+        },
+        "squishEra": 2,
+        "slot": "Hands"
+    },
+    {
+        "id": 280038,
+        "name": "Fetid Reliquary Sabatons",
+        "icon": "inv_boot_mail_outdooramaniloa_c_01",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 219,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "mastery": 3650,
+            "versatility": 3350
+        },
+        "squishEra": 2,
+        "slot": "Feet"
+    },
+    {
+        "id": 280039,
+        "name": "Fetid Reliquary Treads",
+        "icon": "inv_boot_leather_outdooramaniloa_c_01",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 219,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "mastery": 3650,
+            "versatility": 3350
+        },
+        "squishEra": 2,
+        "slot": "Feet"
+    },
+    {
+        "id": 280040,
+        "name": "Fetid Reliquary Slippers",
+        "icon": "inv_boot_cloth_outdooramaniloa_c_01",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 219,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "mastery": 3650,
+            "versatility": 3350
+        },
+        "squishEra": 2,
+        "slot": "Feet"
+    },
+    {
         "id": 280047,
         "name": "Feathered Bell",
         "icon": "ability_mount_goatmount",
@@ -287036,7 +287423,8 @@
             302,
             308,
             315,
-            321
+            321,
+            328
         ]
     },
     {
@@ -287170,6 +287558,26 @@
             "type": "trinket",
             "name": "Breath of Jan'alai"
         }
+    },
+    {
+        "id": 280617,
+        "name": "Lightbearer's Shield Fragment",
+        "icon": "inv_1215_trinket_shield_fragment",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 219,
+        "stats": {
+            "intellect": 0,
+            "stamina": 0
+        },
+        "squishEra": 2,
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Lightbearer's Shield Fragment"
+        },
+        "offspecItem": true
     },
     {
         "id": 280693,
@@ -287478,6 +287886,203 @@
         "slot": "Back"
     },
     {
+        "id": 280835,
+        "name": "Sigil of the Impending Eclipse",
+        "icon": "inv_1215_trinket_eclipse_sigil",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 219,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0
+        },
+        "sources": [
+            {
+                "instanceId": 1324,
+                "encounterId": 2896
+            }
+        ],
+        "squishEra": 2,
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Sigil of the Impending Eclipse"
+        },
+        "levelRange": [
+            272,
+            276,
+            285,
+            289,
+            295,
+            302,
+            308,
+            315,
+            321,
+            328,
+            331,
+            334,
+            340
+        ]
+    },
+    {
+        "id": 281029,
+        "name": "Band of the Swarmcaller",
+        "icon": "acidbroodscourge_8268560",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 219,
+        "stats": {
+            "intellect": 0,
+            "stamina": 7889,
+            "mastery": 12750,
+            "haste": 4750
+        },
+        "sources": [
+            {
+                "instanceId": 1324,
+                "encounterId": 2896
+            }
+        ],
+        "squishEra": 2,
+        "slot": "Finger"
+    },
+    {
+        "id": 281056,
+        "name": "Sanctified Knight's Phoenixblade",
+        "icon": "inv_sword_1h_raidmidnight_d_01",
+        "quality": 4,
+        "itemClass": 2,
+        "itemSubClass": 7,
+        "itemLevel": 219,
+        "stats": {
+            "intellect": 30629,
+            "stamina": 7889,
+            "mastery": 3800,
+            "crit": 3200
+        },
+        "sources": [
+            {
+                "instanceId": 1324,
+                "encounterId": 2896
+            }
+        ],
+        "squishEra": 2,
+        "slot": "1H Weapon"
+    },
+    {
+        "id": 281215,
+        "name": "Twisted Horror's Tendril",
+        "icon": "twistedhorrorstendril_8268563",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 0,
+        "itemLevel": 219,
+        "stats": {
+            "intellect": 6666,
+            "stamina": 0
+        },
+        "squishEra": 2,
+        "slot": "Trinket",
+        "effect": {
+            "type": "trinket",
+            "name": "Twisted Horror's Tendril"
+        }
+    },
+    {
+        "id": 281235,
+        "name": "Voidweaver's Leggings",
+        "icon": "inv_pant_cloth_raidmageulatek_d_01",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 219,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "mastery": 4877,
+            "crit": 2123
+        },
+        "sources": [
+            {
+                "instanceId": 1324,
+                "encounterId": 2896
+            }
+        ],
+        "squishEra": 2,
+        "slot": "Legs"
+    },
+    {
+        "id": 281236,
+        "name": "Chestwrap of Palpable Terror",
+        "icon": "inv_chest_leather_raidrogueulatek_d_01",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 2,
+        "itemLevel": 219,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "haste": 4974,
+            "crit": 2026
+        },
+        "sources": [
+            {
+                "instanceId": 1324,
+                "encounterId": 2896
+            }
+        ],
+        "squishEra": 2,
+        "slot": "Chest"
+    },
+    {
+        "id": 281238,
+        "name": "Aberrant Commander's Gauntlets",
+        "icon": "inv_glove_mail_raidhunterulatek_d_01",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 3,
+        "itemLevel": 219,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 4888,
+            "mastery": 2112
+        },
+        "sources": [
+            {
+                "instanceId": 1324,
+                "encounterId": 2896
+            }
+        ],
+        "squishEra": 2,
+        "slot": "Hands"
+    },
+    {
+        "id": 281239,
+        "name": "Corroded Hulk's Skullcap",
+        "icon": "inv_helm_plate_raidwarriorulatek_d_01",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 219,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "mastery": 4900,
+            "haste": 2100
+        },
+        "sources": [
+            {
+                "instanceId": 1324,
+                "encounterId": 2896
+            }
+        ],
+        "squishEra": 2,
+        "slot": "Head"
+    },
+    {
         "id": 282425,
         "name": "Band of the Beast Reaper",
         "icon": "inv_ring_revendreth_01_gold",
@@ -287510,5 +288115,22 @@
         },
         "squishEra": 2,
         "slot": "Neck"
+    },
+    {
+        "id": 284219,
+        "name": "Granite Ritual Cuirass",
+        "icon": "inv_chest_plate_outdooramaniloa_c_01",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 4,
+        "itemLevel": 219,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "mastery": 3650,
+            "versatility": 3350
+        },
+        "squishEra": 2,
+        "slot": "Chest"
     }
 ]

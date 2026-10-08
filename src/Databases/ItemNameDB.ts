@@ -39094,7 +39094,7 @@ export const nameDB =
     },
     "193645": {
         "cn": "",
-        "en": "Crystalized Bulwark",
+        "en": "Crystallized Bulwark",
         "ru": "Кристаллизованный заслон",
         "es": "Baluarte cristalizado",
         "br": "Baluarte Cristalizado",
@@ -47984,7 +47984,7 @@ export const nameDB =
     },
     "200446": {
         "cn": "",
-        "en": "Crystalized Sigil",
+        "en": "Crystallized Sigil",
         "ru": "Кристаллизованная печать",
         "es": "Sigilo cristalizado",
         "br": "Signo Cristalizado",
@@ -135046,7 +135046,7 @@ export const nameDB =
         "cn": "",
         "en": "Two Thousand and Two Nights",
         "ru": "Две тысячи и две ночи",
-        "es": "Dos mil dos noches",
+        "es": "Dos mil y dos noches",
         "br": "Duas Mil e Uma Noites",
         "kr": "",
         "fr": "Deux mille et deux nuits",
@@ -146154,13 +146154,13 @@ export const nameDB =
     },
     "272248": {
         "cn": "",
-        "en": "Galerider's Chausses",
-        "ru": "Шоссы оседлавшего ветер",
-        "es": "Calzas de jinete de vendaval",
-        "br": "Chausses do Cavaleiro da Tempestade",
+        "en": "Galerider's Footguards",
+        "ru": "Прочные ботинки оседлавшего ветер",
+        "es": "Guardapiés de jinete de vendaval",
+        "br": "Guarda-pés do Cavaleiro da Tempestade",
         "kr": "",
-        "fr": "Hauts-de-chausses de chevauche-vent",
-        "de": "Beinlinge des Böenreiters"
+        "fr": "Protège-tibias de chevauche-vent",
+        "de": "Treter des Fußschützer"
     },
     "272249": {
         "cn": "",
@@ -149192,6 +149192,156 @@ export const nameDB =
         "fr": "Égide affolée par le venin",
         "de": "Giftverfluchte Aegis"
     },
+    "277879": {
+        "cn": "",
+        "en": "Whisperthorn Ritual Knife",
+        "ru": "Ритуальный нож шепчущего шипа",
+        "es": "Cuchillo de ritual susurroespina",
+        "br": "Faca Ritualística Sussurrespinho",
+        "kr": "",
+        "fr": "Couteau rituel de murmépine",
+        "de": "Flüsterdornritualmesser"
+    },
+    "277880": {
+        "cn": "",
+        "en": "Runic Moonbrand",
+        "ru": "Руническое лунное клеймо",
+        "es": "Marca lunar rúnica",
+        "br": "Marca Lunar Rúnica",
+        "kr": "",
+        "fr": "Marque-lunaire runique",
+        "de": "Runenmondwaffe"
+    },
+    "277881": {
+        "cn": "",
+        "en": "Fetid Reliquary Greaves",
+        "ru": "Зловонные наголенники реликвария",
+        "es": "Grebas de relicario fétido",
+        "br": "Grevas do Relicário Fétido",
+        "kr": "",
+        "fr": "Grèves de reliquaire fétide",
+        "de": "Beinschützer des übelriechenden Reliquiars"
+    },
+    "277883": {
+        "cn": "",
+        "en": "Duskmantle Spiteglass",
+        "ru": "Злопамятное стекло мглистой вуали",
+        "es": "Vidrio de rencor mantocaso",
+        "br": "Malivitro Vespermanto",
+        "kr": "",
+        "fr": "Verrancœur mantebrune",
+        "de": "Grollglas des Dämmermantels"
+    },
+    "277885": {
+        "cn": "",
+        "en": "Veilweaver Trousers",
+        "ru": "Штаны туманного ткача",
+        "es": "Calzas de tejevelos",
+        "br": "Calçotes do Tece-véus",
+        "kr": "",
+        "fr": "Chausses de tisse-voile",
+        "de": "Beinkleider des Schleierwebers"
+    },
+    "277886": {
+        "cn": "",
+        "en": "Pendant of Venomous Vigil",
+        "ru": "Подвеска ядовитого дозорного",
+        "es": "Colgante de vigilia venenosa",
+        "br": "Pingente da Vigília Peçonhenta",
+        "kr": "",
+        "fr": "Pendentif de vigie venimeuse",
+        "de": "Anhänger der giftigen Wacht"
+    },
+    "277888": {
+        "cn": "",
+        "en": "Veil of the Feral Rite",
+        "ru": "Покров звериного обряда",
+        "es": "Velo del rito feral",
+        "br": "Véu do Rito Feral",
+        "kr": "",
+        "fr": "Voile du rituel sauvage",
+        "de": "Schleier des Wildheitsritus"
+    },
+    "277889": {
+        "cn": "",
+        "en": "Fanged Riftrazor",
+        "ru": "Клыкастый резчик пустоты",
+        "es": "Fallacuchilla acolmillada",
+        "br": "Fendeabismo com Presas",
+        "kr": "",
+        "fr": "Lame-de-faille à crochets",
+        "de": "Gezackter Spaltreißer"
+    },
+    "277890": {
+        "cn": "",
+        "en": "Wildwarden's Guise",
+        "ru": "Личина дикого стража",
+        "es": "Apariencia de celador de la naturaleza",
+        "br": "Socapa do Guarda-mata",
+        "kr": "",
+        "fr": "Semblance de garde-sauvage",
+        "de": "Gewand des Wildwächters"
+    },
+    "277891": {
+        "cn": "",
+        "en": "Leviathan Bracerbands",
+        "ru": "Ободы левиафана",
+        "es": "Brazales de leviatán",
+        "br": "Braçadeiras do Leviatã",
+        "kr": "",
+        "fr": "Brassards du léviathan",
+        "de": "Leviathanarmbänder"
+    },
+    "277894": {
+        "cn": "",
+        "en": "Veilshroud Wraps",
+        "ru": "Повязки укрывающей завесы",
+        "es": "Envolturas de veloembozo",
+        "br": "Munhequeiras Mortavéu",
+        "kr": "",
+        "fr": "Couvre-bras voilinceul",
+        "de": "Schleiertuchwickel"
+    },
+    "277895": {
+        "cn": "",
+        "en": "Veilweaver's Shadowgown",
+        "ru": "Теневая мантия туманного ткача",
+        "es": "Toga de las Sombras de tejevelos",
+        "br": "Veste de Sombras do Tece-véus",
+        "kr": "",
+        "fr": "Ombrerobe de tisse-voile",
+        "de": "Schattenrobe des Schleierwebers"
+    },
+    "277896": {
+        "cn": "",
+        "en": "Bloodtide Hauberk",
+        "ru": "Хауберк кровавой волны",
+        "es": "Camisote de marea de sangre",
+        "br": "Cota de Maressangre",
+        "kr": "",
+        "fr": "Haubert de marée-de-sang",
+        "de": "Blutstromhalsberge"
+    },
+    "277897": {
+        "cn": "",
+        "en": "Bloodmark Signet",
+        "ru": "Печатка кровавого клейма",
+        "es": "Sello de marca de sangre",
+        "br": "Sinete da Marca de Sangue",
+        "kr": "",
+        "fr": "Chevalière de la marque de sang",
+        "de": "Blutmalsiegelring"
+    },
+    "277898": {
+        "cn": "",
+        "en": "Duskhallow Vanguard Greaves",
+        "ru": "Ритуальные поножи Авангарда теней",
+        "es": "Grebas de vanguardia Sacronoche",
+        "br": "Grevas da Vanguarda de Sacrepúsculo",
+        "kr": "",
+        "fr": "Grèves de l’avant-garde de Sanctebrune",
+        "de": "Schienbeinschützer der Dämmerweihvorhut"
+    },
     "277951": {
         "cn": "",
         "en": "Venomous Aspirant's Slicer",
@@ -149712,6 +149862,66 @@ export const nameDB =
         "fr": "Sorcelame exorcisée",
         "de": "Exorzierte Zauberklinge"
     },
+    "280033": {
+        "cn": "",
+        "en": "Veilshroud Grips",
+        "ru": "Захваты укрывающей завесы",
+        "es": "Mandiletes de veloembozo",
+        "br": "Guantes Mortavéu",
+        "kr": "",
+        "fr": "Poignes voilinceul",
+        "de": "Schleiertuchhandschutz"
+    },
+    "280035": {
+        "cn": "",
+        "en": "Veilshroud Vambraces",
+        "ru": "Тяжелые наручи укрывающей завесы",
+        "es": "Avambrazos de veloembozo",
+        "br": "Avambraços Mortavéu",
+        "kr": "",
+        "fr": "Protège-bras voilinceul",
+        "de": "Schleiertuchunterarmschienen"
+    },
+    "280036": {
+        "cn": "",
+        "en": "Veilshroud Gauntlets",
+        "ru": "Рукавицы укрывающей завесы",
+        "es": "Guanteletes de veloembozo",
+        "br": "Manoplas Mortavéu",
+        "kr": "",
+        "fr": "Gantelets voilinceul",
+        "de": "Schleiertuchstulpen"
+    },
+    "280038": {
+        "cn": "",
+        "en": "Fetid Reliquary Sabatons",
+        "ru": "Зловонные башмаки реликвария",
+        "es": "Escarpes de relicario fétido",
+        "br": "Escarpes do Relicário Fétido",
+        "kr": "",
+        "fr": "Solerets de reliquaire fétide",
+        "de": "Sabatons des übelriechenden Reliquiars"
+    },
+    "280039": {
+        "cn": "",
+        "en": "Fetid Reliquary Treads",
+        "ru": "Зловонные ботфорты реликвария",
+        "es": "Botines de relicario fétido",
+        "br": "Botinas do Relicário Fétido",
+        "kr": "",
+        "fr": "Bottines de reliquaire fétide",
+        "de": "Treter des übelriechenden Reliquiars"
+    },
+    "280040": {
+        "cn": "",
+        "en": "Fetid Reliquary Slippers",
+        "ru": "Зловонные сандалии реликвария",
+        "es": "Zapatillas de relicario fétido",
+        "br": "Sapatilhas do Relicário Fétido",
+        "kr": "",
+        "fr": "Mules de reliquaire fétide",
+        "de": "Pantoffeln des übelriechenden Reliquiars"
+    },
     "280047": {
         "cn": "",
         "en": "Feathered Bell",
@@ -149801,6 +150011,16 @@ export const nameDB =
         "kr": "",
         "fr": "Souffle de Jan’alai",
         "de": "Atem von Jan'alai"
+    },
+    "280617": {
+        "cn": "",
+        "en": "Lightbearer's Shield Fragment",
+        "ru": "Фрагмент щита Светоносца",
+        "es": "Fragmento de escudo de portador de la luz",
+        "br": "Fragmento do Escudo do Portaluz",
+        "kr": "",
+        "fr": "Fragment de bouclier de la porte-lumière",
+        "de": "Schildfragment des Lichtbringers"
     },
     "280693": {
         "cn": "",
@@ -149982,6 +150202,86 @@ export const nameDB =
         "fr": "Cape flottante imperturbable",
         "de": "Unflatterbarer Flatterumhang"
     },
+    "280835": {
+        "cn": "",
+        "en": "Sigil of the Impending Eclipse",
+        "ru": "Печать грядущего затмения",
+        "es": "Sigilo del eclipse inminente",
+        "br": "Signo do Eclipse Iminente",
+        "kr": "",
+        "fr": "Cachet de l’éclipse imminente",
+        "de": "Siegel der hereinbrechenden Finsternis"
+    },
+    "281029": {
+        "cn": "",
+        "en": "Band of the Swarmcaller",
+        "ru": "Кольцо призывателя роя",
+        "es": "Sortija del evocaenjambres",
+        "br": "Elo do Chama-enxame",
+        "kr": "",
+        "fr": "Anneau de mande-essaim",
+        "de": "Band des Schwarmrufers"
+    },
+    "281056": {
+        "cn": "",
+        "en": "Sanctified Knight's Phoenixblade",
+        "ru": "Пламенный клинок священного рыцаря",
+        "es": "Hoja de fénix de Caballero santificado",
+        "br": "Lâmina-fênix do Cavaleiro Santificado",
+        "kr": "",
+        "fr": "Lame-phénix de la chevalière sanctifiée",
+        "de": "Geheiligte Phönixklinge des Ritters"
+    },
+    "281215": {
+        "cn": "",
+        "en": "Twisted Horror's Tendril",
+        "ru": "Щупальце искореженного ужаса",
+        "es": "Tentáculo de horror retorcido",
+        "br": "Tentáculo do Terror Pervertido",
+        "kr": "",
+        "fr": "Tentacule de l’horreur distordue",
+        "de": "Tentakel des verderbten Schreckens"
+    },
+    "281235": {
+        "cn": "",
+        "en": "Voidweaver's Leggings",
+        "ru": "Поножи ткача Бездны",
+        "es": "Leotardos de tejevacío",
+        "br": "Perneiras do Tececaos",
+        "kr": "",
+        "fr": "Jambières de tisse-Vide",
+        "de": "Gamaschen des Leerenwebers"
+    },
+    "281236": {
+        "cn": "",
+        "en": "Chestwrap of Palpable Terror",
+        "ru": "Нагрудник ощутимого ужаса",
+        "es": "Cubrepecho de terror palpable",
+        "br": "Cotão do Terror Palpável",
+        "kr": "",
+        "fr": "Protège-torse de la terreur palpable",
+        "de": "Brustwickel des greifbaren Schreckens"
+    },
+    "281238": {
+        "cn": "",
+        "en": "Aberrant Commander's Gauntlets",
+        "ru": "Рукавицы преображенного командира",
+        "es": "Guanteletes de comandante aberrante",
+        "br": "Manoplas do Comandante Aberrante",
+        "kr": "",
+        "fr": "Gantelets du commandant aberrant",
+        "de": "Anomale Kommandantenstulpen"
+    },
+    "281239": {
+        "cn": "",
+        "en": "Corroded Hulk's Skullcap",
+        "ru": "Наголовник ржавого громилы",
+        "es": "Capacete de mole corroída",
+        "br": "Morrião do Gigante Corroído",
+        "kr": "",
+        "fr": "Calot du mastodonte corrodé",
+        "de": "Korrodierte Schädelkappe des Kolosses"
+    },
     "282425": {
         "cn": "",
         "en": "Band of the Beast Reaper",
@@ -150001,5 +150301,15 @@ export const nameDB =
         "kr": "",
         "fr": "Chaîne de transmission draenique",
         "de": "Draenische Antriebskette"
+    },
+    "284219": {
+        "cn": "",
+        "en": "Granite Ritual Cuirass",
+        "ru": "Гранитная ритуальная кираса",
+        "es": "Loriga de ritual granítico",
+        "br": "Corselete Ritual de Granito",
+        "kr": "",
+        "fr": "Cuirasse rituelle en granit",
+        "de": "Ritualkürass aus Granit"
     }
 };

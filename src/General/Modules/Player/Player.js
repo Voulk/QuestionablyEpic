@@ -646,7 +646,7 @@ export class Player {
       // 1200 stats post-squish
       this.activeStats = {
         intellect: 3200,
-        haste: 1200,
+        haste: 1400,
         crit: 150,
         mastery: 1150,
         versatility: 400,
@@ -686,7 +686,7 @@ export class Player {
 
       this.activeStats = {
         intellect: 3200, 
-        haste: 1100,
+        haste: 1500,
         crit: 900,
         mastery: 800,
         versatility: 100,

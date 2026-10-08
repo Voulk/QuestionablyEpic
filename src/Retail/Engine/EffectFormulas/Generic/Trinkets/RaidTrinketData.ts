@@ -5,6 +5,38 @@ import trinketRawData from "Retail/Engine/EffectFormulas/Generic/Trinkets/Trinke
 
 // Note that raid trinket data is stored here. For other trinket data, see the dungeon, timewalking and other trinket data files.
 export const raidTrinketData = [
+      { //
+        name: "Sigil of the Impending Eclipse",
+        description: "",
+        addonDescription: "",
+        setting: true,
+        effects: [
+        { // Stat Proc Portion
+            stat: "haste",
+            duration: 15,
+            ppm: 2,
+        },
+        {}
+        ],
+        runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+            let bonus_stats: Stats = {};
+
+            const averageRaidHealth = 100 - getSetting(additionalData.settings, "averageRaidHealth"); // Average health missing from the raid in percentage points. 85% average health = 15 here.
+            const baseHaste = {...data[0], ...trinketRawData["Sigil of the Impending Eclipse"][0]}
+            const statPerHealthMissing = {...data[1], ...trinketRawData["Sigil of the Impending Eclipse"][1]}
+            
+
+            const combinedData = {...baseHaste, coefficient: baseHaste.coefficient + statPerHealthMissing.coefficient * averageRaidHealth}; 
+            console.log(baseHaste, statPerHealthMissing, averageRaidHealth, combinedData)
+            bonus_stats.haste = runGenericPPMTrinket(combinedData, itemLevel, additionalData.setStats, ["RefreshExtends"]);
+
+            //bonus_stats.haste *= (1 + (1 - averageRaidHealth));
+
+            if (additionalData.includeTooltip) additionalData.tooltipData.push({name: "Average Raid Health (Adjustable)", value: `${getSetting(additionalData.settings, "averageRaidHealth")}%`})
+
+            return bonus_stats;
+            }
+    },
   { //
     /*
       Effects
