@@ -54,15 +54,13 @@ class ItemSet {
   // SetID: Num Pieces pair.
   sets: any =  {};
 
-  // Classic Socket List
-  bcSockets: any = {};
+
 
   firstSocket: string = ""; // The slot of the first socket in the set. Used to work out where to put our int gem. No effect on scoring.
 
   report: any;
 
   constructor(id: number, itemList: Item[], sumSoft: number, spec: string, flask?: number) {
-    console.log("Item set;" + flask);
     this.id = id;
     this.itemList = itemList;
     this.sumSoftScore = Math.round(1000 * sumSoft) / 1000;
@@ -88,7 +86,6 @@ class ItemSet {
       clonedSet.itemList = this.itemList.slice();
       clonedSet.setStats = { ...this.setStats };
       clonedSet.sets = { ...this.sets };
-      clonedSet.bcSockets = { ...this.bcSockets };
       clonedSet.firstSocket = this.firstSocket;
       clonedSet.report = this.report;
   

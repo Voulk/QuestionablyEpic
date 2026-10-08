@@ -431,7 +431,6 @@ export default function TopGear(props: any) {
 
   const shortenReport = (report: TopGearResult, player: Player, itemList: Item[]) => {
     const itemsAdded: String[] = []
-    console.log(report);
     if (report) {
       const shortReport: ShortReport = {id: report.id, 
         differentials: report.differentials, 

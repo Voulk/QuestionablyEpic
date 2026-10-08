@@ -181,6 +181,10 @@ export const raidStyles = makeStyles((theme) => {
       background: "linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, rgba(9, 14, 24, 0.88) 62%, rgba(19, 30, 46, 0.8) 82%, #3e7bd1 100%)",
       ...commonStyles,
     },
+    unbindingOfKithixHeader: {
+      background: "linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, rgba(24, 14, 9, 0.88) 62%, rgba(46, 27, 19, 0.8) 82%, #d16b3e 100%)",
+        ...commonStyles,
+    },
     voidspireHeader: {
       backgroundImage: `url(${require("../../../../Images/Bosses/MidnightS1/VoidspireShort.png")})`,
       ...commonStyles,

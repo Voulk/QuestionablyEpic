@@ -287983,12 +287983,33 @@
             "intellect": 6666,
             "stamina": 0
         },
+        "sources": [
+            {
+                "instanceId": 1324,
+                "encounterId": 2896
+            }
+        ],
         "squishEra": 2,
         "slot": "Trinket",
         "effect": {
             "type": "trinket",
             "name": "Twisted Horror's Tendril"
-        }
+        },
+        "levelRange": [
+            272,
+            276,
+            285,
+            289,
+            295,
+            302,
+            308,
+            315,
+            321,
+            328,
+            331,
+            334,
+            340
+        ]
     },
     {
         "id": 281235,

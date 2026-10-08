@@ -25,9 +25,7 @@ export const raidTrinketData = [
             const baseHaste = {...data[0], ...trinketRawData["Sigil of the Impending Eclipse"][0]}
             const statPerHealthMissing = {...data[1], ...trinketRawData["Sigil of the Impending Eclipse"][1]}
             
-
             const combinedData = {...baseHaste, coefficient: baseHaste.coefficient + statPerHealthMissing.coefficient * averageRaidHealth}; 
-            console.log(baseHaste, statPerHealthMissing, averageRaidHealth, combinedData)
             bonus_stats.haste = runGenericPPMTrinket(combinedData, itemLevel, additionalData.setStats, ["RefreshExtends"]);
 
             //bonus_stats.haste *= (1 + (1 - averageRaidHealth));
