@@ -36,6 +36,7 @@ type ShortReport = {
   effectList: any[]; // TODO: Replace with proper Effect array.
   differentials: any[]; // TODO: Replace with Differentials.
   contentType: string; // TODO: Replace with contentTypes
+  equippedHPS?: number; // Throughput of the player's current gear, for the upgrade percentage.
   itemSet: {
     itemList: any[]; // TODO: Replace with Item
     setStats: any; // TODO: Replace with nice stat object.
@@ -428,6 +429,7 @@ export default function TopGear(props: any) {
         differentials: report.differentials, 
         new: false,
         contentType: report.contentType,
+        equippedHPS: report.equippedHPS,
         effectList: report.itemSet.effectList, 
         
        
@@ -442,6 +444,7 @@ export default function TopGear(props: any) {
                   folioGems: report.itemSet.folioGems || [],
                   firstSocket: report.itemSet.firstSocket,
                   hardScore: report.itemSet.hardScore,
+                  setHPS: report.itemSet.setHPS,
                   statBreakdown: report.itemSet.statBreakdown,
                 },
         player: {name: player.charName, realm: player.realm, race: player.race || "", region: player.region, spec: player.spec, model: player.getActiveModel(report.contentType).modelName},
