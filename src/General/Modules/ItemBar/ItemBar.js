@@ -19,6 +19,7 @@ import {
   calcStatsAtLevel,
   autoAddItems,
   getItemEffectOptions,
+  hasUnallocatedStats,
 } from "../../Engine/ItemUtilities";
 import { CONSTRAINTS } from "../../Engine/CONSTRAINTS";
 import { useSelector } from "react-redux";
@@ -333,7 +334,9 @@ export default function ItemBar(props) {
     itemLevel: true,
     socket: gameType === "Retail" && CONSTANTS.socketSlots.includes(getItemProp(itemID, "slot", gameType)),
     tertiaries: !(isItemCrafted) && gameType === "Retail",
-    missives: isItemCrafted || getItemProp(itemID, "randomStats", gameType),
+    // Only offer the crafted stat picker when the item actually has stat budget to assign. Generic crafts always
+    // do; fixed-embellished items don't, and showing a picker there implies a choice that has no effect.
+    missives: (isItemCrafted && hasUnallocatedStats(itemID, gameType)) || getItemProp(itemID, "randomStats", gameType),
     specialEffect: itemEffectOptions.length > 0,
   }
 
