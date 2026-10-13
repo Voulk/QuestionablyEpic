@@ -5,6 +5,47 @@ import trinketRawData from "Retail/Engine/EffectFormulas/Generic/Trinkets/Trinke
 
 // Note that raid trinket data is stored here. For other trinket data, see the dungeon, timewalking and other trinket data files.
 export const raidTrinketData = [
+  { //
+      id: 281215,
+      name: "Twisted Horror's Tendril",
+      description: "",
+      addonDescription: "",
+      effects: [
+      { // Stat Proc Portion
+          stat: "crit",
+          duration: 15,
+          ppm: 20,
+          specMods: { // We will refine these with logs
+            "Holy Paladin": 0.2,
+            "Preservation Evoker": 0.7,
+            "Restoration Druid": 0,
+            "Restoration Shaman": 1, // Acid Rain
+            "Holy Priest": 0,
+            "Discpline Priest": 1,
+            "Mistweaver Monk": 1,
+          }
+      },
+      ],
+      runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+          let bonus_stats: Stats = {};
+
+          let specMod = 1;
+
+          if (additionalData.contentType === "Dungeon" && (player.spec === "Holy Paladin" || player.spec === "Restoration Druid" )) {
+            // Both of these specs cast plenty of DPS spells in dungeons.
+            specMod = 0.95;
+          }
+          else {
+            specMod = data[0].specMods[player.spec] || 0;
+          }
+
+          bonus_stats[data[0].stat!] = runGenericPPMOverlapTrinket({...data[0], ...trinketRawData["Twisted Horror's Tendril"][0]}, itemLevel);
+
+          bonus_stats[data[0].stat!] *= specMod;
+
+          return bonus_stats;
+    }
+  },
       { //
         name: "Sigil of the Impending Eclipse",
         description: "",
@@ -27,8 +68,6 @@ export const raidTrinketData = [
             
             const combinedData = {...baseHaste, coefficient: baseHaste.coefficient + statPerHealthMissing.coefficient * averageRaidHealth}; 
             bonus_stats.haste = runGenericPPMTrinket(combinedData, itemLevel, additionalData.setStats, ["RefreshExtends"]);
-
-            //bonus_stats.haste *= (1 + (1 - averageRaidHealth));
 
             if (additionalData.includeTooltip) additionalData.tooltipData.push({name: "Average Raid Health (Adjustable)", value: `${getSetting(additionalData.settings, "averageRaidHealth")}%`})
 

@@ -69720,6 +69720,23 @@
         "slot": "Finger"
     },
     {
+        "id": 171540,
+        "name": "Maiden's Adoration",
+        "icon": "inv_misc_cape_18",
+        "quality": 4,
+        "itemClass": 4,
+        "itemSubClass": 1,
+        "itemLevel": 60,
+        "stats": {
+            "intellect": 5259,
+            "stamina": 7889,
+            "crit": 3500,
+            "versatility": 3500
+        },
+        "faction": "horde",
+        "slot": "Back"
+    },
+    {
         "id": 171543,
         "name": "Band of Deplorable Violence",
         "icon": "inv_jewelry_ring_55",

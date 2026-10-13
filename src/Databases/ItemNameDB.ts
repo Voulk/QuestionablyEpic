@@ -32092,6 +32092,16 @@ export const nameDB =
         "fr": "Manifestation horrible",
         "de": "Blutrünstige Offenbarung"
     },
+    "171540": {
+        "cn": "",
+        "en": "Maiden's Adoration",
+        "ru": "Девичья любовь",
+        "es": "Adoración de doncella",
+        "br": "Adoração da Donzela",
+        "kr": "",
+        "fr": "Adoration de la damoiselle",
+        "de": "Verehrung der Maid"
+    },
     "171543": {
         "cn": "",
         "en": "Band of Deplorable Violence",
