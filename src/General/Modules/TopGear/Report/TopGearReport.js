@@ -280,8 +280,6 @@ function displayReport(
 
   console.log(fullItemList);
   const setFlask = topSet.flask;
-  console.log(setFlask);
-  console.log(topSet);
 
   // setup export button menu options
   let exportOptions = [];
