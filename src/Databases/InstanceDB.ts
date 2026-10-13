@@ -43,6 +43,7 @@ export const instanceDB: Record<string | number, string> = {
   "1305": "Sporefall",
   "1320": "The Venomous Abyss",
   "1317": "The Tidebound Grotto",
+  "1324": "Unbinding of Kith'ix",
 
   "-4": "Crafted",
   "-12": "Reputation",
@@ -135,6 +136,13 @@ export const retailInstanceDB: Record<string | number, any> = {
     bossOrder: [2849],
     bosses: {
       2849: "Nymrissa Wavecaller",
+    },
+  },
+  1324: {
+    name: "Unbinding of Kith'ix",
+    bossOrder: [2896],
+    bosses: {
+      2896: "Kith'ix",
     },
   },
   // Voidspire

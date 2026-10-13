@@ -629,8 +629,8 @@ export function getItemProp(id: number, prop: string, gameType: gameTypes = "Ret
 export function getItemIcon(id: number, gameType = "Retail") {
   const item = getItem(id, gameType);
 
-  if (gameType === "Classic" && item !== "") return "https://wow.zamimg.com/images/wow/icons/large/" + item.icon + ".jpg";
-  if (item !== "" && "icon" in item) return process.env.PUBLIC_URL + "/Images/Icons/" + item.icon + ".jpg";
+  if (item !== ""/* &&gameType === "Classic" */) return "https://wow.zamimg.com/images/wow/icons/large/" + item.icon + ".jpg";
+  else if (item !== "" && "icon" in item) return process.env.PUBLIC_URL + "/Images/Icons/" + item.icon + ".jpg";
   else if (item !== "") {
     reportError("", "ItemUtilities", "Icon not found for ID", id.toString());
     console.error("Icon missing");

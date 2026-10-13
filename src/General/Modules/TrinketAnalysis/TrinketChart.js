@@ -70,7 +70,7 @@ const handleDownload = () => {
 };
 
 export const sourceHandler = (array, sources, playerSpec) => {
-  const raidSources = [1314, 1308, 1307, 1320, 1317, 1305];
+  const raidSources = [1314, 1308, 1307, 1320, 1317, 1305, 1324];
   const dungeonSources = [-1];
   const delveSources = [-98];
   const otherSources = [1192, 1205, -18, -17, -85, -4, -95];
@@ -172,7 +172,7 @@ export default function TrinketChart({ player }) {
 
   const allItemLevels =
     gameType === "Retail"
-      ? [272, 276, 285, 289, 295, 298, 302, 308, 315, 321, 328, 331, 334, 344]
+      ? [272, 276, 285, 289, 295, 298, 302, 308, 315, 321, 328, 331, 334, 340, 344]
       : [476, 502, 509, 510, 517, 522, 528, 535, 541, 553, 559, 566, 572];
 
   const itemLevels = allItemLevels.filter((level) => level <= levelCap || gameType === "Classic");

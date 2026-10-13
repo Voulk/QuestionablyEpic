@@ -87,6 +87,8 @@ export default function RaidGearContainer(props) {
         return classes.venomousAbyssHeader;
       case 1317:
         return classes.tideboundGrottoHeader;
+      case 1324:
+        return classes.unbindingOfKithixHeader;
       default:
         return classes.defaultHeader;
     }
