@@ -281372,7 +281372,7 @@
     {
         "id": 274494,
         "name": "Chiral Marrowgrafter",
-        "icon": "inv__misc_herb_marrowroot_leaf",
+        "icon": "inv_-misc_herb_marrowroot_leaf",
         "quality": 4,
         "itemClass": 4,
         "itemSubClass": 0,
@@ -287905,7 +287905,7 @@
     {
         "id": 280835,
         "name": "Sigil of the Impending Eclipse",
-        "icon": "inv_1215_trinket_eclipse_sigil",
+        "icon": "8268562",
         "quality": 4,
         "itemClass": 4,
         "itemSubClass": 0,
@@ -287991,7 +287991,7 @@
     {
         "id": 281215,
         "name": "Twisted Horror's Tendril",
-        "icon": "twistedhorrorstendril_8268563",
+        "icon": "8268563",
         "quality": 4,
         "itemClass": 4,
         "itemSubClass": 0,

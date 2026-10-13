@@ -8,7 +8,8 @@ export const raidTrinketData = [
   { //
       id: 281215,
       name: "Twisted Horror's Tendril",
-      description: "",
+      description: "Extremely good (better than shown) on multi-target fights which is most of them. Requires that you DPS an enemy frequently to get maximum procs. If your spec does not have a way to do this as part of your regular rotation, then consider another trinket.",
+      warningFlag: true,
       addonDescription: "",
       effects: [
       { // Stat Proc Portion
@@ -21,7 +22,7 @@ export const raidTrinketData = [
             "Restoration Druid": 0,
             "Restoration Shaman": 1, // Acid Rain
             "Holy Priest": 0,
-            "Discpline Priest": 1,
+            "Discipline Priest": 1,
             "Mistweaver Monk": 1,
           }
       },

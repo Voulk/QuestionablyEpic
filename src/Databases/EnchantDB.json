@@ -38,6 +38,12 @@
       "enchantType": "healthpotion",
       "name": "Concentrated Silvermoon Health Potion",
       "icon": "inv_12_profession_alchemy_lightpotion_purple"
+    },
+    {
+      "id": 243734,
+      "enchantType": "oil",
+      "name": "Thalassian Phoenix Oil",
+      "icon": "inv_12_profession_enchanting_manaoil_red"
     }
 
 ]
