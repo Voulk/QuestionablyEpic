@@ -6,6 +6,76 @@ import trinketRawData from "Retail/Engine/EffectFormulas/Generic/Trinkets/Trinke
 // Note that raid trinket data is stored here. For other trinket data, see the dungeon, timewalking and other trinket data files.
 export const raidTrinketData = [
   { //
+      id: 281215,
+      name: "Twisted Horror's Tendril",
+      description: "Extremely good (better than shown) on multi-target fights which is most of them. Requires that you DPS an enemy frequently to get maximum procs. If your spec does not have a way to do this as part of your regular rotation, then consider another trinket.",
+      warningFlag: true,
+      addonDescription: "",
+      effects: [
+      { // Stat Proc Portion
+          stat: "crit",
+          duration: 15,
+          ppm: 20,
+          specMods: { // We will refine these with logs
+            "Holy Paladin": 0.2,
+            "Preservation Evoker": 0.7,
+            "Restoration Druid": 0,
+            "Restoration Shaman": 1, // Acid Rain
+            "Holy Priest": 0,
+            "Discipline Priest": 1,
+            "Mistweaver Monk": 1,
+          }
+      },
+      ],
+      runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+          let bonus_stats: Stats = {};
+
+          let specMod = 1;
+
+          if (additionalData.contentType === "Dungeon" && (player.spec === "Holy Paladin" || player.spec === "Restoration Druid" )) {
+            // Both of these specs cast plenty of DPS spells in dungeons.
+            specMod = 0.95;
+          }
+          else {
+            specMod = data[0].specMods[player.spec] || 0;
+          }
+
+          bonus_stats[data[0].stat!] = runGenericPPMOverlapTrinket({...data[0], ...trinketRawData["Twisted Horror's Tendril"][0]}, itemLevel);
+
+          bonus_stats[data[0].stat!] *= specMod;
+
+          return bonus_stats;
+    }
+  },
+      { //
+        name: "Sigil of the Impending Eclipse",
+        description: "",
+        addonDescription: "",
+        setting: true,
+        effects: [
+        { // Stat Proc Portion
+            stat: "haste",
+            duration: 15,
+            ppm: 2,
+        },
+        {}
+        ],
+        runFunc: function(data: Array<effectData>, player: Player, itemLevel: number, additionalData: any) {
+            let bonus_stats: Stats = {};
+
+            const averageRaidHealth = 100 - getSetting(additionalData.settings, "averageRaidHealth"); // Average health missing from the raid in percentage points. 85% average health = 15 here.
+            const baseHaste = {...data[0], ...trinketRawData["Sigil of the Impending Eclipse"][0]}
+            const statPerHealthMissing = {...data[1], ...trinketRawData["Sigil of the Impending Eclipse"][1]}
+            
+            const combinedData = {...baseHaste, coefficient: baseHaste.coefficient + statPerHealthMissing.coefficient * averageRaidHealth}; 
+            bonus_stats.haste = runGenericPPMTrinket(combinedData, itemLevel, additionalData.setStats, ["RefreshExtends"]);
+
+            if (additionalData.includeTooltip) additionalData.tooltipData.push({name: "Average Raid Health (Adjustable)", value: `${getSetting(additionalData.settings, "averageRaidHealth")}%`})
+
+            return bonus_stats;
+            }
+    },
+  { //
     /*
       Effects
       - 

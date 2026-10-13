@@ -54,7 +54,7 @@ export default function QELogImport(props) {
     setShowSelectedFight(true);
   };
 
-  // Returns data from the selected log based on the current characters specialization.
+  // Called 
   const importHealerNamesFromLogsQE = async (starttime, endtime, reportid) => {
     let classSpec = "";
     let classIcon = "";
@@ -176,15 +176,7 @@ export default function QELogImport(props) {
     setHealerData(healers);
     // Import summary Info from the Logs Summary table.This contains our data for Gear, Stats, Conduits, Soulbinds etc.
     const summary = await importSummaryData(starttime, endtime, reportID);
-    // Import all the damage-taken from the log for friendly targets.
-    // const damage = await importDamageLogData(starttime, endtime, reportID);
-    // Import the log data for Casts for each healer in the log.
-    // const casts = await importCastsLogDataQE(
-    //   starttime,
-    //   endtime,
-    //   reportID,
-    //   healers.map((key) => key.id)
-    // );
+
     // Set all the returned data to state
     let summaryReturned = summary;
     setSummaryData(summary);
@@ -195,7 +187,7 @@ export default function QELogImport(props) {
     // convertLogStatOutput(props.player, summaryReturned, currentPlayerID);
   };
 
-  // Handler to set PLayer ID when player selected from dropdown
+  // Handler to set Player ID when player selected from dropdown
   const playerSelectedHandler = (e) => {
     setSelectValue(e);
     setCurrentPlayerID(

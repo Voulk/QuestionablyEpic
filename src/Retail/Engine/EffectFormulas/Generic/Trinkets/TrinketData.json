@@ -1,4 +1,20 @@
 {
+    "Twisted Horror's Tendril": [
+        {
+            "coefficient": 0.119862,
+            "scalingClass": -7
+        }
+    ],
+    "Sigil of the Impending Eclipse": [
+        {
+            "coefficient": 0.944841,
+            "scalingClass": -7
+        },
+        {
+            "coefficient": 0.006749,
+            "scalingClass": -7
+        }
+    ],
     "Nevermelting Ice Crystal": [],
     "Necromantic Focus": [
         {

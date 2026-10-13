@@ -31,6 +31,8 @@ class ItemSet {
   // We only use it for display purposes on the report end.
   enchantBreakdown: { [key: string]: string | number | number[] } = {};
 
+  flask?: number; // The flask the set is using.
+
   // A list of all items in the set.
   itemList: Item[];
 
@@ -52,29 +54,30 @@ class ItemSet {
   // SetID: Num Pieces pair.
   sets: any =  {};
 
-  // Classic Socket List
-  bcSockets: any = {};
+
 
   firstSocket: string = ""; // The slot of the first socket in the set. Used to work out where to put our int gem. No effect on scoring.
 
   report: any;
 
-  constructor(id: number, itemList: Item[], sumSoft: number, spec: string) {
+  constructor(id: number, itemList: Item[], sumSoft: number, spec: string, flask?: number) {
     this.id = id;
     this.itemList = itemList;
     this.sumSoftScore = Math.round(1000 * sumSoft) / 1000;
     this.spec = spec;
+    this.flask = flask || -1;
   }
 
     // Create a clone of the current instance
     clone(): ItemSet {
-      const clonedSet = new ItemSet(this.id, this.itemList.slice(), this.sumSoftScore, this.spec);
+      const clonedSet = new ItemSet(this.id, this.itemList.slice(), this.sumSoftScore, this.spec, this.flask);
   
       // Copy other properties
       clonedSet.spec = this.spec;
       clonedSet.sumSoftScore = this.sumSoftScore;
       clonedSet.hardScore = this.hardScore;
       clonedSet.setSockets = this.setSockets;
+      clonedSet.flask = this.flask;
       clonedSet.uniques = { ...this.uniques };
       clonedSet.effectList = this.effectList.slice();
       clonedSet.onUseTrinkets = this.onUseTrinkets.slice();
@@ -83,7 +86,6 @@ class ItemSet {
       clonedSet.itemList = this.itemList.slice();
       clonedSet.setStats = { ...this.setStats };
       clonedSet.sets = { ...this.sets };
-      clonedSet.bcSockets = { ...this.bcSockets };
       clonedSet.firstSocket = this.firstSocket;
       clonedSet.report = this.report;
   

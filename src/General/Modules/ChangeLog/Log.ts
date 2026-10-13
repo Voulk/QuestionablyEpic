@@ -19,6 +19,16 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+  {
+    version: "12.1.5 / 5.5.4",
+    update: 12,
+    date: "October 13",
+    changes: [ 
+      "12.1.5 content, including Kithix, new trinkets, and upgrade tokens.",
+      "Revamped Flasks to allow for multiple selections at once. Currently being trialled on select specs only.",
+      "Revamped all log code. Let me know if you run into anything weird. This will allow for a lot more log functionality in future.",
+    ]
+  },
       {
     version: "12.1 / 5.5.4",
     update: 11,

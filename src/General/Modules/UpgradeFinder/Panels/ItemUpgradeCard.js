@@ -197,6 +197,9 @@ export default function ItemCard(props) {
     if (item.source.instanceId === 1317 && item.source.encounterId > 0) {
       return encounterDB[1317].bosses[item.source.encounterId];
     }
+    if (item.source.instanceId === 1324 && item.source.encounterId > 0) {
+      return encounterDB[1324].bosses[item.source.encounterId];
+    }
 
     /* -------------------------- Classic Bosses ---------------------- */
     if ([745, 746].includes(item.source.instanceId)) {

@@ -68679,30 +68679,53 @@ export const bonus_IDs: {[key: string]: any} = {
       }
     }
   },
+  "11053": {
+    "id": 11053,
+    "requiredLevelCurve": {
+      "curve": 96502,
+      "val": 2832
+    }
+  },
   "11054": {
     "id": 11054,
     "ilevel": "363 @plvl 55 - 554 @plvl 554",
     "curveId": 71409,
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 96502,
+      "val": 2832
+    }
   },
   "11055": {
     "id": 11055,
     "ilevel": "369 @plvl 55 - 554 @plvl 554",
     "curveId": 71410,
     "quality": 4,
-    "applyBonusId": 13616
+    "applyBonusId": 13616,
+    "requiredLevelCurve": {
+      "curve": 96502,
+      "val": 2832
+    }
   },
   "11061": {
     "id": 11061,
     "ilevel": "363 @plvl 55 - 554 @plvl 554",
     "curveId": 71409,
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 96502,
+      "val": 2832
+    }
   },
   "11062": {
     "id": 11062,
     "ilevel": "232 @plvl 45 - 353 @plvl 353",
     "curveId": 30726,
-    "quality": 4
+    "quality": 4,
+    "requiredLevelCurve": {
+      "curve": 96502,
+      "val": 2832
+    }
   },
   "11065": {
     "id": 11065,
@@ -90151,7 +90174,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "amount": 328,
       "priority": 0,
       "squishEra": 2
-    }
+    },
+    "tag": "Ascendant Venomforged: Hero"
   },
   "12849": {
     "id": 12849,
@@ -90575,7 +90599,8 @@ export const bonus_IDs: {[key: string]: any} = {
       "amount": 340,
       "priority": 0,
       "squishEra": 2
-    }
+    },
+    "tag": "Ascendant Venomforged: Myth"
   },
   "12857": {
     "id": 12857,
@@ -91691,7 +91716,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "13210": {
     "id": 13210,
-    "tag": "Rank 1/4",
+    "tag": "Rank 1/5",
     "effect": {
       "id": 213707,
       "index": 0,
@@ -91704,7 +91729,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "13211": {
     "id": 13211,
-    "tag": "Rank 2/4",
+    "tag": "Rank 2/5",
     "quality": 2,
     "effect": {
       "id": 213708,
@@ -91718,7 +91743,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "13212": {
     "id": 13212,
-    "tag": "Rank 3/4",
+    "tag": "Rank 3/5",
     "quality": 3,
     "effect": {
       "id": 213709,
@@ -91732,7 +91757,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "13213": {
     "id": 13213,
-    "tag": "Rank 4/4",
+    "tag": "Rank 4/5",
     "quality": 4,
     "effect": {
       "id": 213710,
@@ -91911,7 +91936,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "13226": {
     "id": 13226,
-    "tag": "Rank 1/4",
+    "tag": "Rank 1/5",
     "effect": {
       "id": 213726,
       "index": 0,
@@ -91924,7 +91949,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "13227": {
     "id": 13227,
-    "tag": "Rank 2/4",
+    "tag": "Rank 2/5",
     "quality": 2,
     "effect": {
       "id": 213725,
@@ -91938,7 +91963,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "13228": {
     "id": 13228,
-    "tag": "Rank 3/4",
+    "tag": "Rank 3/5",
     "quality": 3,
     "effect": {
       "id": 213724,
@@ -91952,7 +91977,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "13229": {
     "id": 13229,
-    "tag": "Rank 4/4",
+    "tag": "Rank 4/5",
     "quality": 4,
     "effect": {
       "id": 213723,
@@ -92131,7 +92156,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "13242": {
     "id": 13242,
-    "tag": "Rank 1/4",
+    "tag": "Rank 1/5",
     "effect": {
       "id": 213742,
       "index": 0,
@@ -92144,7 +92169,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "13243": {
     "id": 13243,
-    "tag": "Rank 2/4",
+    "tag": "Rank 2/5",
     "quality": 2,
     "effect": {
       "id": 213741,
@@ -92158,7 +92183,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "13244": {
     "id": 13244,
-    "tag": "Rank 3/4",
+    "tag": "Rank 3/5",
     "quality": 3,
     "effect": {
       "id": 213740,
@@ -92172,7 +92197,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "13245": {
     "id": 13245,
-    "tag": "Rank 4/4",
+    "tag": "Rank 4/5",
     "quality": 4,
     "effect": {
       "id": 213739,
@@ -92186,7 +92211,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "13246": {
     "id": 13246,
-    "tag": "Rank 1/4",
+    "tag": "Rank 1/5",
     "effect": {
       "id": 213746,
       "index": 0,
@@ -92199,7 +92224,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "13247": {
     "id": 13247,
-    "tag": "Rank 2/4",
+    "tag": "Rank 2/5",
     "quality": 2,
     "effect": {
       "id": 213745,
@@ -92213,7 +92238,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "13248": {
     "id": 13248,
-    "tag": "Rank 3/4",
+    "tag": "Rank 3/5",
     "quality": 3,
     "effect": {
       "id": 213744,
@@ -92227,7 +92252,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "13249": {
     "id": 13249,
-    "tag": "Rank 4/4",
+    "tag": "Rank 4/5",
     "quality": 4,
     "effect": {
       "id": 213743,
@@ -94433,8 +94458,7 @@ export const bonus_IDs: {[key: string]: any} = {
       "offset": 0,
       "priority": 300,
       "squishEra": 2
-    },
-    "quality": 2
+    }
   },
   "13565": {
     "id": 13565,
@@ -94852,8 +94876,12 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "13611": {
     "id": 13611,
-    "ilevel": "120 @plvl 80 - 201 @plvl 201",
-    "curveId": 92772,
+    "dropLevelCurve": {
+      "curveId": 92772,
+      "offset": 0,
+      "priority": 0,
+      "squishEra": 2
+    },
     "requiredLevelCurve": {
       "curve": 70856,
       "val": 3322
@@ -95106,7 +95134,11 @@ export const bonus_IDs: {[key: string]: any} = {
       "priority": 0,
       "squishEra": 2
     },
-    "quality": 2
+    "quality": 2,
+    "requiredLevelCurve": {
+      "curve": 78136,
+      "val": 0
+    }
   },
   "13648": {
     "id": 13648,
@@ -95252,7 +95284,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "13673": {
     "id": 13673,
-    "tag": "Rank 1/4",
+    "tag": "Rank 1/5",
     "effect": {
       "id": 231663,
       "index": 0,
@@ -95265,7 +95297,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "13674": {
     "id": 13674,
-    "tag": "Rank 2/4",
+    "tag": "Rank 2/5",
     "quality": 2,
     "effect": {
       "id": 231664,
@@ -95279,7 +95311,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "13675": {
     "id": 13675,
-    "tag": "Rank 3/4",
+    "tag": "Rank 3/5",
     "quality": 3,
     "effect": {
       "id": 231665,
@@ -95293,7 +95325,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "13676": {
     "id": 13676,
-    "tag": "Rank 4/4",
+    "tag": "Rank 4/5",
     "quality": 4,
     "effect": {
       "id": 231666,
@@ -95307,7 +95339,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "13677": {
     "id": 13677,
-    "tag": "Rank 1/4",
+    "tag": "Rank 1/5",
     "effect": {
       "id": 231667,
       "index": 0,
@@ -95320,7 +95352,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "13678": {
     "id": 13678,
-    "tag": "Rank 2/4",
+    "tag": "Rank 2/5",
     "quality": 2,
     "effect": {
       "id": 231668,
@@ -95334,7 +95366,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "13679": {
     "id": 13679,
-    "tag": "Rank 3/4",
+    "tag": "Rank 3/5",
     "quality": 3,
     "effect": {
       "id": 231669,
@@ -95348,7 +95380,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "13680": {
     "id": 13680,
-    "tag": "Rank 4/4",
+    "tag": "Rank 4/5",
     "quality": 4,
     "effect": {
       "id": 231670,
@@ -95362,7 +95394,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "13681": {
     "id": 13681,
-    "tag": "Rank 1/4",
+    "tag": "Rank 1/5",
     "effect": {
       "id": 231671,
       "index": 0,
@@ -95375,7 +95407,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "13682": {
     "id": 13682,
-    "tag": "Rank 2/4",
+    "tag": "Rank 2/5",
     "quality": 2,
     "effect": {
       "id": 231672,
@@ -95389,7 +95421,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "13683": {
     "id": 13683,
-    "tag": "Rank 3/4",
+    "tag": "Rank 3/5",
     "quality": 3,
     "effect": {
       "id": 231673,
@@ -95403,7 +95435,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "13684": {
     "id": 13684,
-    "tag": "Rank 4/4",
+    "tag": "Rank 4/5",
     "quality": 4,
     "effect": {
       "id": 231674,
@@ -95417,7 +95449,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "13685": {
     "id": 13685,
-    "tag": "Rank 1/4",
+    "tag": "Rank 1/5",
     "effect": {
       "id": 231675,
       "index": 0,
@@ -95430,7 +95462,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "13686": {
     "id": 13686,
-    "tag": "Rank 2/4",
+    "tag": "Rank 2/5",
     "quality": 2,
     "effect": {
       "id": 231676,
@@ -95444,7 +95476,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "13687": {
     "id": 13687,
-    "tag": "Rank 3/4",
+    "tag": "Rank 3/5",
     "quality": 3,
     "effect": {
       "id": 231677,
@@ -95458,7 +95490,7 @@ export const bonus_IDs: {[key: string]: any} = {
   },
   "13688": {
     "id": 13688,
-    "tag": "Rank 4/4",
+    "tag": "Rank 4/5",
     "quality": 4,
     "effect": {
       "id": 231678,
@@ -96569,7 +96601,11 @@ export const bonus_IDs: {[key: string]: any} = {
       "priority": 290,
       "squishEra": 2
     },
-    "quality": 3
+    "quality": 3,
+    "requiredLevelCurve": {
+      "curve": 88583,
+      "val": 0
+    }
   },
   "13828": {
     "id": 13828,
@@ -96764,6 +96800,17 @@ export const bonus_IDs: {[key: string]: any} = {
     },
     "quality": 4
   },
+  "13851": {
+    "id": 13851,
+    "serverside": true
+  },
+  "13852": {
+    "id": 13852,
+    "levelOffsetSecondary": {
+      "amount": 7
+    },
+    "tag": "Ascendant Venomforged"
+  },
   "13853": {
     "id": 13853,
     "itemLevel": {
@@ -96811,12 +96858,13 @@ export const bonus_IDs: {[key: string]: any} = {
       "offset": 0,
       "priority": 1,
       "squishEra": 2
-    }
+    },
+    "quality": 2
   },
   "13901": {
     "id": 13901,
     "requiredLevelCurve": {
-      "curve": 101224,
+      "curve": 115477,
       "val": 0
     },
     "dropLevelCurve": {
@@ -96856,5 +96904,187 @@ export const bonus_IDs: {[key: string]: any} = {
       "squishEra": 2
     },
     "quality": 3
+  },
+  "13946": {
+    "id": 13946,
+    "tag": "Rank 5/5",
+    "quality": 4,
+    "effect": {
+      "id": 237341,
+      "index": 0,
+      "spell": {
+        "id": 1314982,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13947": {
+    "id": 13947,
+    "tag": "Rank 5/5",
+    "quality": 4,
+    "effect": {
+      "id": 237364,
+      "index": 0,
+      "spell": {
+        "id": 1315188,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13948": {
+    "id": 13948,
+    "tag": "Rank 5/5",
+    "quality": 4,
+    "effect": {
+      "id": 237365,
+      "index": 0,
+      "spell": {
+        "id": 1315186,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13949": {
+    "id": 13949,
+    "tag": "Rank 5/5",
+    "quality": 4,
+    "effect": {
+      "id": 237366,
+      "index": 0,
+      "spell": {
+        "id": 1315184,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13950": {
+    "id": 13950,
+    "tag": "Rank 5/5",
+    "quality": 4,
+    "effect": {
+      "id": 237367,
+      "index": 0,
+      "spell": {
+        "id": 1315161,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13951": {
+    "id": 13951,
+    "tag": "Rank 5/5",
+    "quality": 4,
+    "effect": {
+      "id": 237368,
+      "index": 0,
+      "spell": {
+        "id": 1315163,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13952": {
+    "id": 13952,
+    "tag": "Rank 5/5",
+    "quality": 4,
+    "effect": {
+      "id": 237369,
+      "index": 0,
+      "spell": {
+        "id": 1315173,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13953": {
+    "id": 13953,
+    "tag": "Rank 5/5",
+    "quality": 4,
+    "effect": {
+      "id": 237370,
+      "index": 0,
+      "spell": {
+        "id": 1314571,
+        "name": "Adding",
+        "icon": "inv_cape_special_explorer_b_03"
+      }
+    }
+  },
+  "13966": {
+    "id": 13966,
+    "tag": "Rank 1/4"
+  },
+  "13967": {
+    "id": 13967,
+    "tag": "Rank 2/4",
+    "quality": 2
+  },
+  "13968": {
+    "id": 13968,
+    "tag": "Rank 3/4",
+    "quality": 3
+  },
+  "13969": {
+    "id": 13969,
+    "tag": "Rank 4/4",
+    "quality": 4
+  },
+  "13987": {
+    "id": 13987,
+    "tag": "Venomcursed",
+    "effect": {
+      "id": 237622,
+      "index": 0,
+      "spell": {
+        "id": 1317582,
+        "name": "Venomcursed Ascendance",
+        "icon": "inv_ability_poison_debuff"
+      }
+    }
+  },
+  "14001": {
+    "id": 14001,
+    "serverside": true
+  },
+  "14004": {
+    "id": 14004,
+    "serverside": true
+  },
+  "14047": {
+    "id": 14047,
+    "dropLevelCurve": {
+      "curveId": 109508,
+      "offset": 13,
+      "priority": 0,
+      "squishEra": 2
+    }
+  },
+  "14048": {
+    "id": 14048,
+    "dropLevelCurve": {
+      "curveId": 92772,
+      "offset": 13,
+      "priority": 0,
+      "squishEra": 2
+    }
+  },
+  "14049": {
+    "id": 14049,
+    "effect": {
+      "id": 238161,
+      "index": 0,
+      "spell": {
+        "id": 1310208,
+        "name": "Void Eruption",
+        "icon": "inv_elemental_primal_shadow"
+      }
+    }
   }
 }
