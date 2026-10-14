@@ -18,7 +18,7 @@ export const raidTrinketData = [
           ppm: 20,
           specMods: { // We will refine these with logs
             "Holy Paladin": 0.2,
-            "Preservation Evoker": 0.7,
+            "Preservation Evoker": 0.75,
             "Restoration Druid": 0,
             "Restoration Shaman": 1, // Acid Rain
             "Holy Priest": 0,
