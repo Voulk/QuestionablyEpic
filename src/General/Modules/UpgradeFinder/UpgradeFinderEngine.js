@@ -185,7 +185,8 @@ export function getSetItemLevel(itemSource, playerSettings, difficultyType = "dr
   }
   else if (instanceID === -98) {
     // Delves
-    itemLevel = 321 //itemLevels.crafted[playerSettings.craftedLevel]; // Temporary. Will need its own panel.
+    if (itemSlot === "Trinket") itemLevel = 321;
+    else itemLevel = 334 //itemLevels.crafted[playerSettings.craftedLevel]; // Temporary. Will need its own panel.
   }
   //else if (instanceID === 1209) itemLevel = 441; // Dawn of the Infinite, upgraded one time.
   else if (instanceID === -30) itemLevel = 359; // Honor. Currently unused.
