@@ -32,7 +32,7 @@ export const raidTrinketData = [
 
           let specMod = 1;
 
-          if (additionalData.contentType === "Dungeon" && (player.spec === "Holy Paladin" || player.spec === "Restoration Druid" )) {
+          if (additionalData.contentType === "Dungeon" && (player.spec === "Preservation Evoker" || player.spec === "Holy Paladin" || player.spec === "Restoration Druid" )) {
             // Both of these specs cast plenty of DPS spells in dungeons.
             specMod = 0.95;
           }
