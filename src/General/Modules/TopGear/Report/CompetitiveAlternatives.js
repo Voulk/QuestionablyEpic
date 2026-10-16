@@ -110,7 +110,7 @@ function CompetitiveAlternatives(props) {
                             </Grid>
                           ));
                         })}
-                        {key.flask.map((flask, i) => {
+                        {gameType === "Retail" && key.flask.map((flask, i) => {
                           let itemArray = [];
                           // 
                           itemArray = [flask];
