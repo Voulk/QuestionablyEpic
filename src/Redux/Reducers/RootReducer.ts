@@ -53,10 +53,16 @@ const initialState : RootState = {
     //gemSettings: {value: "Simple", options: ["Simple", /*"Precise (Beta)"*/], category: "topGear", type: "selector", gameType: "Retail"}, // TODO: Add a "Keep current".
     //runeChoice: {value: "Automatic", options: ["Automatic", "Haste", "Crit", "Mastery"], category: "topGear", type: "selector", gameType: "Retail"},
     flaskChoice: {value: "Automatic", options: ["Automatic", "Crit", "Mastery", "Versatility", "Haste"], category: "topGear", type: "selector", gameType: "Retail"},
+
+    // Consumables. Only options with real modelled values are offered - see the consumables block in TopGearEngine.
+    foodBuff: {value: "Intellect Food", options: ["Intellect Food", "None"], category: "consumables", type: "selector", gameType: "Retail"},
+    weaponOil: {value: true, options: [true, false], category: "consumables", type: "selector", gameType: "Retail"},
+    vantusRune: {value: true, options: [true, false], category: "consumables", type: "selector", gameType: "Retail"},
     liningUptime: { value: 60, options: [], category: "embellishments", type: "Entry", gameType: "Retail" },
 
     // Spec values:
     masteryEffectivenessShaman: { value: 20, options: [], category: "specSpecific", type: "Entry", gameType: "Retail", spec: "Restoration Shaman" },
+    masteryEffectivenessEvoker: { value: 90, options: [], category: "specSpecific", type: "Entry", gameType: "Retail", spec: "Preservation Evoker" },
     fightLengthShaman: { value: "Long", options: ["Long", "Short"], category: "specSpecific", type: "selector", gameType: "Retail", spec: "Restoration Shaman" },
     innervateCountShaman: { value: 0, options: [], category: "specSpecific", type: "Entry", gameType: "Retail", spec: "Restoration Shaman" },
 

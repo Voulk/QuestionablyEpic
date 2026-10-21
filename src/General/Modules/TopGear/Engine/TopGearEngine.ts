@@ -795,16 +795,23 @@ function evalSet(rawItemSet: ItemSet, player: Player, contentType: contentTypes,
   else if (selectedChoice === "crit") itemSet.flask = 241326;
   else if (selectedChoice === "versatility") itemSet.flask = 241320;
 
-  // Food buff
-  consumableStats.intellect = (consumableStats.intellect ?? 0) + 50;
+  // Food buff. Only the standard intellect food is modelled - add more here as values become available.
+  if (getSetting(userSettings, "foodBuff") !== "None") {
+    consumableStats.intellect = (consumableStats.intellect ?? 0) + 50;
+    enchants.food = "Intellect Food";
+  }
 
   // Weapon Oil
-  consumableStats.haste = (consumableStats.haste ?? 0) + 15;
-  consumableStats.crit = (consumableStats.crit ?? 0) + 15;
+  if (getSetting(userSettings, "weaponOil") !== false) {
+    consumableStats.haste = (consumableStats.haste ?? 0) + 15;
+    consumableStats.crit = (consumableStats.crit ?? 0) + 15;
+    enchants.oil = "Weapon Oil";
+  }
 
-  // Vantus Rune
-  if (contentType === "Raid") {
+  // Vantus Rune. Raid only, and only if the player actually uses one.
+  if (contentType === "Raid" && getSetting(userSettings, "vantusRune") !== false) {
     consumableStats.versatility = (consumableStats.versatility ?? 0) + 162;
+    enchants.rune = "Vantus Rune";
   }
 
   statBreakdown.consumables = consumableStats;  
