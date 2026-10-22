@@ -5,14 +5,14 @@
 import foreverDruidSpellDB from "./Druid/ForeverDruidSpellDB";
 
 import { getTalentedSpellDB, logHeal, getTickCount, getSpellThroughput } from "General/Modules/Player/ClassDefaults/Classic/ClassicUtilities";
-
+import { applyForeverTalents } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilitiesForever";
 
 import { buildChartEntry, buildFormulatedChartEntryForever } from "General/Modules/Player/ClassDefaults/Generic/ChartUtilities";
 
 // Long term it would be really nice to just push all of this into the CastModel and have you call the chart data instead of having everything in ten places.
 export const buildForeverChartData = (activeStats, spec, talents) => {
     if (spec === "Restoration Druid Forever") {
-        return buildForeverDruidChartData(activeStats, []);
+        return buildForeverDruidChartData(activeStats, talents);
     }
     /*else if (spec === "Holy Paladin") {
         return buildClassicPaladinChartData(activeStats, paladinTalents);
@@ -32,7 +32,7 @@ export const buildForeverChartData = (activeStats, spec, talents) => {
     }
 }
 
-export const buildForeverDruidChartData = (activeStats) => {
+export const buildForeverDruidChartData = (activeStats, activeTalents) => {
     //
     let results = [];
 
@@ -48,6 +48,7 @@ export const buildForeverDruidChartData = (activeStats) => {
 
     const spellDB = JSON.parse(JSON.stringify(foreverDruidSpellDB));   
     console.log(spellDB);
+    applyForeverTalents("Restoration Druid Forever", spellDB, activeTalents, {});
 
     const testSettings = {masteryEfficiency: 1, includeOverheal: "Yes", reporting: false, advancedReporting: false, t31_2: false};
     const state = {statBonuses: {}, talents: []};
@@ -74,6 +75,10 @@ export const buildForeverDruidChartData = (activeStats) => {
 
     sequences = sequences.concat([
     ])
+
+    Object.keys(spellDB).filter(spellKey => spellDB[spellKey][0].displayInfo.maxRank).forEach(spellKey => {
+        sequences.unshift({cat: "Max Rank", tag: spellKey, seq: [spellKey], preBuffs: [], type: "formulated"});
+    })
 
     sequences.forEach(sequence => {
         let newSeq = sequence.seq;
@@ -118,7 +123,6 @@ export const buildForeverDruidChartData = (activeStats) => {
 
         };  
     }); 
-    console.log(results);
     return results;
 }
 

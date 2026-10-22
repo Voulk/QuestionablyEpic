@@ -25,18 +25,148 @@
             "expectedOverheal": 0.15
         }
     ],
-    "Rejuvenation Rank 11": [
+    "Rejuvenation Rank 2": [
         {
             "displayInfo": {
-                "id": 25299,
+                "id": 1058,
                 "icon": "spell_nature_rejuvenation",
                 "spellName": "Rejuvenation",
                 "cat": "",
-                "rank": "Rank 11"
+                "rank": "Rank 2"
             },
             "castTime": 0.0,
-            "cost": 360,
-            "flat": 194,
+            "cost": 40,
+            "flat": 12,
+            "coeff": 0.2,
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 12.0,
+            "tickData": {
+                "tickRate": 3.0,
+                "tickOnCast": false
+            },
+            "secondaries": [
+                "crit"
+            ],
+            "expectedOverheal": 0.15
+        }
+    ],
+    "Rejuvenation Rank 3": [
+        {
+            "displayInfo": {
+                "id": 1430,
+                "icon": "spell_nature_rejuvenation",
+                "spellName": "Rejuvenation",
+                "cat": "",
+                "rank": "Rank 3"
+            },
+            "castTime": 0.0,
+            "cost": 75,
+            "flat": 23,
+            "coeff": 0.2,
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 12.0,
+            "tickData": {
+                "tickRate": 3.0,
+                "tickOnCast": false
+            },
+            "secondaries": [
+                "crit"
+            ],
+            "expectedOverheal": 0.15
+        }
+    ],
+    "Rejuvenation Rank 4": [
+        {
+            "displayInfo": {
+                "id": 2090,
+                "icon": "spell_nature_rejuvenation",
+                "spellName": "Rejuvenation",
+                "cat": "",
+                "rank": "Rank 4"
+            },
+            "castTime": 0.0,
+            "cost": 105,
+            "flat": 32,
+            "coeff": 0.2,
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 12.0,
+            "tickData": {
+                "tickRate": 3.0,
+                "tickOnCast": false
+            },
+            "secondaries": [
+                "crit"
+            ],
+            "expectedOverheal": 0.15
+        }
+    ],
+    "Rejuvenation Rank 5": [
+        {
+            "displayInfo": {
+                "id": 2091,
+                "icon": "spell_nature_rejuvenation",
+                "spellName": "Rejuvenation",
+                "cat": "",
+                "rank": "Rank 5"
+            },
+            "castTime": 0.0,
+            "cost": 135,
+            "flat": 42,
+            "coeff": 0.2,
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 12.0,
+            "tickData": {
+                "tickRate": 3.0,
+                "tickOnCast": false
+            },
+            "secondaries": [
+                "crit"
+            ],
+            "expectedOverheal": 0.15
+        }
+    ],
+    "Rejuvenation Rank 6": [
+        {
+            "displayInfo": {
+                "id": 3627,
+                "icon": "spell_nature_rejuvenation",
+                "spellName": "Rejuvenation",
+                "cat": "",
+                "rank": "Rank 6"
+            },
+            "castTime": 0.0,
+            "cost": 160,
+            "flat": 51,
+            "coeff": 0.2,
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 12.0,
+            "tickData": {
+                "tickRate": 3.0,
+                "tickOnCast": false
+            },
+            "secondaries": [
+                "crit"
+            ],
+            "expectedOverheal": 0.15
+        }
+    ],
+    "Rejuvenation Rank 7": [
+        {
+            "displayInfo": {
+                "id": 8910,
+                "icon": "spell_nature_rejuvenation",
+                "spellName": "Rejuvenation",
+                "cat": "",
+                "rank": "Rank 7"
+            },
+            "castTime": 0.0,
+            "cost": 195,
+            "flat": 71,
             "coeff": 0.2,
             "spellType": "buff",
             "buffType": "heal",
@@ -77,31 +207,22 @@
             "expectedOverheal": 0.15
         }
     ],
-    "Regrowth Rank 9": [
+    "Rejuvenation Rank 9": [
         {
             "displayInfo": {
-                "id": 9858,
-                "icon": "spell_nature_resistnature",
-                "spellName": "Regrowth",
+                "id": 9840,
+                "icon": "spell_nature_rejuvenation",
+                "spellName": "Rejuvenation",
                 "cat": "",
                 "rank": "Rank 9"
             },
-            "castTime": 2.0,
-            "cost": 525,
-            "flat": 1021,
-            "coeff": 0.286,
-            "spellType": "heal",
-            "secondaries": [
-                "crit"
-            ],
-            "expectedOverheal": 0.15
-        },
-        {
-            "flat": 142,
-            "coeff": 0.071,
+            "castTime": 0.0,
+            "cost": 280,
+            "flat": 124,
+            "coeff": 0.2,
             "spellType": "buff",
             "buffType": "heal",
-            "buffDuration": 21.0,
+            "buffDuration": 12.0,
             "tickData": {
                 "tickRate": 3.0,
                 "tickOnCast": false
@@ -112,33 +233,103 @@
             "expectedOverheal": 0.15
         }
     ],
-    "Regrowth Rank 5": [
+    "Rejuvenation Rank 10": [
         {
             "displayInfo": {
-                "id": 8941,
-                "icon": "spell_nature_resistnature",
-                "spellName": "Regrowth",
+                "id": 9841,
+                "icon": "spell_nature_rejuvenation",
+                "spellName": "Rejuvenation",
                 "cat": "",
-                "rank": "Rank 5"
+                "rank": "Rank 10"
             },
-            "castTime": 2.0,
-            "cost": 250,
-            "flat": 394,
-            "coeff": 0.286,
-            "spellType": "heal",
+            "castTime": 0.0,
+            "cost": 335,
+            "flat": 161,
+            "coeff": 0.2,
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 12.0,
+            "tickData": {
+                "tickRate": 3.0,
+                "tickOnCast": false
+            },
             "secondaries": [
                 "crit"
             ],
             "expectedOverheal": 0.15
-        },
+        }
+    ],
+    "Rejuvenation Rank 11": [
         {
-            "flat": 52,
-            "coeff": 0.071,
+            "displayInfo": {
+                "id": 25299,
+                "icon": "spell_nature_rejuvenation",
+                "spellName": "Rejuvenation",
+                "cat": "",
+                "rank": "Rank 11",
+                "maxRank": true
+            },
+            "castTime": 0.0,
+            "cost": 360,
+            "flat": 194,
+            "coeff": 0.2,
             "spellType": "buff",
             "buffType": "heal",
-            "buffDuration": 21.0,
+            "buffDuration": 12.0,
             "tickData": {
                 "tickRate": 3.0,
+                "tickOnCast": false
+            },
+            "secondaries": [
+                "crit"
+            ],
+            "expectedOverheal": 0.15
+        }
+    ],
+    "Wild Growth Rank 1": [
+        {
+            "displayInfo": {
+                "id": 408120,
+                "icon": "ability_druid_flourish",
+                "spellName": "Wild Growth",
+                "cat": "",
+                "rank": "Rank 1"
+            },
+            "castTime": 0.0,
+            "cost": 550,
+            "flat": 40,
+            "coeff": 0.033,
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 7.0,
+            "tickData": {
+                "tickRate": 1.0,
+                "tickOnCast": false
+            },
+            "secondaries": [
+                "crit"
+            ],
+            "expectedOverheal": 0.15
+        }
+    ],
+    "Wild Growth Rank 2": [
+        {
+            "displayInfo": {
+                "id": 1238214,
+                "icon": "ability_druid_flourish",
+                "spellName": "Wild Growth",
+                "cat": "",
+                "rank": "Rank 2"
+            },
+            "castTime": 0.0,
+            "cost": 755,
+            "flat": 60,
+            "coeff": 0.033,
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 7.0,
+            "tickData": {
+                "tickRate": 1.0,
                 "tickOnCast": false
             },
             "secondaries": [
@@ -154,7 +345,8 @@
                 "icon": "ability_druid_flourish",
                 "spellName": "Wild Growth",
                 "cat": "",
-                "rank": "Rank 3"
+                "rank": "Rank 3",
+                "maxRank": true
             },
             "castTime": 0.0,
             "cost": 1050,

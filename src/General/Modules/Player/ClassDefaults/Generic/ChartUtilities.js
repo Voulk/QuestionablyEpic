@@ -1,6 +1,6 @@
 import { convertStatPercentages, runClassicSpell } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilitiesClassic"
 import { runProfileSpell } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilities"
-import { runProfileSpellForever } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilitiesForever"
+import { runProfileSpellForever, convertStatPercentagesForever } from "General/Modules/Player/ClassDefaults/Generic/ProfileUtilitiesForever"
 
 const runChartEntry = (sequence, spellData, newSeq, activeStats, testSettings, talents, filterSpell, runCastSequence) => {
     const iterations = sequence.iterations ? sequence.iterations : 1; // Spells that require more RNG can set their own iteration count like Reversion.
@@ -79,7 +79,6 @@ export const getSpellCoeffForever = (spell) => {
     let coeff = 0;
     let flat = 0;
     spell.forEach(spellSlice => {
-        console.log(spellSlice);
         let sliceCoeff = 0;
         let sliceFlat = 0;
         if (spellSlice.coeff) sliceCoeff = spellSlice.coeff;
@@ -178,7 +177,8 @@ export const buildFormulatedChartEntryForever = (sequence, displayInfo, rawSpell
 
     data.manaSpent = spell[0].cost;
 
-    const statPercentages = {healingPower: 0, spellpower: 0, crit: 1, critMultHPS: 2}
+    const statPercentages = convertStatPercentagesForever(activeStats, 1, playerData.spec, playerData.race); //{healingPower: 0, spellpower: 0, crit: 1, critMultHPS: 2}
+    console.log(statPercentages);
 
     const result = runProfileSpellForever(spell[0].displayInfo.spellName, spell, statPercentages, playerData.spec, userSettings, {})
 
@@ -259,7 +259,7 @@ export const buildChartEntry = (sequence, spellData, newSeq, activeStats, testSe
             weights[stat] = Math.round(1000*(results[stat] - baseResult.hps) / (results['intellect'] - baseResult.hps))/1000;
         });
 
-        console.log(weights); 
+
 
         result = baseResult;
 

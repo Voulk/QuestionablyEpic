@@ -2,13 +2,19 @@ import { useState } from "react";
 import TCPanel from "./TCPanel";
 import SpellBreakdown from "./SpellBreakdownPanel";
 import TalentList from "./SelectedTalentsPanel";
+import { TalentCalculator } from "./ForeverTalentPanel/ForeverTalentPanel";
+import { TalentNodeData, ForeverTalent } from "./ForeverTalentPanel/ForeverTalentTypes";
 
 const tabs = ['Healing Breakdown', 'Damage Breakdown', 'Talents Selected', 'Unused Panel'] as const;
 type Tab = typeof tabs[number];
 
 interface ModelInformationTabsProps {
     activeResult: any;
-    selectedTalents: {talentName: string, talentRanks: number}[];
+    selectedTalents: {talentName: string, talentRanks: number}[] | ForeverTalent[];
+        onTalentsChange?: (talents: ForeverTalent[]) => void;
+    talentData?: TalentNodeData[];
+    className?: string;
+    gameType: gameTypes;
 }
 
 // ─── Design tokens ────────────────────────────────────────────────────────────
@@ -27,7 +33,7 @@ const COLORS = {
 
 const PRIMARY = "#e3b341";
 
-export default function ModelInformationTabs({ activeResult, selectedTalents }: ModelInformationTabsProps) {
+export default function ModelInformationTabs({ activeResult, selectedTalents, onTalentsChange, talentData, className, gameType }: ModelInformationTabsProps) {
     const [activeTab, setActiveTab] = useState<Tab>('Healing Breakdown');
 
     return (
@@ -76,7 +82,16 @@ export default function ModelInformationTabs({ activeResult, selectedTalents }: 
             )}
             {activeTab === 'Talents Selected' && (
                 <TCPanel title="">
-                    <TalentList talents={selectedTalents} />
+                    {gameType === "Retail" ? (
+                        <TalentList talents={selectedTalents as {talentName: string, talentRanks: number}[]} />
+                    ) : (
+                        <TalentCalculator
+                            talentData={talentData ?? []}
+                            className={className ?? ""}
+                            selectedTalents={selectedTalents as ForeverTalent[]}
+                            onTalentsChange={onTalentsChange ?? (() => {})}
+                        />
+                    )}
                 </TCPanel>
             )}
             {/*activeTab === 'Unused Panel' && (

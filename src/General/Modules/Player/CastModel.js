@@ -23,6 +23,9 @@ import { holyPaladinDefaults } from "General/Modules/Player/ClassDefaults/Classi
 import { restoDruidDefaults } from "General/Modules/Player/ClassDefaults/Classic/Druid/RestoDruidClassic"
 import { mistweaverMonkDefaults } from "./ClassDefaults/Classic/Monk/MistweaverMonkClassic";
 import { restoShamanDefaults } from "./ClassDefaults/Classic/Shaman/RestoShamanClassic";
+import { foreverDruidProfile } from "./ClassDefaults/Forever/Druid/ForeverDruidProfile";
+
+
 
 import { getRampData, genStatWeights } from "General/Modules/Player/ClassDefaults/DisciplinePriest/DiscPriestUtilities";
 
@@ -287,9 +290,17 @@ class CastModel {
       this.baseStatWeights = this.profile.defaultStatWeights;
       this.fightInfo.hps = 200000;
     } 
+    else if (spec === "Restoration Druid Forever") {
+      this.modelName = "Default";
+      this.profile = foreverDruidProfile;
+      this.talents = this.profile.defaultTalents || [];
+      this.baseStatWeights = this.profile.defaultStatWeights;
+      this.fightInfo.hps = 200000;
+    }
     else if (spec.includes("Forever")) {
       this.modelName = "Default";
       this.profile = null;
+      this.talents = this.profile?.talents ?? [];
       this.baseStatWeights = {};
       this.fightInfo.hps = 10000;
     }

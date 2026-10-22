@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useLayoutEffect } from "react";
 import Button from "@mui/material/Button";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -22,6 +22,7 @@ export interface ControlPanelProps {
   stats: Stats;
   setStats: (stats: Stats) => void;
   onRunProfile?: () => void;
+  gameType?: string;
 }
 
 interface AdditionalSetting {
@@ -177,6 +178,7 @@ const styles: Record<string, React.CSSProperties> = {
     flexDirection: "column" as const,
     gap: "5px",
     flex: 1,
+    minWidth: 0,
   },
  
   statLabel: {
@@ -254,13 +256,39 @@ const styles: Record<string, React.CSSProperties> = {
  
 // ─── Stat field metadata ──────────────────────────────────────────────────────
  
-const STAT_FIELDS: { key: keyof StatWeights; label: string }[] = [
+interface StatField {
+  key: string;
+  label: string;
+  shortLabel?: string;
+}
+
+const RETAIL_STAT_FIELDS: StatField[] = [
   { key: "intellect", label: "Intellect" },
   { key: "haste", label: "Haste" },
   { key: "crit", label: "Crit" },
   { key: "mastery", label: "Mastery" },
-  { key: "versatility", label: "Versatility" },
+  { key: "versatility", label: "Versatility", shortLabel: "Vers" },
 ];
+
+const FOREVER_STAT_FIELDS: StatField[] = [
+  { key: "spellpower", label:   "Spell Power", shortLabel: "SP" },
+    { key: "healingpower", label: "Healing Power", shortLabel: "HP" },
+  { key: "intellect", label: "Intellect" },
+  { key: "spirit", label: "Spirit" },
+  { key: "mp5", label: "MP5" },
+  { key: "crit", label: "Crit" },
+  { key: "haste", label: "Haste" },
+];
+
+const getStatFields = (gameType?: string): StatField[] =>
+  gameType === "Forever" ? FOREVER_STAT_FIELDS : RETAIL_STAT_FIELDS;
+
+// Forever has more stats than fit comfortably in one row, so they wrap over two.
+const splitStatRows = (fields: StatField[], gameType?: string): StatField[][] => {
+  if (gameType !== "Forever") return [fields];
+  const perRow = Math.ceil(fields.length / 2);
+  return [fields.slice(0, perRow), fields.slice(perRow)];
+};
 
 const ADDITIONAL_SETTINGS: AdditionalSetting[] = [
   { "label": "Season 1 Tier Set", "options": ["0pc", "2pc", "4pc"], defaultSetting: "4pc"},
@@ -276,7 +304,9 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
   stats = { intellect: 0, haste: 0, crit: 0, mastery: 0, versatility: 0 },
   setStats,
   onRunProfile,
+  gameType,
 }) => {
+  const statRows = splitStatRows(getStatFields(gameType), gameType);
   const [selectHovered, setSelectHovered] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
   const [headerHovered, setHeaderHovered] = useState(false);
@@ -290,7 +320,7 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
     return defaults;
   });
 
-  const handleStatChange = (key: keyof StatWeights, raw: string) => {
+  const handleStatChange = (key: string, raw: string) => {
     const value = parseInt(raw, 10);
     setStats((prev) => ({ ...prev, [key]: isNaN(value) ? 0 : value }));
   };
@@ -307,7 +337,7 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
     <div style={styles.accordion}>
 
       {/* Main Content */}
-      <div style={styles.panel}>
+      <div style={{ ...styles.panel, alignItems: statRows.length > 1 ? "flex-start" : "flex-end" }}>
  
         {/* Profile selector */}
         <div style={styles.profileSection}>
@@ -342,14 +372,22 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
         {/* Statistics */}
         <div style={styles.statsSection}>
           <div style={styles.sectionTitle}>Statistics</div>
-          <div style={styles.statsFields}>
-            {STAT_FIELDS.map(({ key, label }) => (
-              <StatInputRow
-                key={key}
-                label={label}
-                value={stats[key]}
-                onChange={(v) => handleStatChange(key, v)}
-              />
+          <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+            {statRows.map((row, i) => (
+              <div key={i} style={styles.statsFields}>
+                {row.map(({ key, label, shortLabel }) => (
+                  <StatInputRow
+                    key={key}
+                    label={label}
+                    shortLabel={shortLabel}
+                    value={stats[key] ?? 0}
+                    onChange={(v) => handleStatChange(key, v)}
+                  />
+                ))}
+                {Array.from({ length: statRows[0].length - row.length }).map((_, j) => (
+                  <div key={`spacer-${j}`} style={styles.statCol} />
+                ))}
+              </div>
             ))}
           </div>
         </div>
@@ -470,14 +508,49 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
  
 const StatInputRow: React.FC<{
   label: string;
+  shortLabel?: string;
   value: number;
   onChange: (v: string) => void;
-}> = ({ label, value, onChange }) => {
+}> = ({ label, shortLabel, value, onChange }) => {
   const [focused, setFocused] = useState(false);
+  const [useShort, setUseShort] = useState(false);
+  const colRef = useRef<HTMLDivElement>(null);
+  const measureRef = useRef<HTMLSpanElement>(null);
+
+  // Compare the full label's natural width (hidden measurer) to the column width.
+  useLayoutEffect(() => {
+    if (!shortLabel) return;
+    const check = () => {
+      if (colRef.current && measureRef.current) {
+        setUseShort(measureRef.current.offsetWidth > colRef.current.clientWidth);
+      }
+    };
+    check();
+    const observer = new ResizeObserver(check);
+    if (colRef.current) observer.observe(colRef.current);
+    return () => observer.disconnect();
+  }, [shortLabel, label]);
  
   return (
-    <div style={styles.statCol}>
-      <label style={styles.statLabel}>{label}</label>
+    <div ref={colRef} style={styles.statCol}>
+      <label style={{ ...styles.statLabel, whiteSpace: "nowrap" }} title={label}>
+        {useShort && shortLabel ? shortLabel : label}
+      </label>
+      {shortLabel && (
+        <span
+          ref={measureRef}
+          aria-hidden
+          style={{
+            ...styles.statLabel,
+            position: "absolute",
+            visibility: "hidden",
+            whiteSpace: "nowrap",
+            pointerEvents: "none",
+          }}
+        >
+          {label}
+        </span>
+      )}
       <input
         className="cp-no-spinner"
         type="number"

@@ -3,6 +3,7 @@ import { getCritPercentage, getManaPool, getManaRegen, getAdditionalManaEffects,
 import { getHaste } from "General/Modules/Player/ClassDefaults/Generic/RampBase";
 import { STATCONVERSIONCLASSIC } from "General/Engine/STAT"
 import { getSetting } from "Retail/Engine/EffectFormulas/EffectUtilities";
+import { applyForeverDruidTalents } from "General/Modules/Player/ClassDefaults/Forever/Druid/ForeverDruidTalentFunctions";
 
 
 
@@ -11,6 +12,11 @@ export const getHasteClassic = (stats, hasteBuff = 1.05) => {
     return (1 + stats.haste / 425 / 100) * hasteBuff;
 }
 
+export const applyForeverTalents = (spec, spellDB, talentTree, statBonuses) => {
+    if (spec === "Restoration Druid Forever") {
+        applyForeverDruidTalents(spellDB, talentTree, statBonuses);
+    }
+}
 
 export const hasTier = (playerData, tier) => {
     return playerData.tier.includes(tier);
@@ -27,22 +33,24 @@ export const splitSpellCPM = (castProfile, spellName, splitPerc) => {
     castProfile.push(clone);
 }
 
-export const convertStatPercentages = (statProfile, hasteBuff, spec, race = "") => {
+export const convertStatPercentagesForever = (statProfile, hasteBuff, spec, race = "") => {
     const isTwoHander = statProfile.isTwoHanded ?? false;
 
     const stats = {
-        spellpower: statProfile.intellect + statProfile.spellpower - 10, // The first 10 intellect points don't convert to spellpower.
-        crit: 1 + getCritPercentage(statProfile, spec),
-        haste: getHasteClassic({statProfile, haste: statProfile.haste}, hasteBuff),
-        spirit: (statProfile.spirit),
-        weaponDamage: statProfile.averageDamage / statProfile.weaponSwingSpeed * (isTwoHander ? 0.5 : (0.898882 * 0.75)),
-        weaponDamageMelee: statProfile.averageDamage / statProfile.weaponSwingSpeed * (isTwoHander ? 1 : 1),
-        weaponSwingSpeed: statProfile.weaponSwingSpeed,
-        attackpower: (statProfile.intellect + statProfile.spellpower - 10) * 2,
+        spellpower: statProfile.spellpower, // The first 10 intellect points don't convert to spellpower.
+        healingpower: statProfile.healingpower,
+        crit: 1,// + getCritPercentage(statProfile, spec),
+        haste: 1, //getHasteClassic({statProfile, haste: statProfile.haste}, hasteBuff),
+        intellect: statProfile.intellect,
+        spirit: statProfile.spirit,
+        weaponDamage: 0,//statProfile.averageDamage / statProfile.weaponSwingSpeed * (isTwoHander ? 0.5 : (0.898882 * 0.75)),
+        weaponDamageMelee: 0,// statProfile.averageDamage / statProfile.weaponSwingSpeed * (isTwoHander ? 1 : 1),
+        weaponSwingSpeed: 0,// statProfile.weaponSwingSpeed,
+        attackpower: 0,//(statProfile.intellect + statProfile.spellpower - 10) * 2,
         armorReduction: 0.7,
 
-        critMultDPS: statProfile.critMultDPS,
-        critMultHPS: statProfile.critMultHPS + 1, // Yes it works differently to DPS crits. 
+        critMultDPS: 1.5, //statProfile.critMultDPS,
+        critMultHPS: 1.5, //statProfile.critMultHPS + 1, // Yes it works differently to DPS crits. 
     }
 
     getClassicRaceBonuses(stats, race);
@@ -115,7 +123,7 @@ export const runForeverSpell = (spellName, spell, statPercentages, spec, setting
     }
     else {
         // Most other spells follow a uniform formula.
-        spellOutput = (spell.flat + spell.coeff * statPercentages.spellpower) * // Spell "base" healing
+        spellOutput = (spell.flat + spell.coeff * statPercentages.healingpower) * // Spell "base" healing
                             critMult * // Multiply by secondary stats & any generic multipliers. 
                             genericMult *
                             targetCount
