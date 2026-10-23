@@ -1,44 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { rootStyles } from "./PanelStyles";
 import { Typography, Grid } from "@mui/material";
+import ToggleButton from "@mui/material/ToggleButton";
 import ItemUpgradeCard from "./ItemUpgradeCard";
 import "./Panels.css";
 import { useTranslation } from "react-i18next";
-import { getDifferentialByID } from "../../../Engine/ItemUtilities";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { getTranslatedSlotName } from "locale/slotsLocale";
 import UFAccordion from "./ufComponents/ufAccordian";
 import UFAccordionSummary from "./ufComponents/ufAccordianSummary";
+import { DEFAULT_ITEM_TYPES, getSlotItems, getSlotSourceOptions } from "./slotPanelUtils";
 
-function filterItemListBySlot(itemList, slot, itemTypesEnabled) {
-  const excludedInstance = [748, 749, 750, 751, 321, 752];
-  const dropTypes = {
-    "drop": itemTypesEnabled.includes("Drop"),
-    "bonus": itemTypesEnabled.includes("Bonus Roll"),
-    "max": itemTypesEnabled.includes("Upgraded"),
+const loadStoredSources = (availableSources) => {
+  try {
+    const stored = JSON.parse(sessionStorage.getItem("ufSlotSources"));
+    if (!Array.isArray(stored) || stored.length === 0) {
+      return [...availableSources];
+    }
+    const valid = availableSources.filter((source) => stored.includes(source));
+    return valid.length > 0 ? valid : [...availableSources];
+  } catch (e) {
+    return [...availableSources];
   }
-
-  let temp = itemList.filter(function (item) {
-    if (item.dropType && dropTypes[item.dropType] === false) {
-      return false;
-    }
-
-    if ("source" in item && !excludedInstance.includes(item.source.instanceId) && item.source.encounterId !== 249) {
-      if (slot === "AllMainhands") {
-        return item.slot === "1H Weapon" || item.slot === "2H Weapon";
-      } else if (slot === "Offhands") {
-        return item.slot === "Holdable" || item.slot === "Offhand" || item.slot === "Shield";
-      } else {
-        return item.slot === slot;
-      }
-    } else {
-      return false;
-    }
-  });
-
-  return temp;
-}
+};
 
 export default function SlotsContainer(props) {
   const classes = rootStyles();
@@ -46,10 +31,20 @@ export default function SlotsContainer(props) {
   const currentLanguage = i18n.language;
   const itemDifferentials = props.itemDifferentials;
   const spec = props.spec;
-  const itemTypesEnabled = props.playerSettings.itemTypes
-  console.log(itemDifferentials);
+  const gameType = props.gameType || "Retail";
+  const itemTypesEnabled = props.playerSettings.itemTypes || DEFAULT_ITEM_TYPES;
+  const availableSources = getSlotSourceOptions(gameType);
+  const [sourcesEnabled, setSourcesEnabled] = useState(() => loadStoredSources(availableSources));
 
-  itemDifferentials.sort((a, b) => (a.score < b.score ? 1 : -1));
+  useEffect(() => {
+    sessionStorage.setItem("ufSlotSources", JSON.stringify(sourcesEnabled));
+  }, [sourcesEnabled]);
+
+  const toggleSource = (source) => {
+    setSourcesEnabled((current) =>
+      current.includes(source) ? current.filter((entry) => entry !== source) : [...current, source]
+    );
+  };
 
   const slotList = [
     { slot: "Head", label: "head" },
@@ -68,8 +63,8 @@ export default function SlotsContainer(props) {
     { slot: "Offhands", label: "offhands" },
   ];
 
-  const iconReturn = (slot, spec) => {
-    switch (spec) {
+  const iconReturn = (slot, playerSpec) => {
+    switch (playerSpec) {
       case "Restoration Druid":
       case "Restoration Druid Classic":
         return require("Images/UpgradeFinderIcons/Leather/" + slot + ".jpg");
@@ -92,34 +87,56 @@ export default function SlotsContainer(props) {
         return [-1];
     }
   };
+
   const contentGenerator = () => {
-    return slotList.map((key, i) => (
-      <UFAccordion key={getTranslatedSlotName(key.label, currentLanguage) + "-accordian" + i} elevation={0} style={{ backgroundColor: "rgba(255, 255, 255, 0.12)" }}>
-        <UFAccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header" style={{ verticalAlign: "middle" }}>
-          <img src={iconReturn(key.slot, spec)} height={30} width={30} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
-          <Typography align="center" variant="h6" noWrap color="primary">
-            {getTranslatedSlotName(key.label, currentLanguage)} -{" "}
-            {[...filterItemListBySlot(itemDifferentials, key.slot, itemTypesEnabled)].filter((item) => item.score > 0).length} Upgrades
-          </Typography>
-        </UFAccordionSummary>
-        <AccordionDetails style={{ backgroundColor: "#191c23" }}>
-          <Grid xs={12} container spacing={1}>
-            {[...filterItemListBySlot(itemDifferentials, key.slot, itemTypesEnabled)].map((item, index) => (
-              <ItemUpgradeCard key={index} item={item} itemDifferential={getDifferentialByID(itemDifferentials, item.id, item.level)} slotPanel={true} />
-            ))}
-          </Grid>
-        </AccordionDetails>
-      </UFAccordion>
-    ));
+    return slotList.map((key, i) => {
+      const slotItems = getSlotItems(itemDifferentials, key.slot, itemTypesEnabled, sourcesEnabled);
+      const upgradeCount = slotItems.filter((entry) => entry.score > 0).length;
+
+      return (
+        <UFAccordion key={getTranslatedSlotName(key.label, currentLanguage) + "-accordian" + i} elevation={0} style={{ backgroundColor: "rgba(255, 255, 255, 0.12)" }}>
+          <UFAccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header" style={{ verticalAlign: "middle" }}>
+            <img src={iconReturn(key.slot, spec)} height={30} width={30} style={{ borderRadius: 4, border: "1px solid rgba(255, 255, 255, 0.12)" }} />
+            <Typography align="center" variant="h6" noWrap color="primary">
+              {getTranslatedSlotName(key.label, currentLanguage)} - {upgradeCount} Upgrades
+            </Typography>
+          </UFAccordionSummary>
+          <AccordionDetails style={{ backgroundColor: "#191c23" }}>
+            <Grid container spacing={1}>
+              {slotItems.map((entry) => (
+                <ItemUpgradeCard key={`${entry.item}-${entry.level}-${entry.dropLoc}-${entry.dropType}`} item={entry} slotPanel={true} />
+              ))}
+            </Grid>
+          </AccordionDetails>
+        </UFAccordion>
+      );
+    });
   };
 
   return (
     <div className={classes.root}>
-      <Grid container spacing={1}>
-        <Grid item xs={12}>
-          {contentGenerator()}
-        </Grid>
-      </Grid>
+      <div className={classes.sourceBar}>
+        <Typography variant="h6" color="primary" noWrap>
+          {t("UpgradeFinder.SlotSources")}
+        </Typography>
+        <div className={classes.sourceButtonRow}>
+          {availableSources.map((source) => (
+            <ToggleButton
+              key={source}
+              value={source}
+              selected={sourcesEnabled.includes(source)}
+              onChange={() => toggleSource(source)}
+              classes={{
+                root: classes.sourceToggle,
+                selected: classes.sourceToggleSelected,
+              }}
+            >
+              {t(source, { defaultValue: source })}
+            </ToggleButton>
+          ))}
+        </div>
+      </div>
+      {contentGenerator()}
     </div>
   );
 }
