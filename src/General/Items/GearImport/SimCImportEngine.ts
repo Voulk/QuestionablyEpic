@@ -649,7 +649,7 @@ export function processItem(line: string, player: Player, contentType: contentTy
       protoItem.missiveStats.push("versatility");
       //craftedStats = [];
     }
-    if (bonus_id === "12053") {
+    if (bonus_id === "13836") {
       protoItem.upgradeTrack = "Gilded Crafted";
     }
     else if (bonus_id === "12052") {
