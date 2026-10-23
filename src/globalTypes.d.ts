@@ -27,6 +27,7 @@ type SpellData = {
     castTime: number;
     cost: number;
     coeff: number;
+    flat?: number; // Used in Classic iterations
     aura: number;
     school?: string;
     expectedOverheal: number;
@@ -224,3 +225,12 @@ declare type ClassicEffectData =
   }
 
 
+// Forever
+export interface TalentEffectContext {
+  state: any;
+  spellDB: SpellDB;
+  talentValues: Record<string, any>; 
+  points: number;                   
+}
+
+export type TalentEffectFunction = (context: TalentEffectContext) => void;
