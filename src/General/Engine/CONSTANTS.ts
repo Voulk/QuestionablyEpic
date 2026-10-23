@@ -30,6 +30,16 @@ export const CONSTANTS = {
     currentDungeonIDs: [1322, 1311, 1304, 1309, 1313, 1041, 1202, 1030],
     fullItemLevels: [250, 253, 256, 259, 263, 266, 269, 272, 276, 279, 282, 285, 289, 292, 295, 298, 302, 305, 308, 311, 315, 318, 321, 324, 328, 331, 334, 337, 341, 344],
     itemLevelCaps: { Adventurer: 282, Veteran: 295, Champion: 308, Hero: 321, Myth: 334, "Runed Crafted": 318, "Gilded Crafted": 331 },
+    trinketChartConstants: {
+        trinketItemLevels: [272, 276, 285, 289, 295, 298, 302, 308, 315, 321, 328, 331, 334, 341, 344],
+        sliderLevels: [
+            { value: 0, label: "285" },
+            { value: 1, label: "298" },
+            { value: 2, label: "308" },
+            { value: 3, label: "321" },
+            { value: 4, label: "344" },
+        ]
+    },
     seasonID: 37,
     tierNames: { // @deprecated.
       "Preservation Evoker": "of the Black Talon", 

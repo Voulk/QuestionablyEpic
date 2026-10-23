@@ -1,4 +1,5 @@
 import { sourceHandler, getHighestTrinketScore } from "./TrinketChart";
+import { CONSTANTS } from "General/Engine/CONSTANTS";
 
 const raid = (instanceId) => ({ sources: [{ instanceId }] });
 const dungeon = () => ({ sources: [{ instanceId: -1 }] });
@@ -106,5 +107,19 @@ describe("getHighestTrinketScore", () => {
 
   test("returns undefined when the clamped level has no score", () => {
     expect(getHighestTrinketScore(db, trinket, 250)).toBeUndefined();
+  });
+});
+
+describe("trinketItemLevelSafety", () => {
+  const ilvls = CONSTANTS.fullItemLevels;
+
+  test("ensure trinket item levels are within the item level Caps", () => {
+    const trinketIlvls = CONSTANTS.trinketChartConstants.trinketItemLevels
+    expect(trinketIlvls.every(e => ilvls.includes(e))).toBe(true);
+  });
+
+  test("ensure trinket item level slider are within item level cap", () => {
+    const sliderItemLevels = CONSTANTS.trinketChartConstants.sliderLevels.map(e => parseInt(e.label));    
+    expect(sliderItemLevels.every(e => ilvls.includes(e))).toBe(true);
   });
 });
