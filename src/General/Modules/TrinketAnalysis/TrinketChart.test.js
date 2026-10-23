@@ -111,15 +111,15 @@ describe("getHighestTrinketScore", () => {
 });
 
 describe("trinketItemLevelSafety", () => {
-  const ilvls = new Set(CONSTANTS.fullItemLevels);
+  const ilvls = CONSTANTS.fullItemLevels;
 
   test("ensure trinket item levels are within the item level Caps", () => {
-    const trinketIlvls = new Set(CONSTANTS.trinketChartConstants.trinketItemLevels);
-    expect(trinketIlvls.difference(ilvls).size).toBe(0);
+    const trinketIlvls = CONSTANTS.trinketChartConstants.trinketItemLevels
+    expect(trinketIlvls.every(e => ilvls.includes(e))).toBe(true);
   });
 
   test("ensure trinket item level slider are within item level cap", () => {
-    const sliderItemLevels = new Set(CONSTANTS.trinketChartConstants.sliderLevels.map(e => parseInt(e.label)));    
-    expect(sliderItemLevels.difference(ilvls).size).toBe(0);
+    const sliderItemLevels = CONSTANTS.trinketChartConstants.sliderLevels.map(e => parseInt(e.label));    
+    expect(sliderItemLevels.every(e => ilvls.includes(e))).toBe(true);
   });
 });
