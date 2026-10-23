@@ -90596,7 +90596,7 @@ export const bonus_IDs: {[key: string]: any} = {
     "id": 12856,
     "quality": 4,
     "itemLevel": {
-      "amount": 340,
+      "amount": 341,
       "priority": 0,
       "squishEra": 2
     },

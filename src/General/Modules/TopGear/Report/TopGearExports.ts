@@ -335,7 +335,7 @@ export function exportIcyVeinsGearPlanner(itemSet, spec, enchants, gameType = "R
         
 
         if (item.level === 344) bonusTag = "#AddBonus=13848"
-        else if (item.level === 340) bonusTag = "#AddBonus=12856"
+        else if (item.level === 341) bonusTag = "#AddBonus=12856"
         else if (item.level === 338) bonusTag = "#AddBonus=13852"
         else if (item.level === 334) bonusTag = "#AddBonus=12854"
         else if (item.level === 331) bonusTag = "#AddBonus=13836,13751,12497"

@@ -19,6 +19,14 @@ export const getVersion = (): string => {
 }
 
 export const changeLog: entry[] = [
+    {
+    version: "12.1.5 / 5.5.4",
+    update: 13,
+    date: "October 22",
+    changes: [ 
+      "In-game Change: Updated Ascendant Venomstone item levels.",
+    ]
+  },
   {
     version: "12.1.5 / 5.5.4",
     update: 12,

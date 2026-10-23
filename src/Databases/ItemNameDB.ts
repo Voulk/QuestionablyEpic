@@ -23882,6 +23882,16 @@ export const nameDB =
         "fr": "Jambières illidari",
         "de": "Gamaschen der Illidari"
     },
+    "150922": {
+        "cn": "",
+        "en": "Terrific Tankard O' Terror",
+        "ru": "Прекрасная пинта Ужаса",
+        "es": "Pichel del terror terrible",
+        "br": "Maravilhoso Caneco do Terror",
+        "kr": "",
+        "fr": "Pinte de terreur terrible",
+        "de": "Herrlicher Horrorhumpen"
+    },
     "150933": {
         "cn": "",
         "en": "Illidari Leggings",
