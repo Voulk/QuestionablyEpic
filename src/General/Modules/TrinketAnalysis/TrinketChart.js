@@ -21,6 +21,7 @@ import { downloadJson } from "./TrinketJSONDownload";
 import { getAllTrinketData } from "Retail/Engine/EffectFormulas/Generic/Trinkets/TrinketEffectFormulas.js";
 import MenuDropdown from "General/Modules/TopGear/Report/MenuDropdown";
 import GenericDialog from "General/Modules/TopGear/Report/GenericDialog";
+import { CONSTANTS } from "General/Engine/CONSTANTS";
 
 const getTrinketAtItemLevel = (id, itemLevel, player, contentType, playerSettings) => {
   let item = new Item(id, "", "Trinket", false, "", 0, itemLevel, "");
@@ -154,13 +155,7 @@ export default function TrinketChart({ player }) {
   const [levelCap, setLevelCap] = React.useState(344);
   const [breakdown, setBreakdown] = React.useState(false);
 
-  const maxLevelMarks = [
-    { value: 0, label: "282" },
-    { value: 1, label: "298" },
-    { value: 2, label: "308" },
-    { value: 3, label: "321" },
-    { value: 4, label: "344" },
-  ];
+  const maxLevelMarks = CONSTANTS.trinketChartConstants.sliderLevels;
 
   const changeLevelCap = (event, newValue) => {
     setLevelCap(parseInt(maxLevelMarks[newValue].label));
@@ -172,7 +167,7 @@ export default function TrinketChart({ player }) {
 
   const allItemLevels =
     gameType === "Retail"
-      ? [272, 276, 285, 289, 295, 298, 302, 308, 315, 321, 328, 331, 334, 341, 344]
+      ? CONSTANTS.trinketChartConstants.trinketItemLevels
       : [476, 502, 509, 510, 517, 522, 528, 535, 541, 553, 559, 566, 572];
 
   const itemLevels = allItemLevels.filter((level) => level <= levelCap || gameType === "Classic");
