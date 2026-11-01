@@ -48,10 +48,11 @@ export const buildForeverDruidChartData = (activeStats, activeTalents) => {
 
     const spellDB = JSON.parse(JSON.stringify(foreverDruidSpellDB));   
     console.log(spellDB);
-    applyForeverTalents("Restoration Druid Forever", spellDB, activeTalents, {});
+    const state = {statBonuses: {}, talents: [], spec: "Restoration Druid Forever"};
+    applyForeverTalents("Restoration Druid Forever", spellDB, activeTalents, state);
 
-    const testSettings = {masteryEfficiency: 1, includeOverheal: "Yes", reporting: false, advancedReporting: false, t31_2: false};
-    const state = {statBonuses: {}, talents: []};
+    const testSettings = { includeOverheal: "Yes", reporting: false, advancedReporting: false };
+
 
 
     //defaultTalents(talents, "default", "Keeper of the Grove");
@@ -107,8 +108,8 @@ export const buildForeverDruidChartData = (activeStats, activeTalents) => {
             }
         else if (cat.includes("Base Spells") || sequence.type === "formulated") {
             const fullSpell = spellDB[sequence.seq[0]];
-            console.log(fullSpell);
-            results.push(buildFormulatedChartEntryForever(sequence, displayInfo, fullSpell, activeStats, testSettings, {spec: "Restoration Druid Forever"}, null));
+
+            results.push(buildFormulatedChartEntryForever(sequence, displayInfo, fullSpell, activeStats, testSettings, state));
         }
         else {
             // All sequence based.

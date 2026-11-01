@@ -143,7 +143,7 @@ export const buildFormulatedChartEntry = (sequence, displayInfo, rawSpell, activ
 
 }
 
-export const buildFormulatedChartEntryForever = (sequence, displayInfo, rawSpell, activeStats, userSettings, playerData) => {
+export const buildFormulatedChartEntryForever = (sequence, displayInfo, rawSpell, activeStats, userSettings, state) => {
     let data = {
         coeff: 0,
         healingDone: 0,
@@ -177,13 +177,13 @@ export const buildFormulatedChartEntryForever = (sequence, displayInfo, rawSpell
     data.manaSpent = spell[0].cost;
 
 
-
-    const statPercentages = convertStatPercentagesForever(activeStats, 1, playerData.spec, playerData.race); //{healingPower: 0, spellpower: 0, crit: 1, critMultHPS: 2}
+    console.log(state);
+    const statPercentages = convertStatPercentagesForever(activeStats, state.statBonuses, ""/*playerData.race*/); //{healingPower: 0, spellpower: 0, crit: 1, critMultHPS: 2}
     //console.log(statPercentages);
 
     const execTime = (spell[0].castTime || 1.5) / statPercentages.haste;
 
-    const result = runProfileSpellForever(spell[0].displayInfo.spellName, spell, statPercentages, playerData.spec, userSettings, {})
+    const result = runProfileSpellForever(spell[0].displayInfo.spellName, spell, statPercentages, state.spec, userSettings, {})
     data.execTime = execTime;
 
     data.coeff = getSpellCoeffForever(spell);

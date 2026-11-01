@@ -34,13 +34,13 @@ export const splitSpellCPM = (castProfile, spellName, splitPerc) => {
     castProfile.push(clone);
 }
 
-export const convertStatPercentagesForever = (statProfile, hasteBuff, spec, race = "") => {
+export const convertStatPercentagesForever = (statProfile, statBonuses, race = "") => {
     const isTwoHander = statProfile.isTwoHanded ?? false;
 
     const stats = {
-        spellpower: statProfile.spellpower, // The first 10 intellect points don't convert to spellpower.
-        healingpower: statProfile.healingpower,
-        crit: 1,// + getCritPercentage(statProfile, spec),
+        spellpower: (statProfile.spellpower || 0) + (statBonuses.spellpower || 0), // The first 10 intellect points don't convert to spellpower.
+        healingpower: (statProfile.healingpower || 0) + (statBonuses.healingpower || 0),
+        crit: 1 + (statBonuses.crit || 0),// + getCritPercentage(statProfile, spec),
         haste: 1, //getHasteClassic({statProfile, haste: statProfile.haste}, hasteBuff),
         intellect: statProfile.intellect,
         spirit: statProfile.spirit,
@@ -50,8 +50,10 @@ export const convertStatPercentagesForever = (statProfile, hasteBuff, spec, race
         attackpower: 0,//(statProfile.intellect + statProfile.spellpower - 10) * 2,
         armorReduction: 0.7,
 
-        critMultDPS: 1.5, //statProfile.critMultDPS,
-        critMultHPS: 1.5, //statProfile.critMultHPS + 1, // Yes it works differently to DPS crits. 
+        critMultDPS: 1.5 + (statBonuses.critMult || 0), //statProfile.critMultDPS,
+        critMultHPS: 1.5 + (statBonuses.critMultHPS || 0), //statProfile.critMultHPS + 1, // Yes it works differently to DPS crits. 
+        genericHealingMult: 1 + (statBonuses.genericHealingMult || 0),
+        genericDamageMult: 1 + (statBonuses.genericDamageMult || 0)
     }
 
     getClassicRaceBonuses(stats, race);
@@ -95,17 +97,18 @@ export const runProfileSpellForever = (spellName, fullSpell, statPercentages, sp
 // Classic
 export const runForeverSpell = (spellName, spell, statPercentages, spec, settings, flags = {}) => {
 
-    const genericMult = 1;
+    
     let targetCount = 1;
     // (getSetting(settings, "classicMetaGem") === "Burning Primal Diamond")
 
-    //const spellpower = statProfile.intellect + statProfile.spellpower;
     let spellCritBonus = (spell.statMods && spell.statMods.crit) ? spell.statMods.crit : 0; 
     let adjCritChance = ((spell.secondaries && spell.secondaries.includes("crit")) ? (statPercentages.crit + spellCritBonus) : 1)-1; 
     const isDamageSpell = spell.type === "damage" || spell.buffType === "damage";
     const critSize = isDamageSpell ? statPercentages.critMultDPS : statPercentages.critMultHPS; // 3% increased crit damage / healing;
     if (spec.includes("Discipline Priest")) adjCritChance = 0; // We'll handle Disc crits separately since they are a nightmare.
     const critMult = ((1-adjCritChance) + adjCritChance * critSize)
+
+    const genericMult = isDamageSpell ? (statPercentages.genericDamageMult || 1) : (statPercentages.genericHealingMult || 1);
 
     //const additiveScaling = (spell.additiveScaling || 0) + 1
     
@@ -121,6 +124,10 @@ export const runForeverSpell = (spellName, spell, statPercentages, spec, setting
         
         spellOutput = (statPercentages.weaponDamage + statPercentages.attackpower / 14) * spell.weaponScaling
                         * critMult * genericMult * targetCount;
+    }
+    else if (isDamageSpell) {
+        spellOutput = (spell.flat + spell.coeff * statPercentages.spellpower) *
+                        critMult * genericMult * targetCount;
     }
     else {
         // Most other spells follow a uniform formula.

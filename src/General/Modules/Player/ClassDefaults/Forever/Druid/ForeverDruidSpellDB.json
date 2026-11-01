@@ -295,7 +295,7 @@
                 "cat": "",
                 "rank": "Rank 1"
             },
-            "castTime": 3,
+            "castTime": 3.0,
             "cost": 550,
             "flat": 40,
             "coeff": 0.033,
@@ -321,7 +321,7 @@
                 "cat": "",
                 "rank": "Rank 2"
             },
-            "castTime": 3,
+            "castTime": 3.0,
             "cost": 755,
             "flat": 60,
             "coeff": 0.033,
@@ -348,7 +348,7 @@
                 "rank": "Rank 3",
                 "maxRank": true
             },
-            "castTime": 3,
+            "castTime": 3.0,
             "cost": 1050,
             "flat": 97,
             "coeff": 0.033,

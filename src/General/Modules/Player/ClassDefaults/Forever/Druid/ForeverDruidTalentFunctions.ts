@@ -1,14 +1,14 @@
 import { TalentEffectFunction } from "globalTypes";
-import { adjBuffDurationFlat, buffSpellPerc, getAllSpellRanks } from "../../Generic/TalentBaseForever";
+import { addStatPerc, adjBuffDurationFlat, buffSpellCritChance, buffSpellPerc, getAllSpellRanks } from "../../Generic/TalentBaseForever";
 
 
 
-export const applyForeverDruidTalents = (spellDB, talentTree, statBonuses) => {
+export const applyForeverDruidTalents = (spellDB, talentTree, state) => {
     talentTree.forEach(talent => {
         console.log("Talent ", talent.id, " ",talent.points)
         if (druidTalentRegistry[talent.id] && talent.points > 0) {
             
-            druidTalentRegistry[talent.id]({ points: talent.points, state: talent.state, spellDB, talentValues: talent.talentValues });
+            druidTalentRegistry[talent.id]({ points: talent.points, state: state, spellDB, talentValues: talent.talentValues });
         }
         
     })
@@ -26,7 +26,9 @@ const druidTalentRegistry: Record<number, TalentEffectFunction> = {
   }, // Subtlety
   17069: ({ state, spellDB, talentValues, points }) => {}, // Naturalist
   16833: ({ state, spellDB, talentValues, points }) => {}, // Natural Shapeshifter
-  17104: ({ state, spellDB, talentValues, points }) => {}, // Gift of Nature
+  17104: ({ state, spellDB, talentValues, points }) => {
+    addStatPerc(state.statBonuses, "genericHealingMult", talentValues[0] * points)
+  }, // Gift of Nature
   17106: ({ state, spellDB, talentValues, points }) => {}, // Reflection
   414673: ({ state, spellDB, talentValues, points }) => {}, // Gift of the Earthmother
   18562: ({ state, spellDB, talentValues, points }) => {}, // Swiftmend
@@ -37,7 +39,9 @@ const druidTalentRegistry: Record<number, TalentEffectFunction> = {
   17123: ({ state, spellDB, talentValues, points }) => {}, // Improved Tranquility
   1309631: ({ state, spellDB, talentValues, points }) => {}, // Living Spirit
   17116: ({ state, spellDB, talentValues, points }) => {}, // Nature's Swiftness
-  17074: ({ state, spellDB, talentValues, points }) => {}, // Improved Regrowth
+  17074: ({ state, spellDB, talentValues, points }) => {
+    buffSpellCritChance(getAllSpellRanks(spellDB, "Regrowth"), talentValues[0] * points)
+  }, // Improved Regrowth
   408120: ({ state, spellDB, talentValues, points }) => {}, // Wild Growth
 
   // ── Early Balance Tree
