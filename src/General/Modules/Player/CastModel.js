@@ -294,8 +294,9 @@ class CastModel {
       this.modelName = "Default";
       this.profile = foreverDruidProfile;
       this.talents = this.profile.defaultTalents || [];
+      this.runCastModel = this.profile.scoreSet
       this.baseStatWeights = this.profile.defaultStatWeights;
-      this.fightInfo.hps = 200000;
+      this.fightInfo.hps = 900;
     }
     else if (spec.includes("Forever")) {
       this.modelName = "Default";

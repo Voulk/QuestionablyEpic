@@ -12,6 +12,24 @@ export const getHasteClassic = (stats, hasteBuff = 1.05) => {
     return (1 + stats.haste / 425 / 100) * hasteBuff;
 }
 
+export const applyRaidBuffs = (settings) => {
+    const statBonuses = {};
+    // Arcane Int
+    statBonuses.intellect = 0.03
+
+    // Phys damage
+
+    // Mastery
+    statBonuses.mastery = 0.02
+
+    // Versatility
+    statBonuses.versatility = 0.03
+
+    // Vantus?
+
+    return statBonuses;
+}
+
 export const applyForeverTalents = (spec, spellDB, talentTree, statBonuses) => {
     if (spec === "Restoration Druid Forever") {
         console.log(talentTree);

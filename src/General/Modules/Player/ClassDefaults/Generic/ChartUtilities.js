@@ -176,8 +176,6 @@ export const buildFormulatedChartEntryForever = (sequence, displayInfo, rawSpell
 
     data.manaSpent = spell[0].cost;
 
-
-    console.log(state);
     const statPercentages = convertStatPercentagesForever(activeStats, state.statBonuses, ""/*playerData.race*/); //{healingPower: 0, spellpower: 0, crit: 1, critMultHPS: 2}
     //console.log(statPercentages);
 

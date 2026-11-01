@@ -5,7 +5,6 @@ import { addStatPerc, adjBuffDurationFlat, buffSpellCritChance, buffSpellPerc, g
 
 export const applyForeverDruidTalents = (spellDB, talentTree, state) => {
     talentTree.forEach(talent => {
-        console.log("Talent ", talent.id, " ",talent.points)
         if (druidTalentRegistry[talent.id] && talent.points > 0) {
             
             druidTalentRegistry[talent.id]({ points: talent.points, state: state, spellDB, talentValues: talent.talentValues });
@@ -44,17 +43,19 @@ const druidTalentRegistry: Record<number, TalentEffectFunction> = {
   }, // Improved Regrowth
   408120: ({ state, spellDB, talentValues, points }) => {}, // Wild Growth
 
-  // ── Early Balance Tree
+  // Balance Tree
   16814: ({ state, spellDB, talentValues, points }) => {}, // Improved Wrath
   1223081: ({ state, spellDB, talentValues, points }) => {
-    //const validSpells = Object.values(spellDB).filter(spells => slices.some(slice => slice.displayInfo.spellName === spellName));
-    //buffSpellPerc(validSpells, talentValues[0] || 0.03 * points)
+    buffSpellPerc(getAllSpellRanks(spellDB, "Rejuvenation"), talentValues[0] * points, 0)
+    buffSpellPerc(getAllSpellRanks(spellDB, "Wild Growth"), talentValues[0] * points, 0)
+    buffSpellPerc(getAllSpellRanks(spellDB, "Regrowth"), talentValues[0] * points, 1)
   }, // Genesis
   16845: ({ state, spellDB, talentValues, points }) => {}, // Moonglow
   16918: ({ state, spellDB, talentValues, points }) => {}, // Improved Entangling Roots
   1223082: ({ state, spellDB, talentValues, points }) => {}, // Nature's Majesty
   1223083: ({ state, spellDB, talentValues, points }) => {
-    adjBuffDurationFlat(getAllSpellRanks(spellDB, "Rejuvenation"), talentValues[0] || 3000)
+    adjBuffDurationFlat(getAllSpellRanks(spellDB, "Rejuvenation"), talentValues[0])
+    adjBuffDurationFlat(getAllSpellRanks(spellDB, "Regrowth"), talentValues[1])
 
   }, // Nature's Splendor
   16819: ({ state, spellDB, talentValues, points }) => {}, // Nature's Reach

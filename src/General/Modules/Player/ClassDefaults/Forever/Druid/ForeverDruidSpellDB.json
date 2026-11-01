@@ -309,7 +309,8 @@
             "secondaries": [
                 "crit"
             ],
-            "expectedOverheal": 0.15
+            "expectedOverheal": 0.15,
+            "targets": 5
         }
     ],
     "Wild Growth Rank 2": [
@@ -335,7 +336,8 @@
             "secondaries": [
                 "crit"
             ],
-            "expectedOverheal": 0.15
+            "expectedOverheal": 0.15,
+            "targets": 5
         }
     ],
     "Wild Growth Rank 3": [
@@ -676,6 +678,107 @@
                 "tickRate": 3.0,
                 "tickOnCast": false
             },
+            "secondaries": [
+                "crit"
+            ],
+            "expectedOverheal": 0.15
+        }
+    ],
+    "Healing Touch Rank 7": [
+        {
+            "displayInfo": {
+                "id": 8903,
+                "icon": "spell_nature_healingtouch",
+                "spellName": "Healing Touch",
+                "cat": "",
+                "rank": "Rank 7"
+            },
+            "castTime": 3.5,
+            "cost": 425,
+            "flat": 898,
+            "coeff": 1.0,
+            "spellType": "heal",
+            "secondaries": [
+                "crit"
+            ],
+            "expectedOverheal": 0.15
+        }
+    ],
+    "Healing Touch Rank 8": [
+        {
+            "displayInfo": {
+                "id": 9758,
+                "icon": "spell_nature_healingtouch",
+                "spellName": "Healing Touch",
+                "cat": "",
+                "rank": "Rank 8"
+            },
+            "castTime": 3.5,
+            "cost": 520,
+            "flat": 1173,
+            "coeff": 1.0,
+            "spellType": "heal",
+            "secondaries": [
+                "crit"
+            ],
+            "expectedOverheal": 0.15
+        }
+    ],
+    "Healing Touch Rank 9": [
+        {
+            "displayInfo": {
+                "id": 9888,
+                "icon": "spell_nature_healingtouch",
+                "spellName": "Healing Touch",
+                "cat": "",
+                "rank": "Rank 9"
+            },
+            "castTime": 3.5,
+            "cost": 630,
+            "flat": 1516,
+            "coeff": 1.0,
+            "spellType": "heal",
+            "secondaries": [
+                "crit"
+            ],
+            "expectedOverheal": 0.15
+        }
+    ],
+    "Healing Touch Rank 10": [
+        {
+            "displayInfo": {
+                "id": 9889,
+                "icon": "spell_nature_healingtouch",
+                "spellName": "Healing Touch",
+                "cat": "",
+                "rank": "Rank 10"
+            },
+            "castTime": 3.5,
+            "cost": 755,
+            "flat": 1920,
+            "coeff": 1.0,
+            "spellType": "heal",
+            "secondaries": [
+                "crit"
+            ],
+            "expectedOverheal": 0.15
+        }
+    ],
+    "Healing Touch Rank 11": [
+        {
+            "displayInfo": {
+                "id": 25297,
+                "icon": "spell_nature_healingtouch",
+                "spellName": "Healing Touch",
+                "cat": "",
+                "rank": "Rank 11",
+                "maxRank": true
+            },
+            "castTime": 3.5,
+            "cost": 840,
+            "flat": 2332,
+            "coeff": 1.0,
+            "spellType": "heal",
             "secondaries": [
                 "crit"
             ],
