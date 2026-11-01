@@ -29,5 +29,5 @@ export const foreverDruidProfile = {
     specialQueries: {
         // Any special information we need to pull.
     },
-    defaultTalents: ForeverDruidTalentData
+    defaultTalents: "dBX1BZeyW4fs0AAEHP", // ForeverDruidTalentData
 }

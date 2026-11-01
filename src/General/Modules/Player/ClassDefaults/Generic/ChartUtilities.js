@@ -130,7 +130,6 @@ export const buildFormulatedChartEntry = (sequence, displayInfo, rawSpell, activ
                 }
             });
         }
-            
     }
 
     data.manaSpent = spell[0].cost * 250000 / 100;
@@ -177,13 +176,18 @@ export const buildFormulatedChartEntryForever = (sequence, displayInfo, rawSpell
 
     data.manaSpent = spell[0].cost;
 
+
+
     const statPercentages = convertStatPercentagesForever(activeStats, 1, playerData.spec, playerData.race); //{healingPower: 0, spellpower: 0, crit: 1, critMultHPS: 2}
-    console.log(statPercentages);
+    //console.log(statPercentages);
+
+    const execTime = (spell[0].castTime || 1.5) / statPercentages.haste;
 
     const result = runProfileSpellForever(spell[0].displayInfo.spellName, spell, statPercentages, playerData.spec, userSettings, {})
+    data.execTime = execTime;
 
     data.coeff = getSpellCoeffForever(spell);
-    return {cat: sequence.cat, tag: sequence.tag ? sequence.tag : sequence.seq.join(", "), cost: Math.round(data.manaSpent), coeff: data.coeff, hps: Math.round(result.healing), hpm: Math.round(result.healing / data.manaSpent*100)/100, damage: Math.round(result.damage) || "-", dps: 0, spell: displayInfo, hpct: 0, advancedReport: {}}
+    return {cat: sequence.cat, tag: sequence.tag ? sequence.tag : sequence.seq.join(", "), cost: Math.round(data.manaSpent), coeff: data.coeff, hps: Math.round(result.healing), hpm: Math.round(result.healing / data.manaSpent*100)/100, damage: Math.round(result.damage) || "-", dps: 0, spell: displayInfo, hpct: Math.round(result.healing / data.execTime), advancedReport: {}}
 
 }
 

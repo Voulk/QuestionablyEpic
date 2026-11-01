@@ -6,7 +6,8 @@ import { SpellData, SpellDB } from "globalTypes";
  * The result can be passed straight to buffSpellPerc.
  */
 export const getAllSpellRanks = (spellDB: SpellDB, spellName: string): SpellData[][] => {
-    return Object.values(spellDB).filter(slices => slices.some(slice => slice.displayInfo.spellName === spellName));
+    console.log(spellDB, spellName)
+    return Object.values(spellDB).filter(slices => slices[0]?.displayInfo.spellName === spellName);
 } 
 
 

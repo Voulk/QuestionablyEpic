@@ -3,18 +3,18 @@ import TCPanel from "./TCPanel";
 import SpellBreakdown from "./SpellBreakdownPanel";
 import TalentList from "./SelectedTalentsPanel";
 import { TalentCalculator } from "./ForeverTalentPanel/ForeverTalentPanel";
-import { TalentNodeData, ForeverTalent } from "./ForeverTalentPanel/ForeverTalentTypes";
+import { TalentNodeData } from "./ForeverTalentPanel/ForeverTalentTypes";
 
 const tabs = ['Healing Breakdown', 'Damage Breakdown', 'Talents Selected', 'Unused Panel'] as const;
 type Tab = typeof tabs[number];
 
 interface ModelInformationTabsProps {
     activeResult: any;
-    selectedTalents: {talentName: string, talentRanks: number}[] | ForeverTalent[];
-        onTalentsChange?: (talents: ForeverTalent[]) => void;
-    talentData?: TalentNodeData[];
+    selectedTalents: {talentName: string, talentRanks: number}[] | TalentNodeData[];
+        onTalentsChange?: (talents: TalentNodeData[]) => void;
     className?: string;
     gameType: gameTypes;
+    defaultTalentString?: string;
 }
 
 // ─── Design tokens ────────────────────────────────────────────────────────────
@@ -33,7 +33,7 @@ const COLORS = {
 
 const PRIMARY = "#e3b341";
 
-export default function ModelInformationTabs({ activeResult, selectedTalents, onTalentsChange, talentData, className, gameType }: ModelInformationTabsProps) {
+export default function ModelInformationTabs({ activeResult, selectedTalents, onTalentsChange, className, gameType, defaultTalentString }: ModelInformationTabsProps) {
     const [activeTab, setActiveTab] = useState<Tab>('Healing Breakdown');
 
     return (
@@ -86,10 +86,10 @@ export default function ModelInformationTabs({ activeResult, selectedTalents, on
                         <TalentList talents={selectedTalents as {talentName: string, talentRanks: number}[]} />
                     ) : (
                         <TalentCalculator
-                            talentData={talentData ?? []}
+                            talents={selectedTalents as TalentNodeData[]}
                             className={className ?? ""}
-                            selectedTalents={selectedTalents as ForeverTalent[]}
                             onTalentsChange={onTalentsChange ?? (() => {})}
+                            defaultTalentString={defaultTalentString}
                         />
                     )}
                 </TCPanel>

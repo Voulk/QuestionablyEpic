@@ -189,7 +189,7 @@
     {
         "id": 17003,
         "spellName": "Heart of the Wild",
-        "treeID": 1,
+        "treeID": 2,
         "x": 2,
         "y": 0,
         "maxPoints": 5,
@@ -495,15 +495,15 @@
         "iconName": "spell_frost_windwalkon"
     },
     {
-        "id": 414673,
-        "spellName": "Gift of the Earthmother",
+        "id": 1328621,
+        "spellName": "Bloom",
         "treeID": 2,
         "x": 3,
         "y": 2,
         "maxPoints": 1,
         "points": 0,
         "talentValues": [],
-        "iconName": "spell_nature_spiritarmor"
+        "iconName": "inv_misc_herb_felblossom"
     },
     {
         "id": 16833,
@@ -563,7 +563,7 @@
     {
         "id": 17056,
         "spellName": "Furor",
-        "treeID": 2,
+        "treeID": 1,
         "x": 2,
         "y": 0,
         "maxPoints": 5,

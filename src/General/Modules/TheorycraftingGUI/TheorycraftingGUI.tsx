@@ -10,12 +10,15 @@ import { RootState } from "Redux/Reducers/RootReducer";
 import { buildBestDistChart, buildStatWeights, buildTCStatChart } from "General/Modules/Player/ClassDefaults/Generic/RampTestSuite"
 import SequenceDataTable from "../SequenceGenerator/SequenceDataTable";
 import ModelInformationTabs from "./ModelInformationTabs";
-import { ForeverTalent } from "./ForeverTalentPanel/ForeverTalentTypes";
+import { TalentNodeData } from "./ForeverTalentPanel/ForeverTalentTypes";
 
 import { getSelectedTalentsFromString } from "General/Modules/Player/ClassDefaults/Generic/TalentStrings/TalentDecoder"
 import { CONSTANTS } from "General/Engine/CONSTANTS";
 import BestInSlotPanel from "./BestDistributionPanel";
+import { Stats } from "globalTypes";
+import { importTalents } from "./ForeverTalentPanel/ForeverTalentSerialization";
 
+import ForeverDruidTalentData  from "General/Modules/Player/ClassDefaults/Forever/Druid/ForeverDruidTalentData.json"
 
 export default function TheorycraftingGUI(props) {
     const player = props.player;
@@ -57,12 +60,10 @@ export default function TheorycraftingGUI(props) {
     const [bestStatCombo, setbestStatCombo] = useState({haste: 1, crit: 1, mastery: 1, versatility: 1});
     const [selectedProfile, setSelectedProfile] = useState(profiles[0]);
     const [talentString, setTalentString] = useState(profiles[0].talents);
-    const [foreverTalents, setForeverTalents] = useState<ForeverTalent[]>(() =>
-        (profiles[0].talents ?? []).map((node: { id: number; points?: number; talentValues?: number[] }) => ({
-            id: node.id, points: node.points || 0, talentValues: node.talentValues ?? [],
-        })));
+    const [foreverTalents, setForeverTalents] = useState<TalentNodeData[]>(() =>
+        importTalents(ForeverDruidTalentData as TalentNodeData[], profiles[0].talents ?? "") ?? (ForeverDruidTalentData as TalentNodeData[]));
     const talentsSelected = gameType === "Retail" ?  getSelectedTalentsFromString(selectedProfile.talents, selectedSpec) : foreverTalents;
-
+    
     const params = {
         filler: {
             hw: 0, ch: 1
@@ -121,19 +122,19 @@ export default function TheorycraftingGUI(props) {
             activeResult={activeResult}
             selectedTalents={talentsSelected}
             onTalentsChange={setForeverTalents}
-            talentData={selectedProfile.talents}
             className={String(selectedSpec).replace(" Forever", "").split(" ").pop()}
             gameType={gameType}
+                        defaultTalentString={typeof (selectedProfile as any).defaultTalents === "string" ? (selectedProfile as any).defaultTalents : undefined}
         />
 
-      <StatScalingChart data={statChart} currentWeights={currentWeights} />
+      {gameType === "Retail" ? <StatScalingChart data={statChart} currentWeights={currentWeights} /> : null}
  
       {/* Future panels go here */}
-      <BestInSlotPanel stats={bestStatCombo} onRun={() => buildBestDistChart(selectedProfile.runCastModel, playerData).then(result => {
+      {gameType === "Retail" ? <BestInSlotPanel stats={bestStatCombo} onRun={() => buildBestDistChart(selectedProfile.runCastModel, playerData).then(result => {
         setbestStatCombo(result);
-      })} />
+      })} /> : null}
 
-      {<SequenceDataTable data={""} spec={selectedSpec} stats={stats} talents={talentsSelected} />}
+      <SequenceDataTable data={""} spec={selectedSpec} stats={stats} talents={talentsSelected} />
 
       <div style={{ height: 100 }} />
     </Box>

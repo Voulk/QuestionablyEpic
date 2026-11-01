@@ -14,6 +14,7 @@ export const getHasteClassic = (stats, hasteBuff = 1.05) => {
 
 export const applyForeverTalents = (spec, spellDB, talentTree, statBonuses) => {
     if (spec === "Restoration Druid Forever") {
+        console.log(talentTree);
         applyForeverDruidTalents(spellDB, talentTree, statBonuses);
     }
 }

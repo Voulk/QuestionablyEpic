@@ -295,7 +295,7 @@
                 "cat": "",
                 "rank": "Rank 1"
             },
-            "castTime": 0.0,
+            "castTime": 3,
             "cost": 550,
             "flat": 40,
             "coeff": 0.033,
@@ -321,7 +321,7 @@
                 "cat": "",
                 "rank": "Rank 2"
             },
-            "castTime": 0.0,
+            "castTime": 3,
             "cost": 755,
             "flat": 60,
             "coeff": 0.033,
@@ -348,7 +348,7 @@
                 "rank": "Rank 3",
                 "maxRank": true
             },
-            "castTime": 0.0,
+            "castTime": 3,
             "cost": 1050,
             "flat": 97,
             "coeff": 0.033,
@@ -364,6 +364,322 @@
             ],
             "expectedOverheal": 0.15,
             "targets": 5
+        }
+    ],
+    "Regrowth Rank 1": [
+        {
+            "displayInfo": {
+                "id": 8936,
+                "icon": "spell_nature_resistnature",
+                "spellName": "Regrowth",
+                "cat": "",
+                "rank": "Rank 1"
+            },
+            "castTime": 2.0,
+            "cost": 70,
+            "flat": 87,
+            "coeff": 0.286,
+            "spellType": "heal",
+            "secondaries": [
+                "crit"
+            ],
+            "expectedOverheal": 0.15
+        },
+        {
+            "flat": 13,
+            "coeff": 0.071,
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 21.0,
+            "tickData": {
+                "tickRate": 3.0,
+                "tickOnCast": false
+            },
+            "secondaries": [
+                "crit"
+            ],
+            "expectedOverheal": 0.15
+        }
+    ],
+    "Regrowth Rank 2": [
+        {
+            "displayInfo": {
+                "id": 8938,
+                "icon": "spell_nature_resistnature",
+                "spellName": "Regrowth",
+                "cat": "",
+                "rank": "Rank 2"
+            },
+            "castTime": 2.0,
+            "cost": 125,
+            "flat": 164,
+            "coeff": 0.286,
+            "spellType": "heal",
+            "secondaries": [
+                "crit"
+            ],
+            "expectedOverheal": 0.15
+        },
+        {
+            "flat": 22,
+            "coeff": 0.071,
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 21.0,
+            "tickData": {
+                "tickRate": 3.0,
+                "tickOnCast": false
+            },
+            "secondaries": [
+                "crit"
+            ],
+            "expectedOverheal": 0.15
+        }
+    ],
+    "Regrowth Rank 3": [
+        {
+            "displayInfo": {
+                "id": 8939,
+                "icon": "spell_nature_resistnature",
+                "spellName": "Regrowth",
+                "cat": "",
+                "rank": "Rank 3"
+            },
+            "castTime": 2.0,
+            "cost": 170,
+            "flat": 235,
+            "coeff": 0.286,
+            "spellType": "heal",
+            "secondaries": [
+                "crit"
+            ],
+            "expectedOverheal": 0.15
+        },
+        {
+            "flat": 32,
+            "coeff": 0.071,
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 21.0,
+            "tickData": {
+                "tickRate": 3.0,
+                "tickOnCast": false
+            },
+            "secondaries": [
+                "crit"
+            ],
+            "expectedOverheal": 0.15
+        }
+    ],
+    "Regrowth Rank 4": [
+        {
+            "displayInfo": {
+                "id": 8940,
+                "icon": "spell_nature_resistnature",
+                "spellName": "Regrowth",
+                "cat": "",
+                "rank": "Rank 4"
+            },
+            "castTime": 2.0,
+            "cost": 210,
+            "flat": 311,
+            "coeff": 0.286,
+            "spellType": "heal",
+            "secondaries": [
+                "crit"
+            ],
+            "expectedOverheal": 0.15
+        },
+        {
+            "flat": 42,
+            "coeff": 0.071,
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 21.0,
+            "tickData": {
+                "tickRate": 3.0,
+                "tickOnCast": false
+            },
+            "secondaries": [
+                "crit"
+            ],
+            "expectedOverheal": 0.15
+        }
+    ],
+    "Regrowth Rank 5": [
+        {
+            "displayInfo": {
+                "id": 8941,
+                "icon": "spell_nature_resistnature",
+                "spellName": "Regrowth",
+                "cat": "",
+                "rank": "Rank 5"
+            },
+            "castTime": 2.0,
+            "cost": 250,
+            "flat": 394,
+            "coeff": 0.286,
+            "spellType": "heal",
+            "secondaries": [
+                "crit"
+            ],
+            "expectedOverheal": 0.15
+        },
+        {
+            "flat": 52,
+            "coeff": 0.071,
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 21.0,
+            "tickData": {
+                "tickRate": 3.0,
+                "tickOnCast": false
+            },
+            "secondaries": [
+                "crit"
+            ],
+            "expectedOverheal": 0.15
+        }
+    ],
+    "Regrowth Rank 6": [
+        {
+            "displayInfo": {
+                "id": 9750,
+                "icon": "spell_nature_resistnature",
+                "spellName": "Regrowth",
+                "cat": "",
+                "rank": "Rank 6"
+            },
+            "castTime": 2.0,
+            "cost": 305,
+            "flat": 504,
+            "coeff": 0.286,
+            "spellType": "heal",
+            "secondaries": [
+                "crit"
+            ],
+            "expectedOverheal": 0.15
+        },
+        {
+            "flat": 68,
+            "coeff": 0.071,
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 21.0,
+            "tickData": {
+                "tickRate": 3.0,
+                "tickOnCast": false
+            },
+            "secondaries": [
+                "crit"
+            ],
+            "expectedOverheal": 0.15
+        }
+    ],
+    "Regrowth Rank 7": [
+        {
+            "displayInfo": {
+                "id": 9856,
+                "icon": "spell_nature_resistnature",
+                "spellName": "Regrowth",
+                "cat": "",
+                "rank": "Rank 7"
+            },
+            "castTime": 2.0,
+            "cost": 370,
+            "flat": 645,
+            "coeff": 0.286,
+            "spellType": "heal",
+            "secondaries": [
+                "crit"
+            ],
+            "expectedOverheal": 0.15
+        },
+        {
+            "flat": 88,
+            "coeff": 0.071,
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 21.0,
+            "tickData": {
+                "tickRate": 3.0,
+                "tickOnCast": false
+            },
+            "secondaries": [
+                "crit"
+            ],
+            "expectedOverheal": 0.15
+        }
+    ],
+    "Regrowth Rank 8": [
+        {
+            "displayInfo": {
+                "id": 9857,
+                "icon": "spell_nature_resistnature",
+                "spellName": "Regrowth",
+                "cat": "",
+                "rank": "Rank 8"
+            },
+            "castTime": 2.0,
+            "cost": 445,
+            "flat": 817,
+            "coeff": 0.286,
+            "spellType": "heal",
+            "secondaries": [
+                "crit"
+            ],
+            "expectedOverheal": 0.15
+        },
+        {
+            "flat": 113,
+            "coeff": 0.071,
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 21.0,
+            "tickData": {
+                "tickRate": 3.0,
+                "tickOnCast": false
+            },
+            "secondaries": [
+                "crit"
+            ],
+            "expectedOverheal": 0.15
+        }
+    ],
+    "Regrowth Rank 9": [
+        {
+            "displayInfo": {
+                "id": 9858,
+                "icon": "spell_nature_resistnature",
+                "spellName": "Regrowth",
+                "cat": "",
+                "rank": "Rank 9",
+                "maxRank": true
+            },
+            "castTime": 2.0,
+            "cost": 525,
+            "flat": 1021,
+            "coeff": 0.286,
+            "spellType": "heal",
+            "secondaries": [
+                "crit"
+            ],
+            "expectedOverheal": 0.15
+        },
+        {
+            "flat": 142,
+            "coeff": 0.071,
+            "spellType": "buff",
+            "buffType": "heal",
+            "buffDuration": 21.0,
+            "tickData": {
+                "tickRate": 3.0,
+                "tickOnCast": false
+            },
+            "secondaries": [
+                "crit"
+            ],
+            "expectedOverheal": 0.15
         }
     ]
 }

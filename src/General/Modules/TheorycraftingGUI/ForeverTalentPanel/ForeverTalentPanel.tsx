@@ -1,9 +1,9 @@
-import React, { useMemo } from 'react';
-import { TalentNodeData, TalentTreeState, ForeverTalent } from './ForeverTalentTypes';
+import React, { useMemo, useState } from 'react';
+import { TalentNodeData, TalentTreeState } from './ForeverTalentTypes';
 import WowheadTooltip from 'General/Modules/GeneralComponents/WowheadTooltip';
 
-const TOTAL_TALENT_POINTS = 51;
-const POINTS_PER_ROW = 5;
+import { TOTAL_TALENT_POINTS, POINTS_PER_ROW, exportTalents, importTalents } from './ForeverTalentSerialization';
+
 const NUM_COLUMNS = 4;
 const NUM_ROWS = 7;
 
@@ -17,28 +17,24 @@ export const getTreeNames = (className: string): Record<number, string> => {
 };
 
 interface TalentCalculatorProps {
-  talentData: TalentNodeData[];
+  talents: TalentNodeData[]; // Full talent data; each node's `points` is the current selection
   className: string;
-  selectedTalents: ForeverTalent[];
-  onTalentsChange: (talents: ForeverTalent[]) => void;
+  onTalentsChange: (talents: TalentNodeData[]) => void;
+  defaultTalentString?: string; // Spec-supplied build, same format as export
 }
 
-export const TalentCalculator: React.FC<TalentCalculatorProps> = ({ talentData, className, selectedTalents, onTalentsChange }) => {
-  // The panel works on an id -> points map; the shared state keeps full {id, points, talentValues} entries.
+export const TalentCalculator: React.FC<TalentCalculatorProps> = ({ talents: talentData, className, onTalentsChange, defaultTalentString }) => {
+  const [importText, setImportText] = useState('');
+  const [message, setMessage] = useState('');
+  // Internally the panel works on an id -> points map.
   const pointsAllocated: TalentTreeState = useMemo(() => {
     const map: TalentTreeState = {};
-    selectedTalents.forEach((t) => (map[t.id] = t.points));
+    talentData.forEach((t) => (map[t.id] = t.points || 0));
     return map;
-  }, [selectedTalents]);
+  }, [talentData]);
 
   const setPointsAllocated = (map: TalentTreeState) => {
-    onTalentsChange(
-      talentData.map((node) => ({
-        id: node.id,
-        points: map[node.id] || 0,
-        talentValues: selectedTalents.find((t) => t.id === node.id)?.talentValues ?? node.talentValues ?? [],
-      }))
-    );
+    onTalentsChange(talentData.map((node) => ({ ...node, points: map[node.id] || 0 })));
   };
 
   // Calculate total spent points across all subtrees
@@ -157,6 +153,34 @@ export const TalentCalculator: React.FC<TalentCalculatorProps> = ({ talentData, 
     setPointsAllocated(resetState);
   };
 
+  const applyImport = (str: string): boolean => {
+    const imported = importTalents(talentData, str);
+    if (!imported) {
+      setMessage('Invalid talent string.');
+      return false;
+    }
+    onTalentsChange(imported);
+    return true;
+  };
+
+  const handleImport = () => {
+    if (applyImport(importText)) {
+      setMessage('Talents imported.');
+      setImportText('');
+    }
+  };
+
+  const handleExport = () => {
+    const str = exportTalents(talentData, pointsAllocated);
+    setImportText(str);
+    navigator.clipboard?.writeText(str).catch(() => {});
+    setMessage('Exported (copied to clipboard).');
+  };
+
+  const handleDefault = () => {
+    if (defaultTalentString && applyImport(defaultTalentString)) setMessage('Default talents loaded.');
+  };
+
   const treeNames = getTreeNames(className);
 
   return (
@@ -170,6 +194,27 @@ export const TalentCalculator: React.FC<TalentCalculatorProps> = ({ talentData, 
         <button style={styles.resetButton} onClick={handleReset}>
           Reset
         </button>
+      </div>
+
+      <div style={styles.importExportBar}>
+        <input
+          style={styles.importInput}
+          value={importText}
+          placeholder="Paste talent string"
+          onChange={(e) => setImportText(e.target.value)}
+        />
+        <button style={styles.actionButton} onClick={handleImport} disabled={!importText.trim()}>
+          Import
+        </button>
+        <button style={styles.actionButton} onClick={handleExport}>
+          Export
+        </button>
+        {defaultTalentString && (
+          <button style={styles.actionButton} onClick={handleDefault}>
+            Default
+          </button>
+        )}
+        {message && <span style={{ color: '#999' }}>{message}</span>}
       </div>
 
       {/* Horizontal Subtrees Container */}
@@ -352,6 +397,30 @@ const styles: { [key: string]: React.CSSProperties } = {
     color: '#fff',
     border: 'none',
     padding: '8px 16px',
+    borderRadius: '4px',
+    cursor: 'pointer',
+    fontWeight: 'bold',
+  },
+  importExportBar: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '8px',
+    marginBottom: '16px',
+  },
+  importInput: {
+    width: '260px',
+    padding: '6px 8px',
+    backgroundColor: '#181818',
+    color: '#f0f0f0',
+    border: '1px solid #333',
+    borderRadius: '4px',
+    fontFamily: 'monospace',
+  },
+  actionButton: {
+    backgroundColor: '#333',
+    color: '#fff',
+    border: 'none',
+    padding: '6px 14px',
     borderRadius: '4px',
     cursor: 'pointer',
     fontWeight: 'bold',
