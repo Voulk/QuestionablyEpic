@@ -18,7 +18,7 @@
     "axios": "^0.21.2",
     "chroma-js": "^2.1.0",
     "env-cmd": "^10.1.0",
-    "i18next": "^19.7.0",
+    "i18next": "^27.2.6",
     "i18next-browser-languagedetector": "^6.0.1",
     "i18next-xhr-backend": "^3.2.2",
     "local-storage": "^2.0.0",
